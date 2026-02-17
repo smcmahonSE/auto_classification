@@ -3,8 +3,8 @@
 This project is split into modular steps so you do not need to regenerate Titan embeddings every time:
 
 1. Build feature artifact from Snowflake data (`build_training_data.py`)
-2. Train LightGBM from cached embeddings and export ONNX (`train_model.py`)
-3. Run inference wrapper (concat + Titan + ONNX model) (`predict_with_onnx.py`)
+2. Train LightGBM from cached embeddings and export a joblib artifact (`train_model.py`)
+3. Run inference wrapper (concat + Titan + joblib model) (`predict_with_joblib.py`)
 
 ## Setup (venv)
 
@@ -67,7 +67,7 @@ Outputs:
 
 For large runs, start with `--max-workers 8` or `16`, then tune up/down based on throttling and stability.
 
-## Step 2: Train Model and Export ONNX
+## Step 2: Train Model and Export Joblib
 
 ```bash
 python train_model.py
@@ -83,11 +83,7 @@ python train_model.py --experiment-name lgbm_pca_256 --pca-components 256
 
 Outputs:
 
-- `artifacts/model/lightgbm_model.pkl`
-- `artifacts/model/product_classifier.onnx`
-- `artifacts/model/classes.npy`
-- `artifacts/model/label_encoder.pkl`
-- `artifacts/model/pca.pkl` (only if `--pca-components` is set)
+- `artifacts/model/product_classifier.joblib` (model + label encoder + optional PCA)
 - `artifacts/model/metrics.json`
 
 `metrics.json` includes:
@@ -104,14 +100,14 @@ You can compare runs automatically:
 
 ```bash
 python compare_model_runs.py
-python compare_model_runs.py --sort-by onnx_model_mb --ascending
+python compare_model_runs.py --sort-by joblib_model_mb --ascending
 ```
 
 Comparison output CSV:
 
 - `artifacts/model/experiment_comparison.csv`
 
-## Step 3: Inference using ONNX
+## Step 3: Inference using Joblib
 
 Prepare a CSV containing:
 
@@ -123,21 +119,13 @@ Prepare a CSV containing:
 Then run:
 
 ```bash
-python predict_with_onnx.py --input-csv path/to/input.csv --output-csv artifacts/model/predictions.csv
+python predict_with_joblib.py --input-csv path/to/input.csv --output-csv artifacts/model/predictions.csv
 ```
 
-If `artifacts/model/pca.pkl` exists, inference applies PCA automatically before ONNX scoring.
+If PCA was used during training, inference applies the bundled PCA automatically before scoring.
 
-## Notes on ONNX
+## Model artifact notes
 
-ONNX contains the classifier only (LightGBM on embedding vectors).  
+`product_classifier.joblib` contains the classifier and preprocessing objects (label encoder and optional PCA).  
 Titan embedding calls remain in Python wrapper code, which is expected for Bedrock-based embeddings.
 
-## One-command convenience
-
-`train_product_classifier_local.py` is kept as a convenience entrypoint that runs:
-
-1. `build_training_data.py`
-2. `train_model.py`
-
-# test edit 

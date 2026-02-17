@@ -1,13 +1,11 @@
 import argparse
 from datetime import datetime, timezone
 import json
-import pickle
 from pathlib import Path
 
+import joblib
 import numpy as np
 from lightgbm import LGBMClassifier
-from onnxmltools import convert_lightgbm
-from onnxmltools.convert.common.data_types import FloatTensorType
 from sklearn.decomposition import PCA
 from sklearn.metrics import (
     accuracy_score,
@@ -21,7 +19,7 @@ from sklearn.preprocessing import LabelEncoder
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Train LightGBM from cached embeddings and export ONNX."
+        description="Train LightGBM from cached embeddings and export joblib artifact."
     )
     parser.add_argument(
         "--features-path",
@@ -191,36 +189,22 @@ def main():
         )
     )
 
-    pkl_path = output_dir / "lightgbm_model.pkl"
-    with pkl_path.open("wb") as f:
-        pickle.dump(model, f)
-    print(f"Saved LightGBM pickle: {pkl_path}")
-
-    np.save(output_dir / "classes.npy", label_encoder.classes_)
-    with (output_dir / "label_encoder.pkl").open("wb") as f:
-        pickle.dump(label_encoder, f)
-    pca_path = output_dir / "pca.pkl"
-    if pca is not None:
-        with pca_path.open("wb") as f:
-            pickle.dump(pca, f)
-        print(f"Saved PCA transformer: {pca_path}")
-
     model_input_dim = X_train.shape[1]
-    initial_types = [("input", FloatTensorType([None, model_input_dim]))]
-    onnx_model = convert_lightgbm(model, initial_types=initial_types)
-    onnx_path = output_dir / "product_classifier.onnx"
-    with onnx_path.open("wb") as f:
-        f.write(onnx_model.SerializeToString())
-    print(f"Saved ONNX model: {onnx_path}")
+    model_bundle = {
+        "model": model,
+        "pca": pca,
+        "label_encoder": label_encoder,
+        "model_input_dim": int(model_input_dim),
+        "raw_input_dim": int(X.shape[1]),
+        "pca_components": int(args.pca_components) if pca is not None else None,
+    }
+    joblib_path = output_dir / "product_classifier.joblib"
+    joblib.dump(model_bundle, joblib_path)
+    print(f"Saved joblib model bundle: {joblib_path}")
 
     size_report = {
-        "lightgbm_model_pkl_mb": round(file_size_mb(pkl_path), 3),
-        "onnx_model_mb": round(file_size_mb(onnx_path), 3),
-        "classes_npy_mb": round(file_size_mb(output_dir / "classes.npy"), 3),
-        "label_encoder_pkl_mb": round(file_size_mb(output_dir / "label_encoder.pkl"), 3),
+        "joblib_model_mb": round(file_size_mb(joblib_path), 3),
     }
-    if pca is not None:
-        size_report["pca_pkl_mb"] = round(file_size_mb(pca_path), 3)
     size_report["total_artifacts_mb"] = round(sum(size_report.values()), 3)
     # Simple deployment heuristic: 3x artifact size for runtime headroom.
     size_report["recommended_runtime_memory_mb"] = round(
@@ -261,6 +245,7 @@ def main():
         "n_features_raw": int(X.shape[1]),
         "n_features_model_input": int(model_input_dim),
         "pca_components": int(args.pca_components) if pca is not None else None,
+        "model_artifact_path": str(joblib_path),
         "size_report_mb": size_report,
         "per_class_metrics": per_class_recall,
         "classification_report": classification_report(
@@ -294,7 +279,7 @@ def main():
         "colsample_bytree": args.colsample_bytree,
         "n_features_model_input": metrics["n_features_model_input"],
         "n_classes": metrics["n_classes"],
-        "onnx_model_mb": metrics["size_report_mb"]["onnx_model_mb"],
+        "joblib_model_mb": metrics["size_report_mb"]["joblib_model_mb"],
         "total_artifacts_mb": metrics["size_report_mb"]["total_artifacts_mb"],
         "recommended_runtime_memory_mb": metrics["size_report_mb"][
             "recommended_runtime_memory_mb"

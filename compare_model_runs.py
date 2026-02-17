@@ -27,7 +27,7 @@ def parse_args():
             "weighted_f1",
             "accuracy",
             "balanced_accuracy",
-            "onnx_model_mb",
+            "joblib_model_mb",
             "total_artifacts_mb",
         ],
     )
@@ -67,6 +67,11 @@ def main():
     output_csv.parent.mkdir(parents=True, exist_ok=True)
 
     df = load_history(history_path)
+    if "joblib_model_mb" not in df.columns and "onnx_model_mb" in df.columns:
+        df["joblib_model_mb"] = df["onnx_model_mb"]
+    elif "joblib_model_mb" in df.columns and "onnx_model_mb" in df.columns:
+        df["joblib_model_mb"] = df["joblib_model_mb"].fillna(df["onnx_model_mb"])
+
     df_sorted = df.sort_values(args.sort_by, ascending=args.ascending).reset_index(drop=True)
     df_sorted.to_csv(output_csv, index=False)
     print(f"Saved comparison CSV to {output_csv}")
@@ -85,7 +90,7 @@ def main():
         )
 
     rounded_4 = ["macro_f1", "weighted_f1", "accuracy", "balanced_accuracy"]
-    rounded_2 = ["onnx_model_mb", "total_artifacts_mb", "recommended_runtime_memory_mb"]
+    rounded_2 = ["joblib_model_mb", "total_artifacts_mb", "recommended_runtime_memory_mb"]
     for c in rounded_4:
         if c in summary.columns:
             summary[c] = summary[c].astype(float).round(4)
@@ -101,7 +106,7 @@ def main():
         "accuracy",
         "weighted_f1",
         "pca_components",
-        "onnx_model_mb",
+        "joblib_model_mb",
         "total_artifacts_mb",
         "recommended_runtime_memory_mb",
         "run_timestamp_utc",
@@ -113,7 +118,7 @@ def main():
             "balanced_accuracy": "bal_acc",
             "weighted_f1": "w_f1",
             "pca_components": "pca",
-            "onnx_model_mb": "onnx_mb",
+            "joblib_model_mb": "model_mb",
             "total_artifacts_mb": "total_mb",
             "recommended_runtime_memory_mb": "reco_mem_mb",
             "run_timestamp_utc": "run_time_utc",

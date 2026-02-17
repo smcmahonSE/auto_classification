@@ -1,0 +1,20 @@
+# Snowflake (secure-local-storage enables keyring token cache)
+snowflake-snowpark-python[pandas]
+snowflake-connector-python[pandas,secure-local-storage]
+
+# Data and training
+pandas>=1.5.0
+numpy>=1.21.0
+scikit-learn>=1.2.0
+lightgbm>=4.0.0
+
+# ONNX export and inference
+onnxmltools>=1.12.0
+onnx>=1.14.0
+onnxruntime>=1.16.0
+
+# AWS Bedrock
+boto3>=1.28.0
+
+# Optional convenience
+tqdm>=4.65.0

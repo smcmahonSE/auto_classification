@@ -1,0 +1,16 @@
+# Python cache/bytecode
+__pycache__/
+*.py[cod]
+
+# Local virtual environments
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# Local training artifacts (large/generated)
+artifacts/
+
+# Optional local debug exports
+*.log

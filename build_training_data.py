@@ -134,6 +134,24 @@ def apply_stratified_sample(
     return df.iloc[sample_idx].reset_index(drop=True)
 
 
+def drop_sparse_labels_for_stratification(
+    df: pd.DataFrame, label_column: str, min_count: int = 2
+) -> tuple[pd.DataFrame, int, int]:
+    """
+    Remove labels with too few rows for stratified sampling.
+
+    Returns: (filtered_df, dropped_label_count, dropped_row_count)
+    """
+    counts = df[label_column].astype(str).value_counts(dropna=False)
+    keep_labels = counts[counts >= min_count].index
+    keep_mask = df[label_column].astype(str).isin(keep_labels)
+    dropped_row_count = int((~keep_mask).sum())
+    dropped_label_count = int((counts < min_count).sum())
+    if dropped_row_count == 0:
+        return df, 0, 0
+    return df.loc[keep_mask].reset_index(drop=True), dropped_label_count, dropped_row_count
+
+
 def main():
     args = parse_args()
 
@@ -150,6 +168,17 @@ def main():
     if args.label_column not in df.columns:
         raise ValueError(
             f"Missing label column '{args.label_column}'. Available: {sorted(df.columns)}"
+        )
+
+    # Stratified sampling requires at least 2 rows per label.
+    df, dropped_label_count, dropped_row_count = drop_sparse_labels_for_stratification(
+        df, args.label_column, min_count=2
+    )
+    if dropped_row_count > 0:
+        print(
+            "Dropped "
+            f"{dropped_row_count} rows across {dropped_label_count} labels with <2 rows "
+            "to satisfy stratification requirements."
         )
 
     if args.sample_per_category and args.stratified_sample_size:
@@ -235,6 +264,8 @@ def main():
         "max_workers": args.max_workers,
         "checkpoint_every": args.checkpoint_every,
         "max_retries": args.max_retries,
+        "dropped_sparse_label_count": dropped_label_count,
+        "dropped_sparse_row_count": dropped_row_count,
         "stratified_sample_size": args.stratified_sample_size,
         "sample_per_category": args.sample_per_category,
         "random_state": args.random_state,

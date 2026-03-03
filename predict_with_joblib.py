@@ -16,7 +16,7 @@ class JoblibProductCategoryPredictor:
 
     def __init__(
         self,
-        model_path: str = "artifacts/model/product_classifier.joblib",
+        model_path: str = "artifacts/model/latest/product_classifier.joblib",
         aws_profile: str = "staging.admin",
         aws_region: str = "us-east-1",
         model_id: str = "amazon.titan-embed-text-v1",
@@ -56,7 +56,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Run joblib inference on a CSV of product rows.")
     parser.add_argument("--input-csv", required=True)
     parser.add_argument("--output-csv", default="artifacts/model/predictions.csv")
-    parser.add_argument("--model-path", default="artifacts/model/product_classifier.joblib")
+    parser.add_argument("--model-path", default="artifacts/model/latest/product_classifier.joblib")
     parser.add_argument("--aws-profile", default="staging.admin")
     parser.add_argument("--aws-region", default="us-east-1")
     parser.add_argument("--model-id", default="amazon.titan-embed-text-v1")

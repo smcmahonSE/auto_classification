@@ -1,6 +1,7 @@
 import hashlib
 import json
 import os
+import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -46,18 +47,24 @@ def get_snowflake_session(connection_params: Optional[Dict[str, str]] = None) ->
 def load_product_data(
     session: Session,
     table: Optional[str] = None,
+    label_column: str = "PARENT_3_CATEGORY",
     min_category_count: int = 100,
     row_limit: Optional[int] = None,
 ) -> pd.DataFrame:
     """Load product training data from Snowflake."""
     table_name = table or DEFAULT_PRODUCTS_TABLE
+    if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_$]*", label_column):
+        raise ValueError(
+            "Invalid label column name. Use a simple Snowflake identifier, "
+            "for example PARENT_3_CATEGORY or PARENT_4_CATEGORY."
+        )
     query = f"""
     SELECT *
     FROM {table_name}
-    WHERE parent_3_category IN (
-        SELECT parent_3_category
+    WHERE {label_column} IN (
+        SELECT {label_column}
         FROM {table_name}
-        GROUP BY parent_3_category
+        GROUP BY {label_column}
         HAVING COUNT(*) >= {int(min_category_count)}
     )
     """

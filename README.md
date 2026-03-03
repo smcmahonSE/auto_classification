@@ -65,9 +65,11 @@ Outputs:
 - `artifacts/training_data/features_metadata.json`
 - `artifacts/cache/embedding_cache.pkl` (hash -> embedding cache)
 
+Important: as long as `artifacts/cache/embedding_cache.pkl` is preserved, reruns only embed missing text hashes. You do not need to re-embed unchanged rows.
+
 For large runs, start with `--max-workers 8` or `16`, then tune up/down based on throttling and stability.
 
-## Step 2: Train Model and Export Joblib
+## Step 2: Train Model, Register, and Export Joblib
 
 ```bash
 python train_model.py
@@ -83,8 +85,9 @@ python train_model.py --experiment-name lgbm_pca_256 --pca-components 256
 
 Outputs:
 
-- `artifacts/model/product_classifier.joblib` (model + label encoder + optional PCA)
-- `artifacts/model/metrics.json`
+- `artifacts/model/runs/<UTC_TIMESTAMP>/product_classifier.joblib` (immutable model artifact)
+- `artifacts/model/runs/<UTC_TIMESTAMP>/metrics.json`
+- `artifacts/model/latest/product_classifier.joblib` (latest pointer copy for easy inference)
 
 `metrics.json` includes:
 
@@ -95,12 +98,29 @@ Outputs:
 Each run also appends a summary line to:
 
 - `artifacts/model/metrics_history.jsonl`
+- `artifacts/model/model_registry.jsonl`
+
+Registry records include run id, model path, metrics path, training config, artifact sizes, and git commit SHA (when available).
 
 You can compare runs automatically:
 
 ```bash
 python compare_model_runs.py
 python compare_model_runs.py --sort-by joblib_model_mb --ascending
+python model_registry.py --sort-by scores.macro_f1
+```
+
+Archive/share options:
+
+```bash
+# Zip latest run (or pass --run-id <RUN_ID>)
+bash scripts/archive_run.sh
+
+# Zip ranked run from registry (best macro_f1 by default)
+bash scripts/archive_ranked_model.sh
+
+# Example: pick 2nd-best by accuracy
+bash scripts/archive_ranked_model.sh --sort-by scores.accuracy --rank 2
 ```
 
 Comparison output CSV:

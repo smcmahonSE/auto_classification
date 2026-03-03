@@ -160,6 +160,7 @@ def main():
     df = load_product_data(
         session=sf_session,
         table=args.table,
+        label_column=args.label_column,
         min_category_count=args.min_category_count,
         row_limit=args.row_limit,
     )

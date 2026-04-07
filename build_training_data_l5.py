@@ -13,87 +13,72 @@ from product_classifier_utils import (
     ensure_parent_dir,
     get_bedrock_client,
     get_snowflake_session,
-    load_product_data,
     stable_text_hash,
 )
 
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Build cached training features (Titan embeddings + labels)."
+        description="Build L5 training features from label table + source product table."
     )
     parser.add_argument(
-        "--table",
-        default=None,
-        help="Snowflake table (DATABASE.SCHEMA.TABLE). Defaults to SNOWFLAKE_PRODUCTS_TABLE.",
+        "--labels-table",
+        default="SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.PROPOSED_L5",
+        help="Table containing PRODUCT_ID + proposed L5 labels.",
     )
-    parser.add_argument("--min-category-count", type=int, default=100)
     parser.add_argument(
-        "--row-limit",
-        type=int,
-        default=None,
-        help="Optional row limit for small test runs.",
+        "--products-table",
+        default="SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.PRODUCTS_LCG",
+        help="Source product table containing text fields.",
     )
+    parser.add_argument("--join-id-column", default="PRODUCT_ID")
+    parser.add_argument("--label-column", default="PROPOSED_LABEL")
+    parser.add_argument("--min-category-count", type=int, default=20)
+    parser.add_argument("--row-limit", type=int, default=None)
+    parser.add_argument("--priced-only", action="store_true")
     parser.add_argument(
         "--sample-per-category",
         type=int,
         default=None,
-        help="Optional cap per label for quick dry-run/testing.",
+        help="Optional cap per label for quick tests.",
     )
     parser.add_argument(
         "--stratified-sample-size",
         type=int,
         default=None,
-        help="Optional approximate sample size drawn with label stratification.",
+        help="Approximate sample size with label stratification.",
     )
-    parser.add_argument(
-        "--random-state",
-        type=int,
-        default=42,
-        help="Random seed used for stratified sampling.",
-    )
-    parser.add_argument("--id-column", default="PRODUCT_ID")
-    parser.add_argument("--label-column", default="PARENT_3_CATEGORY")
+    parser.add_argument("--random-state", type=int, default=42)
     parser.add_argument("--aws-profile", default="staging.admin")
     parser.add_argument("--aws-region", default="us-east-1")
     parser.add_argument("--model-id", default="amazon.titan-embed-text-v1")
-    parser.add_argument(
-        "--max-workers",
-        type=int,
-        default=1,
-        help="Parallel embedding workers (start with 8-16 for larger runs).",
-    )
+    parser.add_argument("--max-workers", type=int, default=1)
     parser.add_argument(
         "--checkpoint-every",
         type=int,
-        default=500,
-        help="Persist embedding cache every N new embeddings (0 disables periodic checkpointing).",
+        default=2500,
+        help="Persist embedding cache every N new embeddings (0 disables).",
     )
-    parser.add_argument(
-        "--max-retries",
-        type=int,
-        default=5,
-        help="Retries per embedding request for transient Bedrock failures.",
-    )
+    parser.add_argument("--max-retries", type=int, default=5)
     parser.add_argument(
         "--cache-path",
         default="artifacts/cache/embedding_cache.pkl",
-        help="Pickle file mapping text_hash -> embedding vector.",
+        help="Pickle mapping text_hash -> embedding vector.",
     )
     parser.add_argument(
         "--output-path",
-        default="artifacts/training_data/features_titan.npz",
+        default="artifacts/training_data/features_l5.npz",
         help="Compressed feature artifact.",
     )
     parser.add_argument(
         "--metadata-path",
-        default="artifacts/training_data/features_metadata.json",
+        default="artifacts/training_data/features_l5_metadata.json",
         help="Metadata JSON for feature artifact.",
     )
     parser.add_argument(
         "--save-source-csv",
         default=None,
-        help="Optional CSV snapshot path of source rows for reproducibility.",
+        help="Optional CSV snapshot path for reproducibility.",
     )
     return parser.parse_args()
 
@@ -133,7 +118,6 @@ def save_embedding_cache(path: str, cache):
 def apply_stratified_sample(
     df: pd.DataFrame, label_column: str, sample_size: int, random_state: int
 ) -> pd.DataFrame:
-    """Sample rows with class stratification by label_column."""
     if sample_size <= 0:
         raise ValueError("--stratified-sample-size must be > 0.")
     if sample_size >= len(df):
@@ -152,11 +136,6 @@ def apply_stratified_sample(
 def drop_sparse_labels_for_stratification(
     df: pd.DataFrame, label_column: str, min_count: int = 2
 ) -> tuple[pd.DataFrame, int, int]:
-    """
-    Remove labels with too few rows for stratified sampling.
-
-    Returns: (filtered_df, dropped_label_count, dropped_row_count)
-    """
     counts = df[label_column].astype(str).value_counts(dropna=False)
     keep_labels = counts[counts >= min_count].index
     keep_mask = df[label_column].astype(str).isin(keep_labels)
@@ -167,17 +146,55 @@ def drop_sparse_labels_for_stratification(
     return df.loc[keep_mask].reset_index(drop=True), dropped_label_count, dropped_row_count
 
 
+def load_l5_training_source(
+    labels_table: str,
+    products_table: str,
+    join_id_column: str,
+    label_column: str,
+    row_limit: int | None = None,
+    priced_only: bool = False,
+) -> pd.DataFrame:
+    session = get_snowflake_session()
+
+    where_parts = [f"l.{label_column} IS NOT NULL"]
+    if priced_only:
+        where_parts.append("UPPER(COALESCE(p.PRICING_STATUS_C, '')) = 'PRICED'")
+    where_sql = " AND ".join(where_parts)
+
+    query = f"""
+    SELECT
+      p.*,
+      l.{label_column} AS {label_column},
+      l.PROPOSED_CLUSTER
+    FROM {labels_table} l
+    JOIN {products_table} p
+      ON p.{join_id_column} = l.{join_id_column}
+    WHERE {where_sql}
+    """
+    if row_limit is not None and row_limit > 0:
+        query = f"{query}\nLIMIT {int(row_limit)}"
+
+    df_snowflake = session.sql(query)
+    try:
+        return df_snowflake.to_pandas()
+    except Exception as exc:
+        if "Optional dependency: 'pandas' is not installed" in str(exc):
+            rows = df_snowflake.collect()
+            return pd.DataFrame([row.as_dict() for row in rows])
+        raise
+
+
 def main():
     args = parse_args()
 
-    print("Connecting to Snowflake...")
-    sf_session = get_snowflake_session()
-    df = load_product_data(
-        session=sf_session,
-        table=args.table,
+    print("Loading joined L5 source data from Snowflake...")
+    df = load_l5_training_source(
+        labels_table=args.labels_table,
+        products_table=args.products_table,
+        join_id_column=args.join_id_column,
         label_column=args.label_column,
-        min_category_count=args.min_category_count,
         row_limit=args.row_limit,
+        priced_only=args.priced_only,
     )
     print(f"Loaded {len(df)} rows.")
 
@@ -186,7 +203,17 @@ def main():
             f"Missing label column '{args.label_column}'. Available: {sorted(df.columns)}"
         )
 
-    # Stratified sampling requires at least 2 rows per label.
+    # Apply minimum category count for supervised train stability.
+    counts = df[args.label_column].astype(str).value_counts(dropna=False)
+    keep = counts[counts >= args.min_category_count].index
+    before_rows = len(df)
+    df = df[df[args.label_column].astype(str).isin(keep)].reset_index(drop=True)
+    print(
+        f"Applied min-category-count={args.min_category_count}. "
+        f"Rows: {before_rows} -> {len(df)}. Labels kept: {len(keep)}"
+    )
+
+    # Stratified sampling guardrail requires at least 2 rows per class.
     df, dropped_label_count, dropped_row_count = drop_sparse_labels_for_stratification(
         df, args.label_column, min_count=2
     )
@@ -221,8 +248,8 @@ def main():
         )
         print(f"Applied sample-per-category={args.sample_per_category}. Rows now: {len(df)}")
 
-    if args.id_column in df.columns:
-        ids = df[args.id_column].astype(str).fillna("").to_numpy()
+    if args.join_id_column in df.columns:
+        ids = df[args.join_id_column].astype(str).fillna("").to_numpy()
     else:
         ids = np.array([str(i) for i in range(len(df))], dtype=object)
 
@@ -273,8 +300,10 @@ def main():
         "rows": int(len(df)),
         "embedding_dim": int(embeddings.shape[1]),
         "label_column": args.label_column,
-        "id_column": args.id_column if args.id_column in df.columns else None,
-        "table": args.table,
+        "id_column": args.join_id_column if args.join_id_column in df.columns else None,
+        "labels_table": args.labels_table,
+        "products_table": args.products_table,
+        "priced_only": args.priced_only,
         "model_id": args.model_id,
         "cache_path": args.cache_path,
         "max_workers": args.max_workers,
@@ -284,6 +313,7 @@ def main():
         "dropped_sparse_row_count": dropped_row_count,
         "stratified_sample_size": args.stratified_sample_size,
         "sample_per_category": args.sample_per_category,
+        "min_category_count": args.min_category_count,
         "random_state": args.random_state,
     }
     ensure_parent_dir(args.metadata_path)

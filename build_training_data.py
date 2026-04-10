@@ -95,6 +95,11 @@ def parse_args():
         default=None,
         help="Optional CSV snapshot path of source rows for reproducibility.",
     )
+    parser.add_argument(
+        "--include-insert-products",
+        action="store_true",
+        help="Include rows where DESCRIPTION contains INSERT. Default excludes them.",
+    )
     return parser.parse_args()
 
 
@@ -178,6 +183,7 @@ def main():
         label_column=args.label_column,
         min_category_count=args.min_category_count,
         row_limit=args.row_limit,
+        exclude_insert_products=not args.include_insert_products,
     )
     print(f"Loaded {len(df)} rows.")
 
@@ -285,6 +291,7 @@ def main():
         "stratified_sample_size": args.stratified_sample_size,
         "sample_per_category": args.sample_per_category,
         "random_state": args.random_state,
+        "exclude_insert_products": not args.include_insert_products,
     }
     ensure_parent_dir(args.metadata_path)
     with open(args.metadata_path, "w", encoding="utf-8") as f:

@@ -50,6 +50,7 @@ def load_product_data(
     label_column: str = "PARENT_3_CATEGORY",
     min_category_count: int = 100,
     row_limit: Optional[int] = None,
+    exclude_insert_products: bool = True,
 ) -> pd.DataFrame:
     """Load product training data from Snowflake."""
     table_name = table or DEFAULT_PRODUCTS_TABLE
@@ -68,6 +69,11 @@ def load_product_data(
         HAVING COUNT(*) >= {int(min_category_count)}
     )
     """
+    if exclude_insert_products:
+        query = (
+            f"{query}\n"
+            "AND UPPER(COALESCE(DESCRIPTION, '')) NOT LIKE '%INSERT%'"
+        )
     if row_limit is not None and row_limit > 0:
         query = f"{query}\nLIMIT {int(row_limit)}"
 

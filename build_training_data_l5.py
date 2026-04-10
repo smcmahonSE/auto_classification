@@ -80,6 +80,11 @@ def parse_args():
         default=None,
         help="Optional CSV snapshot path for reproducibility.",
     )
+    parser.add_argument(
+        "--include-insert-products",
+        action="store_true",
+        help="Include rows where DESCRIPTION contains INSERT. Default excludes them.",
+    )
     return parser.parse_args()
 
 
@@ -153,12 +158,15 @@ def load_l5_training_source(
     label_column: str,
     row_limit: int | None = None,
     priced_only: bool = False,
+    exclude_insert_products: bool = True,
 ) -> pd.DataFrame:
     session = get_snowflake_session()
 
     where_parts = [f"l.{label_column} IS NOT NULL"]
     if priced_only:
         where_parts.append("UPPER(COALESCE(p.PRICING_STATUS_C, '')) = 'PRICED'")
+    if exclude_insert_products:
+        where_parts.append("UPPER(COALESCE(p.DESCRIPTION, '')) NOT LIKE '%INSERT%'")
     where_sql = " AND ".join(where_parts)
 
     query = f"""
@@ -195,6 +203,7 @@ def main():
         label_column=args.label_column,
         row_limit=args.row_limit,
         priced_only=args.priced_only,
+        exclude_insert_products=not args.include_insert_products,
     )
     print(f"Loaded {len(df)} rows.")
 
@@ -315,6 +324,7 @@ def main():
         "sample_per_category": args.sample_per_category,
         "min_category_count": args.min_category_count,
         "random_state": args.random_state,
+        "exclude_insert_products": not args.include_insert_products,
     }
     ensure_parent_dir(args.metadata_path)
     with open(args.metadata_path, "w", encoding="utf-8") as f:

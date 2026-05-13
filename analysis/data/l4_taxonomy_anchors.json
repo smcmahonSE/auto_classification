@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "notes": [
+    "Descriptions are written in enumeration/product-listing register to maximize semantic alignment with Titan embeddings.",
+    "Cell & Tissue Culture = media, sera, supplements, matrices only. Actual cells belong in Biospecimens.",
+    "Furniture & Storage and General Office Supplies were discovered during products clustering; included alongside 11 official categories.",
+    "Review boundary between Chemicals & Solvents and Molecular Biology Reagents before finalizing."
+  ],
+  "anchors": [
+    {
+      "id": "chemicals_solvents",
+      "label": "Chemicals & Solvents",
+      "description": "Laboratory chemicals, solvents, buffers, and reagent-grade materials identified by CAS number, molecular formula, or purity grade. Includes organic compounds, inorganic compounds, acids, bases, salts, ACS-grade chemicals, HPLC-grade solvents, deuterated solvents, reagent solutions, flammable liquids, corrosive materials, oxidizers, powders, crystals, and bulk chemical raw materials defined by molecular weight, purity percentage, and physical state (solid, liquid, gas, powder, crystal, solution, gel)."
+    },
+    {
+      "id": "molecular_biology_reagents",
+      "label": "Molecular Biology Reagents",
+      "description": "Reagents for molecular biology experiments including PCR, gene editing, RNA interference, and cloning. Includes PCR primers, probes, siRNA, shRNA, miRNA, gRNA, Cas9 and other Cas nucleases, restriction enzymes, DNA polymerases, RNA polymerases, ligases, kinases, nucleotides, dNTPs, rNTPs, oligonucleotides, and other DNA or RNA modifying enzymes. Products are typically identified by target gene, locus, or DNA/RNA region and by target species."
+    },
+    {
+      "id": "lab_supplies_consumables",
+      "label": "Lab Supplies & Consumables",
+      "description": "Disposable and reusable laboratory consumables used in daily bench work. Includes tubes, microtubes, Eppendorf tubes, centrifuge tubes, conical tubes, plates, microplates, 96-well plates, pipette tips, filters, filter papers, filter membranes, cuvettes, flasks, Erlenmeyer flasks, beakers, glassware, Pyrex glassware, containers, bottles, vials, syringes, needles, safety supplies, gloves, nitrile gloves, PPE, protective wear, lab coats, goggles, labeling tape, markers, cleaning supplies, sterilization supplies, microscopy slides, cover slips, tubing, hoses, stopcocks, caps, closures, and general bench consumables."
+    },
+    {
+      "id": "antibodies",
+      "label": "Antibodies",
+      "description": "Primary and secondary antibodies for research, diagnostic, and therapeutic applications. Identified by target protein or epitope (e.g., CD4, CD8, p53, Beta-Actin, GAPDH, Ki-67, PD-L1, EGFR, HER2), host species (mouse, rabbit, goat, rat, donkey, chicken, sheep), clonality (monoclonal, polyclonal, recombinant monoclonal), reactivity species (human, mouse, rat), and application (flow cytometry, western blot, IHC, immunofluorescence, ELISA, immunoprecipitation, ChIP). Includes conjugated antibodies (FITC, PE, APC, HRP, biotin, Alexa Fluor), isotype controls, antibody fragments, and nanobodies."
+    },
+    {
+      "id": "proteins_peptides",
+      "label": "Proteins & Peptides",
+      "description": "Purified recombinant and native proteins, cytokines, growth factors, hormones, and peptides of biological origin. Includes recombinant proteins expressed in E. coli, HEK293, CHO, baculovirus, or yeast systems; cytokines (interleukins, interferons, TNF); growth factors (EGF, FGF, VEGF, TGF-beta, BMP); hormones; enzymes; albumin; fibronectin; collagen; peptide libraries; custom synthesized peptides; amino acid standards; and fusion proteins. Products are identified by source organism, expression system, form (lyophilized, liquid, frozen), purity, and biological activity."
+    },
+    {
+      "id": "kits_assays",
+      "label": "Kits & Assays",
+      "description": "Pre-packaged multi-component kits and assay systems for laboratory detection, quantification, and analysis. Includes ELISA kits, ELISA development kits, cell isolation kits, nucleic acid extraction kits, DNA extraction kits, RNA extraction kits, protein quantification kits, BCA assay kits, Bradford assay kits, PCR kits, qPCR kits, cell viability assay kits, apoptosis assay kits, immunoassay kits, detection assay kits, substrates, blocking buffers, diluents, stabilizers, signal enhancers, lateral flow assays, and multiplex assay systems."
+    },
+    {
+      "id": "cell_tissue_culture",
+      "label": "Cell & Tissue Culture",
+      "description": "Media, reagents, and support materials for maintaining and growing cells in vitro. Includes culture media (DMEM, RPMI, MEM, IMDM, F-12, McCoy's), sera (fetal bovine serum FBS, horse serum, human serum), serum-free media, defined media, supplements, growth factors for cell culture, cryopreservation reagents, DMSO, freezing media, extracellular matrix proteins, Matrigel, collagen coatings, fibronectin coatings, laminin, dissociation reagents, trypsin, Accutase, cell culture plastics, flasks, dishes, and multi-well plates for cell growth. Does NOT include cells themselves — see Biospecimens."
+    },
+    {
+      "id": "biospecimens",
+      "label": "Biospecimens",
+      "description": "Human and animal biological samples, primary biological materials, and living cells for research. Includes blood, whole blood, plasma, serum, urine, cerebrospinal fluid, synovial fluid, tissue biopsies, tissue sections, FFPE tissue, frozen tissue, DNA extracted from human or animal tissue, RNA samples, PBMCs (peripheral blood mononuclear cells), bone marrow cells, cord blood cells, primary cells, primary hepatocytes, primary neurons, cell lines, immortalized cell lines, iPSCs (induced pluripotent stem cells), stem cells, cancer cell lines, organoids, and other biobanked biological materials from human, mouse, rat, non-human primate, or other species. Includes normal and disease-state samples."
+    },
+    {
+      "id": "animal_models",
+      "label": "Animal Models",
+      "description": "Research animal models and model organisms for in vivo studies. Includes mouse models, rat models, zebrafish models, guinea pig models, hamster models, non-human primate models, Drosophila, C. elegans, and other model organisms. Identified by species, genetic strain (C57BL/6, BALB/c, NOD/SCID, nude mice, Sprague Dawley, Wistar), and genetic modification status (wild-type, knockout, transgenic, knock-in, humanized, CRISPR-modified). Includes disease models, oncology models, immunodeficient models, reporter mouse lines, and inbred strains."
+    },
+    {
+      "id": "equipment_instruments_parts",
+      "label": "Equipment, Instruments & Parts",
+      "description": "Laboratory instruments, scientific equipment, automated systems, accessories, and replacement parts. Includes centrifuges, microcentrifuges, analytical balances, microscopes, spectrophotometers, plate readers, flow cytometers, PCR machines, thermal cyclers, gel electrophoresis systems, incubators, shakers, vortexers, homogenizers, sonicators, freeze dryers, lyophilizers, water baths, heating blocks, magnetic stirrers, pumps, pipettors, multichannel pipettes, electronic pipettes, cell counters, autoclave sterilizers, biosafety cabinets, fume hoods, chromatography systems, HPLC instruments, mass spectrometers, and all instrument accessories, replacement parts, spare parts, and consumable components."
+    },
+    {
+      "id": "controls_calibrators_standards",
+      "label": "Controls, Calibrators & Standards",
+      "description": "Reference materials, quality control samples, calibrators, and certified reference standards for laboratory assay validation and instrument calibration. Includes positive controls, negative controls, assay controls, QC control materials, calibration standards, calibrators, reference standards, certified reference materials (CRM), proficiency testing materials, standard solutions, molecular weight markers, DNA ladders, protein ladders, and traceable reference materials. Defined by analyte or parameter being measured, matrix (human blood, synthetic, latex particle, serum), concentration, and regulatory or certification status (FDA cleared, CE marked, RUO, IVD, NIST traceable)."
+    },
+    {
+      "id": "furniture_storage",
+      "label": "Furniture & Storage",
+      "description": "Laboratory furniture, casework, and storage solutions for laboratory environments. Includes laboratory benches, lab tables, workstations, laboratory chairs, lab stools, seating, shelving units, storage shelves, laboratory cabinets, chemical storage cabinets, flammable storage cabinets, refrigerators, freezers, ultra-low temperature freezers (-80C freezers), cryogenic storage tanks, liquid nitrogen storage, sample storage boxes, cryogenic boxes, cryovial racks, tube racks, and general laboratory furniture and storage infrastructure."
+    },
+    {
+      "id": "general_office_supplies",
+      "label": "General Office Supplies",
+      "description": "Non-laboratory office and administrative supplies used in scientific and research workplaces. Includes paper, notebooks, pens, pencils, markers, writing instruments, binders, folders, staplers, tape, adhesives, printer supplies, toner cartridges, printer paper, computer accessories, desk accessories, and general administrative and stationery items used alongside laboratory operations."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "version": "0.1",
+  "notes": [
+    "Pilot schema derived from analysis/data/DRAFT Product Catalog Requirements.pdf.",
+    "Only deterministic extraction is in scope for the first pass."
+  ],
+  "categories": {
+    "chemicals_solvents": {
+      "label": "Chemicals & Solvents",
+      "required_fields": [
+        {
+          "name": "CAS Number",
+          "type": "text",
+          "extractor": "regex",
+          "examples": ["7647-14-5"]
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "extractor": "regex_or_grade_dictionary",
+          "examples": [">=99%", "ACS Grade", "HPLC Grade"]
+        }
+      ]
+    },
+    "antibodies": {
+      "label": "Antibodies",
+      "required_fields": [
+        {
+          "name": "Target / Specificity",
+          "type": "text",
+          "extractor": "pattern_dictionary",
+          "examples": ["CD4", "p53", "Beta-Actin"]
+        },
+        {
+          "name": "Host Species",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Mouse", "Rabbit", "Goat", "Rat", "Donkey", "Chicken", "Sheep", "Other"]
+        },
+        {
+          "name": "Clonality",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Monoclonal", "Polyclonal", "Recombinant Monoclonal"]
+        },
+        {
+          "name": "Reactivity",
+          "type": "multi-select",
+          "extractor": "controlled_vocabulary",
+          "examples": ["Human", "Mouse", "Rat"]
+        },
+        {
+          "name": "Application",
+          "type": "multi-select",
+          "extractor": "controlled_vocabulary",
+          "values": ["FC", "WB", "IHC", "IF", "ELISA", "IP", "ChIP", "ICC", "Neutralization", "Other"]
+        }
+      ]
+    }
+  }
+}

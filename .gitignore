@@ -11,6 +11,8 @@ venv/
 
 # Local training artifacts (large/generated)
 artifacts/
+spec_extraction/outputs/*
+!spec_extraction/outputs/.gitkeep
 
 # Optional local debug exports
 *.log

@@ -10,7 +10,7 @@ from spec_extraction.extractors.common import ExtractedSpec, first_regex_match, 
 
 CAS_PATTERN = re.compile(r"\b(\d{2,7}-\d{2}-\d)\b")
 PURITY_PERCENT_PATTERN = re.compile(
-    r"((?:>=|>|~|approx\.?\s*)?\s*\d{1,3}(?:\.\d+)?\s*%)(?:\s*(?:pure|purity|assay)?)",
+    r"((?:>=|>|~|approx\.?\s*)?\s*\d{1,3}(?:\.\d+)?\+?\s*%)(?:\s*(?:pure|purity|assay)?)",
     re.IGNORECASE,
 )
 
@@ -21,6 +21,9 @@ PURITY_GRADES = {
     "Molecular Biology Grade": ("molecular biology grade",),
     "Reagent Grade": ("reagent grade",),
     "Analytical Grade": ("analytical grade",),
+    "CMOS Grade": ("cmos grade",),
+    "Highly Pure": ("highly pure",),
+    "Ultrapure": ("ultrapure", "ultra pure"),
     "Anhydrous": ("anhydrous",),
 }
 

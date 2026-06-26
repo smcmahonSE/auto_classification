@@ -21,6 +21,16 @@ TARGET_PATTERN = re.compile(
     r"\banti[-\s]([A-Za-z0-9][A-Za-z0-9./_+\- ]{1,40}?)(?:\s+(?:antibody|mab|pab|clone|fitc|pe|apc|hrp|biotin)|[,;()]|$)",
     re.IGNORECASE,
 )
+TARGET_FIELD_PATTERN = re.compile(
+    r"(?:^|\|\s*)(?:Target(?: Name)?|Symbol)\s*:\s*([^|;,]+)",
+    re.IGNORECASE,
+)
+NAME_TARGET_PATTERN = re.compile(
+    r"^\s*(?:Anti[-\s])?(.+?)\s+(?:(?:Mouse|Rabbit|Goat|Rat|Human)\s+)?"
+    r"(?:(?:Recombinant|Mouse|Rabbit|Goat|Rat)\s+)?"
+    r"(?:(?:Monoclonal|Polyclonal)\s+)?(?:Antibody|mAb|pAb)\b",
+    re.IGNORECASE,
+)
 
 HOST_SPECIES = {
     "Mouse": ("mouse", "murine"),
@@ -64,10 +74,54 @@ APPLICATIONS = {
 
 def normalize_target(value: str) -> str:
     value = re.sub(r"\s+", " ", value).strip(" -_/")
+    value = re.sub(r"\s+(?:FITC|PE|APC|HRP|Biotin)\s+conjugated$", "", value, flags=re.IGNORECASE)
     return value.strip()
 
 
+def target_match_from_text(
+    row: Mapping[str, object],
+    source_field: str,
+    pattern: re.Pattern[str],
+    method: str,
+) -> ExtractedSpec | None:
+    raw_text = row.get(source_field)
+    if raw_text is None:
+        return None
+
+    text = str(raw_text).strip()
+    if not text or text.lower() == "nan":
+        return None
+
+    match = pattern.search(text)
+    if not match:
+        return None
+
+    value = normalize_target(match.group(1))
+    if not value:
+        return None
+
+    return ExtractedSpec(
+        field_name="Target / Specificity",
+        value=value,
+        status="matched",
+        method=method,
+        evidence=match.group(0).strip(),
+        source_field=source_field,
+        confidence=0.85,
+    )
+
+
 def extract_target(row: Mapping[str, object]) -> ExtractedSpec:
+    for source_field, pattern, method in (
+        ("DESCRIPTION", TARGET_FIELD_PATTERN, "target_field_regex"),
+        ("PRODUCT_NAME", TARGET_PATTERN, "anti_target_regex"),
+        ("PRODUCT_NAME", NAME_TARGET_PATTERN, "name_target_regex"),
+        ("DESCRIPTION", TARGET_PATTERN, "anti_target_regex"),
+    ):
+        target = target_match_from_text(row, source_field, pattern, method)
+        if target is not None:
+            return target
+
     target = first_regex_match(
         row=row,
         field_name="Target / Specificity",

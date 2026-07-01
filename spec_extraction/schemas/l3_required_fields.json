@@ -22,6 +22,58 @@
         }
       ]
     },
+    "molecular_biology_reagents": {
+      "label": "Molecular Biology Reagents",
+      "required_fields": [
+        {
+          "name": "Sub-Type",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Primer", "Probe", "siRNA", "Enzyme", "Nucleotide", "gRNA", "Cas Nuclease", "shRNA", "miRNA", "Other"]
+        },
+        {
+          "name": "Target Gene / Region",
+          "type": "text",
+          "extractor": "field_or_name_pattern",
+          "examples": ["BRCA1", "TP53", "GAPDH"]
+        }
+      ]
+    },
+    "lab_supplies_consumables": {
+      "label": "Lab Supplies & Consumables",
+      "required_fields": [
+        {
+          "name": "Material",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Polypropylene", "Polystyrene", "Polyethylene", "Glass", "Borosilicate Glass", "PTFE", "Nitrile", "Latex", "Stainless Steel", "PVC", "Silicone", "Other"]
+        },
+        {
+          "name": "Sterility",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Sterile", "Non-Sterile", "Sterilizable"]
+        },
+        {
+          "name": "Capacity / Volume / Size",
+          "type": "text",
+          "extractor": "regex",
+          "examples": ["15 mL", "200 uL", "96-well", "100 mm"]
+        },
+        {
+          "name": "Pack Size",
+          "type": "text",
+          "extractor": "regex",
+          "examples": ["100/pk", "500/cs", "Pack of 96"]
+        },
+        {
+          "name": "Color",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Black", "Blue", "Brown", "Clear", "Green", "Orange", "Pink", "Purple", "Red", "White", "Yellow", "Amber", "Natural", "Assorted"]
+        }
+      ]
+    },
     "antibodies": {
       "label": "Antibodies",
       "required_fields": [

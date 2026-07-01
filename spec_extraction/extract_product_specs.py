@@ -14,7 +14,12 @@ import pandas as pd
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from spec_extraction.extractors import extract_antibody_specs, extract_chemical_specs
+from spec_extraction.extractors import (
+    extract_antibody_specs,
+    extract_chemical_specs,
+    extract_lab_supplies_specs,
+    extract_molecular_biology_specs,
+)
 from spec_extraction.extractors.common import ExtractedSpec
 
 
@@ -28,11 +33,15 @@ L3_LABEL_COLUMNS = ("ASSIGNED_NEW_L3_LABEL", "ASSIGNED_L4_LABEL")
 
 EXTRACTORS: dict[str, Callable[[Mapping[str, object]], list[ExtractedSpec]]] = {
     "chemicals_solvents": extract_chemical_specs,
+    "molecular_biology_reagents": extract_molecular_biology_specs,
+    "lab_supplies_consumables": extract_lab_supplies_specs,
     "antibodies": extract_antibody_specs,
 }
 
 LABEL_TO_ID = {
     "Chemicals & Solvents": "chemicals_solvents",
+    "Molecular Biology Reagents": "molecular_biology_reagents",
+    "Lab Supplies & Consumables": "lab_supplies_consumables",
     "Antibodies": "antibodies",
 }
 
@@ -55,6 +64,48 @@ DETAIL_COLUMNS = [
     "purity_evidence",
     "purity_source_field",
     "purity_confidence",
+    "sub_type_value",
+    "sub_type_status",
+    "sub_type_method",
+    "sub_type_evidence",
+    "sub_type_source_field",
+    "sub_type_confidence",
+    "target_gene_region_value",
+    "target_gene_region_status",
+    "target_gene_region_method",
+    "target_gene_region_evidence",
+    "target_gene_region_source_field",
+    "target_gene_region_confidence",
+    "material_value",
+    "material_status",
+    "material_method",
+    "material_evidence",
+    "material_source_field",
+    "material_confidence",
+    "sterility_value",
+    "sterility_status",
+    "sterility_method",
+    "sterility_evidence",
+    "sterility_source_field",
+    "sterility_confidence",
+    "capacity_volume_size_value",
+    "capacity_volume_size_status",
+    "capacity_volume_size_method",
+    "capacity_volume_size_evidence",
+    "capacity_volume_size_source_field",
+    "capacity_volume_size_confidence",
+    "pack_size_value",
+    "pack_size_status",
+    "pack_size_method",
+    "pack_size_evidence",
+    "pack_size_source_field",
+    "pack_size_confidence",
+    "color_value",
+    "color_status",
+    "color_method",
+    "color_evidence",
+    "color_source_field",
+    "color_confidence",
     "target_specificity_value",
     "target_specificity_status",
     "target_specificity_method",

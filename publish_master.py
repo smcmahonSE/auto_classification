@@ -80,6 +80,7 @@ combined.columns = [c.upper() for c in combined.columns]
 
 print(f"\nConnecting to Snowflake...")
 sf = get_snowflake_session()
+sf.sql("USE ROLE \"DEPT-ENGINEERING\"").collect()
 sf.sql("USE DATABASE SNOWFLAKE_LEARNING_DB").collect()
 sf.sql("USE SCHEMA SMCMAHON_PRODUCTS").collect()
 

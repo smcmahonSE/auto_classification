@@ -1,4 +1,4 @@
-"""Deterministic extraction rules for Lab Supplies & Consumables."""
+"""Deterministic extraction rules for Lab Supplies and Consumables."""
 
 from __future__ import annotations
 
@@ -114,7 +114,7 @@ def extract_first_pattern(
 
 
 def extract_lab_supplies_specs(row: Mapping[str, object]) -> list[ExtractedSpec]:
-    """Extract team-selected fields for Lab Supplies & Consumables."""
+    """Extract team-selected fields for Lab Supplies and Consumables."""
     return [
         vocabulary_matches(row, "Material", MATERIALS, "material_dictionary"),
         extract_sterility(row),

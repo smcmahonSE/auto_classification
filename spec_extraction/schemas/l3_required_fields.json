@@ -6,7 +6,7 @@
   ],
   "categories": {
     "chemicals_solvents": {
-      "label": "Chemicals & Solvents",
+      "label": "Chemicals and Solvents",
       "required_fields": [
         {
           "name": "CAS Number",
@@ -40,7 +40,7 @@
       ]
     },
     "lab_supplies_consumables": {
-      "label": "Lab Supplies & Consumables",
+      "label": "Lab Supplies and Consumables",
       "required_fields": [
         {
           "name": "Material",

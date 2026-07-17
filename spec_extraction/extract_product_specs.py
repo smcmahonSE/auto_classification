@@ -39,9 +39,9 @@ EXTRACTORS: dict[str, Callable[[Mapping[str, object]], list[ExtractedSpec]]] = {
 }
 
 LABEL_TO_ID = {
-    "Chemicals & Solvents": "chemicals_solvents",
+    "Chemicals and Solvents": "chemicals_solvents",
     "Molecular Biology Reagents": "molecular_biology_reagents",
-    "Lab Supplies & Consumables": "lab_supplies_consumables",
+    "Lab Supplies and Consumables": "lab_supplies_consumables",
     "Antibodies": "antibodies",
 }
 

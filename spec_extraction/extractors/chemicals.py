@@ -1,4 +1,4 @@
-"""Deterministic extraction rules for Chemicals & Solvents."""
+"""Deterministic extraction rules for Chemicals and Solvents."""
 
 from __future__ import annotations
 
@@ -74,7 +74,7 @@ def extract_purity(row: Mapping[str, object]) -> ExtractedSpec:
 
 
 def extract_chemical_specs(row: Mapping[str, object]) -> list[ExtractedSpec]:
-    """Extract SME-required fields for Chemicals & Solvents."""
+    """Extract SME-required fields for Chemicals and Solvents."""
     return [
         extract_cas_number(row),
         extract_purity(row),

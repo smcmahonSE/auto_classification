@@ -41,8 +41,8 @@ AWS_REGION       = "us-east-1"
 MODEL_ID         = "amazon.titan-embed-text-v1"
 MARGIN_THRESHOLD = 0.05
 
-L3_ANCHORS_PATH  = PROJECT_ROOT / "analysis/data/l4_taxonomy_anchors.json"
-L4_ANCHORS_PATH  = PROJECT_ROOT / "analysis/data/l4_subcategory_anchors.json"
+L3_ANCHORS_PATH  = PROJECT_ROOT / "analysis/data/l3_taxonomy_anchors.json"
+L4_ANCHORS_PATH  = PROJECT_ROOT / "classification_pipeline/taxonomy/l4_taxonomy_anchors.json"
 CACHE_V1_PATH    = PROJECT_ROOT / "artifacts/cache/embedding_cache.pkl"
 CACHE_V2_PATH    = PROJECT_ROOT / "artifacts/cache/embedding_cache_new.pkl"
 CACHE_KEYS_PATH  = PROJECT_ROOT / "artifacts/cache/embedding_cache_keys.pkl"

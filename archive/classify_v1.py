@@ -37,7 +37,7 @@ BATCH_SIZE         = 250_000
 
 CACHE_V1_PATH      = PROJECT_ROOT / "artifacts/cache/embedding_cache.pkl"
 ANCHOR_CACHE_PATH  = PROJECT_ROOT / "artifacts/cache/anchor_cache.pkl"
-ANCHORS_PATH       = PROJECT_ROOT / "analysis/data/l4_taxonomy_anchors.json"
+ANCHORS_PATH       = PROJECT_ROOT / "analysis/data/l3_taxonomy_anchors.json"
 OUTPUT_DIR         = PROJECT_ROOT / f"artifacts/analysis/l4_classification_{MODE}"
 V1_WORK_PATH       = OUTPUT_DIR / "v1_work.parquet"
 V1_RESULTS_PATH    = OUTPUT_DIR / "classification_results_v1.csv"

@@ -1,7 +1,7 @@
 """
 Re-classify ALL listings against updated L3 anchor descriptions.
 
-Run this whenever l4_taxonomy_anchors.json is updated to regenerate
+Run this whenever l3_taxonomy_anchors.json is updated to regenerate
 L3 assignments for the full 7.8M listing catalog.
 
 Same two-phase memory approach as reclassify_residual.py:
@@ -45,7 +45,7 @@ AWS_REGION       = "us-east-1"
 MODEL_ID         = "amazon.titan-embed-text-v1"
 MARGIN_THRESHOLD = 0.05
 
-ANCHORS_PATH    = PROJECT_ROOT / "analysis/data/l4_taxonomy_anchors.json"
+ANCHORS_PATH    = PROJECT_ROOT / "analysis/data/l3_taxonomy_anchors.json"
 CACHE_V1_PATH   = PROJECT_ROOT / "artifacts/cache/embedding_cache.pkl"
 CACHE_V2_PATH   = PROJECT_ROOT / "artifacts/cache/embedding_cache_new.pkl"
 CACHE_KEYS_PATH = PROJECT_ROOT / "artifacts/cache/embedding_cache_keys.pkl"

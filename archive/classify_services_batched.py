@@ -11,7 +11,7 @@ Usage:
 Prerequisites:
     - embedding_cache.pkl (volume 1) — main cache
     - embedding_cache_new.pkl (volume 2) — new services embeddings
-    - analysis/data/l4_taxonomy_anchors.json — anchor definitions
+    - analysis/data/l3_taxonomy_anchors.json — anchor definitions
     - Snowflake connection (to reload listing metadata for PRODUCT_ID mapping)
 """
 
@@ -36,7 +36,7 @@ from product_classifier_utils import (
 # ── Config ─────────────────────────────────────────────────────────────────────
 CACHE_V1_PATH   = PROJECT_ROOT / "artifacts/cache/embedding_cache.pkl"
 CACHE_V2_PATH   = PROJECT_ROOT / "artifacts/cache/embedding_cache_new.pkl"
-ANCHORS_PATH    = PROJECT_ROOT / "analysis/data/l4_taxonomy_anchors.json"
+ANCHORS_PATH    = PROJECT_ROOT / "analysis/data/l3_taxonomy_anchors.json"
 SERVICES_TABLE  = "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.SERVICES"
 AWS_PROFILE     = "staging.admin"
 AWS_REGION      = "us-east-1"

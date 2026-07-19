@@ -42,7 +42,7 @@ CACHE_V1_PATH     = PROJECT_ROOT / "artifacts/cache/embedding_cache.pkl"
 CACHE_V2_PATH     = PROJECT_ROOT / "artifacts/cache/embedding_cache_new.pkl"
 CACHE_KEYS_PATH   = PROJECT_ROOT / "artifacts/cache/embedding_cache_keys.pkl"
 ANCHOR_CACHE_PATH = PROJECT_ROOT / "artifacts/cache/anchor_cache.pkl"
-ANCHORS_PATH      = PROJECT_ROOT / "analysis/data/l4_taxonomy_anchors.json"
+ANCHORS_PATH      = PROJECT_ROOT / "analysis/data/l3_taxonomy_anchors.json"
 OUTPUT_DIR        = PROJECT_ROOT / f"artifacts/analysis/l4_classification_{MODE}"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 RESULTS_PATH      = OUTPUT_DIR / "classification_results_v1.csv"

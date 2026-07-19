@@ -21,8 +21,8 @@ import boto3
 import numpy as np
 import pandas as pd
 
-PROJECT_ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(PROJECT_ROOT))
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(PROJECT_ROOT / "classification_pipeline"))
 
 from product_classifier_utils import get_snowflake_session
 
@@ -31,8 +31,8 @@ AWS_PROFILE  = "staging.admin"
 AWS_REGION   = "us-east-1"
 MODEL_ID     = "amazon.titan-embed-text-v1"
 
-L3_ANCHORS   = PROJECT_ROOT / "analysis/data/l4_taxonomy_anchors.json"
-L4_ANCHORS   = PROJECT_ROOT / "analysis/data/l4_subcategory_anchors.json"
+L3_ANCHORS   = PROJECT_ROOT / "classification_pipeline/taxonomy/l3_taxonomy_anchors.json"
+L4_ANCHORS   = PROJECT_ROOT / "classification_pipeline/taxonomy/l4_taxonomy_anchors.json"
 
 L3_TABLE     = "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.EMBEDDED_L3_DESCRIPTIONS"
 L4_TABLE     = "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.EMBEDDED_L4_DESCRIPTIONS"

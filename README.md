@@ -1,151 +1,59 @@
-# Product Classifier (Modular Local Workflow)
+# auto_classification
 
-This project is split into modular steps so you do not need to regenerate Titan embeddings every time:
+Automated L3 + L4 product taxonomy classification using Amazon Titan embeddings and cosine similarity.
 
-1. Build feature artifact from Snowflake data (`build_training_data.py`)
-2. Train LightGBM from cached embeddings and export a joblib artifact (`train_model.py`)
-3. Run inference wrapper (concat + Titan + joblib model) (`predict_with_joblib.py`)
+## Repository structure
 
-## Setup (venv)
+```
+auto_classification/
+├── classification_pipeline/               # Active classification pipeline — start here
+│   ├── classify_products.py
+│   ├── product_classifier_utils.py
+│   ├── seed_anchor_tables.py
+│   ├── taxonomy/
+│   │   ├── l3_taxonomy_anchors.json       # L3 category definitions
+│   │   └── l4_taxonomy_anchors.json       # L4 subcategory definitions
+│   └── README.md                          # Run instructions
+├── spec_extraction/        # Deterministic spec extraction by L3 category
+├── analysis/               # Exploratory notebooks and reference data
+├── artifacts/              # Cache files, classification results, model artifacts
+│   ├── cache/              # Embedding caches (large — not committed to git)
+│   └── analysis/           # Phase output CSVs and parquets
+├── archive/                # Superseded scripts from prior approaches
+├── requirements.txt
+└── README.md
+```
+
+## Getting started
+
+See [`classification_pipeline/README.md`](classification_pipeline/README.md) for full run instructions, phase descriptions, environment configs, and output column definitions.
+
+## Setup
 
 ```bash
-cd /Users/stephanie.mcmahon/smcmahon_repo/smcmahon_notebooks
 source /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/activate
-python -m pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-## Environment
-
-- AWS profile defaults to `staging.admin` (override with CLI args).
-- Snowflake defaults can be overridden with env vars:
-  - `SNOWFLAKE_ACCOUNT`
-  - `SNOWFLAKE_USER`
-  - `SNOWFLAKE_WAREHOUSE` (optional)
-  - `SNOWFLAKE_ROLE` (optional)
-  - `SNOWFLAKE_PRODUCTS_TABLE` (DATABASE.SCHEMA.TABLE; default is `SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.PRODUCTS_L3_STG`)
-
-If SSO token expired, run:
+## Auth
 
 ```bash
-aws-sso-util login
+# AWS SSO (Bedrock) — required for embedding and anchor seeding
+aws sso login --profile staging.admin
 ```
 
-## Step 1: Build Training Features (cached embeddings)
+Snowflake auth (Okta SSO) triggers automatically via browser on first use.
 
-```bash
-python build_training_data.py
-```
+## How it works
 
-Useful flags:
+Products are classified by embedding their text (name + description + price fields) using Amazon Titan (`amazon.titan-embed-text-v1`) and computing cosine similarity against pre-embedded anchor descriptions for each L3 category and L4 subcategory. Anchors are stored in Snowflake (`EMBEDDED_L3_DESCRIPTIONS`, `EMBEDDED_L4_DESCRIPTIONS`) and loaded at runtime — no Bedrock calls needed for classification itself.
 
-- Small test run:
-  ```bash
-  python build_training_data.py --row-limit 500 --sample-per-category 25
-  ```
-- Stratified sample by category (recommended for staged testing):
-  ```bash
-  python build_training_data.py --stratified-sample-size 5000 --random-state 42
-  python build_training_data.py --stratified-sample-size 100000 --random-state 42
-  python build_training_data.py --stratified-sample-size 500000 --random-state 42
-  ```
-- Faster embedding runs (parallel + checkpointing):
-  ```bash
-  python build_training_data.py --stratified-sample-size 500000 --max-workers 16 --checkpoint-every 500
-  ```
-- Custom table:
-  ```bash
-  python build_training_data.py --table SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.PRODUCTS_L3_STG
-  # later swap to prod
-  python build_training_data.py --table SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.PRODUCTS_L3_SUB
-  ```
+A margin-based confidence threshold (top-1 minus top-2 similarity ≥ 0.05) flags low-confidence assignments for human review.
 
-Outputs:
+## Taxonomy
 
-- `artifacts/training_data/features_titan.npz` (embeddings + labels + ids)
-- `artifacts/training_data/features_metadata.json`
-- `artifacts/cache/embedding_cache.pkl` (hash -> embedding cache)
+13 L3 categories, 76 L4 subcategories. Definitions live in `classification_pipeline/taxonomy/`. Re-run `classification_pipeline/seed_anchor_tables.py` after any taxonomy changes to update the Snowflake anchor tables.
 
-Important: as long as `artifacts/cache/embedding_cache.pkl` is preserved, reruns only embed missing text hashes. You do not need to re-embed unchanged rows.
+## Prior approach
 
-For large runs, start with `--max-workers 8` or `16`, then tune up/down based on throttling and stability.
-
-## Step 2: Train Model, Register, and Export Joblib
-
-```bash
-python train_model.py
-```
-
-Optional PCA experiment:
-
-```bash
-python train_model.py --experiment-name lgbm_no_pca
-python train_model.py --experiment-name lgbm_pca_512 --pca-components 512
-python train_model.py --experiment-name lgbm_pca_256 --pca-components 256
-```
-
-Outputs:
-
-- `artifacts/model/runs/<UTC_TIMESTAMP>/product_classifier.joblib` (immutable model artifact)
-- `artifacts/model/runs/<UTC_TIMESTAMP>/metrics.json`
-- `artifacts/model/latest/product_classifier.joblib` (latest pointer copy for easy inference)
-
-`metrics.json` includes:
-
-- performance metrics (`accuracy`, `balanced_accuracy`, macro/weighted precision-recall-F1)
-- per-class precision/recall/F1/support
-- artifact size report in MB and a rough runtime memory recommendation
-
-Each run also appends a summary line to:
-
-- `artifacts/model/metrics_history.jsonl`
-- `artifacts/model/model_registry.jsonl`
-
-Registry records include run id, model path, metrics path, training config, artifact sizes, and git commit SHA (when available).
-
-You can compare runs automatically:
-
-```bash
-python compare_model_runs.py
-python compare_model_runs.py --sort-by joblib_model_mb --ascending
-python model_registry.py --sort-by scores.macro_f1
-```
-
-Archive/share options:
-
-```bash
-# Zip latest run (or pass --run-id <RUN_ID>)
-bash scripts/archive_run.sh
-
-# Zip ranked run from registry (best macro_f1 by default)
-bash scripts/archive_ranked_model.sh
-
-# Example: pick 2nd-best by accuracy
-bash scripts/archive_ranked_model.sh --sort-by scores.accuracy --rank 2
-```
-
-Comparison output CSV:
-
-- `artifacts/model/experiment_comparison.csv`
-
-## Step 3: Inference using Joblib
-
-Prepare a CSV containing:
-
-- `PRODUCT_NAME`
-- `DESCRIPTION`
-- `PRICING_STATUS_C`
-- `LIST_PRICE_C`
-
-Then run:
-
-```bash
-python predict_with_joblib.py --input-csv path/to/input.csv --output-csv artifacts/model/predictions.csv
-```
-
-If PCA was used during training, inference applies the bundled PCA automatically before scoring.
-
-## Model artifact notes
-
-`product_classifier.joblib` contains the classifier and preprocessing objects (label encoder and optional PCA).  
-Titan embedding calls remain in Python wrapper code, which is expected for Bedrock-based embeddings.
-
+The `archive/` folder contains the original LightGBM-based classifier and the intermediate per-source scripts (`classify_lcg.py`, `classify_services_batched.py`, etc.) that preceded the unified `classify_products.py` pipeline.

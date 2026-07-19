@@ -2,7 +2,7 @@
   "version": "2.0",
   "notes": [
     "L4 subcategory descriptions nested under each L3 (NEW_L3) anchor.",
-    "This file does NOT replace l4_taxonomy_anchors.json — it extends it with subcategory detail.",
+    "This file does NOT replace l3_taxonomy_anchors.json — it extends it with subcategory detail.",
     "Descriptions use the same enumeration register as the L3 anchors for semantic alignment with Titan embeddings.",
     "General Office Supplies has one L4 entry matching the L3 definition.",
     "MARGIN_THRESHOLD for L4 classification: 0.05 (same as L3).",

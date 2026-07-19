@@ -138,7 +138,8 @@ def invoke_titan_embed(client, text: str, model_id: str, max_retries: int = 5) -
         except Exception:
             if attempt == max_retries - 1:
                 raise
-            sleep_s = 1.5**attempt
+            import random
+            sleep_s = (2.0 ** attempt) + random.uniform(0, 1)
             time.sleep(sleep_s)
 
     raise RuntimeError("Failed to generate embedding after retries.")

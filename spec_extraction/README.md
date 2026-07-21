@@ -16,6 +16,41 @@ rules alone can get before considering model-based extraction.
 - `extractors/antibodies.py` extracts antibody-specific required fields.
 - `outputs/` is reserved for generated pilot CSVs and coverage reports.
 
+## Running
+
+The runner reads classified products from Snowflake using `--env`:
+
+- `stage` reads `NEW_CLASSIFICATIONS_STAGE`.
+- `prod` reads `NEW_CLASSIFICATIONS_PROD`.
+
+Use `--mode sample` for local review artifacts and `--mode full` for Snowflake
+publishing.
+
+```bash
+# Sample/review run
+/Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python extract_product_specs.py \
+  --env stage \
+  --mode sample \
+  --category lab_supplies_consumables
+
+# Full publish run
+/Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python extract_product_specs.py \
+  --env prod \
+  --mode full \
+  --category lab_supplies_consumables
+```
+
+Sample mode writes local CSVs under `outputs/<env>/sample/<category>/`:
+
+- `spec_extraction_pilot_details.csv`
+- `spec_extraction_pilot_coverage.csv`
+- `spec_extraction_filter_summary.csv`
+- `manual_review_sample.csv`
+
+Full mode prints the same summary report in the terminal and writes a value-only
+Snowflake table named `{CATEGORY}_SPEC_{ENV}`, for example
+`LAB_SUPPLIES_CONSUMABLES_SPEC_STAGE`.
+
 ## Pilot Categories
 
 The initial categories are:

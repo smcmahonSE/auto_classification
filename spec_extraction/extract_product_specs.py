@@ -87,11 +87,13 @@ CATEGORY_LABELS = {
 
 CATEGORY_FIELDS = {
     "chemicals_solvents": ["CAS Number", "Purity"],
-    "molecular_biology_reagents": ["Sub-Type", "Target Gene / Region"],
+    "molecular_biology_reagents": ["Sub-Type", "Target Gene / Region", "Target Species"],
     "lab_supplies_consumables": [
         "Material",
         "Sterility",
-        "Capacity / Volume / Size",
+        "Capacity Volume Size",
+        "Size Amount",
+        "Size Unit",
         "Pack Size",
         "Color",
     ],
@@ -162,6 +164,14 @@ def set_snowflake_context(sf) -> None:
     """Set database/schema so Snowpark can create temp stages for pandas writes."""
     sf.sql(f"USE DATABASE {SNOWFLAKE_DATABASE}").collect()
     sf.sql(f"USE SCHEMA {SNOWFLAKE_SCHEMA}").collect()
+
+
+def close_snowflake_session(sf) -> None:
+    """Best-effort close so Snowflake auth/HTTP resources do not keep Python alive."""
+    try:
+        sf.close()
+    except Exception as exc:  # pragma: no cover - cleanup should not mask run success.
+        print(f"Warning: failed to close Snowflake session cleanly: {exc}")
 
 
 def get_category_output_dir(output_dir: Path, env: str, mode: str, category: str) -> Path:
@@ -311,9 +321,12 @@ def load_category_data(env: str, category: str, mode: str, sample_size: int) -> 
 
     print(f"Loading {category} from {table} ({mode})...")
     sf = get_snowflake_session()
-    df = sf.sql(query).to_pandas()
-    print(f"Loaded {len(df):,} classified rows.")
-    return df
+    try:
+        df = sf.sql(query).to_pandas()
+        print(f"Loaded {len(df):,} classified rows.")
+        return df
+    finally:
+        close_snowflake_session(sf)
 
 
 def write_sample_outputs(
@@ -422,23 +435,26 @@ def run_full(env: str, category: str) -> str:
     query = build_category_query(env=env, category=category, mode="full", sample_size=0)
     print(f"Loading {category} from {input_table} (full)...")
     sf = get_snowflake_session()
-    set_snowflake_context(sf)
-    coverage: dict[tuple[str, str], dict[str, int]] = {}
-    filter_counts: dict[str, int] = {}
-    total_written = 0
-    write_mode = "overwrite"
+    try:
+        set_snowflake_context(sf)
+        coverage: dict[tuple[str, str], dict[str, int]] = {}
+        filter_counts: dict[str, int] = {}
+        total_written = 0
+        write_mode = "overwrite"
 
-    for batch_number, batch in enumerate(sf.sql(query).to_pandas_batches(), start=1):
-        rows = extract_chunk(batch, category, coverage, filter_counts, apply_filters=False, full_mode=True)
-        written = write_full_batch(sf, rows, category=category, table=table, mode=write_mode)
-        total_written += written
-        if written > 0:
-            write_mode = "append"
-        print(f"Batch {batch_number}: wrote {written:,} rows")
+        for batch_number, batch in enumerate(sf.sql(query).to_pandas_batches(), start=1):
+            rows = extract_chunk(batch, category, coverage, filter_counts, apply_filters=False, full_mode=True)
+            written = write_full_batch(sf, rows, category=category, table=table, mode=write_mode)
+            total_written += written
+            if written > 0:
+                write_mode = "append"
+            print(f"Batch {batch_number}: wrote {written:,} rows")
 
-    print_report(coverage, filter_counts)
-    print(f"Done. Wrote {total_written:,} rows to {table}.")
-    return table
+        print_report(coverage, filter_counts)
+        print(f"Done. Wrote {total_written:,} rows to {table}.")
+        return table
+    finally:
+        close_snowflake_session(sf)
 
 
 def parse_args() -> argparse.Namespace:

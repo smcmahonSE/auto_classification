@@ -36,6 +36,12 @@
           "type": "text",
           "extractor": "field_or_name_pattern",
           "examples": ["BRCA1", "TP53", "GAPDH"]
+        },
+        {
+          "name": "Target Species",
+          "type": "multi-select",
+          "extractor": "controlled_vocabulary",
+          "values": ["Human", "Mouse", "Rat", "Zebrafish", "Drosophila", "C. elegans", "Yeast", "E. coli", "Bovine", "Porcine", "Chicken", "Rabbit"]
         }
       ]
     },
@@ -55,16 +61,28 @@
           "values": ["Sterile", "Non-Sterile", "Sterilizable"]
         },
         {
-          "name": "Capacity / Volume / Size",
+          "name": "Capacity Volume Size",
           "type": "text",
           "extractor": "regex",
           "examples": ["15 mL", "200 uL", "96-well", "100 mm"]
         },
         {
+          "name": "Size Amount",
+          "type": "number",
+          "extractor": "derived_from_capacity_volume_size",
+          "examples": ["15", "200", "96", "100"]
+        },
+        {
+          "name": "Size Unit",
+          "type": "picklist",
+          "extractor": "derived_from_capacity_volume_size",
+          "values": ["nL", "uL", "mL", "L", "ug", "mg", "g", "kg", "mm", "cm", "in", "well"]
+        },
+        {
           "name": "Pack Size",
-          "type": "text",
+          "type": "number",
           "extractor": "regex",
-          "examples": ["100/pk", "500/cs", "Pack of 96"]
+          "examples": ["100", "500", "96"]
         },
         {
           "name": "Color",

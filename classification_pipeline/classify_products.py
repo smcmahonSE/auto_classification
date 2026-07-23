@@ -227,7 +227,7 @@ def save_env_cache(cache):
 def load_listings(sf):
     print(f"Loading listings from {INPUT_TABLE}...")
     df = sf.sql(f"""
-        SELECT PRODUCT_ID, PRODUCT_NAME, DESCRIPTION, PRICING_STATUS_C, LIST_PRICE_C, PRODUCT_SEGMENT
+        SELECT PRODUCT_ID, PRODUCT_VARIANT_ID, PRODUCT_NAME, DESCRIPTION, PRICING_STATUS_C, LIST_PRICE_C, PRODUCT_SEGMENT
         FROM {INPUT_TABLE}
     """).to_pandas()
     df["PRODUCT_ID"] = df["PRODUCT_ID"].astype(str)

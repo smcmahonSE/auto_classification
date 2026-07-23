@@ -126,6 +126,82 @@
           "values": ["FC", "WB", "IHC", "IF", "ELISA", "IP", "ChIP", "ICC", "Neutralization", "Other"]
         }
       ]
+    },
+    "proteins_peptides": {
+      "label": "Proteins and Peptides",
+      "required_fields": [
+        {
+          "name": "Source Organism",
+          "type": "multi-select",
+          "extractor": "controlled_vocabulary",
+          "values": ["Human", "Mouse", "Rat", "Rabbit", "Bovine", "Porcine", "E. coli", "HEK293", "CHO", "Baculovirus", "Yeast", "Wheat Germ"]
+        },
+        {
+          "name": "Form",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Lyophilized", "Liquid", "Frozen"]
+        },
+        {
+          "name": "Physical State",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Solid", "Liquid", "Powder", "Solution"]
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "extractor": "regex_or_grade_dictionary",
+          "examples": [">95%", ">=90%", "HPLC Grade"]
+        },
+        {
+          "name": "Activity",
+          "type": "text",
+          "extractor": "regex",
+          "examples": ["ED50 < 1 ng/mL", "Specific Activity: 1.0 x 10^6 U/mg"]
+        }
+      ]
+    },
+    "kits_assays": {
+      "label": "Kits and Assays",
+      "required_fields": [
+        {
+          "name": "Sub-Type",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["ELISA Kit", "Extraction Kit", "Detection Kit", "Substrate", "Blocking Buffer", "Diluent", "Stabilizer", "Signal Enhancer", "Lateral Flow", "Other"]
+        },
+        {
+          "name": "Application",
+          "type": "multi-select",
+          "extractor": "controlled_vocabulary",
+          "values": ["ELISA", "Western Blot", "IHC", "Lateral Flow", "Multiplex", "Cell Isolation", "Other"]
+        },
+        {
+          "name": "Detection Method",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Chromogenic", "Chemiluminescent", "Fluorescent", "Electrochemical"]
+        },
+        {
+          "name": "Target Enzyme",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["HRP", "AP", "Universal"]
+        },
+        {
+          "name": "Physical State",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Liquid", "Lyophilized", "Powder"]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "picklist",
+          "extractor": "regex_or_controlled_vocabulary",
+          "values": ["2-8°C", "-20°C", "-80°C", "Room Temperature"]
+        }
+      ]
     }
   }
 }

@@ -17,8 +17,10 @@ from classification_pipeline.product_classifier_utils import get_snowflake_sessi
 from spec_extraction.extractors import (
     extract_antibody_specs,
     extract_chemical_specs,
+    extract_kits_assays_specs,
     extract_lab_supplies_specs,
     extract_molecular_biology_specs,
+    extract_proteins_peptides_specs,
 )
 from spec_extraction.extractors.common import ExtractedSpec
 
@@ -67,6 +69,8 @@ EXTRACTORS: dict[str, Callable[[Mapping[str, object]], list[ExtractedSpec]]] = {
     "molecular_biology_reagents": extract_molecular_biology_specs,
     "lab_supplies_consumables": extract_lab_supplies_specs,
     "antibodies": extract_antibody_specs,
+    "proteins_peptides": extract_proteins_peptides_specs,
+    "kits_assays": extract_kits_assays_specs,
 }
 
 LABEL_TO_ID = {
@@ -76,6 +80,10 @@ LABEL_TO_ID = {
     "Lab Supplies and Consumables": "lab_supplies_consumables",
     "Lab Supplies & Consumables": "lab_supplies_consumables",
     "Antibodies": "antibodies",
+    "Proteins and Peptides": "proteins_peptides",
+    "Proteins & Peptides": "proteins_peptides",
+    "Kits and Assays": "kits_assays",
+    "Kits & Assays": "kits_assays",
 }
 
 CATEGORY_LABELS = {
@@ -83,6 +91,8 @@ CATEGORY_LABELS = {
     "molecular_biology_reagents": "Molecular Biology Reagents",
     "lab_supplies_consumables": "Lab Supplies and Consumables",
     "antibodies": "Antibodies",
+    "proteins_peptides": "Proteins and Peptides",
+    "kits_assays": "Kits and Assays",
 }
 
 CATEGORY_FIELDS = {
@@ -103,6 +113,21 @@ CATEGORY_FIELDS = {
         "Clonality",
         "Reactivity",
         "Application",
+    ],
+    "proteins_peptides": [
+        "Source Organism",
+        "Form",
+        "Physical State",
+        "Purity",
+        "Activity",
+    ],
+    "kits_assays": [
+        "Sub-Type",
+        "Application",
+        "Detection Method",
+        "Target Enzyme",
+        "Physical State",
+        "Storage Conditions",
     ],
 }
 
@@ -239,6 +264,30 @@ def update_coverage(
         counts[spec.status] = counts.get(spec.status, 0) + 1
 
 
+def normalize_optional_text(value: object) -> str:
+    if value is None or pd.isna(value):
+        return ""
+    return str(value).strip()
+
+
+def update_l4_coverage(
+    coverage: dict[tuple[str, str, str, str], dict[str, int]],
+    l3_id: str,
+    row: Mapping[str, object],
+    specs: list[ExtractedSpec],
+) -> None:
+    l4_id = normalize_optional_text(row.get("ASSIGNED_L4_ID"))
+    l4_label = normalize_optional_text(row.get("ASSIGNED_L4_LABEL"))
+    for spec in specs:
+        key = (l3_id, l4_id, l4_label, spec.field_name)
+        counts = coverage.setdefault(
+            key,
+            {"total_rows": 0, "matched": 0, "missing": 0, "ambiguous": 0, "invalid": 0},
+        )
+        counts["total_rows"] += 1
+        counts[spec.status] = counts.get(spec.status, 0) + 1
+
+
 def build_coverage(coverage: dict[tuple[str, str], dict[str, int]]) -> pd.DataFrame:
     summaries = []
     for (l3_id, field_name), counts in sorted(coverage.items()):
@@ -247,6 +296,28 @@ def build_coverage(coverage: dict[tuple[str, str], dict[str, int]]) -> pd.DataFr
         summaries.append(
             {
                 "l3_id": l3_id,
+                "field": field_name,
+                "total_rows": total,
+                "matched_rows": matched,
+                "matched_pct": round((matched / total * 100), 2) if total else 0.0,
+                "missing_rows": counts.get("missing", 0),
+                "ambiguous_rows": counts.get("ambiguous", 0),
+                "invalid_rows": counts.get("invalid", 0),
+            }
+        )
+    return pd.DataFrame(summaries)
+
+
+def build_l4_coverage(coverage: dict[tuple[str, str, str, str], dict[str, int]]) -> pd.DataFrame:
+    summaries = []
+    for (l3_id, l4_id, l4_label, field_name), counts in sorted(coverage.items()):
+        total = counts["total_rows"]
+        matched = counts.get("matched", 0)
+        summaries.append(
+            {
+                "l3_id": l3_id,
+                "l4_id": l4_id,
+                "l4_label": l4_label,
                 "field": field_name,
                 "total_rows": total,
                 "matched_rows": matched,
@@ -279,6 +350,7 @@ def extract_chunk(
     filter_counts: dict[str, int],
     apply_filters: bool,
     full_mode: bool = False,
+    l4_coverage: dict[tuple[str, str, str, str], dict[str, int]] | None = None,
 ) -> list[dict[str, object]]:
     output_rows = []
     extractor = EXTRACTORS[category]
@@ -294,6 +366,8 @@ def extract_chunk(
         filter_counts["extractable_rows"] = filter_counts.get("extractable_rows", 0) + 1
         specs = extractor(row_dict)
         update_coverage(coverage, category, specs)
+        if l4_coverage is not None:
+            update_l4_coverage(l4_coverage, category, row_dict, specs)
         product_values = {column: row_dict.get(column) for column in PRODUCT_COLUMNS + OPTIONAL_SOURCE_COLUMNS}
         if full_mode:
             output_rows.append({**product_values, **flatten_values(specs)})
@@ -333,28 +407,31 @@ def write_sample_outputs(
     output_dir: Path,
     rows: Iterable[dict[str, object]],
     coverage: dict[tuple[str, str], dict[str, int]],
+    l4_coverage: dict[tuple[str, str, str, str], dict[str, int]],
     filter_counts: dict[str, int],
     category: str,
     review_size: int,
-) -> tuple[Path, Path, Path, Path]:
+) -> tuple[Path, Path, Path, Path, Path]:
     output_dir.mkdir(parents=True, exist_ok=True)
     detail_path = output_dir / "spec_extraction_pilot_details.csv"
     coverage_path = output_dir / "spec_extraction_pilot_coverage.csv"
+    l4_coverage_path = output_dir / "spec_extraction_l4_coverage.csv"
     filter_summary_path = output_dir / "spec_extraction_filter_summary.csv"
     review_path = output_dir / "manual_review_sample.csv"
 
-    for path in (detail_path, coverage_path, filter_summary_path, review_path):
+    for path in (detail_path, coverage_path, l4_coverage_path, filter_summary_path, review_path):
         path.unlink(missing_ok=True)
 
     detail_columns = get_detail_columns(category)
     rows_df = pd.DataFrame(rows).reindex(columns=detail_columns)
     rows_df.to_csv(detail_path, index=False)
     build_coverage(coverage).to_csv(coverage_path, index=False)
+    build_l4_coverage(l4_coverage).to_csv(l4_coverage_path, index=False)
     pd.DataFrame(
         [{"metric": metric, "count": count} for metric, count in sorted(filter_counts.items())]
     ).to_csv(filter_summary_path, index=False)
     build_manual_review_sample(rows_df, category, review_size).to_csv(review_path, index=False)
-    return detail_path, coverage_path, filter_summary_path, review_path
+    return detail_path, coverage_path, l4_coverage_path, filter_summary_path, review_path
 
 
 def build_manual_review_sample(rows_df: pd.DataFrame, category: str, review_size: int) -> pd.DataFrame:
@@ -413,16 +490,18 @@ def run_sample(
     output_dir: Path,
     sample_size: int,
     review_size: int,
-) -> tuple[Path, Path, Path, Path]:
+) -> tuple[Path, Path, Path, Path, Path]:
     df = load_category_data(env=env, category=category, mode="sample", sample_size=sample_size)
     coverage: dict[tuple[str, str], dict[str, int]] = {}
+    l4_coverage: dict[tuple[str, str, str, str], dict[str, int]] = {}
     filter_counts: dict[str, int] = {}
-    rows = extract_chunk(df, category, coverage, filter_counts, apply_filters=True)
+    rows = extract_chunk(df, category, coverage, filter_counts, apply_filters=True, l4_coverage=l4_coverage)
     print_report(coverage, filter_counts)
     return write_sample_outputs(
         output_dir=get_category_output_dir(output_dir, env, "sample", category),
         rows=rows,
         coverage=coverage,
+        l4_coverage=l4_coverage,
         filter_counts=filter_counts,
         category=category,
         review_size=review_size,
@@ -471,7 +550,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     if args.mode == "sample":
-        detail_path, coverage_path, filter_summary_path, review_path = run_sample(
+        detail_path, coverage_path, l4_coverage_path, filter_summary_path, review_path = run_sample(
             env=args.env,
             category=args.category,
             output_dir=args.output_dir,
@@ -480,6 +559,7 @@ def main() -> None:
         )
         print(f"Wrote detail output: {detail_path}")
         print(f"Wrote coverage output: {coverage_path}")
+        print(f"Wrote L4 coverage output: {l4_coverage_path}")
         print(f"Wrote filter summary: {filter_summary_path}")
         print(f"Wrote manual review sample: {review_path}")
     else:

@@ -6,6 +6,7 @@ import re
 from typing import Mapping
 
 from spec_extraction.extractors.common import ExtractedSpec, first_regex_match, missing_spec, vocabulary_matches
+from spec_extraction.extractors.standards import SPECIES
 
 
 SUB_TYPES = {
@@ -26,21 +27,6 @@ SUB_TYPES = {
     "Cas Nuclease": ("cas9", "cas12", "cas nuclease", "crispr nuclease"),
     "shRNA": ("shrna", "short hairpin rna"),
     "miRNA": ("mirna", "microrna", "micro rna"),
-}
-
-TARGET_SPECIES = {
-    "Human": ("human", "homo sapiens", "hsapiens", "h. sapiens"),
-    "Mouse": ("mouse", "mice", "mus musculus", "mmusculus", "m. musculus"),
-    "Rat": ("rat", "rattus norvegicus", "rnorvegicus", "r. norvegicus"),
-    "Zebrafish": ("zebrafish", "danio rerio", "d. rerio"),
-    "Drosophila": ("drosophila", "fruit fly", "d. melanogaster", "drosophila melanogaster"),
-    "C. elegans": ("c. elegans", "caenorhabditis elegans"),
-    "Yeast": ("yeast", "saccharomyces cerevisiae", "s. cerevisiae"),
-    "E. coli": ("e. coli", "escherichia coli"),
-    "Bovine": ("bovine", "cow", "bos taurus"),
-    "Porcine": ("porcine", "pig", "swine", "sus scrofa"),
-    "Chicken": ("chicken", "gallus gallus"),
-    "Rabbit": ("rabbit", "oryctolagus cuniculus"),
 }
 
 TARGET_FIELD_PATTERN = re.compile(
@@ -93,7 +79,7 @@ def extract_target_gene_region(row: Mapping[str, object]) -> ExtractedSpec:
 
 def normalize_species(value: str) -> str:
     value = re.sub(r"\s+", " ", value).strip(" .")
-    for normalized, aliases in TARGET_SPECIES.items():
+    for normalized, aliases in SPECIES.items():
         for alias in aliases:
             if re.search(rf"(?<![A-Za-z0-9]){re.escape(alias)}(?![A-Za-z0-9])", value, re.IGNORECASE):
                 return normalized
@@ -115,7 +101,7 @@ def extract_target_species(row: Mapping[str, object]) -> ExtractedSpec:
     vocab = vocabulary_matches(
         row,
         "Target Species",
-        TARGET_SPECIES,
+        SPECIES,
         "target_species_dictionary",
         multi_select=True,
     )

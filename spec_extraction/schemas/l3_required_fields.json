@@ -19,6 +19,12 @@
           "type": "text",
           "extractor": "regex_or_grade_dictionary",
           "examples": [">=99%", "ACS Grade", "HPLC Grade"]
+        },
+        {
+          "name": "Physical State",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Solid", "Liquid", "Gas", "Powder", "Crystal", "Solution", "Gel", "Paste"]
         }
       ]
     },
@@ -200,6 +206,121 @@
           "type": "picklist",
           "extractor": "regex_or_controlled_vocabulary",
           "values": ["2-8°C", "-20°C", "-80°C", "Room Temperature"]
+        }
+      ]
+    },
+    "cell_tissue_culture": {
+      "label": "Cells and Tissue Culture",
+      "required_fields": [
+        {
+          "name": "Sub-Type",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Media", "Supplement", "Growth Factor", "Cryopreservation Reagent", "Matrix / Substrate", "Dissociation Reagent", "Cell Line", "Primary Cell", "Stem Cell", "Organoid", "Tissue", "Other"]
+        },
+        {
+          "name": "Species",
+          "type": "multi-select",
+          "extractor": "controlled_vocabulary",
+          "examples": ["Human", "Mouse", "Rat"]
+        }
+      ]
+    },
+    "biospecimens": {
+      "label": "Biospecimens",
+      "required_fields": [
+        {
+          "name": "Specimen Type",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Blood", "Serum", "Plasma", "Tissue", "DNA", "RNA", "PBMCs", "Bone Marrow Cells", "Cord Blood Cells", "Primary Cells", "Urine", "CSF", "Saliva", "Other"]
+        },
+        {
+          "name": "Species",
+          "type": "multi-select",
+          "extractor": "controlled_vocabulary",
+          "examples": ["Human", "Mouse", "Rat", "Non-Human Primate"]
+        },
+        {
+          "name": "Disease State",
+          "type": "multi-select",
+          "extractor": "controlled_vocabulary",
+          "values": ["Normal / Healthy / Control", "Cancer / Oncology", "Diabetes", "Cardiovascular Disease", "Autoimmune Disease", "Infectious Disease", "Neurological Disease", "Respiratory Disease", "Kidney Disease", "Liver Disease"]
+        }
+      ]
+    },
+    "animal_models": {
+      "label": "Animal Models",
+      "required_fields": [
+        {
+          "name": "Species",
+          "type": "multi-select",
+          "extractor": "controlled_vocabulary",
+          "values": ["Mouse", "Rat", "Zebrafish", "Guinea Pig", "Hamster", "Non-Human Primate", "Rabbit", "Porcine", "Canine", "Drosophila", "C. elegans", "Yeast"]
+        },
+        {
+          "name": "Strain",
+          "type": "text",
+          "extractor": "regex",
+          "examples": ["C57BL/6", "BALB/c", "Sprague Dawley"]
+        },
+        {
+          "name": "Genetic Modification",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Wild-type", "Knockout", "Transgenic", "Knock-in", "Humanized", "CRISPR-Modified"]
+        }
+      ]
+    },
+    "equipment_instruments_parts": {
+      "label": "Equipment, Instruments and Parts",
+      "required_fields": [
+        {
+          "name": "Equipment Type",
+          "type": "text",
+          "extractor": "controlled_vocabulary",
+          "examples": ["Centrifuge", "Flow Cytometer", "Plate Reader"]
+        },
+        {
+          "name": "Sub-Type",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Benchtop", "Floor", "Handheld", "Portable", "Software"]
+        },
+        {
+          "name": "Product Role",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Instrument", "Accessory", "Replacement Part", "Consumable"]
+        }
+      ]
+    },
+    "controls_calibrators_standards": {
+      "label": "Controls, Calibrations and Standards",
+      "required_fields": [
+        {
+          "name": "Sub-Type",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["QC Control", "Calibrator", "Reference Standard", "Proficiency Testing"]
+        },
+        {
+          "name": "Analyte / Parameter",
+          "type": "text",
+          "extractor": "field_or_dictionary_pattern",
+          "examples": ["Hematopoietic Progenitor Cells", "CFU", "Glucose"]
+        },
+        {
+          "name": "Matrix",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Human Blood", "Serum", "Plasma", "Urine", "Synthetic", "Latex Particle", "Buffer", "Aqueous"]
+        },
+        {
+          "name": "Regulatory Status",
+          "type": "multi-select",
+          "extractor": "controlled_vocabulary",
+          "values": ["FDA Cleared", "CE Marked", "RUO", "IVD", "NIST Traceable", "ISO Certified"]
         }
       ]
     }

@@ -16,7 +16,12 @@ sys.path.insert(0, str(PROJECT_ROOT))
 from classification_pipeline.product_classifier_utils import get_snowflake_session
 from spec_extraction.extractors import (
     extract_antibody_specs,
+    extract_animal_model_specs,
+    extract_biospecimen_specs,
+    extract_cell_tissue_culture_specs,
     extract_chemical_specs,
+    extract_controls_calibrators_specs,
+    extract_equipment_instruments_specs,
     extract_kits_assays_specs,
     extract_lab_supplies_specs,
     extract_molecular_biology_specs,
@@ -71,6 +76,11 @@ EXTRACTORS: dict[str, Callable[[Mapping[str, object]], list[ExtractedSpec]]] = {
     "antibodies": extract_antibody_specs,
     "proteins_peptides": extract_proteins_peptides_specs,
     "kits_assays": extract_kits_assays_specs,
+    "cell_tissue_culture": extract_cell_tissue_culture_specs,
+    "biospecimens": extract_biospecimen_specs,
+    "animal_models": extract_animal_model_specs,
+    "equipment_instruments_parts": extract_equipment_instruments_specs,
+    "controls_calibrators_standards": extract_controls_calibrators_specs,
 }
 
 LABEL_TO_ID = {
@@ -84,6 +94,14 @@ LABEL_TO_ID = {
     "Proteins & Peptides": "proteins_peptides",
     "Kits and Assays": "kits_assays",
     "Kits & Assays": "kits_assays",
+    "Cells and Tissue Culture": "cell_tissue_culture",
+    "Cell & Tissue Culture": "cell_tissue_culture",
+    "Biospecimens": "biospecimens",
+    "Animal Models": "animal_models",
+    "Equipment, Instruments and Parts": "equipment_instruments_parts",
+    "Equipment, Instruments & Parts": "equipment_instruments_parts",
+    "Controls, Calibrations and Standards": "controls_calibrators_standards",
+    "Controls, Calibrators & Standards": "controls_calibrators_standards",
 }
 
 CATEGORY_LABELS = {
@@ -93,10 +111,15 @@ CATEGORY_LABELS = {
     "antibodies": "Antibodies",
     "proteins_peptides": "Proteins and Peptides",
     "kits_assays": "Kits and Assays",
+    "cell_tissue_culture": "Cells and Tissue Culture",
+    "biospecimens": "Biospecimens",
+    "animal_models": "Animal Models",
+    "equipment_instruments_parts": "Equipment, Instruments and Parts",
+    "controls_calibrators_standards": "Controls, Calibrations and Standards",
 }
 
 CATEGORY_FIELDS = {
-    "chemicals_solvents": ["CAS Number", "Purity"],
+    "chemicals_solvents": ["CAS Number", "Purity", "Physical State"],
     "molecular_biology_reagents": ["Sub-Type", "Target Gene / Region", "Target Species"],
     "lab_supplies_consumables": [
         "Material",
@@ -129,6 +152,11 @@ CATEGORY_FIELDS = {
         "Physical State",
         "Storage Conditions",
     ],
+    "cell_tissue_culture": ["Sub-Type", "Species"],
+    "biospecimens": ["Specimen Type", "Species", "Disease State"],
+    "animal_models": ["Species", "Strain", "Genetic Modification"],
+    "equipment_instruments_parts": ["Equipment Type", "Sub-Type", "Product Role"],
+    "controls_calibrators_standards": ["Sub-Type", "Analyte / Parameter", "Matrix", "Regulatory Status"],
 }
 
 BASE_DETAIL_COLUMNS = [

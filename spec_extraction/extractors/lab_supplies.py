@@ -13,6 +13,7 @@ from spec_extraction.extractors.common import (
     missing_spec,
     vocabulary_matches,
 )
+from spec_extraction.extractors.standards import UNIT_LOOKUP, normalize_amount, normalize_unit
 
 
 MATERIALS = {
@@ -49,21 +50,6 @@ COLORS = {
     "Assorted": ("assorted", "mixed colors", "multicolor", "multi-color"),
 }
 
-UNIT_ALIASES = {
-    "nL": ("nl", "nanoliter", "nanoliters", "nanolitre", "nanolitres"),
-    "uL": ("ul", "µl", "μl", "microliter", "microliters", "microlitre", "microlitres"),
-    "mL": ("ml", "milliliter", "milliliters", "millilitre", "millilitres"),
-    "L": ("l", "liter", "liters", "litre", "litres"),
-    "ug": ("ug", "µg", "μg", "mcg", "microgram", "micrograms"),
-    "mg": ("mg", "milligram", "milligrams"),
-    "g": ("g", "gram", "grams"),
-    "kg": ("kg", "kilogram", "kilograms"),
-    "mm": ("mm", "millimeter", "millimeters", "millimetre", "millimetres"),
-    "cm": ("cm", "centimeter", "centimeters", "centimetre", "centimetres"),
-    "in": ("in", "inch", "inches"),
-    "well": ("well", "wells"),
-}
-UNIT_LOOKUP = {alias: unit for unit, aliases in UNIT_ALIASES.items() for alias in aliases}
 UNIT_PATTERN = "|".join(
     re.escape(alias) for alias in sorted(UNIT_LOOKUP, key=len, reverse=True)
 )
@@ -105,15 +91,6 @@ class SizeMatch:
 
 def normalize_text_value(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip(" .")
-
-
-def normalize_amount(value: str) -> str:
-    value = value.strip()
-    return value[:-2] if value.endswith(".0") else value
-
-
-def normalize_unit(value: str) -> str:
-    return UNIT_LOOKUP.get(value.lower(), value)
 
 
 def build_size_match(match: re.Match[str], source_field: str, method: str) -> SizeMatch:

@@ -6,6 +6,7 @@ import re
 from typing import Mapping
 
 from spec_extraction.extractors.common import ExtractedSpec, first_regex_match, vocabulary_matches
+from spec_extraction.extractors.standards import physical_state_vocabulary
 
 
 CAS_PATTERN = re.compile(r"\b(\d{2,7}-\d{2}-\d)\b")
@@ -26,6 +27,7 @@ PURITY_GRADES = {
     "Ultrapure": ("ultrapure", "ultra pure"),
     "Anhydrous": ("anhydrous",),
 }
+PHYSICAL_STATES = physical_state_vocabulary(["Solid", "Liquid", "Gas", "Powder", "Crystal", "Solution", "Gel", "Paste"])
 
 
 def is_valid_cas(cas_number: str) -> bool:
@@ -73,9 +75,19 @@ def extract_purity(row: Mapping[str, object]) -> ExtractedSpec:
     )
 
 
+def extract_physical_state(row: Mapping[str, object]) -> ExtractedSpec:
+    return vocabulary_matches(
+        row=row,
+        field_name="Physical State",
+        vocabulary=PHYSICAL_STATES,
+        method="physical_state_dictionary",
+    )
+
+
 def extract_chemical_specs(row: Mapping[str, object]) -> list[ExtractedSpec]:
     """Extract SME-required fields for Chemicals and Solvents."""
     return [
         extract_cas_number(row),
         extract_purity(row),
+        extract_physical_state(row),
     ]

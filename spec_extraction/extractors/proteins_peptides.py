@@ -7,22 +7,7 @@ from typing import Mapping
 
 from spec_extraction.extractors.chemicals import extract_purity
 from spec_extraction.extractors.common import ExtractedSpec, first_regex_match, vocabulary_matches
-
-
-SOURCE_ORGANISMS = {
-    "Human": ("human", "homo sapiens", "recombinant human"),
-    "Mouse": ("mouse", "murine", "mice", "mus musculus", "recombinant mouse"),
-    "Rat": ("rat", "rattus norvegicus", "recombinant rat"),
-    "Rabbit": ("rabbit",),
-    "Bovine": ("bovine", "cow", "bos taurus"),
-    "Porcine": ("porcine", "pig", "swine"),
-    "E. coli": ("e. coli", "escherichia coli", "ecoli"),
-    "HEK293": ("hek293", "hek 293", "293 cells", "293-cell", "293 cell"),
-    "CHO": ("cho", "cho cells", "cho-cell", "cho cell"),
-    "Baculovirus": ("baculovirus", "insect cells", "sf9", "sf21"),
-    "Yeast": ("yeast", "saccharomyces cerevisiae", "pichia pastoris"),
-    "Wheat Germ": ("wheat germ",),
-}
+from spec_extraction.extractors.standards import physical_state_vocabulary, species_vocabulary
 
 FORMS = {
     "Lyophilized": ("lyophilized", "lyophilised", "lyo", "freeze-dried", "freeze dried"),
@@ -30,12 +15,10 @@ FORMS = {
     "Frozen": ("frozen",),
 }
 
-PHYSICAL_STATES = {
-    "Solid": ("solid",),
-    "Liquid": ("liquid",),
-    "Powder": ("powder", "powdered"),
-    "Solution": ("solution",),
-}
+SOURCE_ORGANISMS = species_vocabulary(
+    ["Human", "Mouse", "Rat", "Rabbit", "Bovine", "Porcine", "E. coli", "HEK293", "CHO", "Baculovirus", "Yeast", "Wheat Germ"]
+)
+PHYSICAL_STATES = physical_state_vocabulary(["Solid", "Liquid", "Powder", "Solution"])
 
 ACTIVITY_FIELD_PATTERN = re.compile(
     r"(?:^|\|\s*)(?:Specific Activity|Biological Activity|Bioactivity|Activity|ED50|EC50|IC50)\s*:\s*([^|;,]+)",

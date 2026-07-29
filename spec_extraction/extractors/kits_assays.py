@@ -5,7 +5,8 @@ from __future__ import annotations
 import re
 from typing import Mapping
 
-from spec_extraction.extractors.common import ExtractedSpec, first_regex_match, iter_text_sources, missing_spec, vocabulary_matches
+from spec_extraction.extractors.common import ExtractedSpec, vocabulary_matches
+from spec_extraction.extractors.standards import extract_storage_conditions, first_vocabulary_match, physical_state_vocabulary
 
 
 SUB_TYPES = {
@@ -42,74 +43,7 @@ TARGET_ENZYMES = {
     "Universal": ("universal",),
 }
 
-PHYSICAL_STATES = {
-    "Liquid": ("liquid", "solution"),
-    "Lyophilized": ("lyophilized", "lyophilised", "freeze-dried", "freeze dried"),
-    "Powder": ("powder", "powdered"),
-}
-
-STORAGE_FIELD_PATTERN = re.compile(
-    r"(?:^|\|\s*)(?:Storage(?: Conditions)?|Store(?: at)?|Temperature)\s*:\s*([^|;,]+)",
-    re.IGNORECASE,
-)
-STORAGE_PATTERNS = (
-    ("2-8°C", re.compile(r"\b(2\s*[-–]\s*8\s*(?:°\s*)?C|2\s*to\s*8\s*(?:°\s*)?C|4\s*(?:°\s*)?C)\b", re.IGNORECASE)),
-    ("-20°C", re.compile(r"\b(-20\s*(?:°\s*)?C)\b", re.IGNORECASE)),
-    ("-80°C", re.compile(r"\b(-80\s*(?:°\s*)?C)\b", re.IGNORECASE)),
-    ("Room Temperature", re.compile(r"\b(room temperature|ambient|rt)\b", re.IGNORECASE)),
-)
-
-
-def normalize_storage(value: str) -> str:
-    for normalized, pattern in STORAGE_PATTERNS:
-        if pattern.search(value):
-            return normalized
-    return re.sub(r"\s+", " ", value).strip(" .")
-
-
-def first_vocabulary_match(row: Mapping[str, object], field_name: str, vocabulary: dict[str, tuple[str, ...]], method: str) -> ExtractedSpec:
-    for source_field, text in iter_text_sources(row):
-        for normalized, aliases in vocabulary.items():
-            for alias in aliases:
-                pattern = re.compile(rf"(?<![A-Za-z0-9]){re.escape(alias)}(?![A-Za-z0-9])", re.IGNORECASE)
-                match = pattern.search(text)
-                if match:
-                    return ExtractedSpec(
-                        field_name=field_name,
-                        value=normalized,
-                        status="matched",
-                        method=method,
-                        evidence=match.group(0),
-                        source_field=source_field,
-                        confidence=0.85,
-                    )
-
-    return missing_spec(field_name, method)
-
-
-def extract_storage_conditions(row: Mapping[str, object]) -> ExtractedSpec:
-    labeled = first_regex_match(
-        row=row,
-        field_name="Storage Conditions",
-        pattern=STORAGE_FIELD_PATTERN,
-        method="storage_field_regex",
-        normalizer=normalize_storage,
-    )
-    if labeled.status == "matched":
-        return labeled
-
-    for normalized, pattern in STORAGE_PATTERNS:
-        match = first_regex_match(
-            row=row,
-            field_name="Storage Conditions",
-            pattern=pattern,
-            method="storage_temperature_regex",
-            normalizer=lambda _raw, value=normalized: value,
-        )
-        if match.status == "matched":
-            return match
-
-    return labeled
+PHYSICAL_STATES = physical_state_vocabulary(["Liquid", "Lyophilized", "Powder"])
 
 
 def extract_kits_assays_specs(row: Mapping[str, object]) -> list[ExtractedSpec]:

@@ -22,6 +22,8 @@ from spec_extraction.extractors import (
     extract_chemical_specs,
     extract_controls_calibrators_specs,
     extract_equipment_instruments_specs,
+    extract_furniture_storage_specs,
+    extract_general_office_supplies_specs,
     extract_kits_assays_specs,
     extract_lab_supplies_specs,
     extract_molecular_biology_specs,
@@ -81,6 +83,8 @@ EXTRACTORS: dict[str, Callable[[Mapping[str, object]], list[ExtractedSpec]]] = {
     "animal_models": extract_animal_model_specs,
     "equipment_instruments_parts": extract_equipment_instruments_specs,
     "controls_calibrators_standards": extract_controls_calibrators_specs,
+    "furniture_storage": extract_furniture_storage_specs,
+    "general_office_supplies": extract_general_office_supplies_specs,
 }
 
 LABEL_TO_ID = {
@@ -102,6 +106,9 @@ LABEL_TO_ID = {
     "Equipment, Instruments & Parts": "equipment_instruments_parts",
     "Controls, Calibrations and Standards": "controls_calibrators_standards",
     "Controls, Calibrators & Standards": "controls_calibrators_standards",
+    "Furniture and Storage": "furniture_storage",
+    "Furniture & Storage": "furniture_storage",
+    "General Office Supplies": "general_office_supplies",
 }
 
 CATEGORY_LABELS = {
@@ -116,6 +123,8 @@ CATEGORY_LABELS = {
     "animal_models": "Animal Models",
     "equipment_instruments_parts": "Equipment, Instruments and Parts",
     "controls_calibrators_standards": "Controls, Calibrations and Standards",
+    "furniture_storage": "Furniture and Storage",
+    "general_office_supplies": "General Office Supplies",
 }
 
 CATEGORY_FIELDS = {
@@ -157,6 +166,17 @@ CATEGORY_FIELDS = {
     "animal_models": ["Species", "Strain", "Genetic Modification"],
     "equipment_instruments_parts": ["Equipment Type", "Sub-Type", "Product Role"],
     "controls_calibrators_standards": ["Sub-Type", "Analyte / Parameter", "Matrix", "Regulatory Status"],
+    "furniture_storage": [
+        "Sub-Type",
+        "Material",
+        "Color",
+        "Length",
+        "Width",
+        "Height",
+        "Capacity / Load Rating",
+        "Pack Size",
+    ],
+    "general_office_supplies": ["Sub-Type", "Color", "Size / Dimensions", "Pack Size", "Material"],
 }
 
 BASE_DETAIL_COLUMNS = [

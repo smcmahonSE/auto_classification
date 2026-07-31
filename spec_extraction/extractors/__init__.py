@@ -10,6 +10,10 @@ from spec_extraction.extractors.equipment_instruments import extract_equipment_i
 from spec_extraction.extractors.kits_assays import extract_kits_assays_specs
 from spec_extraction.extractors.lab_supplies import extract_lab_supplies_specs
 from spec_extraction.extractors.molecular_biology import extract_molecular_biology_specs
+from spec_extraction.extractors.office_furniture import (
+    extract_furniture_storage_specs,
+    extract_general_office_supplies_specs,
+)
 from spec_extraction.extractors.proteins_peptides import extract_proteins_peptides_specs
 
 __all__ = [
@@ -23,5 +27,7 @@ __all__ = [
     "extract_kits_assays_specs",
     "extract_lab_supplies_specs",
     "extract_molecular_biology_specs",
+    "extract_furniture_storage_specs",
+    "extract_general_office_supplies_specs",
     "extract_proteins_peptides_specs",
 ]

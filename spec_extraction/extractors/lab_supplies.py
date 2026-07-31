@@ -13,42 +13,8 @@ from spec_extraction.extractors.common import (
     missing_spec,
     vocabulary_matches,
 )
-from spec_extraction.extractors.standards import UNIT_LOOKUP, normalize_amount, normalize_unit
+from spec_extraction.extractors.standards import COLORS, MATERIALS, UNIT_LOOKUP, normalize_amount, normalize_unit
 
-
-MATERIALS = {
-    "Polypropylene": ("polypropylene",),
-    "Polystyrene": ("polystyrene",),
-    "Polyethylene": ("polyethylene", "hdpe", "ldpe"),
-    "Glass": ("glass",),
-    "Borosilicate Glass": ("borosilicate", "borosilicate glass", "pyrex"),
-    "PTFE": ("ptfe", "teflon"),
-    "Nitrile": ("nitrile",),
-    "Latex": ("latex",),
-    "Stainless Steel": ("stainless steel",),
-    "PVC": ("pvc", "polyvinyl chloride"),
-    "Silicone": ("silicone",),
-    "Nylon": ("nylon",),
-    "Polycarbonate": ("polycarbonate",),
-    "Cellulose": ("cellulose", "cellulose acetate"),
-}
-
-COLORS = {
-    "Black": ("black",),
-    "Blue": ("blue",),
-    "Brown": ("brown",),
-    "Clear": ("clear", "transparent"),
-    "Green": ("green",),
-    "Orange": ("orange",),
-    "Pink": ("pink",),
-    "Purple": ("purple", "violet"),
-    "Red": ("red",),
-    "White": ("white",),
-    "Yellow": ("yellow",),
-    "Amber": ("amber",),
-    "Natural": ("natural",),
-    "Assorted": ("assorted", "mixed colors", "multicolor", "multi-color"),
-}
 
 UNIT_PATTERN = "|".join(
     re.escape(alias) for alias in sorted(UNIT_LOOKUP, key=len, reverse=True)

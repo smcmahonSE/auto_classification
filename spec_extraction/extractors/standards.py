@@ -97,6 +97,57 @@ REGULATORY_STATUS = {
     "ISO Certified": ("iso certified", "iso-certified"),
 }
 
+COLORS = {
+    "Black": ("black",),
+    "Blue": ("blue",),
+    "Brown": ("brown",),
+    "Clear": ("clear", "transparent"),
+    "Gray": ("gray", "grey"),
+    "Green": ("green",),
+    "Orange": ("orange",),
+    "Pink": ("pink",),
+    "Purple": ("purple", "violet"),
+    "Red": ("red",),
+    "Silver": ("silver",),
+    "White": ("white",),
+    "Yellow": ("yellow",),
+    "Amber": ("amber",),
+    "Natural": ("natural",),
+    "Assorted": ("assorted", "mixed colors", "multicolor", "multi-color"),
+}
+
+MATERIALS = {
+    "Polypropylene": ("polypropylene",),
+    "Polystyrene": ("polystyrene",),
+    "Polyethylene": ("polyethylene", "hdpe", "ldpe"),
+    "Polycarbonate": ("polycarbonate",),
+    "Plastic": ("plastic",),
+    "Glass": ("glass",),
+    "Borosilicate Glass": ("borosilicate", "borosilicate glass", "pyrex"),
+    "PTFE": ("ptfe", "teflon"),
+    "Nitrile": ("nitrile",),
+    "Latex": ("latex",),
+    "Stainless Steel": ("stainless steel",),
+    "Steel": ("powder-coated steel", "powder coated steel", "chrome steel", "carbon steel", "alloy steel"),
+    "Aluminum": ("aluminum", "aluminium"),
+    "PVC": ("pvc", "polyvinyl chloride"),
+    "Vinyl": ("vinyl",),
+    "Silicone": ("silicone",),
+    "Nylon": ("nylon",),
+    "Cellulose": ("cellulose", "cellulose acetate"),
+    "Wood": ("wood",),
+    "Laminate": ("laminate", "laminated"),
+    "Cardboard": ("cardboard", "corrugated"),
+    "Acrylic": ("acrylic",),
+    "Paper": ("paper",),
+    "Rubber": ("rubber",),
+    "Foam": ("foam",),
+    "Fabric": ("fabric", "cloth", "upholstered"),
+    "Leather": ("leather",),
+    "Mesh": ("mesh",),
+    "Metal": ("metal",),
+}
+
 
 def allowed_vocabulary(vocabulary: Mapping[str, Sequence[str]], allowed_values: Sequence[str]) -> dict[str, Sequence[str]]:
     return {value: vocabulary[value] for value in allowed_values if value in vocabulary}

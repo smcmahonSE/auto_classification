@@ -323,6 +323,94 @@
           "values": ["FDA Cleared", "CE Marked", "RUO", "IVD", "NIST Traceable", "ISO Certified"]
         }
       ]
+    },
+    "furniture_storage": {
+      "label": "Furniture and Storage",
+      "required_fields": [
+        {
+          "name": "Sub-Type",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Seating", "Storage", "Desk / Workstation", "Table / Bench", "Cart", "Rack", "Cabinet", "Shelving", "Stool", "Chair Accessory", "Dispenser", "Other"]
+        },
+        {
+          "name": "Material",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Steel", "Stainless Steel", "Plastic", "Wood", "Laminate", "Cardboard", "Acrylic", "Aluminum", "Polypropylene", "Polyethylene", "Other"]
+        },
+        {
+          "name": "Color",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Black", "Blue", "Brown", "Clear", "Gray", "Green", "Orange", "Pink", "Purple", "Red", "Silver", "White", "Yellow", "Natural", "Assorted"]
+        },
+        {
+          "name": "Length",
+          "type": "text",
+          "extractor": "dimension_regex",
+          "examples": ["13.3 cm", "12 in"]
+        },
+        {
+          "name": "Width",
+          "type": "text",
+          "extractor": "dimension_regex",
+          "examples": ["13.3 cm", "12 in"]
+        },
+        {
+          "name": "Height",
+          "type": "text",
+          "extractor": "dimension_regex",
+          "examples": ["5 cm", "9.75 in"]
+        },
+        {
+          "name": "Capacity / Load Rating",
+          "type": "text",
+          "extractor": "regex",
+          "examples": ["350 lb capacity", "100 kg load"]
+        },
+        {
+          "name": "Pack Size",
+          "type": "number",
+          "extractor": "regex",
+          "examples": ["1", "5", "12"]
+        }
+      ]
+    },
+    "general_office_supplies": {
+      "label": "General Office Supplies",
+      "required_fields": [
+        {
+          "name": "Sub-Type",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Writing Instrument", "Paper / Notebook", "Label / Tag", "Tape / Adhesive", "Binder / Folder", "Envelope / Mailer", "Fastener / Clip / Staple", "Desk Accessory", "Shipping / Packaging", "Other"]
+        },
+        {
+          "name": "Color",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Black", "Blue", "Brown", "Clear", "Gray", "Green", "Orange", "Pink", "Purple", "Red", "Silver", "White", "Yellow", "Natural", "Assorted"]
+        },
+        {
+          "name": "Size / Dimensions",
+          "type": "text",
+          "extractor": "dimension_regex",
+          "examples": ["8.5 x 11 in", "3 x 5 in"]
+        },
+        {
+          "name": "Pack Size",
+          "type": "number",
+          "extractor": "regex",
+          "examples": ["12", "24", "100"]
+        },
+        {
+          "name": "Material",
+          "type": "picklist",
+          "extractor": "controlled_vocabulary",
+          "values": ["Paper", "Plastic", "Vinyl", "Cardboard", "Metal", "Rubber", "Other"]
+        }
+      ]
     }
   }
 }

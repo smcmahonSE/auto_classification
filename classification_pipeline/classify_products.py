@@ -21,7 +21,6 @@ Run order:
 """
 
 import argparse
-import json
 import pickle
 import sys
 from pathlib import Path
@@ -33,10 +32,16 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "classification_pipeline"))
 
 from product_classifier_utils import (
+    attach_classifications,
     build_product_text,
+    classify_l3_and_l4,
     embed_texts_from_cache,
     get_bedrock_client,
-    get_snowflake_session,
+    get_products_session,
+    load_anchors_from_snowflake,
+    load_listings,
+    load_pickle_cache,
+    save_pickle_cache,
     stable_text_hash,
 )
 
@@ -44,13 +49,9 @@ from product_classifier_utils import (
 AWS_PROFILE      = "staging.admin"
 AWS_REGION       = "us-east-1"
 MODEL_ID         = "amazon.titan-embed-text-v1"
-MARGIN_THRESHOLD = 0.05
 EMBED_WORKERS    = 5         # parallel Bedrock workers for net-new products
 EMBED_CHECKPOINT = 1_000     # save env cache every N new embeddings
 PUBLISH_CHUNK    = 500_000   # rows per Snowflake append
-
-L3_ANCHOR_TABLE = "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.EMBEDDED_L3_DESCRIPTIONS"
-L4_ANCHOR_TABLE = "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.EMBEDDED_L4_DESCRIPTIONS"
 
 CACHE_V1_PATH   = PROJECT_ROOT / "artifacts/cache/embedding_cache.pkl"
 CACHE_V2_PATH   = PROJECT_ROOT / "artifacts/cache/embedding_cache_new.pkl"
@@ -86,176 +87,14 @@ EMBED_WORK       = None
 PHASE_EMBED_RESULTS = None
 
 
-# ── Anchor loading from Snowflake ─────────────────────────────────────────────
-
-def load_anchors_from_snowflake(sf):
-    """
-    Load pre-embedded L3 and L4 anchor vectors from Snowflake.
-    Returns:
-        l3_anchors: (ids, labels, normed_matrix)
-        l4_by_l3:   dict of l3_id -> (ids, labels, normed_matrix)
-    """
-    print("Loading L3 anchor vectors from Snowflake...")
-    l3_df = sf.sql(
-        f"SELECT ASSIGNED_NEW_L3_ID, ASSIGNED_NEW_L3_LABEL, L3_EMBED FROM {L3_ANCHOR_TABLE}"
-    ).to_pandas()
-    l3_ids    = l3_df["ASSIGNED_NEW_L3_ID"].tolist()
-    l3_labels = l3_df["ASSIGNED_NEW_L3_LABEL"].tolist()
-    l3_vecs   = np.array([json.loads(e) for e in l3_df["L3_EMBED"]], dtype=np.float32)
-    l3_norms  = np.linalg.norm(l3_vecs, axis=1, keepdims=True)
-    l3_normed = l3_vecs / np.clip(l3_norms, 1e-10, None)
-    print(f"  L3 anchors: {len(l3_ids)} categories")
-
-    print("Loading L4 anchor vectors from Snowflake...")
-    l4_df = sf.sql(f"""
-        SELECT ASSIGNED_NEW_L3_ID, ASSIGNED_L4_ID, ASSIGNED_L4_LABEL, L4_EMBED
-        FROM {L4_ANCHOR_TABLE}
-        ORDER BY ASSIGNED_NEW_L3_ID, L4_ID
-    """).to_pandas()
-
-    l4_by_l3 = {}
-    for l3_id, grp in l4_df.groupby("ASSIGNED_NEW_L3_ID"):
-        ids    = grp["ASSIGNED_L4_ID"].tolist()
-        labels = grp["ASSIGNED_L4_LABEL"].tolist()
-        vecs   = np.array([json.loads(e) for e in grp["L4_EMBED"]], dtype=np.float32)
-        norms  = np.linalg.norm(vecs, axis=1, keepdims=True)
-        normed = vecs / np.clip(norms, 1e-10, None)
-        l4_by_l3[l3_id] = (ids, labels, normed)
-    print(f"  L4 anchors: {sum(len(v[0]) for v in l4_by_l3.values())} subcategories across {len(l4_by_l3)} L3s")
-
-    return (l3_ids, l3_labels, l3_normed), l4_by_l3
-
-
-# ── Classification ────────────────────────────────────────────────────────────
-
-def classify_against_anchors(vecs, anchor_ids, anchor_labels, anchor_normed):
-    """Cosine similarity classification. Returns (ids, labels, scores, margins, low_conf)."""
-    norms  = np.linalg.norm(vecs, axis=1, keepdims=True)
-    vecs_n = vecs / np.clip(norms, 1e-10, None)
-    sim    = vecs_n @ anchor_normed.T
-    top1   = sim.argmax(axis=1)
-    top1_s = sim[np.arange(len(sim)), top1]
-    sim2   = sim.copy()
-    sim2[np.arange(len(sim)), top1] = -1
-    margin = top1_s - sim2.max(axis=1)
-    return (
-        [anchor_ids[i]    for i in top1],
-        [anchor_labels[i] for i in top1],
-        top1_s.round(4),
-        margin.round(4),
-        margin < MARGIN_THRESHOLD,
-    )
-
-
-def classify_l3_and_l4(vecs, l3_anchors, l4_by_l3):
-    """
-    Run L3 then L4 classification in one pass.
-    Returns all 10 result arrays (L3 + L4 each: ids, labels, scores, margins, low_conf).
-    """
-    l3_ids, l3_labels, l3_scores, l3_margins, l3_low_conf = classify_against_anchors(vecs, *l3_anchors)
-
-    n = len(vecs)
-    l4_ids      = [None] * n
-    l4_labels   = [None] * n
-    l4_scores   = np.zeros(n, dtype=np.float32)
-    l4_margins  = np.zeros(n, dtype=np.float32)
-    l4_low_conf = np.ones(n, dtype=bool)
-
-    for unique_l3_id in set(l3_ids):
-        if unique_l3_id not in l4_by_l3:
-            continue
-        idx      = [i for i, lid in enumerate(l3_ids) if lid == unique_l3_id]
-        sub_vecs = vecs[np.array(idx)]
-        s_ids, s_labels, s_scores, s_margins, s_low_conf = classify_against_anchors(
-            sub_vecs, *l4_by_l3[unique_l3_id]
-        )
-        for pos, i in enumerate(idx):
-            l4_ids[i]      = s_ids[pos]
-            l4_labels[i]   = s_labels[pos]
-            l4_scores[i]   = s_scores[pos]
-            l4_margins[i]  = s_margins[pos]
-            l4_low_conf[i] = s_low_conf[pos]
-
-    return (
-        l3_ids, l3_labels, l3_scores, l3_margins, l3_low_conf,
-        l4_ids, l4_labels, l4_scores, l4_margins, l4_low_conf,
-    )
-
-
-def attach_classifications(batch_df, results):
-    """Attach L3 + L4 classification columns to a DataFrame copy."""
-    (l3_ids, l3_labels, l3_scores, l3_margins, l3_low_conf,
-     l4_ids, l4_labels, l4_scores, l4_margins, l4_low_conf) = results
-
-    out = batch_df.copy()
-    out["ASSIGNED_NEW_L3_ID"]    = l3_ids
-    out["ASSIGNED_NEW_L3_LABEL"] = l3_labels
-    out["L3_CONFIDENCE"]         = l3_scores
-    out["L3_CONFIDENCE_MARGIN"]  = l3_margins
-    out["L3_IS_LOW_CONFIDENCE"]  = l3_low_conf
-    out["ASSIGNED_L4_ID"]        = l4_ids
-    out["ASSIGNED_L4_LABEL"]     = l4_labels
-    out["L4_CONFIDENCE"]         = l4_scores
-    out["L4_CONFIDENCE_MARGIN"]  = l4_margins
-    out["L4_IS_LOW_CONFIDENCE"]  = l4_low_conf
-    return out
-
-
-# ── Env cache helpers ─────────────────────────────────────────────────────────
-
-def load_env_cache():
-    if CACHE_ENV_PATH.exists():
-        print(f"Loading env cache ({CACHE_ENV_PATH.stat().st_size/1e9:.2f} GB)...")
-        with open(CACHE_ENV_PATH, "rb") as f:
-            cache = pickle.load(f)
-        print(f"  Env cache: {len(cache):,} entries")
-        return cache
-    print("Env cache not found — starting fresh.")
-    return {}
-
-
-def save_env_cache(cache):
-    """Atomic write: write to temp file then rename."""
-    tmp = CACHE_ENV_PATH.with_suffix(".tmp")
-    with open(tmp, "wb") as f:
-        pickle.dump(cache, f)
-    tmp.rename(CACHE_ENV_PATH)
-
-
-# ── Load listings from Snowflake ──────────────────────────────────────────────
-
-def load_listings(sf):
-    print(f"Loading listings from {INPUT_TABLE}...")
-    df = sf.sql(f"""
-        SELECT PRODUCT_ID, PRODUCT_VARIANT_ID, PRODUCT_NAME, DESCRIPTION, PRICING_STATUS_C, LIST_PRICE_C, PRODUCT_SEGMENT
-        FROM {INPUT_TABLE}
-    """).to_pandas()
-    df["PRODUCT_ID"] = df["PRODUCT_ID"].astype(str)
-    df = df.rename(columns={"PRODUCT_SEGMENT": "SOURCE"})
-    print(f"Loaded: {len(df):,} rows")
-
-    has_text = df["PRODUCT_NAME"].notna() | df["DESCRIPTION"].notna()
-    df = df[has_text].copy().reset_index(drop=True)
-    print(f"Rows with usable text: {len(df):,}")
-    return df
-
-
-def _sf_session():
-    sf = get_snowflake_session()
-    sf.sql("USE ROLE \"DEPT-ENGINEERING\"").collect()
-    sf.sql("USE DATABASE SNOWFLAKE_LEARNING_DB").collect()
-    sf.sql("USE SCHEMA SMCMAHON_PRODUCTS").collect()
-    return sf
-
-
 # ── Phase A ───────────────────────────────────────────────────────────────────
 
 def phase_a():
     print("\n=== PHASE A: Classify v2 + env cache hits ===")
 
-    sf = _sf_session()
+    sf = get_products_session()
     l3_anchors, l4_by_l3 = load_anchors_from_snowflake(sf)
-    df = load_listings(sf)
+    df = load_listings(sf, INPUT_TABLE)
 
     texts  = build_product_text(df).tolist()
     hashes = [stable_text_hash(t) for t in texts]
@@ -269,7 +108,7 @@ def phase_a():
     with open(CACHE_KEYS_PATH, "rb") as f:
         cache_v1_keys = pickle.load(f)
 
-    cache_env = load_env_cache()
+    cache_env = load_pickle_cache(CACHE_ENV_PATH)
 
     in_v2      = [h in cache_v2                                                              for h in hashes]
     in_v1_only = [h in cache_v1_keys and not in_v2[i]                                       for i, h in enumerate(hashes)]
@@ -384,7 +223,7 @@ def phase_b():
             print(f"ERROR: {p} not found. Run phase a and extract first.")
             sys.exit(1)
 
-    sf = _sf_session()
+    sf = get_products_session()
     l3_anchors, l4_by_l3 = load_anchors_from_snowflake(sf)
 
     vectors = np.load(V1_VECTORS, mmap_mode="r")
@@ -421,10 +260,10 @@ def phase_embed():
     embed_work = pd.read_parquet(EMBED_WORK)
     print(f"Net-new products to embed: {len(embed_work):,}")
 
-    sf = _sf_session()
+    sf = get_products_session()
     l3_anchors, l4_by_l3 = load_anchors_from_snowflake(sf)
 
-    cache_env = load_env_cache()
+    cache_env = load_pickle_cache(CACHE_ENV_PATH)
     bedrock   = get_bedrock_client(profile_name=AWS_PROFILE, region=AWS_REGION)
 
     hashes = embed_work["_HASH"].tolist()
@@ -442,7 +281,7 @@ def phase_embed():
 
         def on_checkpoint(cache, processed):
             print(f"  Checkpoint: {processed:,} embedded — saving env cache...")
-            save_env_cache(cache)
+            save_pickle_cache(cache, CACHE_ENV_PATH)
 
         embed_texts_from_cache(
             texts            = [hash_to_text[h] for h in still_needed],
@@ -456,7 +295,7 @@ def phase_embed():
             on_checkpoint    = on_checkpoint,
         )
         print("Saving final env cache...")
-        save_env_cache(cache_env)
+        save_pickle_cache(cache_env, CACHE_ENV_PATH)
 
     print(f"\nClassifying {len(embed_work):,} net-new products...")
     BATCH = 100_000
@@ -519,7 +358,7 @@ def phase_publish():
     combined.columns = [c.upper() for c in combined.columns]
 
     print(f"\nConnecting to Snowflake...")
-    sf = _sf_session()
+    sf = get_products_session()
 
     n_chunks = (len(combined) + PUBLISH_CHUNK - 1) // PUBLISH_CHUNK
     print(f"Writing {len(combined):,} rows to {OUTPUT_TABLE} in {n_chunks} chunk(s)...")

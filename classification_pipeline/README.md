@@ -6,11 +6,14 @@ End-to-end L3 + L4 product classification using cosine similarity against pre-em
 
 | File | Purpose |
 |---|---|
-| `classify_products.py` | Main pipeline — 5 phases covering cache lookup, vector extraction, embedding, and Snowflake publish |
-| `product_classifier_utils.py` | Shared utilities: Snowflake session, Bedrock/Titan embedding, text hashing, cache helpers |
+| `classify_products.py` | Product pipeline — 5 phases covering cache lookup, vector extraction, embedding, and Snowflake publish |
+| `classify_services.py` | Services pipeline — 2 phases (embed, publish); classifies quoted services against the same taxonomy anchors |
+| `product_classifier_utils.py` | Shared utilities: Snowflake session, listing loader, anchor loading, classification math, Bedrock/Titan embedding, text hashing, cache helpers |
 | `seed_anchor_tables.py` | Re-embed L3/L4 anchor descriptions and write to Snowflake — re-run when taxonomy changes |
 | `taxonomy/l3_taxonomy_anchors.json` | L3 category anchor descriptions (13 categories) |
 | `taxonomy/l4_taxonomy_anchors.json` | L4 subcategory anchor descriptions (76 subcategories across all L3s) |
+
+Both pipelines classify against the same anchor tables (`EMBEDDED_L3_DESCRIPTIONS`/`EMBEDDED_L4_DESCRIPTIONS`), loaded via the shared `load_anchors_from_snowflake()` in `product_classifier_utils.py`. Re-running `seed_anchor_tables.py` after a taxonomy change affects both — re-run each pipeline's `--phase embed`/`a` afterward to reclassify against the updated anchors.
 
 ## Auth
 
@@ -83,6 +86,29 @@ Defined in `ENV_CONFIGS` at the top of `classify_products.py`:
 | Artifacts dir | `artifacts/analysis/stage_classification/` | `artifacts/analysis/prod_classification/` |
 
 Shared read-only caches (`embedding_cache.pkl`, `embedding_cache_new.pkl`, `embedding_cache_keys.pkl`) are used by both environments.
+
+## Running the services pipeline
+
+`classify_services.py` classifies quoted-service listings using the same taxonomy anchors as products, but does not touch the product v1/v2 caches — it maintains its own dedicated, incrementally-growing cache instead.
+
+```bash
+cd /Users/stephanie.mcmahon/smcmahon_repo/auto_classification/classification_pipeline
+
+# Phase embed — embed net-new services via Bedrock, then classify
+caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classify_services.py --env stage --phase embed
+
+# Phase publish — write results to Snowflake
+caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classify_services.py --env stage --phase publish
+```
+
+| | stage | prod |
+|---|---|---|
+| Input table | `SERVICES_V1_STAGE` | `SERVICES_PROD_V1` (placeholder — table doesn't exist yet) |
+| Output table | `CLASSIFICATIONS_SERVICES_V1_STAGE` | `CLASSIFICATIONS_SERVICES_V1_PROD` (placeholder) |
+| Cache | `embedding_cache_services_stage.pkl` | `embedding_cache_services_prod.pkl` |
+| Artifacts dir | `artifacts/analysis/stage_services_classification/` | `artifacts/analysis/prod_services_classification/` |
+
+Re-running `--phase embed` after a taxonomy update skips Bedrock calls for already-cached hashes and just reclassifies + re-publishes against the refreshed anchors.
 
 ## Output columns
 

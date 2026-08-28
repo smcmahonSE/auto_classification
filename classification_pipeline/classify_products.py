@@ -155,12 +155,16 @@ def phase_a():
 
     if records:
         phase_a_df = pd.concat(records, ignore_index=True)
-        phase_a_df.to_csv(PHASE_A_RESULTS, index=False)
-        hi = (~phase_a_df["L3_IS_LOW_CONFIDENCE"]).sum()
-        print(f"\nPhase A saved: {PHASE_A_RESULTS} ({len(phase_a_df):,} rows)")
-        print(f"L3 high-confidence: {hi:,}/{len(phase_a_df):,} ({hi/len(phase_a_df)*100:.1f}%)")
     else:
         print("Phase A: no v2 or env cache hits.")
+        empty_results = classify_l3_and_l4(np.empty((0, 1536), dtype=np.float32), l3_anchors, l4_by_l3)
+        phase_a_df = attach_classifications(df.iloc[0:0], empty_results)
+
+    phase_a_df.to_csv(PHASE_A_RESULTS, index=False)
+    print(f"\nPhase A saved: {PHASE_A_RESULTS} ({len(phase_a_df):,} rows)")
+    if len(phase_a_df):
+        hi = (~phase_a_df["L3_IS_LOW_CONFIDENCE"]).sum()
+        print(f"L3 high-confidence: {hi:,}/{len(phase_a_df):,} ({hi/len(phase_a_df)*100:.1f}%)")
 
     v1_work = df.iloc[v1_idx].copy()
     v1_work["_HASH"] = [hashes[i] for i in v1_idx]
@@ -242,11 +246,16 @@ def phase_b():
         pct = end / len(v1_work) * 100
         print(f"  batch {start:,}–{end:,} ({pct:.0f}%) — L3 high-conf: {hi:,}/{end-start:,}")
 
-    v1_results = pd.concat(records, ignore_index=True)
+    if records:
+        v1_results = pd.concat(records, ignore_index=True)
+    else:
+        v1_results = v1_work.drop(columns=["_HASH"], errors="ignore")
+
     v1_results.to_csv(PHASE_B_RESULTS, index=False)
-    hi = (~v1_results["L3_IS_LOW_CONFIDENCE"]).sum()
     print(f"\nPhase B saved: {PHASE_B_RESULTS} ({len(v1_results):,} rows)")
-    print(f"L3 high-confidence: {hi:,}/{len(v1_results):,} ({hi/len(v1_results)*100:.1f}%)")
+    if len(v1_results):
+        hi = (~v1_results["L3_IS_LOW_CONFIDENCE"]).sum()
+        print(f"L3 high-confidence: {hi:,}/{len(v1_results):,} ({hi/len(v1_results)*100:.1f}%)")
 
 
 # ── Phase embed ───────────────────────────────────────────────────────────────
@@ -311,11 +320,16 @@ def phase_embed():
         pct = end / len(embed_work) * 100
         print(f"  batch {start:,}–{end:,} ({pct:.0f}%) — L3 high-conf: {hi:,}/{end-start:,}")
 
-    embed_results = pd.concat(records, ignore_index=True)
+    if records:
+        embed_results = pd.concat(records, ignore_index=True)
+    else:
+        embed_results = embed_work.drop(columns=["_HASH"], errors="ignore")
+
     embed_results.to_csv(PHASE_EMBED_RESULTS, index=False)
-    hi = (~embed_results["L3_IS_LOW_CONFIDENCE"]).sum()
     print(f"\nPhase embed saved: {PHASE_EMBED_RESULTS} ({len(embed_results):,} rows)")
-    print(f"L3 high-confidence: {hi:,}/{len(embed_results):,} ({hi/len(embed_results)*100:.1f}%)")
+    if len(embed_results):
+        hi = (~embed_results["L3_IS_LOW_CONFIDENCE"]).sum()
+        print(f"L3 high-confidence: {hi:,}/{len(embed_results):,} ({hi/len(embed_results)*100:.1f}%)")
 
 
 # ── Phase publish ─────────────────────────────────────────────────────────────

@@ -1,33 +1,17 @@
 {
-  "version": "2.0",
+  "version": "3.0",
   "notes": [
-    "L4 subcategory descriptions nested under each L3 (NEW_L3) anchor.",
-    "This file does NOT replace l3_taxonomy_anchors.json — it extends it with subcategory detail.",
-    "Descriptions use the same enumeration register as the L3 anchors for semantic alignment with Titan embeddings.",
-    "General Office Supplies has one L4 entry matching the L3 definition.",
-    "MARGIN_THRESHOLD for L4 classification: 0.05 (same as L3).",
-    "Equipment subcategories are function-based (7 groups) rather than complexity-tier for better classifier discrimination.",
-    "Research Animal Diets & Husbandry Supplies lives under Lab Supplies and Consumables per team decision.",
-    "Microplates and Microscopy Supplies are now separate L4s (previously combined).",
-    "Cells and Tissue Culture now includes Cell Lines and Cells and Tissues as additional L4s.",
-    "Animal Models now includes Rodent Models and Other Mammalian Models as additional L4s."
+    "L4 (code) = new L3 subcategory descriptions, nested under each L3 (code) = new L2 anchor.",
+    "This file does NOT replace l3_taxonomy_anchors.json \u2014 it extends it with subcategory detail.",
+    "54 of 122 subcategories carried over unchanged from the prior version; 3 were merged/rewritten (Safety & PPE, Sequencing, Zebrafish Models); the remainder (65) are net-new, mostly services.",
+    "Imaging & Microscopy equipment split into 4 discrete nodes: Confocal Microscopy, Electron Microscopy (Cryo-EM), High-Content Imaging, Spatial Imaging."
   ],
   "l3_subcategories": {
     "lab_supplies_consumables": [
       {
         "id": "bottles_containers",
         "label": "Bottles & Containers",
-        "description": "Standalone laboratory bottles and general-purpose containers for storing, dispensing, and transporting liquids, powders, and bulk reagents. Includes media bottles, reagent bottles, Nalgene bottles, HDPE bottles, glass bottles, amber bottles, wash bottles, carboys, jerricans, aspirator bottles, dropping bottles, wide-mouth bottles, narrow-mouth bottles, and graduated containers. Does NOT include tubes or vials designed for sample processing or centrifugation — see Tubes & Vials. Does NOT include caps or closures sold separately — see Caps & Closures."
-      },
-      {
-        "id": "caps_closures",
-        "label": "Caps & Closures",
-        "description": "Caps, lids, stoppers, septa, and closures for sealing laboratory bottles, tubes, flasks, and vials. Includes screw caps, snap caps, push caps, rubber stoppers, silicone stoppers, PTFE-lined caps, septa, septum caps, crimp caps, foil seals, parafilm, bottle caps, tube caps, and closure accessories. Products identified by thread size, neck diameter, material (polypropylene, polyethylene, rubber, silicone, PTFE), and compatibility with specific container types."
-      },
-      {
-        "id": "chemical_safety_storage",
-        "label": "Chemical Safety & Storage",
-        "description": "Safety equipment, storage materials, and compliance supplies for handling and storing hazardous chemicals at the bench scale. Includes secondary containment trays, spill kits, acid spill kits, solvent spill kits, chemical waste containers, safety cans, hazmat labels, GHS labels, SDS binders, chemical-resistant trays, bench-scale chemical storage containers, desiccants, desiccator supplies, and bench-scale safety cabinets. Does NOT include large flammable storage cabinets or fixed infrastructure — see Furniture and Storage."
+        "description": "Standalone laboratory bottles and general-purpose containers for storing, dispensing, and transporting liquids, powders, and bulk reagents. Includes media bottles, reagent bottles, Nalgene bottles, HDPE bottles, glass bottles, amber bottles, wash bottles, carboys, jerricans, aspirator bottles, dropping bottles, wide-mouth bottles, narrow-mouth bottles, and graduated containers. Does NOT include tubes or vials designed for sample processing or centrifugation \u2014 see Tubes & Vials. Does NOT include caps or closures sold separately \u2014 see Caps & Closures."
       },
       {
         "id": "cleaning_sterilization",
@@ -37,17 +21,7 @@
       {
         "id": "filtration",
         "label": "Filtration",
-        "description": "Filtration membranes, filter papers, filtration devices, and filtration systems for clarifying, sterilizing, and concentrating liquids and gases in laboratory settings. Includes syringe filters, membrane filters, PVDF filters, nylon filters, PES filters, PTFE filters, cellulose acetate filters, filter papers (Whatman, qualitative, quantitative, ashless), vacuum filter units, bottle-top filters, filter cups, ultrafiltration membranes, nanofiltration, filter holders, filter funnels, vacuum manifolds, and in-line filters. Does NOT include chromatography columns or resins — see General Lab Consumables."
-      },
-      {
-        "id": "general_lab_consumables",
-        "label": "General Lab Consumables",
-        "description": "Miscellaneous laboratory consumables, accessories, and bench supplies not covered by other Lab Supplies subcategories. Includes chromatography columns, HPLC vials, lab accessories, bench mats, weighing boats, weighing paper, spatulas, lab spoons, forceps, tweezers, scissors, dissection tools, rulers, timers, lab clamps, ring stands, utility clamps, rubber bands, parafilm, laboratory tape, general bench supplies, and other miscellaneous consumable items used in daily laboratory operations."
-      },
-      {
-        "id": "gloves_protective_wear",
-        "label": "Gloves & Protective Wear",
-        "description": "Personal protective equipment (PPE) and protective clothing for laboratory use. Includes nitrile gloves, latex gloves, vinyl gloves, neoprene gloves, examination gloves, cleanroom gloves, powder-free gloves, cryogenic gloves, chemical-resistant gloves, lab coats, disposable lab coats, cleanroom gowns, safety goggles, safety glasses, face shields, splash goggles, chemical-splash goggles, ear protection, shoe covers, and boot covers. Identified by material, size, and protection level."
+        "description": "Filtration membranes, filter papers, filtration devices, and filtration systems for clarifying, sterilizing, and concentrating liquids and gases in laboratory settings. Includes syringe filters, membrane filters, PVDF filters, nylon filters, PES filters, PTFE filters, cellulose acetate filters, filter papers (Whatman, qualitative, quantitative, ashless), vacuum filter units, bottle-top filters, filter cups, ultrafiltration membranes, nanofiltration, filter holders, filter funnels, vacuum manifolds, and in-line filters. Does NOT include chromatography columns or resins \u2014 see General Lab Consumables."
       },
       {
         "id": "labeling_tape",
@@ -57,17 +31,12 @@
       {
         "id": "laboratory_glassware",
         "label": "Laboratory Glassware",
-        "description": "Individual glass and borosilicate labware pieces sold as bench consumables or durable reusables. Includes beakers, Erlenmeyer flasks, round-bottom flasks, volumetric flasks, graduated cylinders, crystallizing dishes, evaporating dishes, Petri dishes (glass), watch glasses, funnels, glass tubing, glass rods, stirring rods, desiccators, separatory funnels, Büchner funnels, condensers, distillation glassware, Pyrex glassware, Kimax glassware, and borosilicate glass labware. Does NOT include plastic or disposable plasticware — see Bottles & Containers or Tubes & Vials."
+        "description": "Individual glass and borosilicate labware pieces sold as bench consumables or durable reusables. Includes beakers, Erlenmeyer flasks, round-bottom flasks, volumetric flasks, graduated cylinders, crystallizing dishes, evaporating dishes, Petri dishes (glass), watch glasses, funnels, glass tubing, glass rods, stirring rods, desiccators, separatory funnels, B\u00fcchner funnels, condensers, distillation glassware, Pyrex glassware, Kimax glassware, and borosilicate glass labware. Does NOT include plastic or disposable plasticware \u2014 see Bottles & Containers or Tubes & Vials."
       },
       {
         "id": "microplates",
         "label": "Microplates",
-        "description": "Multiwell plates used for high-throughput assays, cell culture, compound screening, and sample storage. Includes 6-well, 12-well, 24-well, 48-well, 96-well, 384-well, and 1536-well formats in flat-bottom, round-bottom, V-bottom, U-bottom, and half-area configurations. Encompasses tissue culture-treated (TC-treated) plates, ultra-low attachment plates, glass-bottom plates, black-walled plates, white-walled plates, clear plates, non-binding surface plates, and specialty plates for fluorescence, luminescence, and absorbance readouts. Also includes microplate lids, sealing films, adhesive plate seals, and strip-well plates. Used in ELISA, cell viability assays, cytotoxicity assays, reporter gene assays, kinetic assays, drug screening, and automated liquid handling workflows. Does NOT include microscopy slides or coverslips — see Microscopy Supplies."
-      },
-      {
-        "id": "microscopy_supplies",
-        "label": "Microscopy Supplies",
-        "description": "Consumable and reusable optical components used in light, fluorescence, confocal, and brightfield microscopy. Includes standard glass slides, frosted slides, charged slides, poly-L-lysine coated slides, adhesion slides, and specialty slides for histology and cytology. Encompasses coverslips and cover glass in standard and high-precision thicknesses (No. 0, 1, 1.5, 2), counting chambers, hemocytometers, Neubauer chambers, and Fuchs-Rosenthal chambers. Also includes mounting media (aqueous and non-aqueous), antifade mounting media, DAPI-containing mounting media, immersion oil (Types A, B, N), glycerol, slide mailers, slide boxes, and staining jars. Does NOT include microplates with glass bottoms used primarily for plate-based assays — see Microplates."
+        "description": "Multiwell plates used for high-throughput assays, cell culture, compound screening, and sample storage. Includes 6-well, 12-well, 24-well, 48-well, 96-well, 384-well, and 1536-well formats in flat-bottom, round-bottom, V-bottom, U-bottom, and half-area configurations. Encompasses tissue culture-treated (TC-treated) plates, ultra-low attachment plates, glass-bottom plates, black-walled plates, white-walled plates, clear plates, non-binding surface plates, and specialty plates for fluorescence, luminescence, and absorbance readouts. Also includes microplate lids, sealing films, adhesive plate seals, and strip-well plates. Used in ELISA, cell viability assays, cytotoxicity assays, reporter gene assays, kinetic assays, drug screening, and automated liquid handling workflows. Does NOT include microscopy slides or coverslips \u2014 see Microscopy Supplies."
       },
       {
         "id": "pipettes_tips",
@@ -77,12 +46,12 @@
       {
         "id": "syringes_needles",
         "label": "Syringes & Needles",
-        "description": "Disposable and reusable syringes and hypodermic needles for laboratory fluid handling, injection, and sampling. Includes Luer-lock syringes, slip-tip syringes, glass syringes, gas-tight syringes, Hamilton syringes, dispensing syringes, hypodermic needles, blunt-tip dispensing needles, cannulas, needle hubs, and safety needles. Identified by volume (mL), gauge, needle length, and tip type. Does NOT include syringe filters — see Filtration."
+        "description": "Disposable and reusable syringes and hypodermic needles for laboratory fluid handling, injection, and sampling. Includes Luer-lock syringes, slip-tip syringes, glass syringes, gas-tight syringes, Hamilton syringes, dispensing syringes, hypodermic needles, blunt-tip dispensing needles, cannulas, needle hubs, and safety needles. Identified by volume (mL), gauge, needle length, and tip type. Does NOT include syringe filters \u2014 see Filtration."
       },
       {
         "id": "tubes_vials",
         "label": "Tubes & Vials",
-        "description": "Disposable and reusable tubes and vials used for sample collection, processing, storage, and analysis. Includes microcentrifuge tubes, Eppendorf tubes, 1.5 mL tubes, 2.0 mL tubes, centrifuge tubes, 15 mL conical tubes, 50 mL conical tubes, PCR tubes, PCR strips, cryovials, cryogenic tubes, sample vials, HPLC vials, GC vials, autosampler vials, blood collection tubes, serum separator tubes, culture tubes, test tubes, snap-cap tubes, screw-cap tubes, and specimen collection tubes. Does NOT include bottles for bulk reagent storage — see Bottles & Containers."
+        "description": "Disposable and reusable tubes and vials used for sample collection, processing, storage, and analysis. Includes microcentrifuge tubes, Eppendorf tubes, 1.5 mL tubes, 2.0 mL tubes, centrifuge tubes, 15 mL conical tubes, 50 mL conical tubes, PCR tubes, PCR strips, cryovials, cryogenic tubes, sample vials, HPLC vials, GC vials, autosampler vials, blood collection tubes, serum separator tubes, culture tubes, test tubes, snap-cap tubes, screw-cap tubes, and specimen collection tubes. Does NOT include bottles for bulk reagent storage \u2014 see Bottles & Containers."
       },
       {
         "id": "tubing_hoses",
@@ -93,6 +62,16 @@
         "id": "research_animal_diets",
         "label": "Research Animal Diets & Husbandry Supplies",
         "description": "Specialty diets, feed formulations, and husbandry consumables designed for research animals used in in vivo studies. Includes high-fat diets, high-cholesterol diets, Western diets, purified ingredient diets, irradiated diets, autoclavable diets, low-fat control diets, defined nutritional diets for metabolic research, custom diet formulations, rodent chow, rabbit pellets, zebrafish feed, and animal husbandry consumables such as bedding material, cage accessories, nesting material, and enrichment items for laboratory animals. Products identified by species compatibility (mouse, rat, rabbit, zebrafish), fat content percentage, caloric density, and nutritional composition."
+      },
+      {
+        "id": "microscopy_supplies",
+        "label": "Microscopy Supplies",
+        "description": "Consumable and reusable optical components used in light, fluorescence, confocal, and brightfield microscopy. Includes standard glass slides, frosted slides, charged slides, poly-L-lysine coated slides, adhesion slides, and specialty slides for histology and cytology. Encompasses coverslips and cover glass in standard and high-precision thicknesses (No. 0, 1, 1.5, 2), counting chambers, hemocytometers, Neubauer chambers, and Fuchs-Rosenthal chambers. Also includes mounting media (aqueous and non-aqueous), antifade mounting media, DAPI-containing mounting media, immersion oil (Types A, B, N), glycerol, slide mailers, slide boxes, and staining jars. Does NOT include microplates with glass bottoms used primarily for plate-based assays \u2014 see Microplates."
+      },
+      {
+        "id": "safety_ppe",
+        "label": "Safety & PPE",
+        "description": "Personal protective equipment (PPE), protective clothing, and bench-scale safety supplies for laboratory use. Includes nitrile gloves, latex gloves, vinyl gloves, neoprene gloves, examination gloves, cleanroom gloves, chemical-resistant gloves, cryogenic gloves, lab coats, disposable lab coats, cleanroom gowns, safety goggles, safety glasses, face shields, splash goggles, ear protection, shoe and boot covers, secondary containment trays, spill kits, acid and solvent spill kits, chemical waste containers, safety cans, hazmat and GHS labels, SDS binders, and desiccants. Identified by material, size, protection level, and hazard class. Does NOT include flammable or chemical storage cabinets \u2014 see Furniture and Storage."
       }
     ],
     "molecular_biology_reagents": [
@@ -117,9 +96,24 @@
         "description": "RNA-based reagents for gene silencing and knockdown through the RNA interference pathway. Includes small interfering RNA (siRNA), short hairpin RNA (shRNA), microRNA (miRNA) mimics, microRNA inhibitors (antagomirs), antisense oligonucleotides (ASOs), negative control siRNA, scrambled siRNA controls, siRNA transfection reagents, RNAi libraries, and pre-designed gene-specific siRNA pools. Identified by target gene, species, and modification status (unmodified, chemically modified, 2'-OMe)."
       },
       {
-        "id": "sequencing_reagents",
-        "label": "Sequencing Reagents",
-        "description": "Reagents for DNA sequencing, library preparation, and next-generation sequencing (NGS) workflows. Includes Sanger sequencing reagents, sequencing primers, NGS library preparation kits, adapter ligation reagents, end-repair reagents, size selection beads (AMPure XP), index primers, sequencing adapters, whole genome sequencing kits, RNA-seq library preparation kits, ChIP-seq kits, ATAC-seq kits, and sequencing quality control reagents. Compatible with Illumina, Oxford Nanopore, PacBio, and Ion Torrent platforms."
+        "id": "sequencing",
+        "label": "Sequencing",
+        "description": "Reagents, kits, and services for DNA sequencing, library preparation, and next-generation sequencing (NGS) workflows. Includes Sanger sequencing reagents, sequencing primers, NGS library preparation kits, adapter ligation reagents, end-repair reagents, size selection beads (AMPure XP), index primers, sequencing adapters, whole genome sequencing kits, RNA-seq library preparation kits, ChIP-seq kits, ATAC-seq kits, sequencing quality control reagents, and outsourced sequencing runs. Compatible with Illumina, Oxford Nanopore, PacBio, and Ion Torrent platforms."
+      },
+      {
+        "id": "gene_synthesis",
+        "label": "Gene Synthesis",
+        "description": "Custom synthesis of DNA constructs, genes, and gene fragments to a specified sequence. Includes de novo gene synthesis, codon optimization, synthetic gene fragments, gBlocks, clonal genes, synthetic operons, and codon-optimized coding sequences delivered cloned into a vector or as linear DNA. Identified by target sequence length, GC content, complexity, and delivery format (vector-cloned vs. linear fragment)."
+      },
+      {
+        "id": "plasmids_vectors",
+        "label": "Plasmids & Vectors",
+        "description": "Plasmid DNA and viral vectors used to carry, express, or deliver genetic material. Includes expression plasmids, cloning vectors, shuttle vectors, reporter plasmids, CRISPR vectors, lentiviral vectors, adenoviral vectors, AAV vectors, retroviral vectors, empty backbone vectors, and plasmid preparation and purification services (miniprep, maxiprep, endotoxin-free prep). Identified by vector backbone, selection marker, promoter, insert, and packaging/delivery system."
+      },
+      {
+        "id": "oligos_primers",
+        "label": "Oligos & Primers",
+        "description": "Custom-synthesized and catalog oligonucleotides for PCR, sequencing, and cloning applications. Includes DNA primers, forward and reverse primer pairs, degenerate primers, PCR primers, sequencing primers, qPCR primers, TaqMan probes, molecular beacons, LNA-modified oligos, biotinylated oligos, fluorescently labeled oligos, ultramers, and long single-stranded DNA oligos. Identified by target sequence, length, modification (5' or 3' labels, internal modifications), purification grade (desalted, HPLC, PAGE), and scale of synthesis."
       }
     ],
     "chemicals_solvents": [
@@ -131,7 +125,7 @@
       {
         "id": "organic_acids",
         "label": "Organic Acids",
-        "description": "Carboxylic acids, amino acids (as bulk chemicals), and other organic acid compounds used as reagents, buffers, and chemical intermediates. Includes acetic acid, formic acid, citric acid, tartaric acid, oxalic acid, lactic acid, succinic acid, maleic acid, fumaric acid, benzoic acid, trifluoroacetic acid (TFA), EDTA, trichloroacetic acid, and other organic acid compounds. Does NOT include amino acids sold as biological standards or peptide components — see Peptides & Amino Acids under Proteins and Peptides."
+        "description": "Carboxylic acids, amino acids (as bulk chemicals), and other organic acid compounds used as reagents, buffers, and chemical intermediates. Includes acetic acid, formic acid, citric acid, tartaric acid, oxalic acid, lactic acid, succinic acid, maleic acid, fumaric acid, benzoic acid, trifluoroacetic acid (TFA), EDTA, trichloroacetic acid, and other organic acid compounds. Does NOT include amino acids sold as biological standards or peptide components \u2014 see Peptides & Amino Acids under Proteins and Peptides."
       },
       {
         "id": "polyols",
@@ -162,18 +156,63 @@
         "id": "inorganic_compounds_salts",
         "label": "Inorganic Compounds & Salts",
         "description": "Inorganic chemical compounds, mineral salts, metal salts, and inorganic reagents used in laboratory and industrial chemistry. Includes calcium chloride, magnesium chloride, potassium chloride, ammonium sulfate, copper sulfate, zinc sulfate, iron salts, manganese salts, lithium salts, barium salts, phosphoric acid, hydrochloric acid, sulfuric acid, nitric acid, ammonia, hydrogen peroxide, and other inorganic reagents not classified as sodium salts. Identified by CAS number, purity, and physical form."
+      },
+      {
+        "id": "bioactive_small_molecules",
+        "label": "Bioactive Small Molecules",
+        "description": "Small-molecule compounds with defined biological activity used as research tools, inhibitors, agonists, or probes. Includes kinase inhibitors, enzyme inhibitors, receptor agonists and antagonists, natural product compounds, screening hit compounds, tool compounds, and pathway modulators. Identified by target, mechanism of action, potency (IC50/EC50), and purity."
+      },
+      {
+        "id": "building_blocks_screening_libraries",
+        "label": "Building Blocks & Screening Libraries",
+        "description": "Chemical building blocks and pre-assembled compound collections used for synthesis and drug discovery screening. Includes synthetic intermediates, fragment libraries, diversity libraries, focused screening libraries, natural product libraries, and combinatorial chemistry building blocks. Identified by scaffold class, molecular weight range, functional groups, and library size."
+      },
+      {
+        "id": "solvents",
+        "label": "Solvents",
+        "description": "Organic and inorganic solvents used for extraction, dissolution, and reaction chemistry. Includes HPLC-grade solvents, ACS-grade solvents, anhydrous solvents, deuterated solvents (NMR solvents), aprotic solvents, protic solvents, and bulk industrial solvents. Identified by purity grade, water content, and CAS number."
+      },
+      {
+        "id": "buffers_ph_reagents",
+        "label": "Buffers & pH Reagents",
+        "description": "Buffering agents, pH standards, and pH-adjustment reagents used across laboratory workflows. Includes phosphate buffers, Tris buffers, HEPES, MOPS, citrate buffers, pH calibration standards, pH indicator solutions, acids and bases used for pH adjustment, and pre-made buffer concentrates. Identified by buffering range, molarity, and pH."
+      },
+      {
+        "id": "custom_med_chem_synthesis",
+        "label": "Custom / med-chem synthesis",
+        "description": "Custom chemical synthesis services, including medicinal chemistry support for drug discovery programs. Includes custom compound synthesis, scale-up synthesis, analog synthesis, SAR (structure-activity relationship) compound sets, route scouting, and process chemistry support delivered on a project or contract basis. Identified by target molecule, scale, and required purity."
+      },
+      {
+        "id": "analytical_chemistry",
+        "label": "Analytical chemistry",
+        "description": "Contracted analytical testing services for characterizing and quantifying chemical substances. Includes purity analysis, identity confirmation, impurity profiling, elemental analysis, residual solvent testing, stability testing, and method development and validation performed by an outside lab on submitted samples."
+      },
+      {
+        "id": "chromatography_purification",
+        "label": "Chromatography & purification",
+        "description": "Chromatography-based purification and separation services for chemical and biological samples. Includes preparative HPLC, flash chromatography, ion-exchange purification, size-exclusion purification, and custom purification of synthesized compounds or reaction mixtures performed as a service."
+      },
+      {
+        "id": "radiochemistry",
+        "label": "Radiochemistry",
+        "description": "Radiolabeled compounds and radiochemistry services for tracer and imaging applications. Includes custom radiolabeling, tritium (3H) and carbon-14 (14C) labeled compounds, radioisotope handling services, and specific-activity characterization. Identified by isotope, labeling position, and specific activity."
+      },
+      {
+        "id": "physical_structural_analysis",
+        "label": "Physical / structural analysis",
+        "description": "Services and testing for determining the physical and structural properties of chemical substances. Includes X-ray crystallography, NMR structure elucidation, mass spectrometry structure confirmation, particle size analysis, thermal analysis (DSC, TGA), and polymorph screening performed on submitted samples."
       }
     ],
     "antibodies": [
       {
         "id": "primary_antibodies",
         "label": "Primary Antibodies",
-        "description": "Antibodies that bind directly to the target antigen of interest, used as the first layer of detection in immunoassays and imaging experiments. Includes unconjugated primary antibodies identified by target protein or epitope (p53, GAPDH, beta-actin, Ki-67, CD3, CD4, CD8, PD-L1, HER2, EGFR, vimentin, E-cadherin), host species (rabbit, mouse, rat, goat), clonality (monoclonal, polyclonal, recombinant), and validated application (WB, IHC, ICC, IF, flow cytometry, ELISA, ChIP, IP). Does NOT include antibodies pre-conjugated to fluorophores or enzymes — see Conjugated Antibodies."
+        "description": "Antibodies that bind directly to the target antigen of interest, used as the first layer of detection in immunoassays and imaging experiments. Includes unconjugated primary antibodies identified by target protein or epitope (p53, GAPDH, beta-actin, Ki-67, CD3, CD4, CD8, PD-L1, HER2, EGFR, vimentin, E-cadherin), host species (rabbit, mouse, rat, goat), clonality (monoclonal, polyclonal, recombinant), and validated application (WB, IHC, ICC, IF, flow cytometry, ELISA, ChIP, IP). Does NOT include antibodies pre-conjugated to fluorophores or enzymes \u2014 see Conjugated Antibodies."
       },
       {
         "id": "secondary_antibodies",
         "label": "Secondary Antibodies",
-        "description": "Antibodies raised against immunoglobulins of another species, used to detect primary antibodies in indirect detection systems. Includes anti-mouse IgG, anti-rabbit IgG, anti-goat IgG, anti-rat IgG, anti-human IgG, anti-chicken IgY, and secondary antibodies against IgM, IgA, and IgE isotypes. Identified by target species, host species (donkey, goat, sheep), conjugate (HRP, AP, biotin, FITC, Alexa Fluor, PE), and cross-adsorption status. Does NOT include primary antibodies — see Primary Antibodies."
+        "description": "Antibodies raised against immunoglobulins of another species, used to detect primary antibodies in indirect detection systems. Includes anti-mouse IgG, anti-rabbit IgG, anti-goat IgG, anti-rat IgG, anti-human IgG, anti-chicken IgY, and secondary antibodies against IgM, IgA, and IgE isotypes. Identified by target species, host species (donkey, goat, sheep), conjugate (HRP, AP, biotin, FITC, Alexa Fluor, PE), and cross-adsorption status. Does NOT include primary antibodies \u2014 see Primary Antibodies."
       },
       {
         "id": "conjugated_antibodies",
@@ -189,13 +228,18 @@
         "id": "antibody_fragments",
         "label": "Antibody Fragments",
         "description": "Engineered antibody-derived binding molecules smaller than full-length immunoglobulins, used for applications requiring smaller size, better tissue penetration, or reduced Fc-mediated effects. Includes Fab fragments, F(ab')2 fragments, single-chain variable fragments (scFv), nanobodies (VHH), single-domain antibodies, bispecific antibody fragments, diabodies, and other antibody-derived binding proteins. Also includes IgG blocking reagents such as Fc receptor blocking agents."
+      },
+      {
+        "id": "antibody_validation",
+        "label": "Antibody validation",
+        "description": "Services for characterizing and validating antibody specificity and performance. Includes knockout/knockdown validation, orthogonal application validation, cross-reactivity testing, lot-to-lot consistency testing, and application-specific validation (western blot, IHC, flow cytometry, ELISA) performed on a submitted or custom-produced antibody."
       }
     ],
     "proteins_peptides": [
       {
         "id": "recombinant_proteins",
         "label": "Recombinant Proteins",
-        "description": "Proteins produced through recombinant DNA technology in heterologous expression systems for research and assay development. Includes recombinant human proteins, recombinant mouse proteins, recombinant viral proteins, recombinant bacterial proteins, fusion proteins, tag-purified proteins (His-tag, GST-tag, Fc-fusion), and proteins expressed in E. coli, HEK293, CHO, baculovirus, yeast, or wheat germ systems. Identified by gene name, species, expression system, purity, and biological activity (ED50). Does NOT include antibodies — see Antibodies. Does NOT include cytokines or growth factors — see Cytokines & Growth Factors."
+        "description": "Proteins produced through recombinant DNA technology in heterologous expression systems for research and assay development. Includes recombinant human proteins, recombinant mouse proteins, recombinant viral proteins, recombinant bacterial proteins, fusion proteins, tag-purified proteins (His-tag, GST-tag, Fc-fusion), and proteins expressed in E. coli, HEK293, CHO, baculovirus, yeast, or wheat germ systems. Identified by gene name, species, expression system, purity, and biological activity (ED50). Does NOT include antibodies \u2014 see Antibodies. Does NOT include cytokines or growth factors \u2014 see Cytokines & Growth Factors."
       },
       {
         "id": "cytokines_growth_factors",
@@ -205,7 +249,7 @@
       {
         "id": "enzymes",
         "label": "Enzymes",
-        "description": "Purified non-antibody enzyme proteins for biochemical assays, substrate processing, and research applications. Includes proteases (trypsin, chymotrypsin, pepsin, elastase, collagenase, dispase, papain), nucleases (DNase I, RNase A), kinases, phosphatases, peroxidases (HRP), luciferases, beta-galactosidase, alkaline phosphatase, glucose oxidase, superoxide dismutase, catalase, lysozyme, and other purified enzyme proteins. Does NOT include molecular biology enzymes such as polymerases or restriction enzymes — see Molecular Biology Reagents."
+        "description": "Purified non-antibody enzyme proteins for biochemical assays, substrate processing, and research applications. Includes proteases (trypsin, chymotrypsin, pepsin, elastase, collagenase, dispase, papain), nucleases (DNase I, RNase A), kinases, phosphatases, peroxidases (HRP), luciferases, beta-galactosidase, alkaline phosphatase, glucose oxidase, superoxide dismutase, catalase, lysozyme, and other purified enzyme proteins. Does NOT include molecular biology enzymes such as polymerases or restriction enzymes \u2014 see Molecular Biology Reagents."
       },
       {
         "id": "peptides_amino_acids",
@@ -216,6 +260,26 @@
         "id": "albumin_carrier_proteins",
         "label": "Albumin & Carrier Proteins",
         "description": "Abundant structural and transport proteins used as blocking agents, stabilizers, carriers, and diluents in immunoassays and cell culture. Includes bovine serum albumin (BSA), human serum albumin (HSA), ovalbumin, casein, gelatin, fibronectin, vitronectin, transferrin, lactoferrin, keyhole limpet hemocyanin (KLH), thyroglobulin, collagen, fibrinogen, and other carrier or blocking proteins. Commonly used in ELISA blocking, western blot blocking, antibody stabilization, and protein standard preparation."
+      },
+      {
+        "id": "protein_purification",
+        "label": "Protein purification",
+        "description": "Services for isolating and purifying proteins from expression systems or crude preparations. Includes affinity purification, ion-exchange purification, size-exclusion purification, tag removal, endotoxin removal, and polishing steps delivered as a contract service. Identified by target protein, expression source, and required purity level."
+      },
+      {
+        "id": "protein_characterization",
+        "label": "Protein characterization",
+        "description": "Analytical services for confirming protein identity, purity, and structure. Includes mass spectrometry-based identity confirmation, SDS-PAGE and Western blot analysis, size-exclusion chromatography (SEC) purity analysis, circular dichroism, thermal stability (DSF) analysis, and aggregation analysis performed on a submitted protein sample."
+      },
+      {
+        "id": "protein_engineering",
+        "label": "Protein engineering",
+        "description": "Services for modifying or optimizing protein sequence, stability, or function. Includes directed evolution, rational design, affinity maturation, stability engineering, fusion protein design, and codon optimization for expression, delivered as a custom project."
+      },
+      {
+        "id": "protein_conjugation_labeling",
+        "label": "Protein conjugation & labeling",
+        "description": "Services for chemically conjugating proteins to labels, tags, or other molecules. Includes fluorophore conjugation, biotin conjugation, enzyme conjugation (HRP, AP), PEGylation, and custom bioconjugation performed on a submitted or custom-produced protein."
       }
     ],
     "kits_assays": [
@@ -243,13 +307,28 @@
         "id": "detection_imaging_kits",
         "label": "Detection & Imaging Kits",
         "description": "Kits for detecting, staining, and imaging biological targets in cells, tissues, and membranes using fluorescence, chemiluminescence, or chromogenic methods. Includes western blot detection kits, chemiluminescent HRP substrate kits (ECL), fluorescent western blot kits, immunohistochemistry (IHC) detection kits, immunofluorescence staining kits, cell staining kits, nuclear stains (DAPI, Hoechst), live/dead staining kits, membrane staining kits, immunoprecipitation (IP) kits, and co-immunoprecipitation (co-IP) kits."
+      },
+      {
+        "id": "flow_cytometry_assays",
+        "label": "Flow Cytometry Assays",
+        "description": "Pre-packaged assay kits designed for flow cytometry-based analysis. Includes apoptosis detection kits, cell cycle analysis kits, immunophenotyping panels, viability dye kits, cell proliferation kits, and multiplexed bead-based flow assays. Identified by target marker(s), fluorophore panel, and compatible instrument platform."
+      },
+      {
+        "id": "custom_assay_development_validation",
+        "label": "Custom assay development & validation",
+        "description": "Services for designing, developing, and validating a laboratory assay to a customer's specifications. Includes feasibility studies, assay optimization, analytical validation (sensitivity, specificity, precision), and transfer of a validated assay protocol, delivered as a contract project."
+      },
+      {
+        "id": "high_throughput_screening_hts",
+        "label": "High-throughput screening (HTS)",
+        "description": "Screening services for testing large compound or reagent libraries against a biological target at scale. Includes primary HTS campaigns, secondary/confirmatory screening, dose-response screening, and hit validation performed using automated liquid handling and plate-based readouts, delivered as a contract service."
       }
     ],
     "cell_tissue_culture": [
       {
         "id": "culture_media",
         "label": "Culture Media",
-        "description": "Liquid and powder culture media formulations for maintaining, growing, and differentiating mammalian and non-mammalian cells in vitro. Includes DMEM, RPMI-1640, MEM, IMDM, F-12 (Ham's), McCoy's 5A, DMEM/F-12, alpha-MEM, William's Medium E, MCDB media, serum-free media, defined media, chemically defined media, StemPro media, mTeSR, Essential 8, and specialty media for specific cell types (endothelial, epithelial, neuronal, stem cells). Does NOT include agar or microbial growth media — those belong in General Lab Consumables."
+        "description": "Liquid and powder culture media formulations for maintaining, growing, and differentiating mammalian and non-mammalian cells in vitro. Includes DMEM, RPMI-1640, MEM, IMDM, F-12 (Ham's), McCoy's 5A, DMEM/F-12, alpha-MEM, William's Medium E, MCDB media, serum-free media, defined media, chemically defined media, StemPro media, mTeSR, Essential 8, and specialty media for specific cell types (endothelial, epithelial, neuronal, stem cells). Does NOT include agar or microbial growth media \u2014 those belong in General Lab Consumables."
       },
       {
         "id": "sera_supplements",
@@ -264,7 +343,7 @@
       {
         "id": "cryopreservation",
         "label": "Cryopreservation",
-        "description": "Reagents and media for freezing and long-term cryogenic storage of living cells while maintaining viability. Includes DMSO (cell culture grade), freezing media, CryoStor, Mr. Frosty freezing containers, controlled-rate freezing media, serum-free cryopreservation media, cell banker, bambanker, Recovery Cell Culture Freezing Medium, and complete cryopreservation solutions for cell lines, primary cells, stem cells, and organoids. Does NOT include general laboratory DMSO as a chemical — see Chemicals and Solvents."
+        "description": "Reagents and media for freezing and long-term cryogenic storage of living cells while maintaining viability. Includes DMSO (cell culture grade), freezing media, CryoStor, Mr. Frosty freezing containers, controlled-rate freezing media, serum-free cryopreservation media, cell banker, bambanker, Recovery Cell Culture Freezing Medium, and complete cryopreservation solutions for cell lines, primary cells, stem cells, and organoids. Does NOT include general laboratory DMSO as a chemical \u2014 see Chemicals and Solvents."
       },
       {
         "id": "dissociation_reagents",
@@ -277,39 +356,116 @@
         "description": "A population of cells that was grown from an originator cell, and can continue to be grown and replicated indefinitely. There are many different types, but often are derived from tissues of some clinical significance (such as cancer cells for studying the effects of drugs on that cell type), but they can also represent different kinds of normal cells that you may need to leverage for a variety of lab purposes (like cells used to grow viral particles or serve as controls), animal cell lines, human primary cells (not an immortalized line but primarily derived from tissues), organoids (a specialized type of cell), and cell models."
       },
       {
-        "id": "cells_and_tissues",
-        "label": "Cells and Tissues",
-        "description": "Primary cells, established cell lines, stem cells, organoids, tissue samples, and related biological materials sourced or derived for use in in vitro and ex vivo research. Includes immortalized human and animal cell lines (HEK293, HeLa, CHO, Jurkat, U2OS), primary cells isolated from donor tissue (hepatocytes, PBMCs, endothelial cells, keratinocytes, fibroblasts, neurons, astrocytes, chondrocytes), induced pluripotent stem cells (iPSCs) and their differentiated derivatives, embryonic stem cells (ESCs), mesenchymal stem cells (MSCs), hematopoietic stem and progenitor cells (HSPCs), cancer cell lines, patient-derived xenograft (PDX) cells, organotypic tissue models, 3D organoids (intestinal, liver, brain, kidney), spheroids, tissue slices, and biobanked tissue specimens. Encompasses services such as custom cell isolation, cell expansion and banking, cell authentication (STR profiling, mycoplasma testing, karyotyping), tissue procurement, and contract cell culture."
+        "id": "primary_cells",
+        "label": "Primary Cells",
+        "description": "Cells isolated directly from living tissue and cultured without immortalization. Includes primary human and animal fibroblasts, hepatocytes, neurons, epithelial cells, endothelial cells, keratinocytes, and other tissue-derived primary cell types supplied for in vitro culture. Identified by tissue source, species, and donor characteristics."
+      },
+      {
+        "id": "stem_cells_ipscs",
+        "label": "Stem Cells / iPSCs",
+        "description": "Stem cells and induced pluripotent stem cells (iPSCs) supplied for research culture. Includes embryonic stem cells, adult/tissue stem cells, mesenchymal stem cells, hematopoietic stem cells, iPSC lines, and iPSC-derived differentiated cell types. Identified by cell type, source, pluripotency status, and genetic background."
+      },
+      {
+        "id": "organoid_generation",
+        "label": "Organoid generation",
+        "description": "Services for generating three-dimensional organoid cultures from stem cells or primary tissue. Includes intestinal, liver, brain, tumor, and other organ-specific organoid generation, organoid expansion, and organoid characterization performed as a contract service."
+      },
+      {
+        "id": "custom_cell_culture",
+        "label": "Custom cell culture",
+        "description": "Contract cell culture services performed to a customer's specifications. Includes custom cell expansion, scale-up culture, cell line adaptation, media optimization, and maintenance of customer-supplied cell lines under contract."
       }
     ],
-    "biospecimens": [
+    "animal_biospecimens": [
       {
-        "id": "human_biospecimens",
-        "label": "Human Biospecimens",
-        "description": "Biological samples of human origin including blood products, body fluids, and tissue materials for research. Includes human whole blood, human plasma, human serum, human urine, human cerebrospinal fluid (CSF), human synovial fluid, human saliva, human bronchoalveolar lavage (BAL), human PBMCs, human bone marrow, human cord blood, human DNA samples, human RNA samples, human tissue biopsies, FFPE human tissue, fresh frozen human tissue, and banked human biospecimens. Does NOT include animal-derived specimens — see Animal Biospecimens."
+        "id": "animal_tissue",
+        "label": "Animal Tissue",
+        "description": "Solid tissue samples collected from animal sources for research use. Includes fresh tissue, frozen tissue, FFPE (formalin-fixed paraffin-embedded) tissue blocks and sections, and tissue microarrays from mouse, rat, non-human primate, and other species. Identified by species, tissue/organ type, disease or health status, and preservation method."
       },
       {
-        "id": "animal_biospecimens",
-        "label": "Animal Biospecimens",
-        "description": "Biological samples from non-human animal species including blood, tissue, and organ materials for preclinical and veterinary research. Includes mouse blood, rat blood, rabbit serum, porcine plasma, bovine serum, non-human primate samples, canine biospecimens, feline samples, rodent tissues, animal organ homogenates, animal DNA, animal RNA, and biospecimens from model organisms (mouse, rat, rabbit, pig, dog, sheep, non-human primate). Does NOT include human-origin specimens — see Human Biospecimens. Does NOT include live animals or animal models — see Animal Models."
+        "id": "animal_blood_biofluids",
+        "label": "Animal Blood & Biofluids",
+        "description": "Blood-derived and other liquid biological samples collected from animal sources. Includes whole blood, plasma, serum, cerebrospinal fluid, synovial fluid, and other biofluids from mouse, rat, non-human primate, and other species. Identified by species, collection method, anticoagulant type, and disease or health status."
       },
       {
-        "id": "disease_state_biospecimens",
-        "label": "Disease State Biospecimens",
-        "description": "Human or animal biospecimens collected from donors with specific diagnosed disease states, pathological conditions, or clinical presentations. Includes cancer biospecimens, tumor tissue, oncology plasma samples, diabetic patient samples, cardiovascular disease specimens, autoimmune disease samples, infectious disease samples (HIV, hepatitis, COVID-19), neurological disease biospecimens, rare disease specimens, and clinically characterized disease-state samples with associated patient metadata and diagnosis information."
+        "id": "animal_cells_pbmcs",
+        "label": "Animal Cells & PBMCs",
+        "description": "Cells and peripheral blood mononuclear cells (PBMCs) isolated from animal sources for research use. Includes animal PBMCs, splenocytes, bone marrow cells, and other isolated immune or tissue cells. Identified by species, tissue source, and isolation method."
       },
       {
-        "id": "marine_biospecimens",
-        "label": "Marine Biospecimens",
-        "description": "Biological materials derived from marine organisms and aquatic species for research applications. Includes marine organism tissues, fish tissues, shellfish extracts, coral samples, marine invertebrate specimens, algae samples, marine microorganism cultures, ocean-derived DNA and RNA samples, and biospecimens from marine species including fish, mollusks, crustaceans, echinoderms, and marine mammals."
+        "id": "animal_custom_prospective_collection",
+        "label": "Animal Custom / prospective collection",
+        "description": "Prospective, custom-designed collection of animal biospecimens to a customer's specification. Includes custom collection protocols, specified timepoints, specified anticoagulants or preservation methods, and coordination with animal sourcing for a defined study, delivered as a service."
       },
       {
-        "id": "biospecimen_storage_management",
-        "label": "Biospecimen Storage & Management",
-        "description": "Products and materials for long-term preservation, storage, and biobanking management of biological specimens. Includes biobanking tubes, cryogenic storage boxes for specimens, biospecimen collection kits, stabilization reagents for long-term storage, nucleic acid stabilizers (RNAlater, DNA Shield), blood collection tubes (EDTA, citrate, heparin), sample tracking systems, biobank matrix tubes, and specimen management consumables. Does NOT include general cryovials or general laboratory storage — see Tubes & Vials or Furniture and Storage."
+        "id": "animal_biobanking_storage",
+        "label": "Animal Biobanking & storage",
+        "description": "Long-term storage and biobanking services for animal-derived biospecimens. Includes cryogenic storage, sample tracking and inventory management, chain-of-custody documentation, and biorepository access for stored animal tissue, blood, and cell samples."
+      },
+      {
+        "id": "animal_sample_processing_histology_ffpe_dissociation",
+        "label": "Animal Sample processing (histology / FFPE / dissociation)",
+        "description": "Processing services for preparing animal tissue and biospecimens for downstream analysis. Includes histology sectioning, FFPE embedding and sectioning, tissue dissociation into single-cell suspensions, slide preparation, and staining performed on customer-supplied animal specimens."
+      },
+      {
+        "id": "animal_primary_cells",
+        "label": "Animal Primary Cells",
+        "description": "Primary cells isolated directly from animal tissue and supplied without immortalization. Includes primary hepatocytes, fibroblasts, neurons, and other tissue-derived primary cells from mouse, rat, and other species. Identified by species, tissue source, and isolation method."
+      },
+      {
+        "id": "animal_stem_cells_ipscs",
+        "label": "Animal Stem Cells / iPSCs",
+        "description": "Stem cells and induced pluripotent stem cells derived from animal sources. Includes animal embryonic stem cells, animal iPSC lines, and animal iPSC-derived differentiated cell types. Identified by species, cell type, and genetic background."
+      }
+    ],
+    "human_biospecimens": [
+      {
+        "id": "human_tissue",
+        "label": "Human Tissue",
+        "description": "Solid tissue samples collected from human sources for research use. Includes fresh tissue, frozen tissue, FFPE (formalin-fixed paraffin-embedded) tissue blocks and sections, and tissue microarrays. Identified by tissue/organ type, disease or health status, consent status, and preservation method."
+      },
+      {
+        "id": "human_cells_pbmcs",
+        "label": "Human Cells & PBMCs",
+        "description": "Cells and peripheral blood mononuclear cells (PBMCs) isolated from human donors for research use. Includes human PBMCs, leukapheresis products, and other isolated immune or tissue cells. Identified by donor characteristics, tissue source, isolation method, and consent status."
+      },
+      {
+        "id": "human_custom_prospective_collection",
+        "label": "Human Custom / prospective collection",
+        "description": "Prospective, custom-designed collection of human biospecimens to a customer's specification. Includes custom collection protocols, specified timepoints, IRB-approved collection under informed consent, and coordination with clinical sites for a defined study, delivered as a service."
+      },
+      {
+        "id": "human_biobanking_storage",
+        "label": "Human Biobanking & storage",
+        "description": "Long-term storage and biobanking services for human-derived biospecimens. Includes cryogenic storage, sample tracking and inventory management, chain-of-custody documentation, consent management, and biorepository access for stored human tissue, blood, and cell samples."
+      },
+      {
+        "id": "sample_processing_histology_ffpe_dissociation",
+        "label": "Sample processing (histology / FFPE / dissociation)",
+        "description": "Processing services for preparing human tissue and biospecimens for downstream analysis. Includes histology sectioning, FFPE embedding and sectioning, tissue dissociation into single-cell suspensions, slide preparation, and staining performed on customer-supplied human specimens."
+      },
+      {
+        "id": "human_primary_cells",
+        "label": "Human Primary Cells",
+        "description": "Primary cells isolated directly from human tissue and supplied without immortalization. Includes primary human hepatocytes, fibroblasts, neurons, epithelial cells, and other tissue-derived primary cells. Identified by tissue source, donor characteristics, and isolation method."
+      },
+      {
+        "id": "human_stem_cells_ipscs",
+        "label": "Human Stem Cells / iPSCs",
+        "description": "Stem cells and induced pluripotent stem cells derived from human donors. Includes human embryonic stem cells, human iPSC lines, and human iPSC-derived differentiated cell types. Identified by cell type, donor background, pluripotency status, and consent status."
+      },
+      {
+        "id": "human_blood_biofluids",
+        "label": "Human Blood & Biofluids",
+        "description": "Human blood-derived and other liquid biological samples supplied for research use. Includes whole blood, plasma, serum, buffy coat, cerebrospinal fluid, synovial fluid, saliva, urine, and other human biofluids. Identified by collection method, anticoagulant type (EDTA, heparin, citrate), donor disease state or health status, and any associated consent, annotation, or matched-set documentation."
       }
     ],
     "animal_models": [
+      {
+        "id": "rodent_models",
+        "label": "Rodent Models",
+        "description": "Live mice, rats, and other rodent species procured, bred, or generated for use in preclinical in vivo research, along with associated animal model services provided by CROs and vivarium suppliers. Includes inbred strains (C57BL/6, BALB/c, DBA/2, FVB/N, 129S), outbred stocks (CD-1, Sprague-Dawley, Wistar, Long-Evans), immunodeficient models (nude, SCID, NOD-SCID, NSG, Rag1/Rag2 knockout), humanized mice, germ-free and gnotobiotic mice, aged rodents, and timed-pregnant females. Encompasses genetically engineered mouse and rat models (GEMMs) including transgenic, constitutive knockout, conditional knockout (floxed/Cre), knock-in, and reporter models. Covers disease-specific models including oncology xenograft and syngeneic tumor models, metabolic disease models (db/db, ob/ob, diet-induced obesity), cardiovascular models, neuroscience models (5xFAD, APP/PS1, 3xTg-AD, SOD1), autoimmune and inflammatory models, and spontaneously hypertensive rats (SHR). Also includes services such as custom model generation (CRISPR knockouts, transgenics), colony establishment and maintenance, breeding and expansion, health monitoring, rederivation, cryopreservation of embryos and sperm, strain importation and quarantine, and genotyping services."
+      },
       {
         "id": "nhp_models",
         "label": "Non-Human Primate Models",
@@ -321,73 +477,138 @@
         "description": "Non-vertebrate and lower eukaryotic model organisms used for foundational genetics, cell biology, and aging research. Includes Drosophila melanogaster (fruit fly) strains, Caenorhabditis elegans (nematode) strains, Xenopus laevis and Xenopus tropicalis (African clawed frog), Saccharomyces cerevisiae (yeast) strains for in vivo studies, Dictyostelium discoideum, and other invertebrate model organisms. Products identified by genotype, mutant allele, reporter construct, and stock center source (Bloomington, CGC, DSSC)."
       },
       {
-        "id": "rodent_models",
-        "label": "Rodent Models",
-        "description": "Live mice, rats, and other rodent species procured, bred, or generated for use in preclinical in vivo research, along with associated animal model services provided by CROs and vivarium suppliers. Includes inbred strains (C57BL/6, BALB/c, DBA/2, FVB/N, 129S), outbred stocks (CD-1, Sprague-Dawley, Wistar, Long-Evans), immunodeficient models (nude, SCID, NOD-SCID, NSG, Rag1/Rag2 knockout), humanized mice, germ-free and gnotobiotic mice, aged rodents, and timed-pregnant females. Encompasses genetically engineered mouse and rat models (GEMMs) including transgenic, constitutive knockout, conditional knockout (floxed/Cre), knock-in, and reporter models. Covers disease-specific models including oncology xenograft and syngeneic tumor models, metabolic disease models (db/db, ob/ob, diet-induced obesity), cardiovascular models, neuroscience models (5xFAD, APP/PS1, 3xTg-AD, SOD1), autoimmune and inflammatory models, and spontaneously hypertensive rats (SHR). Also includes services such as custom model generation (CRISPR knockouts, transgenics), colony establishment and maintenance, breeding and expansion, health monitoring, rederivation, cryopreservation of embryos and sperm, strain importation and quarantine, and genotyping services."
-      },
-      {
         "id": "other_mammalian_models",
         "label": "Other Mammalian Models",
-        "description": "Live non-rodent mammalian species procured, bred, or supplied for use in preclinical and translational in vivo research, along with associated animal model services provided by CROs and licensed research facilities. Includes rabbits (New Zealand White, Dutch Belted), guinea pigs (Hartley, Dunkin-Hartley), hamsters (Syrian, Chinese), ferrets, swine and minipigs (Göttingen minipig, Yucatan minipig, Sinclair minipig, domestic pig), dogs (Beagle), non-human primates (cynomolgus macaque, rhesus macaque, marmoset, baboon), sheep, goats, and cattle. Encompasses both purpose-bred research animals and naturally occurring or induced disease models, including cardiovascular models (swine, dog), dermatology and wound healing models (pig, rabbit), ophthalmology models (rabbit, NHP), reproductive biology models (sheep, NHP), infectious disease models (ferret influenza model, NHP SIV/SHIV models), and neuroscience and behavioral models (NHP). Also includes genetically engineered large animal models, humanized pig models, and cloned or gene-edited livestock."
+        "description": "Live non-rodent mammalian species procured, bred, or supplied for use in preclinical and translational in vivo research, along with associated animal model services provided by CROs and licensed research facilities. Includes rabbits (New Zealand White, Dutch Belted), guinea pigs (Hartley, Dunkin-Hartley), hamsters (Syrian, Chinese), ferrets, swine and minipigs (G\u00f6ttingen minipig, Yucatan minipig, Sinclair minipig, domestic pig), dogs (Beagle), non-human primates (cynomolgus macaque, rhesus macaque, marmoset, baboon), sheep, goats, and cattle. Encompasses both purpose-bred research animals and naturally occurring or induced disease models, including cardiovascular models (swine, dog), dermatology and wound healing models (pig, rabbit), ophthalmology models (rabbit, NHP), reproductive biology models (sheep, NHP), infectious disease models (ferret influenza model, NHP SIV/SHIV models), and neuroscience and behavioral models (NHP). Also includes genetically engineered large animal models, humanized pig models, and cloned or gene-edited livestock."
+      },
+      {
+        "id": "zebrafish_models",
+        "label": "Zebrafish Models",
+        "description": "Zebrafish (Danio rerio) research models for developmental biology, toxicology, and genetic studies. Includes wild-type strains (AB, TU, TL), transgenic and reporter lines, mutant lines, knockout and knock-in lines, CRISPR-modified lines, embryos, larvae, and adult fish. Identified by strain, genetic modification status, developmental stage, and disease or reporter phenotype."
+      },
+      {
+        "id": "colony_breeding_management",
+        "label": "Colony & breeding management",
+        "description": "Services for managing live animal breeding colonies on behalf of a customer. Includes colony maintenance, breeding pair management, genotyping and colony record-keeping, husbandry, and colony expansion or rederivation, delivered as an ongoing or project-based service."
+      },
+      {
+        "id": "in_vivo_pharmacology_efficacy",
+        "label": "In vivo pharmacology / efficacy",
+        "description": "Contract in vivo studies evaluating drug efficacy, pharmacology, or disease modulation in animal models. Includes efficacy studies, dose-response studies, PK/PD studies, disease model studies (oncology, immunology, metabolic), and study design and reporting, delivered as a contract research service."
       }
     ],
     "equipment_instruments_parts": [
       {
-        "id": "centrifugation",
-        "label": "Centrifugation",
-        "description": "Centrifuges and centrifugation accessories for separating biological and chemical samples by density using centrifugal force. Includes benchtop centrifuges, microcentrifuges, refrigerated centrifuges, high-speed centrifuges, ultracentrifuges, clinical centrifuges, cell cytospin centrifuges, rotors (swinging-bucket, fixed-angle, vertical), rotor adapters, centrifuge tubes compatible with rotors, and centrifuge maintenance accessories. Identified by maximum RCF (g-force), rotor capacity, temperature control, and tube compatibility."
+        "id": "mass_spec_chromatography",
+        "label": "Mass Spec & Chromatography",
+        "description": "Analytical instrumentation for mass spectrometry and chromatographic separation. Includes mass spectrometers (LC-MS, GC-MS, MALDI-TOF, triple quadrupole), HPLC systems, UHPLC systems, GC systems, ion chromatography systems, and associated columns and detectors."
       },
       {
-        "id": "liquid_handling",
-        "label": "Liquid Handling",
-        "description": "Instruments and automated systems for precise measurement, transfer, and dispensing of liquids in laboratory workflows. Includes electronic single-channel pipettors, electronic multichannel pipettors, repeat dispensers, automated liquid handlers, robotic pipetting workstations, plate washers, reagent dispensers, microfluidic dispensers, diluters, burettes, and semi-automated pipetting systems. Includes brands such as Hamilton, Tecan, Beckman Biomek, Integra, Eppendorf, and Rainin automated platforms. Does NOT include manual pipettes or disposable pipette tips — see Lab Supplies and Consumables."
+        "id": "sequencing_genomics_platforms",
+        "label": "Sequencing & Genomics Platforms",
+        "description": "Instrumentation for DNA/RNA sequencing and genomic analysis. Includes next-generation sequencers, Sanger sequencers, real-time PCR/qPCR systems, digital PCR systems, and genotyping and microarray platforms."
       },
       {
-        "id": "thermal_mixing",
-        "label": "Thermal & Mixing",
-        "description": "Instruments that apply heat, cold, or mechanical agitation to samples during laboratory workflows. Includes PCR thermal cyclers, qPCR instruments (real-time PCR machines), digital PCR instruments, gradient thermal cyclers, heat blocks, dry bath incubators, water baths, circulators, hot plates, magnetic stirrers, vortex mixers, orbital shakers, rocking platforms, tube rotators, roller mixers, cell disruptors, sonicators, ultrasonic homogenizers, bead mills, and freeze-thaw controllers."
+        "id": "flow_cytometry_cell_analysis",
+        "label": "Flow Cytometry & Cell Analysis",
+        "description": "Instrumentation for cell-based analysis and sorting. Includes flow cytometers, cell sorters, cell counters, cell viability analyzers, and imaging cytometers."
       },
       {
-        "id": "imaging_microscopy",
-        "label": "Imaging & Microscopy",
-        "description": "Optical, fluorescence, and digital imaging instruments for visualizing biological samples at macro and microscopic scales. Includes light microscopes, inverted microscopes, fluorescence microscopes, confocal microscopes, two-photon microscopes, super-resolution microscopes (STORM, PALM, STED), electron microscopes (SEM, TEM), gel documentation systems, western blot imagers, chemiluminescence imagers, in vivo bioluminescence imaging systems (IVIS), digital cameras for microscopy, plate imagers, colony counters, and slide scanners."
+        "id": "confocal_microscopy",
+        "label": "Confocal Microscopy",
+        "description": "Confocal microscope systems and accessories for high-resolution optical sectioning of biological samples. Includes laser scanning confocal microscopes, spinning disk confocal systems, and associated objectives, lasers, and detectors."
       },
       {
-        "id": "separation_purification",
-        "label": "Separation & Purification",
-        "description": "Chromatography and electrophoresis instruments for separating, purifying, and analyzing biological molecules and chemical compounds. Includes HPLC systems, UHPLC systems, FPLC systems, fast protein liquid chromatography systems, gel electrophoresis systems, agarose gel electrophoresis units, polyacrylamide gel (SDS-PAGE) systems, 2D gel electrophoresis, capillary electrophoresis instruments, isoelectric focusing systems, power supplies for electrophoresis, western blot transfer systems, and ion exchange and affinity chromatography systems."
+        "id": "electron_microscopy_cryo_em",
+        "label": "Electron Microscopy (Cryo-EM)",
+        "description": "Electron microscope systems for ultrastructural imaging, including cryogenic electron microscopy. Includes transmission electron microscopes (TEM), scanning electron microscopes (SEM), cryo-EM systems, and associated sample preparation accessories."
       },
       {
-        "id": "analysis_detection",
-        "label": "Analysis & Detection",
-        "description": "Analytical instruments for measuring physical, chemical, and biological properties of samples through spectroscopy, spectrometry, or sensing. Includes UV-Vis spectrophotometers, nanodrop instruments, microplate readers (absorbance, fluorescence, luminescence), flow cytometers, cell sorters (FACS), mass spectrometers, NMR instruments, infrared spectrometers (FTIR), Raman spectrometers, analytical balances, precision balances, pH meters, conductivity meters, dissolved oxygen meters, osmometers, particle size analyzers, and elemental analyzers."
+        "id": "high_content_imaging",
+        "label": "High-Content Imaging",
+        "description": "Automated imaging systems for high-content, high-throughput cellular analysis. Includes high-content screening (HCS) imagers, automated fluorescence microscopes with plate-handling, and associated image analysis software platforms."
       },
       {
-        "id": "cell_biology_instruments",
-        "label": "Cell Biology Instruments",
-        "description": "Instruments and systems designed specifically for maintaining, monitoring, and manipulating living cells and biological samples. Includes CO2 incubators, hypoxia incubators, biosafety cabinets (Class II), laminar flow hoods, cell counters (hemocytometer-based and automated), automated cell counters (Countess, Vi-Cell), cell viability analyzers, microinjection systems, electroporation systems, cell sorters, cryogenic storage systems, freeze dryers, lyophilizers, autoclave sterilizers, and bioreactors."
+        "id": "spatial_imaging",
+        "label": "Spatial Imaging",
+        "description": "Instrumentation for spatial biology and spatial omics imaging. Includes spatial transcriptomics platforms, multiplexed tissue imaging systems, and in situ hybridization/sequencing imaging platforms."
+      },
+      {
+        "id": "liquid_handling_automation",
+        "label": "Liquid Handling & Automation",
+        "description": "Automated systems for liquid dispensing and laboratory workflow automation. Includes automated liquid handlers, robotic pipetting systems, plate handlers, automated workstations, and laboratory automation robots."
+      },
+      {
+        "id": "bioprocess_single_use",
+        "label": "Bioprocess & Single-Use",
+        "description": "Equipment and single-use systems for bioprocessing and bioproduction workflows. Includes bioreactors, single-use bioreactor bags, bioprocess control systems, tangential flow filtration (TFF) systems, and single-use tubing assemblies."
+      },
+      {
+        "id": "general_lab_equipment",
+        "label": "General Lab Equipment",
+        "description": "General-purpose laboratory instruments used across bench workflows. Includes centrifuges, microcentrifuges, analytical balances, incubators, shakers, vortexers, homogenizers, sonicators, water baths, heating blocks, magnetic stirrers, autoclaves, and biosafety cabinets, not otherwise classified into a more specific equipment function group."
+      },
+      {
+        "id": "parts_spares",
+        "label": "Parts & Spares",
+        "description": "Replacement parts and spare components for laboratory instruments. Includes lamps, seals, tubing, filters, rotors, gaskets, sensors, and other manufacturer-specific replacement parts identified by instrument make and model."
+      },
+      {
+        "id": "instrument_consumables",
+        "label": "Instrument Consumables",
+        "description": "Consumable items designed for use with a specific instrument platform. Includes chromatography columns, cuvettes, capillaries, injector needles, and other instrument-specific consumables that are periodically replaced during normal operation."
+      },
+      {
+        "id": "installation_qualification_iq_oq_pq",
+        "label": "Installation & Qualification (IQ/OQ/PQ)",
+        "description": "Services for installing and formally qualifying laboratory instruments. Includes installation qualification (IQ), operational qualification (OQ), performance qualification (PQ), and associated documentation required for regulated or GxP laboratory environments."
+      },
+      {
+        "id": "preventive_maintenance",
+        "label": "Preventive Maintenance",
+        "description": "Scheduled maintenance services performed to keep laboratory instruments operating within specification. Includes routine inspection, cleaning, parts replacement, and performance verification performed on a recurring schedule, often bundled with a service contract."
+      },
+      {
+        "id": "repair",
+        "label": "Repair",
+        "description": "Unscheduled repair services for laboratory instruments. Includes diagnostic troubleshooting, parts replacement, and restoration of instrument function following a breakdown or performance failure."
+      },
+      {
+        "id": "service_contracts",
+        "label": "Service Contracts",
+        "description": "Recurring service agreements covering ongoing instrument support. Includes full-service contracts, preventive-maintenance-only contracts, extended warranties, and time-and-materials service agreements covering a defined instrument or fleet."
+      },
+      {
+        "id": "relocation",
+        "label": "Relocation",
+        "description": "Services for the physical relocation, decommissioning, or reinstallation of laboratory instruments. Includes instrument disconnection, packing, transport coordination, reinstallation, and requalification at a new site."
+      },
+      {
+        "id": "calibration",
+        "label": "Calibration",
+        "description": "On-site and depot calibration services for laboratory instruments to verify and restore measurement accuracy against traceable reference standards. Includes routine calibration, multi-point calibration, NIST-traceable calibration, balance calibration, pipette calibration, thermometer and temperature-mapping calibration, and calibration certificate issuance. Typically scheduled on a recurring basis (annual, semi-annual) as part of a lab's quality and compliance program, and often bundled with preventive maintenance visits."
       }
     ],
-    "controls_calibrators_standards": [
+    "analytical_reference_standards": [
       {
-        "id": "qc_controls",
-        "label": "QC Controls",
-        "description": "Quality control samples with known analyte concentrations used to monitor assay performance, detect systematic errors, and ensure reproducibility across runs. Includes assay controls, positive controls, negative controls, high-level controls, low-level controls, multi-analyte controls, matrix-matched controls, lyophilized controls, liquid controls, and third-party QC materials for immunoassays, clinical chemistry, hematology, coagulation, and molecular diagnostics. Identified by analyte panel, matrix, concentration level, and regulatory status (IVD, RUO)."
+        "id": "analytical_standards",
+        "label": "Analytical Standards",
+        "description": "Certified analytical reference compounds used to identify and quantify substances in a sample. Includes chemical reference standards, pharmaceutical reference standards, pesticide standards, and impurity/degradant reference standards. Identified by analyte, purity, and certification/traceability status."
       },
       {
-        "id": "calibrators",
-        "label": "Calibrators",
-        "description": "Reference materials with assigned analyte values used to establish the response curve of an assay and correct instrument output. Includes immunoassay calibrators, clinical chemistry calibrators, multi-point calibrators, calibrator sets, master calibrators, WHO International Standard-traceable calibrators, and instrument-specific calibrators for specific platforms (Roche, Abbott, Siemens, Beckman Coulter). Identified by assigned target values, units, matrix, and calibration level range."
+        "id": "reference_materials_crms",
+        "label": "Reference Materials & CRMs",
+        "description": "Certified reference materials (CRMs) and standard reference materials used to validate measurement accuracy. Includes matrix-matched CRMs, elemental standards, isotope reference materials, and NIST-traceable reference materials. Identified by analyte or parameter, matrix, and certifying body."
       },
       {
-        "id": "reference_standards",
-        "label": "Reference Standards",
-        "description": "Certified reference materials (CRMs) and traceable reference standards for analytical measurement accuracy and method validation. Includes NIST-traceable standards, ISO-certified reference materials, certified reference standards for clinical chemistry analytes, spectroscopic standards, pH standards, conductivity standards, osmolality standards, and primary reference standards. Identified by certificate number, traceability chain, analyte, matrix, and uncertainty values."
+        "id": "quality_controls",
+        "label": "Quality Controls",
+        "description": "Quality control materials used to monitor assay and instrument performance over time. Includes positive controls, negative controls, assay-specific QC panels, and multi-level QC materials. Identified by analyte, matrix, and target concentration range."
       },
       {
-        "id": "proficiency_materials",
-        "label": "Proficiency Materials",
-        "description": "Samples distributed through external quality assurance (EQA) and proficiency testing (PT) programs to assess laboratory performance against peer groups. Includes proficiency testing samples, EQA materials, survey samples, inter-laboratory comparison materials, blind proficiency samples, and accreditation support materials for CAP, CLIA, UK NEQAS, RIQAS, and other proficiency schemes. Identified by program, analyte panel, and distribution cycle."
+        "id": "proficiency_testing",
+        "label": "Proficiency Testing",
+        "description": "Proficiency testing (PT) materials and programs used to externally validate laboratory testing performance. Includes PT sample panels, inter-laboratory comparison programs, and proficiency testing reports used to demonstrate ongoing testing competency."
       }
     ],
     "furniture_storage": [
@@ -410,13 +631,18 @@
         "id": "lab_storage_solutions",
         "label": "Lab Storage Solutions",
         "description": "Dedicated storage cabinets and enclosures for laboratory equipment, chemicals, and sensitive materials. Includes laboratory cabinets, base cabinets, overhead cabinets, flammable storage cabinets, acid storage cabinets, corrosive storage cabinets, under-counter cabinets, instrument cabinets, desiccator cabinets, and specialty storage enclosures for laboratory materials requiring controlled storage conditions."
+      },
+      {
+        "id": "chemical_flammable_storage_cabinets",
+        "label": "Chemical / Flammable Storage Cabinets",
+        "description": "Fixed cabinets and storage infrastructure for the safe storage of hazardous or flammable chemicals. Includes flammable liquid storage cabinets, corrosive storage cabinets, acid cabinets, and other fire-rated chemical storage infrastructure."
       }
     ],
     "general_office_supplies": [
       {
         "id": "general_office_supplies",
         "label": "General Office Supplies",
-        "description": "Non-laboratory office and administrative supplies used in scientific and research workplaces. Includes paper, notebooks, lab notebooks, pens, pencils, markers for writing (not lab labeling), writing instruments, binders, folders, staplers, tape, adhesives, printer supplies, toner cartridges, printer paper, computer accessories, desk accessories, and general administrative and stationery items. Does NOT include laboratory-specific PPE such as nitrile gloves, latex gloves, examination gloves, lab coats, safety goggles, or face shields — see Lab Supplies and Consumables. Does NOT include laboratory-specific cleaning supplies, sterilization wipes, or germicidal wipes — see Lab Supplies and Consumables."
+        "description": "Non-laboratory office and administrative supplies used in scientific and research workplaces. Includes paper, notebooks, lab notebooks, pens, pencils, markers for writing (not lab labeling), writing instruments, binders, folders, staplers, tape, adhesives, printer supplies, toner cartridges, printer paper, computer accessories, desk accessories, and general administrative and stationery items. Does NOT include laboratory-specific PPE such as nitrile gloves, latex gloves, examination gloves, lab coats, safety goggles, or face shields \u2014 see Lab Supplies and Consumables. Does NOT include laboratory-specific cleaning supplies, sterilization wipes, or germicidal wipes \u2014 see Lab Supplies and Consumables."
       }
     ]
   }

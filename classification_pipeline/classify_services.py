@@ -12,6 +12,10 @@ Key design:
   - All listings looked up against one dedicated services cache; net-new
     services embedded with parallel Bedrock workers
   - New embeddings saved to a per-env incremental cache, checkpointed every 1,000
+    (checkpoints append only new-since-last-checkpoint entries to a small delta
+    log — see append_cache_delta/consolidate_cache_delta in
+    product_classifier_utils.py — so cost stays cheap regardless of cache size;
+    the full cache file is only rewritten once, at the very end of a run)
   - Results written to Snowflake in 500K-row chunks
 
 Run order:
@@ -30,16 +34,17 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "classification_pipeline"))
 
 from product_classifier_utils import (
+    append_cache_delta,
     attach_classifications,
     build_product_text,
     classify_l3_and_l4,
+    consolidate_cache_delta,
     embed_texts_from_cache,
     get_bedrock_client,
     get_products_session,
     load_anchors_from_snowflake,
     load_listings,
-    load_pickle_cache,
-    save_pickle_cache,
+    load_pickle_cache_with_delta,
     stable_text_hash,
 )
 
@@ -90,7 +95,7 @@ def phase_embed():
     texts  = build_product_text(df).tolist()
     hashes = [stable_text_hash(t) for t in texts]
 
-    cache   = load_pickle_cache(CACHE_PATH)
+    cache   = load_pickle_cache_with_delta(CACHE_PATH)
     bedrock = get_bedrock_client(profile_name=AWS_PROFILE, region=AWS_REGION)
 
     already_done = [h for h in hashes if h in cache]
@@ -103,9 +108,20 @@ def phase_embed():
 
         hash_to_text = {h: t for h, t in zip(hashes, texts)}
 
+        # Checkpoints append only the entries added since the last checkpoint to a
+        # small delta log (append_cache_delta), instead of re-pickling the entire
+        # (ever-growing) cache dict every time. The full cache file is only
+        # rewritten once, at the very end (consolidate_cache_delta below).
+        seen_keys = set(cache.keys())
+
         def on_checkpoint(c, processed):
-            print(f"  Checkpoint: {processed:,} embedded — saving cache...")
-            save_pickle_cache(c, CACHE_PATH)
+            nonlocal seen_keys
+            current_keys = set(c.keys())
+            new_keys = current_keys - seen_keys
+            delta = {k: c[k] for k in new_keys}
+            print(f"  Checkpoint: {processed:,} embedded — appending {len(delta):,} new entries to delta log...")
+            append_cache_delta(delta, CACHE_PATH)
+            seen_keys = current_keys
 
         embed_texts_from_cache(
             texts            = [hash_to_text[h] for h in still_needed],
@@ -119,7 +135,7 @@ def phase_embed():
             on_checkpoint    = on_checkpoint,
         )
         print("Saving final cache...")
-        save_pickle_cache(cache, CACHE_PATH)
+        consolidate_cache_delta(cache, CACHE_PATH)
 
     print(f"\nClassifying {len(df):,} services...")
     records = []
@@ -149,7 +165,13 @@ def phase_publish():
         sys.exit(1)
 
     combined = pd.read_csv(PHASE_EMBED_RESULTS, low_memory=False)
-    combined = combined.drop_duplicates(subset="PRODUCT_ID", keep="last")
+    # PRODUCT_ID is being phased out in favor of PRODUCT_VARIANT_ID as the durable
+    # identifier — some rows now have a null PRODUCT_ID with a valid, unique
+    # PRODUCT_VARIANT_ID instead. Dedup on whichever identifier is present so
+    # multiple such rows aren't all treated as "the same" null and collapsed
+    # down to one (pandas' drop_duplicates considers NaN == NaN).
+    combined["_DEDUP_KEY"] = combined["PRODUCT_VARIANT_ID"].fillna(combined["PRODUCT_ID"])
+    combined = combined.drop_duplicates(subset="_DEDUP_KEY", keep="last").drop(columns="_DEDUP_KEY")
     print(f"\nCombined: {len(combined):,} rows, {len(combined.columns)} columns")
 
     total = len(combined)

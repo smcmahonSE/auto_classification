@@ -8,8 +8,12 @@ Key design:
   - Anchor vectors loaded from Snowflake (no Bedrock calls for anchors)
   - L3 + L4 classification happen in the same pass
   - Reuses existing prod embedding caches (v1, v2) for overlapping products
-  - Net-new products embedded with parallel Bedrock workers (max_workers=10)
-  - New embeddings saved to a per-env incremental cache, checkpointed every 500
+  - Net-new products embedded with parallel Bedrock workers (max_workers=5)
+  - New embeddings saved to a per-env incremental cache, checkpointed every 1,000
+    (checkpoints append only new-since-last-checkpoint entries to a small delta
+    log — see append_cache_delta/consolidate_cache_delta in
+    product_classifier_utils.py — so cost stays cheap regardless of cache size;
+    the full cache file is only rewritten once, at the very end of a run)
   - Results written to Snowflake in 500K-row chunks
 
 Run order:
@@ -32,16 +36,17 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "classification_pipeline"))
 
 from product_classifier_utils import (
+    append_cache_delta,
     attach_classifications,
     build_product_text,
     classify_l3_and_l4,
+    consolidate_cache_delta,
     embed_texts_from_cache,
     get_bedrock_client,
     get_products_session,
     load_anchors_from_snowflake,
     load_listings,
-    load_pickle_cache,
-    save_pickle_cache,
+    load_pickle_cache_with_delta,
     stable_text_hash,
 )
 
@@ -64,12 +69,28 @@ ENV_CONFIGS = {
         "output_table": "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.NEW_CLASSIFICATIONS_STAGE",
         "cache_path":   PROJECT_ROOT / "artifacts/cache/embedding_cache_stage.pkl",
         "out_dir":      PROJECT_ROOT / "artifacts/analysis/stage_classification",
+        "append_mode":  False,
     },
     "prod": {
         "input_table":  "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.PRODUCTS_PROD",
         "output_table": "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.NEW_CLASSIFICATIONS_PROD",
         "cache_path":   PROJECT_ROOT / "artifacts/cache/embedding_cache_prod_new.pkl",
         "out_dir":      PROJECT_ROOT / "artifacts/analysis/prod_classification",
+        "append_mode":  False,
+    },
+    # Backfill: products missing from the original PRODUCTS_STAGE run. Publishes into the
+    # SAME output table as "stage" via append_mode (delete-matching-PRODUCT_IDs, then insert)
+    # instead of the default overwrite-the-whole-table behavior. cache_path is deliberately
+    # shared with "stage" since embeddings are keyed by text content hash, not PRODUCT_ID —
+    # but do not run `phase embed` for "stage" and "stage_backfill" concurrently, since
+    # both would append checkpoint chunks to the same shared delta log file and could
+    # interleave writes; the two also race to consolidate it back into the main cache.
+    "stage_backfill": {
+        "input_table":  "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.PRODUCTS_STAGE_BACKFILL",
+        "output_table": "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.NEW_CLASSIFICATIONS_STAGE",
+        "cache_path":   PROJECT_ROOT / "artifacts/cache/embedding_cache_stage.pkl",
+        "out_dir":      PROJECT_ROOT / "artifacts/analysis/stage_backfill_classification",
+        "append_mode":  True,
     },
 }
 
@@ -79,6 +100,7 @@ INPUT_TABLE      = None
 OUTPUT_TABLE     = None
 CACHE_ENV_PATH   = None
 OUT_DIR          = None
+APPEND_MODE      = None
 PHASE_A_RESULTS  = None
 V1_WORK          = None
 V1_VECTORS       = None
@@ -108,7 +130,7 @@ def phase_a():
     with open(CACHE_KEYS_PATH, "rb") as f:
         cache_v1_keys = pickle.load(f)
 
-    cache_env = load_pickle_cache(CACHE_ENV_PATH)
+    cache_env = load_pickle_cache_with_delta(CACHE_ENV_PATH)
 
     in_v2      = [h in cache_v2                                                              for h in hashes]
     in_v1_only = [h in cache_v1_keys and not in_v2[i]                                       for i, h in enumerate(hashes)]
@@ -272,7 +294,7 @@ def phase_embed():
     sf = get_products_session()
     l3_anchors, l4_by_l3 = load_anchors_from_snowflake(sf)
 
-    cache_env = load_pickle_cache(CACHE_ENV_PATH)
+    cache_env = load_pickle_cache_with_delta(CACHE_ENV_PATH)
     bedrock   = get_bedrock_client(profile_name=AWS_PROFILE, region=AWS_REGION)
 
     hashes = embed_work["_HASH"].tolist()
@@ -288,9 +310,20 @@ def phase_embed():
         all_texts    = build_product_text(embed_work).tolist()
         hash_to_text = {h: t for h, t in zip(hashes, all_texts)}
 
+        # Checkpoints append only the entries added since the last checkpoint to a
+        # small delta log (append_cache_delta), instead of re-pickling the entire
+        # (multi-GB, ever-growing) cache dict every time. The full cache file is only
+        # rewritten once, at the very end (consolidate_cache_delta below).
+        seen_keys = set(cache_env.keys())
+
         def on_checkpoint(cache, processed):
-            print(f"  Checkpoint: {processed:,} embedded — saving env cache...")
-            save_pickle_cache(cache, CACHE_ENV_PATH)
+            nonlocal seen_keys
+            current_keys = set(cache.keys())
+            new_keys = current_keys - seen_keys
+            delta = {k: cache[k] for k in new_keys}
+            print(f"  Checkpoint: {processed:,} embedded — appending {len(delta):,} new entries to delta log...")
+            append_cache_delta(delta, CACHE_ENV_PATH)
+            seen_keys = current_keys
 
         embed_texts_from_cache(
             texts            = [hash_to_text[h] for h in still_needed],
@@ -304,7 +337,7 @@ def phase_embed():
             on_checkpoint    = on_checkpoint,
         )
         print("Saving final env cache...")
-        save_pickle_cache(cache_env, CACHE_ENV_PATH)
+        consolidate_cache_delta(cache_env, CACHE_ENV_PATH)
 
     print(f"\nClassifying {len(embed_work):,} net-new products...")
     BATCH = 100_000
@@ -354,8 +387,19 @@ def phase_publish():
         print("ERROR: No phase results found.")
         sys.exit(1)
 
+    # Drop genuinely-empty (0-row) parts before concatenating — mixing them in
+    # triggers a pandas dtype-inference quirk on boolean columns (see the
+    # concat FutureWarning) that broke the confidence-summary prints below.
+    parts = [df for df in parts if len(df) > 0]
+
     combined = pd.concat(parts, ignore_index=True)
-    combined = combined.drop_duplicates(subset="PRODUCT_ID", keep="last")
+    # PRODUCT_ID is being phased out in favor of PRODUCT_VARIANT_ID as the durable
+    # identifier — some rows now have a null PRODUCT_ID with a valid, unique
+    # PRODUCT_VARIANT_ID instead. Dedup on whichever identifier is present so
+    # multiple such rows aren't all treated as "the same" null and collapsed
+    # down to one (pandas' drop_duplicates considers NaN == NaN).
+    combined["_DEDUP_KEY"] = combined["PRODUCT_VARIANT_ID"].fillna(combined["PRODUCT_ID"])
+    combined = combined.drop_duplicates(subset="_DEDUP_KEY", keep="last").drop(columns="_DEDUP_KEY")
     print(f"\nCombined: {len(combined):,} rows, {len(combined.columns)} columns")
 
     total = len(combined)
@@ -374,12 +418,58 @@ def phase_publish():
     print(f"\nConnecting to Snowflake...")
     sf = get_products_session()
 
+    if APPEND_MODE:
+        # A row's source can lack PRODUCT_ID even when we already have a valid one
+        # on file for the same PRODUCT_VARIANT_ID (e.g. a newer extract that's
+        # further along in the PRODUCT_ID -> PRODUCT_VARIANT_ID migration than what
+        # originally populated this table). Preserve the previously-known PRODUCT_ID
+        # in that case — otherwise the upsert below would blindly null it out.
+        null_id_variant_ids = (
+            combined.loc[combined["PRODUCT_ID"].isna() & combined["PRODUCT_VARIANT_ID"].notna(), ["PRODUCT_VARIANT_ID"]]
+            .drop_duplicates()
+        )
+        if len(null_id_variant_ids):
+            lookup_table = "PUBLISH_NULL_ID_LOOKUP_TMP"
+            sf.create_dataframe(null_id_variant_ids).write.mode("overwrite").save_as_table(
+                lookup_table, table_type="temporary"
+            )
+            existing_ids = sf.sql(f"""
+                SELECT o.PRODUCT_VARIANT_ID, o.PRODUCT_ID
+                FROM {OUTPUT_TABLE} AS o
+                JOIN {lookup_table} AS t ON o.PRODUCT_VARIANT_ID = t.PRODUCT_VARIANT_ID
+                WHERE o.PRODUCT_ID IS NOT NULL
+            """).to_pandas()
+            if len(existing_ids):
+                id_map = dict(zip(existing_ids["PRODUCT_VARIANT_ID"], existing_ids["PRODUCT_ID"]))
+                fill_mask = combined["PRODUCT_ID"].isna() & combined["PRODUCT_VARIANT_ID"].isin(id_map)
+                combined.loc[fill_mask, "PRODUCT_ID"] = combined.loc[fill_mask, "PRODUCT_VARIANT_ID"].map(id_map)
+                print(f"  Preserved {fill_mask.sum():,} previously-known PRODUCT_IDs for rows whose source lacks one")
+
+        # Match on COALESCE(PRODUCT_VARIANT_ID, PRODUCT_ID) on both sides — either
+        # column can be null on either side (PRODUCT_ID is being phased out), and a
+        # plain `=` comparison would silently fail to match (and thus fail to
+        # delete/replace) any row where the compared column is null on either side.
+        upsert_keys = combined[["PRODUCT_ID", "PRODUCT_VARIANT_ID"]].drop_duplicates()
+        temp_table = "PUBLISH_UPSERT_KEYS_TMP"
+        print(f"\nStaging {len(upsert_keys):,} distinct product keys to {temp_table}...")
+        sf.create_dataframe(upsert_keys).write.mode("overwrite").save_as_table(
+            temp_table, table_type="temporary"
+        )
+
+        print(f"Deleting matching rows from {OUTPUT_TABLE}...")
+        delete_result = sf.sql(f"""
+            DELETE FROM {OUTPUT_TABLE} AS o
+            USING {temp_table} AS t
+            WHERE COALESCE(o.PRODUCT_VARIANT_ID, o.PRODUCT_ID) = COALESCE(t.PRODUCT_VARIANT_ID, t.PRODUCT_ID)
+        """).collect()
+        print(f"  Delete result: {delete_result}")
+
     n_chunks = (len(combined) + PUBLISH_CHUNK - 1) // PUBLISH_CHUNK
     print(f"Writing {len(combined):,} rows to {OUTPUT_TABLE} in {n_chunks} chunk(s)...")
 
     for i, start in enumerate(range(0, len(combined), PUBLISH_CHUNK)):
         chunk = combined.iloc[start:start + PUBLISH_CHUNK]
-        mode  = "overwrite" if i == 0 else "append"
+        mode  = "append" if APPEND_MODE else ("overwrite" if i == 0 else "append")
         sf.create_dataframe(chunk).write.mode(mode).save_as_table(OUTPUT_TABLE)
         print(f"  chunk {i+1}/{n_chunks}: {len(chunk):,} rows written ({mode})")
 
@@ -393,8 +483,8 @@ def phase_publish():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--env",   choices=["stage", "prod"], required=True,
-                        help="Which environment to classify (stage or prod)")
+    parser.add_argument("--env",   choices=list(ENV_CONFIGS.keys()), required=True,
+                        help="Which environment to classify (see ENV_CONFIGS)")
     parser.add_argument("--phase", choices=["a", "extract", "b", "embed", "publish"], required=True,
                         help="Which phase to run")
     args = parser.parse_args()
@@ -405,6 +495,7 @@ if __name__ == "__main__":
     OUTPUT_TABLE  = cfg["output_table"]
     CACHE_ENV_PATH = cfg["cache_path"]
     OUT_DIR        = cfg["out_dir"]
+    APPEND_MODE    = cfg.get("append_mode", False)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     PHASE_A_RESULTS     = OUT_DIR / "phase_a_results.csv"
@@ -419,6 +510,7 @@ if __name__ == "__main__":
     print(f"  Output: {OUTPUT_TABLE}")
     print(f"  Cache:  {CACHE_ENV_PATH}")
     print(f"  Artifacts: {OUT_DIR}")
+    print(f"  Mode:   {'APPEND (delete+insert upsert)' if APPEND_MODE else 'OVERWRITE'}")
 
     if args.phase == "a":
         phase_a()

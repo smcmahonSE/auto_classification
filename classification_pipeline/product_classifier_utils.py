@@ -212,6 +212,62 @@ def save_pickle_cache(cache: dict, path: Path) -> None:
     tmp.rename(path)
 
 
+def _delta_path(path: Path) -> Path:
+    return Path(path).with_suffix(Path(path).suffix + ".delta")
+
+
+def append_cache_delta(new_entries: dict, path: Path) -> None:
+    """Append a small incremental checkpoint chunk to a delta log next to the main
+    cache file, without touching (or resizing) the main cache file itself. Cheap and
+    O(len(new_entries)) regardless of how large the main cache has grown. Call
+    consolidate_cache_delta() once, at the true end of a run, to merge this into the
+    main cache and remove the delta log."""
+    if not new_entries:
+        return
+    with open(_delta_path(path), "ab") as f:
+        pickle.dump(new_entries, f)
+
+
+def load_pickle_cache_with_delta(path: Path) -> dict:
+    """Load the base cache, then replay any not-yet-consolidated delta chunks on top
+    of it (e.g. left behind by a run that was interrupted before it could call
+    consolidate_cache_delta()). A truncated trailing chunk — from a kill mid-write —
+    is discarded rather than raised: everything before it is still replayed, and the
+    handful of entries in the incomplete chunk simply get re-embedded next run."""
+    cache = load_pickle_cache(path)
+    delta_path = _delta_path(path)
+    if not delta_path.exists():
+        return cache
+
+    chunks_replayed = 0
+    entries_replayed = 0
+    with open(delta_path, "rb") as f:
+        while True:
+            try:
+                chunk = pickle.load(f)
+            except EOFError:
+                break
+            except pickle.UnpicklingError:
+                print(f"  Discarding truncated trailing chunk in {delta_path.name} (interrupted mid-write)")
+                break
+            cache.update(chunk)
+            chunks_replayed += 1
+            entries_replayed += len(chunk)
+    if chunks_replayed:
+        print(f"  Replayed {chunks_replayed:,} delta chunk(s) from {delta_path.name} ({entries_replayed:,} entries)")
+    return cache
+
+
+def consolidate_cache_delta(cache: dict, path: Path) -> None:
+    """Write the fully-merged cache back to the main pickle (one full save, same
+    atomic write as save_pickle_cache) and remove the delta log. Call this once, at
+    the true end of a run — not at every checkpoint."""
+    save_pickle_cache(cache, path)
+    delta_path = _delta_path(path)
+    if delta_path.exists():
+        delta_path.unlink()
+
+
 def load_product_data(
     session: Session,
     table: Optional[str] = None,

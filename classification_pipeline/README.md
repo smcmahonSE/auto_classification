@@ -61,31 +61,60 @@ The prod embedding caches (v1: ~32GB, v2: ~13GB) cannot be loaded simultaneously
 
 ### Resuming after interruption
 
-Every phase writes its output before exiting. The embed phase checkpoints the env cache every 1,000 embeddings. To resume:
+Every phase writes its output before exiting. The embed phase checkpoints every 1,000
+embeddings by appending just the new-since-last-checkpoint entries to a small
+`<cache>.pkl.delta` log next to the main cache file (`append_cache_delta` /
+`load_pickle_cache_with_delta` / `consolidate_cache_delta` in
+`product_classifier_utils.py`) — the full multi-GB cache file itself is only
+rewritten once, at the very end of a run, so checkpoint cost stays cheap and constant
+regardless of how large the cache has grown. To resume:
 
 ```bash
-# Clean up any partial checkpoint file
-rm -f /Users/stephanie.mcmahon/smcmahon_repo/auto_classification/artifacts/cache/embedding_cache_stage.tmp
-
 # Re-authenticate if needed
 aws sso login --profile staging.admin
 
-# Re-run the interrupted phase — already-done work is skipped automatically
+# Re-run the interrupted phase — already-done work (including anything sitting in an
+# unconsolidated .delta log from the interrupted run) is picked up automatically
 caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classify_products.py --env stage --phase embed
 ```
+
+A `.delta` log left behind by an interrupted run is safe to leave in place — the next
+run's `load_pickle_cache_with_delta` replays it automatically, and discards a
+truncated trailing chunk (from a kill mid-write) rather than failing, at the cost of
+re-embedding at most one checkpoint's worth of entries.
 
 ## Environment configs
 
 Defined in `ENV_CONFIGS` at the top of `classify_products.py`:
 
-| | stage | prod |
-|---|---|---|
-| Input table | `PRODUCTS_STAGE` | `PRODUCTS_PROD` |
-| Output table | `NEW_CLASSIFICATIONS_STAGE` | `NEW_CLASSIFICATIONS_PROD` |
-| Env cache | `embedding_cache_stage.pkl` | `embedding_cache_prod_new.pkl` |
-| Artifacts dir | `artifacts/analysis/stage_classification/` | `artifacts/analysis/prod_classification/` |
+| | stage | prod | stage_backfill |
+|---|---|---|---|
+| Input table | `PRODUCTS_STAGE` | `PRODUCTS_PROD` | `PRODUCTS_STAGE_BACKFILL` |
+| Output table | `NEW_CLASSIFICATIONS_STAGE` | `NEW_CLASSIFICATIONS_PROD` | `NEW_CLASSIFICATIONS_STAGE` (same as stage) |
+| Env cache | `embedding_cache_stage.pkl` | `embedding_cache_prod_new.pkl` | `embedding_cache_stage.pkl` (shared with stage) |
+| Artifacts dir | `artifacts/analysis/stage_classification/` | `artifacts/analysis/prod_classification/` | `artifacts/analysis/stage_backfill_classification/` |
+| Publish mode | overwrite | overwrite | **append** (delete-matching-PRODUCT_IDs, then insert) |
 
-Shared read-only caches (`embedding_cache.pkl`, `embedding_cache_new.pkl`, `embedding_cache_keys.pkl`) are used by both environments.
+Shared read-only caches (`embedding_cache.pkl`, `embedding_cache_new.pkl`, `embedding_cache_keys.pkl`) are used by all environments.
+
+### Backfill runs
+
+Any `ENV_CONFIGS` entry with `"append_mode": True` (like `stage_backfill`) publishes into its
+target table via upsert instead of overwrite: `phase_publish` stages the run's distinct
+`PRODUCT_ID`s to a Snowflake temp table, deletes any matching rows from the output table, then
+appends all of this run's rows. This makes it safe to point a backfill's `output_table` at an
+existing, already-published table (e.g. `stage_backfill` → `NEW_CLASSIFICATIONS_STAGE`) without
+wiping out prior results, and safe to re-run a backfill's `--phase publish` if it's interrupted
+mid-write.
+
+`stage_backfill` deliberately shares its `cache_path` with `stage` (embeddings are keyed by text
+content hash, not `PRODUCT_ID`, so overlapping text is a free cache hit either way) — **but do
+not run `--phase embed` for `stage` and `stage_backfill` at the same time**, since the pickle
+cache read/mutate/write cycle isn't safe for concurrent writers.
+
+To set up a future backfill: add a new `ENV_CONFIGS` entry with its own `input_table` and
+`out_dir`, point `output_table` at whichever table it should land in, and set `"append_mode":
+True` if that table already has data you don't want overwritten.
 
 ## Running the services pipeline
 

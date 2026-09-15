@@ -62,11 +62,14 @@ def load_listings(session: Session, table: str) -> pd.DataFrame:
     """Load listing rows (products or services) with usable name/description text."""
     print(f"Loading listings from {table}...")
     df = session.sql(f"""
-        SELECT PRODUCT_ID, PRODUCT_VARIANT_ID, PRODUCT_NAME, DESCRIPTION, PRICING_STATUS_C, LIST_PRICE_C, PRODUCT_SEGMENT
+        SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_VARIANT_ID, PRODUCT_VARIANT_NAME, CATEGORY_NAME,
+               DESCRIPTION, SPECIFICATION_ASSIGNMENTS_C, LIST_PRICE_C, PRICING_STATUS_C, PRODUCT_SOURCE_C
         FROM {table}
     """).to_pandas()
-    df["PRODUCT_ID"] = df["PRODUCT_ID"].astype(str)
-    df = df.rename(columns={"PRODUCT_SEGMENT": "SOURCE"})
+    # Nullable string dtype preserves real nulls — plain .astype(str) would turn a null
+    # PRODUCT_ID into the literal string "None", silently defeating the
+    # PRODUCT_VARIANT_ID.fillna(PRODUCT_ID) dedup/upsert key used downstream.
+    df["PRODUCT_ID"] = df["PRODUCT_ID"].astype("string")
     print(f"Loaded: {len(df):,} rows")
 
     has_text = df["PRODUCT_NAME"].notna() | df["DESCRIPTION"].notna()
@@ -256,6 +259,65 @@ def load_pickle_cache_with_delta(path: Path) -> dict:
     if chunks_replayed:
         print(f"  Replayed {chunks_replayed:,} delta chunk(s) from {delta_path.name} ({entries_replayed:,} entries)")
     return cache
+
+
+def upsert_publish(sf: Session, combined: pd.DataFrame, output_table: str, publish_chunk: int) -> None:
+    """Delete any existing rows matching COALESCE(PRODUCT_VARIANT_ID, PRODUCT_ID), then
+    insert. Safe to re-run: re-publishing the same rows replaces them rather than
+    duplicating. Never overwrites the table wholesale — use this whenever a pipeline
+    shares an output table with another pipeline's full-overwrite publish."""
+    # A row's source can lack PRODUCT_ID even when we already have a valid one on file
+    # for the same PRODUCT_VARIANT_ID (e.g. a newer extract that's further along in the
+    # PRODUCT_ID -> PRODUCT_VARIANT_ID migration). Preserve the previously-known
+    # PRODUCT_ID in that case — otherwise this upsert would blindly null it out.
+    null_id_variant_ids = (
+        combined.loc[combined["PRODUCT_ID"].isna() & combined["PRODUCT_VARIANT_ID"].notna(), ["PRODUCT_VARIANT_ID"]]
+        .drop_duplicates()
+    )
+    if len(null_id_variant_ids):
+        lookup_table = "PUBLISH_NULL_ID_LOOKUP_TMP"
+        sf.create_dataframe(null_id_variant_ids).write.mode("overwrite").save_as_table(
+            lookup_table, table_type="temporary"
+        )
+        existing_ids = sf.sql(f"""
+            SELECT o.PRODUCT_VARIANT_ID, o.PRODUCT_ID
+            FROM {output_table} AS o
+            JOIN {lookup_table} AS t ON o.PRODUCT_VARIANT_ID = t.PRODUCT_VARIANT_ID
+            WHERE o.PRODUCT_ID IS NOT NULL
+        """).to_pandas()
+        if len(existing_ids):
+            id_map = dict(zip(existing_ids["PRODUCT_VARIANT_ID"], existing_ids["PRODUCT_ID"]))
+            fill_mask = combined["PRODUCT_ID"].isna() & combined["PRODUCT_VARIANT_ID"].isin(id_map)
+            combined.loc[fill_mask, "PRODUCT_ID"] = combined.loc[fill_mask, "PRODUCT_VARIANT_ID"].map(id_map)
+            print(f"  Preserved {fill_mask.sum():,} previously-known PRODUCT_IDs for rows whose source lacks one")
+
+    # Match on COALESCE(PRODUCT_VARIANT_ID, PRODUCT_ID) on both sides — either column
+    # can be null on either side, and a plain `=` comparison would silently fail to
+    # match (and thus fail to delete/replace) any row where the compared column is
+    # null on either side.
+    upsert_keys = combined[["PRODUCT_ID", "PRODUCT_VARIANT_ID"]].drop_duplicates()
+    temp_table = "PUBLISH_UPSERT_KEYS_TMP"
+    print(f"\nStaging {len(upsert_keys):,} distinct product keys to {temp_table}...")
+    sf.create_dataframe(upsert_keys).write.mode("overwrite").save_as_table(
+        temp_table, table_type="temporary"
+    )
+
+    print(f"Deleting matching rows from {output_table}...")
+    delete_result = sf.sql(f"""
+        DELETE FROM {output_table} AS o
+        USING {temp_table} AS t
+        WHERE COALESCE(o.PRODUCT_VARIANT_ID, o.PRODUCT_ID) = COALESCE(t.PRODUCT_VARIANT_ID, t.PRODUCT_ID)
+    """).collect()
+    print(f"  Delete result: {delete_result}")
+
+    n_chunks = (len(combined) + publish_chunk - 1) // publish_chunk
+    print(f"Writing {len(combined):,} rows to {output_table} in {n_chunks} chunk(s)...")
+    for i, start in enumerate(range(0, len(combined), publish_chunk)):
+        chunk = combined.iloc[start:start + publish_chunk]
+        sf.create_dataframe(chunk).write.mode("append").save_as_table(output_table)
+        print(f"  chunk {i+1}/{n_chunks}: {len(chunk):,} rows written (append)")
+
+    print(f"\nDone. {output_table} updated with {len(combined):,} rows (upserted).")
 
 
 def consolidate_cache_delta(cache: dict, path: Path) -> None:

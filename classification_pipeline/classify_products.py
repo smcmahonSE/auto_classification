@@ -48,6 +48,7 @@ from product_classifier_utils import (
     load_listings,
     load_pickle_cache_with_delta,
     stable_text_hash,
+    upsert_publish,
 )
 
 # ── Static config (shared across all environments) ────────────────────────────
@@ -419,61 +420,17 @@ def phase_publish():
     sf = get_products_session()
 
     if APPEND_MODE:
-        # A row's source can lack PRODUCT_ID even when we already have a valid one
-        # on file for the same PRODUCT_VARIANT_ID (e.g. a newer extract that's
-        # further along in the PRODUCT_ID -> PRODUCT_VARIANT_ID migration than what
-        # originally populated this table). Preserve the previously-known PRODUCT_ID
-        # in that case — otherwise the upsert below would blindly null it out.
-        null_id_variant_ids = (
-            combined.loc[combined["PRODUCT_ID"].isna() & combined["PRODUCT_VARIANT_ID"].notna(), ["PRODUCT_VARIANT_ID"]]
-            .drop_duplicates()
-        )
-        if len(null_id_variant_ids):
-            lookup_table = "PUBLISH_NULL_ID_LOOKUP_TMP"
-            sf.create_dataframe(null_id_variant_ids).write.mode("overwrite").save_as_table(
-                lookup_table, table_type="temporary"
-            )
-            existing_ids = sf.sql(f"""
-                SELECT o.PRODUCT_VARIANT_ID, o.PRODUCT_ID
-                FROM {OUTPUT_TABLE} AS o
-                JOIN {lookup_table} AS t ON o.PRODUCT_VARIANT_ID = t.PRODUCT_VARIANT_ID
-                WHERE o.PRODUCT_ID IS NOT NULL
-            """).to_pandas()
-            if len(existing_ids):
-                id_map = dict(zip(existing_ids["PRODUCT_VARIANT_ID"], existing_ids["PRODUCT_ID"]))
-                fill_mask = combined["PRODUCT_ID"].isna() & combined["PRODUCT_VARIANT_ID"].isin(id_map)
-                combined.loc[fill_mask, "PRODUCT_ID"] = combined.loc[fill_mask, "PRODUCT_VARIANT_ID"].map(id_map)
-                print(f"  Preserved {fill_mask.sum():,} previously-known PRODUCT_IDs for rows whose source lacks one")
+        upsert_publish(sf, combined, OUTPUT_TABLE, PUBLISH_CHUNK)
+    else:
+        n_chunks = (len(combined) + PUBLISH_CHUNK - 1) // PUBLISH_CHUNK
+        print(f"Writing {len(combined):,} rows to {OUTPUT_TABLE} in {n_chunks} chunk(s)...")
+        for i, start in enumerate(range(0, len(combined), PUBLISH_CHUNK)):
+            chunk = combined.iloc[start:start + PUBLISH_CHUNK]
+            mode  = "overwrite" if i == 0 else "append"
+            sf.create_dataframe(chunk).write.mode(mode).save_as_table(OUTPUT_TABLE)
+            print(f"  chunk {i+1}/{n_chunks}: {len(chunk):,} rows written ({mode})")
+        print(f"\nDone. {OUTPUT_TABLE} updated with {len(combined):,} rows.")
 
-        # Match on COALESCE(PRODUCT_VARIANT_ID, PRODUCT_ID) on both sides — either
-        # column can be null on either side (PRODUCT_ID is being phased out), and a
-        # plain `=` comparison would silently fail to match (and thus fail to
-        # delete/replace) any row where the compared column is null on either side.
-        upsert_keys = combined[["PRODUCT_ID", "PRODUCT_VARIANT_ID"]].drop_duplicates()
-        temp_table = "PUBLISH_UPSERT_KEYS_TMP"
-        print(f"\nStaging {len(upsert_keys):,} distinct product keys to {temp_table}...")
-        sf.create_dataframe(upsert_keys).write.mode("overwrite").save_as_table(
-            temp_table, table_type="temporary"
-        )
-
-        print(f"Deleting matching rows from {OUTPUT_TABLE}...")
-        delete_result = sf.sql(f"""
-            DELETE FROM {OUTPUT_TABLE} AS o
-            USING {temp_table} AS t
-            WHERE COALESCE(o.PRODUCT_VARIANT_ID, o.PRODUCT_ID) = COALESCE(t.PRODUCT_VARIANT_ID, t.PRODUCT_ID)
-        """).collect()
-        print(f"  Delete result: {delete_result}")
-
-    n_chunks = (len(combined) + PUBLISH_CHUNK - 1) // PUBLISH_CHUNK
-    print(f"Writing {len(combined):,} rows to {OUTPUT_TABLE} in {n_chunks} chunk(s)...")
-
-    for i, start in enumerate(range(0, len(combined), PUBLISH_CHUNK)):
-        chunk = combined.iloc[start:start + PUBLISH_CHUNK]
-        mode  = "append" if APPEND_MODE else ("overwrite" if i == 0 else "append")
-        sf.create_dataframe(chunk).write.mode(mode).save_as_table(OUTPUT_TABLE)
-        print(f"  chunk {i+1}/{n_chunks}: {len(chunk):,} rows written ({mode})")
-
-    print(f"\nDone. {OUTPUT_TABLE} updated with {len(combined):,} rows.")
     print("\nColumns written:")
     for col in combined.columns:
         print(f"  {col}")

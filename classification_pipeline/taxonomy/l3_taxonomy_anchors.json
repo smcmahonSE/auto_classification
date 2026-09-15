@@ -1,12 +1,13 @@
 {
-  "version": "3.0",
+  "version": "4.0",
   "notes": [
     "Structure updated to incorporate services into the existing tree (no separate services taxonomy).",
     "Codebase labeling unchanged: this file still represents 'L3' anchors, corresponding to the new L2 level in the proposed tree.",
     "Biospecimens split into Animal Biospecimens and Human Biospecimens, re-cut by sample type rather than species/diagnosis.",
     "Equipment, Instruments and Parts expanded to explicitly cover the full instrument lifecycle (install, calibrate, maintain, repair, relocate) in addition to hardware.",
     "Controls, Calibrations and Standards renamed to Analytical & Reference Standards.",
-    "Descriptions for categories that gained new service-type subcategories were extended (not replaced) with a services clause so first-stage classification doesn't miss service products."
+    "Descriptions for categories that gained new service-type subcategories were extended (not replaced) with a services clause so first-stage classification doesn't miss service products.",
+    "v4.0: added 13 new L2 (code-L3) categories covering CRO/pharma services (Histology & Pathology through Medical Affairs & Medical Communications); collapsed 4 imaging-modality Equipment nodes into 1 (Imaging & Microscopy); fixed stale cross-references to removed nodes (Caps & Closures, General Lab Consumables); added production-grade (research/GMP) tag language to Antibodies and Peptides & Amino Acids."
   ],
   "anchors": [
     {
@@ -27,7 +28,7 @@
     {
       "id": "antibodies",
       "label": "Antibodies",
-      "description": "Primary and secondary antibodies for research, diagnostic, and therapeutic applications. Identified by target protein or epitope (e.g., CD4, CD8, p53, Beta-Actin, GAPDH, Ki-67, PD-L1, EGFR, HER2), host species (mouse, rabbit, goat, rat, donkey, chicken, sheep), clonality (monoclonal, polyclonal, recombinant monoclonal), reactivity species (human, mouse, rat), and application (flow cytometry, western blot, IHC, immunofluorescence, ELISA, immunoprecipitation, ChIP). Includes conjugated antibodies (FITC, PE, APC, HRP, biotin, Alexa Fluor), isotype controls, antibody fragments, and nanobodies. Also includes antibody validation services (specificity and application-specific validation) and custom antibody generation (monoclonal, polyclonal, recombinant, and hybridoma production, tagged by grade)."
+      "description": "Primary and secondary antibodies for research, diagnostic, and therapeutic applications. Identified by target protein or epitope (e.g., CD4, CD8, p53, Beta-Actin, GAPDH, Ki-67, PD-L1, EGFR, HER2), host species (mouse, rabbit, goat, rat, donkey, chicken, sheep), clonality (monoclonal, polyclonal, recombinant monoclonal), reactivity species (human, mouse, rat), and application (flow cytometry, western blot, IHC, immunofluorescence, ELISA, immunoprecipitation, ChIP). Includes conjugated antibodies (FITC, PE, APC, HRP, biotin, Alexa Fluor), isotype controls, antibody fragments, and nanobodies. Also includes antibody validation services (specificity and application-specific validation) and custom antibody generation (monoclonal, polyclonal, recombinant, and hybridoma production, tagged by production grade: research-use or GMP)."
     },
     {
       "id": "proteins_peptides",
@@ -78,6 +79,71 @@
       "id": "general_office_supplies",
       "label": "General Office Supplies",
       "description": "Non-laboratory office and administrative supplies used in scientific and research workplaces. Includes paper, notebooks, pens, pencils, markers, writing instruments, binders, folders, staplers, tape, adhesives, printer supplies, toner cartridges, printer paper, computer accessories, desk accessories, and general administrative and stationery items used alongside laboratory operations."
+    },
+    {
+      "id": "histology_pathology",
+      "label": "Histology & Pathology",
+      "description": "Services for preparing, staining, imaging, and interpreting tissue specimens to characterize morphology, pathology, and molecular expression patterns. Includes routine and specialized histology, immunohistochemistry, in situ hybridization, digital pathology, and pathologist review, typically performed on customer-supplied animal or human tissue specimens in support of preclinical and translational research."
+    },
+    {
+      "id": "toxicology_safety_assessment",
+      "label": "Toxicology & Safety Assessment",
+      "description": "GLP and non-GLP nonclinical safety studies characterizing the toxicological profile of a drug, biologic, or chemical candidate prior to or alongside clinical development. Includes general and repeat-dose toxicology, safety pharmacology, genetic toxicology, and specialty toxicology studies (e.g., reproductive, developmental, immunotoxicology, carcinogenicity), typically conducted in animal models under regulatory guidelines (ICH, OECD, FDA)."
+    },
+    {
+      "id": "dmpk_adme",
+      "label": "DMPK / ADME",
+      "description": "Studies characterizing a compound's absorption, distribution, metabolism, and excretion (ADME) and pharmacokinetic behavior in vitro and in vivo. Includes metabolic stability, metabolite identification, drug-drug interaction (CYP/transporter) studies, plasma protein binding, permeability (Caco-2, PAMPA), and in vivo PK/toxicokinetic studies supporting lead optimization and IND-enabling packages."
+    },
+    {
+      "id": "bioanalysis",
+      "label": "Bioanalysis",
+      "description": "Quantitative and qualitative analysis of drugs, metabolites, and biomarkers in biological matrices to support pharmacokinetic, toxicokinetic, and immunogenicity assessments. Includes small-molecule and large-molecule (biologics) bioanalysis, ligand-binding and LC-MS/MS assays, immunogenicity/anti-drug antibody (ADA) testing, biomarker assays, and GLP/regulated method development and validation."
+    },
+    {
+      "id": "cmc_analytical_qc",
+      "label": "CMC, Analytical & QC",
+      "description": "Chemistry, Manufacturing, and Controls analytical services supporting drug substance and drug product development, characterization, and release. Includes analytical method development and validation, stability studies, release and characterization testing, impurity and extractables/leachables (E&L) testing, microbiological/sterility testing, and raw material testing, typically performed under GMP."
+    },
+    {
+      "id": "clinical_trial_services_cro",
+      "label": "Clinical Trial Services (CRO)",
+      "description": "Operational and administrative services supporting the planning, execution, and oversight of clinical trials. Includes trial management and monitoring, site management, patient recruitment and retention, clinical data management, biostatistics, medical writing, and clinical supply chain and logistics."
+    },
+    {
+      "id": "central_lab_services",
+      "label": "Central Lab Services",
+      "description": "Centralized clinical laboratory testing services supporting multi-site clinical trials with standardized, validated results. Includes routine safety labs (chemistry, hematology), specialty/esoteric testing, biomarker testing, flow cytometry, and kit build/logistics and sample management for global trial sites."
+    },
+    {
+      "id": "biomarker_companion_diagnostics",
+      "label": "Biomarker & Companion Diagnostics",
+      "description": "Development and validation of biomarker assays and companion diagnostic tests used to stratify patients, monitor disease, or guide treatment decisions. Includes biomarker assay development, companion diagnostic (CDx) development and regulatory co-development, clinical assay validation, and genomic/molecular profiling services."
+    },
+    {
+      "id": "regulatory_affairs",
+      "label": "Regulatory Affairs",
+      "description": "Services supporting regulatory strategy and submissions to health authorities throughout drug development and post-approval. Includes regulatory strategy consulting, dossier and eCTD preparation, submissions and agency liaison, labeling development, and regulatory auditing and compliance support."
+    },
+    {
+      "id": "pharmacovigilance_drug_safety",
+      "label": "Pharmacovigilance & Drug Safety",
+      "description": "Post-market and clinical-stage safety monitoring services for detecting, assessing, and reporting adverse events and safety signals. Includes individual case safety report (ICSR) processing, signal detection, aggregate safety reporting (PSUR/PBRER/DSUR), literature monitoring, and risk management plan support."
+    },
+    {
+      "id": "heor_rwe_market_access",
+      "label": "HEOR, RWE & Market Access",
+      "description": "Health economics, outcomes research, and market access services supporting value demonstration and reimbursement strategy. Includes health economic and outcomes research (HEOR) modeling, real-world evidence (RWE) studies, systematic literature review, payer/value dossier development, and pricing and market access strategy."
+    },
+    {
+      "id": "phase_iv_post_marketing_studies",
+      "label": "Phase IV / Post-Marketing Studies",
+      "description": "Post-approval research and surveillance activities characterizing a marketed product's real-world safety, effectiveness, and utilization. Includes observational studies, patient registries, late-phase interventional trials, and post-authorization safety studies (PASS)."
+    },
+    {
+      "id": "medical_affairs_medical_communications",
+      "label": "Medical Affairs & Medical Communications",
+      "description": "Scientific and medical communication services supporting evidence dissemination and healthcare provider/scientific engagement for a marketed or late-stage product. Includes medical writing and publications, medical communications, medical science liaison (MSL) support, and scientific advisory/KOL engagement services."
     }
   ]
 }

@@ -1,17 +1,18 @@
 {
-  "version": "3.0",
+  "version": "4.0",
   "notes": [
     "L4 (code) = new L3 subcategory descriptions, nested under each L3 (code) = new L2 anchor.",
     "This file does NOT replace l3_taxonomy_anchors.json \u2014 it extends it with subcategory detail.",
     "54 of 122 subcategories carried over unchanged from the prior version; 3 were merged/rewritten (Safety & PPE, Sequencing, Zebrafish Models); the remainder (65) are net-new, mostly services.",
-    "Imaging & Microscopy equipment split into 4 discrete nodes: Confocal Microscopy, Electron Microscopy (Cryo-EM), High-Content Imaging, Spatial Imaging."
+    "Imaging & Microscopy equipment split into 4 discrete nodes: Confocal Microscopy, Electron Microscopy (Cryo-EM), High-Content Imaging, Spatial Imaging.",
+    "v4.0: added 71 new L4 (code-L4) subcategories under the 13 new L2 categories; replaced confocal_microscopy/electron_microscopy_cryo_em/high_content_imaging/spatial_imaging with a single imaging_microscopy node (modality is now a spec, not a taxonomy branch)."
   ],
   "l3_subcategories": {
     "lab_supplies_consumables": [
       {
         "id": "bottles_containers",
         "label": "Bottles & Containers",
-        "description": "Standalone laboratory bottles and general-purpose containers for storing, dispensing, and transporting liquids, powders, and bulk reagents. Includes media bottles, reagent bottles, Nalgene bottles, HDPE bottles, glass bottles, amber bottles, wash bottles, carboys, jerricans, aspirator bottles, dropping bottles, wide-mouth bottles, narrow-mouth bottles, and graduated containers. Does NOT include tubes or vials designed for sample processing or centrifugation \u2014 see Tubes & Vials. Does NOT include caps or closures sold separately \u2014 see Caps & Closures."
+        "description": "Standalone laboratory bottles and general-purpose containers for storing, dispensing, and transporting liquids, powders, and bulk reagents. Includes media bottles, reagent bottles, Nalgene bottles, HDPE bottles, glass bottles, amber bottles, wash bottles, carboys, jerricans, aspirator bottles, dropping bottles, wide-mouth bottles, narrow-mouth bottles, and graduated containers. Does NOT include tubes or vials designed for sample processing or centrifugation \u2014 see Tubes & Vials. Also includes caps, closures, and other bottle/container accessories."
       },
       {
         "id": "cleaning_sterilization",
@@ -21,7 +22,7 @@
       {
         "id": "filtration",
         "label": "Filtration",
-        "description": "Filtration membranes, filter papers, filtration devices, and filtration systems for clarifying, sterilizing, and concentrating liquids and gases in laboratory settings. Includes syringe filters, membrane filters, PVDF filters, nylon filters, PES filters, PTFE filters, cellulose acetate filters, filter papers (Whatman, qualitative, quantitative, ashless), vacuum filter units, bottle-top filters, filter cups, ultrafiltration membranes, nanofiltration, filter holders, filter funnels, vacuum manifolds, and in-line filters. Does NOT include chromatography columns or resins \u2014 see General Lab Consumables."
+        "description": "Filtration membranes, filter papers, filtration devices, and filtration systems for clarifying, sterilizing, and concentrating liquids and gases in laboratory settings. Includes syringe filters, membrane filters, PVDF filters, nylon filters, PES filters, PTFE filters, cellulose acetate filters, filter papers (Whatman, qualitative, quantitative, ashless), vacuum filter units, bottle-top filters, filter cups, ultrafiltration membranes, nanofiltration, filter holders, filter funnels, vacuum manifolds, and in-line filters. Does NOT include chromatography columns, resins, or other specialty separation media."
       },
       {
         "id": "labeling_tape",
@@ -51,7 +52,7 @@
       {
         "id": "tubes_vials",
         "label": "Tubes & Vials",
-        "description": "Disposable and reusable tubes and vials used for sample collection, processing, storage, and analysis. Includes microcentrifuge tubes, Eppendorf tubes, 1.5 mL tubes, 2.0 mL tubes, centrifuge tubes, 15 mL conical tubes, 50 mL conical tubes, PCR tubes, PCR strips, cryovials, cryogenic tubes, sample vials, HPLC vials, GC vials, autosampler vials, blood collection tubes, serum separator tubes, culture tubes, test tubes, snap-cap tubes, screw-cap tubes, and specimen collection tubes. Does NOT include bottles for bulk reagent storage \u2014 see Bottles & Containers."
+        "description": "Disposable and reusable tubes and vials used for sample collection, processing, storage, and analysis. Includes microcentrifuge tubes, Eppendorf tubes, 1.5 mL tubes, 2.0 mL tubes, centrifuge tubes, 15 mL conical tubes, 50 mL conical tubes, PCR tubes, PCR strips, cryovials, cryogenic tubes, sample vials, HPLC vials, GC vials, autosampler vials, blood collection tubes, serum separator tubes, culture tubes, test tubes, snap-cap tubes, screw-cap tubes, and specimen collection tubes. Does NOT include bottles for bulk reagent storage \u2014 see Bottles & Containers. Also includes caps, closures, and other tube/vial accessories."
       },
       {
         "id": "tubing_hoses",
@@ -249,12 +250,12 @@
       {
         "id": "enzymes",
         "label": "Enzymes",
-        "description": "Purified non-antibody enzyme proteins for biochemical assays, substrate processing, and research applications. Includes proteases (trypsin, chymotrypsin, pepsin, elastase, collagenase, dispase, papain), nucleases (DNase I, RNase A), kinases, phosphatases, peroxidases (HRP), luciferases, beta-galactosidase, alkaline phosphatase, glucose oxidase, superoxide dismutase, catalase, lysozyme, and other purified enzyme proteins. Does NOT include molecular biology enzymes such as polymerases or restriction enzymes \u2014 see Molecular Biology Reagents."
+        "description": "Purified non-antibody enzyme proteins for biochemical assays, substrate processing, and research applications. Includes proteases (trypsin, chymotrypsin, pepsin, elastase, collagenase, dispase, papain), nucleases (DNase I, RNase A), kinases, phosphatases, peroxidases (HRP), luciferases, beta-galactosidase, alkaline phosphatase, glucose oxidase, superoxide dismutase, catalase, lysozyme, and other purified enzyme proteins. Does NOT include molecular biology enzymes such as polymerases or restriction enzymes \u2014 see Molecular Biology & Genomics."
       },
       {
         "id": "peptides_amino_acids",
         "label": "Peptides & Amino Acids",
-        "description": "Short amino acid chains and individual amino acid compounds for biochemical research, assay development, and cell culture supplementation. Includes custom synthesized peptides, peptide libraries, FMOC-protected amino acids, fluorescent peptide substrates, cell-penetrating peptides, antimicrobial peptides, peptide hormones, L-amino acids, D-amino acids, non-natural amino acids, amino acid standards, and dipeptides and tripeptides. Identified by sequence, length, purity, and modification status."
+        "description": "Short amino acid chains and individual amino acid compounds for biochemical research, assay development, and cell culture supplementation. Includes custom synthesized peptides, peptide libraries, FMOC-protected amino acids, fluorescent peptide substrates, cell-penetrating peptides, antimicrobial peptides, peptide hormones, L-amino acids, D-amino acids, non-natural amino acids, amino acid standards, and dipeptides and tripeptides. Identified by sequence, length, purity, and modification status. Also tagged by production grade (research-use or GMP)."
       },
       {
         "id": "albumin_carrier_proteins",
@@ -328,7 +329,7 @@
       {
         "id": "culture_media",
         "label": "Culture Media",
-        "description": "Liquid and powder culture media formulations for maintaining, growing, and differentiating mammalian and non-mammalian cells in vitro. Includes DMEM, RPMI-1640, MEM, IMDM, F-12 (Ham's), McCoy's 5A, DMEM/F-12, alpha-MEM, William's Medium E, MCDB media, serum-free media, defined media, chemically defined media, StemPro media, mTeSR, Essential 8, and specialty media for specific cell types (endothelial, epithelial, neuronal, stem cells). Does NOT include agar or microbial growth media \u2014 those belong in General Lab Consumables."
+        "description": "Liquid and powder culture media formulations for maintaining, growing, and differentiating mammalian and non-mammalian cells in vitro. Includes DMEM, RPMI-1640, MEM, IMDM, F-12 (Ham's), McCoy's 5A, DMEM/F-12, alpha-MEM, William's Medium E, MCDB media, serum-free media, defined media, chemically defined media, StemPro media, mTeSR, Essential 8, and specialty media for specific cell types (endothelial, epithelial, neuronal, stem cells). Does NOT include agar or microbial growth media."
       },
       {
         "id": "sera_supplements",
@@ -514,24 +515,9 @@
         "description": "Instrumentation for cell-based analysis and sorting. Includes flow cytometers, cell sorters, cell counters, cell viability analyzers, and imaging cytometers."
       },
       {
-        "id": "confocal_microscopy",
-        "label": "Confocal Microscopy",
-        "description": "Confocal microscope systems and accessories for high-resolution optical sectioning of biological samples. Includes laser scanning confocal microscopes, spinning disk confocal systems, and associated objectives, lasers, and detectors."
-      },
-      {
-        "id": "electron_microscopy_cryo_em",
-        "label": "Electron Microscopy (Cryo-EM)",
-        "description": "Electron microscope systems for ultrastructural imaging, including cryogenic electron microscopy. Includes transmission electron microscopes (TEM), scanning electron microscopes (SEM), cryo-EM systems, and associated sample preparation accessories."
-      },
-      {
-        "id": "high_content_imaging",
-        "label": "High-Content Imaging",
-        "description": "Automated imaging systems for high-content, high-throughput cellular analysis. Includes high-content screening (HCS) imagers, automated fluorescence microscopes with plate-handling, and associated image analysis software platforms."
-      },
-      {
-        "id": "spatial_imaging",
-        "label": "Spatial Imaging",
-        "description": "Instrumentation for spatial biology and spatial omics imaging. Includes spatial transcriptomics platforms, multiplexed tissue imaging systems, and in situ hybridization/sequencing imaging platforms."
+        "id": "imaging_microscopy",
+        "label": "Imaging & Microscopy",
+        "description": "Instrumentation and platforms for visualizing cells, tissues, and molecular targets at high resolution. Includes confocal microscopy, electron microscopy (cryo-EM), high-content imaging systems, and spatial imaging/spatial omics platforms. Identified by imaging modality (confocal, electron/cryo-EM, high-content, spatial)."
       },
       {
         "id": "liquid_handling_automation",
@@ -551,7 +537,7 @@
       {
         "id": "parts_spares",
         "label": "Parts & Spares",
-        "description": "Replacement parts and spare components for laboratory instruments. Includes lamps, seals, tubing, filters, rotors, gaskets, sensors, and other manufacturer-specific replacement parts identified by instrument make and model."
+        "description": "Replacement parts and spare components for laboratory instruments. Includes lamps, seals, tubing, filters, rotors, gaskets, sensors, and other manufacturer-specific replacement parts identified by instrument make and model. Also tagged by vendor, condition (new or refurbished), and instrument throughput tier."
       },
       {
         "id": "instrument_consumables",
@@ -643,6 +629,387 @@
         "id": "general_office_supplies",
         "label": "General Office Supplies",
         "description": "Non-laboratory office and administrative supplies used in scientific and research workplaces. Includes paper, notebooks, lab notebooks, pens, pencils, markers for writing (not lab labeling), writing instruments, binders, folders, staplers, tape, adhesives, printer supplies, toner cartridges, printer paper, computer accessories, desk accessories, and general administrative and stationery items. Does NOT include laboratory-specific PPE such as nitrile gloves, latex gloves, examination gloves, lab coats, safety goggles, or face shields \u2014 see Lab Supplies and Consumables. Does NOT include laboratory-specific cleaning supplies, sterilization wipes, or germicidal wipes \u2014 see Lab Supplies and Consumables."
+      }
+    ],
+    "histology_pathology": [
+      {
+        "id": "ihc_immunohistochemistry",
+        "label": "IHC (Immunohistochemistry)",
+        "description": "Antibody-based staining services to detect and localize specific protein targets in tissue sections. Includes chromogenic and fluorescent IHC, single- and multiplex-marker panels, and antibody optimization/titration on customer-supplied tissue."
+      },
+      {
+        "id": "special_histochemical_stains",
+        "label": "Special / Histochemical Stains",
+        "description": "Non-immunohistochemical staining services for visualizing tissue morphology and specific structures or substances. Includes H&E, Masson's trichrome, PAS, Alcian blue, Gomori's, and other special/histochemical stains."
+      },
+      {
+        "id": "in_situ_hybridization_ish",
+        "label": "In Situ Hybridization (ISH)",
+        "description": "Services for detecting and localizing specific nucleic acid sequences (DNA/RNA) directly in tissue sections. Includes chromogenic and fluorescent ISH (FISH), RNAscope and other RNA ISH platforms, and multiplex ISH panels."
+      },
+      {
+        "id": "digital_pathology_image_analysis",
+        "label": "Digital Pathology & Image Analysis",
+        "description": "Whole-slide scanning, image management, and quantitative image analysis services for stained tissue sections. Includes whole-slide imaging, automated scoring (e.g., H-score, percent positivity), and AI/ML-assisted image analysis."
+      },
+      {
+        "id": "electron_microscopy_tem_sem",
+        "label": "Electron Microscopy (TEM/SEM)",
+        "description": "Ultrastructural imaging services using transmission or scanning electron microscopy on tissue or cell specimens. Includes sample fixation and processing for EM, TEM imaging, SEM imaging, and immuno-EM."
+      },
+      {
+        "id": "tissue_processing_sectioning",
+        "label": "Tissue Processing & Sectioning",
+        "description": "Services for embedding, sectioning, and mounting tissue specimens in preparation for staining or molecular analysis. Includes paraffin and frozen tissue processing, microtomy/cryosectioning, and tissue microarray (TMA) construction."
+      },
+      {
+        "id": "necropsy_toxicologic_pathology",
+        "label": "Necropsy & Toxicologic Pathology",
+        "description": "Gross and microscopic pathology assessment services performed on animal subjects, typically in support of toxicology studies. Includes necropsy, organ weight and gross lesion assessment, and board-certified toxicologic pathologist evaluation."
+      },
+      {
+        "id": "pathology_peer_review",
+        "label": "Pathology Peer Review",
+        "description": "Independent secondary review of pathology findings and diagnoses by a qualified pathologist. Includes peer review of toxicologic pathology findings and quality control/consensus review for regulatory studies."
+      }
+    ],
+    "toxicology_safety_assessment": [
+      {
+        "id": "glp_toxicology",
+        "label": "GLP Toxicology",
+        "description": "Good Laboratory Practice-compliant nonclinical toxicology studies characterizing dose-related adverse effects of a test article. Includes single- and repeat-dose toxicity studies, dose range-finding studies, and regulatory (ICH/OECD-guideline) toxicology studies."
+      },
+      {
+        "id": "safety_pharmacology",
+        "label": "Safety Pharmacology",
+        "description": "Studies assessing the potential adverse effects of a test article on vital organ systems. Includes cardiovascular (hERG, telemetry), respiratory, and central nervous system safety pharmacology studies, typically per ICH S7A/S7B guidelines."
+      },
+      {
+        "id": "genetic_toxicology",
+        "label": "Genetic Toxicology",
+        "description": "Studies assessing the potential of a test article to cause genetic damage. Includes Ames/bacterial reverse mutation assay, in vitro micronucleus and chromosomal aberration assays, and in vivo genotoxicity studies."
+      },
+      {
+        "id": "toxicokinetics",
+        "label": "Toxicokinetics",
+        "description": "Pharmacokinetic assessment integrated into toxicology studies to characterize systemic exposure to a test article. Includes TK sampling and analysis conducted alongside GLP toxicology studies to support dose-exposure-response relationships."
+      },
+      {
+        "id": "repeat_dose_chronic_studies",
+        "label": "Repeat-Dose / Chronic Studies",
+        "description": "Extended-duration toxicology studies assessing cumulative and chronic effects of repeated test article administration. Includes subchronic and chronic (up to lifetime) repeat-dose toxicity studies in rodent and non-rodent species."
+      },
+      {
+        "id": "specialty_toxicology",
+        "label": "Specialty Toxicology",
+        "description": "Specialized nonclinical safety studies outside routine general toxicology. Includes reproductive and developmental toxicology (DART), immunotoxicology, carcinogenicity studies, and juvenile toxicology studies."
+      }
+    ],
+    "dmpk_adme": [
+      {
+        "id": "in_vitro_adme",
+        "label": "In Vitro ADME",
+        "description": "Cell- and enzyme-based assays characterizing a compound's absorption, distribution, metabolism, and excretion properties in vitro. Includes metabolic stability (microsomes, hepatocytes), CYP inhibition/induction screening, and plasma stability assays."
+      },
+      {
+        "id": "in_vivo_pk_tk",
+        "label": "In Vivo PK / TK",
+        "description": "Pharmacokinetic and toxicokinetic studies characterizing systemic drug exposure over time in a living animal model. Includes single- and multiple-dose PK studies, bioavailability studies, and cassette/cocktail dosing studies."
+      },
+      {
+        "id": "metabolite_identification",
+        "label": "Metabolite Identification",
+        "description": "Services identifying and characterizing the metabolites of a drug candidate. Includes in vitro and in vivo metabolite profiling, structure elucidation (LC-MS/MS, NMR), and reactive metabolite screening."
+      },
+      {
+        "id": "drug_drug_interaction",
+        "label": "Drug-Drug Interaction",
+        "description": "Studies assessing the potential for a drug candidate to interact with co-administered drugs via metabolic or transporter-mediated mechanisms. Includes CYP and UGT enzyme inhibition/induction studies and transporter (P-gp, BCRP) interaction studies."
+      },
+      {
+        "id": "protein_binding",
+        "label": "Protein Binding",
+        "description": "Assays measuring the extent to which a drug candidate binds to plasma or tissue proteins. Includes equilibrium dialysis, ultrafiltration, and ultracentrifugation-based plasma protein binding assays."
+      },
+      {
+        "id": "permeability_transporter",
+        "label": "Permeability & Transporter",
+        "description": "Assays characterizing a compound's membrane permeability and interaction with drug transporters. Includes Caco-2, MDCK, and PAMPA permeability assays, and transporter substrate/inhibition studies (P-gp, BCRP, OATP)."
+      }
+    ],
+    "bioanalysis": [
+      {
+        "id": "small_molecule_pk_bioanalysis",
+        "label": "Small-Molecule PK Bioanalysis",
+        "description": "Quantitative LC-MS/MS bioanalysis of small-molecule drugs and metabolites in biological matrices to support PK/TK studies. Includes GLP and non-GLP bioanalytical support for preclinical and clinical PK sample analysis."
+      },
+      {
+        "id": "large_molecule_bioanalysis",
+        "label": "Large-Molecule Bioanalysis",
+        "description": "Quantitative bioanalysis of biologics (antibodies, proteins, peptides) in biological matrices, typically via ligand-binding or hybrid LC-MS assays. Includes PK bioanalysis of monoclonal antibodies, fusion proteins, and other biotherapeutics."
+      },
+      {
+        "id": "immunogenicity_ada",
+        "label": "Immunogenicity / ADA",
+        "description": "Assays detecting and characterizing anti-drug antibodies (ADA) and neutralizing antibodies generated in response to a biotherapeutic. Includes screening, confirmatory, and titer/neutralizing antibody assays per regulatory tiered testing strategies."
+      },
+      {
+        "id": "biomarker_assays",
+        "label": "Biomarker Assays",
+        "description": "Quantitative assays measuring pharmacodynamic or disease-related biomarkers in biological samples to support clinical or nonclinical studies. Includes ligand-binding assays, multiplex biomarker panels, and biomarker assay qualification."
+      },
+      {
+        "id": "method_development_validation_bioanalysis",
+        "label": "Method Development & Validation",
+        "description": "Development and regulatory validation of bioanalytical methods for a specific analyte and matrix. Includes fit-for-purpose and GLP/regulated (FDA/EMA) bioanalytical method validation."
+      }
+    ],
+    "cmc_analytical_qc": [
+      {
+        "id": "method_development_validation_cmc",
+        "label": "Method Development & Validation",
+        "description": "Development and validation of analytical methods used to characterize and release drug substance and drug product. Includes HPLC/UPLC, GC, and compendial method development and ICH Q2-compliant validation."
+      },
+      {
+        "id": "stability_studies",
+        "label": "Stability Studies",
+        "description": "GMP stability testing programs assessing drug substance/product quality over time under defined storage conditions. Includes ICH-condition stability studies, forced degradation studies, and photostability testing."
+      },
+      {
+        "id": "release_testing",
+        "label": "Release Testing",
+        "description": "GMP analytical testing performed to release a drug substance or drug product batch against its specification. Includes identity, assay/potency, purity, and dissolution testing."
+      },
+      {
+        "id": "impurity_el_testing",
+        "label": "Impurity / E&L Testing",
+        "description": "Analytical testing to identify and quantify impurities, degradants, and extractables/leachables. Includes related substances testing, elemental impurity (ICH Q3D) testing, and container-closure extractables/leachables studies."
+      },
+      {
+        "id": "microbiology_sterility",
+        "label": "Microbiology / Sterility",
+        "description": "GMP microbiological testing services supporting drug product quality and safety. Includes sterility testing, bioburden testing, endotoxin (LAL) testing, and environmental monitoring."
+      },
+      {
+        "id": "raw_material_testing",
+        "label": "Raw Material Testing",
+        "description": "Incoming quality control testing of raw materials, excipients, and components used in drug manufacturing. Includes identity testing, compendial (USP/EP) raw material release testing, and vendor qualification testing."
+      }
+    ],
+    "clinical_trial_services_cro": [
+      {
+        "id": "trial_management_monitoring",
+        "label": "Trial Management & Monitoring",
+        "description": "Operational oversight services for clinical trial conduct, including on-site and remote monitoring visits. Includes project/trial management, clinical monitoring (CRA) visits, and risk-based monitoring services."
+      },
+      {
+        "id": "site_management",
+        "label": "Site Management",
+        "description": "Services supporting the selection, activation, and ongoing management of clinical trial sites. Includes site feasibility and selection, site activation, and site-facing CRO/SMO services."
+      },
+      {
+        "id": "patient_recruitment_retention",
+        "label": "Patient Recruitment & Retention",
+        "description": "Services supporting identification, enrollment, and retention of clinical trial participants. Includes patient recruitment campaigns, pre-screening, and retention/engagement programs."
+      },
+      {
+        "id": "clinical_data_management",
+        "label": "Clinical Data Management",
+        "description": "Services for collecting, cleaning, and managing clinical trial data. Includes EDC (electronic data capture) setup and management, data cleaning/query resolution, and database lock support."
+      },
+      {
+        "id": "biostatistics",
+        "label": "Biostatistics",
+        "description": "Statistical design, analysis, and reporting services for clinical trials. Includes statistical analysis plan (SAP) development, randomization, and statistical analysis/reporting of trial results."
+      },
+      {
+        "id": "medical_writing_cro",
+        "label": "Medical Writing",
+        "description": "Preparation of clinical and regulatory documents supporting trial conduct and reporting. Includes protocol writing, clinical study report (CSR) writing, and informed consent form development."
+      },
+      {
+        "id": "clinical_supply_logistics",
+        "label": "Clinical Supply & Logistics",
+        "description": "Services for the packaging, labeling, distribution, and management of investigational product supply for clinical trials. Includes clinical packaging/labeling, IRT/IVRS-managed supply forecasting, and comparator sourcing."
+      }
+    ],
+    "central_lab_services": [
+      {
+        "id": "routine_safety_labs",
+        "label": "Routine Safety Labs",
+        "description": "Standard clinical laboratory testing (chemistry, hematology, urinalysis) performed for routine safety monitoring in clinical trials. Includes serum chemistry panels, complete blood count (CBC), and coagulation testing."
+      },
+      {
+        "id": "specialty_esoteric_testing",
+        "label": "Specialty / Esoteric Testing",
+        "description": "Non-routine, specialized laboratory testing requiring specific expertise or platforms. Includes esoteric/reference lab testing, specialized assay panels, and low-volume/rare-analyte testing."
+      },
+      {
+        "id": "biomarker_testing",
+        "label": "Biomarker Testing",
+        "description": "Central-lab testing of pharmacodynamic, safety, or efficacy biomarkers across multi-site clinical trials. Includes standardized biomarker panels and cross-site biomarker testing harmonization."
+      },
+      {
+        "id": "flow_cytometry_central_lab",
+        "label": "Flow Cytometry",
+        "description": "Central-lab flow cytometry testing services for immunophenotyping and cell-based endpoints in clinical trials. Includes standardized immunophenotyping panels and multi-site flow cytometry harmonization."
+      },
+      {
+        "id": "kit_build_logistics",
+        "label": "Kit Build & Logistics",
+        "description": "Assembly, labeling, and global distribution of sample-collection kits for clinical trial sites. Includes kit build, kit distribution/logistics, and site kit inventory management."
+      },
+      {
+        "id": "sample_management",
+        "label": "Sample Management",
+        "description": "Tracking, storage, and shipment coordination for clinical trial biological samples across a study's lifecycle. Includes sample tracking/LIMS support, chain-of-custody management, and cold-chain shipment coordination."
+      }
+    ],
+    "biomarker_companion_diagnostics": [
+      {
+        "id": "biomarker_assay_development",
+        "label": "Biomarker Assay Development",
+        "description": "Development of novel or fit-for-purpose biomarker assays supporting drug development. Includes exploratory and analytically validated biomarker assay development for pharmacodynamic, safety, or patient-selection biomarkers."
+      },
+      {
+        "id": "companion_diagnostic_cdx_development",
+        "label": "Companion Diagnostic (CDx) Development",
+        "description": "Development of in vitro diagnostic tests co-developed with a therapeutic to identify patients likely to benefit from treatment. Includes CDx assay development, analytical/clinical validation, and regulatory co-submission support."
+      },
+      {
+        "id": "clinical_assay_validation",
+        "label": "Clinical Assay Validation",
+        "description": "Validation of clinical laboratory assays to demonstrate analytical and clinical performance for use in a clinical trial or diagnostic context. Includes analytical validation (precision, accuracy, sensitivity/specificity) and clinical validation studies."
+      },
+      {
+        "id": "genomic_molecular_profiling",
+        "label": "Genomic / Molecular Profiling",
+        "description": "Genomic and molecular profiling services characterizing a sample's genetic, transcriptomic, or mutational profile. Includes next-generation sequencing (NGS) panels, gene expression profiling, and mutation/variant testing."
+      }
+    ],
+    "regulatory_affairs": [
+      {
+        "id": "regulatory_strategy",
+        "label": "Regulatory Strategy",
+        "description": "Consulting services developing a regulatory pathway and strategy for a drug or device candidate. Includes regulatory strategy consulting, health authority meeting preparation, and orphan/breakthrough designation strategy."
+      },
+      {
+        "id": "dossier_ectd_preparation",
+        "label": "Dossier / eCTD Preparation",
+        "description": "Preparation and compilation of regulatory submission dossiers in required formats. Includes eCTD compilation, module authoring/formatting, and submission publishing."
+      },
+      {
+        "id": "submissions_agency_liaison",
+        "label": "Submissions & Agency Liaison",
+        "description": "Services managing the submission process and ongoing communication with regulatory health authorities. Includes IND/NDA/BLA/MAA submission management and health authority query response coordination."
+      },
+      {
+        "id": "labeling_regulatory",
+        "label": "Labeling",
+        "description": "Development and maintenance of drug product labeling and prescribing information. Includes core data sheet (CDS) and package insert/label development and label harmonization across markets."
+      },
+      {
+        "id": "auditing_compliance",
+        "label": "Auditing & Compliance",
+        "description": "Quality assurance audits and regulatory compliance support services. Includes GxP audits (GLP/GCP/GMP), vendor qualification audits, and regulatory inspection readiness support."
+      }
+    ],
+    "pharmacovigilance_drug_safety": [
+      {
+        "id": "case_processing",
+        "label": "Case Processing",
+        "description": "Intake, triage, and processing of individual adverse event case reports. Includes individual case safety report (ICSR) intake, data entry, medical coding (MedDRA), and case narrative writing."
+      },
+      {
+        "id": "signal_detection",
+        "label": "Signal Detection",
+        "description": "Analysis of safety data to identify potential new safety signals for a marketed or investigational product. Includes statistical signal detection, disproportionality analysis, and signal evaluation/validation."
+      },
+      {
+        "id": "aggregate_reports",
+        "label": "Aggregate Reports",
+        "description": "Preparation of periodic aggregate safety reports required by health authorities. Includes PSUR, PBRER, and DSUR authoring and submission support."
+      },
+      {
+        "id": "literature_monitoring",
+        "label": "Literature Monitoring",
+        "description": "Ongoing surveillance of scientific literature for safety-relevant information about a product. Includes systematic literature searches and case identification from published literature."
+      },
+      {
+        "id": "risk_management",
+        "label": "Risk Management",
+        "description": "Development and maintenance of risk management plans and risk minimization measures for a product. Includes REMS/RMP development, risk minimization materials, and effectiveness assessments."
+      }
+    ],
+    "heor_rwe_market_access": [
+      {
+        "id": "heor_modeling",
+        "label": "HEOR Modeling",
+        "description": "Health economic modeling services quantifying the clinical and economic value of a therapy. Includes cost-effectiveness modeling, budget impact modeling, and cost-of-illness studies."
+      },
+      {
+        "id": "real_world_evidence_studies",
+        "label": "Real-World Evidence Studies",
+        "description": "Studies using real-world data sources to characterize disease burden, treatment patterns, or outcomes. Includes retrospective and prospective RWE studies using claims, EHR, or registry data."
+      },
+      {
+        "id": "systematic_literature_review",
+        "label": "Systematic Literature Review",
+        "description": "Structured review and synthesis of published evidence to support HEOR, regulatory, or clinical claims. Includes systematic literature reviews, network meta-analyses, and evidence gap analyses."
+      },
+      {
+        "id": "payer_value_dossiers",
+        "label": "Payer / Value Dossiers",
+        "description": "Development of evidence dossiers to support payer and reimbursement decision-making. Includes global value dossiers (GVD) and AMCP-format dossier development."
+      },
+      {
+        "id": "pricing_market_access",
+        "label": "Pricing & Market Access",
+        "description": "Strategic consulting services supporting product pricing and reimbursement strategy. Includes pricing strategy, market access consulting, and reimbursement landscape assessment."
+      }
+    ],
+    "phase_iv_post_marketing_studies": [
+      {
+        "id": "observational_studies",
+        "label": "Observational Studies",
+        "description": "Non-interventional studies characterizing product use or outcomes in real-world clinical practice. Includes prospective and retrospective observational cohort and case-control studies."
+      },
+      {
+        "id": "patient_registries",
+        "label": "Patient Registries",
+        "description": "Establishment and management of structured, longitudinal patient data collection programs. Includes disease registries and product/exposure registries for post-marketing surveillance."
+      },
+      {
+        "id": "late_phase_trials",
+        "label": "Late-Phase Trials",
+        "description": "Interventional clinical trials conducted after initial marketing approval. Includes Phase IIIb/IV interventional trials and pragmatic trial designs."
+      },
+      {
+        "id": "post_auth_safety_studies_pass",
+        "label": "Post-Auth Safety Studies (PASS)",
+        "description": "Studies required or requested by health authorities to further characterize a product's safety profile post-approval. Includes PASS protocol development, execution, and regulatory reporting."
+      }
+    ],
+    "medical_affairs_medical_communications": [
+      {
+        "id": "medical_writing_publications",
+        "label": "Medical Writing & Publications",
+        "description": "Preparation of scientific manuscripts, abstracts, and posters communicating clinical or research findings. Includes manuscript writing, abstract/poster development, and publication planning."
+      },
+      {
+        "id": "medical_communications",
+        "label": "Medical Communications",
+        "description": "Development of scientific and educational content and materials for healthcare professional or scientific audiences. Includes slide decks, scientific platforms, and medical education content."
+      },
+      {
+        "id": "msl_support",
+        "label": "MSL Support",
+        "description": "Field-based medical science liaison services engaging with healthcare providers and key opinion leaders on scientific/clinical topics. Includes MSL staffing, training, and field medical support."
+      },
+      {
+        "id": "scientific_advisory_kol",
+        "label": "Scientific Advisory / KOL",
+        "description": "Coordination and execution of scientific advisory boards and key opinion leader engagement activities. Includes advisory board planning/execution and KOL identification and engagement."
       }
     ]
   }

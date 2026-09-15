@@ -9,18 +9,29 @@ volumes (v1/v2) used by classify_products.py.
 Key design:
   - Anchor vectors loaded from Snowflake (shared with classify_products.py)
   - L3 + L4 classification happen in the same pass
-  - All listings looked up against one dedicated services cache; net-new
-    services embedded with parallel Bedrock workers
+  - Phase 'cached' classifies whatever's already in the dedicated services cache
+    and stages the rest — mirrors classify_products.py's phase_a, minus the v1/v2
+    volume split (services has only one cache layer, no giant frozen volumes to
+    memmap around)
+  - Phase 'embed' embeds and classifies only the net-new subset phase 'cached' staged
   - New embeddings saved to a per-env incremental cache, checkpointed every 1,000
     (checkpoints append only new-since-last-checkpoint entries to a small delta
     log — see append_cache_delta/consolidate_cache_delta in
     product_classifier_utils.py — so cost stays cheap regardless of cache size;
     the full cache file is only rewritten once, at the very end of a run)
-  - Results written to Snowflake in 500K-row chunks
+  - Results published via upsert (delete-matching-then-insert) — NEVER an
+    overwrite, since this shares NEW_CLASSIFICATIONS_STAGE/PROD with
+    classify_products.py's full-overwrite publish
 
 Run order:
-    python classify_services.py --env stage --phase embed    # embed & classify services
-    python classify_services.py --env stage --phase publish  # write to Snowflake
+    python classify_services.py --env stage --phase cached   # classify cache hits, stage the rest
+    python classify_services.py --env stage --phase embed    # embed & classify net-new services
+    python classify_services.py --env stage --phase publish  # upsert into Snowflake
+
+To classify ONLY what's already embedded (no Bedrock calls at all), run
+'cached' then 'publish' — do not run 'embed'. Must run AFTER
+classify_products.py's full ('stage'/'prod') publish, since that overwrites
+the shared output table.
 """
 
 import argparse
@@ -46,6 +57,7 @@ from product_classifier_utils import (
     load_listings,
     load_pickle_cache_with_delta,
     stable_text_hash,
+    upsert_publish,
 )
 
 # ── Static config (shared across all environments) ────────────────────────────
@@ -62,14 +74,14 @@ CLASSIFY_BATCH   = 100_000   # rows per classification batch
 # exists yet. Confirm/adjust these names once it's created.
 ENV_CONFIGS = {
     "stage": {
-        "input_table":  "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.SERVICES_V1_STAGE",
-        "output_table": "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.CLASSIFICATIONS_SERVICES_V1_STAGE",
+        "input_table":  "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.SERVICES_STAGE",
+        "output_table": "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.NEW_CLASSIFICATIONS_STAGE",
         "cache_path":   PROJECT_ROOT / "artifacts/cache/embedding_cache_services_stage.pkl",
         "out_dir":      PROJECT_ROOT / "artifacts/analysis/stage_services_classification",
     },
     "prod": {
-        "input_table":  "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.SERVICES_PROD_V1",
-        "output_table": "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.CLASSIFICATIONS_SERVICES_V1_PROD",
+        "input_table":  "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.SERVICES_PROD",
+        "output_table": "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.NEW_CLASSIFICATIONS_PROD",
         "cache_path":   PROJECT_ROOT / "artifacts/cache/embedding_cache_services_prod.pkl",
         "out_dir":      PROJECT_ROOT / "artifacts/analysis/prod_services_classification",
     },
@@ -80,13 +92,15 @@ INPUT_TABLE         = None
 OUTPUT_TABLE        = None
 CACHE_PATH          = None
 OUT_DIR             = None
+CACHED_RESULTS      = None
+EMBED_WORK          = None
 PHASE_EMBED_RESULTS = None
 
 
-# ── Phase embed ───────────────────────────────────────────────────────────────
+# ── Phase cached ──────────────────────────────────────────────────────────────
 
-def phase_embed():
-    print("\n=== PHASE EMBED: Embed & classify service listings ===")
+def phase_cached():
+    print("\n=== PHASE CACHED: Classify cache hits, stage the rest ===")
 
     sf = get_products_session()
     l3_anchors, l4_by_l3 = load_anchors_from_snowflake(sf)
@@ -95,18 +109,69 @@ def phase_embed():
     texts  = build_product_text(df).tolist()
     hashes = [stable_text_hash(t) for t in texts]
 
+    cache = load_pickle_cache_with_delta(CACHE_PATH)
+
+    in_cache   = [h in cache for h in hashes]
+    cached_idx = [i for i, m in enumerate(in_cache) if m]
+    miss_idx   = [i for i, m in enumerate(in_cache) if not m]
+
+    print(f"\nIn cache:    {len(cached_idx):,}")
+    print(f"Not cached:  {len(miss_idx):,}  ← will be embedded in phase embed")
+
+    if cached_idx:
+        records = []
+        for start in range(0, len(cached_idx), CLASSIFY_BATCH):
+            idx_batch    = cached_idx[start:start + CLASSIFY_BATCH]
+            batch_hashes = [hashes[i] for i in idx_batch]
+            vecs    = np.array([cache[h] for h in batch_hashes], dtype=np.float32)
+            results = classify_l3_and_l4(vecs, l3_anchors, l4_by_l3)
+            records.append(attach_classifications(df.iloc[idx_batch], results))
+            hi  = (~results[4]).sum()
+            pct = (start + len(idx_batch)) / len(cached_idx) * 100
+            print(f"  batch {start:,}–{start+len(idx_batch):,} ({pct:.0f}%) — L3 high-conf: {hi:,}/{len(idx_batch):,}")
+        cached_df = pd.concat(records, ignore_index=True)
+        cached_df.to_csv(CACHED_RESULTS, index=False)
+        hi = (~cached_df["L3_IS_LOW_CONFIDENCE"]).sum()
+        print(f"\nPhase cached saved: {CACHED_RESULTS} ({len(cached_df):,} rows)")
+        print(f"L3 high-confidence: {hi:,}/{len(cached_df):,} ({hi/len(cached_df)*100:.1f}%)")
+    else:
+        print("Phase cached: no cache hits.")
+
+    embed_work = df.iloc[miss_idx].copy()
+    embed_work["_HASH"] = [hashes[i] for i in miss_idx]
+    embed_work.to_parquet(EMBED_WORK, index=False)
+    print(f"Embed work file: {EMBED_WORK} ({len(embed_work):,} rows)")
+
+
+# ── Phase embed ───────────────────────────────────────────────────────────────
+
+def phase_embed():
+    print("\n=== PHASE EMBED: Embed & classify net-new services ===")
+    if not EMBED_WORK.exists():
+        print("ERROR: Run phase cached first.")
+        sys.exit(1)
+
+    embed_work = pd.read_parquet(EMBED_WORK)
+    print(f"Net-new services to embed: {len(embed_work):,}")
+
+    sf = get_products_session()
+    l3_anchors, l4_by_l3 = load_anchors_from_snowflake(sf)
+
     cache   = load_pickle_cache_with_delta(CACHE_PATH)
     bedrock = get_bedrock_client(profile_name=AWS_PROFILE, region=AWS_REGION)
 
+    hashes = embed_work["_HASH"].tolist()
+
     already_done = [h for h in hashes if h in cache]
-    still_needed = sorted({h for h in hashes if h not in cache})
-    print(f"Already cached: {len(already_done):,}")
-    print(f"Need embedding: {len(still_needed):,}")
+    still_needed = [h for h in hashes if h not in cache]
+    print(f"Already cached: {len(already_done):,} (resuming from prior run)")
+    print(f"Still need embedding: {len(still_needed):,}")
 
     if still_needed:
         print(f"\nEmbedding {len(still_needed):,} texts with {EMBED_WORKERS} parallel workers...")
 
-        hash_to_text = {h: t for h, t in zip(hashes, texts)}
+        all_texts    = build_product_text(embed_work).tolist()
+        hash_to_text = {h: t for h, t in zip(hashes, all_texts)}
 
         # Checkpoints append only the entries added since the last checkpoint to a
         # small delta log (append_cache_delta), instead of re-pickling the entire
@@ -137,34 +202,57 @@ def phase_embed():
         print("Saving final cache...")
         consolidate_cache_delta(cache, CACHE_PATH)
 
-    print(f"\nClassifying {len(df):,} services...")
+    print(f"\nClassifying {len(embed_work):,} net-new services...")
     records = []
-    for start in range(0, len(df), CLASSIFY_BATCH):
-        end          = min(start + CLASSIFY_BATCH, len(df))
-        batch_hashes = hashes[start:end]
+    for start in range(0, len(embed_work), CLASSIFY_BATCH):
+        end          = min(start + CLASSIFY_BATCH, len(embed_work))
+        batch_hashes = [hashes[i] for i in range(start, end)]
         vecs    = np.array([cache[h] for h in batch_hashes], dtype=np.float32)
         results = classify_l3_and_l4(vecs, l3_anchors, l4_by_l3)
-        records.append(attach_classifications(df.iloc[start:end], results))
+        batch_df = embed_work.iloc[start:end].drop(columns=["_HASH"], errors="ignore")
+        records.append(attach_classifications(batch_df, results))
         hi  = (~results[4]).sum()
-        pct = end / len(df) * 100
+        pct = end / len(embed_work) * 100
         print(f"  batch {start:,}–{end:,} ({pct:.0f}%) — L3 high-conf: {hi:,}/{end-start:,}")
 
-    results_df = pd.concat(records, ignore_index=True)
-    results_df.to_csv(PHASE_EMBED_RESULTS, index=False)
-    hi = (~results_df["L3_IS_LOW_CONFIDENCE"]).sum()
-    print(f"\nPhase embed saved: {PHASE_EMBED_RESULTS} ({len(results_df):,} rows)")
-    print(f"L3 high-confidence: {hi:,}/{len(results_df):,} ({hi/len(results_df)*100:.1f}%)")
+    if records:
+        embed_results = pd.concat(records, ignore_index=True)
+    else:
+        embed_results = embed_work.drop(columns=["_HASH"], errors="ignore")
+
+    embed_results.to_csv(PHASE_EMBED_RESULTS, index=False)
+    print(f"\nPhase embed saved: {PHASE_EMBED_RESULTS} ({len(embed_results):,} rows)")
+    if len(embed_results):
+        hi = (~embed_results["L3_IS_LOW_CONFIDENCE"]).sum()
+        print(f"L3 high-confidence: {hi:,}/{len(embed_results):,} ({hi/len(embed_results)*100:.1f}%)")
 
 
 # ── Phase publish ─────────────────────────────────────────────────────────────
 
 def phase_publish():
-    print("\n=== PHASE PUBLISH: Write to Snowflake ===")
-    if not PHASE_EMBED_RESULTS.exists():
-        print("ERROR: Run phase embed first.")
+    print("\n=== PHASE PUBLISH: Upsert into Snowflake ===")
+
+    parts = []
+    for label, path in [
+        ("Phase cached", CACHED_RESULTS),
+        ("Phase embed",  PHASE_EMBED_RESULTS),
+    ]:
+        if path.exists():
+            df = pd.read_csv(path, low_memory=False)
+            parts.append(df)
+            print(f"  {label}: {len(df):,} rows")
+        else:
+            print(f"  WARNING: {path.name} not found — skipping")
+
+    if not parts:
+        print("ERROR: No phase results found.")
         sys.exit(1)
 
-    combined = pd.read_csv(PHASE_EMBED_RESULTS, low_memory=False)
+    # Drop genuinely-empty (0-row) parts before concatenating — mixing them in
+    # triggers a pandas dtype-inference quirk on boolean columns.
+    parts = [df for df in parts if len(df) > 0]
+
+    combined = pd.concat(parts, ignore_index=True)
     # PRODUCT_ID is being phased out in favor of PRODUCT_VARIANT_ID as the durable
     # identifier — some rows now have a null PRODUCT_ID with a valid, unique
     # PRODUCT_VARIANT_ID instead. Dedup on whichever identifier is present so
@@ -189,17 +277,8 @@ def phase_publish():
 
     print(f"\nConnecting to Snowflake...")
     sf = get_products_session()
+    upsert_publish(sf, combined, OUTPUT_TABLE, PUBLISH_CHUNK)
 
-    n_chunks = (len(combined) + PUBLISH_CHUNK - 1) // PUBLISH_CHUNK
-    print(f"Writing {len(combined):,} rows to {OUTPUT_TABLE} in {n_chunks} chunk(s)...")
-
-    for i, start in enumerate(range(0, len(combined), PUBLISH_CHUNK)):
-        chunk = combined.iloc[start:start + PUBLISH_CHUNK]
-        mode  = "overwrite" if i == 0 else "append"
-        sf.create_dataframe(chunk).write.mode(mode).save_as_table(OUTPUT_TABLE)
-        print(f"  chunk {i+1}/{n_chunks}: {len(chunk):,} rows written ({mode})")
-
-    print(f"\nDone. {OUTPUT_TABLE} updated with {len(combined):,} rows.")
     print("\nColumns written:")
     for col in combined.columns:
         print(f"  {col}")
@@ -211,7 +290,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--env",   choices=["stage", "prod"], required=True,
                         help="Which environment to classify (stage or prod)")
-    parser.add_argument("--phase", choices=["embed", "publish"], required=True,
+    parser.add_argument("--phase", choices=["cached", "embed", "publish"], required=True,
                         help="Which phase to run")
     args = parser.parse_args()
 
@@ -222,6 +301,8 @@ if __name__ == "__main__":
     OUT_DIR      = cfg["out_dir"]
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
+    CACHED_RESULTS      = OUT_DIR / "phase_cached_results.csv"
+    EMBED_WORK          = OUT_DIR / "phase_embed_work.parquet"
     PHASE_EMBED_RESULTS = OUT_DIR / "phase_embed_results.csv"
 
     print(f"Environment: {args.env.upper()}")
@@ -230,7 +311,9 @@ if __name__ == "__main__":
     print(f"  Cache:  {CACHE_PATH}")
     print(f"  Artifacts: {OUT_DIR}")
 
-    if args.phase == "embed":
+    if args.phase == "cached":
+        phase_cached()
+    elif args.phase == "embed":
         phase_embed()
     elif args.phase == "publish":
         phase_publish()

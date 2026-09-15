@@ -7,11 +7,11 @@ End-to-end L3 + L4 product classification using cosine similarity against pre-em
 | File | Purpose |
 |---|---|
 | `classify_products.py` | Product pipeline — 5 phases covering cache lookup, vector extraction, embedding, and Snowflake publish |
-| `classify_services.py` | Services pipeline — 2 phases (embed, publish); classifies quoted services against the same taxonomy anchors |
-| `product_classifier_utils.py` | Shared utilities: Snowflake session, listing loader, anchor loading, classification math, Bedrock/Titan embedding, text hashing, cache helpers |
+| `classify_services.py` | Services pipeline — 3 phases (cached, embed, publish); classifies quoted services against the same taxonomy anchors, publishes into the same output table as products |
+| `product_classifier_utils.py` | Shared utilities: Snowflake session, listing loader, anchor loading, classification math, upsert-publish, Bedrock/Titan embedding, text hashing, cache helpers |
 | `seed_anchor_tables.py` | Re-embed L3/L4 anchor descriptions and write to Snowflake — re-run when taxonomy changes |
-| `taxonomy/l3_taxonomy_anchors.json` | L3 category anchor descriptions (13 categories) |
-| `taxonomy/l4_taxonomy_anchors.json` | L4 subcategory anchor descriptions (76 subcategories across all L3s) |
+| `taxonomy/l3_taxonomy_anchors.json` | L3 category anchor descriptions (27 categories) |
+| `taxonomy/l4_taxonomy_anchors.json` | L4 subcategory anchor descriptions (190 subcategories across all L3s) |
 
 Both pipelines classify against the same anchor tables (`EMBEDDED_L3_DESCRIPTIONS`/`EMBEDDED_L4_DESCRIPTIONS`), loaded via the shared `load_anchors_from_snowflake()` in `product_classifier_utils.py`. Re-running `seed_anchor_tables.py` after a taxonomy change affects both — re-run each pipeline's `--phase embed`/`a` afterward to reclassify against the updated anchors.
 
@@ -118,24 +118,29 @@ True` if that table already has data you don't want overwritten.
 
 ## Running the services pipeline
 
-`classify_services.py` classifies quoted-service listings using the same taxonomy anchors as products, but does not touch the product v1/v2 caches — it maintains its own dedicated, incrementally-growing cache instead.
+`classify_services.py` classifies quoted-service listings using the same taxonomy anchors as products, but does not touch the product v1/v2 caches — it maintains its own dedicated, incrementally-growing cache instead. It **publishes into the same output table as `classify_products.py`** (`NEW_CLASSIFICATIONS_STAGE`/`PROD`), always via upsert (never overwrite) — so it must always be run *after* the corresponding products run, whose overwrite would otherwise wipe services' rows.
 
 ```bash
 cd /Users/stephanie.mcmahon/smcmahon_repo/auto_classification/classification_pipeline
 
+# Phase cached — classify whatever's already in the services cache, stage the rest
+caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classify_services.py --env stage --phase cached
+
 # Phase embed — embed net-new services via Bedrock, then classify
 caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classify_services.py --env stage --phase embed
 
-# Phase publish — write results to Snowflake
+# Phase publish — upsert results into Snowflake
 caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classify_services.py --env stage --phase publish
 ```
 
 | | stage | prod |
 |---|---|---|
-| Input table | `SERVICES_V1_STAGE` | `SERVICES_PROD_V1` (placeholder — table doesn't exist yet) |
-| Output table | `CLASSIFICATIONS_SERVICES_V1_STAGE` | `CLASSIFICATIONS_SERVICES_V1_PROD` (placeholder) |
+| Input table | `SERVICES_STAGE` | `SERVICES_PROD` (placeholder — table doesn't exist yet) |
+| Output table | `NEW_CLASSIFICATIONS_STAGE` (shared with products) | `NEW_CLASSIFICATIONS_PROD` (shared with products) |
 | Cache | `embedding_cache_services_stage.pkl` | `embedding_cache_services_prod.pkl` |
 | Artifacts dir | `artifacts/analysis/stage_services_classification/` | `artifacts/analysis/prod_services_classification/` |
+
+To classify only what's already embedded (no Bedrock calls at all — useful for a fast preview against a freshly-updated taxonomy before committing to embedding a large net-new volume), run `--phase cached` then `--phase publish`, skipping `--phase embed` entirely. This works the same way for `classify_products.py`: run `--phase a` (+ `--phase extract`/`--phase b` for v1 cache hits) and `--phase publish`, skipping `--phase embed`.
 
 Re-running `--phase embed` after a taxonomy update skips Bedrock calls for already-cached hashes and just reclassifies + re-publishes against the refreshed anchors.
 
@@ -145,12 +150,16 @@ Written to the Snowflake output table:
 
 | Column | Description |
 |---|---|
-| `PRODUCT_ID` | Product identifier |
+| `PRODUCT_ID` | Product identifier (being phased out in favor of `PRODUCT_VARIANT_ID`) |
 | `PRODUCT_NAME` | Product name |
+| `PRODUCT_VARIANT_ID` | Durable product variant identifier |
+| `PRODUCT_VARIANT_NAME` | Variant-level name (ride-along; not yet used in classification) |
+| `CATEGORY_NAME` | Source-provided category (ride-along; not yet used in classification) |
 | `DESCRIPTION` | Product description |
+| `SPECIFICATION_ASSIGNMENTS_C` | Structured spec assignments (ride-along; feeds `spec_extraction`'s text-mining fallback) |
 | `PRICING_STATUS_C` | Pricing status |
 | `LIST_PRICE_C` | List price |
-| `SOURCE` | Segment: LCG, LEI, or Services |
+| `PRODUCT_SOURCE_C` | Row origin (products vs. services) |
 | `ASSIGNED_NEW_L3_ID` | L3 category snake_case id |
 | `ASSIGNED_NEW_L3_LABEL` | L3 category display label |
 | `L3_CONFIDENCE` | Cosine similarity score to winning L3 anchor |

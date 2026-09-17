@@ -6,9 +6,10 @@ End-to-end L3 + L4 product classification using cosine similarity against pre-em
 
 | File | Purpose |
 |---|---|
-| `classify_products.py` | Product pipeline — 5 phases covering cache lookup, vector extraction, embedding, and Snowflake publish |
+| `classify_products.py` | Product pipeline — 3 phases (a, embed, publish) covering cache lookup, embedding, and Snowflake publish |
 | `classify_services.py` | Services pipeline — 3 phases (cached, embed, publish); classifies quoted services against the same taxonomy anchors, publishes into the same output table as products |
 | `product_classifier_utils.py` | Shared utilities: Snowflake session, listing loader, anchor loading, classification math, upsert-publish, Bedrock/Titan embedding, text hashing, cache helpers |
+| `freeze_cache.py` | Freezes an active cache into a dated read-only volume under `artifacts/cache/frozen_volumes/` and resets the active cache to empty — run when an active cache approaches ~1M entries |
 | `seed_anchor_tables.py` | Re-embed L3/L4 anchor descriptions and write to Snowflake — re-run when taxonomy changes |
 | `taxonomy/l3_taxonomy_anchors.json` | L3 category anchor descriptions (27 categories) |
 | `taxonomy/l4_taxonomy_anchors.json` | L4 subcategory anchor descriptions (190 subcategories across all L3s) |
@@ -37,27 +38,22 @@ cd /Users/stephanie.mcmahon/smcmahon_repo/auto_classification/classification_pip
 ### Full run order
 
 ```bash
-# Phase A — classify v2 cache + env cache hits (~30-60 min)
+# Phase A — classify cache hits: active cache, then each frozen volume in
+# artifacts/cache/frozen_volumes/ (one at a time)
 caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classify_products.py --env stage --phase a
 
-# Phase extract — extract v1 (32GB) vectors to memmap (~30 min)
-caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classify_products.py --env stage --phase extract
-
-# Phase B — classify v1 cache hits from memmap (~30-40 min)
-caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classify_products.py --env stage --phase b
-
-# Phase embed — embed net-new products via Bedrock, then classify (~2-4 hrs)
+# Phase embed — embed net-new products via Bedrock, then classify
 caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classify_products.py --env stage --phase embed
 
-# Phase publish — merge results and write to Snowflake (~10 min)
+# Phase publish — merge results and write to Snowflake
 caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classify_products.py --env stage --phase publish
 ```
 
 Replace `--env stage` with `--env prod` to run against prod (requires `PRODUCTS_PROD` table to exist).
 
-### Why 5 phases?
+### Why only 3 phases?
 
-The prod embedding caches (v1: ~32GB, v2: ~13GB) cannot be loaded simultaneously. Phases a/extract/b stagger their memory usage. Phase embed only touches net-new products not found in any cache. Each phase is independently resumable.
+Historically this pipeline also had `extract`/`b` phases, needed because the shared v1/v2 product embedding volumes (~32GB and ~13GB) couldn't be loaded simultaneously, and v1 alone was too big to hold in memory alongside anything else — hence extracting just the needed vectors to a memmapped `.npy` file rather than loading the whole thing. Those volumes were retired in September 2026 after a source-table schema migration (see "Cache volumes & freezing" below) made them permanently stale (0 cache hits against the new data). The replacement design — small, individually-sized frozen volumes checked one at a time — never needs that workaround, so `extract`/`b` were removed. `phase a` now does classification directly as it goes, whichever layer (active cache or a given frozen volume) currently holds the vectors.
 
 ### Resuming after interruption
 
@@ -83,6 +79,57 @@ run's `load_pickle_cache_with_delta` replays it automatically, and discards a
 truncated trailing chunk (from a kill mid-write) rather than failing, at the cost of
 re-embedding at most one checkpoint's worth of entries.
 
+### Incremental embedding batches
+
+When the net-new volume is huge (millions of rows) and the taxonomy may still change,
+embed in capped batches rather than committing to the full run up front:
+
+```bash
+# Embed a capped batch (products: --limit; services: same flag, same meaning)
+caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classify_products.py --env stage --phase embed --limit 300000
+caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classify_services.py --env stage --phase embed --limit 100000
+# (safe to run these two concurrently — separate cache files, no shared-write risk)
+
+# Reclassify everything currently cached (this batch + all prior batches) and publish
+caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classify_products.py --env stage --phase a
+caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classify_products.py --env stage --phase publish
+caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classify_services.py --env stage --phase cached
+caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classify_services.py --env stage --phase publish
+```
+
+No dedup/"already published" bookkeeping is needed between batches: products publishes
+via full overwrite (each publish replaces the table with the complete current cache-hit
+set) and services publishes via upsert (safe to re-publish overlapping rows). Embeddings
+accumulate permanently in each pipeline's cache regardless of batch size.
+
+**If the taxonomy changes between batches**: re-run `seed_anchor_tables.py`, then just
+repeat the reclassify+publish step above (no re-embedding needed — the cache is
+independent of the taxonomy). Then continue embedding new batches, increasing `--limit`
+over time (e.g. 300K → 1M) as confidence in the results grows.
+
+`--limit` only affects `--phase embed`; the other phases are unaffected and always
+process everything currently available to them.
+
+## Cache volumes & freezing
+
+Each active per-env cache (`embedding_cache_stage.pkl`, `embedding_cache_services_stage.pkl`, etc.) grows over time as `phase embed`/`phase cached`+`phase embed` runs add new entries. Left unbounded, an active cache eventually gets too big to comfortably hold in memory alongside everything else a phase needs (source dataframe, anchor vectors) — this machine has 24GB RAM, and the original v1 volume (34.5GB) already exceeded that on its own.
+
+To manage this, freeze the active cache into a read-only volume before it gets too big:
+
+```bash
+python freeze_cache.py artifacts/cache/embedding_cache_stage.pkl
+```
+
+This copies the current active cache into `artifacts/cache/frozen_volumes/<name>_frozen_<timestamp>.pkl` and resets the active cache to `{}`. **Recommended trigger: ~1M entries / ~6GB** — comfortably fits in memory on its own, with headroom for everything else `phase_a` holds concurrently.
+
+`classify_products.py`'s `phase_a` automatically discovers every `*.pkl` in `frozen_volumes/` at runtime — no code changes needed after freezing, ever. It checks the active cache first, then each frozen volume **one at a time** (load, check membership, classify hits, release before loading the next), so peak memory stays bounded regardless of how many volumes accumulate. This only works because each volume is kept small by the freeze discipline above — if one were ever allowed to grow to v1's old size, it would need the old memmap-extraction treatment again.
+
+`classify_services.py` doesn't use frozen volumes yet (its cache is still small), but the same `freeze_cache.py` + auto-discovery mechanism isn't products-specific — it can be adopted there identically once its cache approaches the threshold.
+
+### Historical volumes (retired September 2026)
+
+The original v1 (~32GB) and v2 (~13.8GB) product embedding volumes, plus the pre-migration `embedding_cache_stage.pkl` (2.19M entries) and the entire pre-migration `embedding_cache_services_stage.pkl` (535,184 entries, 100% unused), were archived — not deleted — to `artifacts/cache/archive/` after a `PRODUCTS_STAGE`/`SERVICES_STAGE` schema migration made them permanently stale (confirmed 0 cache hits against the new data; the underlying `DESCRIPTION` content and `PRICING_STATUS_C` casing changed). Only the subset confirmed still useful (665,204 unique hashes, 668,315 rows) was carried forward into a fresh active cache. These are no longer read by any pipeline — kept purely for reference/audit.
+
 ## Environment configs
 
 Defined in `ENV_CONFIGS` at the top of `classify_products.py`:
@@ -95,7 +142,7 @@ Defined in `ENV_CONFIGS` at the top of `classify_products.py`:
 | Artifacts dir | `artifacts/analysis/stage_classification/` | `artifacts/analysis/prod_classification/` | `artifacts/analysis/stage_backfill_classification/` |
 | Publish mode | overwrite | overwrite | **append** (delete-matching-PRODUCT_IDs, then insert) |
 
-Shared read-only caches (`embedding_cache.pkl`, `embedding_cache_new.pkl`, `embedding_cache_keys.pkl`) are used by all environments.
+Frozen volumes under `artifacts/cache/frozen_volumes/` are shared/read-only and checked by all environments that share a cache lineage. See "Cache volumes & freezing" above.
 
 ### Backfill runs
 
@@ -140,7 +187,7 @@ caffeinate -dims /Users/stephanie.mcmahon/smcmahon_repo/.venv/bin/python3 classi
 | Cache | `embedding_cache_services_stage.pkl` | `embedding_cache_services_prod.pkl` |
 | Artifacts dir | `artifacts/analysis/stage_services_classification/` | `artifacts/analysis/prod_services_classification/` |
 
-To classify only what's already embedded (no Bedrock calls at all — useful for a fast preview against a freshly-updated taxonomy before committing to embedding a large net-new volume), run `--phase cached` then `--phase publish`, skipping `--phase embed` entirely. This works the same way for `classify_products.py`: run `--phase a` (+ `--phase extract`/`--phase b` for v1 cache hits) and `--phase publish`, skipping `--phase embed`.
+To classify only what's already embedded (no Bedrock calls at all — useful for a fast preview against a freshly-updated taxonomy before committing to embedding a large net-new volume), run `--phase cached` then `--phase publish`, skipping `--phase embed` entirely. This works the same way for `classify_products.py`: run `--phase a` and `--phase publish`, skipping `--phase embed`.
 
 Re-running `--phase embed` after a taxonomy update skips Bedrock calls for already-cached hashes and just reclassifies + re-publishes against the refreshed anchors.
 

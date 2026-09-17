@@ -7,8 +7,14 @@ table names, cache paths, and artifact directories are resolved from ENV_CONFIGS
 Key design:
   - Anchor vectors loaded from Snowflake (no Bedrock calls for anchors)
   - L3 + L4 classification happen in the same pass
-  - Reuses existing prod embedding caches (v1, v2) for overlapping products
-  - Net-new products embedded with parallel Bedrock workers (max_workers=5)
+  - Cache hits are checked in two layers: the active/growing per-env cache, then
+    each frozen (read-only) volume in artifacts/cache/frozen_volumes/, loaded one
+    at a time and classified immediately before moving to the next — bounded peak
+    memory no matter how many frozen volumes accumulate over time. Historical v1/v2
+    volumes (from before the products/services schema migration) are archived under
+    artifacts/cache/archive/ and no longer checked — see freeze_cache.py to create
+    new frozen volumes as the active cache grows.
+  - Net-new products embedded with parallel Bedrock workers (max_workers=10)
   - New embeddings saved to a per-env incremental cache, checkpointed every 1,000
     (checkpoints append only new-since-last-checkpoint entries to a small delta
     log — see append_cache_delta/consolidate_cache_delta in
@@ -16,17 +22,19 @@ Key design:
     the full cache file is only rewritten once, at the very end of a run)
   - Results written to Snowflake in 500K-row chunks
 
-Run order:
-    python classify_products.py --env stage --phase a        # classify v2 + env cache hits
-    python classify_products.py --env stage --phase extract  # extract v1 vectors to .npy
-    python classify_products.py --env stage --phase b        # classify v1 cache hits
+Run order (full run):
+    python classify_products.py --env stage --phase a        # classify cache hits (active + frozen volumes)
     python classify_products.py --env stage --phase embed    # embed & classify net-new products
     python classify_products.py --env stage --phase publish  # write to Snowflake
+
+For incremental batching (--limit on phase embed) and the freeze workflow, see
+README.md.
 """
 
 import argparse
 import pickle
 import sys
+from datetime import datetime
 from pathlib import Path
 
 import numpy as np
@@ -55,13 +63,11 @@ from product_classifier_utils import (
 AWS_PROFILE      = "staging.admin"
 AWS_REGION       = "us-east-1"
 MODEL_ID         = "amazon.titan-embed-text-v1"
-EMBED_WORKERS    = 5         # parallel Bedrock workers for net-new products
+EMBED_WORKERS    = 10        # parallel Bedrock workers for net-new products
 EMBED_CHECKPOINT = 1_000     # save env cache every N new embeddings
 PUBLISH_CHUNK    = 500_000   # rows per Snowflake append
 
-CACHE_V1_PATH   = PROJECT_ROOT / "artifacts/cache/embedding_cache.pkl"
-CACHE_V2_PATH   = PROJECT_ROOT / "artifacts/cache/embedding_cache_new.pkl"
-CACHE_KEYS_PATH = PROJECT_ROOT / "artifacts/cache/embedding_cache_keys.pkl"
+FROZEN_VOLUMES_DIR = PROJECT_ROOT / "artifacts/cache/frozen_volumes"
 
 # ── Environment configs ───────────────────────────────────────────────────────
 ENV_CONFIGS = {
@@ -103,17 +109,15 @@ CACHE_ENV_PATH   = None
 OUT_DIR          = None
 APPEND_MODE      = None
 PHASE_A_RESULTS  = None
-V1_WORK          = None
-V1_VECTORS       = None
-PHASE_B_RESULTS  = None
 EMBED_WORK       = None
 PHASE_EMBED_RESULTS = None
+EMBED_LIMIT      = None
 
 
 # ── Phase A ───────────────────────────────────────────────────────────────────
 
 def phase_a():
-    print("\n=== PHASE A: Classify v2 + env cache hits ===")
+    print("\n=== PHASE A: Classify cache hits (active cache + frozen volumes) ===")
 
     sf = get_products_session()
     l3_anchors, l4_by_l3 = load_anchors_from_snowflake(sf)
@@ -122,64 +126,61 @@ def phase_a():
     texts  = build_product_text(df).tolist()
     hashes = [stable_text_hash(t) for t in texts]
 
-    print(f"\nLoading volume 2 ({CACHE_V2_PATH.stat().st_size/1e9:.1f} GB)...")
-    with open(CACHE_V2_PATH, "rb") as f:
-        cache_v2 = pickle.load(f)
-    print(f"Volume 2: {len(cache_v2):,} entries")
-
-    print("Loading volume 1 key index...")
-    with open(CACHE_KEYS_PATH, "rb") as f:
-        cache_v1_keys = pickle.load(f)
-
-    cache_env = load_pickle_cache_with_delta(CACHE_ENV_PATH)
-
-    in_v2      = [h in cache_v2                                                              for h in hashes]
-    in_v1_only = [h in cache_v1_keys and not in_v2[i]                                       for i, h in enumerate(hashes)]
-    in_env     = [h in cache_env and not in_v2[i] and not in_v1_only[i]                     for i, h in enumerate(hashes)]
-    in_none    = [not in_v2[i] and not in_v1_only[i] and not in_env[i]                      for i, h in enumerate(hashes)]
-
-    v2_idx    = [i for i, m in enumerate(in_v2)      if m]
-    v1_idx    = [i for i, m in enumerate(in_v1_only) if m]
-    env_idx   = [i for i, m in enumerate(in_env)     if m]
-    miss_idx  = [i for i, m in enumerate(in_none)    if m]
-
-    print(f"\nIn volume 2:    {len(v2_idx):,}")
-    print(f"In volume 1:    {len(v1_idx):,}")
-    print(f"In env cache:   {len(env_idx):,}")
-    print(f"In neither:     {len(miss_idx):,}  ← will be embedded in phase embed")
-
     BATCH = 250_000
     records = []
 
-    for start in range(0, len(v2_idx), BATCH):
-        idx_batch    = v2_idx[start:start + BATCH]
-        batch_hashes = [hashes[i] for i in idx_batch]
-        vecs    = np.array([cache_v2[h] for h in batch_hashes], dtype=np.float32)
-        results = classify_l3_and_l4(vecs, l3_anchors, l4_by_l3)
-        records.append(attach_classifications(df.iloc[idx_batch], results))
-        pct = (start + len(idx_batch)) / max(len(v2_idx), 1) * 100
-        hi  = (~results[4]).sum()
-        print(f"  v2 batch {start:,}–{start+len(idx_batch):,} ({pct:.0f}%) — L3 high-conf: {hi:,}/{len(idx_batch):,}")
-        del vecs
-    del cache_v2
-
-    if env_idx:
-        for start in range(0, len(env_idx), BATCH):
-            idx_batch    = env_idx[start:start + BATCH]
+    def classify_and_record(cache_layer, idx_list, label):
+        for start in range(0, len(idx_list), BATCH):
+            idx_batch    = idx_list[start:start + BATCH]
             batch_hashes = [hashes[i] for i in idx_batch]
-            vecs    = np.array([cache_env[h] for h in batch_hashes], dtype=np.float32)
+            vecs    = np.array([cache_layer[h] for h in batch_hashes], dtype=np.float32)
             results = classify_l3_and_l4(vecs, l3_anchors, l4_by_l3)
             records.append(attach_classifications(df.iloc[idx_batch], results))
-            pct = (start + len(idx_batch)) / max(len(env_idx), 1) * 100
+            pct = (start + len(idx_batch)) / max(len(idx_list), 1) * 100
             hi  = (~results[4]).sum()
-            print(f"  env batch {start:,}–{start+len(idx_batch):,} ({pct:.0f}%) — L3 high-conf: {hi:,}/{len(idx_batch):,}")
+            print(f"  {label} batch {start:,}–{start+len(idx_batch):,} ({pct:.0f}%) — L3 high-conf: {hi:,}/{len(idx_batch):,}")
             del vecs
+
+    # Active/growing cache first — cheapest, and most likely to match recently
+    # embedded batches.
+    cache_env  = load_pickle_cache_with_delta(CACHE_ENV_PATH)
+    remaining  = list(range(len(hashes)))
+    active_idx = [i for i in remaining if hashes[i] in cache_env]
+    print(f"In active cache: {len(active_idx):,}")
+    if active_idx:
+        classify_and_record(cache_env, active_idx, "active")
+        active_set = set(active_idx)
+        remaining  = [i for i in remaining if i not in active_set]
     del cache_env
+
+    # Frozen (read-only) volumes, one at a time — bounded peak memory no matter how
+    # many accumulate, since each is loaded fully, checked/classified, then released
+    # before the next loads. See freeze_cache.py for how these get created; each is
+    # kept to a size (~1M entries / ~6GB) that's safe to hold on its own.
+    FROZEN_VOLUMES_DIR.mkdir(parents=True, exist_ok=True)
+    frozen_paths = sorted(FROZEN_VOLUMES_DIR.glob("*.pkl"))
+    for i, volume_path in enumerate(frozen_paths):
+        if not remaining:
+            break
+        print(f"Loading frozen volume {i+1}/{len(frozen_paths)} ({volume_path.name}, "
+              f"{volume_path.stat().st_size/1e9:.2f} GB)...")
+        with open(volume_path, "rb") as f:
+            volume = pickle.load(f)
+        vol_idx = [i for i in remaining if hashes[i] in volume]
+        print(f"  {len(vol_idx):,} hits in this volume")
+        if vol_idx:
+            classify_and_record(volume, vol_idx, volume_path.stem)
+            vol_set   = set(vol_idx)
+            remaining = [i for i in remaining if i not in vol_set]
+        del volume
+
+    miss_idx = remaining
+    print(f"\nCache misses: {len(miss_idx):,}  ← will be embedded in phase embed")
 
     if records:
         phase_a_df = pd.concat(records, ignore_index=True)
     else:
-        print("Phase A: no v2 or env cache hits.")
+        print("Phase A: no cache hits.")
         empty_results = classify_l3_and_l4(np.empty((0, 1536), dtype=np.float32), l3_anchors, l4_by_l3)
         phase_a_df = attach_classifications(df.iloc[0:0], empty_results)
 
@@ -189,96 +190,10 @@ def phase_a():
         hi = (~phase_a_df["L3_IS_LOW_CONFIDENCE"]).sum()
         print(f"L3 high-confidence: {hi:,}/{len(phase_a_df):,} ({hi/len(phase_a_df)*100:.1f}%)")
 
-    v1_work = df.iloc[v1_idx].copy()
-    v1_work["_HASH"] = [hashes[i] for i in v1_idx]
-    v1_work.to_parquet(V1_WORK, index=False)
-    print(f"Phase B work file: {V1_WORK} ({len(v1_work):,} rows)")
-
     embed_work = df.iloc[miss_idx].copy()
     embed_work["_HASH"] = [hashes[i] for i in miss_idx]
     embed_work.to_parquet(EMBED_WORK, index=False)
     print(f"Embed work file:   {EMBED_WORK} ({len(embed_work):,} rows)")
-
-
-# ── Phase extract ─────────────────────────────────────────────────────────────
-
-def phase_extract():
-    print("\n=== PHASE EXTRACT: Extract v1 vectors to memmap ===")
-    if not V1_WORK.exists():
-        print("ERROR: Run phase a first.")
-        sys.exit(1)
-
-    v1_work = pd.read_parquet(V1_WORK)
-    hashes  = v1_work["_HASH"].tolist()
-    print(f"Need vectors for {len(hashes):,} listings from volume 1")
-
-    print(f"Loading volume 1 ({CACHE_V1_PATH.stat().st_size/1e9:.1f} GB)...")
-    with open(CACHE_V1_PATH, "rb") as f:
-        cache_v1 = pickle.load(f)
-    print(f"Volume 1: {len(cache_v1):,} entries")
-
-    v1_key_set = set(cache_v1.keys())
-    not_found  = [h for h in hashes if h not in v1_key_set]
-    if not_found:
-        print(f"WARNING: {len(not_found):,} hashes not found in volume 1 — dropping")
-        valid   = np.array([h in v1_key_set for h in hashes])
-        hashes  = [h for h, m in zip(hashes, valid) if m]
-        v1_work = v1_work[valid].reset_index(drop=True)
-        v1_work.to_parquet(V1_WORK, index=False)
-
-    n, dim = len(hashes), 1536
-    print(f"Extracting {n:,} vectors ({n * dim * 4 / 1e9:.2f} GB)...")
-    mmap  = np.lib.format.open_memmap(str(V1_VECTORS), mode="w+", dtype=np.float32, shape=(n, dim))
-    CHUNK = 100_000
-    for start in range(0, n, CHUNK):
-        end = min(start + CHUNK, n)
-        for i, h in enumerate(hashes[start:end]):
-            mmap[start + i] = cache_v1[h]
-        mmap.flush()
-        print(f"  wrote {end:,}/{n:,} ({end/n*100:.0f}%)")
-
-    del cache_v1, mmap
-    print(f"Saved: {V1_VECTORS} ({V1_VECTORS.stat().st_size/1e9:.2f} GB)")
-
-
-# ── Phase B ───────────────────────────────────────────────────────────────────
-
-def phase_b():
-    print("\n=== PHASE B: Classify from v1 vectors ===")
-    for p in [V1_WORK, V1_VECTORS]:
-        if not p.exists():
-            print(f"ERROR: {p} not found. Run phase a and extract first.")
-            sys.exit(1)
-
-    sf = get_products_session()
-    l3_anchors, l4_by_l3 = load_anchors_from_snowflake(sf)
-
-    vectors = np.load(V1_VECTORS, mmap_mode="r")
-    v1_work = pd.read_parquet(V1_WORK)
-    print(f"Vectors: {vectors.shape}")
-
-    BATCH = 250_000
-    records = []
-    for start in range(0, len(v1_work), BATCH):
-        end     = min(start + BATCH, len(v1_work))
-        vecs    = np.array(vectors[start:end], dtype=np.float32)
-        results = classify_l3_and_l4(vecs, l3_anchors, l4_by_l3)
-        batch_df = v1_work.iloc[start:end].drop(columns=["_HASH"], errors="ignore")
-        records.append(attach_classifications(batch_df, results))
-        hi  = (~results[4]).sum()
-        pct = end / len(v1_work) * 100
-        print(f"  batch {start:,}–{end:,} ({pct:.0f}%) — L3 high-conf: {hi:,}/{end-start:,}")
-
-    if records:
-        v1_results = pd.concat(records, ignore_index=True)
-    else:
-        v1_results = v1_work.drop(columns=["_HASH"], errors="ignore")
-
-    v1_results.to_csv(PHASE_B_RESULTS, index=False)
-    print(f"\nPhase B saved: {PHASE_B_RESULTS} ({len(v1_results):,} rows)")
-    if len(v1_results):
-        hi = (~v1_results["L3_IS_LOW_CONFIDENCE"]).sum()
-        print(f"L3 high-confidence: {hi:,}/{len(v1_results):,} ({hi/len(v1_results)*100:.1f}%)")
 
 
 # ── Phase embed ───────────────────────────────────────────────────────────────
@@ -301,9 +216,14 @@ def phase_embed():
     hashes = embed_work["_HASH"].tolist()
 
     already_done = [h for h in hashes if h in cache_env]
-    still_needed = [h for h in hashes if h not in cache_env]
+    still_needed = sorted({h for h in hashes if h not in cache_env})
     print(f"Already in env cache: {len(already_done):,} (resuming from prior run)")
-    print(f"Still need embedding: {len(still_needed):,}")
+    print(f"Not yet embedded: {len(still_needed):,}")
+
+    if EMBED_LIMIT is not None and len(still_needed) > EMBED_LIMIT:
+        print(f"--limit {EMBED_LIMIT:,}: embedding only {EMBED_LIMIT:,} of {len(still_needed):,} remaining this run; "
+              f"{len(still_needed) - EMBED_LIMIT:,} deferred to a future run")
+        still_needed = still_needed[:EMBED_LIMIT]
 
     if still_needed:
         print(f"\nEmbedding {len(still_needed):,} texts with {EMBED_WORKERS} parallel workers...")
@@ -340,24 +260,35 @@ def phase_embed():
         print("Saving final env cache...")
         consolidate_cache_delta(cache_env, CACHE_ENV_PATH)
 
-    print(f"\nClassifying {len(embed_work):,} net-new products...")
+    # Classify whatever is *currently* cache-hit within embed_work — this run's batch
+    # plus anything embedded in an earlier --limit'd run — not the full embed_work set,
+    # since a capped run leaves most of it still uncached (cache_env[h] would KeyError
+    # on those). An uncapped run ends up classifying everything anyway, since the whole
+    # set becomes cache-hit.
+    cached_mask = [h in cache_env for h in hashes]
+    n_ready = sum(cached_mask)
+    ready_df = embed_work[cached_mask].reset_index(drop=True)
+    ready_hashes = [h for h, m in zip(hashes, cached_mask) if m]
+    print(f"\nClassifying {n_ready:,} of {len(embed_work):,} net-new products now embedded/cached "
+          f"({len(embed_work) - n_ready:,} still awaiting embedding)...")
+
     BATCH = 100_000
     records = []
-    for start in range(0, len(embed_work), BATCH):
-        end          = min(start + BATCH, len(embed_work))
-        batch_hashes = [hashes[i] for i in range(start, end)]
+    for start in range(0, len(ready_df), BATCH):
+        end          = min(start + BATCH, len(ready_df))
+        batch_hashes = ready_hashes[start:end]
         vecs    = np.array([cache_env[h] for h in batch_hashes], dtype=np.float32)
         results = classify_l3_and_l4(vecs, l3_anchors, l4_by_l3)
-        batch_df = embed_work.iloc[start:end].drop(columns=["_HASH"], errors="ignore")
+        batch_df = ready_df.iloc[start:end].drop(columns=["_HASH"], errors="ignore")
         records.append(attach_classifications(batch_df, results))
         hi  = (~results[4]).sum()
-        pct = end / len(embed_work) * 100
+        pct = end / max(len(ready_df), 1) * 100
         print(f"  batch {start:,}–{end:,} ({pct:.0f}%) — L3 high-conf: {hi:,}/{end-start:,}")
 
     if records:
         embed_results = pd.concat(records, ignore_index=True)
     else:
-        embed_results = embed_work.drop(columns=["_HASH"], errors="ignore")
+        embed_results = ready_df.drop(columns=["_HASH"], errors="ignore")
 
     embed_results.to_csv(PHASE_EMBED_RESULTS, index=False)
     print(f"\nPhase embed saved: {PHASE_EMBED_RESULTS} ({len(embed_results):,} rows)")
@@ -371,16 +302,28 @@ def phase_embed():
 def phase_publish():
     print("\n=== PHASE PUBLISH: Write to Snowflake ===")
 
+    # A phase's result file can be a stale leftover from a much earlier run (e.g. a
+    # full run from weeks ago) sitting in the same artifacts dir, silently picked up
+    # here even though this run never regenerated it — bit us once already. Flag any
+    # result file whose age differs from Phase A's by more than a day so it doesn't
+    # happen silently again; a real multi-hour/overnight run between phases is normal
+    # and won't trip this.
+    reference_mtime = PHASE_A_RESULTS.stat().st_mtime if PHASE_A_RESULTS.exists() else None
+    STALE_THRESHOLD_SECONDS = 24 * 3600
+
     parts = []
     for label, path in [
-        ("Phase A",    PHASE_A_RESULTS),
-        ("Phase B",    PHASE_B_RESULTS),
+        ("Phase A",     PHASE_A_RESULTS),
         ("Phase embed", PHASE_EMBED_RESULTS),
     ]:
         if path.exists():
+            mtime = datetime.fromtimestamp(path.stat().st_mtime)
+            stale_flag = ""
+            if reference_mtime is not None and abs(path.stat().st_mtime - reference_mtime) > STALE_THRESHOLD_SECONDS:
+                stale_flag = "  *** POSSIBLY STALE — modified >24h apart from Phase A's result. Verify this wasn't left over from an earlier run before trusting this publish. ***"
             df = pd.read_csv(path, low_memory=False)
             parts.append(df)
-            print(f"  {label}: {len(df):,} rows")
+            print(f"  {label}: {len(df):,} rows (file modified {mtime:%Y-%m-%d %H:%M}){stale_flag}")
         else:
             print(f"  WARNING: {path.name} not found — skipping")
 
@@ -442,8 +385,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--env",   choices=list(ENV_CONFIGS.keys()), required=True,
                         help="Which environment to classify (see ENV_CONFIGS)")
-    parser.add_argument("--phase", choices=["a", "extract", "b", "embed", "publish"], required=True,
+    parser.add_argument("--phase", choices=["a", "embed", "publish"], required=True,
                         help="Which phase to run")
+    parser.add_argument("--limit", type=int, default=None,
+                        help="Phase embed only: cap how many net-new rows get embedded via Bedrock "
+                             "this run, for incremental batching. Omit to embed everything still needed.")
     args = parser.parse_args()
 
     # Resolve environment config into module-level globals so phase functions pick them up
@@ -453,12 +399,10 @@ if __name__ == "__main__":
     CACHE_ENV_PATH = cfg["cache_path"]
     OUT_DIR        = cfg["out_dir"]
     APPEND_MODE    = cfg.get("append_mode", False)
+    EMBED_LIMIT    = args.limit
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     PHASE_A_RESULTS     = OUT_DIR / "phase_a_results.csv"
-    V1_WORK             = OUT_DIR / "phase_b_v1_work.parquet"
-    V1_VECTORS          = OUT_DIR / "phase_b_v1_vectors.npy"
-    PHASE_B_RESULTS     = OUT_DIR / "phase_b_results.csv"
     EMBED_WORK          = OUT_DIR / "phase_embed_work.parquet"
     PHASE_EMBED_RESULTS = OUT_DIR / "phase_embed_results.csv"
 
@@ -471,10 +415,6 @@ if __name__ == "__main__":
 
     if args.phase == "a":
         phase_a()
-    elif args.phase == "extract":
-        phase_extract()
-    elif args.phase == "b":
-        phase_b()
     elif args.phase == "embed":
         phase_embed()
     elif args.phase == "publish":

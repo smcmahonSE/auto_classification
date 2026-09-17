@@ -36,6 +36,7 @@ the shared output table.
 
 import argparse
 import sys
+from datetime import datetime
 from pathlib import Path
 
 import numpy as np
@@ -64,7 +65,7 @@ from product_classifier_utils import (
 AWS_PROFILE      = "staging.admin"
 AWS_REGION       = "us-east-1"
 MODEL_ID         = "amazon.titan-embed-text-v1"
-EMBED_WORKERS    = 5         # parallel Bedrock workers for net-new services
+EMBED_WORKERS    = 10        # parallel Bedrock workers for net-new services
 EMBED_CHECKPOINT = 1_000     # save cache every N new embeddings
 PUBLISH_CHUNK    = 500_000   # rows per Snowflake append
 CLASSIFY_BATCH   = 100_000   # rows per classification batch
@@ -95,6 +96,7 @@ OUT_DIR             = None
 CACHED_RESULTS      = None
 EMBED_WORK          = None
 PHASE_EMBED_RESULTS = None
+EMBED_LIMIT         = None
 
 
 # ── Phase cached ──────────────────────────────────────────────────────────────
@@ -163,9 +165,14 @@ def phase_embed():
     hashes = embed_work["_HASH"].tolist()
 
     already_done = [h for h in hashes if h in cache]
-    still_needed = [h for h in hashes if h not in cache]
+    still_needed = sorted({h for h in hashes if h not in cache})
     print(f"Already cached: {len(already_done):,} (resuming from prior run)")
-    print(f"Still need embedding: {len(still_needed):,}")
+    print(f"Not yet embedded: {len(still_needed):,}")
+
+    if EMBED_LIMIT is not None and len(still_needed) > EMBED_LIMIT:
+        print(f"--limit {EMBED_LIMIT:,}: embedding only {EMBED_LIMIT:,} of {len(still_needed):,} remaining this run; "
+              f"{len(still_needed) - EMBED_LIMIT:,} deferred to a future run")
+        still_needed = still_needed[:EMBED_LIMIT]
 
     if still_needed:
         print(f"\nEmbedding {len(still_needed):,} texts with {EMBED_WORKERS} parallel workers...")
@@ -202,23 +209,34 @@ def phase_embed():
         print("Saving final cache...")
         consolidate_cache_delta(cache, CACHE_PATH)
 
-    print(f"\nClassifying {len(embed_work):,} net-new services...")
+    # Classify whatever is *currently* cache-hit within embed_work — this run's batch
+    # plus anything embedded in an earlier --limit'd run — not the full embed_work set,
+    # since a capped run leaves most of it still uncached (cache[h] would KeyError on
+    # those). An uncapped run ends up classifying everything anyway, since the whole
+    # set becomes cache-hit.
+    cached_mask = [h in cache for h in hashes]
+    n_ready = sum(cached_mask)
+    ready_df = embed_work[cached_mask].reset_index(drop=True)
+    ready_hashes = [h for h, m in zip(hashes, cached_mask) if m]
+    print(f"\nClassifying {n_ready:,} of {len(embed_work):,} net-new services now embedded/cached "
+          f"({len(embed_work) - n_ready:,} still awaiting embedding)...")
+
     records = []
-    for start in range(0, len(embed_work), CLASSIFY_BATCH):
-        end          = min(start + CLASSIFY_BATCH, len(embed_work))
-        batch_hashes = [hashes[i] for i in range(start, end)]
+    for start in range(0, len(ready_df), CLASSIFY_BATCH):
+        end          = min(start + CLASSIFY_BATCH, len(ready_df))
+        batch_hashes = ready_hashes[start:end]
         vecs    = np.array([cache[h] for h in batch_hashes], dtype=np.float32)
         results = classify_l3_and_l4(vecs, l3_anchors, l4_by_l3)
-        batch_df = embed_work.iloc[start:end].drop(columns=["_HASH"], errors="ignore")
+        batch_df = ready_df.iloc[start:end].drop(columns=["_HASH"], errors="ignore")
         records.append(attach_classifications(batch_df, results))
         hi  = (~results[4]).sum()
-        pct = end / len(embed_work) * 100
+        pct = end / max(len(ready_df), 1) * 100
         print(f"  batch {start:,}–{end:,} ({pct:.0f}%) — L3 high-conf: {hi:,}/{end-start:,}")
 
     if records:
         embed_results = pd.concat(records, ignore_index=True)
     else:
-        embed_results = embed_work.drop(columns=["_HASH"], errors="ignore")
+        embed_results = ready_df.drop(columns=["_HASH"], errors="ignore")
 
     embed_results.to_csv(PHASE_EMBED_RESULTS, index=False)
     print(f"\nPhase embed saved: {PHASE_EMBED_RESULTS} ({len(embed_results):,} rows)")
@@ -232,15 +250,24 @@ def phase_embed():
 def phase_publish():
     print("\n=== PHASE PUBLISH: Upsert into Snowflake ===")
 
+    # See classify_products.py's phase_publish for why this check exists — a stale
+    # result file from a much earlier run can otherwise get silently picked up here.
+    reference_mtime = CACHED_RESULTS.stat().st_mtime if CACHED_RESULTS.exists() else None
+    STALE_THRESHOLD_SECONDS = 24 * 3600
+
     parts = []
     for label, path in [
         ("Phase cached", CACHED_RESULTS),
         ("Phase embed",  PHASE_EMBED_RESULTS),
     ]:
         if path.exists():
+            mtime = datetime.fromtimestamp(path.stat().st_mtime)
+            stale_flag = ""
+            if reference_mtime is not None and abs(path.stat().st_mtime - reference_mtime) > STALE_THRESHOLD_SECONDS:
+                stale_flag = "  *** POSSIBLY STALE — modified >24h apart from Phase cached's result. Verify this wasn't left over from an earlier run before trusting this publish. ***"
             df = pd.read_csv(path, low_memory=False)
             parts.append(df)
-            print(f"  {label}: {len(df):,} rows")
+            print(f"  {label}: {len(df):,} rows (file modified {mtime:%Y-%m-%d %H:%M}){stale_flag}")
         else:
             print(f"  WARNING: {path.name} not found — skipping")
 
@@ -292,6 +319,9 @@ if __name__ == "__main__":
                         help="Which environment to classify (stage or prod)")
     parser.add_argument("--phase", choices=["cached", "embed", "publish"], required=True,
                         help="Which phase to run")
+    parser.add_argument("--limit", type=int, default=None,
+                        help="Phase embed only: cap how many net-new rows get embedded via Bedrock "
+                             "this run, for incremental batching. Omit to embed everything still needed.")
     args = parser.parse_args()
 
     cfg = ENV_CONFIGS[args.env]
@@ -299,6 +329,7 @@ if __name__ == "__main__":
     OUTPUT_TABLE = cfg["output_table"]
     CACHE_PATH   = cfg["cache_path"]
     OUT_DIR      = cfg["out_dir"]
+    EMBED_LIMIT  = args.limit
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     CACHED_RESULTS      = OUT_DIR / "phase_cached_results.csv"

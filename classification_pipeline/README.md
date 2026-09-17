@@ -9,7 +9,7 @@ End-to-end L3 + L4 product classification using cosine similarity against pre-em
 | `classify_products.py` | Product pipeline — 3 phases (a, embed, publish) covering cache lookup, embedding, and Snowflake publish |
 | `classify_services.py` | Services pipeline — 3 phases (cached, embed, publish); classifies quoted services against the same taxonomy anchors, publishes into the same output table as products |
 | `product_classifier_utils.py` | Shared utilities: Snowflake session, listing loader, anchor loading, classification math, upsert-publish, Bedrock/Titan embedding, text hashing, cache helpers |
-| `freeze_cache.py` | Freezes an active cache into a dated read-only volume under `artifacts/cache/frozen_volumes/` and resets the active cache to empty — run when an active cache approaches ~1M entries |
+| `freeze_cache.py` | Manual override: freezes an active cache into a dated read-only volume and resets it to empty. Normally unnecessary — both pipelines auto-freeze at ~6GB (see "Cache volumes & freezing") |
 | `seed_anchor_tables.py` | Re-embed L3/L4 anchor descriptions and write to Snowflake — re-run when taxonomy changes |
 | `taxonomy/l3_taxonomy_anchors.json` | L3 category anchor descriptions (27 categories) |
 | `taxonomy/l4_taxonomy_anchors.json` | L4 subcategory anchor descriptions (190 subcategories across all L3s) |
@@ -114,17 +114,21 @@ process everything currently available to them.
 
 Each active per-env cache (`embedding_cache_stage.pkl`, `embedding_cache_services_stage.pkl`, etc.) grows over time as `phase embed`/`phase cached`+`phase embed` runs add new entries. Left unbounded, an active cache eventually gets too big to comfortably hold in memory alongside everything else a phase needs (source dataframe, anchor vectors) — this machine has 24GB RAM, and the original v1 volume (34.5GB) already exceeded that on its own.
 
-To manage this, freeze the active cache into a read-only volume before it gets too big:
+**This is now automatic.** At the end of `phase embed` (both `classify_products.py` and `classify_services.py`), once the active cache is saved, `maybe_auto_freeze()` (in `product_classifier_utils.py`) checks its on-disk size and — if it's crossed `FREEZE_THRESHOLD_BYTES` (6GB, set at the top of each script) — freezes it into a new dated volume and resets the active cache to `{}`, automatically, no manual step required. You'll see this in the `phase embed` output:
 
-```bash
-python freeze_cache.py artifacts/cache/embedding_cache_stage.pkl
+```
+*** Active cache is 6.02 GB (>= 6.0 GB auto-freeze threshold) ***
+*** Froze to embedding_cache_stage_frozen_20260917_143210.pkl — active cache reset to empty ***
 ```
 
-This copies the current active cache into `artifacts/cache/frozen_volumes/<name>_frozen_<timestamp>.pkl` and resets the active cache to `{}`. **Recommended trigger: ~1M entries / ~6GB** — comfortably fits in memory on its own, with headroom for everything else `phase_a` holds concurrently.
+`classify_products.py`'s `phase_a` and `classify_services.py`'s `phase_cached` both automatically discover every `*.pkl` in their respective frozen-volumes directory (`frozen_volumes/` for products, `frozen_volumes_services/` for services) at runtime — no code changes needed after a freeze, ever. Each checks the active cache first, then each frozen volume **one at a time** (load, check membership, classify hits, release before loading the next), so peak memory stays bounded regardless of how many volumes accumulate. This only works because each volume is kept small by the freeze threshold — if one were ever allowed to grow to v1's old size, it would need the old memmap-extraction treatment again.
 
-`classify_products.py`'s `phase_a` automatically discovers every `*.pkl` in `frozen_volumes/` at runtime — no code changes needed after freezing, ever. It checks the active cache first, then each frozen volume **one at a time** (load, check membership, classify hits, release before loading the next), so peak memory stays bounded regardless of how many volumes accumulate. This only works because each volume is kept small by the freeze discipline above — if one were ever allowed to grow to v1's old size, it would need the old memmap-extraction treatment again.
+`freeze_cache.py` still exists for manual use (e.g. freezing early, on purpose, before a batch you know will cross the threshold), and now takes an explicit target directory since products and services keep separate frozen-volume directories:
 
-`classify_services.py` doesn't use frozen volumes yet (its cache is still small), but the same `freeze_cache.py` + auto-discovery mechanism isn't products-specific — it can be adopted there identically once its cache approaches the threshold.
+```bash
+python freeze_cache.py artifacts/cache/embedding_cache_stage.pkl artifacts/cache/frozen_volumes
+python freeze_cache.py artifacts/cache/embedding_cache_services_stage.pkl artifacts/cache/frozen_volumes_services
+```
 
 ### Historical volumes (retired September 2026)
 

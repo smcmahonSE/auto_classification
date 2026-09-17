@@ -55,17 +55,19 @@ from product_classifier_utils import (
     load_anchors_from_snowflake,
     load_listings,
     load_pickle_cache_with_delta,
+    maybe_auto_freeze,
     stable_text_hash,
     upsert_publish,
 )
 
 # ── Static config (shared across all environments) ────────────────────────────
-AWS_PROFILE      = "staging.admin"
+AWS_PROFILE      = "bedrock"
 AWS_REGION       = "us-east-1"
 MODEL_ID         = "amazon.titan-embed-text-v1"
 EMBED_WORKERS    = 10        # parallel Bedrock workers for net-new products
 EMBED_CHECKPOINT = 1_000     # save env cache every N new embeddings
 PUBLISH_CHUNK    = 500_000   # rows per Snowflake append
+FREEZE_THRESHOLD_BYTES = 6_000_000_000   # auto-freeze the active cache at ~6GB
 
 FROZEN_VOLUMES_DIR = PROJECT_ROOT / "artifacts/cache/frozen_volumes"
 
@@ -259,6 +261,7 @@ def phase_embed():
         )
         print("Saving final env cache...")
         consolidate_cache_delta(cache_env, CACHE_ENV_PATH)
+        maybe_auto_freeze(CACHE_ENV_PATH, FROZEN_VOLUMES_DIR, FREEZE_THRESHOLD_BYTES)
 
     # Classify whatever is *currently* cache-hit within embed_work — this run's batch
     # plus anything embedded in an earlier --limit'd run — not the full embed_work set,

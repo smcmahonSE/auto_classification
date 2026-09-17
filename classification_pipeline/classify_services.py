@@ -3,17 +3,21 @@ Classify quoted-service listings into L3 + L4 taxonomy, using the same
 taxonomy anchors as classify_products.py.
 
 Services are a distinct, actively-changing corpus with their own dedicated
-embedding cache — this pipeline does NOT check the frozen product embedding
-volumes (v1/v2) used by classify_products.py.
+embedding cache — this pipeline does NOT check the historical v1/v2 product
+embedding volumes used (and since retired) by classify_products.py, but it does
+check its own frozen volumes under artifacts/cache/frozen_volumes_services/,
+auto-created as the active cache grows (see maybe_auto_freeze below).
 
 Key design:
   - Anchor vectors loaded from Snowflake (shared with classify_products.py)
   - L3 + L4 classification happen in the same pass
-  - Phase 'cached' classifies whatever's already in the dedicated services cache
-    and stages the rest — mirrors classify_products.py's phase_a, minus the v1/v2
-    volume split (services has only one cache layer, no giant frozen volumes to
-    memmap around)
-  - Phase 'embed' embeds and classifies only the net-new subset phase 'cached' staged
+  - Phase 'cached' classifies whatever's already cached — the active cache first,
+    then each frozen volume in frozen_volumes_services/ one at a time (loaded,
+    checked/classified, released before the next) — and stages the rest. Mirrors
+    classify_products.py's phase_a.
+  - Phase 'embed' embeds and classifies only the net-new subset phase 'cached' staged;
+    auto-freezes the active cache into a new frozen volume once it crosses
+    FREEZE_THRESHOLD_BYTES
   - New embeddings saved to a per-env incremental cache, checkpointed every 1,000
     (checkpoints append only new-since-last-checkpoint entries to a small delta
     log — see append_cache_delta/consolidate_cache_delta in
@@ -35,6 +39,7 @@ the shared output table.
 """
 
 import argparse
+import pickle
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -57,18 +62,22 @@ from product_classifier_utils import (
     load_anchors_from_snowflake,
     load_listings,
     load_pickle_cache_with_delta,
+    maybe_auto_freeze,
     stable_text_hash,
     upsert_publish,
 )
 
 # ── Static config (shared across all environments) ────────────────────────────
-AWS_PROFILE      = "staging.admin"
+AWS_PROFILE      = "bedrock"
 AWS_REGION       = "us-east-1"
 MODEL_ID         = "amazon.titan-embed-text-v1"
 EMBED_WORKERS    = 10        # parallel Bedrock workers for net-new services
 EMBED_CHECKPOINT = 1_000     # save cache every N new embeddings
 PUBLISH_CHUNK    = 500_000   # rows per Snowflake append
 CLASSIFY_BATCH   = 100_000   # rows per classification batch
+FREEZE_THRESHOLD_BYTES = 6_000_000_000   # auto-freeze the active cache at ~6GB
+
+FROZEN_VOLUMES_DIR = PROJECT_ROOT / "artifacts/cache/frozen_volumes_services"
 
 # ── Environment configs ───────────────────────────────────────────────────────
 # NOTE: the "prod" entry is a naming placeholder — no prod services table
@@ -111,26 +120,53 @@ def phase_cached():
     texts  = build_product_text(df).tolist()
     hashes = [stable_text_hash(t) for t in texts]
 
-    cache = load_pickle_cache_with_delta(CACHE_PATH)
+    records = []
 
-    in_cache   = [h in cache for h in hashes]
-    cached_idx = [i for i, m in enumerate(in_cache) if m]
-    miss_idx   = [i for i, m in enumerate(in_cache) if not m]
-
-    print(f"\nIn cache:    {len(cached_idx):,}")
-    print(f"Not cached:  {len(miss_idx):,}  ← will be embedded in phase embed")
-
-    if cached_idx:
-        records = []
-        for start in range(0, len(cached_idx), CLASSIFY_BATCH):
-            idx_batch    = cached_idx[start:start + CLASSIFY_BATCH]
+    def classify_and_record(cache_layer, idx_list, label):
+        for start in range(0, len(idx_list), CLASSIFY_BATCH):
+            idx_batch    = idx_list[start:start + CLASSIFY_BATCH]
             batch_hashes = [hashes[i] for i in idx_batch]
-            vecs    = np.array([cache[h] for h in batch_hashes], dtype=np.float32)
+            vecs    = np.array([cache_layer[h] for h in batch_hashes], dtype=np.float32)
             results = classify_l3_and_l4(vecs, l3_anchors, l4_by_l3)
             records.append(attach_classifications(df.iloc[idx_batch], results))
             hi  = (~results[4]).sum()
-            pct = (start + len(idx_batch)) / len(cached_idx) * 100
-            print(f"  batch {start:,}–{start+len(idx_batch):,} ({pct:.0f}%) — L3 high-conf: {hi:,}/{len(idx_batch):,}")
+            pct = (start + len(idx_batch)) / max(len(idx_list), 1) * 100
+            print(f"  {label} batch {start:,}–{start+len(idx_batch):,} ({pct:.0f}%) — L3 high-conf: {hi:,}/{len(idx_batch):,}")
+
+    # Active/growing cache first.
+    cache      = load_pickle_cache_with_delta(CACHE_PATH)
+    remaining  = list(range(len(hashes)))
+    active_idx = [i for i in remaining if hashes[i] in cache]
+    print(f"In active cache: {len(active_idx):,}")
+    if active_idx:
+        classify_and_record(cache, active_idx, "active")
+        active_set = set(active_idx)
+        remaining  = [i for i in remaining if i not in active_set]
+    del cache
+
+    # Frozen (read-only) volumes, one at a time — bounded peak memory no matter how
+    # many accumulate. See classify_products.py's phase_a for the same pattern.
+    FROZEN_VOLUMES_DIR.mkdir(parents=True, exist_ok=True)
+    frozen_paths = sorted(FROZEN_VOLUMES_DIR.glob("*.pkl"))
+    for i, volume_path in enumerate(frozen_paths):
+        if not remaining:
+            break
+        print(f"Loading frozen volume {i+1}/{len(frozen_paths)} ({volume_path.name}, "
+              f"{volume_path.stat().st_size/1e9:.2f} GB)...")
+        with open(volume_path, "rb") as f:
+            volume = pickle.load(f)
+        vol_idx = [i for i in remaining if hashes[i] in volume]
+        print(f"  {len(vol_idx):,} hits in this volume")
+        if vol_idx:
+            classify_and_record(volume, vol_idx, volume_path.stem)
+            vol_set   = set(vol_idx)
+            remaining = [i for i in remaining if i not in vol_set]
+        del volume
+
+    miss_idx = remaining
+    print(f"\nCache misses: {len(miss_idx):,}  ← will be embedded in phase embed")
+
+    if records:
         cached_df = pd.concat(records, ignore_index=True)
         cached_df.to_csv(CACHED_RESULTS, index=False)
         hi = (~cached_df["L3_IS_LOW_CONFIDENCE"]).sum()
@@ -208,6 +244,7 @@ def phase_embed():
         )
         print("Saving final cache...")
         consolidate_cache_delta(cache, CACHE_PATH)
+        maybe_auto_freeze(CACHE_PATH, FROZEN_VOLUMES_DIR, FREEZE_THRESHOLD_BYTES)
 
     # Classify whatever is *currently* cache-hit within embed_work — this run's batch
     # plus anything embedded in an earlier --limit'd run — not the full embed_work set,

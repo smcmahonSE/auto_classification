@@ -5,6 +5,7 @@ import pickle
 import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime
 from pathlib import Path
 from typing import Callable, Dict, Iterable, List, Optional
 
@@ -213,6 +214,44 @@ def save_pickle_cache(cache: dict, path: Path) -> None:
     with open(tmp, "wb") as f:
         pickle.dump(cache, f)
     tmp.rename(path)
+
+
+def freeze_active_cache(active_cache_path: Path, frozen_volumes_dir: Path) -> Path:
+    """Move the active cache's current contents into a new dated, read-only volume
+    under frozen_volumes_dir, and reset the active cache to empty. Returns the new
+    frozen volume's path. Shared by freeze_cache.py (manual) and maybe_auto_freeze
+    (automatic, called from phase_embed)."""
+    active_cache_path = Path(active_cache_path)
+    frozen_volumes_dir = Path(frozen_volumes_dir)
+
+    with open(active_cache_path, "rb") as f:
+        cache = pickle.load(f)
+
+    frozen_volumes_dir.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    frozen_path = frozen_volumes_dir / f"{active_cache_path.stem}_frozen_{timestamp}.pkl"
+    with open(frozen_path, "wb") as f:
+        pickle.dump(cache, f)
+
+    save_pickle_cache({}, active_cache_path)
+    return frozen_path
+
+
+def maybe_auto_freeze(active_cache_path: Path, frozen_volumes_dir: Path, threshold_bytes: int) -> bool:
+    """Check the active cache's on-disk size and freeze it automatically (see
+    freeze_active_cache) if it's at or above threshold_bytes. Returns True if a
+    freeze happened. Call this after saving the active cache at the end of a
+    phase_embed run."""
+    active_cache_path = Path(active_cache_path)
+    if not active_cache_path.exists():
+        return False
+    size = active_cache_path.stat().st_size
+    if size < threshold_bytes:
+        return False
+    print(f"\n*** Active cache is {size/1e9:.2f} GB (>= {threshold_bytes/1e9:.1f} GB auto-freeze threshold) ***")
+    frozen_path = freeze_active_cache(active_cache_path, frozen_volumes_dir)
+    print(f"*** Froze to {frozen_path.name} — active cache reset to empty ***\n")
+    return True
 
 
 def _delta_path(path: Path) -> Path:

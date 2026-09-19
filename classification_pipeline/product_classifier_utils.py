@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Callable, Dict, Iterable, List, Optional
 
 import boto3
+from botocore.config import Config as BotoConfig
 import numpy as np
 import pandas as pd
 from snowflake.snowpark import Session
@@ -436,10 +437,24 @@ def stable_text_hash(text: str) -> str:
 
 
 def get_bedrock_client(profile_name: Optional[str], region: str):
-    """Create Bedrock runtime client using optional AWS profile."""
+    """Create Bedrock runtime client using optional AWS profile.
+
+    Explicit connect/read timeouts are required here: without them, a socket
+    that goes bad mid-request (e.g. a dropped VPN/proxy connection) can block
+    a worker thread forever instead of raising, since botocore's own default
+    timeouts have proven unreliable at recovering from that failure mode in
+    practice (observed multi-hour hangs with zero CPU activity and no
+    exception ever raised). A short client-side timeout lets invoke_titan_embed's
+    own retry loop take over and reconnect within seconds instead.
+    """
     if profile_name:
         boto3.setup_default_session(profile_name=profile_name)
-    return boto3.client(service_name="bedrock-runtime", region_name=region)
+    config = BotoConfig(
+        connect_timeout=20,
+        read_timeout=30,
+        retries={"max_attempts": 2, "mode": "standard"},
+    )
+    return boto3.client(service_name="bedrock-runtime", region_name=region, config=config)
 
 
 def invoke_titan_embed(client, text: str, model_id: str, max_retries: int = 5) -> List[float]:

@@ -1,0 +1,32 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+labeling_tape,Brand / Manufacturer,2000,0,0.0,2000,0,0
+labeling_tape,Category (L2/L3),2000,2000,100.0,0,0,0
+labeling_tape,Category UNSPSC,2000,0,0.0,2000,0,0
+labeling_tape,Color,2000,511,25.55,1332,157,0
+labeling_tape,Currency,2000,29,1.45,1971,0,0
+labeling_tape,Description,2000,1996,99.8,4,0,0
+labeling_tape,Document links,2000,16,0.8,1984,0,0
+labeling_tape,Image URL,2000,4,0.2,1996,0,0
+labeling_tape,Inventory,2000,0,0.0,2000,0,0
+labeling_tape,Lead time (days),2000,0,0.0,2000,0,0
+labeling_tape,Listing UNSPSC,2000,0,0.0,2000,0,0
+labeling_tape,Listing type,2000,2000,100.0,0,0,0
+labeling_tape,Manufacturer SKU,2000,0,0.0,2000,0,0
+labeling_tape,Manufacturer name,2000,0,0.0,2000,0,0
+labeling_tape,Material,2000,479,23.95,1323,198,0
+labeling_tape,Name,2000,2000,100.0,0,0,0
+labeling_tape,Price per unit,2000,2000,100.0,0,0,0
+labeling_tape,Pricing model,2000,2000,100.0,0,0,0
+labeling_tape,Product / service URL,2000,16,0.8,1984,0,0
+labeling_tape,Quantity,2000,0,0.0,2000,0,0
+labeling_tape,Requester UNSPSC,2000,0,0.0,2000,0,0
+labeling_tape,Requester commodity code,2000,0,0.0,2000,0,0
+labeling_tape,Roll length,2000,1,0.05,1999,0,0
+labeling_tape,Ship from,2000,0,0.0,2000,0,0
+labeling_tape,Supplier SKU,2000,0,0.0,2000,0,0
+labeling_tape,Temperature range,2000,40,2.0,1960,0,0
+labeling_tape,Unit,2000,0,0.0,2000,0,0
+labeling_tape,Unit of measure,2000,620,31.0,1053,327,0
+labeling_tape,Use,2000,227,11.35,1773,0,0
+labeling_tape,Width,2000,12,0.6,1988,0,0
+labeling_tape,Writable,2000,5,0.25,1995,0,0

@@ -1,0 +1,35 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+research_animal_diets,Brand / Manufacturer,74,0,0.0,74,0,0
+research_animal_diets,Category (L2/L3),74,74,100.0,0,0,0
+research_animal_diets,Category UNSPSC,74,0,0.0,74,0,0
+research_animal_diets,Certified diet,74,0,0.0,74,0,0
+research_animal_diets,Crude fiber,74,0,0.0,74,0,0
+research_animal_diets,Crude protein,74,0,0.0,74,0,0
+research_animal_diets,Currency,74,3,4.05,71,0,0
+research_animal_diets,Description,74,73,98.65,1,0,0
+research_animal_diets,Diet form,74,2,2.7,72,0,0
+research_animal_diets,Diet sterilization,74,0,0.0,74,0,0
+research_animal_diets,Document links,74,0,0.0,74,0,0
+research_animal_diets,Energy density,74,0,0.0,74,0,0
+research_animal_diets,Fat,74,0,0.0,74,0,0
+research_animal_diets,Image URL,74,0,0.0,74,0,0
+research_animal_diets,Inventory,74,0,0.0,74,0,0
+research_animal_diets,Lead time (days),74,0,0.0,74,0,0
+research_animal_diets,Life stage,74,0,0.0,74,0,0
+research_animal_diets,Listing UNSPSC,74,0,0.0,74,0,0
+research_animal_diets,Listing type,74,74,100.0,0,0,0
+research_animal_diets,Manufacturer SKU,74,0,0.0,74,0,0
+research_animal_diets,Manufacturer name,74,0,0.0,74,0,0
+research_animal_diets,Name,74,74,100.0,0,0,0
+research_animal_diets,Price per unit,74,73,98.65,1,0,0
+research_animal_diets,Pricing model,74,74,100.0,0,0,0
+research_animal_diets,Product / service URL,74,0,0.0,74,0,0
+research_animal_diets,Quantity,74,0,0.0,74,0,0
+research_animal_diets,Requester UNSPSC,74,0,0.0,74,0,0
+research_animal_diets,Requester commodity code,74,0,0.0,74,0,0
+research_animal_diets,Shelf life,74,0,0.0,74,0,0
+research_animal_diets,Ship from,74,0,0.0,74,0,0
+research_animal_diets,Supplier SKU,74,0,0.0,74,0,0
+research_animal_diets,Target species,74,1,1.35,70,3,0
+research_animal_diets,Unit,74,0,0.0,74,0,0
+research_animal_diets,Unit of measure,74,6,8.11,26,42,0

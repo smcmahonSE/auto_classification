@@ -61,10 +61,10 @@ PRODUCT_COLUMNS = [
     "PRODUCT_NAME",
     "DESCRIPTION",
     "SPECIFICATION_ASSIGNMENTS_C",
-    "ASSIGNED_NEW_L3_ID",
-    "ASSIGNED_NEW_L3_LABEL",
-    "ASSIGNED_L4_ID",
-    "ASSIGNED_L4_LABEL",
+    "ASSIGNED_L2_ID",
+    "ASSIGNED_L2_LABEL",
+    "ASSIGNED_L3_ID",
+    "ASSIGNED_L3_LABEL",
 ]
 
 OPTIONAL_SOURCE_COLUMNS = [
@@ -193,10 +193,10 @@ BASE_DETAIL_COLUMNS = [
     "SPECIFICATION_ASSIGNMENTS_C",
     "PRICING_STATUS_C",
     "LIST_PRICE_C",
-    "ASSIGNED_NEW_L3_ID",
-    "ASSIGNED_NEW_L3_LABEL",
-    "ASSIGNED_L4_ID",
-    "ASSIGNED_L4_LABEL",
+    "ASSIGNED_L2_ID",
+    "ASSIGNED_L2_LABEL",
+    "ASSIGNED_L3_ID",
+    "ASSIGNED_L3_LABEL",
 ]
 
 
@@ -217,14 +217,14 @@ def get_detail_columns(category: str) -> list[str]:
     return columns
 
 
-def get_l3_id(row: Mapping[str, object], l3_id_col: str | None, l3_label_col: str | None) -> str | None:
-    if l3_id_col:
-        value = row.get(l3_id_col)
+def get_l2_id(row: Mapping[str, object], l2_id_col: str | None, l2_label_col: str | None) -> str | None:
+    if l2_id_col:
+        value = row.get(l2_id_col)
         if pd.notna(value) and str(value).strip():
             return str(value).strip()
 
-    if l3_label_col:
-        label = row.get(l3_label_col)
+    if l2_label_col:
+        label = row.get(l2_label_col)
         if pd.notna(label):
             return LABEL_TO_ID.get(str(label).strip())
 
@@ -330,8 +330,8 @@ def update_l4_coverage(
     row: Mapping[str, object],
     specs: list[ExtractedSpec],
 ) -> None:
-    l4_id = normalize_optional_text(row.get("ASSIGNED_L4_ID"))
-    l4_label = normalize_optional_text(row.get("ASSIGNED_L4_LABEL"))
+    l4_id = normalize_optional_text(row.get("ASSIGNED_L3_ID"))
+    l4_label = normalize_optional_text(row.get("ASSIGNED_L3_LABEL"))
     for spec in specs:
         key = (l3_id, l4_id, l4_label, spec.field_name)
         counts = coverage.setdefault(
@@ -437,7 +437,7 @@ def build_category_query(env: str, category: str, mode: str, sample_size: int) -
     return f"""
         SELECT *
         FROM {table}
-        WHERE ASSIGNED_NEW_L3_ID = '{quote_sql(category)}'
+        WHERE ASSIGNED_L2_ID = '{quote_sql(category)}'
         {sample_clause}
         {limit_clause}
     """

@@ -1,0 +1,35 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+bottles_containers,Brand / Manufacturer,2000,0,0.0,2000,0,0
+bottles_containers,Capacity / Volume / Size,2000,1665,83.25,335,0,0
+bottles_containers,Category (L2/L3),2000,2000,100.0,0,0,0
+bottles_containers,Category UNSPSC,2000,0,0.0,2000,0,0
+bottles_containers,Closure type,2000,278,13.9,1716,6,0
+bottles_containers,Color,2000,630,31.5,975,395,0
+bottles_containers,Currency,2000,15,0.75,1985,0,0
+bottles_containers,Description,2000,1992,99.6,8,0,0
+bottles_containers,Document links,2000,38,1.9,1962,0,0
+bottles_containers,Image URL,2000,21,1.05,1979,0,0
+bottles_containers,Inventory,2000,0,0.0,2000,0,0
+bottles_containers,Lead time (days),2000,0,0.0,2000,0,0
+bottles_containers,Listing UNSPSC,2000,0,0.0,2000,0,0
+bottles_containers,Listing type,2000,2000,100.0,0,0,0
+bottles_containers,Manufacturer SKU,2000,0,0.0,2000,0,0
+bottles_containers,Manufacturer name,2000,0,0.0,2000,0,0
+bottles_containers,Material,2000,681,34.05,521,798,0
+bottles_containers,Name,2000,2000,100.0,0,0,0
+bottles_containers,Neck finish,2000,390,19.5,1610,0,0
+bottles_containers,Opacity,2000,463,23.15,1441,96,0
+bottles_containers,Price per unit,2000,1999,99.95,1,0,0
+bottles_containers,Pricing model,2000,2000,100.0,0,0,0
+bottles_containers,Product / service URL,2000,38,1.9,1962,0,0
+bottles_containers,Purity certs,2000,35,1.75,1965,0,0
+bottles_containers,Quantity,2000,0,0.0,2000,0,0
+bottles_containers,Requester UNSPSC,2000,0,0.0,2000,0,0
+bottles_containers,Requester commodity code,2000,0,0.0,2000,0,0
+bottles_containers,Ship from,2000,0,0.0,2000,0,0
+bottles_containers,Sterility,2000,422,21.1,1512,66,0
+bottles_containers,Sterilization method,2000,302,15.1,1689,9,0
+bottles_containers,Supplier SKU,2000,0,0.0,2000,0,0
+bottles_containers,Temperature range,2000,115,5.75,1885,0,0
+bottles_containers,Unit,2000,0,0.0,2000,0,0
+bottles_containers,Unit of measure,2000,736,36.8,427,837,0

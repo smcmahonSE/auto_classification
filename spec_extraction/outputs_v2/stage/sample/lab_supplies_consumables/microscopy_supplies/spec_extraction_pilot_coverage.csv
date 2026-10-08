@@ -1,0 +1,30 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+microscopy_supplies,Brand / Manufacturer,2000,0,0.0,2000,0,0
+microscopy_supplies,Category (L2/L3),2000,2000,100.0,0,0,0
+microscopy_supplies,Category UNSPSC,2000,0,0.0,2000,0,0
+microscopy_supplies,Corner style,2000,81,4.05,1919,0,0
+microscopy_supplies,Currency,2000,26,1.3,1974,0,0
+microscopy_supplies,Description,2000,1998,99.9,2,0,0
+microscopy_supplies,Dimensions,2000,386,19.3,1614,0,0
+microscopy_supplies,Document links,2000,235,11.75,1765,0,0
+microscopy_supplies,Frosted,2000,159,7.95,1831,10,0
+microscopy_supplies,Image URL,2000,0,0.0,2000,0,0
+microscopy_supplies,Inventory,2000,0,0.0,2000,0,0
+microscopy_supplies,Item type,2000,340,17.0,1557,103,0
+microscopy_supplies,Lead time (days),2000,0,0.0,2000,0,0
+microscopy_supplies,Listing UNSPSC,2000,0,0.0,2000,0,0
+microscopy_supplies,Listing type,2000,2000,100.0,0,0,0
+microscopy_supplies,Manufacturer SKU,2000,0,0.0,2000,0,0
+microscopy_supplies,Manufacturer name,2000,0,0.0,2000,0,0
+microscopy_supplies,Name,2000,2000,100.0,0,0,0
+microscopy_supplies,Price per unit,2000,1965,98.25,35,0,0
+microscopy_supplies,Pricing model,2000,2000,100.0,0,0,0
+microscopy_supplies,Product / service URL,2000,235,11.75,1765,0,0
+microscopy_supplies,Quantity,2000,0,0.0,2000,0,0
+microscopy_supplies,Requester UNSPSC,2000,0,0.0,2000,0,0
+microscopy_supplies,Requester commodity code,2000,0,0.0,2000,0,0
+microscopy_supplies,Ship from,2000,0,0.0,2000,0,0
+microscopy_supplies,Supplier SKU,2000,0,0.0,2000,0,0
+microscopy_supplies,Surface treatment,2000,51,2.55,1949,0,0
+microscopy_supplies,Unit,2000,0,0.0,2000,0,0
+microscopy_supplies,Unit of measure,2000,579,28.95,1000,421,0

@@ -28,8 +28,8 @@ DEFAULT_PRODUCTS_TABLE = os.environ.get(
     "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.PRODUCTS_L3_STG",
 )
 
+DEFAULT_L2_ANCHOR_TABLE = "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.EMBEDDED_L2_DESCRIPTIONS"
 DEFAULT_L3_ANCHOR_TABLE = "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.EMBEDDED_L3_DESCRIPTIONS"
-DEFAULT_L4_ANCHOR_TABLE = "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.EMBEDDED_L4_DESCRIPTIONS"
 DEFAULT_MARGIN_THRESHOLD = 0.05
 
 
@@ -82,44 +82,44 @@ def load_listings(session: Session, table: str) -> pd.DataFrame:
 
 def load_anchors_from_snowflake(
     session: Session,
+    l2_table: str = DEFAULT_L2_ANCHOR_TABLE,
     l3_table: str = DEFAULT_L3_ANCHOR_TABLE,
-    l4_table: str = DEFAULT_L4_ANCHOR_TABLE,
 ):
     """
-    Load pre-embedded L3 and L4 anchor vectors from Snowflake.
+    Load pre-embedded L2 and L3 anchor vectors from Snowflake.
     Returns:
-        l3_anchors: (ids, labels, normed_matrix)
-        l4_by_l3:   dict of l3_id -> (ids, labels, normed_matrix)
+        l2_anchors: (ids, labels, normed_matrix)
+        l3_by_l2:   dict of l2_id -> (ids, labels, normed_matrix)
     """
-    print("Loading L3 anchor vectors from Snowflake...")
-    l3_df = session.sql(
-        f"SELECT ASSIGNED_NEW_L3_ID, ASSIGNED_NEW_L3_LABEL, L3_EMBED FROM {l3_table}"
+    print("Loading L2 anchor vectors from Snowflake...")
+    l2_df = session.sql(
+        f"SELECT ASSIGNED_L2_ID, ASSIGNED_L2_LABEL, L2_EMBED FROM {l2_table}"
     ).to_pandas()
-    l3_ids    = l3_df["ASSIGNED_NEW_L3_ID"].tolist()
-    l3_labels = l3_df["ASSIGNED_NEW_L3_LABEL"].tolist()
-    l3_vecs   = np.array([json.loads(e) for e in l3_df["L3_EMBED"]], dtype=np.float32)
-    l3_norms  = np.linalg.norm(l3_vecs, axis=1, keepdims=True)
-    l3_normed = l3_vecs / np.clip(l3_norms, 1e-10, None)
-    print(f"  L3 anchors: {len(l3_ids)} categories")
+    l2_ids    = l2_df["ASSIGNED_L2_ID"].tolist()
+    l2_labels = l2_df["ASSIGNED_L2_LABEL"].tolist()
+    l2_vecs   = np.array([json.loads(e) for e in l2_df["L2_EMBED"]], dtype=np.float32)
+    l2_norms  = np.linalg.norm(l2_vecs, axis=1, keepdims=True)
+    l2_normed = l2_vecs / np.clip(l2_norms, 1e-10, None)
+    print(f"  L2 anchors: {len(l2_ids)} categories")
 
-    print("Loading L4 anchor vectors from Snowflake...")
-    l4_df = session.sql(f"""
-        SELECT ASSIGNED_NEW_L3_ID, ASSIGNED_L4_ID, ASSIGNED_L4_LABEL, L4_EMBED
-        FROM {l4_table}
-        ORDER BY ASSIGNED_NEW_L3_ID, L4_ID
+    print("Loading L3 anchor vectors from Snowflake...")
+    l3_df = session.sql(f"""
+        SELECT ASSIGNED_L2_ID, ASSIGNED_L3_ID, ASSIGNED_L3_LABEL, L3_ID, L3_EMBED
+        FROM {l3_table}
+        ORDER BY ASSIGNED_L2_ID, L3_ID
     """).to_pandas()
 
-    l4_by_l3 = {}
-    for l3_id, grp in l4_df.groupby("ASSIGNED_NEW_L3_ID"):
-        ids    = grp["ASSIGNED_L4_ID"].tolist()
-        labels = grp["ASSIGNED_L4_LABEL"].tolist()
-        vecs   = np.array([json.loads(e) for e in grp["L4_EMBED"]], dtype=np.float32)
+    l3_by_l2 = {}
+    for l2_id, grp in l3_df.groupby("ASSIGNED_L2_ID"):
+        ids    = grp["ASSIGNED_L3_ID"].tolist()
+        labels = grp["ASSIGNED_L3_LABEL"].tolist()
+        vecs   = np.array([json.loads(e) for e in grp["L3_EMBED"]], dtype=np.float32)
         norms  = np.linalg.norm(vecs, axis=1, keepdims=True)
         normed = vecs / np.clip(norms, 1e-10, None)
-        l4_by_l3[l3_id] = (ids, labels, normed)
-    print(f"  L4 anchors: {sum(len(v[0]) for v in l4_by_l3.values())} subcategories across {len(l4_by_l3)} L3s")
+        l3_by_l2[l2_id] = (ids, labels, normed)
+    print(f"  L3 anchors: {sum(len(v[0]) for v in l3_by_l2.values())} subcategories across {len(l3_by_l2)} L2s")
 
-    return (l3_ids, l3_labels, l3_normed), l4_by_l3
+    return (l2_ids, l2_labels, l2_normed), l3_by_l2
 
 
 def classify_against_anchors(vecs, anchor_ids, anchor_labels, anchor_normed, margin_threshold: float = DEFAULT_MARGIN_THRESHOLD):
@@ -141,57 +141,57 @@ def classify_against_anchors(vecs, anchor_ids, anchor_labels, anchor_normed, mar
     )
 
 
-def classify_l3_and_l4(vecs, l3_anchors, l4_by_l3):
+def classify_l2_and_l3(vecs, l2_anchors, l3_by_l2):
     """
-    Run L3 then L4 classification in one pass.
-    Returns all 10 result arrays (L3 + L4 each: ids, labels, scores, margins, low_conf).
+    Run L2 then L3 classification in one pass.
+    Returns all 10 result arrays (L2 + L3 each: ids, labels, scores, margins, low_conf).
     """
-    l3_ids, l3_labels, l3_scores, l3_margins, l3_low_conf = classify_against_anchors(vecs, *l3_anchors)
+    l2_ids, l2_labels, l2_scores, l2_margins, l2_low_conf = classify_against_anchors(vecs, *l2_anchors)
 
     n = len(vecs)
-    l4_ids      = [None] * n
-    l4_labels   = [None] * n
-    l4_scores   = np.zeros(n, dtype=np.float32)
-    l4_margins  = np.zeros(n, dtype=np.float32)
-    l4_low_conf = np.ones(n, dtype=bool)
+    l3_ids      = [None] * n
+    l3_labels   = [None] * n
+    l3_scores   = np.zeros(n, dtype=np.float32)
+    l3_margins  = np.zeros(n, dtype=np.float32)
+    l3_low_conf = np.ones(n, dtype=bool)
 
-    for unique_l3_id in set(l3_ids):
-        if unique_l3_id not in l4_by_l3:
+    for unique_l2_id in set(l2_ids):
+        if unique_l2_id not in l3_by_l2:
             continue
-        idx      = [i for i, lid in enumerate(l3_ids) if lid == unique_l3_id]
+        idx      = [i for i, lid in enumerate(l2_ids) if lid == unique_l2_id]
         sub_vecs = vecs[np.array(idx)]
         s_ids, s_labels, s_scores, s_margins, s_low_conf = classify_against_anchors(
-            sub_vecs, *l4_by_l3[unique_l3_id]
+            sub_vecs, *l3_by_l2[unique_l2_id]
         )
         for pos, i in enumerate(idx):
-            l4_ids[i]      = s_ids[pos]
-            l4_labels[i]   = s_labels[pos]
-            l4_scores[i]   = s_scores[pos]
-            l4_margins[i]  = s_margins[pos]
-            l4_low_conf[i] = s_low_conf[pos]
+            l3_ids[i]      = s_ids[pos]
+            l3_labels[i]   = s_labels[pos]
+            l3_scores[i]   = s_scores[pos]
+            l3_margins[i]  = s_margins[pos]
+            l3_low_conf[i] = s_low_conf[pos]
 
     return (
+        l2_ids, l2_labels, l2_scores, l2_margins, l2_low_conf,
         l3_ids, l3_labels, l3_scores, l3_margins, l3_low_conf,
-        l4_ids, l4_labels, l4_scores, l4_margins, l4_low_conf,
     )
 
 
 def attach_classifications(batch_df: pd.DataFrame, results) -> pd.DataFrame:
-    """Attach L3 + L4 classification columns to a DataFrame copy."""
-    (l3_ids, l3_labels, l3_scores, l3_margins, l3_low_conf,
-     l4_ids, l4_labels, l4_scores, l4_margins, l4_low_conf) = results
+    """Attach L2 + L3 classification columns to a DataFrame copy."""
+    (l2_ids, l2_labels, l2_scores, l2_margins, l2_low_conf,
+     l3_ids, l3_labels, l3_scores, l3_margins, l3_low_conf) = results
 
     out = batch_df.copy()
-    out["ASSIGNED_NEW_L3_ID"]    = l3_ids
-    out["ASSIGNED_NEW_L3_LABEL"] = l3_labels
+    out["ASSIGNED_L2_ID"]        = l2_ids
+    out["ASSIGNED_L2_LABEL"]     = l2_labels
+    out["L2_CONFIDENCE"]         = l2_scores
+    out["L2_CONFIDENCE_MARGIN"]  = l2_margins
+    out["L2_IS_LOW_CONFIDENCE"]  = l2_low_conf
+    out["ASSIGNED_L3_ID"]        = l3_ids
+    out["ASSIGNED_L3_LABEL"]     = l3_labels
     out["L3_CONFIDENCE"]         = l3_scores
     out["L3_CONFIDENCE_MARGIN"]  = l3_margins
     out["L3_IS_LOW_CONFIDENCE"]  = l3_low_conf
-    out["ASSIGNED_L4_ID"]        = l4_ids
-    out["ASSIGNED_L4_LABEL"]     = l4_labels
-    out["L4_CONFIDENCE"]         = l4_scores
-    out["L4_CONFIDENCE_MARGIN"]  = l4_margins
-    out["L4_IS_LOW_CONFIDENCE"]  = l4_low_conf
     return out
 
 

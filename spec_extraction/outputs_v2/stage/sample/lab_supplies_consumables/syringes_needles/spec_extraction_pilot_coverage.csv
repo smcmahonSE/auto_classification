@@ -1,0 +1,32 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+syringes_needles,Brand / Manufacturer,2000,0,0.0,2000,0,0
+syringes_needles,Capacity / Volume / Size,2000,1413,70.65,587,0,0
+syringes_needles,Category (L2/L3),2000,2000,100.0,0,0,0
+syringes_needles,Category UNSPSC,2000,0,0.0,2000,0,0
+syringes_needles,Compatibility,2000,0,0.0,2000,0,0
+syringes_needles,Currency,2000,34,1.7,1965,1,0
+syringes_needles,Description,2000,1978,98.9,22,0,0
+syringes_needles,Document links,2000,16,0.8,1984,0,0
+syringes_needles,Image URL,2000,1,0.05,1999,0,0
+syringes_needles,Inventory,2000,0,0.0,2000,0,0
+syringes_needles,Lead time (days),2000,0,0.0,2000,0,0
+syringes_needles,Listing UNSPSC,2000,0,0.0,2000,0,0
+syringes_needles,Listing type,2000,2000,100.0,0,0,0
+syringes_needles,Luer type,2000,245,12.25,1708,47,0
+syringes_needles,Manufacturer SKU,2000,0,0.0,2000,0,0
+syringes_needles,Manufacturer name,2000,0,0.0,2000,0,0
+syringes_needles,Material,2000,561,28.05,788,651,0
+syringes_needles,Name,2000,2000,100.0,0,0,0
+syringes_needles,Needle gauge / length,2000,234,11.7,1766,0,0
+syringes_needles,Price per unit,2000,1995,99.75,5,0,0
+syringes_needles,Pricing model,2000,2000,100.0,0,0,0
+syringes_needles,Product / service URL,2000,16,0.8,1984,0,0
+syringes_needles,Quantity,2000,0,0.0,2000,0,0
+syringes_needles,Requester UNSPSC,2000,0,0.0,2000,0,0
+syringes_needles,Requester commodity code,2000,0,0.0,2000,0,0
+syringes_needles,Ship from,2000,0,0.0,2000,0,0
+syringes_needles,Sterility,2000,534,26.7,1300,166,0
+syringes_needles,Sterilization method,2000,127,6.35,1871,2,0
+syringes_needles,Supplier SKU,2000,0,0.0,2000,0,0
+syringes_needles,Unit,2000,0,0.0,2000,0,0
+syringes_needles,Unit of measure,2000,795,39.75,726,479,0

@@ -1,0 +1,31 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+laboratory_glassware,Brand / Manufacturer,2000,0,0.0,2000,0,0
+laboratory_glassware,Capacity / Volume / Size,2000,1526,76.3,474,0,0
+laboratory_glassware,Category (L2/L3),2000,2000,100.0,0,0,0
+laboratory_glassware,Category UNSPSC,2000,0,0.0,2000,0,0
+laboratory_glassware,Currency,2000,14,0.7,1986,0,0
+laboratory_glassware,Description,2000,1990,99.5,10,0,0
+laboratory_glassware,Document links,2000,78,3.9,1922,0,0
+laboratory_glassware,Glass type,2000,299,14.95,1688,13,0
+laboratory_glassware,Graduation class,2000,241,12.05,1738,21,0
+laboratory_glassware,Image URL,2000,0,0.0,2000,0,0
+laboratory_glassware,Inventory,2000,0,0.0,2000,0,0
+laboratory_glassware,Lead time (days),2000,0,0.0,2000,0,0
+laboratory_glassware,Listing UNSPSC,2000,0,0.0,2000,0,0
+laboratory_glassware,Listing type,2000,2000,100.0,0,0,0
+laboratory_glassware,Manufacturer SKU,2000,0,0.0,2000,0,0
+laboratory_glassware,Manufacturer name,2000,0,0.0,2000,0,0
+laboratory_glassware,Name,2000,2000,100.0,0,0,0
+laboratory_glassware,Price per unit,2000,1995,99.75,5,0,0
+laboratory_glassware,Pricing model,2000,2000,100.0,0,0,0
+laboratory_glassware,Product / service URL,2000,78,3.9,1922,0,0
+laboratory_glassware,Quantity,2000,0,0.0,2000,0,0
+laboratory_glassware,Requester UNSPSC,2000,0,0.0,2000,0,0
+laboratory_glassware,Requester commodity code,2000,0,0.0,2000,0,0
+laboratory_glassware,Ship from,2000,0,0.0,2000,0,0
+laboratory_glassware,Sterility,2000,164,8.2,1808,28,0
+laboratory_glassware,Sterilization method,2000,125,6.25,1873,2,0
+laboratory_glassware,Supplier SKU,2000,0,0.0,2000,0,0
+laboratory_glassware,Temperature range,2000,57,2.85,1943,0,0
+laboratory_glassware,Unit,2000,0,0.0,2000,0,0
+laboratory_glassware,Unit of measure,2000,631,31.55,1076,293,0

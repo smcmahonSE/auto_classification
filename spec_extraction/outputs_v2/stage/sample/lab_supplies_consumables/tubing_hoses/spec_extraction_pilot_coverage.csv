@@ -1,0 +1,37 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+tubing_hoses,Brand / Manufacturer,2000,0,0.0,2000,0,0
+tubing_hoses,Category (L2/L3),2000,2000,100.0,0,0,0
+tubing_hoses,Category UNSPSC,2000,0,0.0,2000,0,0
+tubing_hoses,Compatibility,2000,0,0.0,2000,0,0
+tubing_hoses,Currency,2000,18,0.9,1982,0,0
+tubing_hoses,Description,2000,1993,99.65,7,0,0
+tubing_hoses,Document links,2000,392,19.6,1608,0,0
+tubing_hoses,Durometer,2000,3,0.15,1997,0,0
+tubing_hoses,Image URL,2000,0,0.0,2000,0,0
+tubing_hoses,Inner diameter,2000,33,1.65,1967,0,0
+tubing_hoses,Inventory,2000,0,0.0,2000,0,0
+tubing_hoses,Lead time (days),2000,0,0.0,2000,0,0
+tubing_hoses,Length,2000,361,18.05,1639,0,0
+tubing_hoses,Listing UNSPSC,2000,0,0.0,2000,0,0
+tubing_hoses,Listing type,2000,2000,100.0,0,0,0
+tubing_hoses,Manufacturer SKU,2000,0,0.0,2000,0,0
+tubing_hoses,Manufacturer name,2000,0,0.0,2000,0,0
+tubing_hoses,Max pressure,2000,32,1.6,1968,0,0
+tubing_hoses,Name,2000,2000,100.0,0,0,0
+tubing_hoses,Outer diameter,2000,42,2.1,1958,0,0
+tubing_hoses,Price per unit,2000,1999,99.95,1,0,0
+tubing_hoses,Pricing model,2000,2000,100.0,0,0,0
+tubing_hoses,Product / service URL,2000,392,19.6,1608,0,0
+tubing_hoses,Quantity,2000,0,0.0,2000,0,0
+tubing_hoses,Requester UNSPSC,2000,0,0.0,2000,0,0
+tubing_hoses,Requester commodity code,2000,0,0.0,2000,0,0
+tubing_hoses,Ship from,2000,0,0.0,2000,0,0
+tubing_hoses,Sterility,2000,139,6.95,1833,28,0
+tubing_hoses,Sterilization method,2000,74,3.7,1926,0,0
+tubing_hoses,Supplier SKU,2000,0,0.0,2000,0,0
+tubing_hoses,Temperature range,2000,32,1.6,1968,0,0
+tubing_hoses,Tubing material,2000,540,27.0,1335,125,0
+tubing_hoses,Tubing type,2000,85,4.25,1912,3,0
+tubing_hoses,Unit,2000,0,0.0,2000,0,0
+tubing_hoses,Unit of measure,2000,700,35.0,1116,184,0
+tubing_hoses,Wall thickness,2000,0,0.0,2000,0,0

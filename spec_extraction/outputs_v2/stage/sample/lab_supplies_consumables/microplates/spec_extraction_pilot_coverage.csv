@@ -1,0 +1,37 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+microplates,Brand / Manufacturer,2000,0,0.0,2000,0,0
+microplates,Category (L2/L3),2000,2000,100.0,0,0,0
+microplates,Category UNSPSC,2000,0,0.0,2000,0,0
+microplates,Color,2000,312,15.6,1599,89,0
+microplates,Compatibility,2000,0,0.0,2000,0,0
+microplates,Currency,2000,33,1.65,1967,0,0
+microplates,Description,2000,1948,97.4,52,0,0
+microplates,Document links,2000,88,4.4,1912,0,0
+microplates,Image URL,2000,5,0.25,1995,0,0
+microplates,Inventory,2000,0,0.0,2000,0,0
+microplates,Lead time (days),2000,0,0.0,2000,0,0
+microplates,Lid,2000,41,2.05,1959,0,0
+microplates,Listing UNSPSC,2000,0,0.0,2000,0,0
+microplates,Listing type,2000,2000,100.0,0,0,0
+microplates,Manufacturer SKU,2000,0,0.0,2000,0,0
+microplates,Manufacturer name,2000,0,0.0,2000,0,0
+microplates,Material,2000,622,31.1,1016,362,0
+microplates,Name,2000,2000,100.0,0,0,0
+microplates,Optical / assay readout,2000,32,1.6,1967,1,0
+microplates,Price per unit,2000,1985,99.25,15,0,0
+microplates,Pricing model,2000,2000,100.0,0,0,0
+microplates,Product / service URL,2000,88,4.4,1912,0,0
+microplates,Purity certs,2000,68,3.4,1932,0,0
+microplates,Quantity,2000,0,0.0,2000,0,0
+microplates,Requester UNSPSC,2000,0,0.0,2000,0,0
+microplates,Requester commodity code,2000,0,0.0,2000,0,0
+microplates,Ship from,2000,0,0.0,2000,0,0
+microplates,Sterility,2000,284,14.2,1610,106,0
+microplates,Sterilization method,2000,95,4.75,1905,0,0
+microplates,Supplier SKU,2000,0,0.0,2000,0,0
+microplates,Surface treatment,2000,92,4.6,1903,5,0
+microplates,Temperature range,2000,59,2.95,1941,0,0
+microplates,Unit,2000,0,0.0,2000,0,0
+microplates,Unit of measure,2000,558,27.9,758,684,0
+microplates,Well bottom,2000,225,11.25,1735,40,0
+microplates,Well number,2000,385,19.25,1615,0,0

@@ -1,0 +1,38 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+tubes_vials,Bottom shape,2000,335,16.75,1633,32,0
+tubes_vials,Brand / Manufacturer,2000,0,0.0,2000,0,0
+tubes_vials,Cap type,2000,368,18.4,1598,34,0
+tubes_vials,Capacity / Volume / Size,2000,1730,86.5,270,0,0
+tubes_vials,Category (L2/L3),2000,2000,100.0,0,0,0
+tubes_vials,Category UNSPSC,2000,0,0.0,2000,0,0
+tubes_vials,Color,2000,667,33.35,995,338,0
+tubes_vials,Compatibility,2000,0,0.0,2000,0,0
+tubes_vials,Currency,2000,74,3.7,1926,0,0
+tubes_vials,Description,2000,1976,98.8,24,0,0
+tubes_vials,Document links,2000,26,1.3,1974,0,0
+tubes_vials,Graduations,2000,145,7.25,1837,18,0
+tubes_vials,Image URL,2000,14,0.7,1986,0,0
+tubes_vials,Inventory,2000,0,0.0,2000,0,0
+tubes_vials,Lead time (days),2000,0,0.0,2000,0,0
+tubes_vials,Listing UNSPSC,2000,0,0.0,2000,0,0
+tubes_vials,Listing type,2000,2000,100.0,0,0,0
+tubes_vials,Low-binding,2000,2,0.1,1997,1,0
+tubes_vials,Manufacturer SKU,2000,0,0.0,2000,0,0
+tubes_vials,Manufacturer name,2000,0,0.0,2000,0,0
+tubes_vials,Material,2000,668,33.4,746,586,0
+tubes_vials,Max RCF (g-force),2000,55,2.75,1945,0,0
+tubes_vials,Name,2000,2000,100.0,0,0,0
+tubes_vials,Price per unit,2000,1992,99.6,8,0,0
+tubes_vials,Pricing model,2000,2000,100.0,0,0,0
+tubes_vials,Product / service URL,2000,26,1.3,1974,0,0
+tubes_vials,Purity certs,2000,242,12.1,1758,0,0
+tubes_vials,Quantity,2000,0,0.0,2000,0,0
+tubes_vials,Requester UNSPSC,2000,0,0.0,2000,0,0
+tubes_vials,Requester commodity code,2000,0,0.0,2000,0,0
+tubes_vials,Ship from,2000,0,0.0,2000,0,0
+tubes_vials,Sterility,2000,602,30.1,1209,189,0
+tubes_vials,Sterilization method,2000,343,17.15,1656,1,0
+tubes_vials,Supplier SKU,2000,0,0.0,2000,0,0
+tubes_vials,Temperature range,2000,144,7.2,1856,0,0
+tubes_vials,Unit,2000,0,0.0,2000,0,0
+tubes_vials,Unit of measure,2000,557,27.85,265,1178,0

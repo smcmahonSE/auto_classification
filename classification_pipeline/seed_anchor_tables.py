@@ -1,9 +1,9 @@
 """
-Seed Snowflake with pre-embedded L3 and L4 anchor descriptions.
+Seed Snowflake with pre-embedded L2 and L3 anchor descriptions.
 
 Creates two tables:
+  SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.EMBEDDED_L2_DESCRIPTIONS
   SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.EMBEDDED_L3_DESCRIPTIONS
-  SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.EMBEDDED_L4_DESCRIPTIONS
 
 Embeddings are stored as JSON arrays (VARIANT) for easy loading in downstream services.
 Each run overwrites both tables — safe to re-run if taxonomy definitions change.
@@ -27,15 +27,16 @@ sys.path.insert(0, str(PROJECT_ROOT / "classification_pipeline"))
 from product_classifier_utils import get_snowflake_session
 
 # ── Config ────────────────────────────────────────────────────────────────────
-AWS_PROFILE  = "staging.admin"
+AWS_PROFILE  = "bedrock"  # staging.admin lacks Bedrock access (ForbiddenException); use the
+                          # same profile as the main classify_listings.py pipeline.
 AWS_REGION   = "us-east-1"
 MODEL_ID     = "amazon.titan-embed-text-v1"
 
+L2_ANCHORS   = PROJECT_ROOT / "classification_pipeline/taxonomy/l2_taxonomy_anchors.json"
 L3_ANCHORS   = PROJECT_ROOT / "classification_pipeline/taxonomy/l3_taxonomy_anchors.json"
-L4_ANCHORS   = PROJECT_ROOT / "classification_pipeline/taxonomy/l4_taxonomy_anchors.json"
 
+L2_TABLE     = "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.EMBEDDED_L2_DESCRIPTIONS"
 L3_TABLE     = "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.EMBEDDED_L3_DESCRIPTIONS"
-L4_TABLE     = "SNOWFLAKE_LEARNING_DB.SMCMAHON_PRODUCTS.EMBEDDED_L4_DESCRIPTIONS"
 
 
 # ── Bedrock embedding ─────────────────────────────────────────────────────────
@@ -70,11 +71,11 @@ def embed_batch(client, texts: list[str], label: str) -> list[list[float]]:
     return vectors
 
 
-# ── Build L3 DataFrame ────────────────────────────────────────────────────────
+# ── Build L2 DataFrame ────────────────────────────────────────────────────────
 
-def build_l3_df(client) -> pd.DataFrame:
-    print("\n=== Embedding L3 anchors ===")
-    with open(L3_ANCHORS) as f:
+def build_l2_df(client) -> pd.DataFrame:
+    print("\n=== Embedding L2 anchors ===")
+    with open(L2_ANCHORS) as f:
         data = json.load(f)
 
     anchors = data["anchors"]
@@ -84,49 +85,49 @@ def build_l3_df(client) -> pd.DataFrame:
     rows = []
     for i, (anchor, vec) in enumerate(zip(anchors, vectors)):
         rows.append({
-            "L3_ID":                  i + 1,
-            "ASSIGNED_NEW_L3_LABEL":  anchor["label"],
-            "ASSIGNED_NEW_L3_ID":     anchor["id"],
-            "L3_DESCRIPTION":         anchor["description"],
-            "L3_EMBED":               json.dumps(vec),   # stored as JSON string → VARIANT
+            "L2_ID":              i + 1,
+            "ASSIGNED_L2_LABEL":  anchor["label"],
+            "ASSIGNED_L2_ID":     anchor["id"],
+            "L2_DESCRIPTION":     anchor["description"],
+            "L2_EMBED":           json.dumps(vec),   # stored as JSON string → VARIANT
         })
 
     df = pd.DataFrame(rows)
-    print(f"\nL3 table: {len(df)} rows")
+    print(f"\nL2 table: {len(df)} rows")
     return df
 
 
-# ── Build L4 DataFrame ────────────────────────────────────────────────────────
+# ── Build L3 DataFrame ────────────────────────────────────────────────────────
 
-def build_l4_df(client) -> pd.DataFrame:
-    print("\n=== Embedding L4 anchors ===")
-    with open(L4_ANCHORS) as f:
+def build_l3_df(client) -> pd.DataFrame:
+    print("\n=== Embedding L3 anchors ===")
+    with open(L3_ANCHORS) as f:
         data = json.load(f)
 
     rows   = []
     texts  = []
-    meta   = []   # (l3_id, subcat)
+    meta   = []   # (l2_id, subcat)
 
-    for l3_id, subcats in data["l3_subcategories"].items():
+    for l2_id, subcats in data["l2_subcategories"].items():
         for subcat in subcats:
             texts.append(subcat["description"])
-            meta.append((l3_id, subcat))
+            meta.append((l2_id, subcat))
 
     labels  = [m[1]["label"] for m in meta]
     vectors = embed_batch(client, texts, labels)
 
-    for i, ((l3_id, subcat), vec) in enumerate(zip(meta, vectors)):
+    for i, ((l2_id, subcat), vec) in enumerate(zip(meta, vectors)):
         rows.append({
-            "L4_ID":                  i + 1,
-            "ASSIGNED_L4_LABEL":      subcat["label"],
-            "ASSIGNED_L4_ID":         subcat["id"],
-            "ASSIGNED_NEW_L3_ID":     l3_id,
-            "L4_DESCRIPTION":         subcat["description"],
-            "L4_EMBED":               json.dumps(vec),   # stored as JSON string → VARIANT
+            "L3_ID":              i + 1,
+            "ASSIGNED_L3_LABEL":  subcat["label"],
+            "ASSIGNED_L3_ID":     subcat["id"],
+            "ASSIGNED_L2_ID":     l2_id,
+            "L3_DESCRIPTION":     subcat["description"],
+            "L3_EMBED":           json.dumps(vec),   # stored as JSON string → VARIANT
         })
 
     df = pd.DataFrame(rows)
-    print(f"\nL4 table: {len(df)} rows")
+    print(f"\nL3 table: {len(df)} rows")
     return df
 
 
@@ -145,8 +146,8 @@ if __name__ == "__main__":
     print("Connecting to AWS Bedrock...")
     bedrock = get_bedrock()
 
+    l2_df = build_l2_df(bedrock)
     l3_df = build_l3_df(bedrock)
-    l4_df = build_l4_df(bedrock)
 
     print("\nConnecting to Snowflake...")
     sf = get_snowflake_session()
@@ -154,15 +155,15 @@ if __name__ == "__main__":
     sf.sql("USE DATABASE SNOWFLAKE_LEARNING_DB").collect()
     sf.sql("USE SCHEMA SMCMAHON_PRODUCTS").collect()
 
+    publish(sf, l2_df, L2_TABLE)
     publish(sf, l3_df, L3_TABLE)
-    publish(sf, l4_df, L4_TABLE)
 
     print("\n=== Done ===")
-    print(f"  {L3_TABLE}: {len(l3_df)} L3 categories")
-    print(f"  {L4_TABLE}: {len(l4_df)} L4 subcategories")
-    print("\nL3 categories written:")
+    print(f"  {L2_TABLE}: {len(l2_df)} L2 categories")
+    print(f"  {L3_TABLE}: {len(l3_df)} L3 subcategories")
+    print("\nL2 categories written:")
+    for _, row in l2_df.iterrows():
+        print(f"  [{row['L2_ID']:2d}] {row['ASSIGNED_L2_ID']:<35} {row['ASSIGNED_L2_LABEL']}")
+    print("\nL3 subcategories written:")
     for _, row in l3_df.iterrows():
-        print(f"  [{row['L3_ID']:2d}] {row['ASSIGNED_NEW_L3_ID']:<35} {row['ASSIGNED_NEW_L3_LABEL']}")
-    print("\nL4 subcategories written:")
-    for _, row in l4_df.iterrows():
-        print(f"  [{row['L4_ID']:2d}] {row['ASSIGNED_NEW_L3_ID']:<35} {row['ASSIGNED_L4_LABEL']}")
+        print(f"  [{row['L3_ID']:2d}] {row['ASSIGNED_L2_ID']:<35} {row['ASSIGNED_L3_LABEL']}")

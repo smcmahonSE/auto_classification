@@ -1,0 +1,31 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+cleaning_sterilization,Active ingredient,2000,0,0.0,2000,0,0
+cleaning_sterilization,Brand / Manufacturer,2000,0,0.0,2000,0,0
+cleaning_sterilization,Category (L2/L3),2000,2000,100.0,0,0,0
+cleaning_sterilization,Category UNSPSC,2000,0,0.0,2000,0,0
+cleaning_sterilization,Currency,2000,12,0.6,1988,0,0
+cleaning_sterilization,Description,2000,1994,99.7,6,0,0
+cleaning_sterilization,Document links,2000,20,1.0,1980,0,0
+cleaning_sterilization,EPA registered,2000,2,0.1,1998,0,0
+cleaning_sterilization,Efficacy,2000,34,1.7,1966,0,0
+cleaning_sterilization,Format,2000,37,1.85,1962,1,0
+cleaning_sterilization,Image URL,2000,1,0.05,1999,0,0
+cleaning_sterilization,Inventory,2000,0,0.0,2000,0,0
+cleaning_sterilization,Lead time (days),2000,0,0.0,2000,0,0
+cleaning_sterilization,Listing UNSPSC,2000,0,0.0,2000,0,0
+cleaning_sterilization,Listing type,2000,2000,100.0,0,0,0
+cleaning_sterilization,Manufacturer SKU,2000,0,0.0,2000,0,0
+cleaning_sterilization,Manufacturer name,2000,0,0.0,2000,0,0
+cleaning_sterilization,Name,2000,2000,100.0,0,0,0
+cleaning_sterilization,Price per unit,2000,2000,100.0,0,0,0
+cleaning_sterilization,Pricing model,2000,2000,100.0,0,0,0
+cleaning_sterilization,Product / service URL,2000,20,1.0,1980,0,0
+cleaning_sterilization,Product type,2000,55,2.75,1938,7,0
+cleaning_sterilization,Quantity,2000,0,0.0,2000,0,0
+cleaning_sterilization,Requester UNSPSC,2000,0,0.0,2000,0,0
+cleaning_sterilization,Requester commodity code,2000,0,0.0,2000,0,0
+cleaning_sterilization,Ship from,2000,0,0.0,2000,0,0
+cleaning_sterilization,Supplier SKU,2000,0,0.0,2000,0,0
+cleaning_sterilization,Unit,2000,0,0.0,2000,0,0
+cleaning_sterilization,Unit of measure,2000,820,41.0,649,531,0
+cleaning_sterilization,Use environment,2000,195,9.75,1805,0,0

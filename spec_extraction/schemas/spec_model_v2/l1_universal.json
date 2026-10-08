@@ -1,0 +1,216 @@
+{
+  "version": "0.1",
+  "notes": [
+    "L1 fields apply to every listing (products and services), unless product_only is true.",
+    "product_only is metadata only — extraction is never gated on it; see spec_extraction/README.md for the hierarchical model rationale.",
+    "extractor 'passthrough' means the value is copied directly from an existing source column, not text-mined.",
+    "extractor 'derived' means the value is computed from a source column via a simple rule (e.g. Pricing model from PRICING_STATUS_C)."
+  ],
+  "all_listing_fields": [
+    {
+      "name": "Name",
+      "type": "text",
+      "required": true,
+      "product_only": false,
+      "extractor": "passthrough",
+      "source_column": "PRODUCT_VARIANT_NAME"
+    },
+    {
+      "name": "Category (L2/L3)",
+      "type": "picklist",
+      "allowed_values": "SE category tree (L2 > L3)",
+      "required": true,
+      "product_only": false,
+      "extractor": "passthrough",
+      "source_column": "ASSIGNED_L2_LABEL / ASSIGNED_L3_LABEL"
+    },
+    {
+      "name": "Category UNSPSC",
+      "type": "code",
+      "allowed_values": "8-digit UNSPSC code",
+      "required": true,
+      "product_only": false,
+      "extractor": "regex",
+      "notes": "Not present in source data today — set by SE on the category tree, not derivable from listing text. Expect mostly missing."
+    },
+    {
+      "name": "Listing UNSPSC",
+      "type": "code",
+      "allowed_values": "8-digit UNSPSC code",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "notes": "Supplier-set, not derivable from listing text. Expect mostly missing."
+    },
+    {
+      "name": "Listing type",
+      "type": "picklist",
+      "allowed_values": ["Product", "Service"],
+      "required": true,
+      "product_only": false,
+      "extractor": "derived",
+      "source_column": "PRICING_STATUS_C",
+      "notes": "No reliable listing-type field exists upstream yet. This is a best-effort diagnostic guess (PRICED -> Product, else -> Service), carried as LISTING_TYPE_GUESS — not authoritative, never used to gate extraction."
+    },
+    {
+      "name": "Pricing model",
+      "type": "picklist",
+      "allowed_values": ["Priced", "Quoted"],
+      "required": true,
+      "product_only": false,
+      "extractor": "derived",
+      "source_column": "PRICING_STATUS_C"
+    },
+    {
+      "name": "Description",
+      "type": "text",
+      "required": false,
+      "product_only": false,
+      "extractor": "passthrough",
+      "source_column": "DESCRIPTION",
+      "notes": "Required for services per spec doc, but extraction itself is unconditional."
+    },
+    {
+      "name": "Lead time (days)",
+      "type": "number",
+      "allowed_values": "days",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "lead_time_days"
+    },
+    {
+      "name": "Product / service URL",
+      "type": "url",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "url_generic"
+    },
+    {
+      "name": "Image URL",
+      "type": "url",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "image_url"
+    },
+    {
+      "name": "Document links",
+      "type": "url",
+      "allowed_values": "one link per document: TDS; SDS; COA; Other",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "url_generic"
+    }
+  ],
+  "product_only_fields": [
+    {
+      "name": "Supplier SKU",
+      "type": "text",
+      "required": true,
+      "product_only": true,
+      "extractor": "regex",
+      "pattern": "labeled_sku"
+    },
+    {
+      "name": "Manufacturer SKU",
+      "type": "text",
+      "required": false,
+      "product_only": true,
+      "extractor": "regex",
+      "pattern": "labeled_mfr_sku"
+    },
+    {
+      "name": "Manufacturer name",
+      "type": "text",
+      "required": false,
+      "product_only": true,
+      "extractor": "regex",
+      "pattern": "labeled_manufacturer"
+    },
+    {
+      "name": "Price per unit",
+      "type": "number",
+      "allowed_values": "price for one unit, in listing currency",
+      "required": true,
+      "product_only": true,
+      "extractor": "passthrough",
+      "source_column": "LIST_PRICE_C"
+    },
+    {
+      "name": "Currency",
+      "type": "picklist",
+      "allowed_values": ["USD", "EUR", "GBP", "CHF", "JPY", "CNY", "CAD", "AUD", "Other"],
+      "required": false,
+      "product_only": true,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "currency"
+    },
+    {
+      "name": "Unit",
+      "type": "number",
+      "allowed_values": "count of the unit of measure in one unit",
+      "required": true,
+      "product_only": true,
+      "extractor": "regex",
+      "pattern": "unit_count"
+    },
+    {
+      "name": "Unit of measure",
+      "type": "picklist",
+      "allowed_values": ["Each", "Pack", "Kit", "Bottle", "Tube", "Case", "Bag", "Plate", "Set", "Pair", "Bundle", "Slide", "Unit", "Gallon", "Liter", "Grams (g)", "Milligrams (mg)", "Kilograms (kg)", "Milliliters", "Reaction", "Assay", "Test", "Sample", "Prep", "Lane", "Array", "Antibody", "Amino Acid", "Cell Line", "Cell Strain", "Strain", "Clone", "Compound", "Plasmid", "Protein", "nmol", "micromoles"],
+      "required": true,
+      "product_only": true,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "unit_of_measure"
+    },
+    {
+      "name": "Quantity",
+      "type": "number",
+      "allowed_values": "units ordered",
+      "required": false,
+      "product_only": true,
+      "extractor": "regex",
+      "pattern": "quantity"
+    },
+    {
+      "name": "Inventory",
+      "type": "number",
+      "allowed_values": "units available to sell",
+      "required": false,
+      "product_only": true,
+      "extractor": "regex",
+      "pattern": "inventory"
+    },
+    {
+      "name": "Ship from",
+      "type": "text",
+      "allowed_values": "city, state / region, country",
+      "required": true,
+      "product_only": true,
+      "extractor": "regex",
+      "pattern": "ship_from"
+    }
+  ],
+  "requester_mapping_fields": [
+    {
+      "name": "Requester commodity code",
+      "type": "text",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "notes": "Set per requester org on the category tree — not derivable from a single listing. Expect missing."
+    },
+    {
+      "name": "Requester UNSPSC",
+      "type": "code",
+      "allowed_values": "8-digit UNSPSC code",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "notes": "Set per requester org on the category tree — not derivable from a single listing. Expect missing."
+    }
+  ]
+}

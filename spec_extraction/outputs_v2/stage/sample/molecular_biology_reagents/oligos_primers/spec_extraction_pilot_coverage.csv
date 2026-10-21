@@ -1,0 +1,32 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+oligos_primers,Category (L2/L3),200,200,100.0,0,0,0
+oligos_primers,Category UNSPSC,200,0,0.0,200,0,0
+oligos_primers,Currency,200,0,0.0,200,0,0
+oligos_primers,Description,200,194,97.0,6,0,0
+oligos_primers,Document links,200,6,3.0,194,0,0
+oligos_primers,Format,200,1,0.5,199,0,0
+oligos_primers,Image URL,200,0,0.0,200,0,0
+oligos_primers,Inventory,200,0,0.0,200,0,0
+oligos_primers,Lead time (days),200,0,0.0,200,0,0
+oligos_primers,Length (nt),200,0,0.0,200,0,0
+oligos_primers,Listing UNSPSC,200,0,0.0,200,0,0
+oligos_primers,Listing type,200,200,100.0,0,0,0
+oligos_primers,Manufacturer SKU,200,0,0.0,200,0,0
+oligos_primers,Manufacturer name,200,0,0.0,200,0,0
+oligos_primers,Modifications,200,3,1.5,197,0,0
+oligos_primers,Name,200,200,100.0,0,0,0
+oligos_primers,Price per unit,200,197,98.5,3,0,0
+oligos_primers,Pricing model,200,200,100.0,0,0,0
+oligos_primers,Product / service URL,200,6,3.0,194,0,0
+oligos_primers,Purification,200,0,0.0,200,0,0
+oligos_primers,QC,200,0,0.0,200,0,0
+oligos_primers,Quantity,200,0,0.0,200,0,0
+oligos_primers,Requester UNSPSC,200,0,0.0,200,0,0
+oligos_primers,Requester commodity code,200,0,0.0,200,0,0
+oligos_primers,Ship from,200,0,0.0,200,0,0
+oligos_primers,Supplier SKU,200,0,0.0,200,0,0
+oligos_primers,Synthesis scale,200,0,0.0,200,0,0
+oligos_primers,Target Gene / Region,200,109,54.5,91,0,0
+oligos_primers,Target Species,200,132,66.0,68,0,0
+oligos_primers,Unit,200,0,0.0,200,0,0
+oligos_primers,Unit of measure,200,33,16.5,114,53,0

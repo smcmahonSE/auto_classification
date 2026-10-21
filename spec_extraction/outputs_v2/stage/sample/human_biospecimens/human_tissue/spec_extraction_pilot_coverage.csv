@@ -1,0 +1,42 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+human_tissue,Anatomical site / tissue type,150,0,0.0,150,0,0
+human_tissue,Category (L2/L3),150,150,100.0,0,0,0
+human_tissue,Category UNSPSC,150,0,0.0,150,0,0
+human_tissue,Consent level,150,21,14.0,129,0,0
+human_tissue,Currency,150,0,0.0,150,0,0
+human_tissue,Description,150,11,7.33,139,0,0
+human_tissue,Diagnosis,150,0,0.0,150,0,0
+human_tissue,Disease areas,150,12,8.0,138,0,0
+human_tissue,Disease stage,150,0,0.0,150,0,0
+human_tissue,Document links,150,0,0.0,150,0,0
+human_tissue,Donor Age,150,2,1.33,148,0,0
+human_tissue,Image URL,150,0,0.0,150,0,0
+human_tissue,Individual vs Pooled,150,0,0.0,150,0,0
+human_tissue,Inventory,150,0,0.0,150,0,0
+human_tissue,Lead time (days),150,0,0.0,150,0,0
+human_tissue,Listing UNSPSC,150,0,0.0,150,0,0
+human_tissue,Listing type,150,150,100.0,0,0,0
+human_tissue,Manufacturer SKU,150,0,0.0,150,0,0
+human_tissue,Manufacturer name,150,0,0.0,150,0,0
+human_tissue,Matched sample set,150,10,6.67,140,0,0
+human_tissue,Name,150,150,100.0,0,0,0
+human_tissue,Necrosis %,150,0,0.0,150,0,0
+human_tissue,Price per unit,150,150,100.0,0,0,0
+human_tissue,Pricing model,150,150,100.0,0,0,0
+human_tissue,Product / service URL,150,0,0.0,150,0,0
+human_tissue,Quantity,150,0,0.0,150,0,0
+human_tissue,RIN (RNA integrity),150,3,2.0,147,0,0
+human_tissue,Race / Ethnicity,150,126,84.0,24,0,0
+human_tissue,Requester UNSPSC,150,0,0.0,150,0,0
+human_tissue,Requester commodity code,150,0,0.0,150,0,0
+human_tissue,Sample size / amount,150,12,8.0,138,0,0
+human_tissue,Sex,150,132,88.0,18,0,0
+human_tissue,Ship from,150,0,0.0,150,0,0
+human_tissue,Specimen format,150,81,54.0,21,48,0
+human_tissue,Storage conditions,150,4,2.67,146,0,0
+human_tissue,Supplier SKU,150,0,0.0,150,0,0
+human_tissue,Timepoint,150,0,0.0,150,0,0
+human_tissue,Treatment history,150,0,0.0,150,0,0
+human_tissue,Tumor content %,150,0,0.0,150,0,0
+human_tissue,Unit,150,0,0.0,150,0,0
+human_tissue,Unit of measure,150,56,37.33,87,7,0

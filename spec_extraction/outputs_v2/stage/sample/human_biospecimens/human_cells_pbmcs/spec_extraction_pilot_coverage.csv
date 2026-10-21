@@ -1,0 +1,43 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+human_cells_pbmcs,Category (L2/L3),150,150,100.0,0,0,0
+human_cells_pbmcs,Category UNSPSC,150,0,0.0,150,0,0
+human_cells_pbmcs,Cell count,150,1,0.67,149,0,0
+human_cells_pbmcs,Clinical data,150,0,0.0,150,0,0
+human_cells_pbmcs,Consent level,150,0,0.0,150,0,0
+human_cells_pbmcs,Currency,150,0,0.0,150,0,0
+human_cells_pbmcs,Description,150,115,76.67,35,0,0
+human_cells_pbmcs,Diagnosis,150,0,0.0,150,0,0
+human_cells_pbmcs,Disease areas,150,44,29.33,106,0,0
+human_cells_pbmcs,Disease stage,150,0,0.0,150,0,0
+human_cells_pbmcs,Document links,150,28,18.67,122,0,0
+human_cells_pbmcs,Donor Age,150,33,22.0,117,0,0
+human_cells_pbmcs,HLA type,150,0,0.0,150,0,0
+human_cells_pbmcs,Image URL,150,9,6.0,141,0,0
+human_cells_pbmcs,Individual vs Pooled,150,2,1.33,148,0,0
+human_cells_pbmcs,Inventory,150,0,0.0,150,0,0
+human_cells_pbmcs,Isolation method,150,22,14.67,128,0,0
+human_cells_pbmcs,Lead time (days),150,0,0.0,150,0,0
+human_cells_pbmcs,Listing UNSPSC,150,0,0.0,150,0,0
+human_cells_pbmcs,Listing type,150,150,100.0,0,0,0
+human_cells_pbmcs,Manufacturer SKU,150,0,0.0,150,0,0
+human_cells_pbmcs,Manufacturer name,150,0,0.0,150,0,0
+human_cells_pbmcs,Matched sample set,150,2,1.33,147,1,0
+human_cells_pbmcs,Name,150,150,100.0,0,0,0
+human_cells_pbmcs,Price per unit,150,132,88.0,18,0,0
+human_cells_pbmcs,Pricing model,150,150,100.0,0,0,0
+human_cells_pbmcs,Product / service URL,150,28,18.67,122,0,0
+human_cells_pbmcs,Quantity,150,0,0.0,150,0,0
+human_cells_pbmcs,Race / Ethnicity,150,41,27.33,109,0,0
+human_cells_pbmcs,Requester UNSPSC,150,0,0.0,150,0,0
+human_cells_pbmcs,Requester commodity code,150,0,0.0,150,0,0
+human_cells_pbmcs,Sex,150,40,26.67,110,0,0
+human_cells_pbmcs,Ship from,150,0,0.0,150,0,0
+human_cells_pbmcs,Shipping temperature,150,0,0.0,150,0,0
+human_cells_pbmcs,Specimen format,150,24,16.0,107,19,0
+human_cells_pbmcs,Storage conditions,150,1,0.67,149,0,0
+human_cells_pbmcs,Supplier SKU,150,0,0.0,150,0,0
+human_cells_pbmcs,Timepoint,150,6,4.0,144,0,0
+human_cells_pbmcs,Treatment history,150,0,0.0,150,0,0
+human_cells_pbmcs,Unit,150,0,0.0,150,0,0
+human_cells_pbmcs,Unit of measure,150,49,32.67,90,11,0
+human_cells_pbmcs,Viability %,150,0,0.0,150,0,0

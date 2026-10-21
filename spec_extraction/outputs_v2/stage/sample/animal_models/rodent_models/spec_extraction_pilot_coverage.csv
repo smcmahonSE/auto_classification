@@ -1,0 +1,46 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+rodent_models,Age / weight range,100,0,0.0,100,0,0
+rodent_models,Availability status,100,0,0.0,100,0,0
+rodent_models,Cancer type / indication,100,0,0.0,100,0,0
+rodent_models,Category (L2/L3),100,100,100.0,0,0,0
+rodent_models,Category UNSPSC,100,0,0.0,100,0,0
+rodent_models,Coat color,100,2,2.0,98,0,0
+rodent_models,Currency,100,0,0.0,100,0,0
+rodent_models,Delivery form,100,0,0.0,100,0,0
+rodent_models,Description,100,23,23.0,77,0,0
+rodent_models,Document links,100,0,0.0,100,0,0
+rodent_models,Genetic background,100,0,0.0,100,0,0
+rodent_models,Genotype / alleles,100,0,0.0,100,0,0
+rodent_models,Health status / microbiological standard,100,0,0.0,100,0,0
+rodent_models,Humanization / engraftment,100,0,0.0,100,0,0
+rodent_models,Image URL,100,0,0.0,100,0,0
+rodent_models,Inventory,100,0,0.0,100,0,0
+rodent_models,Known background traits,100,0,0.0,100,0,0
+rodent_models,Lead time (days),100,0,0.0,100,0,0
+rodent_models,Licensing / conditions of use,100,0,0.0,100,0,0
+rodent_models,Listing UNSPSC,100,0,0.0,100,0,0
+rodent_models,Listing type,100,100,100.0,0,0,0
+rodent_models,MHC haplotype,100,0,0.0,100,0,0
+rodent_models,Manufacturer SKU,100,0,0.0,100,0,0
+rodent_models,Manufacturer name,100,0,0.0,100,0,0
+rodent_models,Model type / genetic status,100,5,5.0,95,0,0
+rodent_models,Name,100,100,100.0,0,0,0
+rodent_models,Preconditioning,100,0,0.0,100,0,0
+rodent_models,Price per unit,100,99,99.0,1,0,0
+rodent_models,Pricing model,100,100,100.0,0,0,0
+rodent_models,Product / service URL,100,0,0.0,100,0,0
+rodent_models,Production location / origin,100,0,0.0,100,0,0
+rodent_models,Quantity,100,0,0.0,100,0,0
+rodent_models,Requester UNSPSC,100,0,0.0,100,0,0
+rodent_models,Requester commodity code,100,0,0.0,100,0,0
+rodent_models,Research / therapeutic area,100,4,4.0,96,0,0
+rodent_models,Sex,100,7,7.0,93,0,0
+rodent_models,Ship from,100,0,0.0,100,0,0
+rodent_models,Species,100,28,28.0,69,3,0
+rodent_models,Strain / official nomenclature,100,3,3.0,97,0,0
+rodent_models,Supplier SKU,100,0,0.0,100,0,0
+rodent_models,Supplier stock / strain code,100,0,0.0,100,0,0
+rodent_models,Tumor model type,100,2,2.0,98,0,0
+rodent_models,Unit,100,0,0.0,100,0,0
+rodent_models,Unit of measure,100,4,4.0,93,3,0
+rodent_models,Zygosity,100,0,0.0,100,0,0

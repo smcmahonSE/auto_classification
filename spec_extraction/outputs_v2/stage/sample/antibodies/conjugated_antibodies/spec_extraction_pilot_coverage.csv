@@ -1,0 +1,39 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+conjugated_antibodies,Application,150,5,3.33,145,0,0
+conjugated_antibodies,Category (L2/L3),150,150,100.0,0,0,0
+conjugated_antibodies,Category UNSPSC,150,0,0.0,150,0,0
+conjugated_antibodies,Cited reactivity,150,3,2.0,147,0,0
+conjugated_antibodies,Clonality,150,1,0.67,149,0,0
+conjugated_antibodies,Clone ID,150,0,0.0,150,0,0
+conjugated_antibodies,Conjugate / Label,150,2,1.33,148,0,0
+conjugated_antibodies,Currency,150,0,0.0,150,0,0
+conjugated_antibodies,Description,150,12,8.0,138,0,0
+conjugated_antibodies,Document links,150,2,1.33,148,0,0
+conjugated_antibodies,Format,150,1,0.67,149,0,0
+conjugated_antibodies,Host Species,150,1,0.67,148,1,0
+conjugated_antibodies,Image URL,150,1,0.67,149,0,0
+conjugated_antibodies,Inventory,150,0,0.0,150,0,0
+conjugated_antibodies,Isotype,150,1,0.67,149,0,0
+conjugated_antibodies,Lead time (days),150,0,0.0,150,0,0
+conjugated_antibodies,Listing UNSPSC,150,0,0.0,150,0,0
+conjugated_antibodies,Listing type,150,150,100.0,0,0,0
+conjugated_antibodies,Manufacturer SKU,150,0,0.0,150,0,0
+conjugated_antibodies,Manufacturer name,150,0,0.0,150,0,0
+conjugated_antibodies,Name,150,150,100.0,0,0,0
+conjugated_antibodies,PTM / modification specificity,150,0,0.0,150,0,0
+conjugated_antibodies,Price per unit,150,148,98.67,2,0,0
+conjugated_antibodies,Pricing model,150,150,100.0,0,0,0
+conjugated_antibodies,Product / service URL,150,2,1.33,148,0,0
+conjugated_antibodies,Purification,150,0,0.0,150,0,0
+conjugated_antibodies,Quantity,150,0,0.0,150,0,0
+conjugated_antibodies,RRID,150,0,0.0,150,0,0
+conjugated_antibodies,Recommended dilution,150,0,0.0,150,0,0
+conjugated_antibodies,Requester UNSPSC,150,0,0.0,150,0,0
+conjugated_antibodies,Requester commodity code,150,0,0.0,150,0,0
+conjugated_antibodies,Ship from,150,0,0.0,150,0,0
+conjugated_antibodies,Storage conditions,150,5,3.33,145,0,0
+conjugated_antibodies,Supplier SKU,150,0,0.0,150,0,0
+conjugated_antibodies,Target / Antigen,150,3,2.0,147,0,0
+conjugated_antibodies,Tested reactivity,150,3,2.0,147,0,0
+conjugated_antibodies,Unit,150,0,0.0,150,0,0
+conjugated_antibodies,Unit of measure,150,8,5.33,140,2,0

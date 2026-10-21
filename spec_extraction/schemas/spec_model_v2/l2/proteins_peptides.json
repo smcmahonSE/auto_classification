@@ -1,0 +1,820 @@
+{
+  "l2_id": "proteins_peptides",
+  "l2_label": "Proteins and Peptides",
+  "schema_name": "PROTEINS_PEPTIDES",
+  "l2_fields": [],
+  "l3_nodes": {
+    "recombinant_proteins": {
+      "label": "Recombinant Proteins",
+      "form": "product",
+      "table_name": "RECOMBINANT_PROTEINS_SPEC",
+      "fields": [
+        {
+          "name": "Expression system",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "expression_system",
+          "allowed_values": [
+            "E. coli",
+            "HEK293",
+            "CHO",
+            "Insect",
+            "Yeast",
+            "Wheat germ",
+            "Native"
+          ]
+        },
+        {
+          "name": "Species",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "species_protein",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Bovine",
+            "Porcine",
+            "Monkey",
+            "Other"
+          ]
+        },
+        {
+          "name": "Sequence / region",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_sequence_region"
+        },
+        {
+          "name": "Tag",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_tag",
+          "allowed_values": [
+            "His",
+            "Fc",
+            "GST",
+            "Avi",
+            "FLAG",
+            "Strep",
+            "Tag-free"
+          ]
+        },
+        {
+          "name": "Bioactivity",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "bioactivity_validated",
+          "allowed_values": [
+            "Validated (binding)",
+            "Validated (functional)",
+            "Not tested"
+          ]
+        },
+        {
+          "name": "Form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_form",
+          "allowed_values": [
+            "Lyophilized",
+            "Liquid",
+            "Frozen"
+          ]
+        },
+        {
+          "name": "Grade",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "grade_research_gmp",
+          "allowed_values": [
+            "Research",
+            "GMP",
+            "Animal-free"
+          ]
+        },
+        {
+          "name": "Molecular weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_weight",
+          "allowed_values": "kDa"
+        },
+        {
+          "name": "Storage / reconstitution",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_reconstitution",
+          "allowed_values": [
+            "2-8°C",
+            "-20°C",
+            "-80°C"
+          ]
+        },
+        {
+          "name": "Purity",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity",
+          "allowed_values": "% by SDS-PAGE or HPLC"
+        },
+        {
+          "name": "Endotoxin level",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "endotoxin_level",
+          "allowed_values": "EU/µg"
+        }
+      ]
+    },
+    "cytokines_growth_factors": {
+      "label": "Cytokines & Growth Factors",
+      "form": "product",
+      "table_name": "CYTOKINES_GROWTH_FACTORS_SPEC",
+      "fields": [
+        {
+          "name": "Bioactivity / ED50",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "bioactivity_ed50",
+          "allowed_values": "ng/mL"
+        },
+        {
+          "name": "Species",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "species_protein",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Bovine",
+            "Porcine",
+            "Monkey",
+            "Other"
+          ]
+        },
+        {
+          "name": "Sequence / region",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_sequence_region"
+        },
+        {
+          "name": "Carrier",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "carrier",
+          "allowed_values": [
+            "Carrier-free",
+            "With BSA",
+            "With HSA"
+          ]
+        },
+        {
+          "name": "Endotoxin level",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "endotoxin_level",
+          "allowed_values": "EU/µg"
+        },
+        {
+          "name": "Form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_form",
+          "allowed_values": [
+            "Lyophilized",
+            "Liquid",
+            "Frozen"
+          ]
+        },
+        {
+          "name": "Grade",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "grade_research_gmp",
+          "allowed_values": [
+            "Research",
+            "GMP",
+            "Animal-free"
+          ]
+        },
+        {
+          "name": "Molecular weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_weight",
+          "allowed_values": "kDa"
+        },
+        {
+          "name": "Storage / reconstitution",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_reconstitution",
+          "allowed_values": [
+            "2-8°C",
+            "-20°C",
+            "-80°C"
+          ]
+        },
+        {
+          "name": "Purity",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity",
+          "allowed_values": "% by SDS-PAGE or HPLC"
+        },
+        {
+          "name": "Source / Expression system",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "expression_system",
+          "allowed_values": [
+            "E. coli",
+            "HEK293",
+            "CHO",
+            "Insect",
+            "Yeast",
+            "Wheat germ",
+            "Synthetic",
+            "Native"
+          ]
+        }
+      ]
+    },
+    "enzymes": {
+      "label": "Enzymes",
+      "form": "product",
+      "table_name": "ENZYMES_SPEC",
+      "fields": [
+        {
+          "name": "Specific activity",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "specific_activity_protein",
+          "allowed_values": "units/mg"
+        },
+        {
+          "name": "Cofactors / substrate",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_cofactors_substrate"
+        },
+        {
+          "name": "Form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_form",
+          "allowed_values": [
+            "Lyophilized",
+            "Liquid",
+            "Frozen"
+          ]
+        },
+        {
+          "name": "Grade",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "grade_research_gmp",
+          "allowed_values": [
+            "Research",
+            "GMP",
+            "Animal-free"
+          ]
+        },
+        {
+          "name": "Molecular weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_weight",
+          "allowed_values": "kDa"
+        },
+        {
+          "name": "Storage / reconstitution",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_reconstitution",
+          "allowed_values": [
+            "2-8°C",
+            "-20°C",
+            "-80°C"
+          ]
+        },
+        {
+          "name": "Purity",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity",
+          "allowed_values": "% by SDS-PAGE or HPLC"
+        },
+        {
+          "name": "Source / Expression system",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "expression_system",
+          "allowed_values": [
+            "E. coli",
+            "HEK293",
+            "CHO",
+            "Insect",
+            "Yeast",
+            "Wheat germ",
+            "Synthetic",
+            "Native"
+          ]
+        },
+        {
+          "name": "Endotoxin level",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "endotoxin_level",
+          "allowed_values": "EU/µg"
+        }
+      ]
+    },
+    "albumin_carrier_proteins": {
+      "label": "Albumin & Carrier Proteins",
+      "form": "product",
+      "table_name": "ALBUMIN_CARRIER_PROTEINS_SPEC",
+      "fields": [
+        {
+          "name": "Source",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "albumin_source",
+          "allowed_values": [
+            "Bovine (BSA)",
+            "Human (HSA)",
+            "Recombinant"
+          ]
+        },
+        {
+          "name": "Species",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "species_protein",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Bovine",
+            "Porcine",
+            "Monkey",
+            "Other"
+          ]
+        },
+        {
+          "name": "Fatty-acid-free / globulin-free",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Fraction / purity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_fraction_purity"
+        },
+        {
+          "name": "Form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_form",
+          "allowed_values": [
+            "Lyophilized",
+            "Liquid",
+            "Frozen"
+          ]
+        },
+        {
+          "name": "Grade",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "grade_research_gmp",
+          "allowed_values": [
+            "Research",
+            "GMP",
+            "Animal-free"
+          ]
+        },
+        {
+          "name": "Molecular weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_weight",
+          "allowed_values": "kDa"
+        },
+        {
+          "name": "Storage / reconstitution",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_reconstitution",
+          "allowed_values": [
+            "2-8°C",
+            "-20°C",
+            "-80°C"
+          ]
+        },
+        {
+          "name": "Purity",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity",
+          "allowed_values": "% by SDS-PAGE or HPLC"
+        },
+        {
+          "name": "Endotoxin level",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "endotoxin_level",
+          "allowed_values": "EU/µg"
+        }
+      ]
+    },
+    "peptides_amino_acids": {
+      "label": "Peptides & Amino Acids",
+      "form": "product",
+      "table_name": "PEPTIDES_AMINO_ACIDS_SPEC",
+      "fields": [
+        {
+          "name": "Sequence",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_sequence_region"
+        },
+        {
+          "name": "Length (aa)",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "length_nt_aa_bp",
+          "allowed_values": "aa"
+        },
+        {
+          "name": "Purity (HPLC)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "peptide_purity_tier",
+          "allowed_values": [
+            "Crude",
+            "≥70%",
+            "≥80%",
+            "≥90%",
+            "≥95%",
+            "≥97%",
+            "≥98%"
+          ]
+        },
+        {
+          "name": "Counterion / salt",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "counterion",
+          "allowed_values": [
+            "TFA",
+            "Acetate",
+            "HCl"
+          ]
+        },
+        {
+          "name": "Modifications",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "peptide_modifications",
+          "multi_select": true,
+          "allowed_values": [
+            "Amidation",
+            "Acetylation",
+            "FITC",
+            "Biotin",
+            "Phosphorylation",
+            "Cyclization",
+            "Other"
+          ]
+        },
+        {
+          "name": "Scale",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "peptide_scale",
+          "allowed_values": "mg, g or kg"
+        },
+        {
+          "name": "Form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_form",
+          "allowed_values": [
+            "Lyophilized",
+            "Liquid",
+            "Frozen"
+          ]
+        },
+        {
+          "name": "Grade",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "grade_research_gmp",
+          "allowed_values": [
+            "Research",
+            "GMP",
+            "Animal-free"
+          ]
+        },
+        {
+          "name": "Molecular weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_weight",
+          "allowed_values": "Da (g/mol)"
+        },
+        {
+          "name": "Storage / reconstitution",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_reconstitution",
+          "allowed_values": [
+            "2-8°C",
+            "-20°C",
+            "-80°C"
+          ]
+        },
+        {
+          "name": "Endotoxin level",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "endotoxin_level",
+          "allowed_values": "EU/µg"
+        }
+      ]
+    },
+    "protein_purification": {
+      "label": "Protein purification",
+      "form": "service",
+      "table_name": "PROTEIN_PURIFICATION_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    },
+    "protein_characterization": {
+      "label": "Protein characterization",
+      "form": "service",
+      "table_name": "PROTEIN_CHARACTERIZATION_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    },
+    "protein_engineering": {
+      "label": "Protein engineering",
+      "form": "service",
+      "table_name": "PROTEIN_ENGINEERING_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    },
+    "protein_conjugation_labeling": {
+      "label": "Protein conjugation & labeling",
+      "form": "service",
+      "table_name": "PROTEIN_CONJUGATION_LABELING_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    }
+  }
+}

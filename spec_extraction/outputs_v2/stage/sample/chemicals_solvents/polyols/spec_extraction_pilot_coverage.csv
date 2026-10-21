@@ -1,0 +1,34 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+polyols,Appearance / Color,150,0,0.0,150,0,0
+polyols,CAS Number(s),150,35,23.33,115,0,0
+polyols,Category (L2/L3),150,150,100.0,0,0,0
+polyols,Category UNSPSC,150,0,0.0,150,0,0
+polyols,Currency,150,3,2.0,147,0,0
+polyols,Description,150,141,94.0,9,0,0
+polyols,Document links,150,25,16.67,125,0,0
+polyols,Grade,150,6,4.0,144,0,0
+polyols,Hazard / GHS classification,150,0,0.0,150,0,0
+polyols,Image URL,150,0,0.0,150,0,0
+polyols,Inventory,150,0,0.0,150,0,0
+polyols,Lead time (days),150,0,0.0,150,0,0
+polyols,Listing UNSPSC,150,0,0.0,150,0,0
+polyols,Listing type,150,150,100.0,0,0,0
+polyols,Manufacturer SKU,150,0,0.0,150,0,0
+polyols,Manufacturer name,150,0,0.0,150,0,0
+polyols,Molecular Formula,150,58,38.67,92,0,0
+polyols,Molecular Weight,150,1,0.67,149,0,0
+polyols,Name,150,150,100.0,0,0,0
+polyols,Physical Form / State,150,3,2.0,145,2,0
+polyols,Price per unit,150,149,99.33,1,0,0
+polyols,Pricing model,150,150,100.0,0,0,0
+polyols,Product / service URL,150,25,16.67,125,0,0
+polyols,Purity,150,56,37.33,94,0,0
+polyols,Purity analysis method,150,4,2.67,146,0,0
+polyols,Quantity,150,0,0.0,150,0,0
+polyols,Requester UNSPSC,150,0,0.0,150,0,0
+polyols,Requester commodity code,150,0,0.0,150,0,0
+polyols,Ship from,150,0,0.0,150,0,0
+polyols,Storage Conditions,150,1,0.67,149,0,0
+polyols,Supplier SKU,150,0,0.0,150,0,0
+polyols,Unit,150,0,0.0,150,0,0
+polyols,Unit of measure,150,13,8.67,136,1,0

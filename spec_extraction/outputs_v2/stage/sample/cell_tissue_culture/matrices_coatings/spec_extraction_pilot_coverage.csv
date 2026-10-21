@@ -1,0 +1,38 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+matrices_coatings,Category (L2/L3),150,150,100.0,0,0,0
+matrices_coatings,Category UNSPSC,150,0,0.0,150,0,0
+matrices_coatings,Currency,150,2,1.33,148,0,0
+matrices_coatings,Delivery format,150,16,10.67,134,0,0
+matrices_coatings,Description,150,148,98.67,2,0,0
+matrices_coatings,Document links,150,8,5.33,142,0,0
+matrices_coatings,Format / physical form,150,16,10.67,134,0,0
+matrices_coatings,Formulation / animal origin,150,1,0.67,149,0,0
+matrices_coatings,Grade / regulatory,150,0,0.0,150,0,0
+matrices_coatings,Growth factor content,150,76,50.67,62,12,0
+matrices_coatings,Image URL,150,0,0.0,150,0,0
+matrices_coatings,Intended cell type / application,150,0,0.0,150,0,0
+matrices_coatings,Inventory,150,0,0.0,150,0,0
+matrices_coatings,Lead time (days),150,0,0.0,150,0,0
+matrices_coatings,Listing UNSPSC,150,0,0.0,150,0,0
+matrices_coatings,Listing type,150,150,100.0,0,0,0
+matrices_coatings,Manufacturer SKU,150,0,0.0,150,0,0
+matrices_coatings,Manufacturer name,150,0,0.0,150,0,0
+matrices_coatings,Matrix type,150,25,16.67,123,2,0
+matrices_coatings,Name,150,150,100.0,0,0,0
+matrices_coatings,Phenol red,150,76,50.67,62,12,0
+matrices_coatings,Price per unit,150,143,95.33,7,0,0
+matrices_coatings,Pricing model,150,150,100.0,0,0,0
+matrices_coatings,Product / service URL,150,8,5.33,142,0,0
+matrices_coatings,Protein concentration,150,76,50.67,62,12,0
+matrices_coatings,Qualification,150,76,50.67,62,12,0
+matrices_coatings,Quantity,150,0,0.0,150,0,0
+matrices_coatings,Requester UNSPSC,150,0,0.0,150,0,0
+matrices_coatings,Requester commodity code,150,0,0.0,150,0,0
+matrices_coatings,Ship from,150,0,0.0,150,0,0
+matrices_coatings,Shipping temperature,150,0,0.0,150,0,0
+matrices_coatings,Species (cell source or intended use),150,26,17.33,122,2,0
+matrices_coatings,Sterility / contamination QC,150,0,0.0,150,0,0
+matrices_coatings,Storage conditions,150,3,2.0,146,1,0
+matrices_coatings,Supplier SKU,150,0,0.0,150,0,0
+matrices_coatings,Unit,150,0,0.0,150,0,0
+matrices_coatings,Unit of measure,150,48,32.0,92,10,0

@@ -1,0 +1,33 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+enzymes,Category (L2/L3),150,150,100.0,0,0,0
+enzymes,Category UNSPSC,150,0,0.0,150,0,0
+enzymes,Cofactors / substrate,150,0,0.0,150,0,0
+enzymes,Currency,150,2,1.33,147,1,0
+enzymes,Description,150,117,78.0,33,0,0
+enzymes,Document links,150,12,8.0,138,0,0
+enzymes,Endotoxin level,150,0,0.0,150,0,0
+enzymes,Form,150,16,10.67,134,0,0
+enzymes,Grade,150,1,0.67,149,0,0
+enzymes,Image URL,150,0,0.0,150,0,0
+enzymes,Inventory,150,0,0.0,150,0,0
+enzymes,Lead time (days),150,0,0.0,150,0,0
+enzymes,Listing UNSPSC,150,0,0.0,150,0,0
+enzymes,Listing type,150,150,100.0,0,0,0
+enzymes,Manufacturer SKU,150,0,0.0,150,0,0
+enzymes,Manufacturer name,150,0,0.0,150,0,0
+enzymes,Molecular weight,150,18,12.0,132,0,0
+enzymes,Name,150,150,100.0,0,0,0
+enzymes,Price per unit,150,128,85.33,22,0,0
+enzymes,Pricing model,150,150,100.0,0,0,0
+enzymes,Product / service URL,150,12,8.0,138,0,0
+enzymes,Purity,150,19,12.67,131,0,0
+enzymes,Quantity,150,0,0.0,150,0,0
+enzymes,Requester UNSPSC,150,0,0.0,150,0,0
+enzymes,Requester commodity code,150,0,0.0,150,0,0
+enzymes,Ship from,150,0,0.0,150,0,0
+enzymes,Source / Expression system,150,20,13.33,129,1,0
+enzymes,Specific activity,150,7,4.67,143,0,0
+enzymes,Storage / reconstitution,150,15,10.0,132,3,0
+enzymes,Supplier SKU,150,0,0.0,150,0,0
+enzymes,Unit,150,0,0.0,150,0,0
+enzymes,Unit of measure,150,30,20.0,117,3,0

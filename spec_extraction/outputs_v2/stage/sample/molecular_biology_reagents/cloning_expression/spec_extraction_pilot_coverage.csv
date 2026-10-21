@@ -1,0 +1,27 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+cloning_expression,Category (L2/L3),200,200,100.0,0,0,0
+cloning_expression,Category UNSPSC,200,0,0.0,200,0,0
+cloning_expression,Currency,200,0,0.0,200,0,0
+cloning_expression,Description,200,198,99.0,2,0,0
+cloning_expression,Document links,200,1,0.5,199,0,0
+cloning_expression,Host / expression system,200,5,2.5,195,0,0
+cloning_expression,Image URL,200,0,0.0,200,0,0
+cloning_expression,Inventory,200,0,0.0,200,0,0
+cloning_expression,Lead time (days),200,0,0.0,200,0,0
+cloning_expression,Listing UNSPSC,200,0,0.0,200,0,0
+cloning_expression,Listing type,200,200,100.0,0,0,0
+cloning_expression,Manufacturer SKU,200,0,0.0,200,0,0
+cloning_expression,Manufacturer name,200,0,0.0,200,0,0
+cloning_expression,Name,200,200,100.0,0,0,0
+cloning_expression,Price per unit,200,196,98.0,4,0,0
+cloning_expression,Pricing model,200,200,100.0,0,0,0
+cloning_expression,Product / service URL,200,1,0.5,199,0,0
+cloning_expression,Quantity,200,0,0.0,200,0,0
+cloning_expression,Requester UNSPSC,200,0,0.0,200,0,0
+cloning_expression,Requester commodity code,200,0,0.0,200,0,0
+cloning_expression,Ship from,200,0,0.0,200,0,0
+cloning_expression,Supplier SKU,200,0,0.0,200,0,0
+cloning_expression,Tags / selection,200,4,2.0,196,0,0
+cloning_expression,Unit,200,0,0.0,200,0,0
+cloning_expression,Unit of measure,200,12,6.0,174,14,0
+cloning_expression,Vector / system,200,0,0.0,200,0,0

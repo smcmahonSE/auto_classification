@@ -1,0 +1,31 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+sequencing,Category (L2/L3),200,200,100.0,0,0,0
+sequencing,Category UNSPSC,200,0,0.0,200,0,0
+sequencing,Currency,200,0,0.0,200,0,0
+sequencing,Description,200,97,48.5,103,0,0
+sequencing,Document links,200,10,5.0,190,0,0
+sequencing,Image URL,200,5,2.5,195,0,0
+sequencing,Inventory,200,0,0.0,200,0,0
+sequencing,Lead time (days),200,0,0.0,200,0,0
+sequencing,Listing UNSPSC,200,0,0.0,200,0,0
+sequencing,Listing type,200,200,100.0,0,0,0
+sequencing,Manufacturer SKU,200,0,0.0,200,0,0
+sequencing,Manufacturer name,200,0,0.0,200,0,0
+sequencing,Method,200,12,6.0,188,0,0
+sequencing,Name,200,200,100.0,0,0,0
+sequencing,Price per unit,200,194,97.0,6,0,0
+sequencing,Pricing model,200,200,100.0,0,0,0
+sequencing,Product / service URL,200,10,5.0,190,0,0
+sequencing,Quantity,200,0,0.0,200,0,0
+sequencing,Read configuration,200,0,0.0,200,0,0
+sequencing,Read depth / # reads ordered,200,0,0.0,200,0,0
+sequencing,Read length,200,3,1.5,197,0,0
+sequencing,Regulatory,200,1,0.5,199,0,0
+sequencing,Requester UNSPSC,200,0,0.0,200,0,0
+sequencing,Requester commodity code,200,0,0.0,200,0,0
+sequencing,Sample type,200,32,16.0,163,5,0
+sequencing,Ship from,200,0,0.0,200,0,0
+sequencing,Supplier SKU,200,0,0.0,200,0,0
+sequencing,Turnaround,200,0,0.0,200,0,0
+sequencing,Unit,200,0,0.0,200,0,0
+sequencing,Unit of measure,200,65,32.5,114,21,0

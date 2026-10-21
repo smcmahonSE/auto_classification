@@ -1,0 +1,37 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+cryopreservation,Category (L2/L3),150,150,100.0,0,0,0
+cryopreservation,Category UNSPSC,150,0,0.0,150,0,0
+cryopreservation,Currency,150,1,0.67,149,0,0
+cryopreservation,DMSO concentration,150,1,0.67,149,0,0
+cryopreservation,Description,150,134,89.33,16,0,0
+cryopreservation,Document links,150,7,4.67,143,0,0
+cryopreservation,Format / physical form,150,32,21.33,116,2,0
+cryopreservation,Formulation,150,3,2.0,147,0,0
+cryopreservation,Formulation / animal origin,150,3,2.0,147,0,0
+cryopreservation,Grade / regulatory,150,2,1.33,148,0,0
+cryopreservation,Image URL,150,2,1.33,148,0,0
+cryopreservation,Intended cell type / application,150,0,0.0,150,0,0
+cryopreservation,Inventory,150,0,0.0,150,0,0
+cryopreservation,Lead time (days),150,0,0.0,150,0,0
+cryopreservation,Listing UNSPSC,150,0,0.0,150,0,0
+cryopreservation,Listing type,150,150,100.0,0,0,0
+cryopreservation,Manufacturer SKU,150,0,0.0,150,0,0
+cryopreservation,Manufacturer name,150,0,0.0,150,0,0
+cryopreservation,Name,150,150,100.0,0,0,0
+cryopreservation,Price per unit,150,132,88.0,18,0,0
+cryopreservation,Pricing model,150,150,100.0,0,0,0
+cryopreservation,Product / service URL,150,7,4.67,143,0,0
+cryopreservation,Quantity,150,0,0.0,150,0,0
+cryopreservation,Ready-to-use,150,2,1.33,148,0,0
+cryopreservation,Requester UNSPSC,150,0,0.0,150,0,0
+cryopreservation,Requester commodity code,150,0,0.0,150,0,0
+cryopreservation,Shelf life,150,0,0.0,150,0,0
+cryopreservation,Ship from,150,0,0.0,150,0,0
+cryopreservation,Shipping temperature,150,1,0.67,149,0,0
+cryopreservation,Species (cell source or intended use),150,36,24.0,112,2,0
+cryopreservation,Sterility / contamination QC,150,1,0.67,149,0,0
+cryopreservation,Storage conditions,150,17,11.33,133,0,0
+cryopreservation,Supplier SKU,150,0,0.0,150,0,0
+cryopreservation,Unit,150,0,0.0,150,0,0
+cryopreservation,Unit of measure,150,27,18.0,111,12,0
+cryopreservation,Validated cell types,150,0,0.0,150,0,0

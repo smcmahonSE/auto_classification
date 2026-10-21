@@ -1,0 +1,29 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+rna_interference,Category (L2/L3),200,200,100.0,0,0,0
+rna_interference,Category UNSPSC,200,0,0.0,200,0,0
+rna_interference,Chemistry / modifications,200,0,0.0,200,0,0
+rna_interference,Currency,200,0,0.0,200,0,0
+rna_interference,Description,200,200,100.0,0,0,0
+rna_interference,Document links,200,1,0.5,199,0,0
+rna_interference,Image URL,200,0,0.0,200,0,0
+rna_interference,Inventory,200,0,0.0,200,0,0
+rna_interference,Lead time (days),200,0,0.0,200,0,0
+rna_interference,Listing UNSPSC,200,0,0.0,200,0,0
+rna_interference,Listing type,200,200,100.0,0,0,0
+rna_interference,Manufacturer SKU,200,0,0.0,200,0,0
+rna_interference,Manufacturer name,200,0,0.0,200,0,0
+rna_interference,Name,200,200,100.0,0,0,0
+rna_interference,Pooling,200,0,0.0,200,0,0
+rna_interference,Price per unit,200,200,100.0,0,0,0
+rna_interference,Pricing model,200,200,100.0,0,0,0
+rna_interference,Product / service URL,200,1,0.5,199,0,0
+rna_interference,Quantity,200,0,0.0,200,0,0
+rna_interference,Requester UNSPSC,200,0,0.0,200,0,0
+rna_interference,Requester commodity code,200,0,0.0,200,0,0
+rna_interference,Ship from,200,0,0.0,200,0,0
+rna_interference,Supplier SKU,200,0,0.0,200,0,0
+rna_interference,Target Gene / Region,200,149,74.5,51,0,0
+rna_interference,Target Species,200,128,64.0,72,0,0
+rna_interference,Type,200,176,88.0,24,0,0
+rna_interference,Unit,200,0,0.0,200,0,0
+rna_interference,Unit of measure,200,44,22.0,110,46,0

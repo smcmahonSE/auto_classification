@@ -1,0 +1,47 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+mass_spec_chromatography,Acquisition modes,150,3,2.0,147,0,0
+mass_spec_chromatography,Brand / manufacturer,150,0,0.0,150,0,0
+mass_spec_chromatography,Category (L2/L3),150,150,100.0,0,0,0
+mass_spec_chromatography,Category UNSPSC,150,0,0.0,150,0,0
+mass_spec_chromatography,Certifications,150,0,0.0,150,0,0
+mass_spec_chromatography,Compatible LC front end,150,0,0.0,150,0,0
+mass_spec_chromatography,Compliance / data integrity,150,1,0.67,149,0,0
+mass_spec_chromatography,Condition,150,32,21.33,118,0,0
+mass_spec_chromatography,Currency,150,3,2.0,147,0,0
+mass_spec_chromatography,Description,150,132,88.0,18,0,0
+mass_spec_chromatography,Detector,150,3,2.0,147,0,0
+mass_spec_chromatography,Dimensions (W × D × H),150,0,0.0,150,0,0
+mass_spec_chromatography,Document links,150,0,0.0,150,0,0
+mass_spec_chromatography,Equipment type,150,41,27.33,109,0,0
+mass_spec_chromatography,Flow rate range,150,3,2.0,147,0,0
+mass_spec_chromatography,Form factor,150,7,4.67,141,2,0
+mass_spec_chromatography,Image URL,150,0,0.0,150,0,0
+mass_spec_chromatography,Inventory,150,0,0.0,150,0,0
+mass_spec_chromatography,Ionization sources,150,0,0.0,150,0,0
+mass_spec_chromatography,Lead time (days),150,0,0.0,150,0,0
+mass_spec_chromatography,Listing UNSPSC,150,0,0.0,150,0,0
+mass_spec_chromatography,Listing type,150,150,100.0,0,0,0
+mass_spec_chromatography,Manufacturer SKU,150,0,0.0,150,0,0
+mass_spec_chromatography,Manufacturer name,150,0,0.0,150,0,0
+mass_spec_chromatography,Mass range,150,0,0.0,150,0,0
+mass_spec_chromatography,Max pressure,150,4,2.67,146,0,0
+mass_spec_chromatography,Model / configuration,150,0,0.0,150,0,0
+mass_spec_chromatography,Name,150,150,100.0,0,0,0
+mass_spec_chromatography,Power requirements,150,0,0.0,150,0,0
+mass_spec_chromatography,Price per unit,150,150,100.0,0,0,0
+mass_spec_chromatography,Pricing model,150,150,100.0,0,0,0
+mass_spec_chromatography,Product / service URL,150,0,0.0,150,0,0
+mass_spec_chromatography,Product role,150,38,25.33,112,0,0
+mass_spec_chromatography,Quantity,150,0,0.0,150,0,0
+mass_spec_chromatography,Requester UNSPSC,150,0,0.0,150,0,0
+mass_spec_chromatography,Requester commodity code,150,0,0.0,150,0,0
+mass_spec_chromatography,Sample capacity,150,0,0.0,150,0,0
+mass_spec_chromatography,Scan speed,150,0,0.0,150,0,0
+mass_spec_chromatography,Ship from,150,0,0.0,150,0,0
+mass_spec_chromatography,Software,150,0,0.0,150,0,0
+mass_spec_chromatography,Supplier SKU,150,0,0.0,150,0,0
+mass_spec_chromatography,Technique,150,33,22.0,114,3,0
+mass_spec_chromatography,Unit,150,0,0.0,150,0,0
+mass_spec_chromatography,Unit of measure,150,39,26.0,98,13,0
+mass_spec_chromatography,Warranty / service plan,150,0,0.0,150,0,0
+mass_spec_chromatography,Weight,150,3,2.0,147,0,0

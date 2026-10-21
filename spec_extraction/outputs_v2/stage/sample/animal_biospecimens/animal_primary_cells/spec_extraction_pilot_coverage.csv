@@ -1,0 +1,36 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+animal_primary_cells,Age,9,0,0.0,9,0,0
+animal_primary_cells,Category (L2/L3),9,9,100.0,0,0,0
+animal_primary_cells,Category UNSPSC,9,0,0.0,9,0,0
+animal_primary_cells,Currency,9,0,0.0,9,0,0
+animal_primary_cells,Description,9,9,100.0,0,0,0
+animal_primary_cells,Disease / model state,9,0,0.0,9,0,0
+animal_primary_cells,Document links,9,4,44.44,5,0,0
+animal_primary_cells,Format / preservation,9,3,33.33,6,0,0
+animal_primary_cells,IACUC / animal-welfare consent,9,0,0.0,9,0,0
+animal_primary_cells,Image URL,9,0,0.0,9,0,0
+animal_primary_cells,Individual vs Pooled,9,0,0.0,9,0,0
+animal_primary_cells,Inventory,9,0,0.0,9,0,0
+animal_primary_cells,Lead time (days),9,0,0.0,9,0,0
+animal_primary_cells,Listing UNSPSC,9,0,0.0,9,0,0
+animal_primary_cells,Listing type,9,9,100.0,0,0,0
+animal_primary_cells,Manufacturer SKU,9,0,0.0,9,0,0
+animal_primary_cells,Manufacturer name,9,0,0.0,9,0,0
+animal_primary_cells,Name,9,9,100.0,0,0,0
+animal_primary_cells,Passage number,9,0,0.0,9,0,0
+animal_primary_cells,Price per unit,9,9,100.0,0,0,0
+animal_primary_cells,Pricing model,9,9,100.0,0,0,0
+animal_primary_cells,Product / service URL,9,4,44.44,5,0,0
+animal_primary_cells,Quantity,9,0,0.0,9,0,0
+animal_primary_cells,Requester UNSPSC,9,0,0.0,9,0,0
+animal_primary_cells,Requester commodity code,9,0,0.0,9,0,0
+animal_primary_cells,Sex,9,0,0.0,9,0,0
+animal_primary_cells,Ship from,9,0,0.0,9,0,0
+animal_primary_cells,Shipping Temperature,9,2,22.22,7,0,0
+animal_primary_cells,Species,9,2,22.22,7,0,0
+animal_primary_cells,Storage Conditions,9,1,11.11,6,2,0
+animal_primary_cells,Strain,9,1,11.11,8,0,0
+animal_primary_cells,Supplier SKU,9,0,0.0,9,0,0
+animal_primary_cells,Unit,9,0,0.0,9,0,0
+animal_primary_cells,Unit of measure,9,0,0.0,9,0,0
+animal_primary_cells,Viability %,9,0,0.0,9,0,0

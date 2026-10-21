@@ -1,0 +1,31 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+plasmids_vectors,Category (L2/L3),200,200,100.0,0,0,0
+plasmids_vectors,Category UNSPSC,200,0,0.0,200,0,0
+plasmids_vectors,Currency,200,0,0.0,200,0,0
+plasmids_vectors,Description,200,196,98.0,4,0,0
+plasmids_vectors,Document links,200,0,0.0,200,0,0
+plasmids_vectors,Grade,200,0,0.0,200,0,0
+plasmids_vectors,Image URL,200,0,0.0,200,0,0
+plasmids_vectors,Inventory,200,0,0.0,200,0,0
+plasmids_vectors,Lead time (days),200,0,0.0,200,0,0
+plasmids_vectors,Listing UNSPSC,200,0,0.0,200,0,0
+plasmids_vectors,Listing type,200,200,100.0,0,0,0
+plasmids_vectors,Manufacturer SKU,200,0,0.0,200,0,0
+plasmids_vectors,Manufacturer name,200,0,0.0,200,0,0
+plasmids_vectors,Name,200,200,100.0,0,0,0
+plasmids_vectors,Prep scale,200,0,0.0,200,0,0
+plasmids_vectors,Price per unit,200,195,97.5,5,0,0
+plasmids_vectors,Pricing model,200,200,100.0,0,0,0
+plasmids_vectors,Product / service URL,200,0,0.0,200,0,0
+plasmids_vectors,Quantity,200,0,0.0,200,0,0
+plasmids_vectors,Requester UNSPSC,200,0,0.0,200,0,0
+plasmids_vectors,Requester commodity code,200,0,0.0,200,0,0
+plasmids_vectors,Selection marker,200,0,0.0,200,0,0
+plasmids_vectors,Ship from,200,0,0.0,200,0,0
+plasmids_vectors,Supplier SKU,200,0,0.0,200,0,0
+plasmids_vectors,Titer,200,5,2.5,195,0,0
+plasmids_vectors,Unit,200,0,0.0,200,0,0
+plasmids_vectors,Unit of measure,200,14,7.0,12,174,0
+plasmids_vectors,Vector type / backbone,200,179,89.5,21,0,0
+plasmids_vectors,Viral serotype,200,5,2.5,195,0,0
+plasmids_vectors,Yield,200,0,0.0,200,0,0

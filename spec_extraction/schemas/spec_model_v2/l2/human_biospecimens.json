@@ -1,0 +1,1888 @@
+{
+  "l2_id": "human_biospecimens",
+  "l2_label": "Human Biospecimens",
+  "schema_name": "HUMAN_BIOSPECIMENS",
+  "l2_fields": [],
+  "l3_nodes": {
+    "human_tissue": {
+      "label": "Human Tissue",
+      "form": "product",
+      "table_name": "HUMAN_TISSUE_SPEC",
+      "fields": [
+        {
+          "name": "Diagnosis",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_diagnosis"
+        },
+        {
+          "name": "Disease areas",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "disease_areas",
+          "multi_select": true,
+          "allowed_values": [
+            "Oncology",
+            "Autoimmune / inflammatory",
+            "Infectious disease",
+            "Cardiovascular",
+            "Metabolic / endocrine",
+            "Neurology",
+            "Respiratory",
+            "Liver / GI",
+            "Renal",
+            "Dermatology",
+            "Rare / genetic",
+            "Pediatric",
+            "Other"
+          ]
+        },
+        {
+          "name": "Disease stage",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_disease_stage"
+        },
+        {
+          "name": "Consent level",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "consent_level",
+          "allowed_values": [
+            "IRB-approved and consented",
+            "IRB-approved, full release",
+            "IRB-approved, limited release",
+            "Waiver of consent",
+            "De-identified"
+          ]
+        },
+        {
+          "name": "Anatomical site / tissue type",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_anatomical_site"
+        },
+        {
+          "name": "RIN (RNA integrity)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "rin",
+          "allowed_values": "RIN"
+        },
+        {
+          "name": "Tumor content %",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "tumor_content_pct",
+          "allowed_values": "%"
+        },
+        {
+          "name": "Necrosis %",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "necrosis_pct",
+          "allowed_values": "%"
+        },
+        {
+          "name": "Sample size / amount",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "sample_size_amount",
+          "allowed_values": "mg"
+        },
+        {
+          "name": "Specimen format",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specimen_format_tissue",
+          "allowed_values": [
+            "FFPE",
+            "Fresh frozen",
+            "OCT",
+            "Fresh"
+          ]
+        },
+        {
+          "name": "Donor Age",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "donor_age",
+          "allowed_values": "years"
+        },
+        {
+          "name": "Sex",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sex",
+          "allowed_values": [
+            "Male",
+            "Female",
+            "Mixed (pooled)",
+            "Not specified"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_biospecimen",
+          "allowed_values": [
+            "Room temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Race / Ethnicity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "race_ethnicity",
+          "multi_select": true,
+          "allowed_values": [
+            "American Indian or Alaska Native",
+            "Asian",
+            "Black or African American",
+            "Hispanic or Latino",
+            "Native Hawaiian or Other Pacific Islander",
+            "White",
+            "Unknown"
+          ]
+        },
+        {
+          "name": "Treatment history",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "treatment_history",
+          "allowed_values": [
+            "Treatment-naïve",
+            "On treatment",
+            "Post-treatment"
+          ]
+        },
+        {
+          "name": "Individual vs Pooled",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "individual_pooled",
+          "allowed_values": [
+            "Individual",
+            "Pooled"
+          ]
+        },
+        {
+          "name": "Matched sample set",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Timepoint",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "timepoint",
+          "allowed_values": [
+            "Baseline",
+            "On-treatment",
+            "Follow-up"
+          ]
+        }
+      ]
+    },
+    "human_blood_biofluids": {
+      "label": "Human Blood & Biofluids",
+      "form": "product",
+      "table_name": "HUMAN_BLOOD_BIOFLUIDS_SPEC",
+      "fields": [
+        {
+          "name": "Diagnosis",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_diagnosis"
+        },
+        {
+          "name": "Disease areas",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "disease_areas",
+          "multi_select": true,
+          "allowed_values": [
+            "Oncology",
+            "Autoimmune / inflammatory",
+            "Infectious disease",
+            "Cardiovascular",
+            "Metabolic / endocrine",
+            "Neurology",
+            "Respiratory",
+            "Liver / GI",
+            "Renal",
+            "Dermatology",
+            "Rare / genetic",
+            "Pediatric",
+            "Other"
+          ]
+        },
+        {
+          "name": "Disease stage",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_disease_stage"
+        },
+        {
+          "name": "Consent level",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "consent_level",
+          "allowed_values": [
+            "IRB-approved and consented",
+            "IRB-approved, full release",
+            "IRB-approved, limited release",
+            "Waiver of consent",
+            "De-identified"
+          ]
+        },
+        {
+          "name": "Matrix",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specimen_matrix",
+          "allowed_values": [
+            "Plasma",
+            "Serum",
+            "Whole blood",
+            "CSF",
+            "Urine",
+            "Other"
+          ]
+        },
+        {
+          "name": "Anticoagulant / additive",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "anticoagulant",
+          "allowed_values": [
+            "K2 EDTA",
+            "K3 EDTA",
+            "Lithium heparin",
+            "Sodium heparin",
+            "ACD",
+            "CPD",
+            "CPDA1",
+            "Sodium citrate",
+            "Serum separator (SST)",
+            "None"
+          ]
+        },
+        {
+          "name": "Volume",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "volume_ml",
+          "allowed_values": "mL"
+        },
+        {
+          "name": "Processing",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "processing_finishing",
+          "allowed_values": [
+            "Single-spin",
+            "Double-spin"
+          ]
+        },
+        {
+          "name": "Blood type",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "blood_type",
+          "allowed_values": [
+            "A+",
+            "A-",
+            "B+",
+            "B-",
+            "AB+",
+            "AB-",
+            "O+",
+            "O-"
+          ]
+        },
+        {
+          "name": "Clinical data",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_clinical_data"
+        },
+        {
+          "name": "Medications",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_medications"
+        },
+        {
+          "name": "Specimen format",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specimen_format_fresh_frozen",
+          "allowed_values": [
+            "Fresh",
+            "Frozen"
+          ]
+        },
+        {
+          "name": "Donor Age",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "donor_age",
+          "allowed_values": "years"
+        },
+        {
+          "name": "Sex",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sex",
+          "allowed_values": [
+            "Male",
+            "Female",
+            "Mixed (pooled)",
+            "Not specified"
+          ]
+        },
+        {
+          "name": "Shipping temperature",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "shipping_temperature_biospecimen",
+          "allowed_values": [
+            "Ambient",
+            "Ice pack",
+            "Dry ice",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_biospecimen",
+          "allowed_values": [
+            "Room temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Race / Ethnicity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "race_ethnicity",
+          "multi_select": true,
+          "allowed_values": [
+            "American Indian or Alaska Native",
+            "Asian",
+            "Black or African American",
+            "Hispanic or Latino",
+            "Native Hawaiian or Other Pacific Islander",
+            "White",
+            "Unknown"
+          ]
+        },
+        {
+          "name": "Treatment history",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "treatment_history",
+          "allowed_values": [
+            "Treatment-naïve",
+            "On treatment",
+            "Post-treatment"
+          ]
+        },
+        {
+          "name": "Matched sample set",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Timepoint",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "timepoint",
+          "allowed_values": [
+            "Baseline",
+            "On-treatment",
+            "Follow-up"
+          ]
+        }
+      ]
+    },
+    "human_cells_pbmcs": {
+      "label": "Human Cells & PBMCs",
+      "form": "product",
+      "table_name": "HUMAN_CELLS_PBMCS_SPEC",
+      "fields": [
+        {
+          "name": "Diagnosis",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_diagnosis"
+        },
+        {
+          "name": "Disease areas",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "disease_areas",
+          "multi_select": true,
+          "allowed_values": [
+            "Oncology",
+            "Autoimmune / inflammatory",
+            "Infectious disease",
+            "Cardiovascular",
+            "Metabolic / endocrine",
+            "Neurology",
+            "Respiratory",
+            "Liver / GI",
+            "Renal",
+            "Dermatology",
+            "Rare / genetic",
+            "Pediatric",
+            "Other"
+          ]
+        },
+        {
+          "name": "Disease stage",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_disease_stage"
+        },
+        {
+          "name": "Consent level",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "consent_level",
+          "allowed_values": [
+            "IRB-approved and consented",
+            "IRB-approved, full release",
+            "IRB-approved, limited release",
+            "Waiver of consent",
+            "De-identified"
+          ]
+        },
+        {
+          "name": "Cell count",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "cell_count",
+          "allowed_values": "cells"
+        },
+        {
+          "name": "Viability %",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "viability_pct",
+          "allowed_values": "%"
+        },
+        {
+          "name": "Isolation method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "isolation_method_human",
+          "allowed_values": [
+            "Ficoll",
+            "Magnetic bead",
+            "Leukapheresis"
+          ]
+        },
+        {
+          "name": "HLA type",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_hla_type"
+        },
+        {
+          "name": "Clinical data",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_clinical_data"
+        },
+        {
+          "name": "Specimen format",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specimen_format_fresh_cryo",
+          "allowed_values": [
+            "Fresh",
+            "Cryopreserved"
+          ]
+        },
+        {
+          "name": "Donor Age",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "donor_age",
+          "allowed_values": "years"
+        },
+        {
+          "name": "Sex",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sex",
+          "allowed_values": [
+            "Male",
+            "Female",
+            "Mixed (pooled)",
+            "Not specified"
+          ]
+        },
+        {
+          "name": "Shipping temperature",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "shipping_temperature_biospecimen",
+          "allowed_values": [
+            "Ambient",
+            "Ice pack",
+            "Dry ice",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_biospecimen",
+          "allowed_values": [
+            "Room temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Race / Ethnicity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "race_ethnicity",
+          "multi_select": true,
+          "allowed_values": [
+            "American Indian or Alaska Native",
+            "Asian",
+            "Black or African American",
+            "Hispanic or Latino",
+            "Native Hawaiian or Other Pacific Islander",
+            "White",
+            "Unknown"
+          ]
+        },
+        {
+          "name": "Treatment history",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "treatment_history",
+          "allowed_values": [
+            "Treatment-naïve",
+            "On treatment",
+            "Post-treatment"
+          ]
+        },
+        {
+          "name": "Individual vs Pooled",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "individual_pooled",
+          "allowed_values": [
+            "Individual",
+            "Pooled"
+          ]
+        },
+        {
+          "name": "Matched sample set",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Timepoint",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "timepoint",
+          "allowed_values": [
+            "Baseline",
+            "On-treatment",
+            "Follow-up"
+          ]
+        }
+      ]
+    },
+    "human_primary_cells": {
+      "label": "Human Primary Cells",
+      "form": "product",
+      "table_name": "HUMAN_PRIMARY_CELLS_SPEC",
+      "fields": [
+        {
+          "name": "Diagnosis",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_diagnosis"
+        },
+        {
+          "name": "Disease areas",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "disease_areas",
+          "multi_select": true,
+          "allowed_values": [
+            "Oncology",
+            "Autoimmune / inflammatory",
+            "Infectious disease",
+            "Cardiovascular",
+            "Metabolic / endocrine",
+            "Neurology",
+            "Respiratory",
+            "Liver / GI",
+            "Renal",
+            "Dermatology",
+            "Rare / genetic",
+            "Pediatric",
+            "Other"
+          ]
+        },
+        {
+          "name": "Viability %",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "viability_pct",
+          "allowed_values": "%"
+        },
+        {
+          "name": "Passage number",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "passage_number",
+          "allowed_values": "passage"
+        },
+        {
+          "name": "Specimen format",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specimen_format_fresh_cryo",
+          "allowed_values": [
+            "Fresh",
+            "Cryopreserved"
+          ]
+        },
+        {
+          "name": "Donor Age",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "donor_age",
+          "allowed_values": "years"
+        },
+        {
+          "name": "Sex",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sex",
+          "allowed_values": [
+            "Male",
+            "Female",
+            "Mixed (pooled)",
+            "Not specified"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_biospecimen",
+          "allowed_values": [
+            "Room temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Race / Ethnicity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "race_ethnicity",
+          "multi_select": true,
+          "allowed_values": [
+            "American Indian or Alaska Native",
+            "Asian",
+            "Black or African American",
+            "Hispanic or Latino",
+            "Native Hawaiian or Other Pacific Islander",
+            "White",
+            "Unknown"
+          ]
+        },
+        {
+          "name": "Treatment history",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "treatment_history",
+          "allowed_values": [
+            "Treatment-naïve",
+            "On treatment",
+            "Post-treatment"
+          ]
+        },
+        {
+          "name": "Individual vs Pooled",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "individual_pooled",
+          "allowed_values": [
+            "Individual",
+            "Pooled"
+          ]
+        },
+        {
+          "name": "Matched sample set",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "human_stem_cells_ipscs": {
+      "label": "Human Stem Cells / iPSCs",
+      "form": "product",
+      "table_name": "HUMAN_STEM_CELLS_IPSCS_SPEC",
+      "fields": [
+        {
+          "name": "Diagnosis",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_diagnosis"
+        },
+        {
+          "name": "Disease areas",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "disease_areas",
+          "multi_select": true,
+          "allowed_values": [
+            "Oncology",
+            "Autoimmune / inflammatory",
+            "Infectious disease",
+            "Cardiovascular",
+            "Metabolic / endocrine",
+            "Neurology",
+            "Respiratory",
+            "Liver / GI",
+            "Renal",
+            "Dermatology",
+            "Rare / genetic",
+            "Pediatric",
+            "Other"
+          ]
+        },
+        {
+          "name": "Viability %",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "viability_pct",
+          "allowed_values": "%"
+        },
+        {
+          "name": "Karyotype",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_karyotype"
+        },
+        {
+          "name": "Characterization markers",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_characterization_markers"
+        },
+        {
+          "name": "Reprogramming method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "reprogramming_method",
+          "allowed_values": [
+            "Retroviral",
+            "Lentiviral",
+            "Sendai",
+            "Episomal",
+            "mRNA"
+          ]
+        },
+        {
+          "name": "Specimen format",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specimen_format_fresh_cryo",
+          "allowed_values": [
+            "Fresh",
+            "Cryopreserved"
+          ]
+        },
+        {
+          "name": "Donor Age",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "donor_age",
+          "allowed_values": "years"
+        },
+        {
+          "name": "Sex",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sex",
+          "allowed_values": [
+            "Male",
+            "Female",
+            "Mixed (pooled)",
+            "Not specified"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_biospecimen",
+          "allowed_values": [
+            "Room temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Race / Ethnicity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "race_ethnicity",
+          "multi_select": true,
+          "allowed_values": [
+            "American Indian or Alaska Native",
+            "Asian",
+            "Black or African American",
+            "Hispanic or Latino",
+            "Native Hawaiian or Other Pacific Islander",
+            "White",
+            "Unknown"
+          ]
+        }
+      ]
+    },
+    "human_custom_prospective_collection": {
+      "label": "Human Custom / prospective collection",
+      "form": "service",
+      "table_name": "HUMAN_CUSTOM_PROSPECTIVE_COLLECTION_SPEC",
+      "fields": [
+        {
+          "name": "Sample types collected",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sample_types_collected",
+          "multi_select": true,
+          "allowed_values": [
+            "Whole blood",
+            "Plasma",
+            "Serum",
+            "PBMC",
+            "Buffy coat",
+            "Leukopak",
+            "Bone marrow",
+            "Tissue (fresh)",
+            "Tissue (frozen)",
+            "Tissue (FFPE)",
+            "Urine",
+            "Stool",
+            "Saliva",
+            "Sputum",
+            "CSF",
+            "Swab",
+            "Other"
+          ]
+        },
+        {
+          "name": "Disease areas",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "disease_areas",
+          "multi_select": true,
+          "allowed_values": [
+            "Oncology",
+            "Autoimmune / inflammatory",
+            "Infectious disease",
+            "Cardiovascular",
+            "Metabolic / endocrine",
+            "Neurology",
+            "Respiratory",
+            "Liver / GI",
+            "Renal",
+            "Dermatology",
+            "Rare / genetic",
+            "Pediatric",
+            "Other"
+          ]
+        },
+        {
+          "name": "Donor health status",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "donor_health_status",
+          "multi_select": true,
+          "allowed_values": [
+            "Healthy",
+            "Diseased",
+            "Normal adjacent"
+          ]
+        },
+        {
+          "name": "Collection geography",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "collection_geography",
+          "multi_select": true,
+          "allowed_values": [
+            "North America",
+            "Europe",
+            "Asia-Pacific",
+            "Latin America",
+            "Africa",
+            "Global"
+          ]
+        },
+        {
+          "name": "Accepts client protocol",
+          "type": "yes_no",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "IRB approval handling",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "irb_approval_handling",
+          "allowed_values": [
+            "Provider IRB",
+            "Client IRB",
+            "Either"
+          ]
+        },
+        {
+          "name": "Privacy compliance",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "privacy_compliance",
+          "multi_select": true,
+          "allowed_values": [
+            "HIPAA",
+            "GDPR",
+            "45 CFR 46",
+            "Other"
+          ]
+        },
+        {
+          "name": "Longitudinal timepoints available",
+          "type": "yes_no",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Matched sample sets",
+          "type": "yes_no",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Clinical data provided",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_data_provided",
+          "multi_select": true,
+          "allowed_values": [
+            "Demographics",
+            "Diagnosis",
+            "Stage",
+            "Treatment history",
+            "Lab results",
+            "Pathology report",
+            "Molecular results",
+            "Outcomes / follow-up"
+          ]
+        },
+        {
+          "name": "Collection kits provided",
+          "type": "yes_no",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Preservation at collection",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "preservation_at_collection",
+          "multi_select": true,
+          "allowed_values": [
+            "Fresh",
+            "Frozen",
+            "Cryopreserved viable",
+            "FFPE",
+            "Fixed (other)",
+            "Custom"
+          ]
+        },
+        {
+          "name": "Collection site types",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "collection_site_types",
+          "multi_select": true,
+          "allowed_values": [
+            "Hospital",
+            "Investigator site",
+            "Donor center",
+            "Clinic"
+          ]
+        },
+        {
+          "name": "Donor characterization tests",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "donor_characterization_tests",
+          "multi_select": true,
+          "allowed_values": [
+            "HLA typing",
+            "Blood type",
+            "CMV serology",
+            "Infectious disease screen",
+            "Other"
+          ]
+        },
+        {
+          "name": "Fresh delivery time after collection",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "fresh_delivery_time_hours",
+          "allowed_values": "hours"
+        },
+        {
+          "name": "Shipping temperature",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "shipping_temperature_collection",
+          "multi_select": true,
+          "allowed_values": [
+            "Ambient",
+            "2-8°C",
+            "Dry ice",
+            "LN2 dry shipper"
+          ]
+        },
+        {
+          "name": "Accreditations",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "accreditations_collection",
+          "multi_select": true,
+          "allowed_values": [
+            "CAP",
+            "CLIA",
+            "ISO 9001",
+            "GLP",
+            "GCLP",
+            "HTA",
+            "Other"
+          ]
+        },
+        {
+          "name": "Patient or site recruitment",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Project management included",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Time to start collection",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "time_to_start_days",
+          "allowed_values": "days"
+        },
+        {
+          "name": "Collection-to-processing time",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "collection_to_processing_hours",
+          "allowed_values": "hours"
+        },
+        {
+          "name": "Recallable donors",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Custom consent form",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Clinical data delivery method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_data_delivery_method",
+          "allowed_values": [
+            "EDC portal",
+            "File transfer",
+            "Report"
+          ]
+        },
+        {
+          "name": "Feasibility assessment",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "human_biobanking_storage": {
+      "label": "Human Biobanking & storage",
+      "form": "service",
+      "table_name": "HUMAN_BIOBANKING_STORAGE_SPEC",
+      "fields": [
+        {
+          "name": "Storage temperatures",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_temperatures_biobank",
+          "multi_select": true,
+          "allowed_values": [
+            "Ambient",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2 vapor (below -150°C)"
+          ]
+        },
+        {
+          "name": "Sample types stored",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sample_types_stored",
+          "multi_select": true,
+          "allowed_values": [
+            "Biofluids",
+            "Tissue",
+            "Cells",
+            "Nucleic acids",
+            "FFPE blocks",
+            "Slides",
+            "Other"
+          ]
+        },
+        {
+          "name": "Facility locations",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_facility_locations"
+        },
+        {
+          "name": "Backup systems",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "backup_systems",
+          "multi_select": true,
+          "allowed_values": [
+            "Backup freezers",
+            "Backup LN2",
+            "Generator power",
+            "Other"
+          ]
+        },
+        {
+          "name": "LIMS or client portal",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Inventory reporting",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Chain of custody",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Accreditations",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "accreditations_biobank",
+          "multi_select": true,
+          "allowed_values": [
+            "CAP",
+            "CLIA",
+            "ISO 9001",
+            "ISO 20387",
+            "ISBER aligned",
+            "Other"
+          ]
+        },
+        {
+          "name": "GxP compliance",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "gxp_compliance",
+          "multi_select": true,
+          "allowed_values": [
+            "GMP",
+            "GLP",
+            "GCP",
+            "GDP",
+            "GTP"
+          ]
+        },
+        {
+          "name": "21 CFR Part 11 compliant",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Temperature monitoring",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Retrieval turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "retrieval_turnaround_hours",
+          "allowed_values": "hours"
+        },
+        {
+          "name": "Accessioning turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "accessioning_turnaround_days",
+          "allowed_values": "days"
+        },
+        {
+          "name": "Transport temperature range",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "transport_temp_range",
+          "multi_select": true,
+          "allowed_values": [
+            "Ambient",
+            "2-8°C",
+            "Dry ice",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Dangerous goods certification",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "dangerous_goods_cert",
+          "multi_select": true,
+          "allowed_values": [
+            "IATA",
+            "DOT",
+            "ADR"
+          ]
+        },
+        {
+          "name": "Courier partners",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_courier_partners"
+        },
+        {
+          "name": "Import and export permit support",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Sample relocation service",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Biosafety level",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biosafety_level",
+          "allowed_values": [
+            "BSL-1",
+            "BSL-2",
+            "BSL-3"
+          ]
+        }
+      ]
+    },
+    "sample_processing_histology_ffpe_dissociation": {
+      "label": "Sample processing (histology / FFPE / dissociation)",
+      "form": "service",
+      "table_name": "SAMPLE_PROCESSING_HISTOLOGY_FFPE_DISSOCIATION_SPEC",
+      "fields": [
+        {
+          "name": "Services offered",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "services_offered_histology",
+          "multi_select": true,
+          "allowed_values": [
+            "H&E",
+            "IHC",
+            "Multiplex IF",
+            "ISH",
+            "Whole slide scanning",
+            "Image analysis",
+            "Pathologist review"
+          ]
+        },
+        {
+          "name": "Embedding types",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "embedding_types",
+          "multi_select": true,
+          "allowed_values": [
+            "Paraffin (FFPE)",
+            "Frozen (OCT)"
+          ]
+        },
+        {
+          "name": "Input sample types",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "input_sample_types",
+          "multi_select": true,
+          "allowed_values": [
+            "Fixed tissue",
+            "FFPE block",
+            "Frozen tissue",
+            "Slides",
+            "Cell pellet",
+            "Organoid",
+            "Blood",
+            "Plasma",
+            "Saliva or swab",
+            "Fresh tissue"
+          ]
+        },
+        {
+          "name": "Special stains",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "special_stains_processing",
+          "multi_select": true,
+          "allowed_values": [
+            "Trichrome",
+            "PAS",
+            "Picrosirius Red",
+            "Alcian Blue",
+            "GMS",
+            "Congo Red",
+            "Other"
+          ]
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "business days"
+        },
+        {
+          "name": "Accreditations",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "accreditations_processing",
+          "multi_select": true,
+          "allowed_values": [
+            "CAP",
+            "CLIA",
+            "GLP",
+            "GCLP",
+            "IVDR",
+            "Other"
+          ]
+        },
+        {
+          "name": "Deliverables",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "deliverables_processing",
+          "multi_select": true,
+          "allowed_values": [
+            "Stained slides",
+            "Unstained slides",
+            "Digital images",
+            "Image analysis data",
+            "Pathology report",
+            "Sequencing files"
+          ]
+        },
+        {
+          "name": "Custom antibody optimization",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Image analysis software",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "image_analysis_software",
+          "multi_select": true,
+          "allowed_values": [
+            "HALO",
+            "Visiopharm",
+            "QuPath",
+            "Other"
+          ]
+        },
+        {
+          "name": "Fixation requirements",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_fixation_requirements"
+        },
+        {
+          "name": "Inbound shipping conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "inbound_shipping_conditions",
+          "multi_select": true,
+          "allowed_values": [
+            "Ambient",
+            "Cold packs",
+            "Dry ice"
+          ]
+        },
+        {
+          "name": "Slide archiving",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Tissue dissociation",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Post-thaw viability",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "viability_pct",
+          "allowed_values": "%"
+        },
+        {
+          "name": "Nucleic acid extraction",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "nucleic_acid_extraction",
+          "multi_select": true,
+          "allowed_values": [
+            "DNA",
+            "RNA",
+            "Both"
+          ]
+        }
+      ]
+    }
+  }
+}

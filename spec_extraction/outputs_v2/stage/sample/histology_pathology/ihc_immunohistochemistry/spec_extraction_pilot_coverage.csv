@@ -1,0 +1,37 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+ihc_immunohistochemistry,Antibody source,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Capacity,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Category (L2/L3),150,150,100.0,0,0,0
+ihc_immunohistochemistry,Category UNSPSC,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Currency,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Deliverables,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Description,150,3,2.0,147,0,0
+ihc_immunohistochemistry,Detection,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Document links,150,0,0.0,150,0,0
+ihc_immunohistochemistry,GLP status,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Image URL,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Inventory,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Lead time (days),150,0,0.0,150,0,0
+ihc_immunohistochemistry,Listing UNSPSC,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Listing type,150,150,100.0,0,0,0
+ihc_immunohistochemistry,Manufacturer SKU,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Manufacturer name,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Multiplex,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Name,150,150,100.0,0,0,0
+ihc_immunohistochemistry,Pathologist credentials,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Price per unit,150,150,100.0,0,0,0
+ihc_immunohistochemistry,Pricing model,150,150,100.0,0,0,0
+ihc_immunohistochemistry,Pricing unit,150,1,0.67,149,0,0
+ihc_immunohistochemistry,Product / service URL,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Quantification,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Quantity,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Requester UNSPSC,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Requester commodity code,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Sample type,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Ship from,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Species,150,2,1.33,148,0,0
+ihc_immunohistochemistry,Supplier SKU,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Tissue cross-reactivity (TCR),150,0,0.0,150,0,0
+ihc_immunohistochemistry,Turnaround,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Unit,150,0,0.0,150,0,0
+ihc_immunohistochemistry,Unit of measure,150,1,0.67,149,0,0

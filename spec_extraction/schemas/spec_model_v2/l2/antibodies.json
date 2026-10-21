@@ -1,0 +1,1112 @@
+{
+  "l2_id": "antibodies",
+  "l2_label": "Antibodies",
+  "schema_name": "ANTIBODIES",
+  "l2_fields": [],
+  "l3_nodes": {
+    "primary_antibodies": {
+      "label": "Primary Antibodies",
+      "form": "product",
+      "table_name": "PRIMARY_ANTIBODIES_SPEC",
+      "fields": [
+        {
+          "name": "Target / Antigen",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "antibody_target"
+        },
+        {
+          "name": "Tested reactivity",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "reactivity_species",
+          "multi_select": true,
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Monkey",
+            "Dog",
+            "Pig",
+            "Cow",
+            "Chicken",
+            "Zebrafish",
+            "Other"
+          ]
+        },
+        {
+          "name": "Cited reactivity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "reactivity_species",
+          "multi_select": true,
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Monkey",
+            "Dog",
+            "Pig",
+            "Cow",
+            "Chicken",
+            "Zebrafish",
+            "Other"
+          ]
+        },
+        {
+          "name": "PTM / modification specificity",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ptm_modification_specificity",
+          "allowed_values": [
+            "Total",
+            "Phospho-specific",
+            "Acetyl",
+            "Methyl",
+            "Ubiquitin",
+            "Cleaved"
+          ]
+        },
+        {
+          "name": "Host Species",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "antibody_host_species",
+          "allowed_values": [
+            "Mouse",
+            "Rabbit",
+            "Goat",
+            "Rat",
+            "Donkey",
+            "Chicken",
+            "Sheep",
+            "Guinea pig",
+            "Hamster",
+            "Llama",
+            "Other"
+          ]
+        },
+        {
+          "name": "Clonality",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clonality",
+          "allowed_values": [
+            "Monoclonal",
+            "Polyclonal",
+            "Recombinant monoclonal",
+            "Recombinant polyclonal"
+          ]
+        },
+        {
+          "name": "Application",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "antibody_application",
+          "multi_select": true,
+          "allowed_values": [
+            "FC",
+            "WB",
+            "IHC",
+            "IF",
+            "ELISA",
+            "IP",
+            "ChIP",
+            "ICC",
+            "Neutralization",
+            "Other"
+          ]
+        },
+        {
+          "name": "Format",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "liquid_lyophilized",
+          "allowed_values": [
+            "Liquid",
+            "Lyophilized"
+          ]
+        },
+        {
+          "name": "Purification",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purification_method",
+          "allowed_values": [
+            "Protein A",
+            "Protein G",
+            "Antigen-affinity",
+            "Ion exchange",
+            "Unpurified"
+          ]
+        },
+        {
+          "name": "Clone ID",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_clone_id"
+        },
+        {
+          "name": "Isotype",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "isotype",
+          "allowed_values": [
+            "IgG",
+            "IgG1",
+            "IgG2a",
+            "IgG2b",
+            "IgG2c",
+            "IgG3",
+            "IgM",
+            "IgA",
+            "IgY"
+          ]
+        },
+        {
+          "name": "Conjugate / Label",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "conjugate_label",
+          "allowed_values": [
+            "Unconjugated",
+            "FITC",
+            "PE",
+            "APC",
+            "AF488",
+            "AF647",
+            "HRP",
+            "AP",
+            "Biotin",
+            "Cy3",
+            "Cy5",
+            "BV421",
+            "PE-Cy7",
+            "APC-Cy7",
+            "Other"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_antibody",
+          "multi_select": true,
+          "allowed_values": [
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Room temperature"
+          ]
+        },
+        {
+          "name": "RRID",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_rrid"
+        },
+        {
+          "name": "Recommended dilution",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_dilution"
+        }
+      ]
+    },
+    "secondary_antibodies": {
+      "label": "Secondary Antibodies",
+      "form": "product",
+      "table_name": "SECONDARY_ANTIBODIES_SPEC",
+      "fields": [
+        {
+          "name": "Target species",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "target_species_secondary",
+          "allowed_values": [
+            "Rabbit",
+            "Mouse",
+            "Goat",
+            "Rat",
+            "Human",
+            "Donkey",
+            "Chicken",
+            "Sheep",
+            "Guinea pig",
+            "Hamster",
+            "Other"
+          ]
+        },
+        {
+          "name": "Specificity",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specificity_secondary",
+          "allowed_values": [
+            "IgG (H+L)",
+            "IgG Fc",
+            "IgG F(ab')2",
+            "IgG subclass",
+            "IgM",
+            "Light chain (kappa / lambda)",
+            "Other"
+          ]
+        },
+        {
+          "name": "Conjugate",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "conjugate_secondary",
+          "allowed_values": [
+            "HRP",
+            "AP",
+            "AF488",
+            "AF555",
+            "AF647",
+            "FITC",
+            "Biotin",
+            "Other"
+          ]
+        },
+        {
+          "name": "Cross-adsorbed",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Host Species",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "antibody_host_species",
+          "allowed_values": [
+            "Mouse",
+            "Rabbit",
+            "Goat",
+            "Rat",
+            "Donkey",
+            "Chicken",
+            "Sheep",
+            "Guinea pig",
+            "Hamster",
+            "Llama",
+            "Other"
+          ]
+        },
+        {
+          "name": "Clonality",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clonality",
+          "allowed_values": [
+            "Monoclonal",
+            "Polyclonal",
+            "Recombinant monoclonal",
+            "Recombinant polyclonal"
+          ]
+        },
+        {
+          "name": "Application",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "antibody_application",
+          "multi_select": true,
+          "allowed_values": [
+            "FC",
+            "WB",
+            "IHC",
+            "IF",
+            "ELISA",
+            "IP",
+            "ChIP",
+            "ICC",
+            "Neutralization",
+            "Other"
+          ]
+        },
+        {
+          "name": "Format",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "liquid_lyophilized",
+          "allowed_values": [
+            "Liquid",
+            "Lyophilized"
+          ]
+        },
+        {
+          "name": "Purification",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purification_method",
+          "allowed_values": [
+            "Protein A",
+            "Protein G",
+            "Antigen-affinity",
+            "Ion exchange",
+            "Unpurified"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_antibody",
+          "multi_select": true,
+          "allowed_values": [
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Room temperature"
+          ]
+        },
+        {
+          "name": "RRID",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_rrid"
+        },
+        {
+          "name": "Recommended dilution",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_dilution"
+        }
+      ]
+    },
+    "conjugated_antibodies": {
+      "label": "Conjugated Antibodies",
+      "form": "product",
+      "table_name": "CONJUGATED_ANTIBODIES_SPEC",
+      "fields": [
+        {
+          "name": "Conjugate / Label",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "conjugate_label",
+          "allowed_values": [
+            "Unconjugated",
+            "FITC",
+            "PE",
+            "APC",
+            "AF488",
+            "AF647",
+            "HRP",
+            "AP",
+            "Biotin",
+            "Cy3",
+            "Cy5",
+            "BV421",
+            "PE-Cy7",
+            "APC-Cy7",
+            "Other"
+          ]
+        },
+        {
+          "name": "Target / Antigen",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "antibody_target"
+        },
+        {
+          "name": "Tested reactivity",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "reactivity_species",
+          "multi_select": true,
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Monkey",
+            "Dog",
+            "Pig",
+            "Cow",
+            "Chicken",
+            "Zebrafish",
+            "Other"
+          ]
+        },
+        {
+          "name": "Cited reactivity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "reactivity_species",
+          "multi_select": true,
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Monkey",
+            "Dog",
+            "Pig",
+            "Cow",
+            "Chicken",
+            "Zebrafish",
+            "Other"
+          ]
+        },
+        {
+          "name": "PTM / modification specificity",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ptm_modification_specificity",
+          "allowed_values": [
+            "Total",
+            "Phospho-specific",
+            "Acetyl",
+            "Methyl",
+            "Ubiquitin",
+            "Cleaved"
+          ]
+        },
+        {
+          "name": "Host Species",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "antibody_host_species",
+          "allowed_values": [
+            "Mouse",
+            "Rabbit",
+            "Goat",
+            "Rat",
+            "Donkey",
+            "Chicken",
+            "Sheep",
+            "Guinea pig",
+            "Hamster",
+            "Llama",
+            "Other"
+          ]
+        },
+        {
+          "name": "Clonality",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clonality",
+          "allowed_values": [
+            "Monoclonal",
+            "Polyclonal",
+            "Recombinant monoclonal",
+            "Recombinant polyclonal"
+          ]
+        },
+        {
+          "name": "Application",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "antibody_application",
+          "multi_select": true,
+          "allowed_values": [
+            "FC",
+            "WB",
+            "IHC",
+            "IF",
+            "ELISA",
+            "IP",
+            "ChIP",
+            "ICC",
+            "Neutralization",
+            "Other"
+          ]
+        },
+        {
+          "name": "Format",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "liquid_lyophilized",
+          "allowed_values": [
+            "Liquid",
+            "Lyophilized"
+          ]
+        },
+        {
+          "name": "Purification",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purification_method",
+          "allowed_values": [
+            "Protein A",
+            "Protein G",
+            "Antigen-affinity",
+            "Ion exchange",
+            "Unpurified"
+          ]
+        },
+        {
+          "name": "Clone ID",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_clone_id"
+        },
+        {
+          "name": "Isotype",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "isotype",
+          "allowed_values": [
+            "IgG",
+            "IgG1",
+            "IgG2a",
+            "IgG2b",
+            "IgG2c",
+            "IgG3",
+            "IgM",
+            "IgA",
+            "IgY"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_antibody",
+          "multi_select": true,
+          "allowed_values": [
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Room temperature"
+          ]
+        },
+        {
+          "name": "RRID",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_rrid"
+        },
+        {
+          "name": "Recommended dilution",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_dilution"
+        }
+      ]
+    },
+    "isotype_controls": {
+      "label": "Isotype Controls",
+      "form": "product",
+      "table_name": "ISOTYPE_CONTROLS_SPEC",
+      "fields": [
+        {
+          "name": "Isotype",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "isotype",
+          "allowed_values": [
+            "IgG",
+            "IgG1",
+            "IgG2a",
+            "IgG2b",
+            "IgG2c",
+            "IgG3",
+            "IgM",
+            "IgA",
+            "IgY"
+          ]
+        },
+        {
+          "name": "Conjugate",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "conjugate_label",
+          "allowed_values": [
+            "Unconjugated",
+            "FITC",
+            "PE",
+            "APC",
+            "AF488",
+            "AF647",
+            "HRP",
+            "Biotin",
+            "Other"
+          ]
+        },
+        {
+          "name": "Host Species",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "antibody_host_species",
+          "allowed_values": [
+            "Mouse",
+            "Rabbit",
+            "Goat",
+            "Rat",
+            "Donkey",
+            "Chicken",
+            "Sheep",
+            "Guinea pig",
+            "Hamster",
+            "Llama",
+            "Other"
+          ]
+        },
+        {
+          "name": "Clonality",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clonality",
+          "allowed_values": [
+            "Monoclonal",
+            "Polyclonal",
+            "Recombinant monoclonal",
+            "Recombinant polyclonal"
+          ]
+        },
+        {
+          "name": "Application",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "antibody_application",
+          "multi_select": true,
+          "allowed_values": [
+            "FC",
+            "WB",
+            "IHC",
+            "IF",
+            "ELISA",
+            "IP",
+            "ChIP",
+            "ICC",
+            "Neutralization",
+            "Other"
+          ]
+        },
+        {
+          "name": "Format",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "liquid_lyophilized",
+          "allowed_values": [
+            "Liquid",
+            "Lyophilized"
+          ]
+        },
+        {
+          "name": "Purification",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purification_method",
+          "allowed_values": [
+            "Protein A",
+            "Protein G",
+            "Antigen-affinity",
+            "Ion exchange",
+            "Unpurified"
+          ]
+        },
+        {
+          "name": "Clone ID",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_clone_id"
+        },
+        {
+          "name": "Storage conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_antibody",
+          "multi_select": true,
+          "allowed_values": [
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Room temperature"
+          ]
+        },
+        {
+          "name": "RRID",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_rrid"
+        },
+        {
+          "name": "Recommended dilution",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_dilution"
+        }
+      ]
+    },
+    "antibody_fragments": {
+      "label": "Antibody Fragments",
+      "form": "product",
+      "table_name": "ANTIBODY_FRAGMENTS_SPEC",
+      "fields": [
+        {
+          "name": "Fragment type",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "fragment_type",
+          "allowed_values": [
+            "Fab",
+            "F(ab')2",
+            "scFv",
+            "Nanobody (VHH)",
+            "Fc"
+          ]
+        },
+        {
+          "name": "Target / Antigen",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "antibody_target"
+        },
+        {
+          "name": "Tested reactivity",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "reactivity_species",
+          "multi_select": true,
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Monkey",
+            "Dog",
+            "Pig",
+            "Cow",
+            "Chicken",
+            "Zebrafish",
+            "Other"
+          ]
+        },
+        {
+          "name": "Cited reactivity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "reactivity_species",
+          "multi_select": true,
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Monkey",
+            "Dog",
+            "Pig",
+            "Cow",
+            "Chicken",
+            "Zebrafish",
+            "Other"
+          ]
+        },
+        {
+          "name": "Host Species",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "antibody_host_species",
+          "allowed_values": [
+            "Mouse",
+            "Rabbit",
+            "Goat",
+            "Rat",
+            "Donkey",
+            "Chicken",
+            "Sheep",
+            "Guinea pig",
+            "Hamster",
+            "Llama",
+            "Other"
+          ]
+        },
+        {
+          "name": "Clonality",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clonality",
+          "allowed_values": [
+            "Monoclonal",
+            "Polyclonal",
+            "Recombinant monoclonal",
+            "Recombinant polyclonal"
+          ]
+        },
+        {
+          "name": "Application",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "antibody_application",
+          "multi_select": true,
+          "allowed_values": [
+            "FC",
+            "WB",
+            "IHC",
+            "IF",
+            "ELISA",
+            "IP",
+            "ChIP",
+            "ICC",
+            "Neutralization",
+            "Other"
+          ]
+        },
+        {
+          "name": "Format",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "liquid_lyophilized",
+          "allowed_values": [
+            "Liquid",
+            "Lyophilized"
+          ]
+        },
+        {
+          "name": "Purification",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purification_method",
+          "allowed_values": [
+            "Protein A",
+            "Protein G",
+            "Antigen-affinity",
+            "Ion exchange",
+            "Unpurified"
+          ]
+        },
+        {
+          "name": "Isotype",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "isotype",
+          "allowed_values": [
+            "IgG",
+            "IgG1",
+            "IgG2a",
+            "IgG2b",
+            "IgG2c",
+            "IgG3",
+            "IgM",
+            "IgA",
+            "IgY"
+          ]
+        },
+        {
+          "name": "Conjugate / Label",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "conjugate_label",
+          "allowed_values": [
+            "Unconjugated",
+            "FITC",
+            "PE",
+            "APC",
+            "AF488",
+            "AF647",
+            "HRP",
+            "AP",
+            "Biotin",
+            "Cy3",
+            "Cy5",
+            "BV421",
+            "PE-Cy7",
+            "APC-Cy7",
+            "Other"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_antibody",
+          "multi_select": true,
+          "allowed_values": [
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Room temperature"
+          ]
+        },
+        {
+          "name": "RRID",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_rrid"
+        },
+        {
+          "name": "Recommended dilution",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_dilution"
+        }
+      ]
+    },
+    "antibody_validation": {
+      "label": "Antibody validation",
+      "form": "service",
+      "table_name": "ANTIBODY_VALIDATION_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    }
+  }
+}

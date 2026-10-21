@@ -1,0 +1,1749 @@
+{
+  "l2_id": "cell_tissue_culture",
+  "l2_label": "Cells and Tissue Culture",
+  "schema_name": "CELLS_TISSUE_CULTURE",
+  "l2_fields": [],
+  "l3_nodes": {
+    "culture_media": {
+      "label": "Culture Media",
+      "form": "product",
+      "table_name": "CULTURE_MEDIA_SPEC",
+      "fields": [
+        {
+          "name": "Basal formulation",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "basal_formulation",
+          "allowed_values": [
+            "DMEM",
+            "RPMI 1640",
+            "MEM / EMEM",
+            "DMEM/F-12",
+            "IMDM",
+            "Ham's F-12",
+            "McCoy's 5A",
+            "Other"
+          ]
+        },
+        {
+          "name": "Glucose",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "glucose_level",
+          "allowed_values": [
+            "High (4500 mg/L)",
+            "Low (1000 mg/L)",
+            "None"
+          ]
+        },
+        {
+          "name": "L-Glutamine",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "with_without",
+          "allowed_values": [
+            "With",
+            "Without",
+            "GlutaMAX"
+          ]
+        },
+        {
+          "name": "Phenol red",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "with_without",
+          "allowed_values": [
+            "With",
+            "Without"
+          ]
+        },
+        {
+          "name": "HEPES / Sodium pyruvate",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "hepes_sodium_pyruvate",
+          "multi_select": true,
+          "allowed_values": [
+            "HEPES",
+            "Sodium pyruvate",
+            "Neither"
+          ]
+        },
+        {
+          "name": "Specialized system",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specialized_system",
+          "allowed_values": [
+            "General",
+            "Feeder-free hPSC",
+            "T-cell expansion",
+            "Organoid",
+            "Neural",
+            "Other"
+          ]
+        },
+        {
+          "name": "Kit components",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_kit_components"
+        },
+        {
+          "name": "Shelf life",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "shelf_life_months",
+          "allowed_values": "months"
+        },
+        {
+          "name": "Formulation / animal origin",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "formulation_animal_origin",
+          "multi_select": true,
+          "allowed_values": [
+            "Serum-free",
+            "Xeno-free",
+            "Animal origin-free",
+            "Chemically defined",
+            "Serum-containing"
+          ]
+        },
+        {
+          "name": "Intended cell type / application",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_intended_cell_type"
+        },
+        {
+          "name": "Format / physical form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_physical_form_cell",
+          "allowed_values": [
+            "Liquid",
+            "Powder",
+            "Cryopreserved vial",
+            "Proliferating flask",
+            "Gel"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_cell_culture",
+          "allowed_values": [
+            "15-30°C",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2 vapor phase"
+          ]
+        },
+        {
+          "name": "Grade / regulatory",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "grade_regulatory_cell",
+          "allowed_values": [
+            "RUO",
+            "cGMP",
+            "ISO 13485"
+          ]
+        },
+        {
+          "name": "Sterility / contamination QC",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility_contamination_qc",
+          "multi_select": true,
+          "allowed_values": [
+            "Sterile-filtered",
+            "Mycoplasma-tested",
+            "Endotoxin-tested",
+            "Virus-tested"
+          ]
+        },
+        {
+          "name": "Shipping temperature",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "shipping_temperature",
+          "allowed_values": [
+            "Ambient",
+            "Ice pack",
+            "Dry ice",
+            "LN2 dry shipper"
+          ]
+        },
+        {
+          "name": "Species (cell source or intended use)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "species_cell_source",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Bovine",
+            "Hamster",
+            "Mammalian (general)",
+            "Other"
+          ]
+        }
+      ]
+    },
+    "sera_supplements": {
+      "label": "Sera & Supplements",
+      "form": "product",
+      "table_name": "SERA_SUPPLEMENTS_SPEC",
+      "fields": [
+        {
+          "name": "Serum type / source",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "serum_type",
+          "allowed_values": [
+            "Fetal bovine (FBS)",
+            "Newborn calf",
+            "Horse",
+            "Human AB",
+            "Goat",
+            "Other"
+          ]
+        },
+        {
+          "name": "Country of origin",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "country_of_origin_serum",
+          "allowed_values": [
+            "USA",
+            "Australia",
+            "New Zealand",
+            "South America",
+            "Canada",
+            "EU",
+            "Other"
+          ]
+        },
+        {
+          "name": "Treatment",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "treatment_serum",
+          "multi_select": true,
+          "allowed_values": [
+            "Heat-inactivated",
+            "Gamma-irradiated",
+            "Dialyzed",
+            "Charcoal-stripped",
+            "Exosome-depleted",
+            "None"
+          ]
+        },
+        {
+          "name": "Quality tier",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "quality_tier_serum",
+          "allowed_values": [
+            "Standard",
+            "Premium",
+            "Premium Plus",
+            "ESC-qualified"
+          ]
+        },
+        {
+          "name": "Endotoxin",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "endotoxin_eu_ml",
+          "allowed_values": "EU/mL"
+        },
+        {
+          "name": "Hemoglobin",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "hemoglobin_mg_dl",
+          "allowed_values": "mg/dL"
+        },
+        {
+          "name": "Origin traceability",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Formulation / animal origin",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "formulation_animal_origin",
+          "multi_select": true,
+          "allowed_values": [
+            "Serum-free",
+            "Xeno-free",
+            "Animal origin-free",
+            "Chemically defined",
+            "Serum-containing"
+          ]
+        },
+        {
+          "name": "Intended cell type / application",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_intended_cell_type"
+        },
+        {
+          "name": "Format / physical form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_physical_form_cell",
+          "allowed_values": [
+            "Liquid",
+            "Powder",
+            "Cryopreserved vial",
+            "Proliferating flask",
+            "Gel"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_cell_culture",
+          "allowed_values": [
+            "15-30°C",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2 vapor phase"
+          ]
+        },
+        {
+          "name": "Grade / regulatory",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "grade_regulatory_cell",
+          "allowed_values": [
+            "RUO",
+            "cGMP",
+            "ISO 13485"
+          ]
+        },
+        {
+          "name": "Sterility / contamination QC",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility_contamination_qc",
+          "multi_select": true,
+          "allowed_values": [
+            "Sterile-filtered",
+            "Mycoplasma-tested",
+            "Endotoxin-tested",
+            "Virus-tested"
+          ]
+        },
+        {
+          "name": "Shipping temperature",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "shipping_temperature",
+          "allowed_values": [
+            "Ambient",
+            "Ice pack",
+            "Dry ice",
+            "LN2 dry shipper"
+          ]
+        },
+        {
+          "name": "Species (cell source or intended use)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "species_cell_source",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Bovine",
+            "Hamster",
+            "Mammalian (general)",
+            "Other"
+          ]
+        }
+      ]
+    },
+    "matrices_coatings": {
+      "label": "Matrices & Coatings",
+      "form": "product",
+      "table_name": "MATRICES_COATINGS_SPEC",
+      "fields": [
+        {
+          "name": "Matrix type",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "matrix_type",
+          "allowed_values": [
+            "Basement membrane (Matrigel)",
+            "Collagen I",
+            "Fibronectin",
+            "Laminin",
+            "Vitronectin",
+            "Poly-D-lysine",
+            "Gelatin"
+          ]
+        },
+        {
+          "name": "Growth factor content",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "with_without",
+          "allowed_values": [
+            "Standard",
+            "Growth factor reduced"
+          ]
+        },
+        {
+          "name": "Qualification",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "with_without",
+          "allowed_values": [
+            "hESC-qualified",
+            "Organoid-qualified",
+            "None"
+          ]
+        },
+        {
+          "name": "Protein concentration",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "with_without",
+          "allowed_values": [
+            "Standard",
+            "High concentration"
+          ]
+        },
+        {
+          "name": "Phenol red",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "with_without",
+          "allowed_values": [
+            "With",
+            "Without"
+          ]
+        },
+        {
+          "name": "Delivery format",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_physical_form_cell",
+          "allowed_values": [
+            "Liquid gel",
+            "Pre-coated plates",
+            "Lyophilized"
+          ]
+        },
+        {
+          "name": "Formulation / animal origin",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "formulation_animal_origin",
+          "multi_select": true,
+          "allowed_values": [
+            "Serum-free",
+            "Xeno-free",
+            "Animal origin-free",
+            "Chemically defined",
+            "Serum-containing"
+          ]
+        },
+        {
+          "name": "Intended cell type / application",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_intended_cell_type"
+        },
+        {
+          "name": "Format / physical form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_physical_form_cell",
+          "allowed_values": [
+            "Liquid",
+            "Powder",
+            "Cryopreserved vial",
+            "Proliferating flask",
+            "Gel"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_cell_culture",
+          "allowed_values": [
+            "15-30°C",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2 vapor phase"
+          ]
+        },
+        {
+          "name": "Grade / regulatory",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "grade_regulatory_cell",
+          "allowed_values": [
+            "RUO",
+            "cGMP",
+            "ISO 13485"
+          ]
+        },
+        {
+          "name": "Sterility / contamination QC",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility_contamination_qc",
+          "multi_select": true,
+          "allowed_values": [
+            "Sterile-filtered",
+            "Mycoplasma-tested",
+            "Endotoxin-tested",
+            "Virus-tested"
+          ]
+        },
+        {
+          "name": "Shipping temperature",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "shipping_temperature",
+          "allowed_values": [
+            "Ambient",
+            "Ice pack",
+            "Dry ice",
+            "LN2 dry shipper"
+          ]
+        },
+        {
+          "name": "Species (cell source or intended use)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "species_cell_source",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Bovine",
+            "Hamster",
+            "Mammalian (general)",
+            "Other"
+          ]
+        }
+      ]
+    },
+    "cryopreservation": {
+      "label": "Cryopreservation",
+      "form": "product",
+      "table_name": "CRYOPRESERVATION_SPEC",
+      "fields": [
+        {
+          "name": "DMSO concentration",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "dmso_concentration",
+          "allowed_values": [
+            "10%",
+            "5%",
+            "2%",
+            "DMSO-free"
+          ]
+        },
+        {
+          "name": "Formulation",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "formulation_animal_origin",
+          "multi_select": true,
+          "allowed_values": [
+            "Serum-free",
+            "Animal component-free",
+            "Defined"
+          ]
+        },
+        {
+          "name": "Ready-to-use",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ready_to_use",
+          "allowed_values": [
+            "Ready-to-use",
+            "Requires prep"
+          ]
+        },
+        {
+          "name": "Validated cell types",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_validated_cell_types"
+        },
+        {
+          "name": "Shelf life",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "shelf_life_months",
+          "allowed_values": "months"
+        },
+        {
+          "name": "Formulation / animal origin",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "formulation_animal_origin",
+          "multi_select": true,
+          "allowed_values": [
+            "Serum-free",
+            "Xeno-free",
+            "Animal origin-free",
+            "Chemically defined",
+            "Serum-containing"
+          ]
+        },
+        {
+          "name": "Intended cell type / application",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_intended_cell_type"
+        },
+        {
+          "name": "Format / physical form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_physical_form_cell",
+          "allowed_values": [
+            "Liquid",
+            "Powder",
+            "Cryopreserved vial",
+            "Proliferating flask",
+            "Gel"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_cell_culture",
+          "allowed_values": [
+            "15-30°C",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2 vapor phase"
+          ]
+        },
+        {
+          "name": "Grade / regulatory",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "grade_regulatory_cell",
+          "allowed_values": [
+            "RUO",
+            "cGMP",
+            "ISO 13485"
+          ]
+        },
+        {
+          "name": "Sterility / contamination QC",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility_contamination_qc",
+          "multi_select": true,
+          "allowed_values": [
+            "Sterile-filtered",
+            "Mycoplasma-tested",
+            "Endotoxin-tested",
+            "Virus-tested"
+          ]
+        },
+        {
+          "name": "Shipping temperature",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "shipping_temperature",
+          "allowed_values": [
+            "Ambient",
+            "Ice pack",
+            "Dry ice",
+            "LN2 dry shipper"
+          ]
+        },
+        {
+          "name": "Species (cell source or intended use)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "species_cell_source",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Bovine",
+            "Hamster",
+            "Mammalian (general)",
+            "Other"
+          ]
+        }
+      ]
+    },
+    "dissociation_reagents": {
+      "label": "Dissociation Reagents",
+      "form": "product",
+      "table_name": "DISSOCIATION_REAGENTS_SPEC",
+      "fields": [
+        {
+          "name": "Enzyme / agent",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "dissociation_enzyme",
+          "allowed_values": [
+            "Trypsin",
+            "Recombinant protease (TrypLE)",
+            "Accutase",
+            "Collagenase",
+            "Dispase",
+            "Non-enzymatic"
+          ]
+        },
+        {
+          "name": "Concentration",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "concentration_dissociation",
+          "allowed_values": [
+            "1X",
+            "10X",
+            "0.05%",
+            "0.25%"
+          ]
+        },
+        {
+          "name": "Chelator",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "chelator",
+          "allowed_values": [
+            "EDTA",
+            "None"
+          ]
+        },
+        {
+          "name": "Phenol red",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "with_without",
+          "allowed_values": [
+            "With",
+            "Without"
+          ]
+        },
+        {
+          "name": "Animal origin",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "animal_origin_dissociation",
+          "allowed_values": [
+            "Animal origin-free",
+            "Porcine",
+            "Bovine"
+          ]
+        },
+        {
+          "name": "Formulation / animal origin",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "formulation_animal_origin",
+          "multi_select": true,
+          "allowed_values": [
+            "Serum-free",
+            "Xeno-free",
+            "Animal origin-free",
+            "Chemically defined",
+            "Serum-containing"
+          ]
+        },
+        {
+          "name": "Intended cell type / application",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_intended_cell_type"
+        },
+        {
+          "name": "Format / physical form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_physical_form_cell",
+          "allowed_values": [
+            "Liquid",
+            "Powder",
+            "Cryopreserved vial",
+            "Proliferating flask",
+            "Gel"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_cell_culture",
+          "allowed_values": [
+            "15-30°C",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2 vapor phase"
+          ]
+        },
+        {
+          "name": "Grade / regulatory",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "grade_regulatory_cell",
+          "allowed_values": [
+            "RUO",
+            "cGMP",
+            "ISO 13485"
+          ]
+        },
+        {
+          "name": "Sterility / contamination QC",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility_contamination_qc",
+          "multi_select": true,
+          "allowed_values": [
+            "Sterile-filtered",
+            "Mycoplasma-tested",
+            "Endotoxin-tested",
+            "Virus-tested"
+          ]
+        },
+        {
+          "name": "Shipping temperature",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "shipping_temperature",
+          "allowed_values": [
+            "Ambient",
+            "Ice pack",
+            "Dry ice",
+            "LN2 dry shipper"
+          ]
+        },
+        {
+          "name": "Species (cell source or intended use)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "species_cell_source",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Bovine",
+            "Hamster",
+            "Mammalian (general)",
+            "Other"
+          ]
+        }
+      ]
+    },
+    "cell_lines": {
+      "label": "Cell Lines",
+      "form": "product",
+      "table_name": "CELL_LINES_SPEC",
+      "fields": [
+        {
+          "name": "Organism",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "organism_cell_line",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Hamster (CHO)",
+            "Monkey",
+            "Dog",
+            "Insect",
+            "Other"
+          ]
+        },
+        {
+          "name": "Tissue / organ",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_tissue_organ"
+        },
+        {
+          "name": "Growth properties",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "growth_properties",
+          "allowed_values": [
+            "Adherent",
+            "Suspension",
+            "Mixed"
+          ]
+        },
+        {
+          "name": "Biosafety level",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biosafety_level",
+          "allowed_values": [
+            "BSL-1",
+            "BSL-2",
+            "BSL-3"
+          ]
+        },
+        {
+          "name": "Authentication (STR profile)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "authentication_str",
+          "allowed_values": [
+            "STR-verified",
+            "Not verified"
+          ]
+        },
+        {
+          "name": "Cell type / morphology",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cell_type_morphology",
+          "allowed_values": [
+            "Epithelial",
+            "Fibroblast",
+            "Lymphoblast",
+            "Endothelial",
+            "Neuronal",
+            "Hematopoietic",
+            "Other"
+          ]
+        },
+        {
+          "name": "Disease",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_disease"
+        },
+        {
+          "name": "Contamination / virus status",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_contamination_virus_status"
+        },
+        {
+          "name": "Licensing / permitted use",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_licensing_permitted_use"
+        },
+        {
+          "name": "Recommended medium & conditions",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_recommended_medium_conditions"
+        },
+        {
+          "name": "Subculturing ratio",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_subculturing_ratio"
+        },
+        {
+          "name": "Donor age / sex",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_donor_age_sex"
+        },
+        {
+          "name": "Karyotype",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_karyotype"
+        },
+        {
+          "name": "Format / physical form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_physical_form_cell",
+          "allowed_values": [
+            "Liquid",
+            "Powder",
+            "Cryopreserved vial",
+            "Proliferating flask",
+            "Gel"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_cell_culture",
+          "allowed_values": [
+            "15-30°C",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2 vapor phase"
+          ]
+        },
+        {
+          "name": "Grade / regulatory",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "grade_regulatory_cell",
+          "allowed_values": [
+            "RUO",
+            "cGMP",
+            "ISO 13485"
+          ]
+        },
+        {
+          "name": "Sterility / contamination QC",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility_contamination_qc",
+          "multi_select": true,
+          "allowed_values": [
+            "Sterile-filtered",
+            "Mycoplasma-tested",
+            "Endotoxin-tested",
+            "Virus-tested"
+          ]
+        },
+        {
+          "name": "Shipping temperature",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "shipping_temperature",
+          "allowed_values": [
+            "Ambient",
+            "Ice pack",
+            "Dry ice",
+            "LN2 dry shipper"
+          ]
+        }
+      ]
+    },
+    "primary_cells": {
+      "label": "Primary Cells",
+      "form": "product",
+      "table_name": "PRIMARY_CELLS_SPEC",
+      "fields": [
+        {
+          "name": "Tissue / source",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_tissue_source"
+        },
+        {
+          "name": "Cell type",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_cell_type"
+        },
+        {
+          "name": "Donor type",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "donor_type",
+          "allowed_values": [
+            "Single donor",
+            "Pooled"
+          ]
+        },
+        {
+          "name": "Passage supplied",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "passage_supplied",
+          "allowed_values": [
+            "P0",
+            "P1",
+            "P2",
+            "P3 or later"
+          ]
+        },
+        {
+          "name": "Cell number per vial",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "cell_number_per_vial",
+          "allowed_values": "cells per vial"
+        },
+        {
+          "name": "Guaranteed population doublings",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "population_doublings",
+          "allowed_values": "population doublings"
+        },
+        {
+          "name": "Characterization markers",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_characterization_markers"
+        },
+        {
+          "name": "Recommended medium",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_recommended_medium"
+        },
+        {
+          "name": "Viability %",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "viability_pct",
+          "allowed_values": "% post-thaw"
+        },
+        {
+          "name": "Donor infectious-disease screening",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "donor_infectious_disease_screening",
+          "multi_select": true,
+          "allowed_values": [
+            "HIV-negative",
+            "HBV-negative",
+            "HCV-negative",
+            "Not tested"
+          ]
+        },
+        {
+          "name": "HLA-typed donor",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Formulation / animal origin",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "formulation_animal_origin",
+          "multi_select": true,
+          "allowed_values": [
+            "Serum-free",
+            "Xeno-free",
+            "Animal origin-free",
+            "Chemically defined",
+            "Serum-containing"
+          ]
+        },
+        {
+          "name": "Intended cell type / application",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_intended_cell_type"
+        },
+        {
+          "name": "Format / physical form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_physical_form_cell",
+          "allowed_values": [
+            "Liquid",
+            "Powder",
+            "Cryopreserved vial",
+            "Proliferating flask",
+            "Gel"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_cell_culture",
+          "allowed_values": [
+            "15-30°C",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2 vapor phase"
+          ]
+        },
+        {
+          "name": "Grade / regulatory",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "grade_regulatory_cell",
+          "allowed_values": [
+            "RUO",
+            "cGMP",
+            "ISO 13485"
+          ]
+        },
+        {
+          "name": "Sterility / contamination QC",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility_contamination_qc",
+          "multi_select": true,
+          "allowed_values": [
+            "Sterile-filtered",
+            "Mycoplasma-tested",
+            "Endotoxin-tested",
+            "Virus-tested"
+          ]
+        },
+        {
+          "name": "Shipping temperature",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "shipping_temperature",
+          "allowed_values": [
+            "Ambient",
+            "Ice pack",
+            "Dry ice",
+            "LN2 dry shipper"
+          ]
+        },
+        {
+          "name": "Species (cell source or intended use)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "species_cell_source",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Bovine",
+            "Hamster",
+            "Mammalian (general)",
+            "Other"
+          ]
+        }
+      ]
+    },
+    "stem_cells_ipscs": {
+      "label": "Stem Cells / iPSCs",
+      "form": "product",
+      "table_name": "STEM_CELLS_IPSCS_SPEC",
+      "fields": [
+        {
+          "name": "Stem cell type",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "stem_cell_type",
+          "allowed_values": [
+            "iPSC",
+            "ESC",
+            "MSC",
+            "HSC",
+            "NSC"
+          ]
+        },
+        {
+          "name": "Licensing / permitted use",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_licensing_permitted_use"
+        },
+        {
+          "name": "Reprogramming method",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "reprogramming_method",
+          "allowed_values": [
+            "Retroviral",
+            "Lentiviral",
+            "Sendai",
+            "Episomal",
+            "mRNA"
+          ]
+        },
+        {
+          "name": "Parental cell / tissue origin",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_parental_cell_origin"
+        },
+        {
+          "name": "Donor age / sex / disease",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_donor_age_sex_disease"
+        },
+        {
+          "name": "Culture system",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "culture_system",
+          "allowed_values": [
+            "Feeder-free",
+            "Feeder-dependent"
+          ]
+        },
+        {
+          "name": "Karyotype",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_karyotype"
+        },
+        {
+          "name": "Pluripotency markers",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pluripotency_markers",
+          "multi_select": true,
+          "allowed_values": [
+            "OCT4",
+            "SOX2",
+            "NANOG",
+            "SSEA-4",
+            "TRA-1-60",
+            "TRA-1-81"
+          ]
+        },
+        {
+          "name": "Differentiation potential",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "differentiation_potential",
+          "multi_select": true,
+          "allowed_values": [
+            "Trilineage",
+            "Osteogenic",
+            "Adipogenic",
+            "Chondrogenic",
+            "Hematopoietic lineages",
+            "Neural",
+            "Other"
+          ]
+        },
+        {
+          "name": "Derived cell type & purity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_derived_cell_type_purity"
+        },
+        {
+          "name": "Format / physical form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_physical_form_cell",
+          "allowed_values": [
+            "Liquid",
+            "Powder",
+            "Cryopreserved vial",
+            "Proliferating flask",
+            "Gel"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_cell_culture",
+          "allowed_values": [
+            "15-30°C",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2 vapor phase"
+          ]
+        },
+        {
+          "name": "Grade / regulatory",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "grade_regulatory_cell",
+          "allowed_values": [
+            "RUO",
+            "cGMP",
+            "ISO 13485"
+          ]
+        },
+        {
+          "name": "Sterility / contamination QC",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility_contamination_qc",
+          "multi_select": true,
+          "allowed_values": [
+            "Sterile-filtered",
+            "Mycoplasma-tested",
+            "Endotoxin-tested",
+            "Virus-tested"
+          ]
+        },
+        {
+          "name": "Shipping temperature",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "shipping_temperature",
+          "allowed_values": [
+            "Ambient",
+            "Ice pack",
+            "Dry ice",
+            "LN2 dry shipper"
+          ]
+        },
+        {
+          "name": "Species (cell source or intended use)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "species_cell_source",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Bovine",
+            "Hamster",
+            "Mammalian (general)",
+            "Other"
+          ]
+        }
+      ]
+    },
+    "organoid_generation": {
+      "label": "Organoid generation",
+      "form": "service",
+      "table_name": "ORGANOID_GENERATION_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    },
+    "custom_cell_culture": {
+      "label": "Custom cell culture",
+      "form": "service",
+      "table_name": "CUSTOM_CELL_CULTURE_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    }
+  }
+}

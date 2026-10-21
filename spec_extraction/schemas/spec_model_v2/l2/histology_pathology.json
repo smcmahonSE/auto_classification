@@ -1,0 +1,672 @@
+{
+  "l2_id": "histology_pathology",
+  "l2_label": "Histology & Pathology",
+  "schema_name": "HISTOLOGY_PATHOLOGY",
+  "l2_fields": [
+    {
+      "name": "Species",
+      "type": "multi-select",
+      "required": true,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "species_histology",
+      "multi_select": true,
+      "allowed_values": [
+        "Mouse",
+        "Rat",
+        "Dog",
+        "Non-human primate",
+        "Pig",
+        "Rabbit",
+        "Human",
+        "Other"
+      ]
+    },
+    {
+      "name": "Sample type",
+      "type": "multi-select",
+      "required": true,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "sample_type_histology",
+      "multi_select": true,
+      "allowed_values": [
+        "FFPE block",
+        "Frozen (OCT)",
+        "Fresh tissue",
+        "Glass slides",
+        "Unstained sections"
+      ]
+    },
+    {
+      "name": "GLP status",
+      "type": "picklist",
+      "required": true,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "glp_status",
+      "allowed_values": [
+        "GLP",
+        "Non-GLP",
+        "Discovery"
+      ]
+    },
+    {
+      "name": "Deliverables",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "deliverables_histology_l2",
+      "multi_select": true,
+      "allowed_values": [
+        "Glass slides",
+        "Whole slide images",
+        "Pathology report",
+        "SEND data",
+        "Raw data"
+      ]
+    },
+    {
+      "name": "Turnaround",
+      "type": "number",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "turnaround",
+      "allowed_values": "days"
+    },
+    {
+      "name": "Pricing unit",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "pricing_unit_histology",
+      "allowed_values": [
+        "Per slide",
+        "Per sample",
+        "Per block",
+        "Per study",
+        "Per hour"
+      ]
+    },
+    {
+      "name": "Capacity",
+      "type": "number",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "capacity_slides_per_month",
+      "allowed_values": "slides per month"
+    }
+  ],
+  "l3_nodes": {
+    "ihc_immunohistochemistry": {
+      "label": "IHC (Immunohistochemistry)",
+      "form": "service",
+      "table_name": "IHC_IMMUNOHISTOCHEMISTRY_SPEC",
+      "fields": [
+        {
+          "name": "Detection",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ihc_detection",
+          "allowed_values": [
+            "Chromogenic",
+            "Immunofluorescence"
+          ]
+        },
+        {
+          "name": "Multiplex",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "multiplex_status",
+          "allowed_values": [
+            "Singleplex",
+            "Multiplex"
+          ]
+        },
+        {
+          "name": "Antibody source",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "antibody_source_ihc",
+          "allowed_values": [
+            "Validated menu",
+            "Client-supplied",
+            "Assay development"
+          ]
+        },
+        {
+          "name": "Quantification",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "quantification_ihc",
+          "multi_select": true,
+          "allowed_values": [
+            "Pathologist score",
+            "Image analysis"
+          ]
+        },
+        {
+          "name": "Tissue cross-reactivity (TCR)",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Pathologist credentials",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pathologist_credentials",
+          "multi_select": true,
+          "allowed_values": [
+            "ACVP",
+            "ABP (MD)",
+            "ECVCP",
+            "Board-certified"
+          ]
+        }
+      ]
+    },
+    "special_histochemical_stains": {
+      "label": "Special / Histochemical Stains",
+      "form": "service",
+      "table_name": "SPECIAL_HISTOCHEMICAL_STAINS_SPEC",
+      "fields": [
+        {
+          "name": "Stain",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "histochemical_stain",
+          "allowed_values": [
+            "H&E",
+            "Masson's trichrome",
+            "PAS",
+            "Alcian blue",
+            "Oil Red O",
+            "Picrosirius red",
+            "Silver",
+            "Toluidine blue",
+            "TUNEL",
+            "Other"
+          ]
+        }
+      ]
+    },
+    "in_situ_hybridization_ish": {
+      "label": "In Situ Hybridization (ISH)",
+      "form": "service",
+      "table_name": "IN_SITU_HYBRIDIZATION_ISH_SPEC",
+      "fields": [
+        {
+          "name": "Platform / chemistry",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ish_platform",
+          "allowed_values": [
+            "RNAscope",
+            "BaseScope",
+            "DNAscope",
+            "miRNAscope",
+            "HCR RNA-ISH",
+            "FISH",
+            "CISH",
+            "Other"
+          ]
+        },
+        {
+          "name": "Probe source",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "probe_source_ish",
+          "allowed_values": [
+            "Catalog",
+            "Custom"
+          ]
+        },
+        {
+          "name": "Detection",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "detection_ish",
+          "allowed_values": [
+            "Chromogenic",
+            "Fluorescent"
+          ]
+        },
+        {
+          "name": "Combined with IF",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Pathologist credentials",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pathologist_credentials",
+          "multi_select": true,
+          "allowed_values": [
+            "ACVP",
+            "ABP (MD)",
+            "ECVCP",
+            "Board-certified"
+          ]
+        }
+      ]
+    },
+    "digital_pathology_image_analysis": {
+      "label": "Digital Pathology & Image Analysis",
+      "form": "service",
+      "table_name": "DIGITAL_PATHOLOGY_IMAGE_ANALYSIS_SPEC",
+      "fields": [
+        {
+          "name": "Scan magnification",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "scan_magnification",
+          "allowed_values": [
+            "20X",
+            "40X"
+          ]
+        },
+        {
+          "name": "Imaging mode",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "imaging_mode_digital_path",
+          "allowed_values": [
+            "Brightfield",
+            "Multiplex fluorescence"
+          ]
+        },
+        {
+          "name": "Image analysis platform",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_image_analysis_platform"
+        },
+        {
+          "name": "Scanner",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_scanner"
+        },
+        {
+          "name": "Image format",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "image_format",
+          "allowed_values": [
+            "SVS",
+            "NDPI",
+            "MRXS",
+            "VSI",
+            "TIFF",
+            "OME-TIFF",
+            "CZI",
+            "DICOM"
+          ]
+        },
+        {
+          "name": "21 CFR Part 11 validated",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Pathologist credentials",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pathologist_credentials",
+          "multi_select": true,
+          "allowed_values": [
+            "ACVP",
+            "ABP (MD)",
+            "ECVCP",
+            "Board-certified"
+          ]
+        }
+      ]
+    },
+    "electron_microscopy_tem_sem": {
+      "label": "Electron Microscopy (TEM/SEM)",
+      "form": "service",
+      "table_name": "ELECTRON_MICROSCOPY_TEM_SEM_SPEC",
+      "fields": [
+        {
+          "name": "Technique",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "em_technique",
+          "allowed_values": [
+            "TEM",
+            "SEM",
+            "Cryo-EM",
+            "Negative stain",
+            "Immunogold",
+            "MicroED"
+          ]
+        },
+        {
+          "name": "Fixation requirement",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_fixation_requirements"
+        },
+        {
+          "name": "Section thickness",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "section_thickness_nm",
+          "allowed_values": "nm"
+        },
+        {
+          "name": "Image deliverables",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "image_deliverables_em",
+          "multi_select": true,
+          "allowed_values": [
+            "Micrographs",
+            "Raw image files",
+            "Report"
+          ]
+        }
+      ]
+    },
+    "tissue_processing_sectioning": {
+      "label": "Tissue Processing & Sectioning",
+      "form": "service",
+      "table_name": "TISSUE_PROCESSING_SECTIONING_SPEC",
+      "fields": [
+        {
+          "name": "Embedding medium",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "embedding_medium",
+          "allowed_values": [
+            "Paraffin",
+            "OCT",
+            "Plastic / resin"
+          ]
+        },
+        {
+          "name": "Sections per slide",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "sections_per_slide",
+          "allowed_values": "sections"
+        },
+        {
+          "name": "Decalcification",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Tissue size",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "tissue_size_histology",
+          "allowed_values": [
+            "Regular",
+            "Large / oversized"
+          ]
+        }
+      ]
+    },
+    "necropsy_toxicologic_pathology": {
+      "label": "Necropsy & Toxicologic Pathology",
+      "form": "service",
+      "table_name": "NECROPSY_TOXICOLOGIC_PATHOLOGY_SPEC",
+      "fields": [
+        {
+          "name": "Study type",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "study_type_necropsy",
+          "allowed_values": [
+            "Toxicity / safety",
+            "Carcinogenicity (6-month transgenic)",
+            "Carcinogenicity (2-year rodent)",
+            "Medical device",
+            "Disease model"
+          ]
+        },
+        {
+          "name": "SEND-ready",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Data system",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "data_system_necropsy",
+          "allowed_values": [
+            "Pristima",
+            "Provantis",
+            "Other"
+          ]
+        },
+        {
+          "name": "Prosector supervision",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Pathologist credentials",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pathologist_credentials",
+          "multi_select": true,
+          "allowed_values": [
+            "ACVP",
+            "ABP (MD)",
+            "ECVCP",
+            "Board-certified"
+          ]
+        },
+        {
+          "name": "Regulatory submission support",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "regulatory_submission_support",
+          "multi_select": true,
+          "allowed_values": [
+            "FDA",
+            "EPA",
+            "EMA",
+            "PMDA"
+          ]
+        }
+      ]
+    },
+    "pathology_peer_review": {
+      "label": "Pathology Peer Review",
+      "form": "service",
+      "table_name": "PATHOLOGY_PEER_REVIEW_SPEC",
+      "fields": [
+        {
+          "name": "Review format",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "review_format_pathology",
+          "allowed_values": [
+            "Glass",
+            "Digital"
+          ]
+        },
+        {
+          "name": "Review scope",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "review_scope_pathology",
+          "multi_select": true,
+          "allowed_values": [
+            "Histopathology",
+            "Narratives",
+            "Gross",
+            "Clinical pathology",
+            "Organ weights"
+          ]
+        },
+        {
+          "name": "Timing",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "timing_review_pathology",
+          "allowed_values": [
+            "Contemporaneous",
+            "Retrospective"
+          ]
+        },
+        {
+          "name": "Pathology Working Group (PWG)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pathology_working_group",
+          "multi_select": true,
+          "allowed_values": [
+            "Organize",
+            "Chair",
+            "Participate"
+          ]
+        },
+        {
+          "name": "Pathologist credentials",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pathologist_credentials",
+          "multi_select": true,
+          "allowed_values": [
+            "ACVP",
+            "ABP (MD)",
+            "ECVCP",
+            "Board-certified"
+          ]
+        },
+        {
+          "name": "Regulatory submission support",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "regulatory_submission_support",
+          "multi_select": true,
+          "allowed_values": [
+            "FDA",
+            "EPA",
+            "EMA",
+            "PMDA"
+          ]
+        }
+      ]
+    }
+  }
+}

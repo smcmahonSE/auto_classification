@@ -10,4 +10,14 @@ from __future__ import annotations
 
 MIGRATED_L2_IDS: set[str] = {
     "lab_supplies_consumables",
+    "molecular_biology_reagents",
+    "chemicals_solvents",
+    "antibodies",
+    "proteins_peptides",
+    "cell_tissue_culture",
+    "animal_biospecimens",
+    "human_biospecimens",
+    "animal_models",
+    "equipment_instruments_parts",
+    "histology_pathology",
 }

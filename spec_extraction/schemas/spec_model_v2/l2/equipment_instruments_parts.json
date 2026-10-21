@@ -1,0 +1,1882 @@
+{
+  "l2_id": "equipment_instruments_parts",
+  "l2_label": "Equipment, Instruments and Parts",
+  "schema_name": "EQUIPMENT_INSTRUMENTS_PARTS",
+  "l2_fields": [
+    {
+      "name": "Equipment type",
+      "type": "text",
+      "required": true,
+      "product_only": false,
+      "extractor": "override",
+      "override_key": "equipment_type"
+    },
+    {
+      "name": "Brand / manufacturer",
+      "type": "text",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "labeled_manufacturer"
+    }
+  ],
+  "l3_nodes": {
+    "mass_spec_chromatography": {
+      "label": "Mass Spec & Chromatography",
+      "form": "product",
+      "table_name": "MASS_SPEC_CHROMATOGRAPHY_SPEC",
+      "fields": [
+        {
+          "name": "Technique",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "technique_ms_chrom",
+          "allowed_values": [
+            "HPLC",
+            "UHPLC",
+            "Prep LC",
+            "GC",
+            "GC-MS",
+            "LC-MS",
+            "Triple quad",
+            "QTof",
+            "Orbitrap",
+            "ICP-MS"
+          ]
+        },
+        {
+          "name": "Detector",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "detector_type",
+          "allowed_values": [
+            "UV",
+            "DAD",
+            "MWD",
+            "FLD",
+            "RI",
+            "ELSD",
+            "Mass spec",
+            "Photomultiplier"
+          ]
+        },
+        {
+          "name": "Max pressure",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "max_pressure_bar",
+          "allowed_values": "bar"
+        },
+        {
+          "name": "Flow rate range",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "flow_rate_range",
+          "allowed_values": "mL/min"
+        },
+        {
+          "name": "Sample capacity",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "sample_capacity_vials",
+          "allowed_values": "vials"
+        },
+        {
+          "name": "Mass range",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "mass_range_mz",
+          "allowed_values": "m/z"
+        },
+        {
+          "name": "Ionization sources",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ionization_sources",
+          "multi_select": true,
+          "allowed_values": [
+            "ESI",
+            "APCI",
+            "APPI",
+            "UniSpray",
+            "APGC",
+            "MALDI",
+            "nanoESI"
+          ]
+        },
+        {
+          "name": "Scan speed",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "scan_speed_mrm",
+          "allowed_values": "MRM/sec"
+        },
+        {
+          "name": "Compatible LC front end",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_compatible_lc_front_end"
+        },
+        {
+          "name": "Acquisition modes",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "acquisition_modes",
+          "multi_select": true,
+          "allowed_values": [
+            "Full scan",
+            "MRM",
+            "Product ion",
+            "Precursor ion",
+            "Neutral loss",
+            "DIA",
+            "DDA"
+          ]
+        },
+        {
+          "name": "Form factor",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_form_factor",
+          "allowed_values": [
+            "Benchtop",
+            "Floor",
+            "Handheld",
+            "Portable",
+            "Software"
+          ]
+        },
+        {
+          "name": "Model / configuration",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_model_configuration"
+        },
+        {
+          "name": "Software",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_software"
+        },
+        {
+          "name": "Compliance / data integrity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "compliance_data_integrity",
+          "multi_select": true,
+          "allowed_values": [
+            "21 CFR Part 11",
+            "GxP",
+            "GLP",
+            "ISO 13485"
+          ]
+        },
+        {
+          "name": "Certifications",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "certifications_equipment",
+          "multi_select": true,
+          "allowed_values": [
+            "UL",
+            "CE",
+            "CSA",
+            "RoHS",
+            "IVD",
+            "FDA listed"
+          ]
+        },
+        {
+          "name": "Dimensions (W × D × H)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "dimensions_wdh_cm",
+          "allowed_values": "cm"
+        },
+        {
+          "name": "Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "weight_kg",
+          "allowed_values": "kg"
+        },
+        {
+          "name": "Power requirements",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_power_requirements",
+          "allowed_values": "V, Hz and W"
+        },
+        {
+          "name": "Warranty / service plan",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_warranty_service_plan"
+        },
+        {
+          "name": "Product role",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_product_role",
+          "allowed_values": [
+            "Instrument",
+            "Accessory"
+          ]
+        },
+        {
+          "name": "Condition",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_condition",
+          "allowed_values": [
+            "New",
+            "Refurbished",
+            "Used",
+            "Demo"
+          ]
+        }
+      ]
+    },
+    "sequencing_genomics_platforms": {
+      "label": "Sequencing & Genomics Platforms",
+      "form": "product",
+      "table_name": "SEQUENCING_GENOMICS_PLATFORMS_SPEC",
+      "fields": [
+        {
+          "name": "Max read length",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "max_read_length_bp",
+          "allowed_values": "bp"
+        },
+        {
+          "name": "Output per flow cell",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "output_per_flowcell_gb",
+          "allowed_values": "Gb"
+        },
+        {
+          "name": "Flow cell types",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_flow_cell_types"
+        },
+        {
+          "name": "Reads per run",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "reads_per_run",
+          "allowed_values": "reads"
+        },
+        {
+          "name": "Run time",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "run_time_hours",
+          "allowed_values": "hours"
+        },
+        {
+          "name": "Quality score",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "quality_score_pct",
+          "allowed_values": "% of bases ≥ Q30"
+        },
+        {
+          "name": "Samples per flow cell",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "samples_per_flowcell",
+          "allowed_values": "samples"
+        },
+        {
+          "name": "Form factor",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_form_factor",
+          "allowed_values": [
+            "Benchtop",
+            "Floor",
+            "Handheld",
+            "Portable",
+            "Software"
+          ]
+        },
+        {
+          "name": "Model / configuration",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_model_configuration"
+        },
+        {
+          "name": "Software",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_software"
+        },
+        {
+          "name": "Compliance / data integrity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "compliance_data_integrity",
+          "multi_select": true,
+          "allowed_values": [
+            "21 CFR Part 11",
+            "GxP",
+            "GLP",
+            "ISO 13485"
+          ]
+        },
+        {
+          "name": "Certifications",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "certifications_equipment",
+          "multi_select": true,
+          "allowed_values": [
+            "UL",
+            "CE",
+            "CSA",
+            "RoHS",
+            "IVD",
+            "FDA listed"
+          ]
+        },
+        {
+          "name": "Dimensions (W × D × H)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "dimensions_wdh_cm",
+          "allowed_values": "cm"
+        },
+        {
+          "name": "Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "weight_kg",
+          "allowed_values": "kg"
+        },
+        {
+          "name": "Power requirements",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_power_requirements",
+          "allowed_values": "V, Hz and W"
+        },
+        {
+          "name": "Warranty / service plan",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_warranty_service_plan"
+        },
+        {
+          "name": "Product role",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_product_role",
+          "allowed_values": [
+            "Instrument",
+            "Accessory"
+          ]
+        },
+        {
+          "name": "Condition",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_condition",
+          "allowed_values": [
+            "New",
+            "Refurbished",
+            "Used",
+            "Demo"
+          ]
+        }
+      ]
+    },
+    "flow_cytometry_cell_analysis": {
+      "label": "Flow Cytometry & Cell Analysis",
+      "form": "product",
+      "table_name": "FLOW_CYTOMETRY_CELL_ANALYSIS_SPEC",
+      "fields": [
+        {
+          "name": "Lasers",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "lasers_flow",
+          "multi_select": true,
+          "allowed_values": [
+            "355 nm",
+            "405 nm",
+            "488 nm",
+            "532 nm",
+            "561 nm",
+            "640 nm"
+          ]
+        },
+        {
+          "name": "Parameters / detectors",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "parameters_detectors",
+          "allowed_values": "parameters"
+        },
+        {
+          "name": "Acquisition rate",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "acquisition_rate_events_sec",
+          "allowed_values": "events/sec"
+        },
+        {
+          "name": "Sample formats",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sample_formats_flow",
+          "multi_select": true,
+          "allowed_values": [
+            "Tubes",
+            "96-well plate",
+            "384-well plate",
+            "Microcentrifuge tubes"
+          ]
+        },
+        {
+          "name": "Sample loader / automation",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sample_loader_automation",
+          "allowed_values": [
+            "Manual",
+            "Tube loader",
+            "Plate loader",
+            "Robotic integration"
+          ]
+        },
+        {
+          "name": "Small particle detection",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Upgrade path",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Form factor",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_form_factor",
+          "allowed_values": [
+            "Benchtop",
+            "Floor",
+            "Handheld",
+            "Portable",
+            "Software"
+          ]
+        },
+        {
+          "name": "Model / configuration",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_model_configuration"
+        },
+        {
+          "name": "Software",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_software"
+        },
+        {
+          "name": "Compliance / data integrity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "compliance_data_integrity",
+          "multi_select": true,
+          "allowed_values": [
+            "21 CFR Part 11",
+            "GxP",
+            "GLP",
+            "ISO 13485"
+          ]
+        },
+        {
+          "name": "Certifications",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "certifications_equipment",
+          "multi_select": true,
+          "allowed_values": [
+            "UL",
+            "CE",
+            "CSA",
+            "RoHS",
+            "IVD",
+            "FDA listed"
+          ]
+        },
+        {
+          "name": "Dimensions (W × D × H)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "dimensions_wdh_cm",
+          "allowed_values": "cm"
+        },
+        {
+          "name": "Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "weight_kg",
+          "allowed_values": "kg"
+        },
+        {
+          "name": "Power requirements",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_power_requirements",
+          "allowed_values": "V, Hz and W"
+        },
+        {
+          "name": "Warranty / service plan",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_warranty_service_plan"
+        },
+        {
+          "name": "Product role",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_product_role",
+          "allowed_values": [
+            "Instrument",
+            "Accessory"
+          ]
+        },
+        {
+          "name": "Condition",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_condition",
+          "allowed_values": [
+            "New",
+            "Refurbished",
+            "Used",
+            "Demo"
+          ]
+        }
+      ]
+    },
+    "imaging_microscopy": {
+      "label": "Imaging & Microscopy",
+      "form": "product",
+      "table_name": "IMAGING_MICROSCOPY_SPEC",
+      "fields": [
+        {
+          "name": "Imaging modes",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "imaging_modes",
+          "multi_select": true,
+          "allowed_values": [
+            "Brightfield",
+            "Fluorescence",
+            "Phase contrast",
+            "DIC",
+            "Confocal",
+            "Darkfield"
+          ]
+        },
+        {
+          "name": "Magnification / objectives",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "magnification_x",
+          "allowed_values": "X"
+        },
+        {
+          "name": "Fluorescence channels",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "fluorescence_channels",
+          "allowed_values": "channels"
+        },
+        {
+          "name": "Light source",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "light_source_imaging",
+          "allowed_values": [
+            "LED",
+            "Laser",
+            "Mercury",
+            "Xenon",
+            "Halogen"
+          ]
+        },
+        {
+          "name": "Camera / sensor",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_camera_sensor"
+        },
+        {
+          "name": "Automation",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "automation_imaging",
+          "multi_select": true,
+          "allowed_values": [
+            "Motorized stage",
+            "Autofocus",
+            "Time-lapse",
+            "Z-stack",
+            "Tiling"
+          ]
+        },
+        {
+          "name": "Vessel formats",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "vessel_formats_imaging",
+          "multi_select": true,
+          "allowed_values": [
+            "Slides",
+            "Multi-well plates",
+            "Flasks",
+            "Petri dishes"
+          ]
+        },
+        {
+          "name": "Environmental control",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Form factor",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_form_factor",
+          "allowed_values": [
+            "Benchtop",
+            "Floor",
+            "Handheld",
+            "Portable",
+            "Software"
+          ]
+        },
+        {
+          "name": "Model / configuration",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_model_configuration"
+        },
+        {
+          "name": "Software",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_software"
+        },
+        {
+          "name": "Compliance / data integrity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "compliance_data_integrity",
+          "multi_select": true,
+          "allowed_values": [
+            "21 CFR Part 11",
+            "GxP",
+            "GLP",
+            "ISO 13485"
+          ]
+        },
+        {
+          "name": "Certifications",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "certifications_equipment",
+          "multi_select": true,
+          "allowed_values": [
+            "UL",
+            "CE",
+            "CSA",
+            "RoHS",
+            "IVD",
+            "FDA listed"
+          ]
+        },
+        {
+          "name": "Dimensions (W × D × H)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "dimensions_wdh_cm",
+          "allowed_values": "cm"
+        },
+        {
+          "name": "Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "weight_kg",
+          "allowed_values": "kg"
+        },
+        {
+          "name": "Power requirements",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_power_requirements",
+          "allowed_values": "V, Hz and W"
+        },
+        {
+          "name": "Warranty / service plan",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_warranty_service_plan"
+        },
+        {
+          "name": "Product role",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_product_role",
+          "allowed_values": [
+            "Instrument",
+            "Accessory"
+          ]
+        },
+        {
+          "name": "Condition",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_condition",
+          "allowed_values": [
+            "New",
+            "Refurbished",
+            "Used",
+            "Demo"
+          ]
+        }
+      ]
+    },
+    "liquid_handling_automation": {
+      "label": "Liquid Handling & Automation",
+      "form": "product",
+      "table_name": "LIQUID_HANDLING_AUTOMATION_SPEC",
+      "fields": [
+        {
+          "name": "Deck / worktable size",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deck_worktable_size"
+        },
+        {
+          "name": "Pipetting arms / channels",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pipetting_arms",
+          "multi_select": true,
+          "allowed_values": [
+            "1-channel",
+            "8-channel",
+            "96-head",
+            "384-head"
+          ]
+        },
+        {
+          "name": "Volume range",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "volume_range_ul",
+          "allowed_values": "µL"
+        },
+        {
+          "name": "Tip type",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "tip_type_liquid_handling",
+          "allowed_values": [
+            "Disposable",
+            "Fixed",
+            "Both"
+          ]
+        },
+        {
+          "name": "Plate handling",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Integration",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "integration_liquid_handling",
+          "multi_select": true,
+          "allowed_values": [
+            "LIMS",
+            "Barcode reader",
+            "Plate reader",
+            "Incubator"
+          ]
+        },
+        {
+          "name": "Form factor",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_form_factor",
+          "allowed_values": [
+            "Benchtop",
+            "Floor",
+            "Handheld",
+            "Portable",
+            "Software"
+          ]
+        },
+        {
+          "name": "Model / configuration",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_model_configuration"
+        },
+        {
+          "name": "Software",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_software"
+        },
+        {
+          "name": "Compliance / data integrity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "compliance_data_integrity",
+          "multi_select": true,
+          "allowed_values": [
+            "21 CFR Part 11",
+            "GxP",
+            "GLP",
+            "ISO 13485"
+          ]
+        },
+        {
+          "name": "Certifications",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "certifications_equipment",
+          "multi_select": true,
+          "allowed_values": [
+            "UL",
+            "CE",
+            "CSA",
+            "RoHS",
+            "IVD",
+            "FDA listed"
+          ]
+        },
+        {
+          "name": "Dimensions (W × D × H)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "dimensions_wdh_cm",
+          "allowed_values": "cm"
+        },
+        {
+          "name": "Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "weight_kg",
+          "allowed_values": "kg"
+        },
+        {
+          "name": "Power requirements",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_power_requirements",
+          "allowed_values": "V, Hz and W"
+        },
+        {
+          "name": "Warranty / service plan",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_warranty_service_plan"
+        },
+        {
+          "name": "Product role",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_product_role",
+          "allowed_values": [
+            "Instrument",
+            "Accessory"
+          ]
+        },
+        {
+          "name": "Condition",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_condition",
+          "allowed_values": [
+            "New",
+            "Refurbished",
+            "Used",
+            "Demo"
+          ]
+        }
+      ]
+    },
+    "bioprocess_single_use": {
+      "label": "Bioprocess & Single-Use",
+      "form": "product",
+      "table_name": "BIOPROCESS_SINGLE_USE_SPEC",
+      "fields": [
+        {
+          "name": "System type",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "system_type_bioprocess",
+          "allowed_values": [
+            "Single-use",
+            "Stainless steel",
+            "Glass"
+          ]
+        },
+        {
+          "name": "Vessel size / working volume",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "vessel_size_l",
+          "allowed_values": "L"
+        },
+        {
+          "name": "Application",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "application_bioprocess",
+          "allowed_values": [
+            "Cell culture",
+            "Microbial"
+          ]
+        },
+        {
+          "name": "Bag / consumable type",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_bag_consumable_type"
+        },
+        {
+          "name": "Control system",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_control_system"
+        },
+        {
+          "name": "Sensors",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sensors_bioprocess",
+          "multi_select": true,
+          "allowed_values": [
+            "pH",
+            "DO",
+            "Temperature",
+            "Biomass",
+            "CO2"
+          ]
+        },
+        {
+          "name": "GMP readiness",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Scalability",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_scalability"
+        },
+        {
+          "name": "Form factor",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_form_factor",
+          "allowed_values": [
+            "Benchtop",
+            "Floor",
+            "Handheld",
+            "Portable",
+            "Software"
+          ]
+        },
+        {
+          "name": "Model / configuration",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_model_configuration"
+        },
+        {
+          "name": "Software",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_software"
+        },
+        {
+          "name": "Compliance / data integrity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "compliance_data_integrity",
+          "multi_select": true,
+          "allowed_values": [
+            "21 CFR Part 11",
+            "GxP",
+            "GLP",
+            "ISO 13485"
+          ]
+        },
+        {
+          "name": "Certifications",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "certifications_equipment",
+          "multi_select": true,
+          "allowed_values": [
+            "UL",
+            "CE",
+            "CSA",
+            "RoHS",
+            "IVD",
+            "FDA listed"
+          ]
+        },
+        {
+          "name": "Dimensions (W × D × H)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "dimensions_wdh_cm",
+          "allowed_values": "cm"
+        },
+        {
+          "name": "Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "weight_kg",
+          "allowed_values": "kg"
+        },
+        {
+          "name": "Power requirements",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_power_requirements",
+          "allowed_values": "V, Hz and W"
+        },
+        {
+          "name": "Warranty / service plan",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_warranty_service_plan"
+        },
+        {
+          "name": "Product role",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_product_role",
+          "allowed_values": [
+            "Instrument",
+            "Accessory"
+          ]
+        },
+        {
+          "name": "Condition",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_condition",
+          "allowed_values": [
+            "New",
+            "Refurbished",
+            "Used",
+            "Demo"
+          ]
+        }
+      ]
+    },
+    "general_lab_equipment": {
+      "label": "General Lab Equipment",
+      "form": "product",
+      "table_name": "GENERAL_LAB_EQUIPMENT_SPEC",
+      "fields": [
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity_general_equip"
+        },
+        {
+          "name": "Temperature range",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "temperature_range",
+          "allowed_values": "°C"
+        },
+        {
+          "name": "Max speed / RCF",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "max_rcf",
+          "allowed_values": "rpm and × g"
+        },
+        {
+          "name": "Refrigerated",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "refrigerated_status",
+          "allowed_values": [
+            "Refrigerated",
+            "Ambient",
+            "Heated"
+          ]
+        },
+        {
+          "name": "Noise level",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "noise_level_db",
+          "allowed_values": "dB(A)"
+        },
+        {
+          "name": "Form factor",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_form_factor",
+          "allowed_values": [
+            "Benchtop",
+            "Floor",
+            "Handheld",
+            "Portable",
+            "Software"
+          ]
+        },
+        {
+          "name": "Model / configuration",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_model_configuration"
+        },
+        {
+          "name": "Software",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_software"
+        },
+        {
+          "name": "Compliance / data integrity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "compliance_data_integrity",
+          "multi_select": true,
+          "allowed_values": [
+            "21 CFR Part 11",
+            "GxP",
+            "GLP",
+            "ISO 13485"
+          ]
+        },
+        {
+          "name": "Certifications",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "certifications_equipment",
+          "multi_select": true,
+          "allowed_values": [
+            "UL",
+            "CE",
+            "CSA",
+            "RoHS",
+            "IVD",
+            "FDA listed"
+          ]
+        },
+        {
+          "name": "Dimensions (W × D × H)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "dimensions_wdh_cm",
+          "allowed_values": "cm"
+        },
+        {
+          "name": "Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "weight_kg",
+          "allowed_values": "kg"
+        },
+        {
+          "name": "Power requirements",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_power_requirements",
+          "allowed_values": "V, Hz and W"
+        },
+        {
+          "name": "Warranty / service plan",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_warranty_service_plan"
+        },
+        {
+          "name": "Product role",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_product_role",
+          "allowed_values": [
+            "Instrument",
+            "Accessory"
+          ]
+        },
+        {
+          "name": "Condition",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_condition",
+          "allowed_values": [
+            "New",
+            "Refurbished",
+            "Used",
+            "Demo"
+          ]
+        }
+      ]
+    },
+    "parts_spares": {
+      "label": "Parts & Spares",
+      "form": "product",
+      "table_name": "PARTS_SPARES_SPEC",
+      "fields": [
+        {
+          "name": "Part number",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_part_number"
+        },
+        {
+          "name": "Compatible instruments / modules",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_compatible_instruments"
+        },
+        {
+          "name": "OEM vs compatible",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "oem_compatible",
+          "allowed_values": [
+            "OEM",
+            "Third-party compatible"
+          ]
+        },
+        {
+          "name": "Material",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_material_equipment"
+        },
+        {
+          "name": "Performance rating",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_performance_rating"
+        },
+        {
+          "name": "OEM part cross-reference",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_oem_cross_reference"
+        },
+        {
+          "name": "Mating part",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_mating_part"
+        },
+        {
+          "name": "Condition",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_condition",
+          "allowed_values": [
+            "New",
+            "Refurbished",
+            "Used",
+            "Demo"
+          ]
+        }
+      ]
+    },
+    "instrument_consumables": {
+      "label": "Instrument Consumables",
+      "form": "product",
+      "table_name": "INSTRUMENT_CONSUMABLES_SPEC",
+      "fields": [
+        {
+          "name": "Compatible platform",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_compatible_platform"
+        },
+        {
+          "name": "Size / capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_size_capacity_consumables"
+        },
+        {
+          "name": "Filtered",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "filtered_status",
+          "allowed_values": [
+            "Filtered",
+            "Non-filtered"
+          ]
+        }
+      ]
+    },
+    "installation_qualification_iq_oq_pq": {
+      "label": "Installation & Qualification (IQ/OQ/PQ)",
+      "form": "service",
+      "table_name": "INSTALLATION_QUALIFICATION_IQ_OQ_PQ_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    },
+    "calibration": {
+      "label": "Calibration",
+      "form": "service",
+      "table_name": "CALIBRATION_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    },
+    "preventive_maintenance": {
+      "label": "Preventive Maintenance",
+      "form": "service",
+      "table_name": "PREVENTIVE_MAINTENANCE_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    },
+    "repair": {
+      "label": "Repair",
+      "form": "service",
+      "table_name": "REPAIR_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    },
+    "service_contracts": {
+      "label": "Service Contracts",
+      "form": "service",
+      "table_name": "SERVICE_CONTRACTS_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    },
+    "relocation": {
+      "label": "Relocation",
+      "form": "service",
+      "table_name": "RELOCATION_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    }
+  }
+}

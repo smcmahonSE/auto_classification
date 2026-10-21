@@ -19,8 +19,21 @@ from spec_extraction.extractors.common import ExtractedSpec
 from spec_extraction.v2.generic_field_extractors import extract_generic_field
 
 # l2_id -> {override_key: callable(row, field_name) -> ExtractedSpec}
+# New L2s all share the common overrides module (cas_number, purity, target_gene_region,
+# antibody_target, animal_strain, equipment_type, capacity_volume_size, etc.) rather than
+# each needing its own thin module — see v2/overrides/common.py's FIELD_OVERRIDES dict.
 _OVERRIDE_MODULES: dict[str, str] = {
     "lab_supplies_consumables": "spec_extraction.v2.overrides.lab_supplies_consumables",
+    "molecular_biology_reagents": "spec_extraction.v2.overrides.common",
+    "chemicals_solvents": "spec_extraction.v2.overrides.common",
+    "antibodies": "spec_extraction.v2.overrides.common",
+    "proteins_peptides": "spec_extraction.v2.overrides.common",
+    "cell_tissue_culture": "spec_extraction.v2.overrides.common",
+    "animal_biospecimens": "spec_extraction.v2.overrides.common",
+    "human_biospecimens": "spec_extraction.v2.overrides.common",
+    "animal_models": "spec_extraction.v2.overrides.common",
+    "equipment_instruments_parts": "spec_extraction.v2.overrides.common",
+    "histology_pathology": "spec_extraction.v2.overrides.common",
 }
 
 

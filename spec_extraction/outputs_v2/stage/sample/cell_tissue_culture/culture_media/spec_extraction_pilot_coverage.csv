@@ -1,0 +1,40 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+culture_media,Basal formulation,150,6,4.0,144,0,0
+culture_media,Category (L2/L3),150,150,100.0,0,0,0
+culture_media,Category UNSPSC,150,0,0.0,150,0,0
+culture_media,Currency,150,1,0.67,149,0,0
+culture_media,Description,150,127,84.67,23,0,0
+culture_media,Document links,150,8,5.33,142,0,0
+culture_media,Format / physical form,150,25,16.67,123,2,0
+culture_media,Formulation / animal origin,150,1,0.67,149,0,0
+culture_media,Glucose,150,1,0.67,149,0,0
+culture_media,Grade / regulatory,150,3,2.0,147,0,0
+culture_media,HEPES / Sodium pyruvate,150,2,1.33,148,0,0
+culture_media,Image URL,150,1,0.67,149,0,0
+culture_media,Intended cell type / application,150,0,0.0,150,0,0
+culture_media,Inventory,150,0,0.0,150,0,0
+culture_media,Kit components,150,0,0.0,150,0,0
+culture_media,L-Glutamine,150,49,32.67,89,12,0
+culture_media,Lead time (days),150,0,0.0,150,0,0
+culture_media,Listing UNSPSC,150,0,0.0,150,0,0
+culture_media,Listing type,150,150,100.0,0,0,0
+culture_media,Manufacturer SKU,150,0,0.0,150,0,0
+culture_media,Manufacturer name,150,0,0.0,150,0,0
+culture_media,Name,150,150,100.0,0,0,0
+culture_media,Phenol red,150,49,32.67,89,12,0
+culture_media,Price per unit,150,142,94.67,8,0,0
+culture_media,Pricing model,150,150,100.0,0,0,0
+culture_media,Product / service URL,150,8,5.33,142,0,0
+culture_media,Quantity,150,0,0.0,150,0,0
+culture_media,Requester UNSPSC,150,0,0.0,150,0,0
+culture_media,Requester commodity code,150,0,0.0,150,0,0
+culture_media,Shelf life,150,0,0.0,150,0,0
+culture_media,Ship from,150,0,0.0,150,0,0
+culture_media,Shipping temperature,150,2,1.33,148,0,0
+culture_media,Specialized system,150,26,17.33,120,4,0
+culture_media,Species (cell source or intended use),150,28,18.67,110,12,0
+culture_media,Sterility / contamination QC,150,0,0.0,150,0,0
+culture_media,Storage conditions,150,8,5.33,142,0,0
+culture_media,Supplier SKU,150,0,0.0,150,0,0
+culture_media,Unit,150,0,0.0,150,0,0
+culture_media,Unit of measure,150,29,19.33,102,19,0

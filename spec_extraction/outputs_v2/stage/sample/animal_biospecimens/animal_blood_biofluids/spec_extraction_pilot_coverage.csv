@@ -1,0 +1,38 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+animal_blood_biofluids,Age,150,3,2.0,147,0,0
+animal_blood_biofluids,Anticoagulant / additive,150,1,0.67,118,31,0
+animal_blood_biofluids,Category (L2/L3),150,150,100.0,0,0,0
+animal_blood_biofluids,Category UNSPSC,150,0,0.0,150,0,0
+animal_blood_biofluids,Currency,150,0,0.0,150,0,0
+animal_blood_biofluids,Description,150,84,56.0,66,0,0
+animal_blood_biofluids,Disease / model state,150,0,0.0,150,0,0
+animal_blood_biofluids,Document links,150,1,0.67,149,0,0
+animal_blood_biofluids,Format / preservation,150,15,10.0,135,0,0
+animal_blood_biofluids,IACUC / animal-welfare consent,150,0,0.0,150,0,0
+animal_blood_biofluids,Image URL,150,0,0.0,150,0,0
+animal_blood_biofluids,Individual vs Pooled,150,39,26.0,111,0,0
+animal_blood_biofluids,Inventory,150,0,0.0,150,0,0
+animal_blood_biofluids,Lead time (days),150,0,0.0,150,0,0
+animal_blood_biofluids,Listing UNSPSC,150,0,0.0,150,0,0
+animal_blood_biofluids,Listing type,150,150,100.0,0,0,0
+animal_blood_biofluids,Manufacturer SKU,150,0,0.0,150,0,0
+animal_blood_biofluids,Manufacturer name,150,0,0.0,150,0,0
+animal_blood_biofluids,Matrix,150,68,45.33,43,39,0
+animal_blood_biofluids,Name,150,150,100.0,0,0,0
+animal_blood_biofluids,Price per unit,150,150,100.0,0,0,0
+animal_blood_biofluids,Pricing model,150,150,100.0,0,0,0
+animal_blood_biofluids,Processing / finishing,150,0,0.0,150,0,0
+animal_blood_biofluids,Product / service URL,150,1,0.67,149,0,0
+animal_blood_biofluids,Quantity,150,0,0.0,150,0,0
+animal_blood_biofluids,Requester UNSPSC,150,0,0.0,150,0,0
+animal_blood_biofluids,Requester commodity code,150,0,0.0,150,0,0
+animal_blood_biofluids,Sex,150,80,53.33,66,4,0
+animal_blood_biofluids,Ship from,150,0,0.0,150,0,0
+animal_blood_biofluids,Shipping Temperature,150,7,4.67,143,0,0
+animal_blood_biofluids,Species,150,61,40.67,89,0,0
+animal_blood_biofluids,Storage Conditions,150,1,0.67,142,7,0
+animal_blood_biofluids,Strain,150,71,47.33,79,0,0
+animal_blood_biofluids,Supplier SKU,150,0,0.0,150,0,0
+animal_blood_biofluids,Unit,150,0,0.0,150,0,0
+animal_blood_biofluids,Unit of measure,150,9,6.0,138,3,0
+animal_blood_biofluids,Volume,150,10,6.67,140,0,0

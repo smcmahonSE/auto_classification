@@ -1,0 +1,34 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+sodium_salts,Appearance / Color,150,0,0.0,150,0,0
+sodium_salts,CAS Number(s),150,26,17.33,124,0,0
+sodium_salts,Category (L2/L3),150,150,100.0,0,0,0
+sodium_salts,Category UNSPSC,150,0,0.0,150,0,0
+sodium_salts,Currency,150,3,2.0,147,0,0
+sodium_salts,Description,150,135,90.0,15,0,0
+sodium_salts,Document links,150,26,17.33,124,0,0
+sodium_salts,Grade,150,8,5.33,140,2,0
+sodium_salts,Hazard / GHS classification,150,1,0.67,149,0,0
+sodium_salts,Image URL,150,0,0.0,150,0,0
+sodium_salts,Inventory,150,0,0.0,150,0,0
+sodium_salts,Lead time (days),150,0,0.0,150,0,0
+sodium_salts,Listing UNSPSC,150,0,0.0,150,0,0
+sodium_salts,Listing type,150,150,100.0,0,0,0
+sodium_salts,Manufacturer SKU,150,0,0.0,150,0,0
+sodium_salts,Manufacturer name,150,0,0.0,150,0,0
+sodium_salts,Molecular Formula,150,80,53.33,70,0,0
+sodium_salts,Molecular Weight,150,0,0.0,150,0,0
+sodium_salts,Name,150,150,100.0,0,0,0
+sodium_salts,Physical Form / State,150,2,1.33,142,6,0
+sodium_salts,Price per unit,150,149,99.33,1,0,0
+sodium_salts,Pricing model,150,150,100.0,0,0,0
+sodium_salts,Product / service URL,150,26,17.33,124,0,0
+sodium_salts,Purity,150,74,49.33,76,0,0
+sodium_salts,Purity analysis method,150,7,4.67,143,0,0
+sodium_salts,Quantity,150,0,0.0,150,0,0
+sodium_salts,Requester UNSPSC,150,0,0.0,150,0,0
+sodium_salts,Requester commodity code,150,0,0.0,150,0,0
+sodium_salts,Ship from,150,0,0.0,150,0,0
+sodium_salts,Storage Conditions,150,4,2.67,146,0,0
+sodium_salts,Supplier SKU,150,0,0.0,150,0,0
+sodium_salts,Unit,150,0,0.0,150,0,0
+sodium_salts,Unit of measure,150,12,8.0,138,0,0

@@ -1,0 +1,37 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+zebrafish_models,Adult age,95,0,0.0,95,0,0
+zebrafish_models,Availability status,95,5,5.26,90,0,0
+zebrafish_models,Category (L2/L3),95,95,100.0,0,0,0
+zebrafish_models,Category UNSPSC,95,0,0.0,95,0,0
+zebrafish_models,Currency,95,0,0.0,95,0,0
+zebrafish_models,Description,95,62,65.26,33,0,0
+zebrafish_models,Document links,95,0,0.0,95,0,0
+zebrafish_models,Gene symbol / locus,95,0,0.0,95,0,0
+zebrafish_models,Image URL,95,0,0.0,95,0,0
+zebrafish_models,Inventory,95,0,0.0,95,0,0
+zebrafish_models,Lead time (days),95,0,0.0,95,0,0
+zebrafish_models,Licensing / conditions of use,95,0,0.0,95,0,0
+zebrafish_models,Line / strain name,95,0,0.0,95,0,0
+zebrafish_models,Listing UNSPSC,95,0,0.0,95,0,0
+zebrafish_models,Listing type,95,95,100.0,0,0,0
+zebrafish_models,Manufacturer SKU,95,0,0.0,95,0,0
+zebrafish_models,Manufacturer name,95,0,0.0,95,0,0
+zebrafish_models,Model type / genetic status,95,8,8.42,87,0,0
+zebrafish_models,Mutant allele designation,95,0,0.0,95,0,0
+zebrafish_models,Name,95,95,100.0,0,0,0
+zebrafish_models,Price per unit,95,67,70.53,28,0,0
+zebrafish_models,Pricing model,95,95,100.0,0,0,0
+zebrafish_models,Product / service URL,95,0,0.0,95,0,0
+zebrafish_models,Production location / origin,95,0,0.0,95,0,0
+zebrafish_models,Quantity,95,0,0.0,95,0,0
+zebrafish_models,Requester UNSPSC,95,0,0.0,95,0,0
+zebrafish_models,Requester commodity code,95,0,0.0,95,0,0
+zebrafish_models,Research / therapeutic area,95,1,1.05,94,0,0
+zebrafish_models,Sex,95,5,5.26,86,4,0
+zebrafish_models,Ship from,95,0,0.0,95,0,0
+zebrafish_models,Shipping form,95,8,8.42,87,0,0
+zebrafish_models,Species,95,47,49.47,42,6,0
+zebrafish_models,Supplier SKU,95,0,0.0,95,0,0
+zebrafish_models,Unit,95,0,0.0,95,0,0
+zebrafish_models,Unit of measure,95,27,28.42,63,5,0
+zebrafish_models,Zygosity,95,0,0.0,95,0,0

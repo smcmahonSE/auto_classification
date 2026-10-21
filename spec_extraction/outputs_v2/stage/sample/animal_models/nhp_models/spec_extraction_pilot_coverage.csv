@@ -1,0 +1,36 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+nhp_models,Add-on procedures,100,0,0.0,100,0,0
+nhp_models,Age / weight,100,0,0.0,100,0,0
+nhp_models,Availability status,100,0,0.0,100,0,0
+nhp_models,Category (L2/L3),100,100,100.0,0,0,0
+nhp_models,Category UNSPSC,100,0,0.0,100,0,0
+nhp_models,Currency,100,0,0.0,100,0,0
+nhp_models,Delivery form,100,0,0.0,100,0,0
+nhp_models,Description,100,67,67.0,33,0,0
+nhp_models,Document links,100,0,0.0,100,0,0
+nhp_models,Geographic origin,100,2,2.0,98,0,0
+nhp_models,Housing,100,0,0.0,100,0,0
+nhp_models,Image URL,100,0,0.0,100,0,0
+nhp_models,Import / CITES documentation,100,0,0.0,100,0,0
+nhp_models,Inventory,100,0,0.0,100,0,0
+nhp_models,Lead time (days),100,0,0.0,100,0,0
+nhp_models,Licensing / conditions of use,100,0,0.0,100,0,0
+nhp_models,Listing UNSPSC,100,0,0.0,100,0,0
+nhp_models,Listing type,100,100,100.0,0,0,0
+nhp_models,Manufacturer SKU,100,0,0.0,100,0,0
+nhp_models,Manufacturer name,100,0,0.0,100,0,0
+nhp_models,Name,100,100,100.0,0,0,0
+nhp_models,Price per unit,100,97,97.0,3,0,0
+nhp_models,Pricing model,100,100,100.0,0,0,0
+nhp_models,Product / service URL,100,0,0.0,100,0,0
+nhp_models,Quantity,100,0,0.0,100,0,0
+nhp_models,Requester UNSPSC,100,0,0.0,100,0,0
+nhp_models,Requester commodity code,100,0,0.0,100,0,0
+nhp_models,Research / therapeutic area,100,1,1.0,99,0,0
+nhp_models,SPF status,100,0,0.0,100,0,0
+nhp_models,Sex / sexual maturity,100,20,20.0,80,0,0
+nhp_models,Ship from,100,0,0.0,100,0,0
+nhp_models,Species,100,46,46.0,18,36,0
+nhp_models,Supplier SKU,100,0,0.0,100,0,0
+nhp_models,Unit,100,0,0.0,100,0,0
+nhp_models,Unit of measure,100,2,2.0,98,0,0

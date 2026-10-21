@@ -1,0 +1,35 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+cytokines_growth_factors,Bioactivity / ED50,150,0,0.0,150,0,0
+cytokines_growth_factors,Carrier,150,0,0.0,150,0,0
+cytokines_growth_factors,Category (L2/L3),150,150,100.0,0,0,0
+cytokines_growth_factors,Category UNSPSC,150,0,0.0,150,0,0
+cytokines_growth_factors,Currency,150,0,0.0,150,0,0
+cytokines_growth_factors,Description,150,144,96.0,6,0,0
+cytokines_growth_factors,Document links,150,2,1.33,148,0,0
+cytokines_growth_factors,Endotoxin level,150,0,0.0,150,0,0
+cytokines_growth_factors,Form,150,31,20.67,119,0,0
+cytokines_growth_factors,Grade,150,3,2.0,147,0,0
+cytokines_growth_factors,Image URL,150,2,1.33,148,0,0
+cytokines_growth_factors,Inventory,150,0,0.0,150,0,0
+cytokines_growth_factors,Lead time (days),150,0,0.0,150,0,0
+cytokines_growth_factors,Listing UNSPSC,150,0,0.0,150,0,0
+cytokines_growth_factors,Listing type,150,150,100.0,0,0,0
+cytokines_growth_factors,Manufacturer SKU,150,0,0.0,150,0,0
+cytokines_growth_factors,Manufacturer name,150,0,0.0,150,0,0
+cytokines_growth_factors,Molecular weight,150,39,26.0,111,0,0
+cytokines_growth_factors,Name,150,150,100.0,0,0,0
+cytokines_growth_factors,Price per unit,150,118,78.67,32,0,0
+cytokines_growth_factors,Pricing model,150,150,100.0,0,0,0
+cytokines_growth_factors,Product / service URL,150,2,1.33,148,0,0
+cytokines_growth_factors,Purity,150,10,6.67,140,0,0
+cytokines_growth_factors,Quantity,150,0,0.0,150,0,0
+cytokines_growth_factors,Requester UNSPSC,150,0,0.0,150,0,0
+cytokines_growth_factors,Requester commodity code,150,0,0.0,150,0,0
+cytokines_growth_factors,Sequence / region,150,0,0.0,150,0,0
+cytokines_growth_factors,Ship from,150,0,0.0,150,0,0
+cytokines_growth_factors,Source / Expression system,150,37,24.67,112,1,0
+cytokines_growth_factors,Species,150,93,62.0,36,21,0
+cytokines_growth_factors,Storage / reconstitution,150,42,28.0,108,0,0
+cytokines_growth_factors,Supplier SKU,150,0,0.0,150,0,0
+cytokines_growth_factors,Unit,150,0,0.0,150,0,0
+cytokines_growth_factors,Unit of measure,150,39,26.0,110,1,0

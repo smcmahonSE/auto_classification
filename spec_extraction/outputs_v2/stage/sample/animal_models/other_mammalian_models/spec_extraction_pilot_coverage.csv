@@ -1,0 +1,36 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+other_mammalian_models,Age / weight range,100,1,1.0,99,0,0
+other_mammalian_models,Availability status,100,0,0.0,100,0,0
+other_mammalian_models,Category (L2/L3),100,100,100.0,0,0,0
+other_mammalian_models,Category UNSPSC,100,0,0.0,100,0,0
+other_mammalian_models,Currency,100,1,1.0,99,0,0
+other_mammalian_models,Delivery form,100,0,0.0,100,0,0
+other_mammalian_models,Description,100,21,21.0,79,0,0
+other_mammalian_models,Document links,100,4,4.0,96,0,0
+other_mammalian_models,Health status / microbiological standard,100,0,0.0,100,0,0
+other_mammalian_models,Image URL,100,0,0.0,100,0,0
+other_mammalian_models,Inventory,100,0,0.0,100,0,0
+other_mammalian_models,Lead time (days),100,0,0.0,100,0,0
+other_mammalian_models,Licensing / conditions of use,100,0,0.0,100,0,0
+other_mammalian_models,Listing UNSPSC,100,0,0.0,100,0,0
+other_mammalian_models,Listing type,100,100,100.0,0,0,0
+other_mammalian_models,Manufacturer SKU,100,0,0.0,100,0,0
+other_mammalian_models,Manufacturer name,100,0,0.0,100,0,0
+other_mammalian_models,Model type / genetic status,100,3,3.0,97,0,0
+other_mammalian_models,Name,100,100,100.0,0,0,0
+other_mammalian_models,Price per unit,100,100,100.0,0,0,0
+other_mammalian_models,Pricing model,100,100,100.0,0,0,0
+other_mammalian_models,Product / service URL,100,4,4.0,96,0,0
+other_mammalian_models,Production location / origin,100,0,0.0,100,0,0
+other_mammalian_models,Quantity,100,0,0.0,100,0,0
+other_mammalian_models,Requester UNSPSC,100,0,0.0,100,0,0
+other_mammalian_models,Requester commodity code,100,0,0.0,100,0,0
+other_mammalian_models,Research / therapeutic area,100,10,10.0,90,0,0
+other_mammalian_models,Sex,100,0,0.0,99,1,0
+other_mammalian_models,Ship from,100,0,0.0,100,0,0
+other_mammalian_models,Species,100,13,13.0,83,4,0
+other_mammalian_models,Strain / official nomenclature,100,0,0.0,100,0,0
+other_mammalian_models,Supplier SKU,100,0,0.0,100,0,0
+other_mammalian_models,Supplier stock / strain code,100,0,0.0,100,0,0
+other_mammalian_models,Unit,100,0,0.0,100,0,0
+other_mammalian_models,Unit of measure,100,4,4.0,93,3,0

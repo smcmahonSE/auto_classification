@@ -1,0 +1,32 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+pcr_qpcr,Category (L2/L3),200,200,100.0,0,0,0
+pcr_qpcr,Category UNSPSC,200,0,0.0,200,0,0
+pcr_qpcr,Configuration,200,16,8.0,184,0,0
+pcr_qpcr,Currency,200,3,1.5,197,0,0
+pcr_qpcr,Description,200,176,88.0,24,0,0
+pcr_qpcr,Document links,200,11,5.5,189,0,0
+pcr_qpcr,Image URL,200,8,4.0,192,0,0
+pcr_qpcr,Inventory,200,0,0.0,200,0,0
+pcr_qpcr,Lead time (days),200,0,0.0,200,0,0
+pcr_qpcr,Listing UNSPSC,200,0,0.0,200,0,0
+pcr_qpcr,Listing type,200,200,100.0,0,0,0
+pcr_qpcr,Manufacturer SKU,200,0,0.0,200,0,0
+pcr_qpcr,Manufacturer name,200,0,0.0,200,0,0
+pcr_qpcr,Multiplex,200,3,1.5,197,0,0
+pcr_qpcr,Name,200,200,100.0,0,0,0
+pcr_qpcr,Price per unit,200,190,95.0,10,0,0
+pcr_qpcr,Pricing model,200,200,100.0,0,0,0
+pcr_qpcr,Probe chemistry,200,44,22.0,155,1,0
+pcr_qpcr,Product / service URL,200,11,5.5,189,0,0
+pcr_qpcr,Quantity,200,0,0.0,200,0,0
+pcr_qpcr,Quencher,200,6,3.0,194,0,0
+pcr_qpcr,Reagent type,200,33,16.5,148,19,0
+pcr_qpcr,Reporter dye,200,15,7.5,185,0,0
+pcr_qpcr,Requester UNSPSC,200,0,0.0,200,0,0
+pcr_qpcr,Requester commodity code,200,0,0.0,200,0,0
+pcr_qpcr,Ship from,200,0,0.0,200,0,0
+pcr_qpcr,Supplier SKU,200,0,0.0,200,0,0
+pcr_qpcr,Target Gene / Region,200,82,41.0,118,0,0
+pcr_qpcr,Target Species,200,38,19.0,162,0,0
+pcr_qpcr,Unit,200,0,0.0,200,0,0
+pcr_qpcr,Unit of measure,200,41,20.5,64,95,0

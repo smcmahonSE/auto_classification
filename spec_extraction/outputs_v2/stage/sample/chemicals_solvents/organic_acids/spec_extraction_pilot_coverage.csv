@@ -1,0 +1,34 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+organic_acids,Appearance / Color,150,0,0.0,150,0,0
+organic_acids,CAS Number(s),150,31,20.67,119,0,0
+organic_acids,Category (L2/L3),150,150,100.0,0,0,0
+organic_acids,Category UNSPSC,150,0,0.0,150,0,0
+organic_acids,Currency,150,3,2.0,147,0,0
+organic_acids,Description,150,118,78.67,32,0,0
+organic_acids,Document links,150,15,10.0,135,0,0
+organic_acids,Grade,150,3,2.0,147,0,0
+organic_acids,Hazard / GHS classification,150,1,0.67,149,0,0
+organic_acids,Image URL,150,0,0.0,150,0,0
+organic_acids,Inventory,150,0,0.0,150,0,0
+organic_acids,Lead time (days),150,0,0.0,150,0,0
+organic_acids,Listing UNSPSC,150,0,0.0,150,0,0
+organic_acids,Listing type,150,150,100.0,0,0,0
+organic_acids,Manufacturer SKU,150,0,0.0,150,0,0
+organic_acids,Manufacturer name,150,0,0.0,150,0,0
+organic_acids,Molecular Formula,150,57,38.0,93,0,0
+organic_acids,Molecular Weight,150,0,0.0,150,0,0
+organic_acids,Name,150,150,100.0,0,0,0
+organic_acids,Physical Form / State,150,3,2.0,145,2,0
+organic_acids,Price per unit,150,150,100.0,0,0,0
+organic_acids,Pricing model,150,150,100.0,0,0,0
+organic_acids,Product / service URL,150,15,10.0,135,0,0
+organic_acids,Purity,150,82,54.67,68,0,0
+organic_acids,Purity analysis method,150,2,1.33,148,0,0
+organic_acids,Quantity,150,0,0.0,150,0,0
+organic_acids,Requester UNSPSC,150,0,0.0,150,0,0
+organic_acids,Requester commodity code,150,0,0.0,150,0,0
+organic_acids,Ship from,150,0,0.0,150,0,0
+organic_acids,Storage Conditions,150,3,2.0,147,0,0
+organic_acids,Supplier SKU,150,0,0.0,150,0,0
+organic_acids,Unit,150,0,0.0,150,0,0
+organic_acids,Unit of measure,150,3,2.0,147,0,0

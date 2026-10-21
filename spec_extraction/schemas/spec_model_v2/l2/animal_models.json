@@ -1,0 +1,893 @@
+{
+  "l2_id": "animal_models",
+  "l2_label": "Animal Models",
+  "schema_name": "ANIMAL_MODELS",
+  "l2_fields": [
+    {
+      "name": "Species",
+      "type": "picklist",
+      "required": true,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "animal_model_species",
+      "allowed_values": [
+        "Mouse",
+        "Rat",
+        "Zebrafish",
+        "Guinea pig",
+        "Hamster",
+        "Rabbit",
+        "Cynomolgus (M. fascicularis)",
+        "Rhesus (M. mulatta)",
+        "Marmoset",
+        "African green",
+        "Drosophila melanogaster",
+        "C. elegans",
+        "Other"
+      ]
+    },
+    {
+      "name": "Research / therapeutic area",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "research_therapeutic_area",
+      "multi_select": true,
+      "allowed_values": [
+        "Oncology & I-O",
+        "Neuroscience",
+        "Cardiometabolic",
+        "Immunology",
+        "Infectious disease",
+        "IBD",
+        "ADMET",
+        "Other"
+      ]
+    }
+  ],
+  "l3_nodes": {
+    "rodent_models": {
+      "label": "Rodent Models",
+      "form": "product",
+      "table_name": "RODENT_MODELS_SPEC",
+      "fields": [
+        {
+          "name": "Genotype / alleles",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_genotype_alleles"
+        },
+        {
+          "name": "Genetic background",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_genetic_background"
+        },
+        {
+          "name": "Zygosity",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "zygosity",
+          "allowed_values": [
+            "Homozygous",
+            "Heterozygous",
+            "Hemizygous",
+            "Wild type",
+            "Carrier"
+          ]
+        },
+        {
+          "name": "MHC haplotype",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_mhc_haplotype"
+        },
+        {
+          "name": "Coat color",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "coat_color",
+          "allowed_values": [
+            "Black",
+            "Albino",
+            "Agouti",
+            "Brown",
+            "Other"
+          ]
+        },
+        {
+          "name": "Humanization / engraftment",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "humanization_engraftment",
+          "allowed_values": [
+            "None",
+            "CD34+ HSC",
+            "PBMC",
+            "PDX",
+            "Humanized liver"
+          ]
+        },
+        {
+          "name": "Preconditioning",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "preconditioning",
+          "multi_select": true,
+          "allowed_values": [
+            "None",
+            "Aged",
+            "Diet-induced obese (DIO)",
+            "Surgically modified"
+          ]
+        },
+        {
+          "name": "Known background traits",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_known_background_traits"
+        },
+        {
+          "name": "Tumor model type",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "tumor_model_type",
+          "allowed_values": [
+            "Syngeneic",
+            "CDX",
+            "PDX",
+            "Spontaneous",
+            "GEMM"
+          ]
+        },
+        {
+          "name": "Cancer type / indication",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_cancer_type_indication"
+        },
+        {
+          "name": "Supplier stock / strain code",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_supplier_stock_code"
+        },
+        {
+          "name": "Health status / microbiological standard",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "health_status_microbiological",
+          "allowed_values": [
+            "VAF/Elite",
+            "SPF",
+            "SOPF",
+            "Germ-free",
+            "Conventional"
+          ]
+        },
+        {
+          "name": "Strain / official nomenclature",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "animal_strain"
+        },
+        {
+          "name": "Model type / genetic status",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "model_genetic_status",
+          "multi_select": true,
+          "allowed_values": [
+            "Inbred",
+            "Outbred",
+            "Congenic",
+            "Hybrid",
+            "Wild-type",
+            "Knockout",
+            "Knock-in",
+            "Transgenic",
+            "CRISPR-modified",
+            "Immunodeficient",
+            "Humanized"
+          ]
+        },
+        {
+          "name": "Delivery form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "delivery_form_animal",
+          "allowed_values": [
+            "Live animals",
+            "Cryopreserved embryos",
+            "Cryopreserved sperm",
+            "Embryos"
+          ]
+        },
+        {
+          "name": "Sex",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sex_mfb",
+          "allowed_values": [
+            "Male",
+            "Female",
+            "Both"
+          ]
+        },
+        {
+          "name": "Age / weight range",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "age_weight_range",
+          "allowed_values": "weeks or grams"
+        },
+        {
+          "name": "Production location / origin",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_production_location"
+        },
+        {
+          "name": "Availability status",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "availability_status",
+          "allowed_values": [
+            "Readily available",
+            "Limited",
+            "Special order",
+            "Cryo-recovery"
+          ]
+        },
+        {
+          "name": "Licensing / conditions of use",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_licensing_conditions"
+        }
+      ]
+    },
+    "zebrafish_models": {
+      "label": "Zebrafish Models",
+      "form": "product",
+      "table_name": "ZEBRAFISH_MODELS_SPEC",
+      "fields": [
+        {
+          "name": "Line / strain name",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_line_strain_name"
+        },
+        {
+          "name": "Mutant allele designation",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_mutant_allele"
+        },
+        {
+          "name": "Gene symbol / locus",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_gene_symbol_locus"
+        },
+        {
+          "name": "Shipping form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "shipping_form_zebrafish",
+          "allowed_values": [
+            "Embryos",
+            "Adult carrier pair",
+            "Frozen sperm (regenerated by IVF)"
+          ]
+        },
+        {
+          "name": "Zygosity",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "zygosity_zebrafish",
+          "allowed_values": [
+            "Heterozygous",
+            "Homozygous"
+          ]
+        },
+        {
+          "name": "Adult age",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "adult_age_months",
+          "allowed_values": "months"
+        },
+        {
+          "name": "Model type / genetic status",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "model_genetic_status",
+          "multi_select": true,
+          "allowed_values": [
+            "Inbred",
+            "Outbred",
+            "Congenic",
+            "Hybrid",
+            "Wild-type",
+            "Knockout",
+            "Knock-in",
+            "Transgenic",
+            "CRISPR-modified",
+            "Immunodeficient",
+            "Humanized"
+          ]
+        },
+        {
+          "name": "Sex",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sex_mfb",
+          "allowed_values": [
+            "Male",
+            "Female",
+            "Both"
+          ]
+        },
+        {
+          "name": "Production location / origin",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_production_location"
+        },
+        {
+          "name": "Availability status",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "availability_status",
+          "allowed_values": [
+            "Readily available",
+            "Limited",
+            "Special order",
+            "Cryo-recovery"
+          ]
+        },
+        {
+          "name": "Licensing / conditions of use",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_licensing_conditions"
+        }
+      ]
+    },
+    "nhp_models": {
+      "label": "Non-Human Primate Models",
+      "form": "product",
+      "table_name": "NHP_MODELS_SPEC",
+      "fields": [
+        {
+          "name": "Geographic origin",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "geographic_origin_nhp",
+          "allowed_values": [
+            "Mauritian",
+            "Chinese",
+            "Vietnamese",
+            "Cambodian",
+            "Other"
+          ]
+        },
+        {
+          "name": "SPF status",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "spf_status_nhp",
+          "multi_select": true,
+          "allowed_values": [
+            "B virus",
+            "SIV",
+            "SRV",
+            "STLV",
+            "TB-negative"
+          ]
+        },
+        {
+          "name": "Sex / sexual maturity",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sex_mfb",
+          "allowed_values": [
+            "Male",
+            "Female"
+          ]
+        },
+        {
+          "name": "Housing",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "housing_nhp",
+          "allowed_values": [
+            "Indoor",
+            "Outdoor"
+          ]
+        },
+        {
+          "name": "Age / weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "age_weight_years_kg",
+          "allowed_values": "years and kg"
+        },
+        {
+          "name": "Import / CITES documentation",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Add-on procedures",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "add_on_procedures_nhp",
+          "multi_select": true,
+          "allowed_values": [
+            "Surgical models",
+            "ECG",
+            "Radiology",
+            "Clinical chemistry",
+            "Ocular screening"
+          ]
+        },
+        {
+          "name": "Delivery form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "delivery_form_animal",
+          "allowed_values": [
+            "Live animals",
+            "Cryopreserved embryos",
+            "Cryopreserved sperm",
+            "Embryos"
+          ]
+        },
+        {
+          "name": "Availability status",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "availability_status",
+          "allowed_values": [
+            "Readily available",
+            "Limited",
+            "Special order",
+            "Cryo-recovery"
+          ]
+        },
+        {
+          "name": "Licensing / conditions of use",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_licensing_conditions"
+        }
+      ]
+    },
+    "invertebrate_lower_organism": {
+      "label": "Invertebrate & Lower Organism Models",
+      "form": "product",
+      "table_name": "INVERTEBRATE_LOWER_ORGANISM_SPEC",
+      "fields": [
+        {
+          "name": "Stock / strain number",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_stock_strain_number"
+        },
+        {
+          "name": "Genotype",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_genotype"
+        },
+        {
+          "name": "Chromosomes affected",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_chromosomes_affected"
+        },
+        {
+          "name": "Balancer",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_balancer"
+        },
+        {
+          "name": "Mutagen",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_mutagen"
+        },
+        {
+          "name": "Times outcrossed",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "times_outcrossed",
+          "allowed_values": "outcrosses"
+        },
+        {
+          "name": "Donor / made by",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_donor_made_by"
+        },
+        {
+          "name": "Model type / genetic status",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "model_genetic_status",
+          "multi_select": true,
+          "allowed_values": [
+            "Inbred",
+            "Outbred",
+            "Congenic",
+            "Hybrid",
+            "Wild-type",
+            "Knockout",
+            "Knock-in",
+            "Transgenic",
+            "CRISPR-modified",
+            "Immunodeficient",
+            "Humanized"
+          ]
+        },
+        {
+          "name": "Delivery form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "delivery_form_animal",
+          "allowed_values": [
+            "Live animals",
+            "Cryopreserved embryos",
+            "Cryopreserved sperm",
+            "Embryos"
+          ]
+        },
+        {
+          "name": "Production location / origin",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_production_location"
+        },
+        {
+          "name": "Availability status",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "availability_status",
+          "allowed_values": [
+            "Readily available",
+            "Limited",
+            "Special order",
+            "Cryo-recovery"
+          ]
+        },
+        {
+          "name": "Licensing / conditions of use",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_licensing_conditions"
+        }
+      ]
+    },
+    "other_mammalian_models": {
+      "label": "Other Mammalian Models",
+      "form": "product",
+      "table_name": "OTHER_MAMMALIAN_MODELS_SPEC",
+      "fields": [
+        {
+          "name": "Supplier stock / strain code",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_supplier_stock_code"
+        },
+        {
+          "name": "Health status / microbiological standard",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "health_status_microbiological",
+          "allowed_values": [
+            "VAF/Elite",
+            "SPF",
+            "SOPF",
+            "Germ-free",
+            "Conventional"
+          ]
+        },
+        {
+          "name": "Strain / official nomenclature",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "animal_strain"
+        },
+        {
+          "name": "Model type / genetic status",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "model_genetic_status",
+          "multi_select": true,
+          "allowed_values": [
+            "Inbred",
+            "Outbred",
+            "Congenic",
+            "Hybrid",
+            "Wild-type",
+            "Knockout",
+            "Knock-in",
+            "Transgenic",
+            "CRISPR-modified",
+            "Immunodeficient",
+            "Humanized"
+          ]
+        },
+        {
+          "name": "Delivery form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "delivery_form_animal",
+          "allowed_values": [
+            "Live animals",
+            "Cryopreserved embryos",
+            "Cryopreserved sperm",
+            "Embryos"
+          ]
+        },
+        {
+          "name": "Sex",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sex_mfb",
+          "allowed_values": [
+            "Male",
+            "Female",
+            "Both"
+          ]
+        },
+        {
+          "name": "Age / weight range",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "age_weight_range",
+          "allowed_values": "weeks or grams"
+        },
+        {
+          "name": "Production location / origin",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_production_location"
+        },
+        {
+          "name": "Availability status",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "availability_status",
+          "allowed_values": [
+            "Readily available",
+            "Limited",
+            "Special order",
+            "Cryo-recovery"
+          ]
+        },
+        {
+          "name": "Licensing / conditions of use",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_licensing_conditions"
+        }
+      ]
+    },
+    "colony_breeding_management": {
+      "label": "Colony & breeding management",
+      "form": "service",
+      "table_name": "COLONY_BREEDING_MANAGEMENT_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    },
+    "in_vivo_pharmacology_efficacy": {
+      "label": "In vivo pharmacology / efficacy",
+      "form": "service",
+      "table_name": "IN_VIVO_PHARMACOLOGY_EFFICACY_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    }
+  }
+}

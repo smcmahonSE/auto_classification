@@ -1,0 +1,39 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+primary_antibodies,Application,150,75,50.0,75,0,0
+primary_antibodies,Category (L2/L3),150,150,100.0,0,0,0
+primary_antibodies,Category UNSPSC,150,0,0.0,150,0,0
+primary_antibodies,Cited reactivity,150,65,43.33,85,0,0
+primary_antibodies,Clonality,150,58,38.67,92,0,0
+primary_antibodies,Clone ID,150,0,0.0,150,0,0
+primary_antibodies,Conjugate / Label,150,47,31.33,103,0,0
+primary_antibodies,Currency,150,0,0.0,150,0,0
+primary_antibodies,Description,150,99,66.0,51,0,0
+primary_antibodies,Document links,150,4,2.67,146,0,0
+primary_antibodies,Format,150,5,3.33,145,0,0
+primary_antibodies,Host Species,150,60,40.0,70,20,0
+primary_antibodies,Image URL,150,1,0.67,149,0,0
+primary_antibodies,Inventory,150,0,0.0,150,0,0
+primary_antibodies,Isotype,150,24,16.0,126,0,0
+primary_antibodies,Lead time (days),150,0,0.0,150,0,0
+primary_antibodies,Listing UNSPSC,150,0,0.0,150,0,0
+primary_antibodies,Listing type,150,150,100.0,0,0,0
+primary_antibodies,Manufacturer SKU,150,0,0.0,150,0,0
+primary_antibodies,Manufacturer name,150,0,0.0,150,0,0
+primary_antibodies,Name,150,150,100.0,0,0,0
+primary_antibodies,PTM / modification specificity,150,3,2.0,147,0,0
+primary_antibodies,Price per unit,150,128,85.33,22,0,0
+primary_antibodies,Pricing model,150,150,100.0,0,0,0
+primary_antibodies,Product / service URL,150,4,2.67,146,0,0
+primary_antibodies,Purification,150,3,2.0,147,0,0
+primary_antibodies,Quantity,150,0,0.0,150,0,0
+primary_antibodies,RRID,150,0,0.0,150,0,0
+primary_antibodies,Recommended dilution,150,0,0.0,150,0,0
+primary_antibodies,Requester UNSPSC,150,0,0.0,150,0,0
+primary_antibodies,Requester commodity code,150,0,0.0,150,0,0
+primary_antibodies,Ship from,150,0,0.0,150,0,0
+primary_antibodies,Storage conditions,150,24,16.0,126,0,0
+primary_antibodies,Supplier SKU,150,0,0.0,150,0,0
+primary_antibodies,Target / Antigen,150,74,49.33,76,0,0
+primary_antibodies,Tested reactivity,150,65,43.33,85,0,0
+primary_antibodies,Unit,150,0,0.0,150,0,0
+primary_antibodies,Unit of measure,150,20,13.33,127,3,0

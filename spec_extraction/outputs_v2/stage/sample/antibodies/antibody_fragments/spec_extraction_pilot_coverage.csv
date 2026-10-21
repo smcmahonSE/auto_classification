@@ -1,0 +1,38 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+antibody_fragments,Application,150,42,28.0,108,0,0
+antibody_fragments,Category (L2/L3),150,150,100.0,0,0,0
+antibody_fragments,Category UNSPSC,150,0,0.0,150,0,0
+antibody_fragments,Cited reactivity,150,63,42.0,87,0,0
+antibody_fragments,Clonality,150,73,48.67,77,0,0
+antibody_fragments,Conjugate / Label,150,31,20.67,119,0,0
+antibody_fragments,Currency,150,0,0.0,150,0,0
+antibody_fragments,Description,150,141,94.0,9,0,0
+antibody_fragments,Document links,150,4,2.67,146,0,0
+antibody_fragments,Format,150,10,6.67,140,0,0
+antibody_fragments,Fragment type,150,1,0.67,149,0,0
+antibody_fragments,Host Species,150,83,55.33,53,14,0
+antibody_fragments,Image URL,150,0,0.0,150,0,0
+antibody_fragments,Inventory,150,0,0.0,150,0,0
+antibody_fragments,Isotype,150,21,14.0,129,0,0
+antibody_fragments,Lead time (days),150,0,0.0,150,0,0
+antibody_fragments,Listing UNSPSC,150,0,0.0,150,0,0
+antibody_fragments,Listing type,150,150,100.0,0,0,0
+antibody_fragments,Manufacturer SKU,150,0,0.0,150,0,0
+antibody_fragments,Manufacturer name,150,0,0.0,150,0,0
+antibody_fragments,Name,150,150,100.0,0,0,0
+antibody_fragments,Price per unit,150,133,88.67,17,0,0
+antibody_fragments,Pricing model,150,150,100.0,0,0,0
+antibody_fragments,Product / service URL,150,4,2.67,146,0,0
+antibody_fragments,Purification,150,5,3.33,145,0,0
+antibody_fragments,Quantity,150,0,0.0,150,0,0
+antibody_fragments,RRID,150,0,0.0,150,0,0
+antibody_fragments,Recommended dilution,150,0,0.0,150,0,0
+antibody_fragments,Requester UNSPSC,150,0,0.0,150,0,0
+antibody_fragments,Requester commodity code,150,0,0.0,150,0,0
+antibody_fragments,Ship from,150,0,0.0,150,0,0
+antibody_fragments,Storage conditions,150,35,23.33,115,0,0
+antibody_fragments,Supplier SKU,150,0,0.0,150,0,0
+antibody_fragments,Target / Antigen,150,54,36.0,96,0,0
+antibody_fragments,Tested reactivity,150,63,42.0,87,0,0
+antibody_fragments,Unit,150,0,0.0,150,0,0
+antibody_fragments,Unit of measure,150,15,10.0,135,0,0

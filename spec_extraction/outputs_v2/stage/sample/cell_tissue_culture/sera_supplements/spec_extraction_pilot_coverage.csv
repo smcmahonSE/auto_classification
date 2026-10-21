@@ -1,0 +1,39 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+sera_supplements,Category (L2/L3),150,150,100.0,0,0,0
+sera_supplements,Category UNSPSC,150,0,0.0,150,0,0
+sera_supplements,Country of origin,150,15,10.0,133,2,0
+sera_supplements,Currency,150,2,1.33,148,0,0
+sera_supplements,Description,150,150,100.0,0,0,0
+sera_supplements,Document links,150,10,6.67,140,0,0
+sera_supplements,Endotoxin,150,1,0.67,149,0,0
+sera_supplements,Format / physical form,150,28,18.67,118,4,0
+sera_supplements,Formulation / animal origin,150,6,4.0,144,0,0
+sera_supplements,Grade / regulatory,150,0,0.0,150,0,0
+sera_supplements,Hemoglobin,150,0,0.0,150,0,0
+sera_supplements,Image URL,150,5,3.33,145,0,0
+sera_supplements,Intended cell type / application,150,0,0.0,150,0,0
+sera_supplements,Inventory,150,0,0.0,150,0,0
+sera_supplements,Lead time (days),150,0,0.0,150,0,0
+sera_supplements,Listing UNSPSC,150,0,0.0,150,0,0
+sera_supplements,Listing type,150,150,100.0,0,0,0
+sera_supplements,Manufacturer SKU,150,0,0.0,150,0,0
+sera_supplements,Manufacturer name,150,0,0.0,150,0,0
+sera_supplements,Name,150,150,100.0,0,0,0
+sera_supplements,Origin traceability,150,7,4.67,143,0,0
+sera_supplements,Price per unit,150,137,91.33,13,0,0
+sera_supplements,Pricing model,150,150,100.0,0,0,0
+sera_supplements,Product / service URL,150,10,6.67,140,0,0
+sera_supplements,Quality tier,150,8,5.33,142,0,0
+sera_supplements,Quantity,150,0,0.0,150,0,0
+sera_supplements,Requester UNSPSC,150,0,0.0,150,0,0
+sera_supplements,Requester commodity code,150,0,0.0,150,0,0
+sera_supplements,Serum type / source,150,9,6.0,141,0,0
+sera_supplements,Ship from,150,0,0.0,150,0,0
+sera_supplements,Shipping temperature,150,3,2.0,147,0,0
+sera_supplements,Species (cell source or intended use),150,33,22.0,107,10,0
+sera_supplements,Sterility / contamination QC,150,3,2.0,147,0,0
+sera_supplements,Storage conditions,150,11,7.33,139,0,0
+sera_supplements,Supplier SKU,150,0,0.0,150,0,0
+sera_supplements,Treatment,150,3,2.0,147,0,0
+sera_supplements,Unit,150,0,0.0,150,0,0
+sera_supplements,Unit of measure,150,43,28.67,101,6,0

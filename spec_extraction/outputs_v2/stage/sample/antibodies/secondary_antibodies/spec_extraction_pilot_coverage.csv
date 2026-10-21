@@ -1,0 +1,36 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+secondary_antibodies,Application,150,112,74.67,38,0,0
+secondary_antibodies,Category (L2/L3),150,150,100.0,0,0,0
+secondary_antibodies,Category UNSPSC,150,0,0.0,150,0,0
+secondary_antibodies,Clonality,150,72,48.0,77,1,0
+secondary_antibodies,Conjugate,150,49,32.67,78,23,0
+secondary_antibodies,Cross-adsorbed,150,17,11.33,133,0,0
+secondary_antibodies,Currency,150,0,0.0,150,0,0
+secondary_antibodies,Description,150,149,99.33,1,0,0
+secondary_antibodies,Document links,150,5,3.33,145,0,0
+secondary_antibodies,Format,150,42,28.0,93,15,0
+secondary_antibodies,Host Species,150,106,70.67,11,33,0
+secondary_antibodies,Image URL,150,0,0.0,150,0,0
+secondary_antibodies,Inventory,150,0,0.0,150,0,0
+secondary_antibodies,Lead time (days),150,0,0.0,150,0,0
+secondary_antibodies,Listing UNSPSC,150,0,0.0,150,0,0
+secondary_antibodies,Listing type,150,150,100.0,0,0,0
+secondary_antibodies,Manufacturer SKU,150,0,0.0,150,0,0
+secondary_antibodies,Manufacturer name,150,0,0.0,150,0,0
+secondary_antibodies,Name,150,150,100.0,0,0,0
+secondary_antibodies,Price per unit,150,132,88.0,18,0,0
+secondary_antibodies,Pricing model,150,150,100.0,0,0,0
+secondary_antibodies,Product / service URL,150,5,3.33,145,0,0
+secondary_antibodies,Purification,150,12,8.0,138,0,0
+secondary_antibodies,Quantity,150,0,0.0,150,0,0
+secondary_antibodies,RRID,150,0,0.0,150,0,0
+secondary_antibodies,Recommended dilution,150,0,0.0,150,0,0
+secondary_antibodies,Requester UNSPSC,150,0,0.0,150,0,0
+secondary_antibodies,Requester commodity code,150,0,0.0,150,0,0
+secondary_antibodies,Ship from,150,0,0.0,150,0,0
+secondary_antibodies,Specificity,150,27,18.0,106,17,0
+secondary_antibodies,Storage conditions,150,51,34.0,99,0,0
+secondary_antibodies,Supplier SKU,150,0,0.0,150,0,0
+secondary_antibodies,Target species,150,33,22.0,9,108,0
+secondary_antibodies,Unit,150,0,0.0,150,0,0
+secondary_antibodies,Unit of measure,150,61,40.67,81,8,0

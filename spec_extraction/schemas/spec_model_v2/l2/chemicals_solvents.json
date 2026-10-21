@@ -1,0 +1,2270 @@
+{
+  "l2_id": "chemicals_solvents",
+  "l2_label": "Chemicals and Solvents",
+  "schema_name": "CHEMICALS_SOLVENTS",
+  "l2_fields": [],
+  "l3_nodes": {
+    "alcohols": {
+      "label": "Alcohols",
+      "form": "product",
+      "table_name": "ALCOHOLS_SPEC",
+      "fields": [
+        {
+          "name": "Molecular Formula",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_formula"
+        },
+        {
+          "name": "Molecular Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_weight",
+          "allowed_values": "g/mol"
+        },
+        {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
+          "name": "Physical Form / State",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "physical_form_state",
+          "allowed_values": [
+            "Solid",
+            "Liquid",
+            "Gas",
+            "Powder",
+            "Crystal",
+            "Solution",
+            "Gel",
+            "Paste"
+          ]
+        },
+        {
+          "name": "Grade",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_grade",
+          "allowed_values": [
+            "Reagent",
+            "ACS",
+            "USP",
+            "HPLC",
+            "LC-MS",
+            "Anhydrous",
+            "Technical",
+            "Molecular biology"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_chem",
+          "multi_select": true,
+          "allowed_values": [
+            "Room Temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Desiccated",
+            "Protected from Light"
+          ]
+        },
+        {
+          "name": "Hazard / GHS classification",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "hazard_ghs",
+          "multi_select": true,
+          "allowed_values": [
+            "Flammable",
+            "Corrosive",
+            "Toxic",
+            "Oxidizer",
+            "Irritant",
+            "Environmental Hazard",
+            "Health Hazard",
+            "Explosive",
+            "Non-Hazardous"
+          ]
+        },
+        {
+          "name": "Appearance / Color",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_appearance_color"
+        },
+        {
+          "name": "Purity analysis method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_analysis_method",
+          "allowed_values": [
+            "GC",
+            "HPLC",
+            "qNMR",
+            "Titration",
+            "LC-MS"
+          ]
+        }
+      ]
+    },
+    "organic_acids": {
+      "label": "Organic Acids",
+      "form": "product",
+      "table_name": "ORGANIC_ACIDS_SPEC",
+      "fields": [
+        {
+          "name": "Molecular Formula",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_formula"
+        },
+        {
+          "name": "Molecular Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_weight",
+          "allowed_values": "g/mol"
+        },
+        {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
+          "name": "Physical Form / State",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "physical_form_state",
+          "allowed_values": [
+            "Solid",
+            "Liquid",
+            "Gas",
+            "Powder",
+            "Crystal",
+            "Solution",
+            "Gel",
+            "Paste"
+          ]
+        },
+        {
+          "name": "Grade",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_grade",
+          "allowed_values": [
+            "Reagent",
+            "ACS",
+            "USP",
+            "HPLC",
+            "LC-MS",
+            "Anhydrous",
+            "Technical",
+            "Molecular biology"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_chem",
+          "multi_select": true,
+          "allowed_values": [
+            "Room Temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Desiccated",
+            "Protected from Light"
+          ]
+        },
+        {
+          "name": "Hazard / GHS classification",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "hazard_ghs",
+          "multi_select": true,
+          "allowed_values": [
+            "Flammable",
+            "Corrosive",
+            "Toxic",
+            "Oxidizer",
+            "Irritant",
+            "Environmental Hazard",
+            "Health Hazard",
+            "Explosive",
+            "Non-Hazardous"
+          ]
+        },
+        {
+          "name": "Appearance / Color",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_appearance_color"
+        },
+        {
+          "name": "Purity analysis method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_analysis_method",
+          "allowed_values": [
+            "GC",
+            "HPLC",
+            "qNMR",
+            "Titration",
+            "LC-MS"
+          ]
+        }
+      ]
+    },
+    "polyols": {
+      "label": "Polyols",
+      "form": "product",
+      "table_name": "POLYOLS_SPEC",
+      "fields": [
+        {
+          "name": "Molecular Formula",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_formula"
+        },
+        {
+          "name": "Molecular Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_weight",
+          "allowed_values": "g/mol"
+        },
+        {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
+          "name": "Physical Form / State",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "physical_form_state",
+          "allowed_values": [
+            "Solid",
+            "Liquid",
+            "Gas",
+            "Powder",
+            "Crystal",
+            "Solution",
+            "Gel",
+            "Paste"
+          ]
+        },
+        {
+          "name": "Grade",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_grade",
+          "allowed_values": [
+            "Reagent",
+            "ACS",
+            "USP",
+            "HPLC",
+            "LC-MS",
+            "Anhydrous",
+            "Technical",
+            "Molecular biology"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_chem",
+          "multi_select": true,
+          "allowed_values": [
+            "Room Temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Desiccated",
+            "Protected from Light"
+          ]
+        },
+        {
+          "name": "Hazard / GHS classification",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "hazard_ghs",
+          "multi_select": true,
+          "allowed_values": [
+            "Flammable",
+            "Corrosive",
+            "Toxic",
+            "Oxidizer",
+            "Irritant",
+            "Environmental Hazard",
+            "Health Hazard",
+            "Explosive",
+            "Non-Hazardous"
+          ]
+        },
+        {
+          "name": "Appearance / Color",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_appearance_color"
+        },
+        {
+          "name": "Purity analysis method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_analysis_method",
+          "allowed_values": [
+            "GC",
+            "HPLC",
+            "qNMR",
+            "Titration",
+            "LC-MS"
+          ]
+        }
+      ]
+    },
+    "sodium_salts": {
+      "label": "Sodium Salts",
+      "form": "product",
+      "table_name": "SODIUM_SALTS_SPEC",
+      "fields": [
+        {
+          "name": "Molecular Formula",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_formula"
+        },
+        {
+          "name": "Molecular Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_weight",
+          "allowed_values": "g/mol"
+        },
+        {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
+          "name": "Physical Form / State",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "physical_form_state",
+          "allowed_values": [
+            "Solid",
+            "Liquid",
+            "Gas",
+            "Powder",
+            "Crystal",
+            "Solution",
+            "Gel",
+            "Paste"
+          ]
+        },
+        {
+          "name": "Grade",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_grade",
+          "allowed_values": [
+            "Reagent",
+            "ACS",
+            "USP",
+            "HPLC",
+            "LC-MS",
+            "Anhydrous",
+            "Technical",
+            "Molecular biology"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_chem",
+          "multi_select": true,
+          "allowed_values": [
+            "Room Temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Desiccated",
+            "Protected from Light"
+          ]
+        },
+        {
+          "name": "Hazard / GHS classification",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "hazard_ghs",
+          "multi_select": true,
+          "allowed_values": [
+            "Flammable",
+            "Corrosive",
+            "Toxic",
+            "Oxidizer",
+            "Irritant",
+            "Environmental Hazard",
+            "Health Hazard",
+            "Explosive",
+            "Non-Hazardous"
+          ]
+        },
+        {
+          "name": "Appearance / Color",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_appearance_color"
+        },
+        {
+          "name": "Purity analysis method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_analysis_method",
+          "allowed_values": [
+            "GC",
+            "HPLC",
+            "qNMR",
+            "Titration",
+            "LC-MS"
+          ]
+        }
+      ]
+    },
+    "esters": {
+      "label": "Esters",
+      "form": "product",
+      "table_name": "ESTERS_SPEC",
+      "fields": [
+        {
+          "name": "Molecular Formula",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_formula"
+        },
+        {
+          "name": "Molecular Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_weight",
+          "allowed_values": "g/mol"
+        },
+        {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
+          "name": "Physical Form / State",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "physical_form_state",
+          "allowed_values": [
+            "Solid",
+            "Liquid",
+            "Gas",
+            "Powder",
+            "Crystal",
+            "Solution",
+            "Gel",
+            "Paste"
+          ]
+        },
+        {
+          "name": "Grade",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_grade",
+          "allowed_values": [
+            "Reagent",
+            "ACS",
+            "USP",
+            "HPLC",
+            "LC-MS",
+            "Anhydrous",
+            "Technical",
+            "Molecular biology"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_chem",
+          "multi_select": true,
+          "allowed_values": [
+            "Room Temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Desiccated",
+            "Protected from Light"
+          ]
+        },
+        {
+          "name": "Hazard / GHS classification",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "hazard_ghs",
+          "multi_select": true,
+          "allowed_values": [
+            "Flammable",
+            "Corrosive",
+            "Toxic",
+            "Oxidizer",
+            "Irritant",
+            "Environmental Hazard",
+            "Health Hazard",
+            "Explosive",
+            "Non-Hazardous"
+          ]
+        },
+        {
+          "name": "Appearance / Color",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_appearance_color"
+        },
+        {
+          "name": "Purity analysis method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_analysis_method",
+          "allowed_values": [
+            "GC",
+            "HPLC",
+            "qNMR",
+            "Titration",
+            "LC-MS"
+          ]
+        }
+      ]
+    },
+    "inorganic_compounds_salts": {
+      "label": "Inorganic Compounds & Salts",
+      "form": "product",
+      "table_name": "INORGANIC_COMPOUNDS_SALTS_SPEC",
+      "fields": [
+        {
+          "name": "Molecular Formula",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_formula"
+        },
+        {
+          "name": "Molecular Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_weight",
+          "allowed_values": "g/mol"
+        },
+        {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
+          "name": "Physical Form / State",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "physical_form_state",
+          "allowed_values": [
+            "Solid",
+            "Liquid",
+            "Gas",
+            "Powder",
+            "Crystal",
+            "Solution",
+            "Gel",
+            "Paste"
+          ]
+        },
+        {
+          "name": "Grade",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_grade",
+          "allowed_values": [
+            "Reagent",
+            "ACS",
+            "USP",
+            "HPLC",
+            "LC-MS",
+            "Anhydrous",
+            "Technical",
+            "Molecular biology"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_chem",
+          "multi_select": true,
+          "allowed_values": [
+            "Room Temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Desiccated",
+            "Protected from Light"
+          ]
+        },
+        {
+          "name": "Hazard / GHS classification",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "hazard_ghs",
+          "multi_select": true,
+          "allowed_values": [
+            "Flammable",
+            "Corrosive",
+            "Toxic",
+            "Oxidizer",
+            "Irritant",
+            "Environmental Hazard",
+            "Health Hazard",
+            "Explosive",
+            "Non-Hazardous"
+          ]
+        },
+        {
+          "name": "Appearance / Color",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_appearance_color"
+        },
+        {
+          "name": "Purity analysis method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_analysis_method",
+          "allowed_values": [
+            "GC",
+            "HPLC",
+            "qNMR",
+            "Titration",
+            "LC-MS"
+          ]
+        }
+      ]
+    },
+    "coatings_sealants_adhesives": {
+      "label": "Coatings, Sealants & Adhesives",
+      "form": "product",
+      "table_name": "COATINGS_SEALANTS_ADHESIVES_SPEC",
+      "fields": [
+        {
+          "name": "Chemistry",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "coating_chemistry",
+          "allowed_values": [
+            "Epoxy",
+            "Cyanoacrylate",
+            "Silicone",
+            "Acrylic",
+            "Light-cure acrylic",
+            "Polyurethane",
+            "Other"
+          ]
+        },
+        {
+          "name": "Number of components",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "components_count",
+          "allowed_values": [
+            "1-part",
+            "2-part"
+          ]
+        },
+        {
+          "name": "Mix ratio",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_mix_ratio"
+        },
+        {
+          "name": "Cure method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cure_method",
+          "allowed_values": [
+            "Room temperature",
+            "Heat",
+            "UV / visible light",
+            "Moisture",
+            "Other"
+          ]
+        },
+        {
+          "name": "Full cure time",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "full_cure_time",
+          "allowed_values": "hours"
+        },
+        {
+          "name": "Work life",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "work_life",
+          "allowed_values": "minutes"
+        },
+        {
+          "name": "Viscosity",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "viscosity_cp",
+          "allowed_values": "cP"
+        },
+        {
+          "name": "Color",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "coating_color",
+          "allowed_values": [
+            "Clear",
+            "Translucent",
+            "White / off-white",
+            "Black",
+            "Amber",
+            "Red",
+            "Other"
+          ]
+        },
+        {
+          "name": "Operating temperature",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "operating_temp_range",
+          "allowed_values": "°C (min to max)"
+        },
+        {
+          "name": "Substrates",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "substrates",
+          "multi_select": true,
+          "allowed_values": [
+            "Metal",
+            "Plastic",
+            "Rubber / elastomer",
+            "Glass",
+            "Ceramic",
+            "Wood",
+            "Composite",
+            "Other"
+          ]
+        },
+        {
+          "name": "Shear strength",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "shear_strength",
+          "allowed_values": "psi"
+        },
+        {
+          "name": "Certifications",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "certifications_chem",
+          "multi_select": true,
+          "allowed_values": [
+            "ISO 10993",
+            "USP Class VI",
+            "NASA low outgassing (ASTM E595)",
+            "UL 94",
+            "None"
+          ]
+        },
+        {
+          "name": "Package type",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "package_type_chem",
+          "allowed_values": [
+            "Syringe",
+            "Bottle",
+            "Tube",
+            "Dual cartridge",
+            "Can",
+            "Pail",
+            "Other"
+          ]
+        },
+        {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Physical Form / State",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "physical_form_state",
+          "allowed_values": [
+            "Solid",
+            "Liquid",
+            "Gas",
+            "Powder",
+            "Crystal",
+            "Solution",
+            "Gel",
+            "Paste"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_chem",
+          "multi_select": true,
+          "allowed_values": [
+            "Room Temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Desiccated",
+            "Protected from Light"
+          ]
+        },
+        {
+          "name": "Hazard / GHS classification",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "hazard_ghs",
+          "multi_select": true,
+          "allowed_values": [
+            "Flammable",
+            "Corrosive",
+            "Toxic",
+            "Oxidizer",
+            "Irritant",
+            "Environmental Hazard",
+            "Health Hazard",
+            "Explosive",
+            "Non-Hazardous"
+          ]
+        }
+      ]
+    },
+    "resins_modifiers": {
+      "label": "Resins & Modifiers",
+      "form": "product",
+      "table_name": "RESINS_MODIFIERS_SPEC",
+      "fields": [
+        {
+          "name": "Resin type",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "resin_type",
+          "allowed_values": [
+            "Ion exchange",
+            "Solid-phase synthesis",
+            "Embedding",
+            "Impact modifier",
+            "Silicone resin",
+            "Other"
+          ]
+        },
+        {
+          "name": "Application",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "resin_application",
+          "multi_select": true,
+          "allowed_values": [
+            "Ion exchange chromatography",
+            "Peptide synthesis",
+            "Microscopy embedding",
+            "Polymer modification",
+            "Other"
+          ]
+        },
+        {
+          "name": "Kit contents",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_kit_contents"
+        },
+        {
+          "name": "Matrix",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_matrix"
+        },
+        {
+          "name": "Functional group",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_functional_group"
+        },
+        {
+          "name": "Ionic form",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_ionic_form"
+        },
+        {
+          "name": "Cross-linkage",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "cross_linkage_pct",
+          "allowed_values": "% DVB"
+        },
+        {
+          "name": "Particle / mesh size",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_particle_mesh_size"
+        },
+        {
+          "name": "Loading / capacity",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "loading_capacity",
+          "allowed_values": "mmol/g or meq/mL"
+        },
+        {
+          "name": "Moisture content",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "moisture_content_pct",
+          "allowed_values": "%"
+        },
+        {
+          "name": "Viscosity",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "viscosity_cp",
+          "allowed_values": "cP"
+        },
+        {
+          "name": "Polymerization time",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_polymerization_time"
+        },
+        {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Physical Form / State",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "physical_form_state",
+          "allowed_values": [
+            "Solid",
+            "Liquid",
+            "Gas",
+            "Powder",
+            "Crystal",
+            "Solution",
+            "Gel",
+            "Paste"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_chem",
+          "multi_select": true,
+          "allowed_values": [
+            "Room Temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Desiccated",
+            "Protected from Light"
+          ]
+        },
+        {
+          "name": "Hazard / GHS classification",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "hazard_ghs",
+          "multi_select": true,
+          "allowed_values": [
+            "Flammable",
+            "Corrosive",
+            "Toxic",
+            "Oxidizer",
+            "Irritant",
+            "Environmental Hazard",
+            "Health Hazard",
+            "Explosive",
+            "Non-Hazardous"
+          ]
+        }
+      ]
+    },
+    "bioactive_small_molecules": {
+      "label": "Bioactive Small Molecules",
+      "form": "product",
+      "table_name": "BIOACTIVE_SMALL_MOLECULES_SPEC",
+      "fields": [
+        {
+          "name": "Target / Pathway",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_target_pathway"
+        },
+        {
+          "name": "Mechanism / activity",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "mechanism_activity",
+          "allowed_values": [
+            "Inhibitor",
+            "Agonist",
+            "Antagonist",
+            "Activator",
+            "Modulator",
+            "Degrader"
+          ]
+        },
+        {
+          "name": "Solubility",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "solubility_solvent",
+          "multi_select": true,
+          "allowed_values": [
+            "DMSO",
+            "Ethanol",
+            "Water",
+            "Methanol",
+            "DMF"
+          ]
+        },
+        {
+          "name": "Solution concentration",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_solution_concentration",
+          "allowed_values": "mM, with solvent"
+        },
+        {
+          "name": "Molecular Formula",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_formula"
+        },
+        {
+          "name": "Molecular Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_weight",
+          "allowed_values": "g/mol"
+        },
+        {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
+          "name": "Physical Form / State",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "physical_form_state",
+          "allowed_values": [
+            "Solid",
+            "Liquid",
+            "Gas",
+            "Powder",
+            "Crystal",
+            "Solution",
+            "Gel",
+            "Paste"
+          ]
+        },
+        {
+          "name": "Grade",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_grade",
+          "allowed_values": [
+            "Reagent",
+            "ACS",
+            "USP",
+            "HPLC",
+            "LC-MS",
+            "Anhydrous",
+            "Technical",
+            "Molecular biology"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_chem",
+          "multi_select": true,
+          "allowed_values": [
+            "Room Temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Desiccated",
+            "Protected from Light"
+          ]
+        },
+        {
+          "name": "Hazard / GHS classification",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "hazard_ghs",
+          "multi_select": true,
+          "allowed_values": [
+            "Flammable",
+            "Corrosive",
+            "Toxic",
+            "Oxidizer",
+            "Irritant",
+            "Environmental Hazard",
+            "Health Hazard",
+            "Explosive",
+            "Non-Hazardous"
+          ]
+        },
+        {
+          "name": "Appearance / Color",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_appearance_color"
+        },
+        {
+          "name": "Purity analysis method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_analysis_method",
+          "allowed_values": [
+            "GC",
+            "HPLC",
+            "qNMR",
+            "Titration",
+            "LC-MS"
+          ]
+        }
+      ]
+    },
+    "building_blocks_screening_libraries": {
+      "label": "Building Blocks & Screening Libraries",
+      "form": "product",
+      "table_name": "BUILDING_BLOCKS_SCREENING_LIBRARIES_SPEC",
+      "fields": [
+        {
+          "name": "Format",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "building_block_format",
+          "allowed_values": [
+            "Dry powder",
+            "Neat",
+            "DMSO solution"
+          ]
+        },
+        {
+          "name": "Physicochemical descriptors",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_physicochemical_descriptors"
+        },
+        {
+          "name": "Functional group / warhead",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "functional_group_warhead",
+          "multi_select": true,
+          "allowed_values": [
+            "Amine",
+            "Carboxylic acid",
+            "Boronic acid",
+            "Halide",
+            "Alcohol",
+            "Covalent warhead",
+            "Other"
+          ]
+        },
+        {
+          "name": "Library / collection size",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "library_collection_size",
+          "allowed_values": "compounds"
+        },
+        {
+          "name": "Library type",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "library_type",
+          "allowed_values": [
+            "Diversity",
+            "Targeted",
+            "Natural product",
+            "Fragment",
+            "Covalent"
+          ]
+        },
+        {
+          "name": "Purity tier",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "building_block_purity_tier",
+          "allowed_values": [
+            "90%",
+            "95%",
+            "97%"
+          ]
+        },
+        {
+          "name": "Solution concentration",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_solution_concentration",
+          "allowed_values": "mM, with solvent"
+        },
+        {
+          "name": "Molecular Formula",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_formula"
+        },
+        {
+          "name": "Molecular Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_weight",
+          "allowed_values": "g/mol"
+        },
+        {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
+          "name": "Physical Form / State",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "physical_form_state",
+          "allowed_values": [
+            "Solid",
+            "Liquid",
+            "Gas",
+            "Powder",
+            "Crystal",
+            "Solution",
+            "Gel",
+            "Paste"
+          ]
+        },
+        {
+          "name": "Grade",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_grade",
+          "allowed_values": [
+            "Reagent",
+            "ACS",
+            "USP",
+            "HPLC",
+            "LC-MS",
+            "Anhydrous",
+            "Technical",
+            "Molecular biology"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_chem",
+          "multi_select": true,
+          "allowed_values": [
+            "Room Temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Desiccated",
+            "Protected from Light"
+          ]
+        },
+        {
+          "name": "Hazard / GHS classification",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "hazard_ghs",
+          "multi_select": true,
+          "allowed_values": [
+            "Flammable",
+            "Corrosive",
+            "Toxic",
+            "Oxidizer",
+            "Irritant",
+            "Environmental Hazard",
+            "Health Hazard",
+            "Explosive",
+            "Non-Hazardous"
+          ]
+        },
+        {
+          "name": "Appearance / Color",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_appearance_color"
+        },
+        {
+          "name": "Purity analysis method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_analysis_method",
+          "allowed_values": [
+            "GC",
+            "HPLC",
+            "qNMR",
+            "Titration",
+            "LC-MS"
+          ]
+        }
+      ]
+    },
+    "solvents": {
+      "label": "Solvents",
+      "form": "product",
+      "table_name": "SOLVENTS_SPEC",
+      "fields": [
+        {
+          "name": "Solvent grade",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "solvent_grade",
+          "allowed_values": [
+            "HPLC",
+            "ACS",
+            "Anhydrous",
+            "LC-MS",
+            "GC",
+            "Spectrophotometric"
+          ]
+        },
+        {
+          "name": "Water content",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "water_content_pct",
+          "allowed_values": "%"
+        },
+        {
+          "name": "Molecular Formula",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_formula"
+        },
+        {
+          "name": "Molecular Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_weight",
+          "allowed_values": "g/mol"
+        },
+        {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
+          "name": "Physical Form / State",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "physical_form_state",
+          "allowed_values": [
+            "Solid",
+            "Liquid",
+            "Gas",
+            "Powder",
+            "Crystal",
+            "Solution",
+            "Gel",
+            "Paste"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_chem",
+          "multi_select": true,
+          "allowed_values": [
+            "Room Temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Desiccated",
+            "Protected from Light"
+          ]
+        },
+        {
+          "name": "Hazard / GHS classification",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "hazard_ghs",
+          "multi_select": true,
+          "allowed_values": [
+            "Flammable",
+            "Corrosive",
+            "Toxic",
+            "Oxidizer",
+            "Irritant",
+            "Environmental Hazard",
+            "Health Hazard",
+            "Explosive",
+            "Non-Hazardous"
+          ]
+        },
+        {
+          "name": "Appearance / Color",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_appearance_color"
+        },
+        {
+          "name": "Purity analysis method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_analysis_method",
+          "allowed_values": [
+            "GC",
+            "HPLC",
+            "qNMR",
+            "Titration",
+            "LC-MS"
+          ]
+        }
+      ]
+    },
+    "buffers_ph_reagents": {
+      "label": "Buffers & pH Reagents",
+      "form": "product",
+      "table_name": "BUFFERS_PH_REAGENTS_SPEC",
+      "fields": [
+        {
+          "name": "pH",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "ph",
+          "allowed_values": "pH"
+        },
+        {
+          "name": "Concentration / molarity",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "concentration_molarity",
+          "allowed_values": "M or ×"
+        },
+        {
+          "name": "Molecular Formula",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_formula"
+        },
+        {
+          "name": "Molecular Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_weight",
+          "allowed_values": "g/mol"
+        },
+        {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
+          "name": "Physical Form / State",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "physical_form_state",
+          "allowed_values": [
+            "Solid",
+            "Liquid",
+            "Gas",
+            "Powder",
+            "Crystal",
+            "Solution",
+            "Gel",
+            "Paste"
+          ]
+        },
+        {
+          "name": "Grade",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_grade",
+          "allowed_values": [
+            "Reagent",
+            "ACS",
+            "USP",
+            "HPLC",
+            "LC-MS",
+            "Anhydrous",
+            "Technical",
+            "Molecular biology"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_chem",
+          "multi_select": true,
+          "allowed_values": [
+            "Room Temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Desiccated",
+            "Protected from Light"
+          ]
+        },
+        {
+          "name": "Hazard / GHS classification",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "hazard_ghs",
+          "multi_select": true,
+          "allowed_values": [
+            "Flammable",
+            "Corrosive",
+            "Toxic",
+            "Oxidizer",
+            "Irritant",
+            "Environmental Hazard",
+            "Health Hazard",
+            "Explosive",
+            "Non-Hazardous"
+          ]
+        },
+        {
+          "name": "Appearance / Color",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_appearance_color"
+        },
+        {
+          "name": "Purity analysis method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_analysis_method",
+          "allowed_values": [
+            "GC",
+            "HPLC",
+            "qNMR",
+            "Titration",
+            "LC-MS"
+          ]
+        }
+      ]
+    },
+    "radiochemistry": {
+      "label": "Radiochemistry",
+      "form": "product",
+      "table_name": "RADIOCHEMISTRY_SPEC",
+      "fields": [
+        {
+          "name": "Isotope",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "isotope",
+          "allowed_values": [
+            "³H",
+            "¹⁴C",
+            "³²P",
+            "³³P",
+            "³⁵S",
+            "¹²⁵I"
+          ]
+        },
+        {
+          "name": "Specific activity",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "specific_activity",
+          "allowed_values": "mCi/mmol"
+        },
+        {
+          "name": "Molecular Formula",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_formula"
+        },
+        {
+          "name": "Molecular Weight",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "molecular_weight",
+          "allowed_values": "g/mol"
+        },
+        {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
+          "name": "Physical Form / State",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "physical_form_state",
+          "allowed_values": [
+            "Solid",
+            "Liquid",
+            "Gas",
+            "Powder",
+            "Crystal",
+            "Solution",
+            "Gel",
+            "Paste"
+          ]
+        },
+        {
+          "name": "Grade",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_grade",
+          "allowed_values": [
+            "Reagent",
+            "ACS",
+            "USP",
+            "HPLC",
+            "LC-MS",
+            "Anhydrous",
+            "Technical",
+            "Molecular biology"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_chem",
+          "multi_select": true,
+          "allowed_values": [
+            "Room Temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "Desiccated",
+            "Protected from Light"
+          ]
+        },
+        {
+          "name": "Hazard / GHS classification",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "hazard_ghs",
+          "multi_select": true,
+          "allowed_values": [
+            "Flammable",
+            "Corrosive",
+            "Toxic",
+            "Oxidizer",
+            "Irritant",
+            "Environmental Hazard",
+            "Health Hazard",
+            "Explosive",
+            "Non-Hazardous"
+          ]
+        },
+        {
+          "name": "Appearance / Color",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_appearance_color"
+        },
+        {
+          "name": "Purity analysis method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_analysis_method",
+          "allowed_values": [
+            "GC",
+            "HPLC",
+            "qNMR",
+            "Titration",
+            "LC-MS"
+          ]
+        }
+      ]
+    },
+    "custom_med_chem_synthesis": {
+      "label": "Custom / med-chem synthesis",
+      "form": "service",
+      "table_name": "CUSTOM_MED_CHEM_SYNTHESIS_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    },
+    "analytical_chemistry": {
+      "label": "Analytical chemistry",
+      "form": "service",
+      "table_name": "ANALYTICAL_CHEMISTRY_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    },
+    "chromatography_purification": {
+      "label": "Chromatography & purification",
+      "form": "service",
+      "table_name": "CHROMATOGRAPHY_PURIFICATION_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    },
+    "physical_structural_analysis": {
+      "label": "Physical / structural analysis",
+      "form": "service",
+      "table_name": "PHYSICAL_STRUCTURAL_ANALYSIS_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    }
+  }
+}

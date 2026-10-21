@@ -1,0 +1,845 @@
+{
+  "l2_id": "animal_biospecimens",
+  "l2_label": "Animal Biospecimens",
+  "schema_name": "ANIMAL_BIOSPECIMENS",
+  "l2_fields": [
+    {
+      "name": "Species",
+      "type": "picklist",
+      "required": true,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "species_biospecimen",
+      "allowed_values": [
+        "Mouse",
+        "Rat",
+        "Dog",
+        "Non-human primate",
+        "Rabbit",
+        "Pig",
+        "Bovine",
+        "Other"
+      ]
+    },
+    {
+      "name": "IACUC / animal-welfare consent",
+      "type": "text",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "labeled_iacuc_consent"
+    }
+  ],
+  "l3_nodes": {
+    "animal_tissue": {
+      "label": "Animal Tissue",
+      "form": "product",
+      "table_name": "ANIMAL_TISSUE_SPEC",
+      "fields": [
+        {
+          "name": "Anatomical site / tissue type",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_anatomical_site"
+        },
+        {
+          "name": "Derivative / extract type",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "derivative_extract_type",
+          "allowed_values": [
+            "Intact tissue",
+            "gDNA",
+            "Total RNA",
+            "cDNA",
+            "Protein lysate",
+            "TMA"
+          ]
+        },
+        {
+          "name": "Sample size / amount",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "sample_size_amount",
+          "allowed_values": "mg or sections"
+        },
+        {
+          "name": "Format / preservation",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_preservation_biospecimen",
+          "allowed_values": [
+            "FFPE",
+            "Fresh frozen",
+            "OCT",
+            "Cryopreserved",
+            "Fresh"
+          ]
+        },
+        {
+          "name": "Shipping Temperature",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "shipping_temperature_biospecimen",
+          "allowed_values": [
+            "Ambient",
+            "Ice pack",
+            "Dry ice",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_biospecimen",
+          "allowed_values": [
+            "Room temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Strain",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "animal_strain"
+        },
+        {
+          "name": "Disease / model state",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_disease_model_state"
+        },
+        {
+          "name": "Sex",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sex",
+          "allowed_values": [
+            "Male",
+            "Female",
+            "Mixed (pooled)",
+            "Not specified"
+          ]
+        },
+        {
+          "name": "Age",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "donor_age",
+          "allowed_values": "weeks, months or years"
+        },
+        {
+          "name": "Individual vs Pooled",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "individual_pooled",
+          "allowed_values": [
+            "Individual",
+            "Pooled"
+          ]
+        }
+      ]
+    },
+    "animal_blood_biofluids": {
+      "label": "Animal Blood & Biofluids",
+      "form": "product",
+      "table_name": "ANIMAL_BLOOD_BIOFLUIDS_SPEC",
+      "fields": [
+        {
+          "name": "Matrix",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specimen_matrix",
+          "allowed_values": [
+            "Plasma",
+            "Serum",
+            "Whole blood",
+            "Urine",
+            "CSF",
+            "Other"
+          ]
+        },
+        {
+          "name": "Anticoagulant / additive",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "anticoagulant",
+          "allowed_values": [
+            "K2 EDTA",
+            "K3 EDTA",
+            "Lithium heparin",
+            "Sodium heparin",
+            "Sodium citrate",
+            "ACD",
+            "None"
+          ]
+        },
+        {
+          "name": "Volume",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "volume_ml",
+          "allowed_values": "mL"
+        },
+        {
+          "name": "Processing / finishing",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "processing_finishing",
+          "multi_select": true,
+          "allowed_values": [
+            "Single-spin",
+            "Double-spin",
+            "Sterile-filtered",
+            "Heat-inactivated",
+            "Lyophilized"
+          ]
+        },
+        {
+          "name": "Format / preservation",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_preservation_biospecimen",
+          "allowed_values": [
+            "FFPE",
+            "Fresh frozen",
+            "OCT",
+            "Cryopreserved",
+            "Fresh"
+          ]
+        },
+        {
+          "name": "Shipping Temperature",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "shipping_temperature_biospecimen",
+          "allowed_values": [
+            "Ambient",
+            "Ice pack",
+            "Dry ice",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_biospecimen",
+          "allowed_values": [
+            "Room temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Strain",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "animal_strain"
+        },
+        {
+          "name": "Disease / model state",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_disease_model_state"
+        },
+        {
+          "name": "Sex",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sex",
+          "allowed_values": [
+            "Male",
+            "Female",
+            "Mixed (pooled)",
+            "Not specified"
+          ]
+        },
+        {
+          "name": "Age",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "donor_age",
+          "allowed_values": "weeks, months or years"
+        },
+        {
+          "name": "Individual vs Pooled",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "individual_pooled",
+          "allowed_values": [
+            "Individual",
+            "Pooled"
+          ]
+        }
+      ]
+    },
+    "animal_cells_pbmcs": {
+      "label": "Animal Cells & PBMCs",
+      "form": "product",
+      "table_name": "ANIMAL_CELLS_PBMCS_SPEC",
+      "fields": [
+        {
+          "name": "Cell count",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "cell_count",
+          "allowed_values": "cells"
+        },
+        {
+          "name": "Viability %",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "viability_pct",
+          "allowed_values": "%"
+        },
+        {
+          "name": "Isolation method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "isolation_method_animal",
+          "allowed_values": [
+            "Ficoll",
+            "Magnetic bead",
+            "Flow sorting"
+          ]
+        },
+        {
+          "name": "Format / preservation",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_preservation_biospecimen",
+          "allowed_values": [
+            "FFPE",
+            "Fresh frozen",
+            "OCT",
+            "Cryopreserved",
+            "Fresh"
+          ]
+        },
+        {
+          "name": "Shipping Temperature",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "shipping_temperature_biospecimen",
+          "allowed_values": [
+            "Ambient",
+            "Ice pack",
+            "Dry ice",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_biospecimen",
+          "allowed_values": [
+            "Room temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Strain",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "animal_strain"
+        },
+        {
+          "name": "Disease / model state",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_disease_model_state"
+        },
+        {
+          "name": "Sex",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sex",
+          "allowed_values": [
+            "Male",
+            "Female",
+            "Mixed (pooled)",
+            "Not specified"
+          ]
+        },
+        {
+          "name": "Age",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "donor_age",
+          "allowed_values": "weeks, months or years"
+        },
+        {
+          "name": "Individual vs Pooled",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "individual_pooled",
+          "allowed_values": [
+            "Individual",
+            "Pooled"
+          ]
+        }
+      ]
+    },
+    "animal_primary_cells": {
+      "label": "Animal Primary Cells",
+      "form": "product",
+      "table_name": "ANIMAL_PRIMARY_CELLS_SPEC",
+      "fields": [
+        {
+          "name": "Viability %",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "viability_pct",
+          "allowed_values": "%"
+        },
+        {
+          "name": "Passage number",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "passage_number",
+          "allowed_values": "passage"
+        },
+        {
+          "name": "Format / preservation",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_preservation_biospecimen",
+          "allowed_values": [
+            "FFPE",
+            "Fresh frozen",
+            "OCT",
+            "Cryopreserved",
+            "Fresh"
+          ]
+        },
+        {
+          "name": "Shipping Temperature",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "shipping_temperature_biospecimen",
+          "allowed_values": [
+            "Ambient",
+            "Ice pack",
+            "Dry ice",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_biospecimen",
+          "allowed_values": [
+            "Room temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Strain",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "animal_strain"
+        },
+        {
+          "name": "Disease / model state",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_disease_model_state"
+        },
+        {
+          "name": "Sex",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sex",
+          "allowed_values": [
+            "Male",
+            "Female",
+            "Mixed (pooled)",
+            "Not specified"
+          ]
+        },
+        {
+          "name": "Age",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "donor_age",
+          "allowed_values": "weeks, months or years"
+        },
+        {
+          "name": "Individual vs Pooled",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "individual_pooled",
+          "allowed_values": [
+            "Individual",
+            "Pooled"
+          ]
+        }
+      ]
+    },
+    "animal_stem_cells_ipscs": {
+      "label": "Animal Stem Cells / iPSCs",
+      "form": "product",
+      "table_name": "ANIMAL_STEM_CELLS_IPSCS_SPEC",
+      "fields": [
+        {
+          "name": "Viability %",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "viability_pct",
+          "allowed_values": "%"
+        },
+        {
+          "name": "Karyotype",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_karyotype"
+        },
+        {
+          "name": "Characterization markers",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_characterization_markers"
+        },
+        {
+          "name": "Reprogramming method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "reprogramming_method",
+          "allowed_values": [
+            "Retroviral",
+            "Lentiviral",
+            "Sendai",
+            "Episomal",
+            "mRNA"
+          ]
+        },
+        {
+          "name": "Format / preservation",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_preservation_biospecimen",
+          "allowed_values": [
+            "FFPE",
+            "Fresh frozen",
+            "OCT",
+            "Cryopreserved",
+            "Fresh"
+          ]
+        },
+        {
+          "name": "Shipping Temperature",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "shipping_temperature_biospecimen",
+          "allowed_values": [
+            "Ambient",
+            "Ice pack",
+            "Dry ice",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Storage Conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_biospecimen",
+          "allowed_values": [
+            "Room temperature",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2"
+          ]
+        },
+        {
+          "name": "Strain",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "animal_strain"
+        },
+        {
+          "name": "Disease / model state",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_disease_model_state"
+        },
+        {
+          "name": "Sex",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sex",
+          "allowed_values": [
+            "Male",
+            "Female",
+            "Mixed (pooled)",
+            "Not specified"
+          ]
+        },
+        {
+          "name": "Age",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "donor_age",
+          "allowed_values": "weeks, months or years"
+        },
+        {
+          "name": "Individual vs Pooled",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "individual_pooled",
+          "allowed_values": [
+            "Individual",
+            "Pooled"
+          ]
+        }
+      ]
+    },
+    "animal_custom_prospective_collection": {
+      "label": "Animal Custom / prospective collection",
+      "form": "service",
+      "table_name": "ANIMAL_CUSTOM_PROSPECTIVE_COLLECTION_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    },
+    "animal_biobanking_storage": {
+      "label": "Animal Biobanking & storage",
+      "form": "service",
+      "table_name": "ANIMAL_BIOBANKING_STORAGE_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    },
+    "animal_sample_processing_histology_ffpe_dissociation": {
+      "label": "Animal Sample processing (histology / FFPE / dissociation)",
+      "form": "service",
+      "table_name": "ANIMAL_SAMPLE_PROCESSING_HISTOLOGY_FFPE_DISSOCIATION_SPEC",
+      "fields": [
+        {
+          "name": "Protocol / scope",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_protocol_scope"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround",
+          "allowed_values": "days or weeks"
+        },
+        {
+          "name": "Capacity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_capacity"
+        },
+        {
+          "name": "Deliverable",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_deliverable"
+        }
+      ]
+    }
+  }
+}

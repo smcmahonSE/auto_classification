@@ -1,0 +1,31 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+gene_synthesis,Category (L2/L3),200,200,100.0,0,0,0
+gene_synthesis,Category UNSPSC,200,0,0.0,200,0,0
+gene_synthesis,Codon optimization,200,0,0.0,200,0,0
+gene_synthesis,Currency,200,0,0.0,200,0,0
+gene_synthesis,Description,200,185,92.5,15,0,0
+gene_synthesis,Document links,200,0,0.0,200,0,0
+gene_synthesis,Format,200,4,2.0,196,0,0
+gene_synthesis,Image URL,200,0,0.0,200,0,0
+gene_synthesis,Inventory,200,0,0.0,200,0,0
+gene_synthesis,Lead time (days),200,0,0.0,200,0,0
+gene_synthesis,Length (bp),200,0,0.0,200,0,0
+gene_synthesis,Listing UNSPSC,200,0,0.0,200,0,0
+gene_synthesis,Listing type,200,200,100.0,0,0,0
+gene_synthesis,Manufacturer SKU,200,0,0.0,200,0,0
+gene_synthesis,Manufacturer name,200,0,0.0,200,0,0
+gene_synthesis,Name,200,200,100.0,0,0,0
+gene_synthesis,Price per unit,200,199,99.5,1,0,0
+gene_synthesis,Pricing model,200,200,100.0,0,0,0
+gene_synthesis,Product / service URL,200,0,0.0,200,0,0
+gene_synthesis,Product type,200,0,0.0,200,0,0
+gene_synthesis,Quantity,200,0,0.0,200,0,0
+gene_synthesis,Requester UNSPSC,200,0,0.0,200,0,0
+gene_synthesis,Requester commodity code,200,0,0.0,200,0,0
+gene_synthesis,Sequence verification,200,0,0.0,200,0,0
+gene_synthesis,Ship from,200,0,0.0,200,0,0
+gene_synthesis,Supplier SKU,200,0,0.0,200,0,0
+gene_synthesis,Turnaround,200,0,0.0,200,0,0
+gene_synthesis,Unit,200,0,0.0,200,0,0
+gene_synthesis,Unit of measure,200,5,2.5,90,105,0
+gene_synthesis,Vector / cloning,200,0,0.0,200,0,0

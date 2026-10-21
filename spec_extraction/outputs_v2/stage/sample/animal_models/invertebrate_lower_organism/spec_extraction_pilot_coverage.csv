@@ -1,0 +1,38 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+invertebrate_lower_organism,Availability status,100,0,0.0,100,0,0
+invertebrate_lower_organism,Balancer,100,0,0.0,100,0,0
+invertebrate_lower_organism,Category (L2/L3),100,100,100.0,0,0,0
+invertebrate_lower_organism,Category UNSPSC,100,0,0.0,100,0,0
+invertebrate_lower_organism,Chromosomes affected,100,0,0.0,100,0,0
+invertebrate_lower_organism,Currency,100,0,0.0,100,0,0
+invertebrate_lower_organism,Delivery form,100,0,0.0,100,0,0
+invertebrate_lower_organism,Description,100,22,22.0,78,0,0
+invertebrate_lower_organism,Document links,100,0,0.0,100,0,0
+invertebrate_lower_organism,Donor / made by,100,0,0.0,100,0,0
+invertebrate_lower_organism,Genotype,100,0,0.0,100,0,0
+invertebrate_lower_organism,Image URL,100,0,0.0,100,0,0
+invertebrate_lower_organism,Inventory,100,0,0.0,100,0,0
+invertebrate_lower_organism,Lead time (days),100,0,0.0,100,0,0
+invertebrate_lower_organism,Licensing / conditions of use,100,0,0.0,100,0,0
+invertebrate_lower_organism,Listing UNSPSC,100,0,0.0,100,0,0
+invertebrate_lower_organism,Listing type,100,100,100.0,0,0,0
+invertebrate_lower_organism,Manufacturer SKU,100,0,0.0,100,0,0
+invertebrate_lower_organism,Manufacturer name,100,0,0.0,100,0,0
+invertebrate_lower_organism,Model type / genetic status,100,3,3.0,97,0,0
+invertebrate_lower_organism,Mutagen,100,0,0.0,100,0,0
+invertebrate_lower_organism,Name,100,100,100.0,0,0,0
+invertebrate_lower_organism,Price per unit,100,98,98.0,2,0,0
+invertebrate_lower_organism,Pricing model,100,100,100.0,0,0,0
+invertebrate_lower_organism,Product / service URL,100,0,0.0,100,0,0
+invertebrate_lower_organism,Production location / origin,100,0,0.0,100,0,0
+invertebrate_lower_organism,Quantity,100,0,0.0,100,0,0
+invertebrate_lower_organism,Requester UNSPSC,100,0,0.0,100,0,0
+invertebrate_lower_organism,Requester commodity code,100,0,0.0,100,0,0
+invertebrate_lower_organism,Research / therapeutic area,100,0,0.0,100,0,0
+invertebrate_lower_organism,Ship from,100,0,0.0,100,0,0
+invertebrate_lower_organism,Species,100,6,6.0,93,1,0
+invertebrate_lower_organism,Stock / strain number,100,0,0.0,100,0,0
+invertebrate_lower_organism,Supplier SKU,100,0,0.0,100,0,0
+invertebrate_lower_organism,Times outcrossed,100,0,0.0,100,0,0
+invertebrate_lower_organism,Unit,100,0,0.0,100,0,0
+invertebrate_lower_organism,Unit of measure,100,2,2.0,95,3,0

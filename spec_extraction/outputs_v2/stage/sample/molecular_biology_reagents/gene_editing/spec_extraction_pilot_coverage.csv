@@ -1,0 +1,32 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+gene_editing,Category (L2/L3),200,200,100.0,0,0,0
+gene_editing,Category UNSPSC,200,0,0.0,200,0,0
+gene_editing,Currency,200,0,0.0,200,0,0
+gene_editing,Delivery format,200,1,0.5,199,0,0
+gene_editing,Description,200,198,99.0,2,0,0
+gene_editing,Document links,200,0,0.0,200,0,0
+gene_editing,Edit type,200,190,95.0,10,0,0
+gene_editing,Image URL,200,0,0.0,200,0,0
+gene_editing,Inventory,200,0,0.0,200,0,0
+gene_editing,Lead time (days),200,0,0.0,200,0,0
+gene_editing,Listing UNSPSC,200,0,0.0,200,0,0
+gene_editing,Listing type,200,200,100.0,0,0,0
+gene_editing,Manufacturer SKU,200,0,0.0,200,0,0
+gene_editing,Manufacturer name,200,0,0.0,200,0,0
+gene_editing,Name,200,200,100.0,0,0,0
+gene_editing,Nuclease type,200,3,1.5,197,0,0
+gene_editing,Price per unit,200,198,99.0,2,0,0
+gene_editing,Pricing model,200,200,100.0,0,0,0
+gene_editing,Product / service URL,200,0,0.0,200,0,0
+gene_editing,Purification,200,1,0.5,199,0,0
+gene_editing,Quantity,200,0,0.0,200,0,0
+gene_editing,Requester UNSPSC,200,0,0.0,200,0,0
+gene_editing,Requester commodity code,200,0,0.0,200,0,0
+gene_editing,Ship from,200,0,0.0,200,0,0
+gene_editing,Supplier SKU,200,0,0.0,200,0,0
+gene_editing,Target Gene / Region,200,0,0.0,200,0,0
+gene_editing,Target Species,200,193,96.5,7,0,0
+gene_editing,Unit,200,0,0.0,200,0,0
+gene_editing,Unit of measure,200,192,96.0,8,0,0
+gene_editing,gRNA format,200,1,0.5,199,0,0
+gene_editing,gRNA modifications,200,0,0.0,200,0,0

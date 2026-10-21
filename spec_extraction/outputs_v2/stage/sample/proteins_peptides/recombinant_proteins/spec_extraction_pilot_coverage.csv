@@ -1,0 +1,35 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+recombinant_proteins,Bioactivity,150,0,0.0,150,0,0
+recombinant_proteins,Category (L2/L3),150,150,100.0,0,0,0
+recombinant_proteins,Category UNSPSC,150,0,0.0,150,0,0
+recombinant_proteins,Currency,150,0,0.0,150,0,0
+recombinant_proteins,Description,150,141,94.0,9,0,0
+recombinant_proteins,Document links,150,2,1.33,148,0,0
+recombinant_proteins,Endotoxin level,150,1,0.67,149,0,0
+recombinant_proteins,Expression system,150,27,18.0,117,6,0
+recombinant_proteins,Form,150,13,8.67,137,0,0
+recombinant_proteins,Grade,150,2,1.33,148,0,0
+recombinant_proteins,Image URL,150,0,0.0,150,0,0
+recombinant_proteins,Inventory,150,0,0.0,150,0,0
+recombinant_proteins,Lead time (days),150,0,0.0,150,0,0
+recombinant_proteins,Listing UNSPSC,150,0,0.0,150,0,0
+recombinant_proteins,Listing type,150,150,100.0,0,0,0
+recombinant_proteins,Manufacturer SKU,150,0,0.0,150,0,0
+recombinant_proteins,Manufacturer name,150,0,0.0,150,0,0
+recombinant_proteins,Molecular weight,150,13,8.67,137,0,0
+recombinant_proteins,Name,150,150,100.0,0,0,0
+recombinant_proteins,Price per unit,150,135,90.0,15,0,0
+recombinant_proteins,Pricing model,150,150,100.0,0,0,0
+recombinant_proteins,Product / service URL,150,2,1.33,148,0,0
+recombinant_proteins,Purity,150,21,14.0,129,0,0
+recombinant_proteins,Quantity,150,0,0.0,150,0,0
+recombinant_proteins,Requester UNSPSC,150,0,0.0,150,0,0
+recombinant_proteins,Requester commodity code,150,0,0.0,150,0,0
+recombinant_proteins,Sequence / region,150,0,0.0,150,0,0
+recombinant_proteins,Ship from,150,0,0.0,150,0,0
+recombinant_proteins,Species,150,124,82.67,16,10,0
+recombinant_proteins,Storage / reconstitution,150,28,18.67,116,6,0
+recombinant_proteins,Supplier SKU,150,0,0.0,150,0,0
+recombinant_proteins,Tag,150,30,20.0,120,0,0
+recombinant_proteins,Unit,150,0,0.0,150,0,0
+recombinant_proteins,Unit of measure,150,16,10.67,133,1,0

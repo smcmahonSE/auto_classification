@@ -1,0 +1,49 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+impurity_el_testing,Category (L2/L3),1233,1233,100.0,0,0,0
+impurity_el_testing,Category UNSPSC,1233,0,0.0,1233,0,0
+impurity_el_testing,Controlled substances accepted,1233,5,0.41,1228,0,0
+impurity_el_testing,Currency,1233,5,0.41,1228,0,0
+impurity_el_testing,Deliverables,1233,15,1.22,1218,0,0
+impurity_el_testing,Description,1233,161,13.06,1072,0,0
+impurity_el_testing,Development stage,1233,7,0.57,1226,0,0
+impurity_el_testing,Document links,1233,1,0.08,1232,0,0
+impurity_el_testing,Dosage form,1233,1,0.08,1232,0,0
+impurity_el_testing,E&L analytical technique,1233,17,1.38,1216,0,0
+impurity_el_testing,E&L component type,1233,0,0.0,1233,0,0
+impurity_el_testing,E&L standard,1233,1,0.08,1232,0,0
+impurity_el_testing,E&L study type,1233,1,0.08,1232,0,0
+impurity_el_testing,Elemental impurity chapter,1233,0,0.0,1233,0,0
+impurity_el_testing,Expedited turnaround available,1233,5,0.41,1228,0,0
+impurity_el_testing,Extraction technique,1233,1,0.08,1232,0,0
+impurity_el_testing,GMP status,1233,3,0.24,1229,1,0
+impurity_el_testing,Highly potent compounds accepted,1233,5,0.41,1228,0,0
+impurity_el_testing,Image URL,1233,0,0.0,1233,0,0
+impurity_el_testing,Impurity class,1233,8,0.65,1225,0,0
+impurity_el_testing,Impurity guideline,1233,0,0.0,1233,0,0
+impurity_el_testing,Inventory,1233,0,0.0,1233,0,0
+impurity_el_testing,Lead time (days),1233,0,0.0,1233,0,0
+impurity_el_testing,Listing UNSPSC,1233,0,0.0,1233,0,0
+impurity_el_testing,Listing type,1233,1233,100.0,0,0,0
+impurity_el_testing,Manufacturer SKU,1233,0,0.0,1233,0,0
+impurity_el_testing,Manufacturer name,1233,0,0.0,1233,0,0
+impurity_el_testing,Material tested,1233,2,0.16,1231,0,0
+impurity_el_testing,Method source,1233,8,0.65,1225,0,0
+impurity_el_testing,Name,1233,1233,100.0,0,0,0
+impurity_el_testing,Nitrosamine LOQ,1233,0,0.0,1233,0,0
+impurity_el_testing,Pharmacopeia,1233,0,0.0,1233,0,0
+impurity_el_testing,Price per unit,1233,1229,99.68,4,0,0
+impurity_el_testing,Pricing model,1233,1233,100.0,0,0,0
+impurity_el_testing,Product / service URL,1233,1,0.08,1232,0,0
+impurity_el_testing,Product modality,1233,3,0.24,1230,0,0
+impurity_el_testing,Quantity,1233,0,0.0,1233,0,0
+impurity_el_testing,Requester UNSPSC,1233,0,0.0,1233,0,0
+impurity_el_testing,Requester commodity code,1233,0,0.0,1233,0,0
+impurity_el_testing,Safety threshold applied,1233,0,0.0,1233,0,0
+impurity_el_testing,Ship from,1233,0,0.0,1233,0,0
+impurity_el_testing,Standard turnaround,1233,0,0.0,1233,0,0
+impurity_el_testing,Supplier SKU,1233,0,0.0,1233,0,0
+impurity_el_testing,Target regulatory agency,1233,5,0.41,1228,0,0
+impurity_el_testing,Toxicological risk assessment,1233,5,0.41,1228,0,0
+impurity_el_testing,Unit,1233,0,0.0,1233,0,0
+impurity_el_testing,Unit of measure,1233,53,4.3,1167,13,0
+impurity_el_testing,Unknown structure elucidation,1233,5,0.41,1228,0,0

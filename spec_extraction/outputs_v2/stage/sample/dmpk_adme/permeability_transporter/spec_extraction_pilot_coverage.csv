@@ -1,0 +1,54 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+permeability_transporter,Analytical platform,20000,39,0.19,19961,0,0
+permeability_transporter,Buffer pH,20000,0,0.0,20000,0,0
+permeability_transporter,Category (L2/L3),20000,20000,100.0,0,0,0
+permeability_transporter,Category UNSPSC,20000,0,0.0,20000,0,0
+permeability_transporter,Classification output,20000,0,0.0,20000,0,0
+permeability_transporter,Compound amount required,20000,0,0.0,20000,0,0
+permeability_transporter,Compound format,20000,5610,28.05,14390,0,0
+permeability_transporter,Currency,20000,664,3.32,19332,4,0
+permeability_transporter,Deliverable format,20000,0,0.0,20000,0,0
+permeability_transporter,Description,20000,19433,97.17,567,0,0
+permeability_transporter,Development stage,20000,566,2.83,19434,0,0
+permeability_transporter,Direction,20000,11,0.06,19989,0,0
+permeability_transporter,Document links,20000,2019,10.1,17981,0,0
+permeability_transporter,Efflux inhibitor,20000,76,0.38,19924,0,0
+permeability_transporter,GLP status,20000,258,1.29,19739,3,0
+permeability_transporter,Hepatic uptake assay,20000,1205,6.02,18754,41,0
+permeability_transporter,Image URL,20000,6,0.03,19994,0,0
+permeability_transporter,Incubation time,20000,0,0.0,20000,0,0
+permeability_transporter,Inhibition format,20000,4814,24.07,15186,0,0
+permeability_transporter,Integrity marker,20000,1323,6.62,18677,0,0
+permeability_transporter,Inventory,20000,0,0.0,20000,0,0
+permeability_transporter,Lead time (days),20000,0,0.0,20000,0,0
+permeability_transporter,Listing UNSPSC,20000,0,0.0,20000,0,0
+permeability_transporter,Listing type,20000,20000,100.0,0,0,0
+permeability_transporter,Manufacturer SKU,20000,0,0.0,20000,0,0
+permeability_transporter,Manufacturer name,20000,0,0.0,20000,0,0
+permeability_transporter,Modality supported,20000,637,3.19,19363,0,0
+permeability_transporter,Monolayer age,20000,0,0.0,20000,0,0
+permeability_transporter,Name,20000,20000,100.0,0,0,0
+permeability_transporter,Non-human transporter species,20000,1783,8.91,18217,0,0
+permeability_transporter,Ordering format,20000,0,0.0,20000,0,0
+permeability_transporter,PAMPA type,20000,526,2.63,19474,0,0
+permeability_transporter,Permeability model,20000,173,0.86,19827,0,0
+permeability_transporter,Permeability readouts,20000,73,0.36,19927,0,0
+permeability_transporter,Price per unit,20000,17933,89.66,2067,0,0
+permeability_transporter,Pricing model,20000,20000,100.0,0,0,0
+permeability_transporter,Probe substrate,20000,0,0.0,20000,0,0
+permeability_transporter,Product / service URL,20000,2019,10.1,17981,0,0
+permeability_transporter,Quantity,20000,0,0.0,20000,0,0
+permeability_transporter,Regulatory guidance,20000,12,0.06,19988,0,0
+permeability_transporter,Requester UNSPSC,20000,0,0.0,20000,0,0
+permeability_transporter,Requester commodity code,20000,0,0.0,20000,0,0
+permeability_transporter,Ship from,20000,0,0.0,20000,0,0
+permeability_transporter,Species,20000,4714,23.57,15286,0,0
+permeability_transporter,Study direction,20000,8486,42.43,11514,0,0
+permeability_transporter,Supplier SKU,20000,0,0.0,20000,0,0
+permeability_transporter,Test concentration,20000,0,0.0,20000,0,0
+permeability_transporter,Transporter readouts,20000,6082,30.41,13918,0,0
+permeability_transporter,Transporter test system,20000,338,1.69,19662,0,0
+permeability_transporter,Transporters,20000,545,2.73,19455,0,0
+permeability_transporter,Turnaround,20000,0,0.0,20000,0,0
+permeability_transporter,Unit,20000,0,0.0,20000,0,0
+permeability_transporter,Unit of measure,20000,1968,9.84,17645,387,0

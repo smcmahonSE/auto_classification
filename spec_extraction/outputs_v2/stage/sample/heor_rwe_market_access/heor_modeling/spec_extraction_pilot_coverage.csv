@@ -1,0 +1,42 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+heor_modeling,AI-assisted methods,1232,11,0.89,1221,0,0
+heor_modeling,Category (L2/L3),1232,1232,100.0,0,0,0
+heor_modeling,Category UNSPSC,1232,0,0.0,1232,0,0
+heor_modeling,Currency,1232,3,0.24,1229,0,0
+heor_modeling,Deliverables,1232,0,0.0,1232,0,0
+heor_modeling,Description,1232,254,20.62,978,0,0
+heor_modeling,Development stage,1232,3,0.24,1229,0,0
+heor_modeling,Document links,1232,24,1.95,1208,0,0
+heor_modeling,Economic model type,1232,58,4.71,1174,0,0
+heor_modeling,Geographic markets covered,1232,65,5.28,1167,0,0
+heor_modeling,Image URL,1232,0,0.0,1232,0,0
+heor_modeling,Interactive model tool,1232,11,0.89,1221,0,0
+heor_modeling,Inventory,1232,0,0.0,1232,0,0
+heor_modeling,Lead time (days),1232,0,0.0,1232,0,0
+heor_modeling,Listing UNSPSC,1232,0,0.0,1232,0,0
+heor_modeling,Listing type,1232,1232,100.0,0,0,0
+heor_modeling,Manufacturer SKU,1232,0,0.0,1232,0,0
+heor_modeling,Manufacturer name,1232,0,0.0,1232,0,0
+heor_modeling,Model build scope,1232,0,0.0,1232,0,0
+heor_modeling,Model structure,1232,0,0.0,1232,0,0
+heor_modeling,Model validation,1232,0,0.0,1232,0,0
+heor_modeling,Name,1232,1232,100.0,0,0,0
+heor_modeling,Peer-reviewed publication support,1232,11,0.89,1221,0,0
+heor_modeling,Price per unit,1232,1219,98.94,13,0,0
+heor_modeling,Pricing model,1232,1232,100.0,0,0,0
+heor_modeling,Product / service URL,1232,24,1.95,1208,0,0
+heor_modeling,Product type supported,1232,2,0.16,1230,0,0
+heor_modeling,Proprietary modeling platform,1232,0,0.0,1232,0,0
+heor_modeling,Quantity,1232,0,0.0,1232,0,0
+heor_modeling,Requester UNSPSC,1232,0,0.0,1232,0,0
+heor_modeling,Requester commodity code,1232,0,0.0,1232,0,0
+heor_modeling,Ship from,1232,0,0.0,1232,0,0
+heor_modeling,Strategic consulting included,1232,11,0.89,1221,0,0
+heor_modeling,Supplier SKU,1232,0,0.0,1232,0,0
+heor_modeling,Survival analysis included,1232,11,0.89,1221,0,0
+heor_modeling,Target HTA body,1232,0,0.0,1232,0,0
+heor_modeling,Target decision maker,1232,24,1.95,1208,0,0
+heor_modeling,Therapeutic areas,1232,5,0.41,1227,0,0
+heor_modeling,Unit,1232,0,0.0,1232,0,0
+heor_modeling,Unit of measure,1232,76,6.17,1137,19,0
+heor_modeling,Utility measurement,1232,0,0.0,1232,0,0

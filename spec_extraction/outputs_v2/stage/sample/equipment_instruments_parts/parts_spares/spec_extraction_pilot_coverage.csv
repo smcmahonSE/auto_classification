@@ -1,0 +1,34 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+parts_spares,Brand / manufacturer,20000,0,0.0,20000,0,0
+parts_spares,Category (L2/L3),20000,20000,100.0,0,0,0
+parts_spares,Category UNSPSC,20000,0,0.0,20000,0,0
+parts_spares,Compatible instruments / modules,20000,0,0.0,20000,0,0
+parts_spares,Condition,20000,1210,6.05,18768,22,0
+parts_spares,Currency,20000,69,0.34,19931,0,0
+parts_spares,Description,20000,18890,94.45,1110,0,0
+parts_spares,Document links,20000,32,0.16,19968,0,0
+parts_spares,Equipment type,20000,3350,16.75,16650,0,0
+parts_spares,Image URL,20000,4,0.02,19996,0,0
+parts_spares,Inventory,20000,0,0.0,20000,0,0
+parts_spares,Lead time (days),20000,0,0.0,20000,0,0
+parts_spares,Listing UNSPSC,20000,0,0.0,20000,0,0
+parts_spares,Listing type,20000,20000,100.0,0,0,0
+parts_spares,Manufacturer SKU,20000,0,0.0,20000,0,0
+parts_spares,Manufacturer name,20000,0,0.0,20000,0,0
+parts_spares,Material,20000,0,0.0,20000,0,0
+parts_spares,Mating part,20000,0,0.0,20000,0,0
+parts_spares,Name,20000,20000,100.0,0,0,0
+parts_spares,OEM part cross-reference,20000,0,0.0,20000,0,0
+parts_spares,OEM vs compatible,20000,233,1.17,19664,103,0
+parts_spares,Part number,20000,0,0.0,20000,0,0
+parts_spares,Performance rating,20000,0,0.0,20000,0,0
+parts_spares,Price per unit,20000,19954,99.77,46,0,0
+parts_spares,Pricing model,20000,20000,100.0,0,0,0
+parts_spares,Product / service URL,20000,32,0.16,19968,0,0
+parts_spares,Quantity,20000,0,0.0,20000,0,0
+parts_spares,Requester UNSPSC,20000,0,0.0,20000,0,0
+parts_spares,Requester commodity code,20000,0,0.0,20000,0,0
+parts_spares,Ship from,20000,0,0.0,20000,0,0
+parts_spares,Supplier SKU,20000,0,0.0,20000,0,0
+parts_spares,Unit,20000,0,0.0,20000,0,0
+parts_spares,Unit of measure,20000,2771,13.86,16452,777,0

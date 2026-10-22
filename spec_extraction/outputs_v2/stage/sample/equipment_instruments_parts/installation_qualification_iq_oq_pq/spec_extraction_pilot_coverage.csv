@@ -1,0 +1,30 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+installation_qualification_iq_oq_pq,Brand / manufacturer,2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Capacity,2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Category (L2/L3),2108,2108,100.0,0,0,0
+installation_qualification_iq_oq_pq,Category UNSPSC,2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Currency,2108,2,0.09,2106,0,0
+installation_qualification_iq_oq_pq,Deliverable,2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Description,2108,331,15.7,1777,0,0
+installation_qualification_iq_oq_pq,Document links,2108,17,0.81,2091,0,0
+installation_qualification_iq_oq_pq,Equipment type,2108,29,1.38,2079,0,0
+installation_qualification_iq_oq_pq,Image URL,2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Inventory,2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Lead time (days),2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Listing UNSPSC,2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Listing type,2108,2108,100.0,0,0,0
+installation_qualification_iq_oq_pq,Manufacturer SKU,2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Manufacturer name,2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Name,2108,2108,100.0,0,0,0
+installation_qualification_iq_oq_pq,Price per unit,2108,2101,99.67,7,0,0
+installation_qualification_iq_oq_pq,Pricing model,2108,2108,100.0,0,0,0
+installation_qualification_iq_oq_pq,Product / service URL,2108,17,0.81,2091,0,0
+installation_qualification_iq_oq_pq,Protocol / scope,2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Quantity,2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Requester UNSPSC,2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Requester commodity code,2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Ship from,2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Supplier SKU,2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Turnaround,2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Unit,2108,0,0.0,2108,0,0
+installation_qualification_iq_oq_pq,Unit of measure,2108,65,3.08,1988,55,0

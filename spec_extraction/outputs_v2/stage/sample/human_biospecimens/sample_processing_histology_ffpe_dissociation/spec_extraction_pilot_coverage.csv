@@ -1,0 +1,39 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+sample_processing_histology_ffpe_dissociation,Accreditations,8877,322,3.63,8555,0,0
+sample_processing_histology_ffpe_dissociation,Category (L2/L3),8877,8877,100.0,0,0,0
+sample_processing_histology_ffpe_dissociation,Category UNSPSC,8877,0,0.0,8877,0,0
+sample_processing_histology_ffpe_dissociation,Currency,8877,1,0.01,8876,0,0
+sample_processing_histology_ffpe_dissociation,Custom antibody optimization,8877,898,10.12,7979,0,0
+sample_processing_histology_ffpe_dissociation,Deliverables,8877,0,0.0,8877,0,0
+sample_processing_histology_ffpe_dissociation,Description,8877,173,1.95,8704,0,0
+sample_processing_histology_ffpe_dissociation,Document links,8877,12,0.14,8865,0,0
+sample_processing_histology_ffpe_dissociation,Embedding types,8877,8693,97.93,184,0,0
+sample_processing_histology_ffpe_dissociation,Fixation requirements,8877,0,0.0,8877,0,0
+sample_processing_histology_ffpe_dissociation,Image URL,8877,8,0.09,8869,0,0
+sample_processing_histology_ffpe_dissociation,Image analysis software,8877,320,3.6,8557,0,0
+sample_processing_histology_ffpe_dissociation,Inbound shipping conditions,8877,32,0.36,8845,0,0
+sample_processing_histology_ffpe_dissociation,Input sample types,8877,768,8.65,8109,0,0
+sample_processing_histology_ffpe_dissociation,Inventory,8877,0,0.0,8877,0,0
+sample_processing_histology_ffpe_dissociation,Lead time (days),8877,0,0.0,8877,0,0
+sample_processing_histology_ffpe_dissociation,Listing UNSPSC,8877,0,0.0,8877,0,0
+sample_processing_histology_ffpe_dissociation,Listing type,8877,8877,100.0,0,0,0
+sample_processing_histology_ffpe_dissociation,Manufacturer SKU,8877,0,0.0,8877,0,0
+sample_processing_histology_ffpe_dissociation,Manufacturer name,8877,0,0.0,8877,0,0
+sample_processing_histology_ffpe_dissociation,Name,8877,8877,100.0,0,0,0
+sample_processing_histology_ffpe_dissociation,Nucleic acid extraction,8877,46,0.52,8831,0,0
+sample_processing_histology_ffpe_dissociation,Post-thaw viability,8877,0,0.0,8877,0,0
+sample_processing_histology_ffpe_dissociation,Price per unit,8877,8869,99.91,8,0,0
+sample_processing_histology_ffpe_dissociation,Pricing model,8877,8877,100.0,0,0,0
+sample_processing_histology_ffpe_dissociation,Product / service URL,8877,12,0.14,8865,0,0
+sample_processing_histology_ffpe_dissociation,Quantity,8877,0,0.0,8877,0,0
+sample_processing_histology_ffpe_dissociation,Requester UNSPSC,8877,0,0.0,8877,0,0
+sample_processing_histology_ffpe_dissociation,Requester commodity code,8877,0,0.0,8877,0,0
+sample_processing_histology_ffpe_dissociation,Services offered,8877,34,0.38,8843,0,0
+sample_processing_histology_ffpe_dissociation,Ship from,8877,0,0.0,8877,0,0
+sample_processing_histology_ffpe_dissociation,Slide archiving,8877,898,10.12,7979,0,0
+sample_processing_histology_ffpe_dissociation,Special stains,8877,322,3.63,8555,0,0
+sample_processing_histology_ffpe_dissociation,Supplier SKU,8877,0,0.0,8877,0,0
+sample_processing_histology_ffpe_dissociation,Tissue dissociation,8877,898,10.12,7979,0,0
+sample_processing_histology_ffpe_dissociation,Turnaround,8877,0,0.0,8877,0,0
+sample_processing_histology_ffpe_dissociation,Unit,8877,0,0.0,8877,0,0
+sample_processing_histology_ffpe_dissociation,Unit of measure,8877,3987,44.91,4464,426,0

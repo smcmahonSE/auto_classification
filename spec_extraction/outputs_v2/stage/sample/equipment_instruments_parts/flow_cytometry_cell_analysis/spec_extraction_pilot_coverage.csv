@@ -1,0 +1,44 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+flow_cytometry_cell_analysis,Acquisition rate,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Brand / manufacturer,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Category (L2/L3),166,166,100.0,0,0,0
+flow_cytometry_cell_analysis,Category UNSPSC,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Certifications,166,1,0.6,165,0,0
+flow_cytometry_cell_analysis,Compliance / data integrity,166,1,0.6,165,0,0
+flow_cytometry_cell_analysis,Condition,166,37,22.29,129,0,0
+flow_cytometry_cell_analysis,Currency,166,1,0.6,165,0,0
+flow_cytometry_cell_analysis,Description,166,125,75.3,41,0,0
+flow_cytometry_cell_analysis,Dimensions (W × D × H),166,1,0.6,165,0,0
+flow_cytometry_cell_analysis,Document links,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Equipment type,166,34,20.48,132,0,0
+flow_cytometry_cell_analysis,Form factor,166,25,15.06,137,4,0
+flow_cytometry_cell_analysis,Image URL,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Inventory,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Lasers,166,1,0.6,165,0,0
+flow_cytometry_cell_analysis,Lead time (days),166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Listing UNSPSC,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Listing type,166,166,100.0,0,0,0
+flow_cytometry_cell_analysis,Manufacturer SKU,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Manufacturer name,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Model / configuration,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Name,166,166,100.0,0,0,0
+flow_cytometry_cell_analysis,Parameters / detectors,166,1,0.6,165,0,0
+flow_cytometry_cell_analysis,Power requirements,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Price per unit,166,161,96.99,5,0,0
+flow_cytometry_cell_analysis,Pricing model,166,166,100.0,0,0,0
+flow_cytometry_cell_analysis,Product / service URL,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Product role,166,42,25.3,124,0,0
+flow_cytometry_cell_analysis,Quantity,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Requester UNSPSC,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Requester commodity code,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Sample formats,166,5,3.01,161,0,0
+flow_cytometry_cell_analysis,Sample loader / automation,166,9,5.42,157,0,0
+flow_cytometry_cell_analysis,Ship from,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Small particle detection,166,12,7.23,153,1,0
+flow_cytometry_cell_analysis,Software,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Supplier SKU,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Unit,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Unit of measure,166,42,25.3,96,28,0
+flow_cytometry_cell_analysis,Upgrade path,166,12,7.23,153,1,0
+flow_cytometry_cell_analysis,Warranty / service plan,166,0,0.0,166,0,0
+flow_cytometry_cell_analysis,Weight,166,3,1.81,163,0,0

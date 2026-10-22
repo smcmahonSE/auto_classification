@@ -1,0 +1,44 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+raw_material_testing,Category (L2/L3),594,594,100.0,0,0,0
+raw_material_testing,Category UNSPSC,594,0,0.0,594,0,0
+raw_material_testing,Compendium,594,7,1.18,587,0,0
+raw_material_testing,Controlled substances accepted,594,0,0.0,594,0,0
+raw_material_testing,Currency,594,1,0.17,593,0,0
+raw_material_testing,Deliverables,594,6,1.01,588,0,0
+raw_material_testing,Description,594,79,13.3,515,0,0
+raw_material_testing,Development stage,594,17,2.86,577,0,0
+raw_material_testing,Document links,594,0,0.0,594,0,0
+raw_material_testing,Dosage form,594,2,0.34,592,0,0
+raw_material_testing,Expedited turnaround available,594,0,0.0,594,0,0
+raw_material_testing,Full monograph testing,594,0,0.0,594,0,0
+raw_material_testing,GMP status,594,5,0.84,588,1,0
+raw_material_testing,Highly potent compounds accepted,594,0,0.0,594,0,0
+raw_material_testing,Identity technique,594,2,0.34,592,0,0
+raw_material_testing,Image URL,594,0,0.0,594,0,0
+raw_material_testing,Inventory,594,0,0.0,594,0,0
+raw_material_testing,Lead time (days),594,0,0.0,594,0,0
+raw_material_testing,Listing UNSPSC,594,0,0.0,594,0,0
+raw_material_testing,Listing type,594,594,100.0,0,0,0
+raw_material_testing,Manufacturer SKU,594,0,0.0,594,0,0
+raw_material_testing,Manufacturer name,594,0,0.0,594,0,0
+raw_material_testing,Material category,594,5,0.84,589,0,0
+raw_material_testing,Material tested,594,2,0.34,592,0,0
+raw_material_testing,Method source,594,2,0.34,592,0,0
+raw_material_testing,Name,594,594,100.0,0,0,0
+raw_material_testing,Pharmacopeia,594,7,1.18,587,0,0
+raw_material_testing,Price per unit,594,594,100.0,0,0,0
+raw_material_testing,Pricing model,594,594,100.0,0,0,0
+raw_material_testing,Product / service URL,594,0,0.0,594,0,0
+raw_material_testing,Product modality,594,1,0.17,593,0,0
+raw_material_testing,Quantity,594,0,0.0,594,0,0
+raw_material_testing,Raw material test,594,8,1.35,586,0,0
+raw_material_testing,Requester UNSPSC,594,0,0.0,594,0,0
+raw_material_testing,Requester commodity code,594,0,0.0,594,0,0
+raw_material_testing,Ship from,594,0,0.0,594,0,0
+raw_material_testing,Specification development support,594,0,0.0,594,0,0
+raw_material_testing,Standard turnaround,594,0,0.0,594,0,0
+raw_material_testing,Supplier SKU,594,0,0.0,594,0,0
+raw_material_testing,Target regulatory agency,594,7,1.18,587,0,0
+raw_material_testing,Testing basis,594,2,0.34,592,0,0
+raw_material_testing,Unit,594,0,0.0,594,0,0
+raw_material_testing,Unit of measure,594,32,5.39,547,15,0

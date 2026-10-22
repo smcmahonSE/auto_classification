@@ -1,0 +1,45 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+bioprocess_single_use,Application,449,12,2.67,437,0,0
+bioprocess_single_use,Bag / consumable type,449,0,0.0,449,0,0
+bioprocess_single_use,Brand / manufacturer,449,0,0.0,449,0,0
+bioprocess_single_use,Category (L2/L3),449,449,100.0,0,0,0
+bioprocess_single_use,Category UNSPSC,449,0,0.0,449,0,0
+bioprocess_single_use,Certifications,449,7,1.56,442,0,0
+bioprocess_single_use,Compliance / data integrity,449,2,0.45,447,0,0
+bioprocess_single_use,Condition,449,126,28.06,307,16,0
+bioprocess_single_use,Control system,449,0,0.0,449,0,0
+bioprocess_single_use,Currency,449,5,1.11,444,0,0
+bioprocess_single_use,Description,449,398,88.64,51,0,0
+bioprocess_single_use,Dimensions (W × D × H),449,0,0.0,449,0,0
+bioprocess_single_use,Document links,449,0,0.0,449,0,0
+bioprocess_single_use,Equipment type,449,150,33.41,299,0,0
+bioprocess_single_use,Form factor,449,35,7.8,413,1,0
+bioprocess_single_use,GMP readiness,449,61,13.59,388,0,0
+bioprocess_single_use,Image URL,449,0,0.0,449,0,0
+bioprocess_single_use,Inventory,449,0,0.0,449,0,0
+bioprocess_single_use,Lead time (days),449,0,0.0,449,0,0
+bioprocess_single_use,Listing UNSPSC,449,0,0.0,449,0,0
+bioprocess_single_use,Listing type,449,449,100.0,0,0,0
+bioprocess_single_use,Manufacturer SKU,449,0,0.0,449,0,0
+bioprocess_single_use,Manufacturer name,449,0,0.0,449,0,0
+bioprocess_single_use,Model / configuration,449,0,0.0,449,0,0
+bioprocess_single_use,Name,449,449,100.0,0,0,0
+bioprocess_single_use,Power requirements,449,0,0.0,449,0,0
+bioprocess_single_use,Price per unit,449,447,99.55,2,0,0
+bioprocess_single_use,Pricing model,449,449,100.0,0,0,0
+bioprocess_single_use,Product / service URL,449,0,0.0,449,0,0
+bioprocess_single_use,Product role,449,155,34.52,287,7,0
+bioprocess_single_use,Quantity,449,0,0.0,449,0,0
+bioprocess_single_use,Requester UNSPSC,449,0,0.0,449,0,0
+bioprocess_single_use,Requester commodity code,449,0,0.0,449,0,0
+bioprocess_single_use,Scalability,449,0,0.0,449,0,0
+bioprocess_single_use,Sensors,449,9,2.0,440,0,0
+bioprocess_single_use,Ship from,449,0,0.0,449,0,0
+bioprocess_single_use,Software,449,0,0.0,449,0,0
+bioprocess_single_use,Supplier SKU,449,0,0.0,449,0,0
+bioprocess_single_use,System type,449,51,11.36,397,1,0
+bioprocess_single_use,Unit,449,0,0.0,449,0,0
+bioprocess_single_use,Unit of measure,449,164,36.53,208,77,0
+bioprocess_single_use,Vessel size / working volume,449,62,13.81,387,0,0
+bioprocess_single_use,Warranty / service plan,449,0,0.0,449,0,0
+bioprocess_single_use,Weight,449,1,0.22,448,0,0

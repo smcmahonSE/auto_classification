@@ -1,0 +1,30 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+animal_biobanking_storage,Capacity,49,0,0.0,49,0,0
+animal_biobanking_storage,Category (L2/L3),49,49,100.0,0,0,0
+animal_biobanking_storage,Category UNSPSC,49,0,0.0,49,0,0
+animal_biobanking_storage,Currency,49,0,0.0,49,0,0
+animal_biobanking_storage,Deliverable,49,0,0.0,49,0,0
+animal_biobanking_storage,Description,49,38,77.55,11,0,0
+animal_biobanking_storage,Document links,49,0,0.0,49,0,0
+animal_biobanking_storage,IACUC / animal-welfare consent,49,0,0.0,49,0,0
+animal_biobanking_storage,Image URL,49,0,0.0,49,0,0
+animal_biobanking_storage,Inventory,49,0,0.0,49,0,0
+animal_biobanking_storage,Lead time (days),49,0,0.0,49,0,0
+animal_biobanking_storage,Listing UNSPSC,49,0,0.0,49,0,0
+animal_biobanking_storage,Listing type,49,49,100.0,0,0,0
+animal_biobanking_storage,Manufacturer SKU,49,0,0.0,49,0,0
+animal_biobanking_storage,Manufacturer name,49,0,0.0,49,0,0
+animal_biobanking_storage,Name,49,49,100.0,0,0,0
+animal_biobanking_storage,Price per unit,49,48,97.96,1,0,0
+animal_biobanking_storage,Pricing model,49,49,100.0,0,0,0
+animal_biobanking_storage,Product / service URL,49,0,0.0,49,0,0
+animal_biobanking_storage,Protocol / scope,49,0,0.0,49,0,0
+animal_biobanking_storage,Quantity,49,0,0.0,49,0,0
+animal_biobanking_storage,Requester UNSPSC,49,0,0.0,49,0,0
+animal_biobanking_storage,Requester commodity code,49,0,0.0,49,0,0
+animal_biobanking_storage,Ship from,49,0,0.0,49,0,0
+animal_biobanking_storage,Species,49,22,44.9,25,2,0
+animal_biobanking_storage,Supplier SKU,49,0,0.0,49,0,0
+animal_biobanking_storage,Turnaround,49,0,0.0,49,0,0
+animal_biobanking_storage,Unit,49,0,0.0,49,0,0
+animal_biobanking_storage,Unit of measure,49,2,4.08,46,1,0

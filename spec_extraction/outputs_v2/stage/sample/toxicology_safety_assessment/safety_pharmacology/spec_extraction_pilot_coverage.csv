@@ -1,0 +1,44 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+safety_pharmacology,CNS method,549,1,0.18,548,0,0
+safety_pharmacology,CV measurement,549,41,7.47,508,0,0
+safety_pharmacology,Category (L2/L3),549,549,100.0,0,0,0
+safety_pharmacology,Category UNSPSC,549,0,0.0,549,0,0
+safety_pharmacology,CiPA assessment,549,19,3.46,530,0,0
+safety_pharmacology,Core battery system,549,57,10.38,492,0,0
+safety_pharmacology,Currency,549,6,1.09,543,0,0
+safety_pharmacology,Data acquisition system,549,0,0.0,549,0,0
+safety_pharmacology,Description,549,537,97.81,12,0,0
+safety_pharmacology,Document links,549,8,1.46,541,0,0
+safety_pharmacology,GLP status,549,24,4.37,525,0,0
+safety_pharmacology,Guidelines followed,549,0,0.0,549,0,0
+safety_pharmacology,Image URL,549,0,0.0,549,0,0
+safety_pharmacology,In vitro hERG / ion channel,549,19,3.46,530,0,0
+safety_pharmacology,Inventory,549,0,0.0,549,0,0
+safety_pharmacology,Ion channel panel,549,22,4.01,527,0,0
+safety_pharmacology,Lead time (days),549,0,0.0,549,0,0
+safety_pharmacology,Listing UNSPSC,549,0,0.0,549,0,0
+safety_pharmacology,Listing type,549,549,100.0,0,0,0
+safety_pharmacology,Manufacturer SKU,549,0,0.0,549,0,0
+safety_pharmacology,Manufacturer name,549,0,0.0,549,0,0
+safety_pharmacology,Modality supported,549,18,3.28,531,0,0
+safety_pharmacology,Name,549,549,100.0,0,0,0
+safety_pharmacology,Patch clamp mode,549,0,0.0,548,1,0
+safety_pharmacology,Price per unit,549,426,77.6,123,0,0
+safety_pharmacology,Pricing model,549,549,100.0,0,0,0
+safety_pharmacology,Product / service URL,549,8,1.46,541,0,0
+safety_pharmacology,Quantity,549,0,0.0,549,0,0
+safety_pharmacology,Regulatory submission supported,549,0,0.0,549,0,0
+safety_pharmacology,Requester UNSPSC,549,0,0.0,549,0,0
+safety_pharmacology,Requester commodity code,549,0,0.0,549,0,0
+safety_pharmacology,Respiratory method,549,1,0.18,548,0,0
+safety_pharmacology,SEND datasets,549,19,3.46,530,0,0
+safety_pharmacology,Ship from,549,0,0.0,549,0,0
+safety_pharmacology,Species,549,79,14.39,470,0,0
+safety_pharmacology,Study design,549,0,0.0,549,0,0
+safety_pharmacology,Study start lead time,549,0,0.0,549,0,0
+safety_pharmacology,Supplemental system,549,33,6.01,516,0,0
+safety_pharmacology,Supplier SKU,549,0,0.0,549,0,0
+safety_pharmacology,Telemetry type,549,0,0.0,549,0,0
+safety_pharmacology,Time to final report,549,0,0.0,549,0,0
+safety_pharmacology,Unit,549,0,0.0,549,0,0
+safety_pharmacology,Unit of measure,549,40,7.29,498,11,0

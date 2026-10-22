@@ -1,0 +1,61 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+immunogenicity_ada,ADA assay development time,256,0,0.0,256,0,0
+immunogenicity_ada,ADA assay sensitivity,256,0,0.0,256,0,0
+immunogenicity_ada,ADA characterization,256,0,0.0,256,0,0
+immunogenicity_ada,ADA tiers offered,256,4,1.56,252,0,0
+immunogenicity_ada,Assay platform,256,14,5.47,242,0,0
+immunogenicity_ada,Automated sample preparation,256,6,2.34,250,0,0
+immunogenicity_ada,Bioanalytical guidance followed,256,0,0.0,256,0,0
+immunogenicity_ada,Calibration standard levels,256,0,0.0,256,0,0
+immunogenicity_ada,Category (L2/L3),256,256,100.0,0,0,0
+immunogenicity_ada,Category UNSPSC,256,0,0.0,256,0,0
+immunogenicity_ada,Cellular immunogenicity,256,6,2.34,250,0,0
+immunogenicity_ada,Critical reagent management,256,6,2.34,250,0,0
+immunogenicity_ada,Currency,256,0,0.0,256,0,0
+immunogenicity_ada,Cut point statistical analysis,256,6,2.34,250,0,0
+immunogenicity_ada,Description,256,254,99.22,2,0,0
+immunogenicity_ada,Development stage,256,14,5.47,242,0,0
+immunogenicity_ada,Document links,256,9,3.52,247,0,0
+immunogenicity_ada,Drug tolerance method,256,0,0.0,256,0,0
+immunogenicity_ada,Drug tolerance target,256,0,0.0,256,0,0
+immunogenicity_ada,Feasibility assessment,256,6,2.34,250,0,0
+immunogenicity_ada,Image URL,256,0,0.0,256,0,0
+immunogenicity_ada,Immunogenicity guidance followed,256,0,0.0,256,0,0
+immunogenicity_ada,Inventory,256,0,0.0,256,0,0
+immunogenicity_ada,Lead time (days),256,0,0.0,256,0,0
+immunogenicity_ada,Listing UNSPSC,256,0,0.0,256,0,0
+immunogenicity_ada,Listing type,256,256,100.0,0,0,0
+immunogenicity_ada,Manufacturer SKU,256,0,0.0,256,0,0
+immunogenicity_ada,Manufacturer name,256,0,0.0,256,0,0
+immunogenicity_ada,Matrix lots for matrix effect,256,0,0.0,256,0,0
+immunogenicity_ada,Method development time,256,0,0.0,256,0,0
+immunogenicity_ada,Method origin,256,0,0.0,256,0,0
+immunogenicity_ada,Molecule modality,256,32,12.5,224,0,0
+immunogenicity_ada,NAb assay format,256,1,0.39,255,0,0
+immunogenicity_ada,Name,256,256,100.0,0,0,0
+immunogenicity_ada,Positive control generation,256,6,2.34,250,0,0
+immunogenicity_ada,Pre-existing immunity handling,256,6,2.34,250,0,0
+immunogenicity_ada,Price per unit,256,207,80.86,49,0,0
+immunogenicity_ada,Pricing model,256,256,100.0,0,0,0
+immunogenicity_ada,Product / service URL,256,9,3.52,247,0,0
+immunogenicity_ada,Quantity,256,0,0.0,256,0,0
+immunogenicity_ada,Real-time data portal,256,6,2.34,250,0,0
+immunogenicity_ada,Regulatory compliance level,256,2,0.78,254,0,0
+immunogenicity_ada,Regulatory submission supported,256,0,0.0,256,0,0
+immunogenicity_ada,Requester UNSPSC,256,0,0.0,256,0,0
+immunogenicity_ada,Requester commodity code,256,0,0.0,256,0,0
+immunogenicity_ada,Sample matrix,256,20,7.81,236,0,0
+immunogenicity_ada,Screening false positive rate,256,0,0.0,256,0,0
+immunogenicity_ada,Service scope,256,2,0.78,254,0,0
+immunogenicity_ada,Ship from,256,0,0.0,256,0,0
+immunogenicity_ada,Species,256,31,12.11,225,0,0
+immunogenicity_ada,Supplier SKU,256,0,0.0,256,0,0
+immunogenicity_ada,TDAR assay,256,6,2.34,250,0,0
+immunogenicity_ada,Therapeutic area experience,256,12,4.69,244,0,0
+immunogenicity_ada,Unit,256,0,0.0,256,0,0
+immunogenicity_ada,Unit of measure,256,28,10.94,212,16,0
+immunogenicity_ada,Validated assay library size,256,0,0.0,256,0,0
+immunogenicity_ada,Validation deliverables,256,0,0.0,256,0,0
+immunogenicity_ada,Validation level,256,0,0.0,256,0,0
+immunogenicity_ada,Validation parameters,256,7,2.73,249,0,0
+immunogenicity_ada,Validation type,256,1,0.39,255,0,0

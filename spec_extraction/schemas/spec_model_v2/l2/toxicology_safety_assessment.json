@@ -1,0 +1,1116 @@
+{
+  "l2_id": "toxicology_safety_assessment",
+  "l2_label": "Toxicology & Safety Assessment",
+  "schema_name": "TOXICOLOGY_SAFETY_ASSESSMENT",
+  "l2_fields": [
+    {
+      "name": "GLP status",
+      "type": "multi-select",
+      "required": true,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "glp_status_toxicology",
+      "allowed_values": [
+        "GLP",
+        "Non-GLP"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Species",
+      "type": "multi-select",
+      "required": true,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "species_toxicology",
+      "allowed_values": [
+        "Mouse",
+        "Rat",
+        "Hamster",
+        "Guinea pig",
+        "Rabbit",
+        "Dog",
+        "Minipig",
+        "NHP (cynomolgus)",
+        "NHP (rhesus)",
+        "Other",
+        "None (in vitro)"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Modality supported",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "modality_supported_toxicology",
+      "allowed_values": [
+        "Small molecule",
+        "Biologic / mAb",
+        "Peptide",
+        "Oligonucleotide",
+        "ADC",
+        "Vaccine",
+        "Cell therapy",
+        "Gene therapy",
+        "mRNA / LNP",
+        "Radiopharmaceutical",
+        "Medical device",
+        "Chemical / agrochemical"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Regulatory submission supported",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "regulatory_submission_supported_toxicology",
+      "allowed_values": [
+        "IND",
+        "CTA",
+        "NDA",
+        "BLA",
+        "510(k)",
+        "PMA"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "SEND datasets",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "Study start lead time",
+      "type": "number",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "study_start_lead_time_weeks",
+      "allowed_values": "weeks"
+    },
+    {
+      "name": "Time to final report",
+      "type": "number",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "time_to_final_report_weeks",
+      "allowed_values": "weeks"
+    }
+  ],
+  "l3_nodes": {
+    "general_toxicology": {
+      "label": "General Toxicology",
+      "table_name": "GENERAL_TOXICOLOGY_SPEC",
+      "fields": [
+        {
+          "name": "Study type",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "study_type_general_tox",
+          "allowed_values": [
+            "Acute single-dose",
+            "DRF / MTD",
+            "Subacute",
+            "Subchronic",
+            "Chronic",
+            "Carcinogenicity",
+            "IND-enabling package"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Route of administration",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "route_of_administration_tox",
+          "allowed_values": [
+            "Oral gavage",
+            "Oral capsule",
+            "Dietary",
+            "Drinking water",
+            "IV bolus",
+            "IV infusion",
+            "Subcutaneous",
+            "Intramuscular",
+            "Intraperitoneal",
+            "Intradermal",
+            "Dermal / topical",
+            "Inhalation",
+            "Intranasal",
+            "Intrathecal",
+            "Ocular",
+            "Implant",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Endpoints",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "endpoints_general_tox",
+          "allowed_values": [
+            "Clinical observations",
+            "Body weight",
+            "Food consumption",
+            "Hematology",
+            "Clinical chemistry",
+            "Coagulation",
+            "Urinalysis",
+            "Necropsy",
+            "Histopathology",
+            "IHC",
+            "Ophthalmology",
+            "Tumor statistics"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Dosing duration",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "dosing_duration",
+          "allowed_values": [
+            "14 days",
+            "28 days",
+            "13 weeks",
+            "26 weeks",
+            "39 weeks",
+            "52 weeks",
+            "2 years"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Dose formulation analysis",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "NHP species",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "nhp_species_tox",
+          "allowed_values": [
+            "Cynomolgus",
+            "Rhesus"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Infusion mode",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "infusion_mode",
+          "allowed_values": [
+            "Bolus",
+            "Intermittent",
+            "Continuous"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Board-certified pathologists",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Guidelines followed",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "guidelines_followed_general_tox",
+          "allowed_values": [
+            "ICH M3(R2)",
+            "ICH S6(R1)",
+            "ICH S9",
+            "WHO vaccine",
+            "ICH S1B",
+            "ICH S4",
+            "OECD 407",
+            "OECD 408",
+            "OECD 452"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "SEND version",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "send_version",
+          "allowed_values": [
+            "3.0",
+            "3.1"
+          ]
+        },
+        {
+          "name": "Report format",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "report_format_tox",
+          "allowed_values": [
+            "eCTD",
+            "Standard"
+          ]
+        },
+        {
+          "name": "Carcinogenicity model",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "carcinogenicity_model",
+          "allowed_values": [
+            "2-year rat",
+            "2-year mouse",
+            "rasH2 26-week",
+            "p53+/-",
+            "Tg.AC"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "TK included",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Rodent strain",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "rodent_strain_tox",
+          "allowed_values": [
+            "Sprague-Dawley",
+            "Wistar Han",
+            "CD-1",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Regions where reports are accepted",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "regions_reports_accepted",
+          "allowed_values": [
+            "North America",
+            "Europe",
+            "Japan",
+            "China",
+            "Other"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "safety_pharmacology": {
+      "label": "Safety Pharmacology",
+      "table_name": "SAFETY_PHARMACOLOGY_SPEC",
+      "fields": [
+        {
+          "name": "Core battery system",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "core_battery_system",
+          "allowed_values": [
+            "Cardiovascular",
+            "CNS",
+            "Respiratory"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Telemetry type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "telemetry_type",
+          "allowed_values": [
+            "Implanted",
+            "Jacketed external (JET)",
+            "None"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "CNS method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cns_method",
+          "allowed_values": [
+            "FOB",
+            "Irwin",
+            "EEG",
+            "Seizure / pro-convulsant"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Respiratory method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "respiratory_method",
+          "allowed_values": [
+            "Whole body plethysmography",
+            "Head-out plethysmography",
+            "Face mask",
+            "RIP",
+            "Blood gas"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Supplemental system",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "supplemental_system",
+          "allowed_values": [
+            "Renal",
+            "GI",
+            "Endocrine",
+            "Abuse liability"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "CV measurement",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cv_measurement",
+          "allowed_values": [
+            "Blood pressure",
+            "Heart rate",
+            "ECG",
+            "LVP",
+            "Echocardiography",
+            "Cardiac output"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Guidelines followed",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "guidelines_followed_safety_pharm",
+          "allowed_values": [
+            "ICH S7A",
+            "ICH S7B",
+            "ICH E14/S7B Q&A"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "In vitro hERG / ion channel",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Study design",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "study_design_safety_pharm",
+          "allowed_values": [
+            "Standalone",
+            "Integrated into tox study"
+          ]
+        },
+        {
+          "name": "Ion channel panel",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ion_channel_panel",
+          "allowed_values": [
+            "hERG",
+            "Nav1.5",
+            "Cav1.2",
+            "Kv1.5",
+            "Kv4.3",
+            "KvLQT1/minK"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "CiPA assessment",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Data acquisition system",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_data_acquisition_system"
+        },
+        {
+          "name": "Patch clamp mode",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "patch_clamp_mode",
+          "allowed_values": [
+            "Automated",
+            "Manual"
+          ]
+        }
+      ]
+    },
+    "genetic_toxicology": {
+      "label": "Genetic Toxicology",
+      "table_name": "GENETIC_TOXICOLOGY_SPEC",
+      "fields": [
+        {
+          "name": "Assay",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "assay_genetic_tox",
+          "allowed_values": [
+            "Ames",
+            "In vitro micronucleus",
+            "Chromosomal aberration",
+            "Mouse lymphoma (MLA)",
+            "HPRT",
+            "In vivo micronucleus",
+            "Comet",
+            "Pig-a",
+            "Transgenic rodent (TGR)"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Test system type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "test_system_type_genetic_tox",
+          "allowed_values": [
+            "In vitro",
+            "In vivo",
+            "In silico"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Study tier",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "study_tier_genetic_tox",
+          "allowed_values": [
+            "Screening",
+            "GLP regulatory"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "In vivo species",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "in_vivo_species_genetic_tox",
+          "allowed_values": [
+            "Rat",
+            "Mouse",
+            "Transgenic mouse"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Follow-up assay",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "follow_up_assay",
+          "allowed_values": [
+            "FISH",
+            "CREST",
+            "Pig-a",
+            "MultiFlow",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "ICH guidance",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ich_guidance_genetic_tox",
+          "allowed_values": [
+            "ICH S2(R1)",
+            "ICH M7"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "ICH S2 battery option",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ich_s2_battery_option",
+          "allowed_values": [
+            "Option 1",
+            "Option 2"
+          ]
+        },
+        {
+          "name": "Mammalian cell line",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "mammalian_cell_line",
+          "allowed_values": [
+            "CHO",
+            "TK6",
+            "HPBL",
+            "V79",
+            "L5178Y"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Ames format",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ames_format",
+          "allowed_values": [
+            "Plate incorporation",
+            "Pre-incubation",
+            "Micro / mini-Ames",
+            "Ames II",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Integrated into tox study",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "integrated_into_tox_study",
+          "allowed_values": [
+            "Standalone",
+            "Integrated"
+          ]
+        },
+        {
+          "name": "OECD test guideline",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "oecd_test_guideline",
+          "allowed_values": [
+            "471",
+            "473",
+            "474",
+            "475",
+            "476",
+            "487",
+            "489",
+            "490"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Enhanced Ames for nitrosamines",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Micronucleus scoring method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "micronucleus_scoring_method",
+          "allowed_values": [
+            "Manual",
+            "Flow cytometry"
+          ]
+        },
+        {
+          "name": "In silico (Q)SAR",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "toxicokinetics": {
+      "label": "Toxicokinetics",
+      "table_name": "TOXICOKINETICS_SPEC",
+      "fields": [
+        {
+          "name": "Bioanalysis platform",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "bioanalysis_platform_tk",
+          "allowed_values": [
+            "LC-MS/MS",
+            "Ligand binding assay",
+            "qPCR / ddPCR",
+            "Flow cytometry",
+            "Radioassay"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Sample matrix",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sample_matrix_tk",
+          "allowed_values": [
+            "Plasma",
+            "Serum",
+            "Urine",
+            "Tissue",
+            "CSF",
+            "Bile",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Sampling technique",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sampling_technique_tk",
+          "allowed_values": [
+            "Serial",
+            "Microsampling",
+            "Satellite group"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "ADA / immunogenicity",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Run alongside tox study",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Validation guidance",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "validation_guidance_tk",
+          "allowed_values": [
+            "ICH M10",
+            "FDA BMV"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "PK analysis software",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_pk_analysis_software"
+        },
+        {
+          "name": "21 CFR Part 11 systems",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Method validation lead time",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "method_validation_lead_time_weeks",
+          "allowed_values": "weeks"
+        }
+      ]
+    },
+    "specialty_toxicology": {
+      "label": "Specialty Toxicology",
+      "table_name": "SPECIALTY_TOXICOLOGY_SPEC",
+      "fields": [
+        {
+          "name": "Specialty type",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specialty_type",
+          "allowed_values": [
+            "DART",
+            "Juvenile",
+            "Immunotoxicology",
+            "Inhalation",
+            "Ocular",
+            "Phototoxicity",
+            "Dermal",
+            "Infusion",
+            "Neurotoxicity",
+            "Abuse liability",
+            "Ototoxicity",
+            "Tissue cross-reactivity"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "DART species",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "dart_species",
+          "allowed_values": [
+            "Rat",
+            "Mouse",
+            "Rabbit",
+            "NHP"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "DART guideline",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "dart_guideline",
+          "allowed_values": [
+            "ICH S5(R3)",
+            "OECD 414",
+            "OECD 421/422",
+            "OECD 426",
+            "OECD 443",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Juvenile species",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "juvenile_species",
+          "allowed_values": [
+            "Rat",
+            "Mouse",
+            "NHP",
+            "Minipig"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Ocular route",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ocular_route",
+          "allowed_values": [
+            "Topical",
+            "Subconjunctival",
+            "Intravitreal",
+            "Subretinal",
+            "Retrobulbar"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "DART study design",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "dart_study_design",
+          "allowed_values": [
+            "FEED",
+            "EFD",
+            "PPND",
+            "ePPND",
+            "EOGRTS",
+            "OECD 421/422",
+            "1-generation",
+            "2-generation"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "DART endpoints",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "dart_endpoints",
+          "allowed_values": [
+            "Sperm analysis",
+            "Fetal external",
+            "Fetal visceral",
+            "Fetal skeletal",
+            "MicroCT"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Juvenile behavioral tests",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "juvenile_behavioral_tests",
+          "allowed_values": [
+            "Locomotor",
+            "Startle",
+            "Morris water maze",
+            "FOB"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Phototox assay",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "phototox_assay",
+          "allowed_values": [
+            "3T3 NRU (OECD 432)",
+            "3D epidermal",
+            "Photomutagenicity",
+            "In vivo"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "In vitro skin or eye model",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "in_vitro_skin_eye_model",
+          "allowed_values": [
+            "EPISKIN",
+            "EpiDerm",
+            "BCOP",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Biosafety containment",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biosafety_containment",
+          "allowed_values": [
+            "BSL-1",
+            "BSL-2"
+          ]
+        },
+        {
+          "name": "Inhalation exposure system",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "inhalation_exposure_system",
+          "allowed_values": [
+            "Nose-only",
+            "Oronasal",
+            "Whole-body",
+            "Intratracheal"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Inhalation atmosphere",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "inhalation_atmosphere",
+          "allowed_values": [
+            "Dry powder",
+            "Liquid aerosol",
+            "Vapor",
+            "MDI"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Immunotox assay",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "immunotox_assay",
+          "allowed_values": [
+            "Immunophenotyping",
+            "Cytokine release",
+            "Complement",
+            "ELISpot",
+            "Receptor occupancy",
+            "TDAR",
+            "NK activity"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Historical control database",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    }
+  }
+}

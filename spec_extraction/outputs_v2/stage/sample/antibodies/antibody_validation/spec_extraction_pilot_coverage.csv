@@ -1,0 +1,28 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+antibody_validation,Capacity,20000,0,0.0,20000,0,0
+antibody_validation,Category (L2/L3),20000,20000,100.0,0,0,0
+antibody_validation,Category UNSPSC,20000,0,0.0,20000,0,0
+antibody_validation,Currency,20000,98,0.49,19902,0,0
+antibody_validation,Deliverable,20000,1,0.01,19999,0,0
+antibody_validation,Description,20000,11725,58.63,8275,0,0
+antibody_validation,Document links,20000,208,1.04,19792,0,0
+antibody_validation,Image URL,20000,10,0.05,19990,0,0
+antibody_validation,Inventory,20000,0,0.0,20000,0,0
+antibody_validation,Lead time (days),20000,0,0.0,20000,0,0
+antibody_validation,Listing UNSPSC,20000,0,0.0,20000,0,0
+antibody_validation,Listing type,20000,20000,100.0,0,0,0
+antibody_validation,Manufacturer SKU,20000,0,0.0,20000,0,0
+antibody_validation,Manufacturer name,20000,0,0.0,20000,0,0
+antibody_validation,Name,20000,20000,100.0,0,0,0
+antibody_validation,Price per unit,20000,17509,87.55,2491,0,0
+antibody_validation,Pricing model,20000,20000,100.0,0,0,0
+antibody_validation,Product / service URL,20000,208,1.04,19792,0,0
+antibody_validation,Protocol / scope,20000,0,0.0,20000,0,0
+antibody_validation,Quantity,20000,0,0.0,20000,0,0
+antibody_validation,Requester UNSPSC,20000,0,0.0,20000,0,0
+antibody_validation,Requester commodity code,20000,0,0.0,20000,0,0
+antibody_validation,Ship from,20000,0,0.0,20000,0,0
+antibody_validation,Supplier SKU,20000,0,0.0,20000,0,0
+antibody_validation,Turnaround,20000,0,0.0,20000,0,0
+antibody_validation,Unit,20000,0,0.0,20000,0,0
+antibody_validation,Unit of measure,20000,8169,40.84,11480,351,0

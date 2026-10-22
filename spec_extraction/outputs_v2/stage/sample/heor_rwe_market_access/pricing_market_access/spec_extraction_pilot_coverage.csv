@@ -1,0 +1,39 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+pricing_market_access,AI-assisted methods,865,22,2.54,843,0,0
+pricing_market_access,Access scope,865,0,0.0,865,0,0
+pricing_market_access,Category (L2/L3),865,865,100.0,0,0,0
+pricing_market_access,Category UNSPSC,865,0,0.0,865,0,0
+pricing_market_access,Currency,865,4,0.46,861,0,0
+pricing_market_access,Description,865,425,49.13,440,0,0
+pricing_market_access,Development stage,865,113,13.06,752,0,0
+pricing_market_access,Document links,865,30,3.47,835,0,0
+pricing_market_access,Geographic markets covered,865,127,14.68,738,0,0
+pricing_market_access,Image URL,865,0,0.0,865,0,0
+pricing_market_access,Inventory,865,0,0.0,865,0,0
+pricing_market_access,Launch readiness support,865,22,2.54,843,0,0
+pricing_market_access,Lead time (days),865,0,0.0,865,0,0
+pricing_market_access,Listing UNSPSC,865,0,0.0,865,0,0
+pricing_market_access,Listing type,865,865,100.0,0,0,0
+pricing_market_access,Manufacturer SKU,865,0,0.0,865,0,0
+pricing_market_access,Manufacturer name,865,0,0.0,865,0,0
+pricing_market_access,Name,865,865,100.0,0,0,0
+pricing_market_access,Patient services strategy,865,22,2.54,843,0,0
+pricing_market_access,Payer research method,865,0,0.0,865,0,0
+pricing_market_access,Peer-reviewed publication support,865,22,2.54,843,0,0
+pricing_market_access,Policy and HTA consulting,865,22,2.54,843,0,0
+pricing_market_access,Price per unit,865,860,99.42,5,0,0
+pricing_market_access,Pricing model,865,865,100.0,0,0,0
+pricing_market_access,Pricing service,865,0,0.0,865,0,0
+pricing_market_access,Product / service URL,865,30,3.47,835,0,0
+pricing_market_access,Product type supported,865,2,0.23,863,0,0
+pricing_market_access,Pull-through and field training,865,22,2.54,843,0,0
+pricing_market_access,Quantity,865,0,0.0,865,0,0
+pricing_market_access,Requester UNSPSC,865,0,0.0,865,0,0
+pricing_market_access,Requester commodity code,865,0,0.0,865,0,0
+pricing_market_access,Ship from,865,0,0.0,865,0,0
+pricing_market_access,Strategic consulting included,865,22,2.54,843,0,0
+pricing_market_access,Supplier SKU,865,0,0.0,865,0,0
+pricing_market_access,Target decision maker,865,21,2.43,844,0,0
+pricing_market_access,Therapeutic areas,865,0,0.0,865,0,0
+pricing_market_access,Unit,865,0,0.0,865,0,0
+pricing_market_access,Unit of measure,865,83,9.6,767,15,0

@@ -1,0 +1,46 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+general_toxicology,Board-certified pathologists,5609,186,3.32,5423,0,0
+general_toxicology,Carcinogenicity model,5609,0,0.0,5609,0,0
+general_toxicology,Category (L2/L3),5609,5609,100.0,0,0,0
+general_toxicology,Category UNSPSC,5609,0,0.0,5609,0,0
+general_toxicology,Currency,5609,82,1.46,5527,0,0
+general_toxicology,Description,5609,5537,98.72,72,0,0
+general_toxicology,Document links,5609,214,3.82,5395,0,0
+general_toxicology,Dose formulation analysis,5609,186,3.32,5423,0,0
+general_toxicology,Dosing duration,5609,1326,23.64,4283,0,0
+general_toxicology,Endpoints,5609,125,2.23,5484,0,0
+general_toxicology,GLP status,5609,615,10.96,4994,0,0
+general_toxicology,Guidelines followed,5609,0,0.0,5609,0,0
+general_toxicology,Image URL,5609,0,0.0,5609,0,0
+general_toxicology,Infusion mode,5609,8,0.14,5601,0,0
+general_toxicology,Inventory,5609,0,0.0,5609,0,0
+general_toxicology,Lead time (days),5609,0,0.0,5609,0,0
+general_toxicology,Listing UNSPSC,5609,0,0.0,5609,0,0
+general_toxicology,Listing type,5609,5609,100.0,0,0,0
+general_toxicology,Manufacturer SKU,5609,0,0.0,5609,0,0
+general_toxicology,Manufacturer name,5609,0,0.0,5609,0,0
+general_toxicology,Modality supported,5609,463,8.25,5146,0,0
+general_toxicology,NHP species,5609,10,0.18,5599,0,0
+general_toxicology,Name,5609,5609,100.0,0,0,0
+general_toxicology,Price per unit,5609,4794,85.47,815,0,0
+general_toxicology,Pricing model,5609,5609,100.0,0,0,0
+general_toxicology,Product / service URL,5609,214,3.82,5395,0,0
+general_toxicology,Quantity,5609,0,0.0,5609,0,0
+general_toxicology,Regions where reports are accepted,5609,379,6.76,5230,0,0
+general_toxicology,Regulatory submission supported,5609,3,0.05,5606,0,0
+general_toxicology,Report format,5609,111,1.98,5498,0,0
+general_toxicology,Requester UNSPSC,5609,0,0.0,5609,0,0
+general_toxicology,Requester commodity code,5609,0,0.0,5609,0,0
+general_toxicology,Rodent strain,5609,395,7.04,5214,0,0
+general_toxicology,Route of administration,5609,411,7.33,5198,0,0
+general_toxicology,SEND datasets,5609,186,3.32,5423,0,0
+general_toxicology,SEND version,5609,14,0.25,5595,0,0
+general_toxicology,Ship from,5609,0,0.0,5609,0,0
+general_toxicology,Species,5609,1143,20.38,4466,0,0
+general_toxicology,Study start lead time,5609,0,0.0,5609,0,0
+general_toxicology,Study type,5609,143,2.55,5466,0,0
+general_toxicology,Supplier SKU,5609,0,0.0,5609,0,0
+general_toxicology,TK included,5609,186,3.32,5423,0,0
+general_toxicology,Time to final report,5609,0,0.0,5609,0,0
+general_toxicology,Unit,5609,0,0.0,5609,0,0
+general_toxicology,Unit of measure,5609,410,7.31,5145,54,0

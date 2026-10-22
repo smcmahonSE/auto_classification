@@ -1,44 +1,44 @@
 l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
-human_blood_biofluids,Anticoagulant / additive,150,4,2.67,140,6,0
-human_blood_biofluids,Blood type,150,1,0.67,149,0,0
-human_blood_biofluids,Category (L2/L3),150,150,100.0,0,0,0
-human_blood_biofluids,Category UNSPSC,150,0,0.0,150,0,0
-human_blood_biofluids,Clinical data,150,0,0.0,150,0,0
-human_blood_biofluids,Consent level,150,0,0.0,150,0,0
-human_blood_biofluids,Currency,150,0,0.0,150,0,0
-human_blood_biofluids,Description,150,92,61.33,58,0,0
-human_blood_biofluids,Diagnosis,150,0,0.0,150,0,0
-human_blood_biofluids,Disease areas,150,12,8.0,138,0,0
-human_blood_biofluids,Disease stage,150,0,0.0,150,0,0
-human_blood_biofluids,Document links,150,0,0.0,150,0,0
-human_blood_biofluids,Donor Age,150,38,25.33,112,0,0
-human_blood_biofluids,Image URL,150,0,0.0,150,0,0
-human_blood_biofluids,Inventory,150,0,0.0,150,0,0
-human_blood_biofluids,Lead time (days),150,0,0.0,150,0,0
-human_blood_biofluids,Listing UNSPSC,150,0,0.0,150,0,0
-human_blood_biofluids,Listing type,150,150,100.0,0,0,0
-human_blood_biofluids,Manufacturer SKU,150,0,0.0,150,0,0
-human_blood_biofluids,Manufacturer name,150,0,0.0,150,0,0
-human_blood_biofluids,Matched sample set,150,4,2.67,146,0,0
-human_blood_biofluids,Matrix,150,55,36.67,86,9,0
-human_blood_biofluids,Medications,150,0,0.0,150,0,0
-human_blood_biofluids,Name,150,150,100.0,0,0,0
-human_blood_biofluids,Price per unit,150,150,100.0,0,0,0
-human_blood_biofluids,Pricing model,150,150,100.0,0,0,0
-human_blood_biofluids,Processing,150,0,0.0,150,0,0
-human_blood_biofluids,Product / service URL,150,0,0.0,150,0,0
-human_blood_biofluids,Quantity,150,0,0.0,150,0,0
-human_blood_biofluids,Race / Ethnicity,150,50,33.33,100,0,0
-human_blood_biofluids,Requester UNSPSC,150,0,0.0,150,0,0
-human_blood_biofluids,Requester commodity code,150,0,0.0,150,0,0
-human_blood_biofluids,Sex,150,116,77.33,33,1,0
-human_blood_biofluids,Ship from,150,0,0.0,150,0,0
-human_blood_biofluids,Shipping temperature,150,2,1.33,148,0,0
-human_blood_biofluids,Specimen format,150,2,1.33,145,3,0
-human_blood_biofluids,Storage conditions,150,9,6.0,141,0,0
-human_blood_biofluids,Supplier SKU,150,0,0.0,150,0,0
-human_blood_biofluids,Timepoint,150,1,0.67,149,0,0
-human_blood_biofluids,Treatment history,150,0,0.0,150,0,0
-human_blood_biofluids,Unit,150,0,0.0,150,0,0
-human_blood_biofluids,Unit of measure,150,117,78.0,26,7,0
-human_blood_biofluids,Volume,150,69,46.0,81,0,0
+human_blood_biofluids,Anticoagulant / additive,10248,478,4.66,9543,227,0
+human_blood_biofluids,Blood type,10248,48,0.47,10200,0,0
+human_blood_biofluids,Category (L2/L3),10248,10248,100.0,0,0,0
+human_blood_biofluids,Category UNSPSC,10248,0,0.0,10248,0,0
+human_blood_biofluids,Clinical data,10248,0,0.0,10248,0,0
+human_blood_biofluids,Consent level,10248,1,0.01,10247,0,0
+human_blood_biofluids,Currency,10248,8,0.08,10240,0,0
+human_blood_biofluids,Description,10248,6691,65.29,3557,0,0
+human_blood_biofluids,Diagnosis,10248,0,0.0,10248,0,0
+human_blood_biofluids,Disease areas,10248,956,9.33,9292,0,0
+human_blood_biofluids,Disease stage,10248,0,0.0,10248,0,0
+human_blood_biofluids,Document links,10248,11,0.11,10237,0,0
+human_blood_biofluids,Donor Age,10248,2973,29.01,7275,0,0
+human_blood_biofluids,Image URL,10248,3,0.03,10245,0,0
+human_blood_biofluids,Inventory,10248,0,0.0,10248,0,0
+human_blood_biofluids,Lead time (days),10248,0,0.0,10248,0,0
+human_blood_biofluids,Listing UNSPSC,10248,0,0.0,10248,0,0
+human_blood_biofluids,Listing type,10248,10248,100.0,0,0,0
+human_blood_biofluids,Manufacturer SKU,10248,0,0.0,10248,0,0
+human_blood_biofluids,Manufacturer name,10248,0,0.0,10248,0,0
+human_blood_biofluids,Matched sample set,10248,332,3.24,9913,3,0
+human_blood_biofluids,Matrix,10248,4033,39.35,5762,453,0
+human_blood_biofluids,Medications,10248,0,0.0,10248,0,0
+human_blood_biofluids,Name,10248,10248,100.0,0,0,0
+human_blood_biofluids,Price per unit,10248,10231,99.83,17,0,0
+human_blood_biofluids,Pricing model,10248,10248,100.0,0,0,0
+human_blood_biofluids,Processing,10248,37,0.36,10211,0,0
+human_blood_biofluids,Product / service URL,10248,11,0.11,10237,0,0
+human_blood_biofluids,Quantity,10248,0,0.0,10248,0,0
+human_blood_biofluids,Race / Ethnicity,10248,3066,29.92,7182,0,0
+human_blood_biofluids,Requester UNSPSC,10248,0,0.0,10248,0,0
+human_blood_biofluids,Requester commodity code,10248,0,0.0,10248,0,0
+human_blood_biofluids,Sex,10248,5925,57.82,1990,2333,0
+human_blood_biofluids,Ship from,10248,0,0.0,10248,0,0
+human_blood_biofluids,Shipping temperature,10248,482,4.7,9766,0,0
+human_blood_biofluids,Specimen format,10248,122,1.19,9981,145,0
+human_blood_biofluids,Storage conditions,10248,561,5.47,9680,7,0
+human_blood_biofluids,Supplier SKU,10248,0,0.0,10248,0,0
+human_blood_biofluids,Timepoint,10248,3,0.03,10245,0,0
+human_blood_biofluids,Treatment history,10248,4,0.04,10244,0,0
+human_blood_biofluids,Unit,10248,0,0.0,10248,0,0
+human_blood_biofluids,Unit of measure,10248,8378,81.75,1539,331,0
+human_blood_biofluids,Volume,10248,5614,54.78,4634,0,0

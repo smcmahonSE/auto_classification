@@ -1,0 +1,43 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+liquid_handling_automation,Brand / manufacturer,482,0,0.0,482,0,0
+liquid_handling_automation,Category (L2/L3),482,482,100.0,0,0,0
+liquid_handling_automation,Category UNSPSC,482,0,0.0,482,0,0
+liquid_handling_automation,Certifications,482,10,2.07,472,0,0
+liquid_handling_automation,Compliance / data integrity,482,1,0.21,481,0,0
+liquid_handling_automation,Condition,482,30,6.22,450,2,0
+liquid_handling_automation,Currency,482,2,0.41,480,0,0
+liquid_handling_automation,Deck / worktable size,482,0,0.0,482,0,0
+liquid_handling_automation,Description,482,458,95.02,24,0,0
+liquid_handling_automation,Dimensions (W × D × H),482,5,1.04,477,0,0
+liquid_handling_automation,Document links,482,4,0.83,478,0,0
+liquid_handling_automation,Equipment type,482,148,30.71,334,0,0
+liquid_handling_automation,Form factor,482,62,12.86,416,4,0
+liquid_handling_automation,Image URL,482,0,0.0,482,0,0
+liquid_handling_automation,Integration,482,1,0.21,481,0,0
+liquid_handling_automation,Inventory,482,0,0.0,482,0,0
+liquid_handling_automation,Lead time (days),482,0,0.0,482,0,0
+liquid_handling_automation,Listing UNSPSC,482,0,0.0,482,0,0
+liquid_handling_automation,Listing type,482,482,100.0,0,0,0
+liquid_handling_automation,Manufacturer SKU,482,0,0.0,482,0,0
+liquid_handling_automation,Manufacturer name,482,0,0.0,482,0,0
+liquid_handling_automation,Model / configuration,482,0,0.0,482,0,0
+liquid_handling_automation,Name,482,482,100.0,0,0,0
+liquid_handling_automation,Pipetting arms / channels,482,9,1.87,473,0,0
+liquid_handling_automation,Plate handling,482,35,7.26,446,1,0
+liquid_handling_automation,Power requirements,482,0,0.0,482,0,0
+liquid_handling_automation,Price per unit,482,482,100.0,0,0,0
+liquid_handling_automation,Pricing model,482,482,100.0,0,0,0
+liquid_handling_automation,Product / service URL,482,4,0.83,478,0,0
+liquid_handling_automation,Product role,482,193,40.04,287,2,0
+liquid_handling_automation,Quantity,482,0,0.0,482,0,0
+liquid_handling_automation,Requester UNSPSC,482,0,0.0,482,0,0
+liquid_handling_automation,Requester commodity code,482,0,0.0,482,0,0
+liquid_handling_automation,Ship from,482,0,0.0,482,0,0
+liquid_handling_automation,Software,482,0,0.0,482,0,0
+liquid_handling_automation,Supplier SKU,482,0,0.0,482,0,0
+liquid_handling_automation,Tip type,482,25,5.19,457,0,0
+liquid_handling_automation,Unit,482,0,0.0,482,0,0
+liquid_handling_automation,Unit of measure,482,102,21.16,283,97,0
+liquid_handling_automation,Volume range,482,48,9.96,434,0,0
+liquid_handling_automation,Warranty / service plan,482,0,0.0,482,0,0
+liquid_handling_automation,Weight,482,6,1.24,476,0,0

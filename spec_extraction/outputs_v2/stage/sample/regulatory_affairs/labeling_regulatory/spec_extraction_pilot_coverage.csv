@@ -1,0 +1,41 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+labeling_regulatory,Artwork service,653,0,0.0,653,0,0
+labeling_regulatory,Category (L2/L3),653,653,100.0,0,0,0
+labeling_regulatory,Category UNSPSC,653,0,0.0,653,0,0
+labeling_regulatory,Currency,653,6,0.92,647,0,0
+labeling_regulatory,Description,653,133,20.37,520,0,0
+labeling_regulatory,Development discipline covered,653,7,1.07,646,0,0
+labeling_regulatory,Development stage,653,47,7.2,606,0,0
+labeling_regulatory,Document links,653,2,0.31,651,0,0
+labeling_regulatory,Engagement model,653,0,0.0,653,0,0
+labeling_regulatory,Image URL,653,0,0.0,653,0,0
+labeling_regulatory,Inventory,653,0,0.0,653,0,0
+labeling_regulatory,Label translation,653,2,0.31,651,0,0
+labeling_regulatory,Labeling activity,653,0,0.0,653,0,0
+labeling_regulatory,Labeling document type,653,0,0.0,653,0,0
+labeling_regulatory,Lead time (days),653,0,0.0,653,0,0
+labeling_regulatory,Listing UNSPSC,653,0,0.0,653,0,0
+labeling_regulatory,Listing type,653,653,100.0,0,0,0
+labeling_regulatory,Manufacturer SKU,653,0,0.0,653,0,0
+labeling_regulatory,Manufacturer name,653,0,0.0,653,0,0
+labeling_regulatory,Name,653,653,100.0,0,0,0
+labeling_regulatory,Packaging component,653,1,0.15,652,0,0
+labeling_regulatory,Price per unit,653,647,99.08,6,0,0
+labeling_regulatory,Pricing model,653,653,100.0,0,0,0
+labeling_regulatory,Pricing structure,653,0,0.0,653,0,0
+labeling_regulatory,Product / service URL,653,2,0.31,651,0,0
+labeling_regulatory,Product type,653,0,0.0,653,0,0
+labeling_regulatory,Promotional material review,653,2,0.31,651,0,0
+labeling_regulatory,Quantity,653,0,0.0,653,0,0
+labeling_regulatory,Readability user testing,653,2,0.31,651,0,0
+labeling_regulatory,Regulatory agency,653,15,2.3,638,0,0
+labeling_regulatory,Regulatory information management system,653,14,2.14,639,0,0
+labeling_regulatory,Requester UNSPSC,653,0,0.0,653,0,0
+labeling_regulatory,Requester commodity code,653,0,0.0,653,0,0
+labeling_regulatory,SPL submission type,653,0,0.0,653,0,0
+labeling_regulatory,Ship from,653,0,0.0,653,0,0
+labeling_regulatory,Structured Product Labeling,653,2,0.31,651,0,0
+labeling_regulatory,Supplier SKU,653,0,0.0,653,0,0
+labeling_regulatory,Target market region,653,1,0.15,652,0,0
+labeling_regulatory,Unit,653,0,0.0,653,0,0
+labeling_regulatory,Unit of measure,653,16,2.45,635,2,0

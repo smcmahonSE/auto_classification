@@ -1,0 +1,30 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+animal_custom_prospective_collection,Capacity,254,0,0.0,254,0,0
+animal_custom_prospective_collection,Category (L2/L3),254,254,100.0,0,0,0
+animal_custom_prospective_collection,Category UNSPSC,254,0,0.0,254,0,0
+animal_custom_prospective_collection,Currency,254,1,0.39,253,0,0
+animal_custom_prospective_collection,Deliverable,254,0,0.0,254,0,0
+animal_custom_prospective_collection,Description,254,141,55.51,113,0,0
+animal_custom_prospective_collection,Document links,254,6,2.36,248,0,0
+animal_custom_prospective_collection,IACUC / animal-welfare consent,254,0,0.0,254,0,0
+animal_custom_prospective_collection,Image URL,254,0,0.0,254,0,0
+animal_custom_prospective_collection,Inventory,254,0,0.0,254,0,0
+animal_custom_prospective_collection,Lead time (days),254,0,0.0,254,0,0
+animal_custom_prospective_collection,Listing UNSPSC,254,0,0.0,254,0,0
+animal_custom_prospective_collection,Listing type,254,254,100.0,0,0,0
+animal_custom_prospective_collection,Manufacturer SKU,254,0,0.0,254,0,0
+animal_custom_prospective_collection,Manufacturer name,254,0,0.0,254,0,0
+animal_custom_prospective_collection,Name,254,254,100.0,0,0,0
+animal_custom_prospective_collection,Price per unit,254,250,98.43,4,0,0
+animal_custom_prospective_collection,Pricing model,254,254,100.0,0,0,0
+animal_custom_prospective_collection,Product / service URL,254,6,2.36,248,0,0
+animal_custom_prospective_collection,Protocol / scope,254,0,0.0,254,0,0
+animal_custom_prospective_collection,Quantity,254,0,0.0,254,0,0
+animal_custom_prospective_collection,Requester UNSPSC,254,0,0.0,254,0,0
+animal_custom_prospective_collection,Requester commodity code,254,0,0.0,254,0,0
+animal_custom_prospective_collection,Ship from,254,0,0.0,254,0,0
+animal_custom_prospective_collection,Species,254,19,7.48,235,0,0
+animal_custom_prospective_collection,Supplier SKU,254,0,0.0,254,0,0
+animal_custom_prospective_collection,Turnaround,254,0,0.0,254,0,0
+animal_custom_prospective_collection,Unit,254,0,0.0,254,0,0
+animal_custom_prospective_collection,Unit of measure,254,44,17.32,194,16,0

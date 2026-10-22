@@ -1,0 +1,40 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+analytical_standards,Accreditation,10886,2198,20.19,8688,0,0
+analytical_standards,Analyte(s) / parameter,10886,0,0.0,10886,0,0
+analytical_standards,CAS number,10886,2916,26.79,7969,0,1
+analytical_standards,Category (L2/L3),10886,10886,100.0,0,0,0
+analytical_standards,Category UNSPSC,10886,0,0.0,10886,0,0
+analytical_standards,Certified / assigned value,10886,0,0.0,10886,0,0
+analytical_standards,Concentration,10886,38,0.35,10848,0,0
+analytical_standards,Controlled substance status,10886,3,0.03,10883,0,0
+analytical_standards,Currency,10886,597,5.48,10289,0,0
+analytical_standards,Description,10886,10710,98.38,176,0,0
+analytical_standards,Document links,10886,823,7.56,10063,0,0
+analytical_standards,Expiration / validity,10886,0,0.0,10886,0,0
+analytical_standards,Format,10886,608,5.59,10271,7,0
+analytical_standards,Hazard classification,10886,20,0.18,10862,4,0
+analytical_standards,Image URL,10886,12,0.11,10874,0,0
+analytical_standards,Inventory,10886,0,0.0,10886,0,0
+analytical_standards,Lead time (days),10886,0,0.0,10886,0,0
+analytical_standards,Listing UNSPSC,10886,0,0.0,10886,0,0
+analytical_standards,Listing type,10886,10886,100.0,0,0,0
+analytical_standards,Manufacturer SKU,10886,0,0.0,10886,0,0
+analytical_standards,Manufacturer name,10886,0,0.0,10886,0,0
+analytical_standards,Matrix / solvent,10886,22,0.2,10864,0,0
+analytical_standards,Name,10886,10886,100.0,0,0,0
+analytical_standards,Price per unit,10886,10077,92.57,809,0,0
+analytical_standards,Pricing model,10886,10886,100.0,0,0,0
+analytical_standards,Product / service URL,10886,823,7.56,10063,0,0
+analytical_standards,Quantity,10886,0,0.0,10886,0,0
+analytical_standards,Regulatory status / intended use,10886,8,0.07,10878,0,0
+analytical_standards,Requester UNSPSC,10886,0,0.0,10886,0,0
+analytical_standards,Requester commodity code,10886,0,0.0,10886,0,0
+analytical_standards,Ship from,10886,0,0.0,10886,0,0
+analytical_standards,Single or multi-component,10886,98,0.9,10788,0,0
+analytical_standards,Standard type,10886,4822,44.3,4595,1469,0
+analytical_standards,Storage conditions,10886,431,3.96,10455,0,0
+analytical_standards,Supplier SKU,10886,0,0.0,10886,0,0
+analytical_standards,Technique,10886,875,8.04,10011,0,0
+analytical_standards,Traceability,10886,91,0.84,10795,0,0
+analytical_standards,Unit,10886,0,0.0,10886,0,0
+analytical_standards,Unit of measure,10886,3327,30.56,6621,938,0

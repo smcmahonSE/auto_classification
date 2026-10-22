@@ -1,0 +1,1046 @@
+{
+  "l2_id": "bioanalysis",
+  "l2_label": "Bioanalysis",
+  "schema_name": "BIOANALYSIS",
+  "l2_fields": [
+    {
+      "name": "Regulatory compliance level",
+      "type": "multi-select",
+      "required": true,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "regulatory_compliance_level_bioanalysis",
+      "allowed_values": [
+        "Non-GLP",
+        "GLP",
+        "GCP",
+        "GCLP"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Molecule modality",
+      "type": "multi-select",
+      "required": true,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "molecule_modality_bioanalysis",
+      "allowed_values": [
+        "Small molecule",
+        "Peptide",
+        "Protein",
+        "Monoclonal antibody",
+        "Bispecific antibody",
+        "ADC",
+        "Oligonucleotide",
+        "Gene therapy",
+        "Cell therapy",
+        "Vaccine",
+        "LNP"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Bioanalytical guidance followed",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "bioanalytical_guidance_followed",
+      "allowed_values": [
+        "ICH M10",
+        "FDA BMV 2018",
+        "EMA BMV",
+        "NMPA",
+        "ICH Q2(R1)"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Development stage",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "development_stage",
+      "allowed_values": [
+        "Discovery",
+        "Preclinical",
+        "Phase 1",
+        "Phase 2",
+        "Phase 3",
+        "Post-approval"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Sample matrix",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "sample_matrix_bioanalysis",
+      "allowed_values": [
+        "Plasma",
+        "Serum",
+        "Whole blood",
+        "Urine",
+        "CSF",
+        "Feces",
+        "Tissue homogenate",
+        "PBMC",
+        "Dried blood spot",
+        "Rare matrix"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Service scope",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "service_scope_bioanalysis",
+      "allowed_values": [
+        "Method development",
+        "Method transfer",
+        "Method validation",
+        "Sample analysis",
+        "Reporting"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Automated sample preparation",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "Species",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "species_bioanalysis",
+      "allowed_values": [
+        "Mouse",
+        "Rat",
+        "Rabbit",
+        "Dog",
+        "Minipig",
+        "Non-human primate",
+        "Human"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Validation type",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "validation_type_bioanalysis",
+      "allowed_values": [
+        "Full validation",
+        "Partial validation",
+        "Cross-validation",
+        "Method transfer",
+        "Qualification"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Validation parameters",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "validation_parameters_bioanalysis",
+      "allowed_values": [
+        "Selectivity",
+        "Specificity",
+        "Matrix effect",
+        "Calibration curve",
+        "LLOQ to ULOQ range",
+        "Accuracy",
+        "Precision",
+        "Carry-over",
+        "Dilution integrity",
+        "Dilution linearity",
+        "Parallelism",
+        "Stability",
+        "Robustness",
+        "Reinjection reproducibility"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Method origin",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "method_origin_bioanalysis",
+      "allowed_values": [
+        "De novo development",
+        "Transfer from sponsor",
+        "Existing in-house method"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Validation deliverables",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "validation_deliverables_bioanalysis",
+      "allowed_values": [
+        "Validated method",
+        "Validation report",
+        "Submission-ready report",
+        "Audit support"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Regulatory submission supported",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "regulatory_submission_supported_bioanalysis",
+      "allowed_values": [
+        "IND",
+        "CTA",
+        "NDA",
+        "BLA",
+        "Post-market"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Therapeutic area experience",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "therapeutic_area_experience_bioanalysis",
+      "allowed_values": [
+        "Oncology",
+        "Neurology",
+        "Metabolic",
+        "Autoimmune",
+        "Inflammation",
+        "Infectious disease",
+        "Cardiovascular"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Real-time data portal",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "Validated assay library size",
+      "type": "number",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "validated_assay_library_size",
+      "allowed_values": "assays"
+    },
+    {
+      "name": "Feasibility assessment",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "Method development time",
+      "type": "number",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "method_development_time_weeks",
+      "allowed_values": "weeks"
+    },
+    {
+      "name": "Matrix lots for matrix effect",
+      "type": "number",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "matrix_lots_for_matrix_effect",
+      "allowed_values": "lots"
+    },
+    {
+      "name": "Calibration standard levels",
+      "type": "number",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "calibration_standard_levels",
+      "allowed_values": "levels"
+    }
+  ],
+  "l3_nodes": {
+    "small_molecule_pk_bioanalysis": {
+      "label": "Small-Molecule PK Bioanalysis",
+      "table_name": "SMALL_MOLECULE_PK_BIOANALYSIS_SPEC",
+      "fields": [
+        {
+          "name": "Analytical platform",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "analytical_platform_small_molecule_bioanalysis",
+          "allowed_values": [
+            "LC-MS/MS",
+            "LC-HRMS",
+            "HPLC-UV",
+            "HPLC-fluorescence",
+            "GC-MS",
+            "ICP-MS",
+            "HILIC",
+            "Accelerator MS"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Mass spectrometer model",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_mass_spectrometer_model"
+        },
+        {
+          "name": "Analyte class",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "analyte_class_bioanalysis",
+          "allowed_values": [
+            "Parent drug",
+            "Metabolite",
+            "Peptide",
+            "Oligonucleotide",
+            "Lipid",
+            "Steroid",
+            "Amino acid",
+            "ADC payload",
+            "PROTAC",
+            "Chiral compound",
+            "Metal"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Study type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "study_type_small_molecule_bioanalysis",
+          "allowed_values": [
+            "PK",
+            "TK",
+            "Bioavailability",
+            "Bioequivalence",
+            "Drug-drug interaction",
+            "Protein binding",
+            "Tissue distribution",
+            "Therapeutic drug monitoring",
+            "Pediatric"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Microsampling format",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "microsampling_format",
+          "allowed_values": [
+            "Dried blood spot",
+            "Capillary microsampling",
+            "Patient-centric device",
+            "None"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Ionization mode",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ionization_mode_bioanalysis",
+          "allowed_values": [
+            "ESI",
+            "APCI",
+            "EI",
+            "CI"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Sample preparation technique",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sample_preparation_technique_bioanalysis",
+          "allowed_values": [
+            "Protein precipitation",
+            "Solid phase extraction",
+            "Liquid-liquid extraction",
+            "Derivatization"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Minimum sample volume",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "minimum_sample_volume_ul",
+          "allowed_values": "uL"
+        },
+        {
+          "name": "Default assay range",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_default_assay_range"
+        },
+        {
+          "name": "Non-proprietary method available",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Radiolabeled (14C) analysis",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Non-GLP sample analysis turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "nonglp_turnaround_days",
+          "allowed_values": "business days"
+        },
+        {
+          "name": "GLP sample analysis turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "glp_turnaround_days",
+          "allowed_values": "business days"
+        },
+        {
+          "name": "Expedited analysis available",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "PK modeling and reporting",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pk_modeling_reporting",
+          "allowed_values": [
+            "Noncompartmental PK",
+            "PopPK",
+            "PBPK",
+            "PK-PD modeling"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "large_molecule_bioanalysis": {
+      "label": "Large-Molecule Bioanalysis",
+      "table_name": "LARGE_MOLECULE_BIOANALYSIS_SPEC",
+      "fields": [
+        {
+          "name": "Analytical platform",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "analytical_platform_large_molecule_bioanalysis",
+          "allowed_values": [
+            "ELISA",
+            "MSD",
+            "Gyrolab",
+            "Simoa",
+            "Ella",
+            "SMCxPRO",
+            "Luminex",
+            "Hybrid LC-MS",
+            "Hybridization ELISA",
+            "qPCR",
+            "ddPCR"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Biologic modality",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biologic_modality",
+          "allowed_values": [
+            "Monoclonal antibody",
+            "Bispecific antibody",
+            "Antibody fragment",
+            "Nanobody",
+            "Fusion protein",
+            "PEGylated protein",
+            "ADC",
+            "Oligonucleotide",
+            "Gene therapy",
+            "Vaccine"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Study type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "study_type_large_molecule_bioanalysis",
+          "allowed_values": [
+            "PK",
+            "TK",
+            "PD",
+            "Receptor occupancy",
+            "Biodistribution"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Custom reagent generation",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Critical reagent management",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Antibody origin",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "antibody_origin_bioanalysis",
+          "allowed_values": [
+            "Murine",
+            "Chimeric",
+            "Humanized",
+            "Fully human"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "ADC drug-to-antibody ratio analysis",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Ultrasensitive platform available",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Gene therapy detection limit",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "gene_therapy_detection_limit",
+          "allowed_values": "copies"
+        }
+      ]
+    },
+    "immunogenicity_ada": {
+      "label": "Immunogenicity / ADA",
+      "table_name": "IMMUNOGENICITY_ADA_SPEC",
+      "fields": [
+        {
+          "name": "ADA tiers offered",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ada_tiers_offered",
+          "allowed_values": [
+            "Screening",
+            "Confirmatory",
+            "Titer",
+            "Neutralizing antibody"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "NAb assay format",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "nab_assay_format",
+          "allowed_values": [
+            "Cell-based",
+            "Competitive ligand binding",
+            "Enzymatic",
+            "Transduction inhibition"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Drug tolerance method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "drug_tolerance_method",
+          "allowed_values": [
+            "Acid dissociation",
+            "ACE",
+            "SPEAD",
+            "BEAD",
+            "BEHD",
+            "PandA"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Assay platform",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "assay_platform_ada",
+          "allowed_values": [
+            "ELISA",
+            "MSD",
+            "Gyrolab",
+            "Flow cytometry",
+            "ELISpot",
+            "FluoroSpot",
+            "Luminex"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Cut point statistical analysis",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "ADA characterization",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ada_characterization",
+          "allowed_values": [
+            "Isotyping",
+            "Epitope specificity",
+            "Cross-reactivity"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Cellular immunogenicity",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Immunogenicity guidance followed",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "immunogenicity_guidance_followed",
+          "allowed_values": [
+            "FDA 2019 ADA guidance",
+            "EMA immunogenicity guideline",
+            "ICH S6",
+            "ICH S8"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Critical reagent management",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Drug tolerance target",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_drug_tolerance_target"
+        },
+        {
+          "name": "ADA assay sensitivity",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "ada_assay_sensitivity_ng_ml",
+          "allowed_values": "ng/mL"
+        },
+        {
+          "name": "Screening false positive rate",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "screening_false_positive_rate",
+          "allowed_values": [
+            "0.1%",
+            "1%",
+            "5%"
+          ]
+        },
+        {
+          "name": "Pre-existing immunity handling",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Positive control generation",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "TDAR assay",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Validation level",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "validation_level_ada",
+          "allowed_values": [
+            "Fit-for-purpose qualified",
+            "Fully validated"
+          ]
+        },
+        {
+          "name": "ADA assay development time",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "ada_assay_development_time_weeks",
+          "allowed_values": "weeks"
+        }
+      ]
+    },
+    "biomarker_assays": {
+      "label": "Biomarker Assays",
+      "table_name": "BIOMARKER_ASSAYS_SPEC",
+      "fields": [
+        {
+          "name": "Biomarker type",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biomarker_type_bioanalysis",
+          "allowed_values": [
+            "Soluble protein",
+            "Cytokine",
+            "Neuro biomarker",
+            "Enzyme activity",
+            "Cell surface",
+            "Gene expression"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Analytical platform",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "analytical_platform_biomarker",
+          "allowed_values": [
+            "ELISA",
+            "MSD",
+            "Simoa",
+            "Ella",
+            "SMCxPRO",
+            "Luminex",
+            "Olink",
+            "NULISA",
+            "AlphaLISA",
+            "Lumipulse",
+            "Flow cytometry",
+            "ELISpot",
+            "NanoString",
+            "qPCR",
+            "LC-MS/MS",
+            "Hybrid LC-MS"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Multiplex capability",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Validation approach",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "validation_approach_biomarker",
+          "allowed_values": [
+            "Exploratory",
+            "Fit-for-purpose",
+            "Qualified",
+            "Fully validated"
+          ]
+        },
+        {
+          "name": "Context of use defined",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "CLIA testing available",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Assay source",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "assay_source_biomarker",
+          "allowed_values": [
+            "Commercial kit",
+            "Custom developed"
+          ]
+        },
+        {
+          "name": "Off-the-shelf assay menu",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "BEST biomarker category",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "best_biomarker_category",
+          "allowed_values": [
+            "Pharmacodynamic",
+            "Safety",
+            "Predictive",
+            "Prognostic",
+            "Diagnostic",
+            "Monitoring",
+            "Susceptibility",
+            "Surrogate endpoint"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Max analytes per sample",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "max_analytes_per_sample",
+          "allowed_values": "analytes"
+        },
+        {
+          "name": "Lowest quantitation range",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "lowest_quantitation_range",
+          "allowed_values": [
+            "fg/mL",
+            "pg/mL",
+            "ng/mL"
+          ]
+        }
+      ]
+    },
+    "method_development_validation_bioanalysis": {
+      "label": "Method Development & Validation",
+      "table_name": "METHOD_DEVELOPMENT_VALIDATION_SPEC",
+      "fields": []
+    }
+  }
+}

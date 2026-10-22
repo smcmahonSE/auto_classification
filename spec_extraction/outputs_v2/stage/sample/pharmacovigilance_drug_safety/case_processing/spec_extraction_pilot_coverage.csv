@@ -1,0 +1,42 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+case_processing,24/7 availability,824,53,6.43,771,0,0
+case_processing,AI or automation in delivery,824,53,6.43,771,0,0
+case_processing,Case sources,824,0,0.0,824,0,0
+case_processing,Category (L2/L3),824,824,100.0,0,0,0
+case_processing,Category UNSPSC,824,0,0.0,824,0,0
+case_processing,Clinical trial case types,824,0,0.0,824,0,0
+case_processing,Coding dictionaries,824,0,0.0,824,0,0
+case_processing,Currency,824,0,0.0,824,0,0
+case_processing,Description,824,723,87.74,101,0,0
+case_processing,Development stage,824,4,0.49,820,0,0
+case_processing,Document links,824,4,0.49,820,0,0
+case_processing,Expanded access supported,824,53,6.43,771,0,0
+case_processing,Image URL,824,0,0.0,824,0,0
+case_processing,Intake channels,824,0,0.0,824,0,0
+case_processing,Inventory,824,0,0.0,824,0,0
+case_processing,Languages supported,824,0,0.0,824,0,0
+case_processing,Lead time (days),824,0,0.0,824,0,0
+case_processing,Listing UNSPSC,824,0,0.0,824,0,0
+case_processing,Listing type,824,824,100.0,0,0,0
+case_processing,Manufacturer SKU,824,0,0.0,824,0,0
+case_processing,Manufacturer name,824,0,0.0,824,0,0
+case_processing,Multilingual intake and translation,824,53,6.43,771,0,0
+case_processing,Name,824,824,100.0,0,0,0
+case_processing,On-time submission compliance,824,0,0.0,824,0,0
+case_processing,Price per unit,824,802,97.33,22,0,0
+case_processing,Pricing model,824,824,100.0,0,0,0
+case_processing,Processing steps included,824,0,0.0,824,0,0
+case_processing,Product / service URL,824,4,0.49,820,0,0
+case_processing,Product types covered,824,1,0.12,823,0,0
+case_processing,Quantity,824,0,0.0,824,0,0
+case_processing,Regions served,824,38,4.61,786,0,0
+case_processing,Reporting destinations,824,0,0.0,824,0,0
+case_processing,Requester UNSPSC,824,0,0.0,824,0,0
+case_processing,Requester commodity code,824,0,0.0,824,0,0
+case_processing,Safety database,824,0,0.0,824,0,0
+case_processing,Ship from,824,0,0.0,824,0,0
+case_processing,Submission formats,824,0,0.0,824,0,0
+case_processing,Supplier SKU,824,0,0.0,824,0,0
+case_processing,Unit,824,0,0.0,824,0,0
+case_processing,Unit of measure,824,207,25.12,550,67,0
+case_processing,Vendor-hosted safety database,824,53,6.43,771,0,0

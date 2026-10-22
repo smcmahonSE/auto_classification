@@ -1,0 +1,29 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+instrument_consumables,Brand / manufacturer,1266,0,0.0,1266,0,0
+instrument_consumables,Category (L2/L3),1266,1266,100.0,0,0,0
+instrument_consumables,Category UNSPSC,1266,0,0.0,1266,0,0
+instrument_consumables,Compatible platform,1266,0,0.0,1266,0,0
+instrument_consumables,Currency,1266,16,1.26,1250,0,0
+instrument_consumables,Description,1266,1234,97.47,32,0,0
+instrument_consumables,Document links,1266,4,0.32,1262,0,0
+instrument_consumables,Equipment type,1266,287,22.67,979,0,0
+instrument_consumables,Filtered,1266,0,0.0,1264,2,0
+instrument_consumables,Image URL,1266,1,0.08,1265,0,0
+instrument_consumables,Inventory,1266,0,0.0,1266,0,0
+instrument_consumables,Lead time (days),1266,0,0.0,1266,0,0
+instrument_consumables,Listing UNSPSC,1266,0,0.0,1266,0,0
+instrument_consumables,Listing type,1266,1266,100.0,0,0,0
+instrument_consumables,Manufacturer SKU,1266,0,0.0,1266,0,0
+instrument_consumables,Manufacturer name,1266,0,0.0,1266,0,0
+instrument_consumables,Name,1266,1266,100.0,0,0,0
+instrument_consumables,Price per unit,1266,1264,99.84,2,0,0
+instrument_consumables,Pricing model,1266,1266,100.0,0,0,0
+instrument_consumables,Product / service URL,1266,4,0.32,1262,0,0
+instrument_consumables,Quantity,1266,0,0.0,1266,0,0
+instrument_consumables,Requester UNSPSC,1266,0,0.0,1266,0,0
+instrument_consumables,Requester commodity code,1266,0,0.0,1266,0,0
+instrument_consumables,Ship from,1266,0,0.0,1266,0,0
+instrument_consumables,Size / capacity,1266,0,0.0,1266,0,0
+instrument_consumables,Supplier SKU,1266,0,0.0,1266,0,0
+instrument_consumables,Unit,1266,0,0.0,1266,0,0
+instrument_consumables,Unit of measure,1266,357,28.2,756,153,0

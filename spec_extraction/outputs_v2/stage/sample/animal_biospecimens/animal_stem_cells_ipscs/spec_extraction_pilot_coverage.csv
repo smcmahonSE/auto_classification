@@ -1,0 +1,38 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+animal_stem_cells_ipscs,Age,37,7,18.92,30,0,0
+animal_stem_cells_ipscs,Category (L2/L3),37,37,100.0,0,0,0
+animal_stem_cells_ipscs,Category UNSPSC,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Characterization markers,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Currency,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Description,37,35,94.59,2,0,0
+animal_stem_cells_ipscs,Disease / model state,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Document links,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Format / preservation,37,23,62.16,14,0,0
+animal_stem_cells_ipscs,IACUC / animal-welfare consent,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Image URL,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Individual vs Pooled,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Inventory,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Karyotype,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Lead time (days),37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Listing UNSPSC,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Listing type,37,37,100.0,0,0,0
+animal_stem_cells_ipscs,Manufacturer SKU,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Manufacturer name,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Name,37,37,100.0,0,0,0
+animal_stem_cells_ipscs,Price per unit,37,37,100.0,0,0,0
+animal_stem_cells_ipscs,Pricing model,37,37,100.0,0,0,0
+animal_stem_cells_ipscs,Product / service URL,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Quantity,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Reprogramming method,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Requester UNSPSC,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Requester commodity code,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Sex,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Ship from,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Shipping Temperature,37,22,59.46,15,0,0
+animal_stem_cells_ipscs,Species,37,25,67.57,12,0,0
+animal_stem_cells_ipscs,Storage Conditions,37,7,18.92,8,22,0
+animal_stem_cells_ipscs,Strain,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Supplier SKU,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Unit,37,0,0.0,37,0,0
+animal_stem_cells_ipscs,Unit of measure,37,5,13.51,32,0,0
+animal_stem_cells_ipscs,Viability %,37,0,0.0,37,0,0

@@ -1,0 +1,45 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+stability_studies,Category (L2/L3),115,115,100.0,0,0,0
+stability_studies,Category UNSPSC,115,0,0.0,115,0,0
+stability_studies,Controlled substances accepted,115,1,0.87,114,0,0
+stability_studies,Currency,115,2,1.74,113,0,0
+stability_studies,Deliverables,115,16,13.91,99,0,0
+stability_studies,Description,115,107,93.04,8,0,0
+stability_studies,Development stage,115,0,0.0,115,0,0
+stability_studies,Document links,115,2,1.74,113,0,0
+stability_studies,Dosage form,115,0,0.0,115,0,0
+stability_studies,Expedited turnaround available,115,1,0.87,114,0,0
+stability_studies,GMP status,115,1,0.87,114,0,0
+stability_studies,Highly potent compounds accepted,115,1,0.87,114,0,0
+stability_studies,Image URL,115,0,0.0,115,0,0
+stability_studies,Inventory,115,0,0.0,115,0,0
+stability_studies,Lead time (days),115,0,0.0,115,0,0
+stability_studies,Listing UNSPSC,115,0,0.0,115,0,0
+stability_studies,Listing type,115,115,100.0,0,0,0
+stability_studies,Manufacturer SKU,115,0,0.0,115,0,0
+stability_studies,Manufacturer name,115,0,0.0,115,0,0
+stability_studies,Material tested,115,2,1.74,113,0,0
+stability_studies,Method source,115,0,0.0,115,0,0
+stability_studies,Name,115,115,100.0,0,0,0
+stability_studies,Pharmacopeia,115,9,7.83,106,0,0
+stability_studies,Photostability option,115,0,0.0,115,0,0
+stability_studies,Photostability testing,115,1,0.87,114,0,0
+stability_studies,Price per unit,115,114,99.13,1,0,0
+stability_studies,Pricing model,115,115,100.0,0,0,0
+stability_studies,Product / service URL,115,2,1.74,113,0,0
+stability_studies,Product modality,115,1,0.87,114,0,0
+stability_studies,Program management services,115,0,0.0,115,0,0
+stability_studies,Quantity,115,0,0.0,115,0,0
+stability_studies,Requester UNSPSC,115,0,0.0,115,0,0
+stability_studies,Requester commodity code,115,0,0.0,115,0,0
+stability_studies,Ship from,115,0,0.0,115,0,0
+stability_studies,Stability guideline,115,0,0.0,115,0,0
+stability_studies,Stability outcome,115,0,0.0,115,0,0
+stability_studies,Standard turnaround,115,0,0.0,115,0,0
+stability_studies,Storage condition,115,0,0.0,115,0,0
+stability_studies,Storage-only service,115,1,0.87,114,0,0
+stability_studies,Study type,115,5,4.35,110,0,0
+stability_studies,Supplier SKU,115,0,0.0,115,0,0
+stability_studies,Target regulatory agency,115,1,0.87,114,0,0
+stability_studies,Unit,115,0,0.0,115,0,0
+stability_studies,Unit of measure,115,34,29.57,78,3,0

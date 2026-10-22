@@ -1,0 +1,53 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+large_molecule_bioanalysis,ADC drug-to-antibody ratio analysis,840,26,3.1,814,0,0
+large_molecule_bioanalysis,Analytical platform,840,7,0.83,833,0,0
+large_molecule_bioanalysis,Antibody origin,840,1,0.12,839,0,0
+large_molecule_bioanalysis,Automated sample preparation,840,26,3.1,814,0,0
+large_molecule_bioanalysis,Bioanalytical guidance followed,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Biologic modality,840,3,0.36,837,0,0
+large_molecule_bioanalysis,Calibration standard levels,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Category (L2/L3),840,840,100.0,0,0,0
+large_molecule_bioanalysis,Category UNSPSC,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Critical reagent management,840,26,3.1,814,0,0
+large_molecule_bioanalysis,Currency,840,11,1.31,829,0,0
+large_molecule_bioanalysis,Custom reagent generation,840,26,3.1,814,0,0
+large_molecule_bioanalysis,Description,840,654,77.86,186,0,0
+large_molecule_bioanalysis,Development stage,840,67,7.98,773,0,0
+large_molecule_bioanalysis,Document links,840,25,2.98,815,0,0
+large_molecule_bioanalysis,Feasibility assessment,840,26,3.1,814,0,0
+large_molecule_bioanalysis,Gene therapy detection limit,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Image URL,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Inventory,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Lead time (days),840,0,0.0,840,0,0
+large_molecule_bioanalysis,Listing UNSPSC,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Listing type,840,840,100.0,0,0,0
+large_molecule_bioanalysis,Manufacturer SKU,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Manufacturer name,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Matrix lots for matrix effect,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Method development time,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Method origin,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Molecule modality,840,164,19.52,676,0,0
+large_molecule_bioanalysis,Name,840,840,100.0,0,0,0
+large_molecule_bioanalysis,Price per unit,840,755,89.88,85,0,0
+large_molecule_bioanalysis,Pricing model,840,840,100.0,0,0,0
+large_molecule_bioanalysis,Product / service URL,840,25,2.98,815,0,0
+large_molecule_bioanalysis,Quantity,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Real-time data portal,840,26,3.1,814,0,0
+large_molecule_bioanalysis,Regulatory compliance level,840,5,0.6,835,0,0
+large_molecule_bioanalysis,Regulatory submission supported,840,1,0.12,839,0,0
+large_molecule_bioanalysis,Requester UNSPSC,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Requester commodity code,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Sample matrix,840,134,15.95,706,0,0
+large_molecule_bioanalysis,Service scope,840,2,0.24,838,0,0
+large_molecule_bioanalysis,Ship from,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Species,840,118,14.05,722,0,0
+large_molecule_bioanalysis,Study type,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Supplier SKU,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Therapeutic area experience,840,34,4.05,806,0,0
+large_molecule_bioanalysis,Ultrasensitive platform available,840,26,3.1,814,0,0
+large_molecule_bioanalysis,Unit,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Unit of measure,840,149,17.74,610,81,0
+large_molecule_bioanalysis,Validated assay library size,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Validation deliverables,840,0,0.0,840,0,0
+large_molecule_bioanalysis,Validation parameters,840,42,5.0,798,0,0
+large_molecule_bioanalysis,Validation type,840,0,0.0,840,0,0

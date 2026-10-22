@@ -1,0 +1,1163 @@
+{
+  "l2_id": "cmc_analytical_qc",
+  "l2_label": "CMC, Analytical & QC",
+  "schema_name": "CMC_ANALYTICAL_QC",
+  "l2_fields": [
+    {
+      "name": "Product modality",
+      "type": "multi-select",
+      "required": true,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "product_modality_cmc",
+      "allowed_values": [
+        "Small molecule",
+        "Peptide",
+        "Biologic protein",
+        "Monoclonal antibody",
+        "Antibody drug conjugate",
+        "Cell therapy",
+        "Gene therapy",
+        "mRNA",
+        "Vaccine",
+        "Medical device",
+        "Combination product",
+        "Tissue product"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "GMP status",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "gmp_status_cmc",
+      "allowed_values": [
+        "cGMP",
+        "GLP",
+        "Non-GMP"
+      ]
+    },
+    {
+      "name": "Material tested",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "material_tested_cmc",
+      "allowed_values": [
+        "Raw material",
+        "Excipient",
+        "Drug substance (API)",
+        "Intermediate",
+        "In-process sample",
+        "Finished drug product",
+        "Packaging component"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Dosage form",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "dosage_form_cmc",
+      "allowed_values": [
+        "Oral solid",
+        "Oral liquid",
+        "Parenteral",
+        "Ophthalmic",
+        "Orally inhaled and nasal",
+        "Topical",
+        "Transdermal patch"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Development stage",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "development_stage",
+      "allowed_values": [
+        "Preclinical",
+        "Phase 1",
+        "Phase 2",
+        "Phase 3",
+        "Post-approval"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Pharmacopeia",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "pharmacopeia_cmc",
+      "allowed_values": [
+        "USP-NF",
+        "Ph. Eur.",
+        "JP",
+        "BP",
+        "ChP"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Target regulatory agency",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "target_regulatory_agency_cmc",
+      "allowed_values": [
+        "FDA",
+        "EMA",
+        "MHRA",
+        "NMPA",
+        "PMDA",
+        "Health Canada"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Deliverables",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "deliverables_cmc",
+      "allowed_values": [
+        "Certificate of Analysis",
+        "Study protocol",
+        "Interim report",
+        "Final report",
+        "Raw data package",
+        "Submission-ready report"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Method source",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "method_source_cmc",
+      "allowed_values": [
+        "Compendial",
+        "Client-supplied",
+        "Vendor-supplied",
+        "Developed by provider"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Standard turnaround",
+      "type": "number",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "standard_turnaround_days",
+      "allowed_values": "business days"
+    },
+    {
+      "name": "Expedited turnaround available",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "Controlled substances accepted",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "Highly potent compounds accepted",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    }
+  ],
+  "l3_nodes": {
+    "method_development_validation_cmc": {
+      "label": "Method Development & Validation",
+      "table_name": "METHOD_DEVELOPMENT_VALIDATION_CMC_SPEC",
+      "fields": [
+        {
+          "name": "Method lifecycle activity",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "method_lifecycle_activity",
+          "allowed_values": [
+            "Method development",
+            "Method optimization",
+            "Feasibility study",
+            "Method qualification",
+            "Method validation",
+            "Compendial method verification",
+            "Method transfer",
+            "Revalidation"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Validation guideline",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "validation_guideline_cmc",
+          "allowed_values": [
+            "ICH Q2(R1)",
+            "ICH Q2(R2)",
+            "ICH Q14",
+            "FDA guidance",
+            "Pharmacopeial chapter"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Method purpose",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "method_purpose",
+          "allowed_values": [
+            "Assay",
+            "Identity",
+            "Purity and impurities",
+            "Stability-indicating",
+            "Dissolution",
+            "Residual solvents",
+            "Cleaning validation",
+            "Potency bioassay",
+            "Microbiological method suitability"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Analytical technique",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "analytical_technique_cmc",
+          "allowed_values": [
+            "HPLC",
+            "UPLC",
+            "GC",
+            "GC-MS",
+            "LC-MS",
+            "HRMS",
+            "ICP-MS",
+            "ICP-OES",
+            "Ion chromatography",
+            "SEC",
+            "NMR",
+            "FTIR",
+            "XRPD",
+            "DSC",
+            "TGA",
+            "qPCR",
+            "ELISA",
+            "Cell-based assay"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Forced degradation studies",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Validation approach",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "validation_approach_cmc",
+          "allowed_values": [
+            "Phase-appropriate",
+            "Full validation"
+          ]
+        },
+        {
+          "name": "Validation parameters",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "validation_parameters_cmc",
+          "allowed_values": [
+            "System suitability",
+            "Accuracy",
+            "Precision",
+            "Intermediate precision",
+            "Specificity",
+            "LOD",
+            "LOQ",
+            "Linearity",
+            "Range",
+            "Robustness",
+            "Solution stability"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Transfer lab role",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "transfer_lab_role",
+          "allowed_values": [
+            "Sending lab",
+            "Receiving lab",
+            "Both"
+          ]
+        },
+        {
+          "name": "Analytical quality by design",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "stability_studies": {
+      "label": "Stability Studies",
+      "table_name": "STABILITY_STUDIES_SPEC",
+      "fields": [
+        {
+          "name": "Study type",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "study_type_stability",
+          "allowed_values": [
+            "Long-term real-time",
+            "Accelerated",
+            "Forced degradation",
+            "Photostability",
+            "Freeze-thaw",
+            "Temperature cycling",
+            "Shipping simulation",
+            "Excipient compatibility"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Photostability testing",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Storage condition",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_condition_stability",
+          "allowed_values": [
+            "25C/60% RH",
+            "30C/65% RH",
+            "30C/75% RH",
+            "40C/75% RH",
+            "25C/40% RH",
+            "5C",
+            "-20C",
+            "-40C",
+            "-70C",
+            "-80C",
+            "Below -150C",
+            "Custom"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Stability guideline",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "stability_guideline",
+          "allowed_values": [
+            "ICH Q1A(R2)",
+            "ICH Q1B",
+            "ICH Q1C",
+            "ICH Q1D",
+            "ICH Q1E",
+            "ICH Q1F"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Photostability option",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "photostability_option",
+          "allowed_values": [
+            "Option 1",
+            "Option 2"
+          ]
+        },
+        {
+          "name": "Storage-only service",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Program management services",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "program_management_services",
+          "allowed_values": [
+            "Protocol writing",
+            "Sample pull scheduling",
+            "Sample reconciliation",
+            "Retain sample management"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Stability outcome",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "stability_outcome",
+          "allowed_values": [
+            "Shelf-life determination",
+            "Retest period",
+            "Storage condition recommendation"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "release_testing": {
+      "label": "Release Testing",
+      "table_name": "RELEASE_TESTING_SPEC",
+      "fields": [
+        {
+          "name": "Release test",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "release_test",
+          "allowed_values": [
+            "Assay",
+            "Identity",
+            "Purity and impurities",
+            "Dissolution",
+            "Water content",
+            "Hardness",
+            "Friability",
+            "Disintegration",
+            "Particle size",
+            "pH",
+            "Subvisible particulates",
+            "Sterility",
+            "Bacterial endotoxin"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Release scope",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "release_scope",
+          "allowed_values": [
+            "Drug substance",
+            "Drug product",
+            "Clinical trial material",
+            "Commercial batch",
+            "Comparator product"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Container closure integrity method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "container_closure_integrity_method",
+          "allowed_values": [
+            "Dye ingress",
+            "Microbial ingress",
+            "Mass extraction"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "EU QP certification",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "EU import testing",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Specification development support",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "OOS investigation support",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "impurity_el_testing": {
+      "label": "Impurity / E&L Testing",
+      "table_name": "IMPURITY_EL_TESTING_SPEC",
+      "fields": [
+        {
+          "name": "Impurity class",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "impurity_class",
+          "allowed_values": [
+            "Organic impurities",
+            "Degradation products",
+            "Residual solvents",
+            "Elemental impurities",
+            "Nitrosamines",
+            "Genotoxic impurities",
+            "Extractables",
+            "Leachables"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Elemental impurity chapter",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "elemental_impurity_chapter",
+          "allowed_values": [
+            "USP <232>",
+            "USP <233>",
+            "Ph. Eur. 5.20",
+            "Ph. Eur. 2.4.20"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "E&L standard",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "el_standard",
+          "allowed_values": [
+            "USP <1663>",
+            "USP <1664>",
+            "USP <665>",
+            "USP <1665>",
+            "ISO 10993-18",
+            "PQRI",
+            "BPOG",
+            "BPSA"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "E&L study type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "el_study_type",
+          "allowed_values": [
+            "Controlled extraction",
+            "Simulation study",
+            "Leachables on stability"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "E&L component type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "el_component_type",
+          "allowed_values": [
+            "Primary container closure",
+            "Single-use system",
+            "Manufacturing component",
+            "Prefilled syringe",
+            "Auto-injector",
+            "Inhaler",
+            "Medical device component"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Impurity guideline",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "impurity_guideline",
+          "allowed_values": [
+            "ICH Q3A",
+            "ICH Q3B",
+            "ICH Q3C",
+            "ICH Q3D",
+            "ICH Q3E",
+            "ICH M7"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Toxicological risk assessment",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Safety threshold applied",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "safety_threshold_applied",
+          "allowed_values": [
+            "AET",
+            "SCT",
+            "QT",
+            "TTC",
+            "PDE"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Nitrosamine LOQ",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "nitrosamine_loq_ppb",
+          "allowed_values": "ppb"
+        },
+        {
+          "name": "E&L analytical technique",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "el_analytical_technique",
+          "allowed_values": [
+            "GC-MS",
+            "Headspace GC-MS",
+            "LC-MS",
+            "LC-HRMS",
+            "ICP-MS",
+            "ICP-OES",
+            "NMR",
+            "Ion chromatography",
+            "TOC",
+            "FTIR"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Extraction technique",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "extraction_technique",
+          "allowed_values": [
+            "Reflux",
+            "Soxhlet",
+            "Sonication",
+            "Microwave",
+            "Controlled-temperature incubation"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Unknown structure elucidation",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "microbiology_sterility": {
+      "label": "Microbiology / Sterility",
+      "table_name": "MICROBIOLOGY_STERILITY_SPEC",
+      "fields": [
+        {
+          "name": "Microbiology test",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "microbiology_test",
+          "allowed_values": [
+            "Sterility",
+            "Bacterial endotoxin",
+            "Rabbit pyrogen",
+            "Monocyte activation test",
+            "Bioburden",
+            "Microbial limits",
+            "Mycoplasma",
+            "Antimicrobial effectiveness",
+            "Environmental monitoring",
+            "Water testing",
+            "Microbial identification",
+            "Biological indicator",
+            "Disinfectant efficacy",
+            "Media fill"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Sterility test environment",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility_test_environment",
+          "allowed_values": [
+            "Isolator",
+            "Cleanroom"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Sterility chapter",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility_chapter",
+          "allowed_values": [
+            "USP <71>",
+            "Ph. Eur. 2.6.1",
+            "JP 4.06",
+            "21 CFR 610.12"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Microbial identification method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "microbial_identification_method",
+          "allowed_values": [
+            "MALDI-TOF",
+            "16S rRNA sequencing",
+            "ITS sequencing",
+            "Strain typing",
+            "NGS",
+            "Phenotypic"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Rapid microbial method platform",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "rapid_microbial_method_platform",
+          "allowed_values": [
+            "Celsis ATP bioluminescence",
+            "BacT/Alert",
+            "RedOne solid cytometry",
+            "MycoSEQ qPCR",
+            "BioFire"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Rapid method validation basis",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "rapid_method_validation_basis",
+          "allowed_values": [
+            "USP <1223>",
+            "Ph. Eur. 5.1.6",
+            "PDA TR33",
+            "USP <1071>"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Endotoxin method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "endotoxin_method",
+          "allowed_values": [
+            "Gel clot",
+            "Kinetic chromogenic",
+            "Kinetic turbidimetric",
+            "Recombinant reagent"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Mycoplasma method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "mycoplasma_method",
+          "allowed_values": [
+            "Culture",
+            "Indicator cell culture",
+            "qPCR"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Microbial limits chapter",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "microbial_limits_chapter",
+          "allowed_values": [
+            "USP <61>",
+            "USP <62>",
+            "Ph. Eur. 2.6.12",
+            "Ph. Eur. 2.6.13",
+            "ChP"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Environmental monitoring sample type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "environmental_monitoring_sample_type",
+          "allowed_values": [
+            "Viable air",
+            "Non-viable particles",
+            "Surface",
+            "Compressed gas",
+            "Water"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Method suitability testing",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Sterility incubation period",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "sterility_incubation_period_days",
+          "allowed_values": "days"
+        },
+        {
+          "name": "Sterility method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility_method",
+          "allowed_values": [
+            "Membrane filtration",
+            "Closed-system filtration",
+            "Direct inoculation"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Endotoxin chapter",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "endotoxin_chapter",
+          "allowed_values": [
+            "USP <85>",
+            "Ph. Eur. 2.6.14",
+            "JP 4.01",
+            "USP <161>"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Low endotoxin recovery study",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Mycoplasma chapter",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "mycoplasma_chapter",
+          "allowed_values": [
+            "USP <63>",
+            "Ph. Eur. 2.6.7",
+            "JP"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "raw_material_testing": {
+      "label": "Raw Material Testing",
+      "table_name": "RAW_MATERIAL_TESTING_SPEC",
+      "fields": [
+        {
+          "name": "Material category",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "material_category_raw_material",
+          "allowed_values": [
+            "Excipient",
+            "API",
+            "Reagent",
+            "Cell culture media",
+            "Animal serum",
+            "Chromatography resin",
+            "Growth factor",
+            "Process buffer",
+            "Surfactant",
+            "Packaging component",
+            "Pharmaceutical water"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Testing basis",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "testing_basis_raw_material",
+          "allowed_values": [
+            "Compendial",
+            "Non-compendial",
+            "Client-supplied method"
+          ]
+        },
+        {
+          "name": "Raw material test",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "raw_material_test",
+          "allowed_values": [
+            "Identity",
+            "Assay",
+            "Purity",
+            "Residual solvents",
+            "Elemental impurities",
+            "Water content",
+            "Microbial limits",
+            "Residual host cell DNA",
+            "Residual host cell protein"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Compendium",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "compendium_raw_material",
+          "allowed_values": [
+            "USP-NF",
+            "Ph. Eur.",
+            "JP",
+            "BP",
+            "ChP",
+            "JPE",
+            "FCC",
+            "ACS"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Full monograph testing",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Identity technique",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "identity_technique_raw_material",
+          "allowed_values": [
+            "FTIR",
+            "NIR",
+            "NMR",
+            "HPLC"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Specification development support",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    }
+  }
+}

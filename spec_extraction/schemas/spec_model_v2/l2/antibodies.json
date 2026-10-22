@@ -39,43 +39,6 @@
           ]
         },
         {
-          "name": "Cited reactivity",
-          "type": "multi-select",
-          "required": false,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "reactivity_species",
-          "multi_select": true,
-          "allowed_values": [
-            "Human",
-            "Mouse",
-            "Rat",
-            "Monkey",
-            "Dog",
-            "Pig",
-            "Cow",
-            "Chicken",
-            "Zebrafish",
-            "Other"
-          ]
-        },
-        {
-          "name": "PTM / modification specificity",
-          "type": "picklist",
-          "required": false,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "ptm_modification_specificity",
-          "allowed_values": [
-            "Total",
-            "Phospho-specific",
-            "Acetyl",
-            "Methyl",
-            "Ubiquitin",
-            "Cleaved"
-          ]
-        },
-        {
           "name": "Host Species",
           "type": "picklist",
           "required": true,
@@ -129,6 +92,43 @@
             "ICC",
             "Neutralization",
             "Other"
+          ]
+        },
+        {
+          "name": "Cited reactivity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "reactivity_species",
+          "multi_select": true,
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Monkey",
+            "Dog",
+            "Pig",
+            "Cow",
+            "Chicken",
+            "Zebrafish",
+            "Other"
+          ]
+        },
+        {
+          "name": "PTM / modification specificity",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ptm_modification_specificity",
+          "allowed_values": [
+            "Total",
+            "Phospho-specific",
+            "Acetyl",
+            "Methyl",
+            "Ubiquitin",
+            "Cleaved"
           ]
         },
         {
@@ -305,18 +305,6 @@
           ]
         },
         {
-          "name": "Cross-adsorbed",
-          "type": "yes_no",
-          "required": false,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "yes_no",
-          "allowed_values": [
-            "Yes",
-            "No"
-          ]
-        },
-        {
           "name": "Host Species",
           "type": "picklist",
           "required": true,
@@ -370,6 +358,18 @@
             "ICC",
             "Neutralization",
             "Other"
+          ]
+        },
+        {
+          "name": "Cross-adsorbed",
+          "type": "yes_no",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
           ]
         },
         {
@@ -438,31 +438,6 @@
       "table_name": "CONJUGATED_ANTIBODIES_SPEC",
       "fields": [
         {
-          "name": "Conjugate / Label",
-          "type": "picklist",
-          "required": false,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "conjugate_label",
-          "allowed_values": [
-            "Unconjugated",
-            "FITC",
-            "PE",
-            "APC",
-            "AF488",
-            "AF647",
-            "HRP",
-            "AP",
-            "Biotin",
-            "Cy3",
-            "Cy5",
-            "BV421",
-            "PE-Cy7",
-            "APC-Cy7",
-            "Other"
-          ]
-        },
-        {
           "name": "Target / Antigen",
           "type": "text",
           "required": true,
@@ -489,43 +464,6 @@
             "Chicken",
             "Zebrafish",
             "Other"
-          ]
-        },
-        {
-          "name": "Cited reactivity",
-          "type": "multi-select",
-          "required": false,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "reactivity_species",
-          "multi_select": true,
-          "allowed_values": [
-            "Human",
-            "Mouse",
-            "Rat",
-            "Monkey",
-            "Dog",
-            "Pig",
-            "Cow",
-            "Chicken",
-            "Zebrafish",
-            "Other"
-          ]
-        },
-        {
-          "name": "PTM / modification specificity",
-          "type": "picklist",
-          "required": false,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "ptm_modification_specificity",
-          "allowed_values": [
-            "Total",
-            "Phospho-specific",
-            "Acetyl",
-            "Methyl",
-            "Ubiquitin",
-            "Cleaved"
           ]
         },
         {
@@ -582,6 +520,68 @@
             "ICC",
             "Neutralization",
             "Other"
+          ]
+        },
+        {
+          "name": "Conjugate / Label",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "conjugate_label",
+          "allowed_values": [
+            "Unconjugated",
+            "FITC",
+            "PE",
+            "APC",
+            "AF488",
+            "AF647",
+            "HRP",
+            "AP",
+            "Biotin",
+            "Cy3",
+            "Cy5",
+            "BV421",
+            "PE-Cy7",
+            "APC-Cy7",
+            "Other"
+          ]
+        },
+        {
+          "name": "Cited reactivity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "reactivity_species",
+          "multi_select": true,
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Monkey",
+            "Dog",
+            "Pig",
+            "Cow",
+            "Chicken",
+            "Zebrafish",
+            "Other"
+          ]
+        },
+        {
+          "name": "PTM / modification specificity",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ptm_modification_specificity",
+          "allowed_values": [
+            "Total",
+            "Phospho-specific",
+            "Acetyl",
+            "Methyl",
+            "Ubiquitin",
+            "Cleaved"
           ]
         },
         {
@@ -696,25 +696,6 @@
           ]
         },
         {
-          "name": "Conjugate",
-          "type": "picklist",
-          "required": false,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "conjugate_label",
-          "allowed_values": [
-            "Unconjugated",
-            "FITC",
-            "PE",
-            "APC",
-            "AF488",
-            "AF647",
-            "HRP",
-            "Biotin",
-            "Other"
-          ]
-        },
-        {
           "name": "Host Species",
           "type": "picklist",
           "required": true,
@@ -767,6 +748,25 @@
             "ChIP",
             "ICC",
             "Neutralization",
+            "Other"
+          ]
+        },
+        {
+          "name": "Conjugate",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "conjugate_label",
+          "allowed_values": [
+            "Unconjugated",
+            "FITC",
+            "PE",
+            "APC",
+            "AF488",
+            "AF647",
+            "HRP",
+            "Biotin",
             "Other"
           ]
         },
@@ -888,27 +888,6 @@
           ]
         },
         {
-          "name": "Cited reactivity",
-          "type": "multi-select",
-          "required": false,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "reactivity_species",
-          "multi_select": true,
-          "allowed_values": [
-            "Human",
-            "Mouse",
-            "Rat",
-            "Monkey",
-            "Dog",
-            "Pig",
-            "Cow",
-            "Chicken",
-            "Zebrafish",
-            "Other"
-          ]
-        },
-        {
           "name": "Host Species",
           "type": "picklist",
           "required": true,
@@ -961,6 +940,27 @@
             "ChIP",
             "ICC",
             "Neutralization",
+            "Other"
+          ]
+        },
+        {
+          "name": "Cited reactivity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "reactivity_species",
+          "multi_select": true,
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Monkey",
+            "Dog",
+            "Pig",
+            "Cow",
+            "Chicken",
+            "Zebrafish",
             "Other"
           ]
         },

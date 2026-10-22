@@ -311,7 +311,13 @@ def phase_publish():
             stale_flag = ""
             if reference_mtime is not None and abs(path.stat().st_mtime - reference_mtime) > STALE_THRESHOLD_SECONDS:
                 stale_flag = "  *** POSSIBLY STALE — modified >24h apart from Phase classify's result. Verify this wasn't left over from an earlier run before trusting this publish. ***"
-            df = pd.read_csv(path, low_memory=False)
+            # A phase that processed zero rows (e.g. embed with no net-new listings)
+            # writes a header-less, truly empty CSV — pd.read_csv() raises
+            # EmptyDataError on that rather than returning a 0-row frame.
+            try:
+                df = pd.read_csv(path, low_memory=False)
+            except pd.errors.EmptyDataError:
+                df = pd.DataFrame()
             parts.append(df)
             print(f"  {label}: {len(df):,} rows (file modified {mtime:%Y-%m-%d %H:%M}){stale_flag}")
         else:

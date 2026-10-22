@@ -34,6 +34,15 @@ _OVERRIDE_MODULES: dict[str, str] = {
     "animal_models": "spec_extraction.v2.overrides.common",
     "equipment_instruments_parts": "spec_extraction.v2.overrides.common",
     "histology_pathology": "spec_extraction.v2.overrides.common",
+    "analytical_reference_standards": "spec_extraction.v2.overrides.common",
+    "dmpk_adme": "spec_extraction.v2.overrides.common",
+    "bioanalysis": "spec_extraction.v2.overrides.common",
+    "cmc_analytical_qc": "spec_extraction.v2.overrides.common",
+    "regulatory_affairs": "spec_extraction.v2.overrides.common",
+    "heor_rwe_market_access": "spec_extraction.v2.overrides.common",
+    "phase_iv_post_marketing_studies": "spec_extraction.v2.overrides.common",
+    "toxicology_safety_assessment": "spec_extraction.v2.overrides.common",
+    "pharmacovigilance_drug_safety": "spec_extraction.v2.overrides.common",
 }
 
 

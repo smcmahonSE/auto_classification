@@ -1,0 +1,52 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+patient_registries,Biospecimen collection,178,5,2.81,173,0,0
+patient_registries,Category (L2/L3),178,178,100.0,0,0,0
+patient_registries,Category UNSPSC,178,0,0.0,178,0,0
+patient_registries,Currency,178,1,0.56,177,0,0
+patient_registries,Data collection approach,178,0,0.0,178,0,0
+patient_registries,Data reporters,178,0,0.0,178,0,0
+patient_registries,Data sources,178,0,0.0,178,0,0
+patient_registries,Decentralized or remote study model,178,5,2.81,173,0,0
+patient_registries,Deliverables,178,0,0.0,178,0,0
+patient_registries,Description,178,6,3.37,172,0,0
+patient_registries,Direct-to-patient data collection,178,5,2.81,173,0,0
+patient_registries,Document links,178,0,0.0,178,0,0
+patient_registries,Endpoints captured,178,1,0.56,177,0,0
+patient_registries,Enrollment channel,178,0,0.0,178,0,0
+patient_registries,Exposed versus unexposed comparison,178,5,2.81,173,0,0
+patient_registries,Geographic coverage,178,6,3.37,172,0,0
+patient_registries,Global coordinating center,178,5,2.81,173,0,0
+patient_registries,Image URL,178,0,0.0,178,0,0
+patient_registries,Infant follow-up period,178,0,0.0,178,0,0
+patient_registries,Inventory,178,0,0.0,178,0,0
+patient_registries,Lactation study type,178,0,0.0,178,0,0
+patient_registries,Lead time (days),178,0,0.0,178,0,0
+patient_registries,Listing UNSPSC,178,0,0.0,178,0,0
+patient_registries,Listing type,178,178,100.0,0,0,0
+patient_registries,Manufacturer SKU,178,0,0.0,178,0,0
+patient_registries,Manufacturer name,178,0,0.0,178,0,0
+patient_registries,Name,178,178,100.0,0,0,0
+patient_registries,Number of countries,178,0,0.0,178,0,0
+patient_registries,Patient population,178,1,0.56,177,0,0
+patient_registries,Patient-reported outcomes collected,178,5,2.81,173,0,0
+patient_registries,Pregnancy outcomes captured,178,0,0.0,178,0,0
+patient_registries,Price per unit,178,178,100.0,0,0,0
+patient_registries,Pricing model,178,178,100.0,0,0,0
+patient_registries,Product / service URL,178,0,0.0,178,0,0
+patient_registries,Product type,178,1,0.56,177,0,0
+patient_registries,Quantity,178,0,0.0,178,0,0
+patient_registries,Registry awareness campaign,178,5,2.81,173,0,0
+patient_registries,Registry duration,178,0,0.0,178,0,0
+patient_registries,Registry type,178,3,1.69,175,0,0
+patient_registries,Regulatory purpose,178,0,0.0,178,0,0
+patient_registries,Requester UNSPSC,178,0,0.0,178,0,0
+patient_registries,Requester commodity code,178,0,0.0,178,0,0
+patient_registries,Scope of service,178,17,9.55,161,0,0
+patient_registries,Ship from,178,0,0.0,178,0,0
+patient_registries,Sponsor model,178,0,0.0,178,0,0
+patient_registries,Supplier SKU,178,0,0.0,178,0,0
+patient_registries,Target regulator,178,0,0.0,178,0,0
+patient_registries,Target sample size,178,0,0.0,178,0,0
+patient_registries,Therapeutic area,178,0,0.0,178,0,0
+patient_registries,Unit,178,0,0.0,178,0,0
+patient_registries,Unit of measure,178,21,11.8,157,0,0

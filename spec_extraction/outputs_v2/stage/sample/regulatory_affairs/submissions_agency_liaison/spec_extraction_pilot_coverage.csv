@@ -1,0 +1,43 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+submissions_agency_liaison,Agency query response,232,0,0.0,232,0,0
+submissions_agency_liaison,Briefing package preparation,232,0,0.0,232,0,0
+submissions_agency_liaison,Category (L2/L3),232,232,100.0,0,0,0
+submissions_agency_liaison,Category UNSPSC,232,0,0.0,232,0,0
+submissions_agency_liaison,Clinical trial transparency,232,0,0.0,232,0,0
+submissions_agency_liaison,Currency,232,1,0.43,231,0,0
+submissions_agency_liaison,Description,232,8,3.45,224,0,0
+submissions_agency_liaison,Development discipline covered,232,0,0.0,232,0,0
+submissions_agency_liaison,Development stage,232,170,73.28,62,0,0
+submissions_agency_liaison,Document links,232,2,0.86,230,0,0
+submissions_agency_liaison,EU procedure,232,0,0.0,232,0,0
+submissions_agency_liaison,Electronic gateway,232,0,0.0,232,0,0
+submissions_agency_liaison,Engagement model,232,0,0.0,232,0,0
+submissions_agency_liaison,Establishment registration and listing,232,0,0.0,232,0,0
+submissions_agency_liaison,Image URL,232,0,0.0,232,0,0
+submissions_agency_liaison,Inventory,232,0,0.0,232,0,0
+submissions_agency_liaison,Lead time (days),232,0,0.0,232,0,0
+submissions_agency_liaison,Listing UNSPSC,232,0,0.0,232,0,0
+submissions_agency_liaison,Listing type,232,232,100.0,0,0,0
+submissions_agency_liaison,Local affiliate service,232,0,0.0,232,0,0
+submissions_agency_liaison,Manufacturer SKU,232,0,0.0,232,0,0
+submissions_agency_liaison,Manufacturer name,232,0,0.0,232,0,0
+submissions_agency_liaison,Markets supported for dispatch,232,0,0.0,232,0,0
+submissions_agency_liaison,Meeting type,232,1,0.43,231,0,0
+submissions_agency_liaison,Name,232,232,100.0,0,0,0
+submissions_agency_liaison,Price per unit,232,230,99.14,2,0,0
+submissions_agency_liaison,Pricing model,232,232,100.0,0,0,0
+submissions_agency_liaison,Pricing structure,232,0,0.0,232,0,0
+submissions_agency_liaison,Product / service URL,232,2,0.86,230,0,0
+submissions_agency_liaison,Product type,232,0,0.0,232,0,0
+submissions_agency_liaison,Quantity,232,0,0.0,232,0,0
+submissions_agency_liaison,Regulatory agency,232,0,0.0,232,0,0
+submissions_agency_liaison,Regulatory information management system,232,0,0.0,232,0,0
+submissions_agency_liaison,Requester UNSPSC,232,0,0.0,232,0,0
+submissions_agency_liaison,Requester commodity code,232,0,0.0,232,0,0
+submissions_agency_liaison,Ship from,232,0,0.0,232,0,0
+submissions_agency_liaison,Submission type,232,171,73.71,61,0,0
+submissions_agency_liaison,Supplier SKU,232,0,0.0,232,0,0
+submissions_agency_liaison,Target market region,232,0,0.0,232,0,0
+submissions_agency_liaison,US agent service,232,0,0.0,232,0,0
+submissions_agency_liaison,Unit,232,0,0.0,232,0,0
+submissions_agency_liaison,Unit of measure,232,1,0.43,231,0,0

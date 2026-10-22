@@ -1,0 +1,53 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+microbiology_sterility,Category (L2/L3),126,126,100.0,0,0,0
+microbiology_sterility,Category UNSPSC,126,0,0.0,126,0,0
+microbiology_sterility,Controlled substances accepted,126,2,1.59,124,0,0
+microbiology_sterility,Currency,126,3,2.38,123,0,0
+microbiology_sterility,Deliverables,126,23,18.25,103,0,0
+microbiology_sterility,Description,126,109,86.51,17,0,0
+microbiology_sterility,Development stage,126,9,7.14,117,0,0
+microbiology_sterility,Document links,126,2,1.59,124,0,0
+microbiology_sterility,Dosage form,126,7,5.56,119,0,0
+microbiology_sterility,Endotoxin chapter,126,0,0.0,126,0,0
+microbiology_sterility,Endotoxin method,126,1,0.79,125,0,0
+microbiology_sterility,Environmental monitoring sample type,126,8,6.35,118,0,0
+microbiology_sterility,Expedited turnaround available,126,2,1.59,124,0,0
+microbiology_sterility,GMP status,126,10,7.94,116,0,0
+microbiology_sterility,Highly potent compounds accepted,126,2,1.59,124,0,0
+microbiology_sterility,Image URL,126,0,0.0,126,0,0
+microbiology_sterility,Inventory,126,0,0.0,126,0,0
+microbiology_sterility,Lead time (days),126,0,0.0,126,0,0
+microbiology_sterility,Listing UNSPSC,126,0,0.0,126,0,0
+microbiology_sterility,Listing type,126,126,100.0,0,0,0
+microbiology_sterility,Low endotoxin recovery study,126,2,1.59,124,0,0
+microbiology_sterility,Manufacturer SKU,126,0,0.0,126,0,0
+microbiology_sterility,Manufacturer name,126,0,0.0,126,0,0
+microbiology_sterility,Material tested,126,1,0.79,125,0,0
+microbiology_sterility,Method source,126,2,1.59,124,0,0
+microbiology_sterility,Method suitability testing,126,2,1.59,124,0,0
+microbiology_sterility,Microbial identification method,126,0,0.0,126,0,0
+microbiology_sterility,Microbial limits chapter,126,0,0.0,126,0,0
+microbiology_sterility,Microbiology test,126,2,1.59,124,0,0
+microbiology_sterility,Mycoplasma chapter,126,0,0.0,126,0,0
+microbiology_sterility,Mycoplasma method,126,0,0.0,126,0,0
+microbiology_sterility,Name,126,126,100.0,0,0,0
+microbiology_sterility,Pharmacopeia,126,5,3.97,121,0,0
+microbiology_sterility,Price per unit,126,124,98.41,2,0,0
+microbiology_sterility,Pricing model,126,126,100.0,0,0,0
+microbiology_sterility,Product / service URL,126,2,1.59,124,0,0
+microbiology_sterility,Product modality,126,4,3.17,122,0,0
+microbiology_sterility,Quantity,126,0,0.0,126,0,0
+microbiology_sterility,Rapid method validation basis,126,0,0.0,126,0,0
+microbiology_sterility,Rapid microbial method platform,126,0,0.0,126,0,0
+microbiology_sterility,Requester UNSPSC,126,0,0.0,126,0,0
+microbiology_sterility,Requester commodity code,126,0,0.0,126,0,0
+microbiology_sterility,Ship from,126,0,0.0,126,0,0
+microbiology_sterility,Standard turnaround,126,0,0.0,126,0,0
+microbiology_sterility,Sterility chapter,126,0,0.0,126,0,0
+microbiology_sterility,Sterility incubation period,126,0,0.0,126,0,0
+microbiology_sterility,Sterility method,126,0,0.0,126,0,0
+microbiology_sterility,Sterility test environment,126,0,0.0,126,0,0
+microbiology_sterility,Supplier SKU,126,0,0.0,126,0,0
+microbiology_sterility,Target regulatory agency,126,12,9.52,114,0,0
+microbiology_sterility,Unit,126,0,0.0,126,0,0
+microbiology_sterility,Unit of measure,126,24,19.05,92,10,0

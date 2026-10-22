@@ -1,37 +1,37 @@
 l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
-animal_cells_pbmcs,Age,150,3,2.0,147,0,0
-animal_cells_pbmcs,Category (L2/L3),150,150,100.0,0,0,0
-animal_cells_pbmcs,Category UNSPSC,150,0,0.0,150,0,0
-animal_cells_pbmcs,Cell count,150,0,0.0,150,0,0
-animal_cells_pbmcs,Currency,150,0,0.0,150,0,0
-animal_cells_pbmcs,Description,150,144,96.0,6,0,0
-animal_cells_pbmcs,Disease / model state,150,0,0.0,150,0,0
-animal_cells_pbmcs,Document links,150,6,4.0,144,0,0
-animal_cells_pbmcs,Format / preservation,150,9,6.0,141,0,0
-animal_cells_pbmcs,IACUC / animal-welfare consent,150,0,0.0,150,0,0
-animal_cells_pbmcs,Image URL,150,0,0.0,150,0,0
-animal_cells_pbmcs,Individual vs Pooled,150,1,0.67,149,0,0
-animal_cells_pbmcs,Inventory,150,0,0.0,150,0,0
-animal_cells_pbmcs,Isolation method,150,1,0.67,149,0,0
-animal_cells_pbmcs,Lead time (days),150,0,0.0,150,0,0
-animal_cells_pbmcs,Listing UNSPSC,150,0,0.0,150,0,0
-animal_cells_pbmcs,Listing type,150,150,100.0,0,0,0
-animal_cells_pbmcs,Manufacturer SKU,150,0,0.0,150,0,0
-animal_cells_pbmcs,Manufacturer name,150,0,0.0,150,0,0
-animal_cells_pbmcs,Name,150,150,100.0,0,0,0
-animal_cells_pbmcs,Price per unit,150,148,98.67,2,0,0
-animal_cells_pbmcs,Pricing model,150,150,100.0,0,0,0
-animal_cells_pbmcs,Product / service URL,150,6,4.0,144,0,0
-animal_cells_pbmcs,Quantity,150,0,0.0,150,0,0
-animal_cells_pbmcs,Requester UNSPSC,150,0,0.0,150,0,0
-animal_cells_pbmcs,Requester commodity code,150,0,0.0,150,0,0
-animal_cells_pbmcs,Sex,150,6,4.0,144,0,0
-animal_cells_pbmcs,Ship from,150,0,0.0,150,0,0
-animal_cells_pbmcs,Shipping Temperature,150,1,0.67,149,0,0
-animal_cells_pbmcs,Species,150,18,12.0,132,0,0
-animal_cells_pbmcs,Storage Conditions,150,0,0.0,149,1,0
-animal_cells_pbmcs,Strain,150,7,4.67,143,0,0
-animal_cells_pbmcs,Supplier SKU,150,0,0.0,150,0,0
-animal_cells_pbmcs,Unit,150,0,0.0,150,0,0
-animal_cells_pbmcs,Unit of measure,150,54,36.0,92,4,0
-animal_cells_pbmcs,Viability %,150,0,0.0,150,0,0
+animal_cells_pbmcs,Age,386,5,1.3,381,0,0
+animal_cells_pbmcs,Category (L2/L3),386,386,100.0,0,0,0
+animal_cells_pbmcs,Category UNSPSC,386,0,0.0,386,0,0
+animal_cells_pbmcs,Cell count,386,0,0.0,386,0,0
+animal_cells_pbmcs,Currency,386,0,0.0,386,0,0
+animal_cells_pbmcs,Description,386,371,96.11,15,0,0
+animal_cells_pbmcs,Disease / model state,386,0,0.0,386,0,0
+animal_cells_pbmcs,Document links,386,15,3.89,371,0,0
+animal_cells_pbmcs,Format / preservation,386,29,7.51,357,0,0
+animal_cells_pbmcs,IACUC / animal-welfare consent,386,0,0.0,386,0,0
+animal_cells_pbmcs,Image URL,386,2,0.52,384,0,0
+animal_cells_pbmcs,Individual vs Pooled,386,1,0.26,385,0,0
+animal_cells_pbmcs,Inventory,386,0,0.0,386,0,0
+animal_cells_pbmcs,Isolation method,386,2,0.52,384,0,0
+animal_cells_pbmcs,Lead time (days),386,0,0.0,386,0,0
+animal_cells_pbmcs,Listing UNSPSC,386,0,0.0,386,0,0
+animal_cells_pbmcs,Listing type,386,386,100.0,0,0,0
+animal_cells_pbmcs,Manufacturer SKU,386,0,0.0,386,0,0
+animal_cells_pbmcs,Manufacturer name,386,0,0.0,386,0,0
+animal_cells_pbmcs,Name,386,386,100.0,0,0,0
+animal_cells_pbmcs,Price per unit,386,381,98.7,5,0,0
+animal_cells_pbmcs,Pricing model,386,386,100.0,0,0,0
+animal_cells_pbmcs,Product / service URL,386,15,3.89,371,0,0
+animal_cells_pbmcs,Quantity,386,0,0.0,386,0,0
+animal_cells_pbmcs,Requester UNSPSC,386,0,0.0,386,0,0
+animal_cells_pbmcs,Requester commodity code,386,0,0.0,386,0,0
+animal_cells_pbmcs,Sex,386,13,3.37,373,0,0
+animal_cells_pbmcs,Ship from,386,0,0.0,386,0,0
+animal_cells_pbmcs,Shipping Temperature,386,4,1.04,382,0,0
+animal_cells_pbmcs,Species,386,55,14.25,328,3,0
+animal_cells_pbmcs,Storage Conditions,386,2,0.52,382,2,0
+animal_cells_pbmcs,Strain,386,18,4.66,368,0,0
+animal_cells_pbmcs,Supplier SKU,386,0,0.0,386,0,0
+animal_cells_pbmcs,Unit,386,0,0.0,386,0,0
+animal_cells_pbmcs,Unit of measure,386,123,31.87,256,7,0
+animal_cells_pbmcs,Viability %,386,1,0.26,385,0,0

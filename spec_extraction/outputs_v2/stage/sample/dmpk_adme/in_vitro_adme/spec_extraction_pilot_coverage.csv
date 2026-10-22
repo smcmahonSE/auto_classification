@@ -1,0 +1,50 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+in_vitro_adme,Analytical platform,13301,46,0.35,13255,0,0
+in_vitro_adme,Assay type,13301,4190,31.5,9111,0,0
+in_vitro_adme,Category (L2/L3),13301,13301,100.0,0,0,0
+in_vitro_adme,Category UNSPSC,13301,0,0.0,13301,0,0
+in_vitro_adme,Compound amount required,13301,0,0.0,13301,0,0
+in_vitro_adme,Compound format,13301,3346,25.16,9955,0,0
+in_vitro_adme,Currency,13301,508,3.82,12788,5,0
+in_vitro_adme,Deliverable format,13301,0,0.0,13301,0,0
+in_vitro_adme,Description,13301,12503,94.0,798,0,0
+in_vitro_adme,Development stage,13301,650,4.89,12651,0,0
+in_vitro_adme,Document links,13301,1031,7.75,12270,0,0
+in_vitro_adme,Donor pool size,13301,0,0.0,13301,0,0
+in_vitro_adme,Donor sex,13301,656,4.93,12551,94,0
+in_vitro_adme,GLP status,13301,345,2.59,12956,0,0
+in_vitro_adme,Image URL,13301,3,0.02,13298,0,0
+in_vitro_adme,In vivo clearance prediction,13301,815,6.13,12477,9,0
+in_vitro_adme,Inventory,13301,0,0.0,13301,0,0
+in_vitro_adme,Lead time (days),13301,0,0.0,13301,0,0
+in_vitro_adme,Lipophilicity measure,13301,0,0.0,13301,0,0
+in_vitro_adme,Listing UNSPSC,13301,0,0.0,13301,0,0
+in_vitro_adme,Listing type,13301,13301,100.0,0,0,0
+in_vitro_adme,Low-clearance method,13301,0,0.0,13301,0,0
+in_vitro_adme,Manufacturer SKU,13301,0,0.0,13301,0,0
+in_vitro_adme,Manufacturer name,13301,0,0.0,13301,0,0
+in_vitro_adme,Metabolic phase covered,13301,70,0.53,13231,0,0
+in_vitro_adme,Metabolite detection add-on,13301,815,6.13,12477,9,0
+in_vitro_adme,Modality supported,13301,394,2.96,12907,0,0
+in_vitro_adme,Name,13301,13301,100.0,0,0,0
+in_vitro_adme,Ordering format,13301,0,0.0,13301,0,0
+in_vitro_adme,Price per unit,13301,11951,89.85,1350,0,0
+in_vitro_adme,Pricing model,13301,13301,100.0,0,0,0
+in_vitro_adme,Product / service URL,13301,1031,7.75,12270,0,0
+in_vitro_adme,Quantity,13301,0,0.0,13301,0,0
+in_vitro_adme,Readout parameters,13301,400,3.01,12901,0,0
+in_vitro_adme,Replicates,13301,0,0.0,13301,0,0
+in_vitro_adme,Requester UNSPSC,13301,0,0.0,13301,0,0
+in_vitro_adme,Requester commodity code,13301,0,0.0,13301,0,0
+in_vitro_adme,Ship from,13301,0,0.0,13301,0,0
+in_vitro_adme,Solubility type,13301,68,0.51,13233,0,0
+in_vitro_adme,Species,13301,3447,25.92,9854,0,0
+in_vitro_adme,Stability matrix,13301,886,6.66,12415,0,0
+in_vitro_adme,Supplier SKU,13301,0,0.0,13301,0,0
+in_vitro_adme,Test concentration,13301,0,0.0,13301,0,0
+in_vitro_adme,Test system,13301,352,2.65,12949,0,0
+in_vitro_adme,Time points,13301,0,0.0,13301,0,0
+in_vitro_adme,Tissue source,13301,1658,12.47,11643,0,0
+in_vitro_adme,Turnaround,13301,0,0.0,13301,0,0
+in_vitro_adme,Unit,13301,0,0.0,13301,0,0
+in_vitro_adme,Unit of measure,13301,1891,14.22,11031,379,0

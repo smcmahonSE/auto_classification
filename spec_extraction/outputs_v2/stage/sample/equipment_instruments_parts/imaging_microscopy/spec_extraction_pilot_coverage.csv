@@ -1,0 +1,45 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+imaging_microscopy,Automation,1532,13,0.85,1519,0,0
+imaging_microscopy,Brand / manufacturer,1532,0,0.0,1532,0,0
+imaging_microscopy,Camera / sensor,1532,0,0.0,1532,0,0
+imaging_microscopy,Category (L2/L3),1532,1532,100.0,0,0,0
+imaging_microscopy,Category UNSPSC,1532,0,0.0,1532,0,0
+imaging_microscopy,Certifications,1532,29,1.89,1503,0,0
+imaging_microscopy,Compliance / data integrity,1532,0,0.0,1532,0,0
+imaging_microscopy,Condition,1532,124,8.09,1404,4,0
+imaging_microscopy,Currency,1532,1,0.07,1531,0,0
+imaging_microscopy,Description,1532,614,40.08,918,0,0
+imaging_microscopy,Dimensions (W × D × H),1532,1,0.07,1531,0,0
+imaging_microscopy,Document links,1532,0,0.0,1532,0,0
+imaging_microscopy,Environmental control,1532,94,6.14,1434,4,0
+imaging_microscopy,Equipment type,1532,418,27.28,1114,0,0
+imaging_microscopy,Fluorescence channels,1532,1,0.07,1531,0,0
+imaging_microscopy,Form factor,1532,140,9.14,1389,3,0
+imaging_microscopy,Image URL,1532,0,0.0,1532,0,0
+imaging_microscopy,Imaging modes,1532,132,8.62,1400,0,0
+imaging_microscopy,Inventory,1532,0,0.0,1532,0,0
+imaging_microscopy,Lead time (days),1532,0,0.0,1532,0,0
+imaging_microscopy,Light source,1532,274,17.89,1211,47,0
+imaging_microscopy,Listing UNSPSC,1532,0,0.0,1532,0,0
+imaging_microscopy,Listing type,1532,1532,100.0,0,0,0
+imaging_microscopy,Magnification / objectives,1532,400,26.11,1132,0,0
+imaging_microscopy,Manufacturer SKU,1532,0,0.0,1532,0,0
+imaging_microscopy,Manufacturer name,1532,0,0.0,1532,0,0
+imaging_microscopy,Model / configuration,1532,0,0.0,1532,0,0
+imaging_microscopy,Name,1532,1532,100.0,0,0,0
+imaging_microscopy,Power requirements,1532,0,0.0,1532,0,0
+imaging_microscopy,Price per unit,1532,1513,98.76,19,0,0
+imaging_microscopy,Pricing model,1532,1532,100.0,0,0,0
+imaging_microscopy,Product / service URL,1532,0,0.0,1532,0,0
+imaging_microscopy,Product role,1532,241,15.73,1265,26,0
+imaging_microscopy,Quantity,1532,0,0.0,1532,0,0
+imaging_microscopy,Requester UNSPSC,1532,0,0.0,1532,0,0
+imaging_microscopy,Requester commodity code,1532,0,0.0,1532,0,0
+imaging_microscopy,Ship from,1532,0,0.0,1532,0,0
+imaging_microscopy,Software,1532,0,0.0,1532,0,0
+imaging_microscopy,Supplier SKU,1532,0,0.0,1532,0,0
+imaging_microscopy,Unit,1532,0,0.0,1532,0,0
+imaging_microscopy,Unit of measure,1532,210,13.71,1272,50,0
+imaging_microscopy,Vessel formats,1532,16,1.04,1516,0,0
+imaging_microscopy,Warranty / service plan,1532,0,0.0,1532,0,0
+imaging_microscopy,Weight,1532,14,0.91,1518,0,0

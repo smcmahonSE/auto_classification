@@ -1,0 +1,42 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+dossier_ectd_preparation,AI-assisted authoring,224,0,0.0,224,0,0
+dossier_ectd_preparation,CTD module scope,224,1,0.45,223,0,0
+dossier_ectd_preparation,Category (L2/L3),224,224,100.0,0,0,0
+dossier_ectd_preparation,Category UNSPSC,224,0,0.0,224,0,0
+dossier_ectd_preparation,Currency,224,1,0.45,223,0,0
+dossier_ectd_preparation,Description,224,25,11.16,199,0,0
+dossier_ectd_preparation,Development discipline covered,224,4,1.79,220,0,0
+dossier_ectd_preparation,Development stage,224,39,17.41,185,0,0
+dossier_ectd_preparation,Document links,224,0,0.0,224,0,0
+dossier_ectd_preparation,Document type authored,224,0,0.0,224,0,0
+dossier_ectd_preparation,Engagement model,224,0,0.0,224,0,0
+dossier_ectd_preparation,Image URL,224,0,0.0,224,0,0
+dossier_ectd_preparation,Inventory,224,0,0.0,224,0,0
+dossier_ectd_preparation,Lead time (days),224,0,0.0,224,0,0
+dossier_ectd_preparation,Legacy conversion,224,0,0.0,224,0,0
+dossier_ectd_preparation,Listing UNSPSC,224,0,0.0,224,0,0
+dossier_ectd_preparation,Listing type,224,224,100.0,0,0,0
+dossier_ectd_preparation,Manufacturer SKU,224,0,0.0,224,0,0
+dossier_ectd_preparation,Manufacturer name,224,0,0.0,224,0,0
+dossier_ectd_preparation,Master file type,224,0,0.0,224,0,0
+dossier_ectd_preparation,Name,224,224,100.0,0,0,0
+dossier_ectd_preparation,Price per unit,224,223,99.55,1,0,0
+dossier_ectd_preparation,Pricing model,224,224,100.0,0,0,0
+dossier_ectd_preparation,Pricing structure,224,0,0.0,224,0,0
+dossier_ectd_preparation,Product / service URL,224,0,0.0,224,0,0
+dossier_ectd_preparation,Product type,224,1,0.45,223,0,0
+dossier_ectd_preparation,Publishing QC and validation,224,0,0.0,224,0,0
+dossier_ectd_preparation,Publishing tool,224,0,0.0,224,0,0
+dossier_ectd_preparation,Quantity,224,0,0.0,224,0,0
+dossier_ectd_preparation,Regulatory agency,224,2,0.89,222,0,0
+dossier_ectd_preparation,Regulatory information management system,224,0,0.0,224,0,0
+dossier_ectd_preparation,Requester UNSPSC,224,0,0.0,224,0,0
+dossier_ectd_preparation,Requester commodity code,224,0,0.0,224,0,0
+dossier_ectd_preparation,Ship from,224,0,0.0,224,0,0
+dossier_ectd_preparation,Structured data submission,224,0,0.0,224,0,0
+dossier_ectd_preparation,Submission format,224,16,7.14,208,0,0
+dossier_ectd_preparation,Supplier SKU,224,0,0.0,224,0,0
+dossier_ectd_preparation,Target market region,224,0,0.0,224,0,0
+dossier_ectd_preparation,Translation and localization,224,0,0.0,224,0,0
+dossier_ectd_preparation,Unit,224,0,0.0,224,0,0
+dossier_ectd_preparation,Unit of measure,224,5,2.23,218,1,0

@@ -1,0 +1,30 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+repair,Brand / manufacturer,146,0,0.0,146,0,0
+repair,Capacity,146,0,0.0,146,0,0
+repair,Category (L2/L3),146,146,100.0,0,0,0
+repair,Category UNSPSC,146,0,0.0,146,0,0
+repair,Currency,146,0,0.0,146,0,0
+repair,Deliverable,146,0,0.0,146,0,0
+repair,Description,146,92,63.01,54,0,0
+repair,Document links,146,2,1.37,144,0,0
+repair,Equipment type,146,0,0.0,146,0,0
+repair,Image URL,146,2,1.37,144,0,0
+repair,Inventory,146,0,0.0,146,0,0
+repair,Lead time (days),146,0,0.0,146,0,0
+repair,Listing UNSPSC,146,0,0.0,146,0,0
+repair,Listing type,146,146,100.0,0,0,0
+repair,Manufacturer SKU,146,0,0.0,146,0,0
+repair,Manufacturer name,146,0,0.0,146,0,0
+repair,Name,146,146,100.0,0,0,0
+repair,Price per unit,146,142,97.26,4,0,0
+repair,Pricing model,146,146,100.0,0,0,0
+repair,Product / service URL,146,2,1.37,144,0,0
+repair,Protocol / scope,146,0,0.0,146,0,0
+repair,Quantity,146,0,0.0,146,0,0
+repair,Requester UNSPSC,146,0,0.0,146,0,0
+repair,Requester commodity code,146,0,0.0,146,0,0
+repair,Ship from,146,0,0.0,146,0,0
+repair,Supplier SKU,146,0,0.0,146,0,0
+repair,Turnaround,146,0,0.0,146,0,0
+repair,Unit,146,0,0.0,146,0,0
+repair,Unit of measure,146,30,20.55,114,2,0

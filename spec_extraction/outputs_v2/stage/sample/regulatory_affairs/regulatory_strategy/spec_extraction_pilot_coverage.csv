@@ -1,0 +1,40 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+regulatory_strategy,Category (L2/L3),1914,1914,100.0,0,0,0
+regulatory_strategy,Category UNSPSC,1914,0,0.0,1914,0,0
+regulatory_strategy,Currency,1914,0,0.0,1914,0,0
+regulatory_strategy,Description,1914,88,4.6,1826,0,0
+regulatory_strategy,Development discipline covered,1914,12,0.63,1902,0,0
+regulatory_strategy,Development stage,1914,45,2.35,1869,0,0
+regulatory_strategy,Document links,1914,0,0.0,1914,0,0
+regulatory_strategy,Due diligence support,1914,1,0.05,1913,0,0
+regulatory_strategy,Engagement model,1914,0,0.0,1914,0,0
+regulatory_strategy,Expedited pathway or designation,1914,0,0.0,1914,0,0
+regulatory_strategy,Expert witness support,1914,1,0.05,1913,0,0
+regulatory_strategy,HTA alignment,1914,1,0.05,1913,0,0
+regulatory_strategy,Image URL,1914,0,0.0,1914,0,0
+regulatory_strategy,Inventory,1914,0,0.0,1914,0,0
+regulatory_strategy,Lead time (days),1914,0,0.0,1914,0,0
+regulatory_strategy,Listing UNSPSC,1914,0,0.0,1914,0,0
+regulatory_strategy,Listing type,1914,1914,100.0,0,0,0
+regulatory_strategy,Manufacturer SKU,1914,0,0.0,1914,0,0
+regulatory_strategy,Manufacturer name,1914,0,0.0,1914,0,0
+regulatory_strategy,Name,1914,1914,100.0,0,0,0
+regulatory_strategy,Pediatric plan,1914,0,0.0,1914,0,0
+regulatory_strategy,Price per unit,1914,1914,100.0,0,0,0
+regulatory_strategy,Pricing model,1914,1914,100.0,0,0,0
+regulatory_strategy,Pricing structure,1914,0,0.0,1914,0,0
+regulatory_strategy,Product / service URL,1914,0,0.0,1914,0,0
+regulatory_strategy,Product type,1914,14,0.73,1900,0,0
+regulatory_strategy,Quantity,1914,0,0.0,1914,0,0
+regulatory_strategy,Regulatory agency,1914,5,0.26,1909,0,0
+regulatory_strategy,Regulatory information management system,1914,3,0.16,1911,0,0
+regulatory_strategy,Regulatory intelligence delivery,1914,0,0.0,1914,0,0
+regulatory_strategy,Regulatory intelligence included,1914,1,0.05,1913,0,0
+regulatory_strategy,Requester UNSPSC,1914,0,0.0,1914,0,0
+regulatory_strategy,Requester commodity code,1914,0,0.0,1914,0,0
+regulatory_strategy,Ship from,1914,0,0.0,1914,0,0
+regulatory_strategy,Strategy deliverable,1914,3,0.16,1911,0,0
+regulatory_strategy,Supplier SKU,1914,0,0.0,1914,0,0
+regulatory_strategy,Target market region,1914,0,0.0,1914,0,0
+regulatory_strategy,Unit,1914,0,0.0,1914,0,0
+regulatory_strategy,Unit of measure,1914,4,0.21,1908,2,0

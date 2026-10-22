@@ -1,0 +1,59 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+small_molecule_pk_bioanalysis,Analyte class,6130,796,12.99,5334,0,0
+small_molecule_pk_bioanalysis,Analytical platform,6130,410,6.69,5720,0,0
+small_molecule_pk_bioanalysis,Automated sample preparation,6130,59,0.96,6071,0,0
+small_molecule_pk_bioanalysis,Bioanalytical guidance followed,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Calibration standard levels,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Category (L2/L3),6130,6130,100.0,0,0,0
+small_molecule_pk_bioanalysis,Category UNSPSC,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Currency,6130,26,0.42,6104,0,0
+small_molecule_pk_bioanalysis,Default assay range,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Description,6130,2108,34.39,4022,0,0
+small_molecule_pk_bioanalysis,Development stage,6130,153,2.5,5977,0,0
+small_molecule_pk_bioanalysis,Document links,6130,32,0.52,6098,0,0
+small_molecule_pk_bioanalysis,Expedited analysis available,6130,59,0.96,6071,0,0
+small_molecule_pk_bioanalysis,Feasibility assessment,6130,59,0.96,6071,0,0
+small_molecule_pk_bioanalysis,GLP sample analysis turnaround,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Image URL,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Inventory,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Ionization mode,6130,46,0.75,6084,0,0
+small_molecule_pk_bioanalysis,Lead time (days),6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Listing UNSPSC,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Listing type,6130,6130,100.0,0,0,0
+small_molecule_pk_bioanalysis,Manufacturer SKU,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Manufacturer name,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Mass spectrometer model,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Matrix lots for matrix effect,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Method development time,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Method origin,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Microsampling format,6130,18,0.29,6112,0,0
+small_molecule_pk_bioanalysis,Minimum sample volume,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Molecule modality,6130,228,3.72,5902,0,0
+small_molecule_pk_bioanalysis,Name,6130,6130,100.0,0,0,0
+small_molecule_pk_bioanalysis,Non-GLP sample analysis turnaround,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Non-proprietary method available,6130,59,0.96,6071,0,0
+small_molecule_pk_bioanalysis,PK modeling and reporting,6130,2,0.03,6128,0,0
+small_molecule_pk_bioanalysis,Price per unit,6130,5931,96.75,199,0,0
+small_molecule_pk_bioanalysis,Pricing model,6130,6130,100.0,0,0,0
+small_molecule_pk_bioanalysis,Product / service URL,6130,32,0.52,6098,0,0
+small_molecule_pk_bioanalysis,Quantity,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Radiolabeled (14C) analysis,6130,59,0.96,6071,0,0
+small_molecule_pk_bioanalysis,Real-time data portal,6130,59,0.96,6071,0,0
+small_molecule_pk_bioanalysis,Regulatory compliance level,6130,21,0.34,6109,0,0
+small_molecule_pk_bioanalysis,Regulatory submission supported,6130,1,0.02,6129,0,0
+small_molecule_pk_bioanalysis,Requester UNSPSC,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Requester commodity code,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Sample matrix,6130,346,5.64,5784,0,0
+small_molecule_pk_bioanalysis,Sample preparation technique,6130,29,0.47,6101,0,0
+small_molecule_pk_bioanalysis,Service scope,6130,145,2.37,5985,0,0
+small_molecule_pk_bioanalysis,Ship from,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Species,6130,424,6.92,5706,0,0
+small_molecule_pk_bioanalysis,Study type,6130,67,1.09,6063,0,0
+small_molecule_pk_bioanalysis,Supplier SKU,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Therapeutic area experience,6130,209,3.41,5921,0,0
+small_molecule_pk_bioanalysis,Unit,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Unit of measure,6130,731,11.92,5301,98,0
+small_molecule_pk_bioanalysis,Validated assay library size,6130,0,0.0,6130,0,0
+small_molecule_pk_bioanalysis,Validation deliverables,6130,1,0.02,6129,0,0
+small_molecule_pk_bioanalysis,Validation parameters,6130,116,1.89,6014,0,0
+small_molecule_pk_bioanalysis,Validation type,6130,11,0.18,6119,0,0

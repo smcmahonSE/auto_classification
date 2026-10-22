@@ -1,0 +1,52 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+in_vivo_pk_tk,Analytical platform,1393,1,0.07,1392,0,0
+in_vivo_pk_tk,Animal model type,1393,2,0.14,1391,0,0
+in_vivo_pk_tk,Animals per group,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Blood sampling method,1393,2,0.14,1391,0,0
+in_vivo_pk_tk,Category (L2/L3),1393,1393,100.0,0,0,0
+in_vivo_pk_tk,Category UNSPSC,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Compound amount required,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Compound format,1393,1,0.07,1392,0,0
+in_vivo_pk_tk,Currency,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Deliverable format,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Description,1393,108,7.75,1285,0,0
+in_vivo_pk_tk,Development stage,1393,53,3.8,1340,0,0
+in_vivo_pk_tk,Document links,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Dose regimen,1393,12,0.86,1381,0,0
+in_vivo_pk_tk,Dosing design,1393,5,0.36,1388,0,0
+in_vivo_pk_tk,Excretion study,1393,4,0.29,1389,0,0
+in_vivo_pk_tk,Formulation support,1393,4,0.29,1389,0,0
+in_vivo_pk_tk,GLP status,1393,19,1.36,1370,4,0
+in_vivo_pk_tk,Image URL,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Inventory,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Lead time (days),1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Listing UNSPSC,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Listing type,1393,1393,100.0,0,0,0
+in_vivo_pk_tk,Manufacturer SKU,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Manufacturer name,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Max compounds per cassette,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Max infusion duration,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Modality supported,1393,1,0.07,1392,0,0
+in_vivo_pk_tk,Name,1393,1393,100.0,0,0,0
+in_vivo_pk_tk,Ordering format,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,PK analysis approach,1393,231,16.58,1162,0,0
+in_vivo_pk_tk,PK parameters,1393,10,0.72,1383,0,0
+in_vivo_pk_tk,PK software,1393,12,0.86,1381,0,0
+in_vivo_pk_tk,Price per unit,1393,1383,99.28,10,0,0
+in_vivo_pk_tk,Pricing model,1393,1393,100.0,0,0,0
+in_vivo_pk_tk,Product / service URL,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Quantity,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Requester UNSPSC,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Requester commodity code,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Route of administration,1393,12,0.86,1381,0,0
+in_vivo_pk_tk,Sampling matrix,1393,29,2.08,1364,0,0
+in_vivo_pk_tk,Ship from,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Species,1393,45,3.23,1348,0,0
+in_vivo_pk_tk,Strain,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Supplier SKU,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Surgical or cannulated model,1393,5,0.36,1388,0,0
+in_vivo_pk_tk,TK alongside tox,1393,4,0.29,1389,0,0
+in_vivo_pk_tk,Tissue distribution,1393,4,0.29,1389,0,0
+in_vivo_pk_tk,Turnaround,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Unit,1393,0,0.0,1393,0,0
+in_vivo_pk_tk,Unit of measure,1393,274,19.67,1104,15,0

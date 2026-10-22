@@ -45,31 +45,6 @@
           "pattern": "labeled_anatomical_site"
         },
         {
-          "name": "Derivative / extract type",
-          "type": "picklist",
-          "required": false,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "derivative_extract_type",
-          "allowed_values": [
-            "Intact tissue",
-            "gDNA",
-            "Total RNA",
-            "cDNA",
-            "Protein lysate",
-            "TMA"
-          ]
-        },
-        {
-          "name": "Sample size / amount",
-          "type": "number",
-          "required": false,
-          "product_only": false,
-          "extractor": "regex",
-          "pattern": "sample_size_amount",
-          "allowed_values": "mg or sections"
-        },
-        {
           "name": "Format / preservation",
           "type": "picklist",
           "required": true,
@@ -112,6 +87,31 @@
             "-80°C",
             "LN2"
           ]
+        },
+        {
+          "name": "Derivative / extract type",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "derivative_extract_type",
+          "allowed_values": [
+            "Intact tissue",
+            "gDNA",
+            "Total RNA",
+            "cDNA",
+            "Protein lysate",
+            "TMA"
+          ]
+        },
+        {
+          "name": "Sample size / amount",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "sample_size_amount",
+          "allowed_values": "mg or sections"
         },
         {
           "name": "Strain",
@@ -214,22 +214,6 @@
           "allowed_values": "mL"
         },
         {
-          "name": "Processing / finishing",
-          "type": "multi-select",
-          "required": false,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "processing_finishing",
-          "multi_select": true,
-          "allowed_values": [
-            "Single-spin",
-            "Double-spin",
-            "Sterile-filtered",
-            "Heat-inactivated",
-            "Lyophilized"
-          ]
-        },
-        {
           "name": "Format / preservation",
           "type": "picklist",
           "required": true,
@@ -271,6 +255,22 @@
             "-20°C",
             "-80°C",
             "LN2"
+          ]
+        },
+        {
+          "name": "Processing / finishing",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "processing_finishing",
+          "multi_select": true,
+          "allowed_values": [
+            "Single-spin",
+            "Double-spin",
+            "Sterile-filtered",
+            "Heat-inactivated",
+            "Lyophilized"
           ]
         },
         {
@@ -350,19 +350,6 @@
           "allowed_values": "%"
         },
         {
-          "name": "Isolation method",
-          "type": "picklist",
-          "required": false,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "isolation_method_animal",
-          "allowed_values": [
-            "Ficoll",
-            "Magnetic bead",
-            "Flow sorting"
-          ]
-        },
-        {
           "name": "Format / preservation",
           "type": "picklist",
           "required": true,
@@ -404,6 +391,19 @@
             "-20°C",
             "-80°C",
             "LN2"
+          ]
+        },
+        {
+          "name": "Isolation method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "isolation_method_animal",
+          "allowed_values": [
+            "Ficoll",
+            "Magnetic bead",
+            "Flow sorting"
           ]
         },
         {
@@ -474,15 +474,6 @@
           "allowed_values": "%"
         },
         {
-          "name": "Passage number",
-          "type": "number",
-          "required": false,
-          "product_only": false,
-          "extractor": "regex",
-          "pattern": "passage_number",
-          "allowed_values": "passage"
-        },
-        {
           "name": "Format / preservation",
           "type": "picklist",
           "required": true,
@@ -525,6 +516,15 @@
             "-80°C",
             "LN2"
           ]
+        },
+        {
+          "name": "Passage number",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "passage_number",
+          "allowed_values": "passage"
         },
         {
           "name": "Strain",
@@ -594,37 +594,6 @@
           "allowed_values": "%"
         },
         {
-          "name": "Karyotype",
-          "type": "text",
-          "required": false,
-          "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_karyotype"
-        },
-        {
-          "name": "Characterization markers",
-          "type": "text",
-          "required": false,
-          "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_characterization_markers"
-        },
-        {
-          "name": "Reprogramming method",
-          "type": "picklist",
-          "required": false,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "reprogramming_method",
-          "allowed_values": [
-            "Retroviral",
-            "Lentiviral",
-            "Sendai",
-            "Episomal",
-            "mRNA"
-          ]
-        },
-        {
           "name": "Format / preservation",
           "type": "picklist",
           "required": true,
@@ -666,6 +635,37 @@
             "-20°C",
             "-80°C",
             "LN2"
+          ]
+        },
+        {
+          "name": "Karyotype",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_karyotype"
+        },
+        {
+          "name": "Characterization markers",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_characterization_markers"
+        },
+        {
+          "name": "Reprogramming method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "reprogramming_method",
+          "allowed_values": [
+            "Retroviral",
+            "Lentiviral",
+            "Sendai",
+            "Episomal",
+            "mRNA"
           ]
         },
         {

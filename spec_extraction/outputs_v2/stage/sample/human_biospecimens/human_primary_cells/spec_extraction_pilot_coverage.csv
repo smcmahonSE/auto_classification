@@ -1,0 +1,36 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+human_primary_cells,Category (L2/L3),572,572,100.0,0,0,0
+human_primary_cells,Category UNSPSC,572,0,0.0,572,0,0
+human_primary_cells,Currency,572,1,0.17,571,0,0
+human_primary_cells,Description,572,170,29.72,402,0,0
+human_primary_cells,Diagnosis,572,0,0.0,572,0,0
+human_primary_cells,Disease areas,572,518,90.56,54,0,0
+human_primary_cells,Document links,572,4,0.7,568,0,0
+human_primary_cells,Donor Age,572,105,18.36,467,0,0
+human_primary_cells,Image URL,572,4,0.7,568,0,0
+human_primary_cells,Individual vs Pooled,572,4,0.7,568,0,0
+human_primary_cells,Inventory,572,0,0.0,572,0,0
+human_primary_cells,Lead time (days),572,0,0.0,572,0,0
+human_primary_cells,Listing UNSPSC,572,0,0.0,572,0,0
+human_primary_cells,Listing type,572,572,100.0,0,0,0
+human_primary_cells,Manufacturer SKU,572,0,0.0,572,0,0
+human_primary_cells,Manufacturer name,572,0,0.0,572,0,0
+human_primary_cells,Matched sample set,572,1,0.17,571,0,0
+human_primary_cells,Name,572,572,100.0,0,0,0
+human_primary_cells,Passage number,572,0,0.0,572,0,0
+human_primary_cells,Price per unit,572,568,99.3,4,0,0
+human_primary_cells,Pricing model,572,572,100.0,0,0,0
+human_primary_cells,Product / service URL,572,4,0.7,568,0,0
+human_primary_cells,Quantity,572,0,0.0,572,0,0
+human_primary_cells,Race / Ethnicity,572,105,18.36,467,0,0
+human_primary_cells,Requester UNSPSC,572,0,0.0,572,0,0
+human_primary_cells,Requester commodity code,572,0,0.0,572,0,0
+human_primary_cells,Sex,572,454,79.37,61,57,0
+human_primary_cells,Ship from,572,0,0.0,572,0,0
+human_primary_cells,Specimen format,572,29,5.07,543,0,0
+human_primary_cells,Storage conditions,572,2,0.35,570,0,0
+human_primary_cells,Supplier SKU,572,0,0.0,572,0,0
+human_primary_cells,Treatment history,572,0,0.0,572,0,0
+human_primary_cells,Unit,572,0,0.0,572,0,0
+human_primary_cells,Unit of measure,572,110,19.23,460,2,0
+human_primary_cells,Viability %,572,0,0.0,572,0,0

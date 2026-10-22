@@ -1,35 +1,35 @@
 l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
-isotype_controls,Application,150,3,2.0,147,0,0
-isotype_controls,Category (L2/L3),150,150,100.0,0,0,0
-isotype_controls,Category UNSPSC,150,0,0.0,150,0,0
-isotype_controls,Clonality,150,3,2.0,147,0,0
-isotype_controls,Clone ID,150,0,0.0,150,0,0
-isotype_controls,Conjugate,150,0,0.0,150,0,0
-isotype_controls,Currency,150,0,0.0,150,0,0
-isotype_controls,Description,150,12,8.0,138,0,0
-isotype_controls,Document links,150,2,1.33,148,0,0
-isotype_controls,Format,150,0,0.0,150,0,0
-isotype_controls,Host Species,150,2,1.33,146,2,0
-isotype_controls,Image URL,150,0,0.0,150,0,0
-isotype_controls,Inventory,150,0,0.0,150,0,0
-isotype_controls,Isotype,150,0,0.0,150,0,0
-isotype_controls,Lead time (days),150,0,0.0,150,0,0
-isotype_controls,Listing UNSPSC,150,0,0.0,150,0,0
-isotype_controls,Listing type,150,150,100.0,0,0,0
-isotype_controls,Manufacturer SKU,150,0,0.0,150,0,0
-isotype_controls,Manufacturer name,150,0,0.0,150,0,0
-isotype_controls,Name,150,150,100.0,0,0,0
-isotype_controls,Price per unit,150,150,100.0,0,0,0
-isotype_controls,Pricing model,150,150,100.0,0,0,0
-isotype_controls,Product / service URL,150,2,1.33,148,0,0
-isotype_controls,Purification,150,0,0.0,150,0,0
-isotype_controls,Quantity,150,0,0.0,150,0,0
-isotype_controls,RRID,150,0,0.0,150,0,0
-isotype_controls,Recommended dilution,150,0,0.0,150,0,0
-isotype_controls,Requester UNSPSC,150,0,0.0,150,0,0
-isotype_controls,Requester commodity code,150,0,0.0,150,0,0
-isotype_controls,Ship from,150,0,0.0,150,0,0
-isotype_controls,Storage conditions,150,0,0.0,150,0,0
-isotype_controls,Supplier SKU,150,0,0.0,150,0,0
-isotype_controls,Unit,150,0,0.0,150,0,0
-isotype_controls,Unit of measure,150,7,4.67,142,1,0
+isotype_controls,Application,20000,379,1.9,19621,0,0
+isotype_controls,Category (L2/L3),20000,20000,100.0,0,0,0
+isotype_controls,Category UNSPSC,20000,0,0.0,20000,0,0
+isotype_controls,Clonality,20000,310,1.55,19690,0,0
+isotype_controls,Clone ID,20000,0,0.0,20000,0,0
+isotype_controls,Conjugate,20000,103,0.52,19888,9,0
+isotype_controls,Currency,20000,15,0.07,19985,0,0
+isotype_controls,Description,20000,2047,10.23,17953,0,0
+isotype_controls,Document links,20000,117,0.58,19883,0,0
+isotype_controls,Format,20000,66,0.33,19934,0,0
+isotype_controls,Host Species,20000,292,1.46,19528,180,0
+isotype_controls,Image URL,20000,8,0.04,19992,0,0
+isotype_controls,Inventory,20000,0,0.0,20000,0,0
+isotype_controls,Isotype,20000,158,0.79,19819,23,0
+isotype_controls,Lead time (days),20000,0,0.0,20000,0,0
+isotype_controls,Listing UNSPSC,20000,0,0.0,20000,0,0
+isotype_controls,Listing type,20000,20000,100.0,0,0,0
+isotype_controls,Manufacturer SKU,20000,0,0.0,20000,0,0
+isotype_controls,Manufacturer name,20000,0,0.0,20000,0,0
+isotype_controls,Name,20000,20000,100.0,0,0,0
+isotype_controls,Price per unit,20000,19787,98.94,213,0,0
+isotype_controls,Pricing model,20000,20000,100.0,0,0,0
+isotype_controls,Product / service URL,20000,117,0.58,19883,0,0
+isotype_controls,Purification,20000,7,0.03,19993,0,0
+isotype_controls,Quantity,20000,0,0.0,20000,0,0
+isotype_controls,RRID,20000,0,0.0,20000,0,0
+isotype_controls,Recommended dilution,20000,0,0.0,20000,0,0
+isotype_controls,Requester UNSPSC,20000,0,0.0,20000,0,0
+isotype_controls,Requester commodity code,20000,0,0.0,20000,0,0
+isotype_controls,Ship from,20000,0,0.0,20000,0,0
+isotype_controls,Storage conditions,20000,148,0.74,19852,0,0
+isotype_controls,Supplier SKU,20000,0,0.0,20000,0,0
+isotype_controls,Unit,20000,0,0.0,20000,0,0
+isotype_controls,Unit of measure,20000,1242,6.21,18719,39,0

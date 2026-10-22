@@ -1,0 +1,35 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+human_stem_cells_ipscs,Category (L2/L3),2524,2524,100.0,0,0,0
+human_stem_cells_ipscs,Category UNSPSC,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Characterization markers,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Currency,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Description,2524,151,5.98,2373,0,0
+human_stem_cells_ipscs,Diagnosis,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Disease areas,2524,125,4.95,2399,0,0
+human_stem_cells_ipscs,Document links,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Donor Age,2524,1,0.04,2523,0,0
+human_stem_cells_ipscs,Image URL,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Inventory,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Karyotype,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Lead time (days),2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Listing UNSPSC,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Listing type,2524,2524,100.0,0,0,0
+human_stem_cells_ipscs,Manufacturer SKU,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Manufacturer name,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Name,2524,2524,100.0,0,0,0
+human_stem_cells_ipscs,Price per unit,2524,2524,100.0,0,0,0
+human_stem_cells_ipscs,Pricing model,2524,2524,100.0,0,0,0
+human_stem_cells_ipscs,Product / service URL,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Quantity,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Race / Ethnicity,2524,2346,92.95,178,0,0
+human_stem_cells_ipscs,Reprogramming method,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Requester UNSPSC,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Requester commodity code,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Sex,2524,170,6.74,165,2189,0
+human_stem_cells_ipscs,Ship from,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Specimen format,2524,40,1.58,2484,0,0
+human_stem_cells_ipscs,Storage conditions,2524,145,5.74,2379,0,0
+human_stem_cells_ipscs,Supplier SKU,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Unit,2524,0,0.0,2524,0,0
+human_stem_cells_ipscs,Unit of measure,2524,1123,44.49,1394,7,0
+human_stem_cells_ipscs,Viability %,2524,0,0.0,2524,0,0

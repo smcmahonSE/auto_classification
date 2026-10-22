@@ -1,42 +1,42 @@
 l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
-human_tissue,Anatomical site / tissue type,150,0,0.0,150,0,0
-human_tissue,Category (L2/L3),150,150,100.0,0,0,0
-human_tissue,Category UNSPSC,150,0,0.0,150,0,0
-human_tissue,Consent level,150,21,14.0,129,0,0
-human_tissue,Currency,150,0,0.0,150,0,0
-human_tissue,Description,150,11,7.33,139,0,0
-human_tissue,Diagnosis,150,0,0.0,150,0,0
-human_tissue,Disease areas,150,12,8.0,138,0,0
-human_tissue,Disease stage,150,0,0.0,150,0,0
-human_tissue,Document links,150,0,0.0,150,0,0
-human_tissue,Donor Age,150,2,1.33,148,0,0
-human_tissue,Image URL,150,0,0.0,150,0,0
-human_tissue,Individual vs Pooled,150,0,0.0,150,0,0
-human_tissue,Inventory,150,0,0.0,150,0,0
-human_tissue,Lead time (days),150,0,0.0,150,0,0
-human_tissue,Listing UNSPSC,150,0,0.0,150,0,0
-human_tissue,Listing type,150,150,100.0,0,0,0
-human_tissue,Manufacturer SKU,150,0,0.0,150,0,0
-human_tissue,Manufacturer name,150,0,0.0,150,0,0
-human_tissue,Matched sample set,150,10,6.67,140,0,0
-human_tissue,Name,150,150,100.0,0,0,0
-human_tissue,Necrosis %,150,0,0.0,150,0,0
-human_tissue,Price per unit,150,150,100.0,0,0,0
-human_tissue,Pricing model,150,150,100.0,0,0,0
-human_tissue,Product / service URL,150,0,0.0,150,0,0
-human_tissue,Quantity,150,0,0.0,150,0,0
-human_tissue,RIN (RNA integrity),150,3,2.0,147,0,0
-human_tissue,Race / Ethnicity,150,126,84.0,24,0,0
-human_tissue,Requester UNSPSC,150,0,0.0,150,0,0
-human_tissue,Requester commodity code,150,0,0.0,150,0,0
-human_tissue,Sample size / amount,150,12,8.0,138,0,0
-human_tissue,Sex,150,132,88.0,18,0,0
-human_tissue,Ship from,150,0,0.0,150,0,0
-human_tissue,Specimen format,150,81,54.0,21,48,0
-human_tissue,Storage conditions,150,4,2.67,146,0,0
-human_tissue,Supplier SKU,150,0,0.0,150,0,0
-human_tissue,Timepoint,150,0,0.0,150,0,0
-human_tissue,Treatment history,150,0,0.0,150,0,0
-human_tissue,Tumor content %,150,0,0.0,150,0,0
-human_tissue,Unit,150,0,0.0,150,0,0
-human_tissue,Unit of measure,150,56,37.33,87,7,0
+human_tissue,Anatomical site / tissue type,20000,0,0.0,20000,0,0
+human_tissue,Category (L2/L3),20000,20000,100.0,0,0,0
+human_tissue,Category UNSPSC,20000,0,0.0,20000,0,0
+human_tissue,Consent level,20000,2699,13.49,17301,0,0
+human_tissue,Currency,20000,18,0.09,19982,0,0
+human_tissue,Description,20000,1635,8.18,18365,0,0
+human_tissue,Diagnosis,20000,0,0.0,20000,0,0
+human_tissue,Disease areas,20000,2332,11.66,17668,0,0
+human_tissue,Disease stage,20000,0,0.0,20000,0,0
+human_tissue,Document links,20000,3,0.01,19997,0,0
+human_tissue,Donor Age,20000,218,1.09,19782,0,0
+human_tissue,Image URL,20000,1,0.01,19999,0,0
+human_tissue,Individual vs Pooled,20000,20,0.1,19980,0,0
+human_tissue,Inventory,20000,0,0.0,20000,0,0
+human_tissue,Lead time (days),20000,0,0.0,20000,0,0
+human_tissue,Listing UNSPSC,20000,0,0.0,20000,0,0
+human_tissue,Listing type,20000,20000,100.0,0,0,0
+human_tissue,Manufacturer SKU,20000,0,0.0,20000,0,0
+human_tissue,Manufacturer name,20000,0,0.0,20000,0,0
+human_tissue,Matched sample set,20000,1908,9.54,18092,0,0
+human_tissue,Name,20000,20000,100.0,0,0,0
+human_tissue,Necrosis %,20000,0,0.0,20000,0,0
+human_tissue,Price per unit,20000,19999,100.0,1,0,0
+human_tissue,Pricing model,20000,20000,100.0,0,0,0
+human_tissue,Product / service URL,20000,3,0.01,19997,0,0
+human_tissue,Quantity,20000,0,0.0,20000,0,0
+human_tissue,RIN (RNA integrity),20000,315,1.57,19685,0,0
+human_tissue,Race / Ethnicity,20000,17358,86.79,2642,0,0
+human_tissue,Requester UNSPSC,20000,0,0.0,20000,0,0
+human_tissue,Requester commodity code,20000,0,0.0,20000,0,0
+human_tissue,Sample size / amount,20000,1367,6.83,18633,0,0
+human_tissue,Sex,20000,15188,75.94,1705,3107,0
+human_tissue,Ship from,20000,0,0.0,20000,0,0
+human_tissue,Specimen format,20000,9974,49.87,1987,8039,0
+human_tissue,Storage conditions,20000,1003,5.01,18997,0,0
+human_tissue,Supplier SKU,20000,0,0.0,20000,0,0
+human_tissue,Timepoint,20000,177,0.89,19823,0,0
+human_tissue,Treatment history,20000,5,0.03,19995,0,0
+human_tissue,Tumor content %,20000,2,0.01,19998,0,0
+human_tissue,Unit,20000,0,0.0,20000,0,0
+human_tissue,Unit of measure,20000,8235,41.17,10913,852,0

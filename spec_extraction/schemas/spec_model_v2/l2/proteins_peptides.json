@@ -27,6 +27,28 @@
           ]
         },
         {
+          "name": "Form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_form",
+          "allowed_values": [
+            "Lyophilized",
+            "Liquid",
+            "Frozen"
+          ]
+        },
+        {
+          "name": "Purity",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity",
+          "allowed_values": "% by SDS-PAGE or HPLC"
+        },
+        {
           "name": "Species",
           "type": "picklist",
           "required": false,
@@ -82,19 +104,6 @@
           ]
         },
         {
-          "name": "Form",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "protein_form",
-          "allowed_values": [
-            "Lyophilized",
-            "Liquid",
-            "Frozen"
-          ]
-        },
-        {
           "name": "Grade",
           "type": "picklist",
           "required": false,
@@ -130,15 +139,6 @@
           ]
         },
         {
-          "name": "Purity",
-          "type": "number",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "purity",
-          "allowed_values": "% by SDS-PAGE or HPLC"
-        },
-        {
           "name": "Endotoxin level",
           "type": "number",
           "required": false,
@@ -162,6 +162,46 @@
           "extractor": "regex",
           "pattern": "bioactivity_ed50",
           "allowed_values": "ng/mL"
+        },
+        {
+          "name": "Form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_form",
+          "allowed_values": [
+            "Lyophilized",
+            "Liquid",
+            "Frozen"
+          ]
+        },
+        {
+          "name": "Purity",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity",
+          "allowed_values": "% by SDS-PAGE or HPLC"
+        },
+        {
+          "name": "Source / Expression system",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "expression_system",
+          "allowed_values": [
+            "E. coli",
+            "HEK293",
+            "CHO",
+            "Insect",
+            "Yeast",
+            "Wheat germ",
+            "Synthetic",
+            "Native"
+          ]
         },
         {
           "name": "Species",
@@ -211,19 +251,6 @@
           "allowed_values": "EU/µg"
         },
         {
-          "name": "Form",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "protein_form",
-          "allowed_values": [
-            "Lyophilized",
-            "Liquid",
-            "Frozen"
-          ]
-        },
-        {
           "name": "Grade",
           "type": "picklist",
           "required": false,
@@ -256,33 +283,6 @@
             "2-8°C",
             "-20°C",
             "-80°C"
-          ]
-        },
-        {
-          "name": "Purity",
-          "type": "number",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "purity",
-          "allowed_values": "% by SDS-PAGE or HPLC"
-        },
-        {
-          "name": "Source / Expression system",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "expression_system",
-          "allowed_values": [
-            "E. coli",
-            "HEK293",
-            "CHO",
-            "Insect",
-            "Yeast",
-            "Wheat germ",
-            "Synthetic",
-            "Native"
           ]
         }
       ]
@@ -302,14 +302,6 @@
           "allowed_values": "units/mg"
         },
         {
-          "name": "Cofactors / substrate",
-          "type": "text",
-          "required": false,
-          "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_cofactors_substrate"
-        },
-        {
           "name": "Form",
           "type": "picklist",
           "required": true,
@@ -321,6 +313,41 @@
             "Liquid",
             "Frozen"
           ]
+        },
+        {
+          "name": "Purity",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity",
+          "allowed_values": "% by SDS-PAGE or HPLC"
+        },
+        {
+          "name": "Source / Expression system",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "expression_system",
+          "allowed_values": [
+            "E. coli",
+            "HEK293",
+            "CHO",
+            "Insect",
+            "Yeast",
+            "Wheat germ",
+            "Synthetic",
+            "Native"
+          ]
+        },
+        {
+          "name": "Cofactors / substrate",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_cofactors_substrate"
         },
         {
           "name": "Grade",
@@ -355,33 +382,6 @@
             "2-8°C",
             "-20°C",
             "-80°C"
-          ]
-        },
-        {
-          "name": "Purity",
-          "type": "number",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "purity",
-          "allowed_values": "% by SDS-PAGE or HPLC"
-        },
-        {
-          "name": "Source / Expression system",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "expression_system",
-          "allowed_values": [
-            "E. coli",
-            "HEK293",
-            "CHO",
-            "Insect",
-            "Yeast",
-            "Wheat germ",
-            "Synthetic",
-            "Native"
           ]
         },
         {
@@ -412,6 +412,28 @@
             "Human (HSA)",
             "Recombinant"
           ]
+        },
+        {
+          "name": "Form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_form",
+          "allowed_values": [
+            "Lyophilized",
+            "Liquid",
+            "Frozen"
+          ]
+        },
+        {
+          "name": "Purity",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity",
+          "allowed_values": "% by SDS-PAGE or HPLC"
         },
         {
           "name": "Species",
@@ -451,19 +473,6 @@
           "pattern": "labeled_fraction_purity"
         },
         {
-          "name": "Form",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "protein_form",
-          "allowed_values": [
-            "Lyophilized",
-            "Liquid",
-            "Frozen"
-          ]
-        },
-        {
           "name": "Grade",
           "type": "picklist",
           "required": false,
@@ -497,15 +506,6 @@
             "-20°C",
             "-80°C"
           ]
-        },
-        {
-          "name": "Purity",
-          "type": "number",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "purity",
-          "allowed_values": "% by SDS-PAGE or HPLC"
         },
         {
           "name": "Endotoxin level",
@@ -558,6 +558,19 @@
           ]
         },
         {
+          "name": "Form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_form",
+          "allowed_values": [
+            "Lyophilized",
+            "Liquid",
+            "Frozen"
+          ]
+        },
+        {
           "name": "Counterion / salt",
           "type": "picklist",
           "required": false,
@@ -596,19 +609,6 @@
           "extractor": "regex",
           "pattern": "peptide_scale",
           "allowed_values": "mg, g or kg"
-        },
-        {
-          "name": "Form",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "protein_form",
-          "allowed_values": [
-            "Lyophilized",
-            "Liquid",
-            "Frozen"
-          ]
         },
         {
           "name": "Grade",

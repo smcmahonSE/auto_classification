@@ -1,0 +1,40 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+signal_detection,24/7 availability,2102,135,6.42,1967,0,0
+signal_detection,AI or automation in delivery,2102,135,6.42,1967,0,0
+signal_detection,Benefit-risk assessment included,2102,135,6.42,1967,0,0
+signal_detection,Category (L2/L3),2102,2102,100.0,0,0,0
+signal_detection,Category UNSPSC,2102,0,0.0,2102,0,0
+signal_detection,Currency,2102,42,2.0,2060,0,0
+signal_detection,Data sources searched,2102,0,0.0,2102,0,0
+signal_detection,Description,2102,2011,95.67,91,0,0
+signal_detection,Detection method,2102,0,0.0,2102,0,0
+signal_detection,Development stage,2102,101,4.8,2001,0,0
+signal_detection,Document links,2102,3,0.14,2099,0,0
+signal_detection,Expanded access supported,2102,135,6.42,1967,0,0
+signal_detection,Image URL,2102,0,0.0,2102,0,0
+signal_detection,Inventory,2102,0,0.0,2102,0,0
+signal_detection,Languages supported,2102,0,0.0,2102,0,0
+signal_detection,Lead time (days),2102,0,0.0,2102,0,0
+signal_detection,Listing UNSPSC,2102,0,0.0,2102,0,0
+signal_detection,Listing type,2102,2102,100.0,0,0,0
+signal_detection,Manufacturer SKU,2102,0,0.0,2102,0,0
+signal_detection,Manufacturer name,2102,0,0.0,2102,0,0
+signal_detection,Multilingual intake and translation,2102,135,6.42,1967,0,0
+signal_detection,Name,2102,2102,100.0,0,0,0
+signal_detection,Price per unit,2102,2100,99.9,2,0,0
+signal_detection,Pricing model,2102,2102,100.0,0,0,0
+signal_detection,Product / service URL,2102,3,0.14,2099,0,0
+signal_detection,Product types covered,2102,19,0.9,2083,0,0
+signal_detection,Quantity,2102,0,0.0,2102,0,0
+signal_detection,Regions served,2102,13,0.62,2089,0,0
+signal_detection,Requester UNSPSC,2102,0,0.0,2102,0,0
+signal_detection,Requester commodity code,2102,0,0.0,2102,0,0
+signal_detection,Review frequency,2102,0,0.0,2102,0,0
+signal_detection,Ship from,2102,0,0.0,2102,0,0
+signal_detection,Signal deliverables,2102,0,0.0,2102,0,0
+signal_detection,Signal management stages,2102,20,0.95,2082,0,0
+signal_detection,Signal scope,2102,0,0.0,2102,0,0
+signal_detection,Signal tools,2102,0,0.0,2102,0,0
+signal_detection,Supplier SKU,2102,0,0.0,2102,0,0
+signal_detection,Unit,2102,0,0.0,2102,0,0
+signal_detection,Unit of measure,2102,382,18.17,1654,66,0

@@ -1,0 +1,733 @@
+{
+  "l2_id": "heor_rwe_market_access",
+  "l2_label": "HEOR, RWE & Market Access",
+  "schema_name": "HEOR_RWE_MARKET_ACCESS",
+  "l2_fields": [
+    {
+      "name": "Therapeutic areas",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "therapeutic_areas_heor",
+      "allowed_values": [
+        "Oncology",
+        "Hematology",
+        "Rare and orphan disease",
+        "Immunology",
+        "Cardiovascular",
+        "Central nervous system",
+        "Behavioral health",
+        "Diabetes and endocrine",
+        "Infectious disease",
+        "Respiratory",
+        "Ophthalmology",
+        "Dermatology",
+        "Obesity",
+        "Pediatrics",
+        "Alzheimer's disease",
+        "Women's health"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Geographic markets covered",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "geographic_markets_covered_heor",
+      "allowed_values": [
+        "Global",
+        "US",
+        "Canada",
+        "EU",
+        "UK",
+        "EU5",
+        "Central and Eastern Europe",
+        "Nordics",
+        "Australia",
+        "Japan",
+        "China",
+        "Asia-Pacific",
+        "Latin America",
+        "Emerging markets"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Product type supported",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "product_type_supported_heor",
+      "allowed_values": [
+        "Drug",
+        "Biologic",
+        "Biosimilar",
+        "Cell and gene therapy",
+        "Medical device",
+        "Diagnostic",
+        "Vaccine"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Development stage",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "development_stage",
+      "allowed_values": [
+        "Phase 1",
+        "Phase 2",
+        "Phase 3",
+        "Marketing application",
+        "Launch",
+        "Post-approval"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Target decision maker",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "target_decision_maker",
+      "allowed_values": [
+        "HTA body",
+        "Public payer",
+        "Private payer",
+        "Regulator",
+        "Healthcare professional",
+        "Patient"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Strategic consulting included",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "Peer-reviewed publication support",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "AI-assisted methods",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    }
+  ],
+  "l3_nodes": {
+    "heor_modeling": {
+      "label": "HEOR Modeling",
+      "table_name": "HEOR_MODELING_SPEC",
+      "fields": [
+        {
+          "name": "Economic model type",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "economic_model_type",
+          "allowed_values": [
+            "Cost-effectiveness",
+            "Cost-utility",
+            "Budget impact",
+            "Burden of disease",
+            "Value-based pricing",
+            "Epidemiology forecasting"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Model build scope",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "model_build_scope",
+          "allowed_values": [
+            "De novo global model",
+            "Local country adaptation",
+            "Early economic model",
+            "Update of existing model"
+          ]
+        },
+        {
+          "name": "Interactive model tool",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Deliverables",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "deliverables_heor_modeling",
+          "allowed_values": [
+            "Economic model file",
+            "Technical report",
+            "HTA submission-ready module",
+            "Pricing scenarios",
+            "Clinical trial design inputs"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Target HTA body",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "target_hta_body_heor_modeling",
+          "allowed_values": [
+            "NICE",
+            "CADTH (CDA-AMC)",
+            "INESSS",
+            "ICER",
+            "AMCP format",
+            "EU JCA"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Utility measurement",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "utility_measurement",
+          "allowed_values": [
+            "Discrete choice experiment",
+            "Health state utility study",
+            "Patient preference study"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Proprietary modeling platform",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_proprietary_modeling_platform"
+        },
+        {
+          "name": "Model structure",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "model_structure",
+          "allowed_values": [
+            "Decision tree",
+            "Markov",
+            "Partitioned survival",
+            "Individual patient simulation",
+            "Discretely integrated condition event (DICE)"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Survival analysis included",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Model validation",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "model_validation",
+          "allowed_values": [
+            "Face validity",
+            "Internal validation",
+            "External validation"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "real_world_evidence_studies": {
+      "label": "Real-World Evidence Studies",
+      "table_name": "REAL_WORLD_EVIDENCE_STUDIES_SPEC",
+      "fields": [
+        {
+          "name": "Study design",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "study_design_rwe",
+          "allowed_values": [
+            "Retrospective database study",
+            "Retrospective chart review",
+            "Cohort",
+            "Case-control",
+            "Cross-sectional",
+            "Registry",
+            "Natural history",
+            "External control arm",
+            "Pragmatic trial",
+            "Comparative effectiveness",
+            "Drug utilization",
+            "Post-authorization safety study (PASS)",
+            "Post-authorization efficacy study (PAES)",
+            "Long-term follow-up",
+            "Pregnancy and lactation",
+            "Survey",
+            "Claims-linked survey"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Study timing",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "study_timing_rwe",
+          "allowed_values": [
+            "Retrospective",
+            "Prospective",
+            "Hybrid"
+          ]
+        },
+        {
+          "name": "Data source type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "data_source_type_rwe",
+          "allowed_values": [
+            "Claims",
+            "EHR or EMR",
+            "Registry",
+            "Chart review",
+            "Pharmacy records",
+            "Lab results",
+            "Patient-reported outcomes",
+            "Primary data collection",
+            "Social media",
+            "Biosensor or wearable",
+            "Clinical notes",
+            "Genomic"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Intended use of evidence",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "intended_use_of_evidence",
+          "allowed_values": [
+            "Regulatory submission",
+            "HTA or payer submission",
+            "Label expansion",
+            "Post-market surveillance",
+            "Value demonstration",
+            "Publication"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Proprietary data asset used",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_proprietary_data_asset_used"
+        },
+        {
+          "name": "Data country of origin",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "data_country_of_origin",
+          "allowed_values": [
+            "US",
+            "Canada",
+            "EU",
+            "UK",
+            "Japan",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Data linkage",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Deliverables",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "deliverables_rwe_studies",
+          "allowed_values": [
+            "Protocol",
+            "Site selection and management",
+            "IRB submission",
+            "Statistical analysis",
+            "Final study report",
+            "Publication"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "systematic_literature_review": {
+      "label": "Systematic Literature Review",
+      "table_name": "SYSTEMATIC_LITERATURE_REVIEW_SPEC",
+      "fields": [
+        {
+          "name": "Review type",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "review_type_slr",
+          "allowed_values": [
+            "Systematic literature review",
+            "Targeted literature review",
+            "Scoping review"
+          ]
+        },
+        {
+          "name": "Indirect treatment comparison method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "indirect_treatment_comparison_method",
+          "allowed_values": [
+            "Network meta-analysis (NMA)",
+            "Matching-adjusted indirect comparison (MAIC)",
+            "Simulated treatment comparison (STC)",
+            "Multilevel network meta-regression (ML-NMR)"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Evidence topic",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "evidence_topic",
+          "allowed_values": [
+            "Clinical efficacy",
+            "Safety",
+            "Costs",
+            "Economic evaluations",
+            "Health-related quality of life",
+            "Utilities",
+            "Clinical outcome assessments"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Meta-analysis included",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Grey literature included",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "HTA-compliant methods",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "SLR platform or tooling",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_slr_platform_tooling"
+        }
+      ]
+    },
+    "payer_value_dossiers": {
+      "label": "Payer / Value Dossiers",
+      "table_name": "PAYER_VALUE_DOSSIERS_SPEC",
+      "fields": [
+        {
+          "name": "Dossier type",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "dossier_type",
+          "allowed_values": [
+            "AMCP format dossier",
+            "Global value dossier",
+            "Core value dossier",
+            "HTA submission dossier",
+            "EU Joint Clinical Assessment (JCA) dossier",
+            "Country-specific reimbursement dossier",
+            "Private payer dossier",
+            "COA dossier"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Value communication deliverables",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "value_communication_deliverables",
+          "allowed_values": [
+            "Value story",
+            "Payer slide deck",
+            "Objection handler",
+            "Interactive value tool",
+            "Executive summary"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Target HTA body",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "target_hta_body_payer_dossiers",
+          "allowed_values": [
+            "NICE",
+            "ICER",
+            "CDA-AMC (formerly CADTH)",
+            "INESSS",
+            "EU JCA",
+            "EUnetHTA"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Submission support stage",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "submission_support_stage",
+          "allowed_values": [
+            "Scientific advice",
+            "Pre-submission",
+            "Submission",
+            "Post-submission"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Interactive digital dossier",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Message testing with payers",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "pricing_market_access": {
+      "label": "Pricing & Market Access",
+      "table_name": "PRICING_MARKET_ACCESS_SPEC",
+      "fields": [
+        {
+          "name": "Pricing service",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pricing_service",
+          "allowed_values": [
+            "Pricing strategy",
+            "Launch sequencing",
+            "Indication sequencing",
+            "Contracting and net price",
+            "Value-based contracting",
+            "Reimbursement strategy",
+            "International reference pricing analysis"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Payer research method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "payer_research_method",
+          "allowed_values": [
+            "Payer market research",
+            "Advisory board",
+            "Rapid panel",
+            "Expert payer panel",
+            "Qualitative interviews",
+            "Quantitative survey"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Patient services strategy",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Access scope",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "access_scope",
+          "allowed_values": [
+            "Global access strategy",
+            "Local access strategy",
+            "US managed markets",
+            "Medicare and Medicaid"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Policy and HTA consulting",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Launch readiness support",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Pull-through and field training",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    }
+  }
+}

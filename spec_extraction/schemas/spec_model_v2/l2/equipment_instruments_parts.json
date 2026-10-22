@@ -47,6 +47,41 @@
           ]
         },
         {
+          "name": "Form factor",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_form_factor",
+          "allowed_values": [
+            "Benchtop",
+            "Floor",
+            "Handheld",
+            "Portable",
+            "Software"
+          ]
+        },
+        {
+          "name": "Model / configuration",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_model_configuration"
+        },
+        {
+          "name": "Product role",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_product_role",
+          "allowed_values": [
+            "Instrument",
+            "Accessory"
+          ]
+        },
+        {
           "name": "Detector",
           "type": "picklist",
           "required": false,
@@ -154,29 +189,6 @@
           ]
         },
         {
-          "name": "Form factor",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "equipment_form_factor",
-          "allowed_values": [
-            "Benchtop",
-            "Floor",
-            "Handheld",
-            "Portable",
-            "Software"
-          ]
-        },
-        {
-          "name": "Model / configuration",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_model_configuration"
-        },
-        {
           "name": "Software",
           "type": "text",
           "required": false,
@@ -252,18 +264,6 @@
           "pattern": "labeled_warranty_service_plan"
         },
         {
-          "name": "Product role",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "equipment_product_role",
-          "allowed_values": [
-            "Instrument",
-            "Accessory"
-          ]
-        },
-        {
           "name": "Condition",
           "type": "picklist",
           "required": false,
@@ -301,6 +301,41 @@
           "extractor": "regex",
           "pattern": "output_per_flowcell_gb",
           "allowed_values": "Gb"
+        },
+        {
+          "name": "Form factor",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_form_factor",
+          "allowed_values": [
+            "Benchtop",
+            "Floor",
+            "Handheld",
+            "Portable",
+            "Software"
+          ]
+        },
+        {
+          "name": "Model / configuration",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_model_configuration"
+        },
+        {
+          "name": "Product role",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_product_role",
+          "allowed_values": [
+            "Instrument",
+            "Accessory"
+          ]
         },
         {
           "name": "Flow cell types",
@@ -347,29 +382,6 @@
           "allowed_values": "samples"
         },
         {
-          "name": "Form factor",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "equipment_form_factor",
-          "allowed_values": [
-            "Benchtop",
-            "Floor",
-            "Handheld",
-            "Portable",
-            "Software"
-          ]
-        },
-        {
-          "name": "Model / configuration",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_model_configuration"
-        },
-        {
           "name": "Software",
           "type": "text",
           "required": false,
@@ -443,18 +455,6 @@
           "product_only": false,
           "extractor": "regex",
           "pattern": "labeled_warranty_service_plan"
-        },
-        {
-          "name": "Product role",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "equipment_product_role",
-          "allowed_values": [
-            "Instrument",
-            "Accessory"
-          ]
         },
         {
           "name": "Condition",
@@ -502,6 +502,41 @@
           "extractor": "regex",
           "pattern": "parameters_detectors",
           "allowed_values": "parameters"
+        },
+        {
+          "name": "Form factor",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_form_factor",
+          "allowed_values": [
+            "Benchtop",
+            "Floor",
+            "Handheld",
+            "Portable",
+            "Software"
+          ]
+        },
+        {
+          "name": "Model / configuration",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_model_configuration"
+        },
+        {
+          "name": "Product role",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_product_role",
+          "allowed_values": [
+            "Instrument",
+            "Accessory"
+          ]
         },
         {
           "name": "Acquisition rate",
@@ -566,29 +601,6 @@
           ]
         },
         {
-          "name": "Form factor",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "equipment_form_factor",
-          "allowed_values": [
-            "Benchtop",
-            "Floor",
-            "Handheld",
-            "Portable",
-            "Software"
-          ]
-        },
-        {
-          "name": "Model / configuration",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_model_configuration"
-        },
-        {
           "name": "Software",
           "type": "text",
           "required": false,
@@ -664,18 +676,6 @@
           "pattern": "labeled_warranty_service_plan"
         },
         {
-          "name": "Product role",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "equipment_product_role",
-          "allowed_values": [
-            "Instrument",
-            "Accessory"
-          ]
-        },
-        {
           "name": "Condition",
           "type": "picklist",
           "required": false,
@@ -721,6 +721,41 @@
           "extractor": "regex",
           "pattern": "magnification_x",
           "allowed_values": "X"
+        },
+        {
+          "name": "Form factor",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_form_factor",
+          "allowed_values": [
+            "Benchtop",
+            "Floor",
+            "Handheld",
+            "Portable",
+            "Software"
+          ]
+        },
+        {
+          "name": "Model / configuration",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_model_configuration"
+        },
+        {
+          "name": "Product role",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_product_role",
+          "allowed_values": [
+            "Instrument",
+            "Accessory"
+          ]
         },
         {
           "name": "Fluorescence channels",
@@ -798,29 +833,6 @@
           ]
         },
         {
-          "name": "Form factor",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "equipment_form_factor",
-          "allowed_values": [
-            "Benchtop",
-            "Floor",
-            "Handheld",
-            "Portable",
-            "Software"
-          ]
-        },
-        {
-          "name": "Model / configuration",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_model_configuration"
-        },
-        {
           "name": "Software",
           "type": "text",
           "required": false,
@@ -894,18 +906,6 @@
           "product_only": false,
           "extractor": "regex",
           "pattern": "labeled_warranty_service_plan"
-        },
-        {
-          "name": "Product role",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "equipment_product_role",
-          "allowed_values": [
-            "Instrument",
-            "Accessory"
-          ]
         },
         {
           "name": "Condition",
@@ -961,6 +961,41 @@
           "allowed_values": "µL"
         },
         {
+          "name": "Form factor",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_form_factor",
+          "allowed_values": [
+            "Benchtop",
+            "Floor",
+            "Handheld",
+            "Portable",
+            "Software"
+          ]
+        },
+        {
+          "name": "Model / configuration",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_model_configuration"
+        },
+        {
+          "name": "Product role",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_product_role",
+          "allowed_values": [
+            "Instrument",
+            "Accessory"
+          ]
+        },
+        {
           "name": "Tip type",
           "type": "picklist",
           "required": false,
@@ -999,29 +1034,6 @@
             "Plate reader",
             "Incubator"
           ]
-        },
-        {
-          "name": "Form factor",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "equipment_form_factor",
-          "allowed_values": [
-            "Benchtop",
-            "Floor",
-            "Handheld",
-            "Portable",
-            "Software"
-          ]
-        },
-        {
-          "name": "Model / configuration",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_model_configuration"
         },
         {
           "name": "Software",
@@ -1097,18 +1109,6 @@
           "product_only": false,
           "extractor": "regex",
           "pattern": "labeled_warranty_service_plan"
-        },
-        {
-          "name": "Product role",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "equipment_product_role",
-          "allowed_values": [
-            "Instrument",
-            "Accessory"
-          ]
         },
         {
           "name": "Condition",
@@ -1166,6 +1166,41 @@
           ]
         },
         {
+          "name": "Form factor",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_form_factor",
+          "allowed_values": [
+            "Benchtop",
+            "Floor",
+            "Handheld",
+            "Portable",
+            "Software"
+          ]
+        },
+        {
+          "name": "Model / configuration",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_model_configuration"
+        },
+        {
+          "name": "Product role",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_product_role",
+          "allowed_values": [
+            "Instrument",
+            "Accessory"
+          ]
+        },
+        {
           "name": "Bag / consumable type",
           "type": "text",
           "required": false,
@@ -1218,29 +1253,6 @@
           "pattern": "labeled_scalability"
         },
         {
-          "name": "Form factor",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "equipment_form_factor",
-          "allowed_values": [
-            "Benchtop",
-            "Floor",
-            "Handheld",
-            "Portable",
-            "Software"
-          ]
-        },
-        {
-          "name": "Model / configuration",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_model_configuration"
-        },
-        {
           "name": "Software",
           "type": "text",
           "required": false,
@@ -1316,18 +1328,6 @@
           "pattern": "labeled_warranty_service_plan"
         },
         {
-          "name": "Product role",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "equipment_product_role",
-          "allowed_values": [
-            "Instrument",
-            "Accessory"
-          ]
-        },
-        {
           "name": "Condition",
           "type": "picklist",
           "required": false,
@@ -1348,6 +1348,41 @@
       "form": "product",
       "table_name": "GENERAL_LAB_EQUIPMENT_SPEC",
       "fields": [
+        {
+          "name": "Form factor",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_form_factor",
+          "allowed_values": [
+            "Benchtop",
+            "Floor",
+            "Handheld",
+            "Portable",
+            "Software"
+          ]
+        },
+        {
+          "name": "Model / configuration",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_model_configuration"
+        },
+        {
+          "name": "Product role",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "equipment_product_role",
+          "allowed_values": [
+            "Instrument",
+            "Accessory"
+          ]
+        },
         {
           "name": "Capacity",
           "type": "text",
@@ -1397,29 +1432,6 @@
           "allowed_values": "dB(A)"
         },
         {
-          "name": "Form factor",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "equipment_form_factor",
-          "allowed_values": [
-            "Benchtop",
-            "Floor",
-            "Handheld",
-            "Portable",
-            "Software"
-          ]
-        },
-        {
-          "name": "Model / configuration",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_model_configuration"
-        },
-        {
           "name": "Software",
           "type": "text",
           "required": false,
@@ -1493,18 +1505,6 @@
           "product_only": false,
           "extractor": "regex",
           "pattern": "labeled_warranty_service_plan"
-        },
-        {
-          "name": "Product role",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "equipment_product_role",
-          "allowed_values": [
-            "Instrument",
-            "Accessory"
-          ]
         },
         {
           "name": "Condition",

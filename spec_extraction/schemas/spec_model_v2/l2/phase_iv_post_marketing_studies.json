@@ -1,0 +1,785 @@
+{
+  "l2_id": "phase_iv_post_marketing_studies",
+  "l2_label": "Phase IV / Post-Marketing Studies",
+  "schema_name": "PHASE_IV_POST_MARKETING_STUDIES",
+  "l2_fields": [
+    {
+      "name": "Therapeutic area",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "therapeutic_area_phase_iv",
+      "allowed_values": [
+        "Oncology",
+        "Hematology",
+        "Rare and orphan disease",
+        "Cardiovascular",
+        "Dermatology",
+        "Gastroenterology",
+        "Neurology",
+        "Psychiatry",
+        "Immunology and rheumatology",
+        "Infectious disease",
+        "Vaccines",
+        "Respiratory",
+        "Ophthalmology",
+        "Obesity and metabolic",
+        "Women's health",
+        "Cell and gene therapy"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Product type",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "product_type_phase_iv",
+      "allowed_values": [
+        "Small molecule",
+        "Biologic",
+        "Vaccine",
+        "Cell therapy",
+        "Gene therapy",
+        "Medical device",
+        "Diagnostic",
+        "Digital therapeutic"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Geographic coverage",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "geographic_coverage_phase_iv",
+      "allowed_values": [
+        "North America",
+        "Europe",
+        "Asia-Pacific",
+        "China",
+        "Japan",
+        "Latin America",
+        "Middle East and Africa",
+        "Global"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Data collection approach",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "data_collection_approach",
+      "allowed_values": [
+        "Prospective primary data",
+        "Retrospective secondary data",
+        "Hybrid primary and secondary"
+      ]
+    },
+    {
+      "name": "Data sources",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "data_sources_phase_iv",
+      "allowed_values": [
+        "Site case report forms",
+        "Electronic health records",
+        "Medical chart review",
+        "Claims data",
+        "Existing disease registries",
+        "Lab data",
+        "Patient support program data",
+        "Wearables and biosensors",
+        "Patient surveys"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Regulatory purpose",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "regulatory_purpose",
+      "allowed_values": [
+        "Post-approval regulatory requirement",
+        "Voluntary sponsor commitment",
+        "Label expansion",
+        "HTA or payer submission",
+        "Market access and value",
+        "Medical affairs evidence"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Target regulator",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "target_regulator_phase_iv",
+      "allowed_values": [
+        "FDA",
+        "EMA",
+        "MHRA",
+        "Health Canada",
+        "Other national authority"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Endpoints captured",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "endpoints_captured",
+      "allowed_values": [
+        "Long-term safety",
+        "Rare adverse events",
+        "Effectiveness",
+        "Durability of response",
+        "Survival or time-to-event",
+        "Disease progression",
+        "Functional outcomes",
+        "Quality of life",
+        "Treatment patterns",
+        "Adherence",
+        "Healthcare resource use",
+        "Cost"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Patient-reported outcomes collected",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "Scope of service",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "scope_of_service_phase_iv",
+      "allowed_values": [
+        "Evidence strategy",
+        "Study design",
+        "Protocol writing",
+        "Feasibility and site selection",
+        "IRB or ethics submission",
+        "EDC build",
+        "Patient recruitment",
+        "Site management and monitoring",
+        "Data management",
+        "Statistical analysis",
+        "Final study report",
+        "Publication support"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Deliverables",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "deliverables_phase_iv",
+      "allowed_values": [
+        "Evidence plan",
+        "Protocol",
+        "Statistical analysis plan",
+        "Interim reports",
+        "Final study report",
+        "Regulatory submission dossier",
+        "HTA dossier",
+        "Manuscripts and abstracts"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Number of countries",
+      "type": "number",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "number_of_countries_phase_iv",
+      "allowed_values": "countries"
+    },
+    {
+      "name": "Decentralized or remote study model",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "Patient population",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "patient_population_phase_iv",
+      "allowed_values": [
+        "Adult",
+        "Pediatric",
+        "Pregnant people",
+        "Lactating people",
+        "Infants",
+        "Rare disease",
+        "Elderly or comorbid"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Direct-to-patient data collection",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "Target sample size",
+      "type": "number",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "target_sample_size",
+      "allowed_values": "patients"
+    }
+  ],
+  "l3_nodes": {
+    "observational_studies": {
+      "label": "Observational Studies",
+      "table_name": "OBSERVATIONAL_STUDIES_SPEC",
+      "fields": [
+        {
+          "name": "Observational study type",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "observational_study_type",
+          "allowed_values": [
+            "Drug utilization study",
+            "Natural history study",
+            "Comparative effectiveness study",
+            "Burden of disease study",
+            "Cross-sectional study",
+            "Patient preference study",
+            "Database study",
+            "Survey study",
+            "External control arm"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Data linkage across sources",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Comparator approach",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "comparator_approach",
+          "allowed_values": [
+            "None",
+            "Internal comparator cohort",
+            "External control arm",
+            "Historical control"
+          ]
+        },
+        {
+          "name": "Epidemiologic design",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "epidemiologic_design",
+          "allowed_values": [
+            "Cohort",
+            "Case-control",
+            "Cross-sectional",
+            "Descriptive"
+          ]
+        },
+        {
+          "name": "Number of data sources linked",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "number_of_data_sources_linked",
+          "allowed_values": "data sources"
+        },
+        {
+          "name": "Causal inference methods",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Site type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "site_type_phase_iv",
+          "allowed_values": [
+            "Academic centers",
+            "Community practices",
+            "Non-traditional research sites",
+            "Pharmacies"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "patient_registries": {
+      "label": "Patient Registries",
+      "table_name": "PATIENT_REGISTRIES_SPEC",
+      "fields": [
+        {
+          "name": "Registry type",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "registry_type",
+          "allowed_values": [
+            "Disease",
+            "Product",
+            "Pregnancy exposure",
+            "Vaccine",
+            "Rare disease"
+          ]
+        },
+        {
+          "name": "Sponsor model",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sponsor_model",
+          "allowed_values": [
+            "Single product single protocol",
+            "Multi-product consortium",
+            "Independent multi-product single protocol"
+          ]
+        },
+        {
+          "name": "Registry duration",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "registry_duration_years",
+          "allowed_values": "years"
+        },
+        {
+          "name": "Infant follow-up period",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "infant_follow_up_period_months",
+          "allowed_values": "months after birth"
+        },
+        {
+          "name": "Exposed versus unexposed comparison",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Enrollment channel",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "enrollment_channel",
+          "allowed_values": [
+            "Healthcare provider referral",
+            "Patient self-enrollment by phone",
+            "Patient self-enrollment online",
+            "Pharmacy",
+            "Clinic sites"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Registry awareness campaign",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Global coordinating center",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Data reporters",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "data_reporters",
+          "allowed_values": [
+            "Clinician-reported",
+            "Patient-reported"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Pregnancy outcomes captured",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pregnancy_outcomes_captured",
+          "allowed_values": [
+            "Maternal complications",
+            "Fetal outcomes",
+            "Neonatal outcomes",
+            "Infant outcomes"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Lactation study type",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "lactation_study_type",
+          "allowed_values": [
+            "Milk only",
+            "Milk plus serum",
+            "Mother-infant pairs"
+          ]
+        },
+        {
+          "name": "Biospecimen collection",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "late_phase_trials": {
+      "label": "Late-Phase Trials",
+      "table_name": "LATE_PHASE_TRIALS_SPEC",
+      "fields": [
+        {
+          "name": "Late-phase trial type",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "late_phase_trial_type",
+          "allowed_values": [
+            "Phase IIIb",
+            "Phase IV",
+            "Pragmatic trial",
+            "Low-intervention trial",
+            "Open-label extension",
+            "Long-term extension",
+            "Rollover study",
+            "Label expansion study"
+          ]
+        },
+        {
+          "name": "Pragmatic design",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Access program type",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "access_program_type",
+          "allowed_values": [
+            "None",
+            "Expanded access",
+            "Early access",
+            "Managed access",
+            "Compassionate use"
+          ]
+        },
+        {
+          "name": "Long-term follow-up for cell or gene therapy",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Follow-up duration",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "follow_up_duration_years",
+          "allowed_values": "years"
+        },
+        {
+          "name": "Randomized",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Vector type followed",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "vector_type_followed",
+          "allowed_values": [
+            "Integrating vector (gammaretroviral or lentiviral)",
+            "AAV vector",
+            "Genome editing",
+            "Transposon",
+            "Herpes vector"
+          ]
+        },
+        {
+          "name": "Separate LTFU protocol",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Non-drug intervention studied",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "non_drug_intervention_studied",
+          "allowed_values": [
+            "None",
+            "Medical device",
+            "Diagnostic",
+            "Digital therapeutic"
+          ]
+        },
+        {
+          "name": "Digital endpoints",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "post_auth_safety_studies_pass": {
+      "label": "Post-Auth Safety Studies (PASS)",
+      "table_name": "POST_AUTH_SAFETY_STUDIES_PASS_SPEC",
+      "fields": [
+        {
+          "name": "Safety study type",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "safety_study_type",
+          "allowed_values": [
+            "PASS",
+            "PAES",
+            "Post-marketing surveillance study",
+            "Drug utilization study"
+          ]
+        },
+        {
+          "name": "Risk program supported",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "risk_program_supported",
+          "allowed_values": [
+            "FDA REMS",
+            "EU Risk Management Plan",
+            "Additional risk minimisation measures"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Safety outcomes of interest",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "safety_outcomes_of_interest",
+          "allowed_values": [
+            "Rare adverse events",
+            "Adverse events of special interest",
+            "Malignancy",
+            "Fertility effects",
+            "Pregnancy outcomes"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Interventional status",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "interventional_status",
+          "allowed_values": [
+            "Non-interventional",
+            "Interventional"
+          ]
+        },
+        {
+          "name": "Follows GVP Module VIII",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Follows ENCePP methods guide",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Safety design",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "safety_design_phase_iv",
+          "allowed_values": [
+            "Active surveillance",
+            "Cohort",
+            "Case-control",
+            "Database study"
+          ]
+        },
+        {
+          "name": "Signal detection support",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    }
+  }
+}

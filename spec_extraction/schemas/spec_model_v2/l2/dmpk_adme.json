@@ -1,0 +1,1484 @@
+{
+  "l2_id": "dmpk_adme",
+  "l2_label": "DMPK / ADME",
+  "schema_name": "DMPK_ADME",
+  "l2_fields": [
+    {
+      "name": "Development stage",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "development_stage",
+      "allowed_values": [
+        "Discovery",
+        "Preclinical",
+        "Phase 1",
+        "Phase 2",
+        "Phase 3",
+        "Marketing application"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Species",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "species_dmpk",
+      "allowed_values": [
+        "Human",
+        "Mouse",
+        "Rat",
+        "Hamster",
+        "Guinea pig",
+        "Rabbit",
+        "Dog",
+        "Monkey",
+        "Minipig",
+        "Ferret"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Analytical platform",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "analytical_platform_dmpk",
+      "allowed_values": [
+        "LC-MS/MS",
+        "HRMS",
+        "Ligand binding",
+        "Radio-detection"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Turnaround",
+      "type": "number",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "turnaround_business_days",
+      "allowed_values": "business days"
+    },
+    {
+      "name": "Ordering format",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "ordering_format_dmpk",
+      "allowed_values": [
+        "Single assay",
+        "Panel or package"
+      ]
+    },
+    {
+      "name": "Modality supported",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "modality_supported_dmpk",
+      "allowed_values": [
+        "Small molecule",
+        "Peptide",
+        "Oligonucleotide",
+        "PROTAC / degrader",
+        "ADC",
+        "PDC",
+        "mRNA",
+        "Biologic"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Compound amount required",
+      "type": "number",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "compound_amount_required_mg",
+      "allowed_values": "mg"
+    },
+    {
+      "name": "Compound format",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "compound_format_dmpk",
+      "allowed_values": [
+        "DMSO stock",
+        "Powder"
+      ]
+    },
+    {
+      "name": "Deliverable format",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "deliverable_format_dmpk",
+      "allowed_values": [
+        "Summary data",
+        "Full report",
+        "Raw data",
+        "Portal access"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "GLP status",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "glp_status",
+      "allowed_values": [
+        "Non-GLP",
+        "GLP"
+      ]
+    }
+  ],
+  "l3_nodes": {
+    "in_vitro_adme": {
+      "label": "In Vitro ADME",
+      "table_name": "IN_VITRO_ADME_SPEC",
+      "fields": [
+        {
+          "name": "Assay type",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "assay_type_in_vitro_adme",
+          "allowed_values": [
+            "Microsomal stability",
+            "Hepatocyte stability",
+            "S9 stability",
+            "Plasma stability",
+            "Blood stability",
+            "Solubility",
+            "LogD",
+            "pKa"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Test system",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "test_system_in_vitro_adme",
+          "allowed_values": [
+            "Microsomes",
+            "S9",
+            "Hepatocytes (suspension)",
+            "Hepatocytes (plated)",
+            "Cytosol",
+            "Recombinant enzyme"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Readout parameters",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "readout_parameters_in_vitro_adme",
+          "allowed_values": [
+            "CLint",
+            "Half-life",
+            "% remaining",
+            "Scaled CLint"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Solubility type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "solubility_type_dmpk",
+          "allowed_values": [
+            "Kinetic",
+            "Thermodynamic",
+            "Simulated GI fluid"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Stability matrix",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "stability_matrix_dmpk",
+          "allowed_values": [
+            "Plasma",
+            "Whole blood",
+            "SGF",
+            "SIF",
+            "Buffer",
+            "Formulation"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Tissue source",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "tissue_source_dmpk",
+          "allowed_values": [
+            "Liver",
+            "Intestine",
+            "Kidney",
+            "Lung"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Donor pool size",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "donor_pool_size",
+          "allowed_values": "donors"
+        },
+        {
+          "name": "Donor sex",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "donor_sex_dmpk",
+          "allowed_values": [
+            "Mixed",
+            "Male",
+            "Female"
+          ]
+        },
+        {
+          "name": "Metabolic phase covered",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "metabolic_phase_covered",
+          "allowed_values": [
+            "Phase I",
+            "Phase II",
+            "Phase I and II combined"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Time points",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_time_points"
+        },
+        {
+          "name": "Low-clearance method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "low_clearance_method",
+          "allowed_values": [
+            "Hepatocyte relay",
+            "Plated hepatocytes",
+            "Co-culture"
+          ]
+        },
+        {
+          "name": "In vivo clearance prediction",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Metabolite detection add-on",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Lipophilicity measure",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "lipophilicity_measure",
+          "allowed_values": [
+            "LogD7.4",
+            "LogP"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Test concentration",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "test_concentration_um",
+          "allowed_values": "µM"
+        },
+        {
+          "name": "Replicates",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "replicates_count",
+          "allowed_values": "replicates"
+        }
+      ]
+    },
+    "in_vivo_pk_tk": {
+      "label": "In Vivo PK / TK",
+      "table_name": "IN_VIVO_PK_TK_SPEC",
+      "fields": [
+        {
+          "name": "Route of administration",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "route_of_administration_dmpk",
+          "allowed_values": [
+            "IV bolus",
+            "IV infusion",
+            "PO",
+            "SC",
+            "IP",
+            "IM",
+            "Intranasal",
+            "Intrathecal",
+            "ICV",
+            "Topical",
+            "Inhalation"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Dosing design",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "dosing_design",
+          "allowed_values": [
+            "Discrete",
+            "Cassette",
+            "Crossover"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Sampling matrix",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sampling_matrix_dmpk",
+          "allowed_values": [
+            "Plasma",
+            "Serum",
+            "Whole blood",
+            "CSF",
+            "Bile",
+            "Urine",
+            "Feces",
+            "Tissue"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Blood sampling method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "blood_sampling_method",
+          "allowed_values": [
+            "Serial",
+            "Terminal",
+            "Microsampling",
+            "Automated"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Surgical or cannulated model",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "surgical_cannulated_model",
+          "allowed_values": [
+            "JVC",
+            "FVC",
+            "BDC",
+            "Portal vein",
+            "Lymph duct",
+            "Cisterna magna"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Dose regimen",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "dose_regimen",
+          "allowed_values": [
+            "Single",
+            "Repeat",
+            "Dose escalation"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Tissue distribution",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Excretion study",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Formulation support",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Animal model type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "animal_model_type_dmpk",
+          "allowed_values": [
+            "Normal",
+            "Knockout",
+            "Immunodeficient",
+            "Disease model"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "PK analysis approach",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pk_analysis_approach",
+          "allowed_values": [
+            "NCA",
+            "PK/PD",
+            "PBPK"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "PK software",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pk_software",
+          "allowed_values": [
+            "Phoenix WinNonlin",
+            "Other"
+          ]
+        },
+        {
+          "name": "TK alongside tox",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Strain",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_strain_dmpk"
+        },
+        {
+          "name": "Max compounds per cassette",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "max_compounds_per_cassette",
+          "allowed_values": "compounds"
+        },
+        {
+          "name": "Animals per group",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "animals_per_group",
+          "allowed_values": "animals"
+        },
+        {
+          "name": "PK parameters",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pk_parameters",
+          "allowed_values": [
+            "Cmax",
+            "Tmax",
+            "AUC",
+            "t1/2",
+            "CL",
+            "Vd",
+            "F%"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Max infusion duration",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "max_infusion_duration_hours",
+          "allowed_values": "hours"
+        }
+      ]
+    },
+    "metabolite_identification": {
+      "label": "Metabolite Identification",
+      "table_name": "METABOLITE_IDENTIFICATION_SPEC",
+      "fields": [
+        {
+          "name": "Study type",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "study_type_metabolite_id",
+          "allowed_values": [
+            "In vitro profiling",
+            "In vivo profiling",
+            "Soft spot",
+            "Reactive metabolite",
+            "MIST",
+            "Human AME"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Radiolabeled test article",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Test system",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "test_system_metabolite_id",
+          "allowed_values": [
+            "Microsomes",
+            "Hepatocytes",
+            "S9",
+            "Recombinant",
+            "Plasma",
+            "Tissue homogenate"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "In vivo sample matrix",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "in_vivo_sample_matrix",
+          "allowed_values": [
+            "Plasma",
+            "Urine",
+            "Feces",
+            "Bile",
+            "Tissue"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Cross-species comparison",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "MS platform",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ms_platform",
+          "allowed_values": [
+            "HRMS (Orbitrap)",
+            "HRMS (QTof)",
+            "Triple quad"
+          ]
+        },
+        {
+          "name": "Isotope",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "isotope",
+          "allowed_values": [
+            "3H",
+            "14C",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Radiosynthesis in-house",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Radio detection",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "radio_detection",
+          "allowed_values": [
+            "Online radio-HPLC",
+            "Fraction collection plus LSC",
+            "AMS"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Service level",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "service_level_metabolite_id",
+          "allowed_values": [
+            "Detection",
+            "Profiling",
+            "Structural elucidation"
+          ]
+        },
+        {
+          "name": "Mass balance",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "QWBA",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "MIST coverage",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Trapping agent",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "trapping_agent",
+          "allowed_values": [
+            "GSH",
+            "Cysteine",
+            "Methoxyamine",
+            "Cyanide"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "NMR structure confirmation",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Metabolite biosynthesis",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Test concentration",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "test_concentration_um",
+          "allowed_values": "µM"
+        }
+      ]
+    },
+    "drug_drug_interaction": {
+      "label": "Drug-Drug Interaction",
+      "table_name": "DRUG_DRUG_INTERACTION_SPEC",
+      "fields": [
+        {
+          "name": "Assay type",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "assay_type_ddi",
+          "allowed_values": [
+            "Reversible CYP inhibition",
+            "Time-dependent inhibition",
+            "CYP induction",
+            "Reaction phenotyping",
+            "UGT inhibition",
+            "Transporter inhibition",
+            "Transporter substrate"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Non-CYP enzymes",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "non_cyp_enzymes",
+          "allowed_values": [
+            "UGT",
+            "SULT",
+            "AO",
+            "XO",
+            "FMO",
+            "MAO",
+            "CES",
+            "ADH / ALDH"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "CYP isoforms",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cyp_isoforms",
+          "allowed_values": [
+            "1A2",
+            "2A6",
+            "2B6",
+            "2C8",
+            "2C9",
+            "2C19",
+            "2D6",
+            "2E1",
+            "3A4",
+            "2J2",
+            "4F2"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Inhibition parameter",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "inhibition_parameter",
+          "allowed_values": [
+            "IC50",
+            "Ki",
+            "IC50 shift",
+            "kinact/KI",
+            "% inhibition"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Induction test system",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "induction_test_system",
+          "allowed_values": [
+            "Primary hepatocytes",
+            "Sandwich-cultured hepatocytes",
+            "HepaRG",
+            "Reporter assay"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Induction endpoint",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "induction_endpoint",
+          "allowed_values": [
+            "mRNA",
+            "Enzyme activity",
+            "Protein"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Phenotyping method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "phenotyping_method",
+          "allowed_values": [
+            "Chemical inhibition",
+            "Recombinant enzyme",
+            "Correlation"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Regulatory guidance",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "regulatory_guidance_ddi",
+          "allowed_values": [
+            "ICH M12",
+            "FDA 2020",
+            "EMA",
+            "PMDA",
+            "NMPA"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Nuclear receptor assay",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "nuclear_receptor_assay",
+          "allowed_values": [
+            "PXR",
+            "CAR",
+            "AhR"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Probe format",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "probe_format",
+          "allowed_values": [
+            "Discrete",
+            "Cocktail"
+          ]
+        },
+        {
+          "name": "Inhibitor concentration range",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_inhibitor_concentration_range"
+        },
+        {
+          "name": "Induction parameters",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "induction_parameters",
+          "allowed_values": [
+            "Fold induction",
+            "EC50",
+            "Emax",
+            "RIS"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Risk assessment or modeling",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "risk_assessment_modeling",
+          "allowed_values": [
+            "Static model",
+            "PBPK"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Hepatocyte donors",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "hepatocyte_donors",
+          "allowed_values": "donors"
+        },
+        {
+          "name": "UGT isoforms",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ugt_isoforms",
+          "allowed_values": [
+            "1A1",
+            "1A3",
+            "1A4",
+            "1A9",
+            "2B7",
+            "2B15"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "protein_binding": {
+      "label": "Protein Binding",
+      "table_name": "PROTEIN_BINDING_SPEC",
+      "fields": [
+        {
+          "name": "Method",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "method_protein_binding",
+          "allowed_values": [
+            "Equilibrium dialysis",
+            "Ultrafiltration",
+            "Ultracentrifugation"
+          ]
+        },
+        {
+          "name": "Matrix",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "matrix_protein_binding",
+          "allowed_values": [
+            "Plasma",
+            "Serum",
+            "Microsomes",
+            "Hepatocytes",
+            "Brain homogenate",
+            "Tissue homogenate",
+            "Purified protein",
+            "Media"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Readout",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "readout_protein_binding",
+          "allowed_values": [
+            "fu",
+            "% bound",
+            "Recovery"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Blood-to-plasma ratio",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Test concentration",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "test_concentration_um",
+          "allowed_values": "µM"
+        },
+        {
+          "name": "Derived unbound parameters",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "derived_unbound_parameters",
+          "allowed_values": [
+            "Kp,uu",
+            "Ki,u",
+            "CLint,u"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Anticoagulant",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "anticoagulant_protein_binding",
+          "allowed_values": [
+            "Heparin",
+            "EDTA",
+            "Citrate"
+          ]
+        },
+        {
+          "name": "Incubation time",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "incubation_time_hours",
+          "allowed_values": "hours"
+        },
+        {
+          "name": "Replicates",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "replicates_count",
+          "allowed_values": "replicates"
+        },
+        {
+          "name": "Tissue dilution factor",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "tissue_dilution_factor",
+          "allowed_values": "fold"
+        },
+        {
+          "name": "Dynamic range",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_dynamic_range"
+        }
+      ]
+    },
+    "permeability_transporter": {
+      "label": "Permeability & Transporter",
+      "table_name": "PERMEABILITY_TRANSPORTER_SPEC",
+      "fields": [
+        {
+          "name": "Permeability model",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "permeability_model",
+          "allowed_values": [
+            "Caco-2",
+            "MDCK",
+            "MDR1-MDCK",
+            "BCRP-MDCK",
+            "PAMPA"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Transporters",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "transporters",
+          "allowed_values": [
+            "P-gp",
+            "BCRP",
+            "BSEP",
+            "MRP2",
+            "MRP3",
+            "MRP4",
+            "OATP1B1",
+            "OATP1B3",
+            "OATP2B1",
+            "OAT1",
+            "OAT3",
+            "OCT1",
+            "OCT2",
+            "MATE1",
+            "MATE2-K",
+            "NTCP",
+            "PEPT1",
+            "PEPT2"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Study direction",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "study_direction_transporter",
+          "allowed_values": [
+            "Substrate",
+            "Inhibitor"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Direction",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "direction_permeability",
+          "allowed_values": [
+            "A to B only",
+            "Bidirectional"
+          ]
+        },
+        {
+          "name": "Permeability readouts",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "permeability_readouts",
+          "allowed_values": [
+            "Papp A to B",
+            "Papp B to A",
+            "Efflux ratio",
+            "Recovery"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Transporter test system",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "transporter_test_system",
+          "allowed_values": [
+            "Transfected HEK293",
+            "Transfected MDCK",
+            "CHO",
+            "Membrane vesicles",
+            "Hepatocytes"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Hepatic uptake assay",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Regulatory guidance",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "regulatory_guidance_permeability",
+          "allowed_values": [
+            "ICH M12",
+            "FDA 2020",
+            "EMA",
+            "PMDA",
+            "ITC"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Transporter readouts",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "transporter_readouts",
+          "allowed_values": [
+            "IC50",
+            "% inhibition",
+            "Km",
+            "Vmax",
+            "Ki",
+            "Uptake ratio"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Incubation time",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "incubation_time_min",
+          "allowed_values": "min"
+        },
+        {
+          "name": "Monolayer age",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "monolayer_age_days",
+          "allowed_values": "days"
+        },
+        {
+          "name": "Integrity marker",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "integrity_marker",
+          "allowed_values": [
+            "Lucifer yellow",
+            "Other"
+          ]
+        },
+        {
+          "name": "Efflux inhibitor",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "efflux_inhibitor",
+          "allowed_values": [
+            "Verapamil",
+            "Elacridar",
+            "Valspodar",
+            "Ko143",
+            "FTC"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Classification output",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "classification_output_permeability",
+          "allowed_values": [
+            "Absorption class",
+            "BBB class",
+            "BCS class"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "PAMPA type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pampa_type",
+          "allowed_values": [
+            "GIT",
+            "BBB",
+            "Skin"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Buffer pH",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_buffer_ph"
+        },
+        {
+          "name": "Test concentration",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "test_concentration_um",
+          "allowed_values": "µM"
+        },
+        {
+          "name": "Inhibition format",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "inhibition_format",
+          "allowed_values": [
+            "Single concentration",
+            "IC50"
+          ]
+        },
+        {
+          "name": "Probe substrate",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_probe_substrate"
+        },
+        {
+          "name": "Non-human transporter species",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "non_human_transporter_species",
+          "allowed_values": [
+            "Rat",
+            "Dog",
+            "Monkey"
+          ],
+          "multi_select": true
+        }
+      ]
+    }
+  }
+}

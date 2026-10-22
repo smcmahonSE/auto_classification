@@ -1,0 +1,44 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+sequencing_genomics_platforms,Brand / manufacturer,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Category (L2/L3),132,132,100.0,0,0,0
+sequencing_genomics_platforms,Category UNSPSC,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Certifications,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Compliance / data integrity,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Condition,132,13,9.85,118,1,0
+sequencing_genomics_platforms,Currency,132,2,1.52,130,0,0
+sequencing_genomics_platforms,Description,132,90,68.18,42,0,0
+sequencing_genomics_platforms,Dimensions (W × D × H),132,4,3.03,128,0,0
+sequencing_genomics_platforms,Document links,132,3,2.27,129,0,0
+sequencing_genomics_platforms,Equipment type,132,22,16.67,110,0,0
+sequencing_genomics_platforms,Flow cell types,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Form factor,132,14,10.61,117,1,0
+sequencing_genomics_platforms,Image URL,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Inventory,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Lead time (days),132,0,0.0,132,0,0
+sequencing_genomics_platforms,Listing UNSPSC,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Listing type,132,132,100.0,0,0,0
+sequencing_genomics_platforms,Manufacturer SKU,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Manufacturer name,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Max read length,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Model / configuration,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Name,132,132,100.0,0,0,0
+sequencing_genomics_platforms,Output per flow cell,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Power requirements,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Price per unit,132,120,90.91,12,0,0
+sequencing_genomics_platforms,Pricing model,132,132,100.0,0,0,0
+sequencing_genomics_platforms,Product / service URL,132,3,2.27,129,0,0
+sequencing_genomics_platforms,Product role,132,24,18.18,108,0,0
+sequencing_genomics_platforms,Quality score,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Quantity,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Reads per run,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Requester UNSPSC,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Requester commodity code,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Run time,132,1,0.76,131,0,0
+sequencing_genomics_platforms,Samples per flow cell,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Ship from,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Software,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Supplier SKU,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Unit,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Unit of measure,132,26,19.7,96,10,0
+sequencing_genomics_platforms,Warranty / service plan,132,0,0.0,132,0,0
+sequencing_genomics_platforms,Weight,132,3,2.27,129,0,0

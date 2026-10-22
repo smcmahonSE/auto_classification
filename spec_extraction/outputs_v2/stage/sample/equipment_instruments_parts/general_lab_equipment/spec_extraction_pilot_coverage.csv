@@ -1,0 +1,42 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+general_lab_equipment,Brand / manufacturer,3082,0,0.0,3082,0,0
+general_lab_equipment,Capacity,3082,2,0.06,3080,0,0
+general_lab_equipment,Category (L2/L3),3082,3082,100.0,0,0,0
+general_lab_equipment,Category UNSPSC,3082,0,0.0,3082,0,0
+general_lab_equipment,Certifications,3082,93,3.02,2989,0,0
+general_lab_equipment,Compliance / data integrity,3082,136,4.41,2946,0,0
+general_lab_equipment,Condition,3082,526,17.07,2538,18,0
+general_lab_equipment,Currency,3082,76,2.47,3006,0,0
+general_lab_equipment,Description,3082,2352,76.31,730,0,0
+general_lab_equipment,Dimensions (W × D × H),3082,47,1.52,3035,0,0
+general_lab_equipment,Document links,3082,9,0.29,3073,0,0
+general_lab_equipment,Equipment type,3082,1279,41.5,1803,0,0
+general_lab_equipment,Form factor,3082,582,18.88,2464,36,0
+general_lab_equipment,Image URL,3082,0,0.0,3082,0,0
+general_lab_equipment,Inventory,3082,0,0.0,3082,0,0
+general_lab_equipment,Lead time (days),3082,0,0.0,3082,0,0
+general_lab_equipment,Listing UNSPSC,3082,0,0.0,3082,0,0
+general_lab_equipment,Listing type,3082,3082,100.0,0,0,0
+general_lab_equipment,Manufacturer SKU,3082,0,0.0,3082,0,0
+general_lab_equipment,Manufacturer name,3082,0,0.0,3082,0,0
+general_lab_equipment,Max speed / RCF,3082,276,8.96,2806,0,0
+general_lab_equipment,Model / configuration,3082,0,0.0,3082,0,0
+general_lab_equipment,Name,3082,3082,100.0,0,0,0
+general_lab_equipment,Noise level,3082,31,1.01,3051,0,0
+general_lab_equipment,Power requirements,3082,0,0.0,3082,0,0
+general_lab_equipment,Price per unit,3082,3030,98.31,52,0,0
+general_lab_equipment,Pricing model,3082,3082,100.0,0,0,0
+general_lab_equipment,Product / service URL,3082,9,0.29,3073,0,0
+general_lab_equipment,Product role,3082,804,26.09,2214,64,0
+general_lab_equipment,Quantity,3082,0,0.0,3082,0,0
+general_lab_equipment,Refrigerated,3082,200,6.49,2879,3,0
+general_lab_equipment,Requester UNSPSC,3082,0,0.0,3082,0,0
+general_lab_equipment,Requester commodity code,3082,0,0.0,3082,0,0
+general_lab_equipment,Ship from,3082,0,0.0,3082,0,0
+general_lab_equipment,Software,3082,0,0.0,3082,0,0
+general_lab_equipment,Supplier SKU,3082,0,0.0,3082,0,0
+general_lab_equipment,Temperature range,3082,215,6.98,2867,0,0
+general_lab_equipment,Unit,3082,0,0.0,3082,0,0
+general_lab_equipment,Unit of measure,3082,736,23.88,1860,486,0
+general_lab_equipment,Warranty / service plan,3082,0,0.0,3082,0,0
+general_lab_equipment,Weight,3082,262,8.5,2820,0,0

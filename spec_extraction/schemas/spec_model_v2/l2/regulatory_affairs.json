@@ -1,0 +1,888 @@
+{
+  "l2_id": "regulatory_affairs",
+  "l2_label": "Regulatory Affairs",
+  "schema_name": "REGULATORY_AFFAIRS",
+  "l2_fields": [
+    {
+      "name": "Product type",
+      "type": "multi-select",
+      "required": true,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "product_type_regulatory",
+      "allowed_values": [
+        "Small molecule drug",
+        "Generic drug",
+        "Biologic",
+        "Biosimilar",
+        "Vaccine",
+        "ATMP (cell and gene therapy)",
+        "Medical device",
+        "IVD",
+        "Software as a medical device",
+        "Combination product",
+        "Veterinary product",
+        "Consumer health product"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Regulatory agency",
+      "type": "multi-select",
+      "required": true,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "regulatory_agency",
+      "allowed_values": [
+        "FDA",
+        "EMA",
+        "EU national competent authorities",
+        "MHRA",
+        "PMDA",
+        "NMPA",
+        "Health Canada",
+        "TGA",
+        "Anvisa",
+        "Other"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Development stage",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "development_stage",
+      "allowed_values": [
+        "Preclinical",
+        "Phase 1",
+        "Phase 2",
+        "Phase 3",
+        "Marketing application",
+        "Post-approval"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Development discipline covered",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "development_discipline_covered",
+      "allowed_values": [
+        "Nonclinical",
+        "CMC",
+        "Clinical",
+        "Clinical pharmacology"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Target market region",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "target_market_region",
+      "allowed_values": [
+        "United States",
+        "Canada",
+        "European Union",
+        "United Kingdom",
+        "Switzerland",
+        "Japan",
+        "China",
+        "Other Asia-Pacific",
+        "Latin America",
+        "Middle East",
+        "Africa",
+        "Eurasian Economic Union"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Engagement model",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "engagement_model_regulatory",
+      "allowed_values": [
+        "Project-based",
+        "Standalone consulting",
+        "Integrated with clinical program",
+        "Staff augmentation",
+        "Full portfolio outsourcing"
+      ]
+    },
+    {
+      "name": "Regulatory information management system",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "regulatory_information_management_system",
+      "allowed_values": [
+        "Client system",
+        "Veeva Vault",
+        "Lorenz",
+        "IQVIA RIM Smart",
+        "SmartPHLEX",
+        "Other"
+      ]
+    },
+    {
+      "name": "Pricing structure",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "pricing_model_regulatory",
+      "allowed_values": [
+        "Fixed fee per deliverable",
+        "Activity-based unit pricing",
+        "FTE or time and materials"
+      ]
+    }
+  ],
+  "l3_nodes": {
+    "regulatory_strategy": {
+      "label": "Regulatory Strategy",
+      "table_name": "REGULATORY_STRATEGY_SPEC",
+      "fields": [
+        {
+          "name": "Strategy deliverable",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "strategy_deliverable",
+          "allowed_values": [
+            "Regulatory roadmap",
+            "Gap analysis",
+            "Target product profile",
+            "Development plan",
+            "Landscape analysis",
+            "Probability of regulatory success assessment",
+            "Submission plan"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Expedited pathway or designation",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "expedited_pathway_designation",
+          "allowed_values": [
+            "Fast Track",
+            "Breakthrough Therapy",
+            "Accelerated Approval",
+            "RMAT",
+            "QIDP",
+            "Real-Time Oncology Review",
+            "Breakthrough Device",
+            "Orphan designation",
+            "EMA PRIME",
+            "EU conditional marketing authorization",
+            "UK ILAP",
+            "MHRA EAMS",
+            "Japan Sakigake",
+            "Reliance procedure"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Pediatric plan",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pediatric_plan",
+          "allowed_values": [
+            "Pediatric Investigation Plan (EU)",
+            "Pediatric Study Plan (US)",
+            "Waiver or deferral"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Regulatory intelligence included",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Regulatory intelligence delivery",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "regulatory_intelligence_delivery",
+          "allowed_values": [
+            "Searchable repository",
+            "Ad-hoc query response",
+            "Subscription",
+            "Newsletter",
+            "Impact assessment"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "HTA alignment",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Due diligence support",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Expert witness support",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "dossier_ectd_preparation": {
+      "label": "Dossier / eCTD Preparation",
+      "table_name": "DOSSIER_ECTD_PREPARATION_SPEC",
+      "fields": [
+        {
+          "name": "Document type authored",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "document_type_authored",
+          "allowed_values": [
+            "CTD summaries",
+            "Quality (CMC) section",
+            "IMPD",
+            "Expert report",
+            "Plain language summary",
+            "Device clinical evaluation report",
+            "Device technical file"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Submission format",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "submission_format_regulatory",
+          "allowed_values": [
+            "eCTD",
+            "eCTD 4.0",
+            "China eCTD",
+            "EAEU eCTD",
+            "NeeS",
+            "VNeeS",
+            "Paper",
+            "FDA eSTAR",
+            "eCopy"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Publishing tool",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "publishing_tool",
+          "allowed_values": [
+            "Client system",
+            "Veeva Vault",
+            "Lorenz",
+            "GlobalSubmit",
+            "IQVIA RIM Smart",
+            "SmartPHLEX",
+            "Other"
+          ]
+        },
+        {
+          "name": "Publishing QC and validation",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "CTD module scope",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ctd_module_scope",
+          "allowed_values": [
+            "Module 1",
+            "Module 2",
+            "Module 3",
+            "Module 4",
+            "Module 5"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Master file type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "master_file_type",
+          "allowed_values": [
+            "US DMF",
+            "ASMF",
+            "CEP"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Structured data submission",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "structured_data_submission",
+          "allowed_values": [
+            "XEVMPD",
+            "IDMP",
+            "SPOR"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Legacy conversion",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Translation and localization",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "AI-assisted authoring",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "submissions_agency_liaison": {
+      "label": "Submissions & Agency Liaison",
+      "table_name": "SUBMISSIONS_AGENCY_LIAISON_SPEC",
+      "fields": [
+        {
+          "name": "Submission type",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "submission_type_regulatory",
+          "allowed_values": [
+            "IND",
+            "CTA",
+            "IMPD",
+            "NDA",
+            "505(b)(2)",
+            "BLA",
+            "ANDA",
+            "MAA",
+            "NDS",
+            "ANDS",
+            "510(k)",
+            "De Novo",
+            "PMA",
+            "IDE",
+            "Q-Submission",
+            "Orphan designation request",
+            "Variation or supplement",
+            "Renewal",
+            "Annual report",
+            "Line extension",
+            "Marketing authorization transfer"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Meeting type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "meeting_type_regulatory",
+          "allowed_values": [
+            "Pre-IND",
+            "Type A",
+            "Type B",
+            "Type C",
+            "Type D",
+            "End of Phase 2",
+            "Pre-NDA",
+            "Pre-BLA",
+            "Advisory Committee",
+            "Scientific advice",
+            "Joint EMA-FDA advice",
+            "Device pre-submission",
+            "Pre-submission meeting"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Agency query response",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "agency_query_response",
+          "allowed_values": [
+            "Information request",
+            "Deficiency letter",
+            "Clinical hold",
+            "Complete response letter"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Briefing package preparation",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "EU procedure",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "eu_procedure",
+          "allowed_values": [
+            "Centralised",
+            "Decentralised",
+            "Mutual recognition",
+            "National",
+            "Work-sharing"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Electronic gateway",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "electronic_gateway",
+          "allowed_values": [
+            "FDA ESG",
+            "EMA gateway",
+            "FDA CDRH portal"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Markets supported for dispatch",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "markets_supported_for_dispatch",
+          "allowed_values": "markets"
+        },
+        {
+          "name": "US agent service",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Local affiliate service",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "local_affiliate_service",
+          "allowed_values": [
+            "Local submissions",
+            "Local regulatory contact",
+            "QPPV",
+            "Partner network"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Clinical trial transparency",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_trial_transparency",
+          "allowed_values": [
+            "EU CTR Part II redaction",
+            "Lay summary",
+            "Trial registration",
+            "Results posting"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Establishment registration and listing",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "labeling_regulatory": {
+      "label": "Labeling",
+      "table_name": "LABELING_REGULATORY_SPEC",
+      "fields": [
+        {
+          "name": "Labeling activity",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "labeling_activity",
+          "allowed_values": [
+            "New label development",
+            "Label negotiation",
+            "CCDS harmonization",
+            "Local deviation tracking",
+            "Competitor label analysis",
+            "Label comparison",
+            "Safety variation"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Labeling document type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "labeling_document_type",
+          "allowed_values": [
+            "USPI",
+            "SmPC",
+            "PIL",
+            "CCDS",
+            "CCSI",
+            "Medication Guide",
+            "Patient Package Insert",
+            "Health Canada product monograph",
+            "Device IFU"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Structured Product Labeling",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Artwork service",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "artwork_service",
+          "allowed_values": [
+            "Mock-up creation",
+            "Proofreading",
+            "Print-proof QC",
+            "Barcode check",
+            "Braille check",
+            "Color check",
+            "Artwork lifecycle coordination"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Label translation",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Readability user testing",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Promotional material review",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "SPL submission type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "spl_submission_type",
+          "allowed_values": [
+            "Content of labeling",
+            "Establishment registration",
+            "Drug listing",
+            "NDC labeler code",
+            "GDUFA self-identification",
+            "Lot distribution report",
+            "REMS"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Packaging component",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "packaging_component",
+          "allowed_values": [
+            "Carton",
+            "Container label",
+            "Leaflet",
+            "Foil",
+            "Tube",
+            "Booklet"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "auditing_compliance": {
+      "label": "Auditing & Compliance",
+      "table_name": "AUDITING_COMPLIANCE_SPEC",
+      "fields": [
+        {
+          "name": "Audit type",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "audit_type_regulatory",
+          "allowed_values": [
+            "GxP general",
+            "GCP",
+            "GMP",
+            "GLP",
+            "GDP",
+            "GVP",
+            "Vendor",
+            "IT vendor",
+            "Computer system validation",
+            "Data integrity",
+            "QMS",
+            "Internal",
+            "Due diligence",
+            "REMS"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Inspection readiness service",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "inspection_readiness_service",
+          "allowed_values": [
+            "Mock inspection",
+            "Pre-approval inspection readiness",
+            "Mock interviews",
+            "Front room and back room support",
+            "Staff training",
+            "Unannounced inspection readiness"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Enforcement remediation",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "enforcement_remediation",
+          "allowed_values": [
+            "Form 483 response",
+            "Warning letter",
+            "Consent decree",
+            "CAPA management",
+            "Root cause analysis"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "SOP and QMS development",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Audited entity",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "audited_entity",
+          "allowed_values": [
+            "CRO",
+            "Investigator site",
+            "Trial master file",
+            "Drug substance manufacturer",
+            "Drug product manufacturer",
+            "Laboratory",
+            "Warehouse and distributor",
+            "Pharmacovigilance system",
+            "Software vendor"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Audit deliverable",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "audit_deliverable",
+          "allowed_values": [
+            "Audit plan",
+            "Audit report",
+            "Debrief meeting",
+            "Finding classification",
+            "CAPA tracking"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Standard audited against",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "standard_audited_against",
+          "allowed_values": [
+            "21 CFR Part 11",
+            "EU Annex 11",
+            "ISO 13485",
+            "ISO 9001",
+            "PIC/S",
+            "ALCOA data integrity"
+          ],
+          "multi_select": true
+        }
+      ]
+    }
+  }
+}

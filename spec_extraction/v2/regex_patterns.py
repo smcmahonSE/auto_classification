@@ -125,7 +125,7 @@ NUMERIC_PATTERNS: dict[str, NumericPattern] = {
     ),
     "cell_count": NumericPattern(labels=("cell count", "cells per vial"), bare_regex=None),
     "donor_age": NumericPattern(
-        labels=("donor age", "age"),
+        labels=("donor age", "age", "animal age", "age at collection"),
         bare_regex=re.compile(r"\b(\d+(?:\.\d+)?)\s*(?:years?|yrs?|weeks?|months?)\s*(?:old)?\b", re.IGNORECASE),
     ),
     "passage_number": NumericPattern(
@@ -228,7 +228,7 @@ NUMERIC_PATTERNS: dict[str, NumericPattern] = {
         bare_regex=re.compile(r"\brin\D{0,5}?(\d+(?:\.\d+)?)\b", re.IGNORECASE),
     ),
     "tumor_content_pct": NumericPattern(
-        labels=("tumor content",),
+        labels=("tumor content", "tumor %", "tumor cellularity", "tumor nuclei", "cancer %"),
         bare_regex=re.compile(r"\b(\d+(?:\.\d+)?)\s*%\s*tumor\b", re.IGNORECASE),
     ),
     "necrosis_pct": NumericPattern(
@@ -261,7 +261,7 @@ NUMERIC_PATTERNS: dict[str, NumericPattern] = {
     "magnification_x": NumericPattern(labels=("magnification",), bare_regex=re.compile(r"\b(\d+(?:\.\d+)?)\s*[xX]\b")),
     "fluorescence_channels": NumericPattern(labels=("fluorescence channels", "channels"), bare_regex=re.compile(r"\b(\d+)\s*\+?\s*channels?\b", re.IGNORECASE)),
     "volume_range_ul": NumericPattern(labels=("volume range",), bare_regex=re.compile(r"\b(\d+(?:,\d+)?)\s*(?:µl|ul)\b", re.IGNORECASE)),
-    "vessel_size_l": NumericPattern(labels=("vessel size", "working volume"), bare_regex=re.compile(r"\b(\d+(?:,\d+)?(?:\.\d+)?)\s*L\b")),
+    "vessel_size_l": NumericPattern(labels=("vessel size", "working volume", "nominal volume", "bag size", "capacity"), bare_regex=re.compile(r"\b(\d+(?:,\d+)?(?:\.\d+)?)\s*L\b")),
     "noise_level_db": NumericPattern(labels=("noise level",), bare_regex=re.compile(r"\b(\d+(?:\.\d+)?)\s*db", re.IGNORECASE)),
     "dimensions_wdh_cm": NumericPattern(
         labels=("dimensions",),
@@ -278,6 +278,67 @@ NUMERIC_PATTERNS: dict[str, NumericPattern] = {
     "section_thickness_nm": NumericPattern(labels=("section thickness",), bare_regex=re.compile(r"\b(\d+(?:\.\d+)?)\s*nm\b", re.IGNORECASE)),
     "sections_per_slide": NumericPattern(labels=("sections per slide",), bare_regex=None),
     "capacity_slides_per_month": NumericPattern(labels=("capacity",), bare_regex=re.compile(r"\b([\d,]+)\s*slides?\s*/\s*month\b", re.IGNORECASE)),
+
+    # --- Analytical & Reference Standards ---
+    "concentration_ug_mg_per_ml": NumericPattern(labels=("concentration",), bare_regex=None),
+    "minimum_sample_size": NumericPattern(labels=("minimum sample size", "sample size"), bare_regex=None),
+    "number_of_analytes": NumericPattern(labels=("number of analytes", "analytes"), bare_regex=None),
+    "open_vial_stability_days": NumericPattern(labels=("open-vial stability", "open vial stability"), bare_regex=None),
+    "languages_supported_count": NumericPattern(labels=("languages supported", "languages"), bare_regex=None),
+    # --- DMPK / ADME ---
+    "turnaround_business_days": NumericPattern(labels=("turnaround", "turnaround time", "tat",), bare_regex=None),
+    "compound_amount_required_mg": NumericPattern(labels=("compound amount required", "compound amount",), bare_regex=None),
+    "donor_pool_size": NumericPattern(labels=("donor pool size", "donor pool",), bare_regex=None),
+    "test_concentration_um": NumericPattern(labels=("test concentration",), bare_regex=None),
+    "replicates_count": NumericPattern(labels=("replicates",), bare_regex=None),
+    "max_compounds_per_cassette": NumericPattern(labels=("max compounds per cassette", "compounds per cassette",), bare_regex=None),
+    "animals_per_group": NumericPattern(labels=("animals per group",), bare_regex=None),
+    "max_infusion_duration_hours": NumericPattern(labels=("max infusion duration", "infusion duration",), bare_regex=None),
+    "hepatocyte_donors": NumericPattern(labels=("hepatocyte donors",), bare_regex=None),
+    "incubation_time_hours": NumericPattern(labels=("incubation time",), bare_regex=None),
+    "tissue_dilution_factor": NumericPattern(labels=("tissue dilution factor", "dilution factor",), bare_regex=None),
+    "incubation_time_min": NumericPattern(labels=("incubation time",), bare_regex=None),
+    "monolayer_age_days": NumericPattern(labels=("monolayer age",), bare_regex=None),
+
+    # --- Bioanalysis ---
+    "validated_assay_library_size": NumericPattern(labels=("validated assay library size", "assay library size",), bare_regex=None),
+    "method_development_time_weeks": NumericPattern(labels=("method development time",), bare_regex=None),
+    "matrix_lots_for_matrix_effect": NumericPattern(labels=("matrix lots for matrix effect", "matrix lots",), bare_regex=None),
+    "calibration_standard_levels": NumericPattern(labels=("calibration standard levels",), bare_regex=None),
+    "minimum_sample_volume_ul": NumericPattern(labels=("minimum sample volume",), bare_regex=None),
+    "nonglp_turnaround_days": NumericPattern(labels=("non-glp sample analysis turnaround", "non-glp turnaround",), bare_regex=None),
+    "glp_turnaround_days": NumericPattern(labels=("glp sample analysis turnaround", "glp turnaround",), bare_regex=None),
+    "gene_therapy_detection_limit": NumericPattern(labels=("gene therapy detection limit", "detection limit",), bare_regex=None),
+    "ada_assay_sensitivity_ng_ml": NumericPattern(labels=("ada assay sensitivity", "assay sensitivity",), bare_regex=None),
+    "ada_assay_development_time_weeks": NumericPattern(labels=("ada assay development time", "assay development time",), bare_regex=None),
+    "max_analytes_per_sample": NumericPattern(labels=("max analytes per sample", "analytes per sample",), bare_regex=None),
+
+    # --- CMC, Analytical & QC ---
+    "standard_turnaround_days": NumericPattern(labels=("standard turnaround",), bare_regex=None),
+    "sterility_incubation_period_days": NumericPattern(labels=("sterility incubation period", "incubation period",), bare_regex=None),
+    "nitrosamine_loq_ppb": NumericPattern(labels=("nitrosamine loq", "loq",), bare_regex=None),
+
+    # --- Regulatory Affairs ---
+    "markets_supported_for_dispatch": NumericPattern(labels=("markets supported for dispatch", "markets supported",), bare_regex=None),
+
+    # --- Phase IV / Post-Marketing Studies ---
+    "number_of_countries_phase_iv": NumericPattern(labels=("number of countries",), bare_regex=None),
+    "target_sample_size": NumericPattern(labels=("target sample size", "sample size",), bare_regex=None),
+    "number_of_data_sources_linked": NumericPattern(labels=("number of data sources linked", "data sources linked",), bare_regex=None),
+    "registry_duration_years": NumericPattern(labels=("registry duration",), bare_regex=None),
+    "infant_follow_up_period_months": NumericPattern(labels=("infant follow-up period", "infant follow-up",), bare_regex=None),
+    "follow_up_duration_years": NumericPattern(labels=("follow-up duration",), bare_regex=None),
+
+    # --- Toxicology & Safety Assessment ---
+    "study_start_lead_time_weeks": NumericPattern(labels=("study start lead time",), bare_regex=None),
+    "time_to_final_report_weeks": NumericPattern(labels=("time to final report",), bare_regex=None),
+    "method_validation_lead_time_weeks": NumericPattern(labels=("method validation lead time",), bare_regex=None),
+
+    # --- Pharmacovigilance & Drug Safety ---
+    "languages_supported_pv": NumericPattern(labels=("languages supported", "languages",), bare_regex=None),
+    "on_time_submission_compliance_pct": NumericPattern(labels=("on-time submission compliance", "submission compliance",), bare_regex=None),
+    "program_languages_pv": NumericPattern(labels=("program languages",), bare_regex=None),
+
 }
 
 PERCENTAGE_PATTERNS: dict[str, re.Pattern] = {
@@ -311,9 +372,8 @@ LABELED_TEXT_PATTERNS: dict[str, tuple[str, ...]] = {
     "labeled_part_number": ("part number", "part no", "p/n"),
     "labeled_compatible_instruments": ("compatible instruments", "compatible with", "fits"),
     "labeled_vector": ("vector", "vector/system", "backbone"),
-    "labeled_tissue_source": ("tissue", "tissue/source", "source tissue"),
     "labeled_cell_type": ("cell type",),
-    "labeled_diagnosis": ("diagnosis",),
+    "labeled_diagnosis": ("diagnosis", "disease state", "disease", "indication", "condition", "pathology diagnosis", "icd-10 code"),
     "labeled_anatomical_site": ("anatomical site", "tissue type", "organ"),
     "labeled_appearance_color": ("appearance", "color", "appearance/color"),
     "labeled_target_pathway": ("target", "pathway", "target/pathway"),
@@ -341,17 +401,17 @@ LABELED_TEXT_PATTERNS: dict[str, tuple[str, ...]] = {
     "labeled_subculturing_ratio": ("subculturing ratio", "split ratio"),
     "labeled_donor_age_sex": ("donor age", "donor sex", "age / sex"),
     "labeled_karyotype": ("karyotype",),
-    "labeled_tissue_source": ("tissue", "source", "tissue / source"),
-    "labeled_characterization_markers": ("characterization markers", "markers"),
+    "labeled_tissue_source": ("tissue", "source", "tissue / source", "tissue/source", "source tissue"),
+    "labeled_characterization_markers": ("characterization markers", "markers", "pluripotency markers", "phenotype", "qc markers"),
     "labeled_recommended_medium": ("recommended medium",),
     "labeled_parental_cell_origin": ("parental cell", "tissue origin", "parental cell / tissue origin"),
     "labeled_donor_age_sex_disease": ("donor age", "sex", "disease"),
     "labeled_derived_cell_type_purity": ("derived cell type", "purity"),
     "labeled_disease_model_state": ("disease", "model state", "disease / model state"),
     "labeled_iacuc_consent": ("iacuc", "animal-welfare consent", "protocol number"),
-    "labeled_disease_stage": ("disease stage", "stage"),
-    "labeled_clinical_data": ("clinical data",),
-    "labeled_medications": ("medications",),
+    "labeled_disease_stage": ("disease stage", "stage", "tumor stage", "tnm stage", "clinical stage"),
+    "labeled_clinical_data": ("clinical data", "clinical info", "lab data", "patient data", "annotations"),
+    "labeled_medications": ("medications", "meds", "concomitant medications", "drug history"),
     "labeled_hla_type": ("hla type", "hla"),
     "labeled_facility_locations": ("facility locations", "locations"),
     "labeled_courier_partners": ("courier partners", "couriers"),
@@ -393,6 +453,42 @@ LABELED_TEXT_PATTERNS: dict[str, tuple[str, ...]] = {
     "labeled_capacity_general_equip": ("capacity",),
     "labeled_image_analysis_platform": ("image analysis platform",),
     "labeled_scanner": ("scanner",),
+
+    # --- Analytical & Reference Standards ---
+    "labeled_analyte_parameter": ("analyte", "analytes", "parameter", "analyte / parameter", "analyte(s)"),
+    "labeled_matrix_solvent": ("matrix", "solvent", "matrix / solvent"),
+    "labeled_expiration_validity": ("expiration", "expiry", "validity", "valid until"),
+    "labeled_certified_assigned_value": ("certified value", "assigned value", "certified / assigned value"),
+    "labeled_current_lot_valid_use_date": ("current lot", "valid use date", "lot"),
+    "labeled_homogeneity": ("homogeneity",),
+    "labeled_variants_allele_frequency": ("variants", "allele frequency"),
+    "labeled_peer_data_program": ("peer data program", "peer group"),
+    "labeled_study_schedule": ("study schedule", "schedule"),
+    # --- DMPK / ADME ---
+    "labeled_time_points": ("time points", "timepoints",),
+    "labeled_strain_dmpk": ("strain",),
+    "labeled_inhibitor_concentration_range": ("inhibitor concentration range", "concentration range",),
+    "labeled_dynamic_range": ("dynamic range",),
+    "labeled_buffer_ph": ("buffer ph", "ph",),
+    "labeled_probe_substrate": ("probe substrate",),
+
+    # --- Bioanalysis ---
+    "labeled_mass_spectrometer_model": ("mass spectrometer model", "mass spec model", "instrument model",),
+    "labeled_default_assay_range": ("default assay range", "assay range",),
+    "labeled_drug_tolerance_target": ("drug tolerance target",),
+
+    # --- HEOR, RWE & Market Access ---
+    "labeled_proprietary_modeling_platform": ("proprietary modeling platform", "modeling platform",),
+    "labeled_proprietary_data_asset_used": ("proprietary data asset used", "data asset",),
+    "labeled_slr_platform_tooling": ("slr platform", "tooling", "platform or tooling",),
+
+    # --- Toxicology & Safety Assessment ---
+    "labeled_pk_analysis_software": ("pk analysis software",),
+    "labeled_data_acquisition_system": ("data acquisition system",),
+
+    # --- Pharmacovigilance & Drug Safety ---
+    "labeled_literature_tool": ("literature tool",),
+
 }
 
 

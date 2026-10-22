@@ -1,37 +1,37 @@
 l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
-animal_tissue,Age,150,17,11.33,133,0,0
-animal_tissue,Anatomical site / tissue type,150,0,0.0,150,0,0
-animal_tissue,Category (L2/L3),150,150,100.0,0,0,0
-animal_tissue,Category UNSPSC,150,0,0.0,150,0,0
-animal_tissue,Currency,150,0,0.0,150,0,0
-animal_tissue,Derivative / extract type,150,0,0.0,150,0,0
-animal_tissue,Description,150,146,97.33,4,0,0
-animal_tissue,Disease / model state,150,0,0.0,150,0,0
-animal_tissue,Document links,150,0,0.0,150,0,0
-animal_tissue,Format / preservation,150,106,70.67,44,0,0
-animal_tissue,IACUC / animal-welfare consent,150,0,0.0,150,0,0
-animal_tissue,Image URL,150,0,0.0,150,0,0
-animal_tissue,Individual vs Pooled,150,1,0.67,149,0,0
-animal_tissue,Inventory,150,0,0.0,150,0,0
-animal_tissue,Lead time (days),150,0,0.0,150,0,0
-animal_tissue,Listing UNSPSC,150,0,0.0,150,0,0
-animal_tissue,Listing type,150,150,100.0,0,0,0
-animal_tissue,Manufacturer SKU,150,0,0.0,150,0,0
-animal_tissue,Manufacturer name,150,0,0.0,150,0,0
-animal_tissue,Name,150,150,100.0,0,0,0
-animal_tissue,Price per unit,150,150,100.0,0,0,0
-animal_tissue,Pricing model,150,150,100.0,0,0,0
-animal_tissue,Product / service URL,150,0,0.0,150,0,0
-animal_tissue,Quantity,150,0,0.0,150,0,0
-animal_tissue,Requester UNSPSC,150,0,0.0,150,0,0
-animal_tissue,Requester commodity code,150,0,0.0,150,0,0
-animal_tissue,Sample size / amount,150,0,0.0,150,0,0
-animal_tissue,Sex,150,6,4.0,144,0,0
-animal_tissue,Ship from,150,0,0.0,150,0,0
-animal_tissue,Shipping Temperature,150,38,25.33,112,0,0
-animal_tissue,Species,150,65,43.33,85,0,0
-animal_tissue,Storage Conditions,150,42,28.0,71,37,0
-animal_tissue,Strain,150,29,19.33,121,0,0
-animal_tissue,Supplier SKU,150,0,0.0,150,0,0
-animal_tissue,Unit,150,0,0.0,150,0,0
-animal_tissue,Unit of measure,150,11,7.33,137,2,0
+animal_tissue,Age,597,91,15.24,506,0,0
+animal_tissue,Anatomical site / tissue type,597,0,0.0,597,0,0
+animal_tissue,Category (L2/L3),597,597,100.0,0,0,0
+animal_tissue,Category UNSPSC,597,0,0.0,597,0,0
+animal_tissue,Currency,597,1,0.17,596,0,0
+animal_tissue,Derivative / extract type,597,1,0.17,596,0,0
+animal_tissue,Description,597,586,98.16,11,0,0
+animal_tissue,Disease / model state,597,0,0.0,597,0,0
+animal_tissue,Document links,597,0,0.0,597,0,0
+animal_tissue,Format / preservation,597,443,74.2,153,1,0
+animal_tissue,IACUC / animal-welfare consent,597,0,0.0,597,0,0
+animal_tissue,Image URL,597,0,0.0,597,0,0
+animal_tissue,Individual vs Pooled,597,6,1.01,591,0,0
+animal_tissue,Inventory,597,0,0.0,597,0,0
+animal_tissue,Lead time (days),597,0,0.0,597,0,0
+animal_tissue,Listing UNSPSC,597,0,0.0,597,0,0
+animal_tissue,Listing type,597,597,100.0,0,0,0
+animal_tissue,Manufacturer SKU,597,0,0.0,597,0,0
+animal_tissue,Manufacturer name,597,0,0.0,597,0,0
+animal_tissue,Name,597,597,100.0,0,0,0
+animal_tissue,Price per unit,597,597,100.0,0,0,0
+animal_tissue,Pricing model,597,597,100.0,0,0,0
+animal_tissue,Product / service URL,597,0,0.0,597,0,0
+animal_tissue,Quantity,597,0,0.0,597,0,0
+animal_tissue,Requester UNSPSC,597,0,0.0,597,0,0
+animal_tissue,Requester commodity code,597,0,0.0,597,0,0
+animal_tissue,Sample size / amount,597,0,0.0,597,0,0
+animal_tissue,Sex,597,21,3.52,576,0,0
+animal_tissue,Ship from,597,0,0.0,597,0,0
+animal_tissue,Shipping Temperature,597,157,26.3,440,0,0
+animal_tissue,Species,597,262,43.89,332,3,0
+animal_tissue,Storage Conditions,597,158,26.47,287,152,0
+animal_tissue,Strain,597,109,18.26,488,0,0
+animal_tissue,Supplier SKU,597,0,0.0,597,0,0
+animal_tissue,Unit,597,0,0.0,597,0,0
+animal_tissue,Unit of measure,597,34,5.7,551,12,0

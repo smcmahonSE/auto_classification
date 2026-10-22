@@ -1,0 +1,49 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+human_custom_prospective_collection,Accepts client protocol,2511,17,0.68,2492,2,0
+human_custom_prospective_collection,Accreditations,2511,56,2.23,2455,0,0
+human_custom_prospective_collection,Category (L2/L3),2511,2511,100.0,0,0,0
+human_custom_prospective_collection,Category UNSPSC,2511,0,0.0,2511,0,0
+human_custom_prospective_collection,Clinical data delivery method,2511,3,0.12,2508,0,0
+human_custom_prospective_collection,Clinical data provided,2511,206,8.2,2305,0,0
+human_custom_prospective_collection,Collection geography,2511,13,0.52,2498,0,0
+human_custom_prospective_collection,Collection kits provided,2511,17,0.68,2492,2,0
+human_custom_prospective_collection,Collection site types,2511,3,0.12,2508,0,0
+human_custom_prospective_collection,Collection-to-processing time,2511,2,0.08,2509,0,0
+human_custom_prospective_collection,Currency,2511,2,0.08,2509,0,0
+human_custom_prospective_collection,Custom consent form,2511,17,0.68,2492,2,0
+human_custom_prospective_collection,Description,2511,1025,40.82,1486,0,0
+human_custom_prospective_collection,Disease areas,2511,75,2.99,2436,0,0
+human_custom_prospective_collection,Document links,2511,10,0.4,2501,0,0
+human_custom_prospective_collection,Donor characterization tests,2511,52,2.07,2459,0,0
+human_custom_prospective_collection,Donor health status,2511,9,0.36,2502,0,0
+human_custom_prospective_collection,Feasibility assessment,2511,17,0.68,2492,2,0
+human_custom_prospective_collection,Fresh delivery time after collection,2511,2,0.08,2509,0,0
+human_custom_prospective_collection,IRB approval handling,2511,2,0.08,2509,0,0
+human_custom_prospective_collection,Image URL,2511,0,0.0,2511,0,0
+human_custom_prospective_collection,Inventory,2511,0,0.0,2511,0,0
+human_custom_prospective_collection,Lead time (days),2511,0,0.0,2511,0,0
+human_custom_prospective_collection,Listing UNSPSC,2511,0,0.0,2511,0,0
+human_custom_prospective_collection,Listing type,2511,2511,100.0,0,0,0
+human_custom_prospective_collection,Longitudinal timepoints available,2511,17,0.68,2492,2,0
+human_custom_prospective_collection,Manufacturer SKU,2511,0,0.0,2511,0,0
+human_custom_prospective_collection,Manufacturer name,2511,0,0.0,2511,0,0
+human_custom_prospective_collection,Matched sample sets,2511,17,0.68,2492,2,0
+human_custom_prospective_collection,Name,2511,2511,100.0,0,0,0
+human_custom_prospective_collection,Patient or site recruitment,2511,17,0.68,2492,2,0
+human_custom_prospective_collection,Preservation at collection,2511,59,2.35,2452,0,0
+human_custom_prospective_collection,Price per unit,2511,2511,100.0,0,0,0
+human_custom_prospective_collection,Pricing model,2511,2511,100.0,0,0,0
+human_custom_prospective_collection,Privacy compliance,2511,52,2.07,2459,0,0
+human_custom_prospective_collection,Product / service URL,2511,10,0.4,2501,0,0
+human_custom_prospective_collection,Project management included,2511,17,0.68,2492,2,0
+human_custom_prospective_collection,Quantity,2511,0,0.0,2511,0,0
+human_custom_prospective_collection,Recallable donors,2511,17,0.68,2492,2,0
+human_custom_prospective_collection,Requester UNSPSC,2511,0,0.0,2511,0,0
+human_custom_prospective_collection,Requester commodity code,2511,0,0.0,2511,0,0
+human_custom_prospective_collection,Sample types collected,2511,947,37.71,1564,0,0
+human_custom_prospective_collection,Ship from,2511,0,0.0,2511,0,0
+human_custom_prospective_collection,Shipping temperature,2511,20,0.8,2491,0,0
+human_custom_prospective_collection,Supplier SKU,2511,0,0.0,2511,0,0
+human_custom_prospective_collection,Time to start collection,2511,5,0.2,2506,0,0
+human_custom_prospective_collection,Unit,2511,0,0.0,2511,0,0
+human_custom_prospective_collection,Unit of measure,2511,264,10.51,2166,81,0

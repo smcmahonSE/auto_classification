@@ -1,0 +1,44 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+release_testing,Category (L2/L3),768,768,100.0,0,0,0
+release_testing,Category UNSPSC,768,0,0.0,768,0,0
+release_testing,Container closure integrity method,768,0,0.0,768,0,0
+release_testing,Controlled substances accepted,768,10,1.3,758,0,0
+release_testing,Currency,768,23,2.99,745,0,0
+release_testing,Deliverables,768,212,27.6,556,0,0
+release_testing,Description,768,662,86.2,106,0,0
+release_testing,Development stage,768,4,0.52,764,0,0
+release_testing,Document links,768,11,1.43,757,0,0
+release_testing,Dosage form,768,0,0.0,768,0,0
+release_testing,EU QP certification,768,10,1.3,758,0,0
+release_testing,EU import testing,768,10,1.3,758,0,0
+release_testing,Expedited turnaround available,768,10,1.3,758,0,0
+release_testing,GMP status,768,7,0.91,760,1,0
+release_testing,Highly potent compounds accepted,768,10,1.3,758,0,0
+release_testing,Image URL,768,0,0.0,768,0,0
+release_testing,Inventory,768,0,0.0,768,0,0
+release_testing,Lead time (days),768,0,0.0,768,0,0
+release_testing,Listing UNSPSC,768,0,0.0,768,0,0
+release_testing,Listing type,768,768,100.0,0,0,0
+release_testing,Manufacturer SKU,768,0,0.0,768,0,0
+release_testing,Manufacturer name,768,0,0.0,768,0,0
+release_testing,Material tested,768,1,0.13,767,0,0
+release_testing,Method source,768,2,0.26,766,0,0
+release_testing,Name,768,768,100.0,0,0,0
+release_testing,OOS investigation support,768,10,1.3,758,0,0
+release_testing,Pharmacopeia,768,34,4.43,734,0,0
+release_testing,Price per unit,768,748,97.4,20,0,0
+release_testing,Pricing model,768,768,100.0,0,0,0
+release_testing,Product / service URL,768,11,1.43,757,0,0
+release_testing,Product modality,768,1,0.13,767,0,0
+release_testing,Quantity,768,0,0.0,768,0,0
+release_testing,Release scope,768,53,6.9,715,0,0
+release_testing,Release test,768,31,4.04,737,0,0
+release_testing,Requester UNSPSC,768,0,0.0,768,0,0
+release_testing,Requester commodity code,768,0,0.0,768,0,0
+release_testing,Ship from,768,0,0.0,768,0,0
+release_testing,Specification development support,768,10,1.3,758,0,0
+release_testing,Standard turnaround,768,0,0.0,768,0,0
+release_testing,Supplier SKU,768,0,0.0,768,0,0
+release_testing,Target regulatory agency,768,11,1.43,757,0,0
+release_testing,Unit,768,0,0.0,768,0,0
+release_testing,Unit of measure,768,239,31.12,497,32,0

@@ -1,0 +1,43 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+human_biobanking_storage,21 CFR Part 11 compliant,2639,95,3.6,2544,0,0
+human_biobanking_storage,Accessioning turnaround,2639,23,0.87,2616,0,0
+human_biobanking_storage,Accreditations,2639,35,1.33,2604,0,0
+human_biobanking_storage,Backup systems,2639,32,1.21,2607,0,0
+human_biobanking_storage,Biosafety level,2639,0,0.0,2639,0,0
+human_biobanking_storage,Category (L2/L3),2639,2639,100.0,0,0,0
+human_biobanking_storage,Category UNSPSC,2639,0,0.0,2639,0,0
+human_biobanking_storage,Chain of custody,2639,95,3.6,2544,0,0
+human_biobanking_storage,Courier partners,2639,0,0.0,2639,0,0
+human_biobanking_storage,Currency,2639,0,0.0,2639,0,0
+human_biobanking_storage,Dangerous goods certification,2639,18,0.68,2621,0,0
+human_biobanking_storage,Description,2639,424,16.07,2215,0,0
+human_biobanking_storage,Document links,2639,1,0.04,2638,0,0
+human_biobanking_storage,Facility locations,2639,0,0.0,2639,0,0
+human_biobanking_storage,GxP compliance,2639,0,0.0,2639,0,0
+human_biobanking_storage,Image URL,2639,1,0.04,2638,0,0
+human_biobanking_storage,Import and export permit support,2639,95,3.6,2544,0,0
+human_biobanking_storage,Inventory,2639,0,0.0,2639,0,0
+human_biobanking_storage,Inventory reporting,2639,95,3.6,2544,0,0
+human_biobanking_storage,LIMS or client portal,2639,95,3.6,2544,0,0
+human_biobanking_storage,Lead time (days),2639,0,0.0,2639,0,0
+human_biobanking_storage,Listing UNSPSC,2639,0,0.0,2639,0,0
+human_biobanking_storage,Listing type,2639,2639,100.0,0,0,0
+human_biobanking_storage,Manufacturer SKU,2639,0,0.0,2639,0,0
+human_biobanking_storage,Manufacturer name,2639,0,0.0,2639,0,0
+human_biobanking_storage,Name,2639,2639,100.0,0,0,0
+human_biobanking_storage,Price per unit,2639,2639,100.0,0,0,0
+human_biobanking_storage,Pricing model,2639,2639,100.0,0,0,0
+human_biobanking_storage,Product / service URL,2639,1,0.04,2638,0,0
+human_biobanking_storage,Quantity,2639,0,0.0,2639,0,0
+human_biobanking_storage,Requester UNSPSC,2639,0,0.0,2639,0,0
+human_biobanking_storage,Requester commodity code,2639,0,0.0,2639,0,0
+human_biobanking_storage,Retrieval turnaround,2639,37,1.4,2602,0,0
+human_biobanking_storage,Sample relocation service,2639,95,3.6,2544,0,0
+human_biobanking_storage,Sample types stored,2639,395,14.97,2244,0,0
+human_biobanking_storage,Ship from,2639,0,0.0,2639,0,0
+human_biobanking_storage,Storage temperatures,2639,12,0.45,2627,0,0
+human_biobanking_storage,Supplier SKU,2639,0,0.0,2639,0,0
+human_biobanking_storage,Temperature monitoring,2639,95,3.6,2544,0,0
+human_biobanking_storage,Transport temperature range,2639,23,0.87,2616,0,0
+human_biobanking_storage,Unit,2639,0,0.0,2639,0,0
+human_biobanking_storage,Unit of measure,2639,1127,42.71,1433,79,0

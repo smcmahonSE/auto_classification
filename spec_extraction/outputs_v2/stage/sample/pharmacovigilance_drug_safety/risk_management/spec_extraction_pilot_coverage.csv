@@ -1,0 +1,36 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+risk_management,24/7 availability,848,13,1.53,835,0,0
+risk_management,AI or automation in delivery,848,13,1.53,835,0,0
+risk_management,Category (L2/L3),848,848,100.0,0,0,0
+risk_management,Category UNSPSC,848,0,0.0,848,0,0
+risk_management,Currency,848,13,1.53,835,0,0
+risk_management,Description,848,741,87.38,107,0,0
+risk_management,Development stage,848,1,0.12,847,0,0
+risk_management,Document links,848,0,0.0,848,0,0
+risk_management,Expanded access supported,848,13,1.53,835,0,0
+risk_management,Image URL,848,0,0.0,848,0,0
+risk_management,Inventory,848,0,0.0,848,0,0
+risk_management,Languages supported,848,0,0.0,848,0,0
+risk_management,Lead time (days),848,0,0.0,848,0,0
+risk_management,Listing UNSPSC,848,0,0.0,848,0,0
+risk_management,Listing type,848,848,100.0,0,0,0
+risk_management,Manufacturer SKU,848,0,0.0,848,0,0
+risk_management,Manufacturer name,848,0,0.0,848,0,0
+risk_management,Multilingual intake and translation,848,13,1.53,835,0,0
+risk_management,Name,848,848,100.0,0,0,0
+risk_management,Plan types,848,0,0.0,848,0,0
+risk_management,Price per unit,848,836,98.58,12,0,0
+risk_management,Pricing model,848,848,100.0,0,0,0
+risk_management,Product / service URL,848,0,0.0,848,0,0
+risk_management,Product types covered,848,0,0.0,848,0,0
+risk_management,Program languages,848,0,0.0,848,0,0
+risk_management,Quantity,848,0,0.0,848,0,0
+risk_management,REMS program operations,848,0,0.0,848,0,0
+risk_management,Regions served,848,9,1.06,839,0,0
+risk_management,Requester UNSPSC,848,0,0.0,848,0,0
+risk_management,Requester commodity code,848,0,0.0,848,0,0
+risk_management,Risk management scope,848,20,2.36,828,0,0
+risk_management,Ship from,848,0,0.0,848,0,0
+risk_management,Supplier SKU,848,0,0.0,848,0,0
+risk_management,Unit,848,0,0.0,848,0,0
+risk_management,Unit of measure,848,79,9.32,710,59,0

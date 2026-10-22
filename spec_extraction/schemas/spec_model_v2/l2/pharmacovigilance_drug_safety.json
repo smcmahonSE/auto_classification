@@ -1,0 +1,649 @@
+{
+  "l2_id": "pharmacovigilance_drug_safety",
+  "l2_label": "Pharmacovigilance & Drug Safety",
+  "schema_name": "PHARMACOVIGILANCE_DRUG_SAFETY",
+  "l2_fields": [
+    {
+      "name": "Development stage",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "development_stage",
+      "allowed_values": [
+        "Phase 1",
+        "Phase 2",
+        "Phase 3",
+        "Post-approval"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Product types covered",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "product_types_covered_pv",
+      "allowed_values": [
+        "Small molecule drug",
+        "Biologic",
+        "Biosimilar",
+        "Generic",
+        "Vaccine",
+        "Medical device",
+        "In vitro diagnostic",
+        "Combination product",
+        "Cell and gene therapy",
+        "Consumer health product",
+        "Cosmetic",
+        "Dietary supplement",
+        "Nutraceutical",
+        "Radiopharmaceutical",
+        "Homeopathic product",
+        "Natural health product"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Regions served",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "regions_served_pv",
+      "allowed_values": [
+        "North America",
+        "EU and EEA",
+        "UK",
+        "Latin America",
+        "Asia-Pacific",
+        "Japan",
+        "China",
+        "Middle East and Africa",
+        "Australia"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Multilingual intake and translation",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "AI or automation in delivery",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "24/7 availability",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "Languages supported",
+      "type": "number",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "languages_supported_pv",
+      "allowed_values": "languages"
+    },
+    {
+      "name": "Expanded access supported",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    }
+  ],
+  "l3_nodes": {
+    "case_processing": {
+      "label": "Case Processing",
+      "table_name": "CASE_PROCESSING_SPEC",
+      "fields": [
+        {
+          "name": "Processing steps included",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "processing_steps_included",
+          "allowed_values": [
+            "Triage",
+            "Duplicate check",
+            "Data entry",
+            "Coding",
+            "Narrative writing",
+            "Quality control",
+            "Medical review",
+            "Follow-up queries",
+            "Reconciliation",
+            "Unblinding",
+            "Submission"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Case sources",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "case_sources",
+          "allowed_values": [
+            "Spontaneous",
+            "Solicited",
+            "Clinical trial",
+            "Literature",
+            "Social media",
+            "Patient support program",
+            "Call center",
+            "Medical information",
+            "Product complaints",
+            "Partners",
+            "Affiliates",
+            "Legacy cases"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Intake channels",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "intake_channels_pv",
+          "allowed_values": [
+            "Email or safety mailbox",
+            "Call center",
+            "Social media",
+            "Chatbot",
+            "Patient support program",
+            "Web or mobile"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Vendor-hosted safety database",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Submission formats",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "submission_formats_pv",
+          "allowed_values": [
+            "E2B(R3)",
+            "E2B(R2)",
+            "MedWatch",
+            "CIOMS I"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Reporting destinations",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "reporting_destinations",
+          "allowed_values": [
+            "FDA FAERS",
+            "EudraVigilance",
+            "MHRA",
+            "Other national authorities",
+            "Ethics committees or IRBs",
+            "Investigators",
+            "Business partners"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "On-time submission compliance",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "on_time_submission_compliance_pct",
+          "allowed_values": "percent"
+        },
+        {
+          "name": "Safety database",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "safety_database",
+          "allowed_values": [
+            "Oracle Argus",
+            "ArisGlobal ARISg",
+            "Veeva Vault Safety",
+            "AB Cube",
+            "PVNet",
+            "Client in-house database",
+            "Vendor proprietary database"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Clinical trial case types",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_trial_case_types",
+          "allowed_values": [
+            "SAE",
+            "SUSAR",
+            "AESI",
+            "Pregnancy"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Coding dictionaries",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "coding_dictionaries",
+          "allowed_values": [
+            "MedDRA",
+            "WHODrug"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "signal_detection": {
+      "label": "Signal Detection",
+      "table_name": "SIGNAL_DETECTION_SPEC",
+      "fields": [
+        {
+          "name": "Signal management stages",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "signal_management_stages",
+          "allowed_values": [
+            "Detection",
+            "Validation",
+            "Prioritization",
+            "Assessment",
+            "Recommendation for action",
+            "Communication to authorities"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Detection method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "detection_method_pv",
+          "allowed_values": [
+            "Qualitative case review",
+            "Quantitative statistical analysis",
+            "Disproportionality analysis",
+            "AI or NLP assisted"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Signal tools",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "signal_tools",
+          "allowed_values": [
+            "EVDAS",
+            "IQVIA Vigilance Signal",
+            "Spotfire-based review tool",
+            "Client tool"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Data sources searched",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "data_sources_searched",
+          "allowed_values": [
+            "Internal safety database",
+            "Clinical trial data",
+            "Noninterventional studies",
+            "Literature",
+            "EudraVigilance EVDAS",
+            "FDA FAERS",
+            "WHO VigiBase",
+            "Health authority websites"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Signal deliverables",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "signal_deliverables",
+          "allowed_values": [
+            "Signal tracking log",
+            "Signal evaluation report",
+            "Safety review meeting",
+            "Label or RMP update recommendation",
+            "Health authority query response"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Review frequency",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "review_frequency_pv",
+          "allowed_values": [
+            "Every 3 months",
+            "Every 6 months",
+            "Ad hoc"
+          ]
+        },
+        {
+          "name": "Signal scope",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "signal_scope",
+          "allowed_values": [
+            "Single product",
+            "Product portfolio"
+          ]
+        },
+        {
+          "name": "Benefit-risk assessment included",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "aggregate_reports": {
+      "label": "Aggregate Reports",
+      "table_name": "AGGREGATE_REPORTS_SPEC",
+      "fields": [
+        {
+          "name": "Report types",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "report_types_aggregate",
+          "allowed_values": [
+            "PSUR",
+            "PBRER",
+            "DSUR",
+            "PADER",
+            "IND annual report",
+            "Annual safety report",
+            "Addendum to Clinical Overview",
+            "Summary bridging report",
+            "Country-specific periodic report",
+            "SUSAR line listing"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Aggregate report scope",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "aggregate_report_scope",
+          "allowed_values": [
+            "Authoring",
+            "Independent quality review",
+            "Submission",
+            "Health authority question response"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Reference safety documents",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "reference_safety_documents",
+          "allowed_values": [
+            "CCDS",
+            "CCSI",
+            "Reference safety information"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "literature_monitoring": {
+      "label": "Literature Monitoring",
+      "table_name": "LITERATURE_MONITORING_SPEC",
+      "fields": [
+        {
+          "name": "Search scope",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "search_scope_literature",
+          "allowed_values": [
+            "Global",
+            "Local"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Literature databases",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "literature_databases",
+          "allowed_values": [
+            "MEDLINE",
+            "PubMed",
+            "Embase",
+            "Local non-indexed journals"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "EMA MLM handling",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Article translation",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Full-text article retrieval",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Search strategy development",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Literature tool",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_literature_tool"
+        }
+      ]
+    },
+    "risk_management": {
+      "label": "Risk Management",
+      "table_name": "RISK_MANAGEMENT_SPEC",
+      "fields": [
+        {
+          "name": "Plan types",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "plan_types_risk_mgmt",
+          "allowed_values": [
+            "EU RMP",
+            "Development RMP",
+            "US REMS",
+            "aRMM"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Risk management scope",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "risk_management_scope",
+          "allowed_values": [
+            "Authoring",
+            "Maintenance",
+            "Program implementation",
+            "Effectiveness assessment"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "REMS program operations",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "rems_program_operations",
+          "allowed_values": [
+            "Call center",
+            "HCP certification verification",
+            "Pharmacy or program locator",
+            "Stakeholder surveys",
+            "Translations"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Program languages",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "program_languages_pv",
+          "allowed_values": "languages"
+        }
+      ]
+    },
+    "qppv_pv_system_services": {
+      "label": "QPPV & PV System Services",
+      "table_name": "QPPV_PV_SYSTEM_SERVICES_SPEC",
+      "fields": [
+        {
+          "name": "Service type",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "service_type_qppv",
+          "allowed_values": [
+            "EU QPPV",
+            "Deputy QPPV",
+            "Local PV contact (LPPV)",
+            "PSMF maintenance"
+          ],
+          "multi_select": true
+        }
+      ]
+    }
+  }
+}

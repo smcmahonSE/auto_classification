@@ -1,0 +1,30 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+relocation,Brand / manufacturer,57,0,0.0,57,0,0
+relocation,Capacity,57,0,0.0,57,0,0
+relocation,Category (L2/L3),57,57,100.0,0,0,0
+relocation,Category UNSPSC,57,0,0.0,57,0,0
+relocation,Currency,57,5,8.77,52,0,0
+relocation,Deliverable,57,0,0.0,57,0,0
+relocation,Description,57,49,85.96,8,0,0
+relocation,Document links,57,1,1.75,56,0,0
+relocation,Equipment type,57,0,0.0,57,0,0
+relocation,Image URL,57,0,0.0,57,0,0
+relocation,Inventory,57,0,0.0,57,0,0
+relocation,Lead time (days),57,0,0.0,57,0,0
+relocation,Listing UNSPSC,57,0,0.0,57,0,0
+relocation,Listing type,57,57,100.0,0,0,0
+relocation,Manufacturer SKU,57,0,0.0,57,0,0
+relocation,Manufacturer name,57,0,0.0,57,0,0
+relocation,Name,57,57,100.0,0,0,0
+relocation,Price per unit,57,57,100.0,0,0,0
+relocation,Pricing model,57,57,100.0,0,0,0
+relocation,Product / service URL,57,1,1.75,56,0,0
+relocation,Protocol / scope,57,0,0.0,57,0,0
+relocation,Quantity,57,0,0.0,57,0,0
+relocation,Requester UNSPSC,57,0,0.0,57,0,0
+relocation,Requester commodity code,57,0,0.0,57,0,0
+relocation,Ship from,57,0,0.0,57,0,0
+relocation,Supplier SKU,57,0,0.0,57,0,0
+relocation,Turnaround,57,0,0.0,57,0,0
+relocation,Unit,57,0,0.0,57,0,0
+relocation,Unit of measure,57,15,26.32,42,0,0

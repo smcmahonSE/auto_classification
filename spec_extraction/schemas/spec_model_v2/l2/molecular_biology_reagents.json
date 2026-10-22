@@ -9,14 +9,121 @@
       "form": "product",
       "table_name": "PCR_QPCR_REAGENTS_SPEC",
       "fields": [
-        {"name": "Reagent type", "type": "picklist", "allowed_values": ["Master mix", "Polymerase", "dNTPs / nucleotides", "Probe or primer assay", "Buffer / additive"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "pcr_reagent_type"},
-        {"name": "Target Gene / Region", "type": "text", "required": false, "product_only": false, "extractor": "override", "override_key": "target_gene_region"},
-        {"name": "Target Species", "type": "multi-select", "allowed_values": ["Human", "Mouse", "Rat", "Zebrafish", "Drosophila", "Yeast", "E. coli", "Other"], "required": false, "product_only": false, "extractor": "override", "override_key": "target_species"},
-        {"name": "Probe chemistry", "type": "picklist", "allowed_values": ["SYBR Green", "TaqMan / hydrolysis probe", "Dual-labeled probe", "Molecular beacon"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "probe_chemistry"},
-        {"name": "Reporter dye", "type": "picklist", "allowed_values": ["FAM", "VIC", "HEX", "NED", "TET", "ABY", "JUN", "ROX", "Cy5", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "reporter_dye"},
-        {"name": "Quencher", "type": "picklist", "allowed_values": ["MGB-NFQ", "BHQ-1", "BHQ-2", "TAMRA", "QSY", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "quencher"},
-        {"name": "Configuration", "type": "picklist", "allowed_values": ["Master mix", "Individual components"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "pcr_configuration"},
-        {"name": "Multiplex", "type": "picklist", "allowed_values": ["Singleplex", "Multiplex"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "multiplex_status"}
+        {
+          "name": "Reagent type",
+          "type": "picklist",
+          "allowed_values": [
+            "Master mix",
+            "Polymerase",
+            "dNTPs / nucleotides",
+            "Probe or primer assay",
+            "Buffer / additive"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pcr_reagent_type"
+        },
+        {
+          "name": "Target Gene / Region",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "target_gene_region"
+        },
+        {
+          "name": "Target Species",
+          "type": "multi-select",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Zebrafish",
+            "Drosophila",
+            "Yeast",
+            "E. coli",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "target_species"
+        },
+        {
+          "name": "Probe chemistry",
+          "type": "picklist",
+          "allowed_values": [
+            "SYBR Green",
+            "TaqMan / hydrolysis probe",
+            "Dual-labeled probe",
+            "Molecular beacon"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "probe_chemistry"
+        },
+        {
+          "name": "Reporter dye",
+          "type": "picklist",
+          "allowed_values": [
+            "FAM",
+            "VIC",
+            "HEX",
+            "NED",
+            "TET",
+            "ABY",
+            "JUN",
+            "ROX",
+            "Cy5",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "reporter_dye"
+        },
+        {
+          "name": "Quencher",
+          "type": "picklist",
+          "allowed_values": [
+            "MGB-NFQ",
+            "BHQ-1",
+            "BHQ-2",
+            "TAMRA",
+            "QSY",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "quencher"
+        },
+        {
+          "name": "Configuration",
+          "type": "picklist",
+          "allowed_values": [
+            "Master mix",
+            "Individual components"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pcr_configuration"
+        },
+        {
+          "name": "Multiplex",
+          "type": "picklist",
+          "allowed_values": [
+            "Singleplex",
+            "Multiplex"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "multiplex_status"
+        }
       ]
     },
     "cloning_expression": {
@@ -24,9 +131,48 @@
       "form": "product",
       "table_name": "CLONING_EXPRESSION_SPEC",
       "fields": [
-        {"name": "Vector / system", "type": "text", "required": true, "product_only": false, "extractor": "regex", "pattern": "labeled_vector"},
-        {"name": "Host / expression system", "type": "picklist", "allowed_values": ["E. coli", "Mammalian", "Insect", "Yeast", "Cell-free"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "expression_system_cloning"},
-        {"name": "Tags / selection", "type": "multi-select", "allowed_values": ["His", "GST", "FLAG", "Myc", "GFP", "AmpR", "KanR", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "tags_selection", "multi_select": true}
+        {
+          "name": "Vector / system",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_vector"
+        },
+        {
+          "name": "Host / expression system",
+          "type": "picklist",
+          "allowed_values": [
+            "E. coli",
+            "Mammalian",
+            "Insect",
+            "Yeast",
+            "Cell-free"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "expression_system_cloning"
+        },
+        {
+          "name": "Tags / selection",
+          "type": "multi-select",
+          "allowed_values": [
+            "His",
+            "GST",
+            "FLAG",
+            "Myc",
+            "GFP",
+            "AmpR",
+            "KanR",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "tags_selection",
+          "multi_select": true
+        }
       ]
     },
     "gene_editing": {
@@ -34,14 +180,116 @@
       "form": "product",
       "table_name": "GENE_EDITING_SPEC",
       "fields": [
-        {"name": "Target Gene / Region", "type": "text", "required": true, "product_only": false, "extractor": "override", "override_key": "target_gene_region"},
-        {"name": "Target Species", "type": "multi-select", "allowed_values": ["Human", "Mouse", "Rat", "Zebrafish", "Drosophila", "Yeast", "E. coli", "Other"], "required": false, "product_only": false, "extractor": "override", "override_key": "target_species"},
-        {"name": "Nuclease type", "type": "picklist", "allowed_values": ["Cas9", "Cas12a (Cpf1)", "Base editor", "Prime editor", "Other"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "nuclease_type"},
-        {"name": "Edit type", "type": "picklist", "allowed_values": ["Knockout", "Knock-in", "CRISPRa", "CRISPRi", "Base edit"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "edit_type"},
-        {"name": "gRNA format", "type": "picklist", "allowed_values": ["sgRNA", "crRNA + tracrRNA"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "grna_format"},
-        {"name": "Delivery format", "type": "picklist", "allowed_values": ["RNP", "Plasmid", "mRNA", "Lentivirus", "AAV"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "delivery_format_gene_editing"},
-        {"name": "gRNA modifications", "type": "multi-select", "allowed_values": ["2'O-Me", "Phosphorothioate", "None"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "oligo_modifications", "multi_select": true},
-        {"name": "Purification", "type": "picklist", "allowed_values": ["Desalted", "HPLC", "PAGE"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "oligo_purification"}
+        {
+          "name": "Target Gene / Region",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "target_gene_region"
+        },
+        {
+          "name": "Nuclease type",
+          "type": "picklist",
+          "allowed_values": [
+            "Cas9",
+            "Cas12a (Cpf1)",
+            "Base editor",
+            "Prime editor",
+            "Other"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "nuclease_type"
+        },
+        {
+          "name": "Edit type",
+          "type": "picklist",
+          "allowed_values": [
+            "Knockout",
+            "Knock-in",
+            "CRISPRa",
+            "CRISPRi",
+            "Base edit"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "edit_type"
+        },
+        {
+          "name": "gRNA format",
+          "type": "picklist",
+          "allowed_values": [
+            "sgRNA",
+            "crRNA + tracrRNA"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "grna_format"
+        },
+        {
+          "name": "Target Species",
+          "type": "multi-select",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Zebrafish",
+            "Drosophila",
+            "Yeast",
+            "E. coli",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "target_species"
+        },
+        {
+          "name": "Delivery format",
+          "type": "picklist",
+          "allowed_values": [
+            "RNP",
+            "Plasmid",
+            "mRNA",
+            "Lentivirus",
+            "AAV"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "delivery_format_gene_editing"
+        },
+        {
+          "name": "gRNA modifications",
+          "type": "multi-select",
+          "allowed_values": [
+            "2'O-Me",
+            "Phosphorothioate",
+            "None"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "oligo_modifications",
+          "multi_select": true
+        },
+        {
+          "name": "Purification",
+          "type": "picklist",
+          "allowed_values": [
+            "Desalted",
+            "HPLC",
+            "PAGE"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "oligo_purification"
+        }
       ]
     },
     "rna_interference": {
@@ -49,11 +297,73 @@
       "form": "product",
       "table_name": "RNA_INTERFERENCE_SPEC",
       "fields": [
-        {"name": "Target Gene / Region", "type": "text", "required": true, "product_only": false, "extractor": "override", "override_key": "target_gene_region"},
-        {"name": "Target Species", "type": "multi-select", "allowed_values": ["Human", "Mouse", "Rat", "Zebrafish", "Drosophila", "Yeast", "E. coli", "Other"], "required": false, "product_only": false, "extractor": "override", "override_key": "target_species"},
-        {"name": "Type", "type": "picklist", "allowed_values": ["siRNA", "shRNA", "miRNA mimic", "miRNA inhibitor"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "rnai_type"},
-        {"name": "Pooling", "type": "picklist", "allowed_values": ["Individual", "Pooled"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "individual_pooled"},
-        {"name": "Chemistry / modifications", "type": "multi-select", "allowed_values": ["2'O-Me", "2'F", "Phosphorothioate", "Unmodified"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "oligo_modifications", "multi_select": true}
+        {
+          "name": "Target Gene / Region",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "target_gene_region"
+        },
+        {
+          "name": "Type",
+          "type": "picklist",
+          "allowed_values": [
+            "siRNA",
+            "shRNA",
+            "miRNA mimic",
+            "miRNA inhibitor"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "rnai_type"
+        },
+        {
+          "name": "Target Species",
+          "type": "multi-select",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Zebrafish",
+            "Drosophila",
+            "Yeast",
+            "E. coli",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "target_species"
+        },
+        {
+          "name": "Pooling",
+          "type": "picklist",
+          "allowed_values": [
+            "Individual",
+            "Pooled"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "individual_pooled"
+        },
+        {
+          "name": "Chemistry / modifications",
+          "type": "multi-select",
+          "allowed_values": [
+            "2'O-Me",
+            "2'F",
+            "Phosphorothioate",
+            "Unmodified"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "oligo_modifications",
+          "multi_select": true
+        }
       ]
     },
     "sequencing": {
@@ -61,13 +371,96 @@
       "form": "product",
       "table_name": "SEQUENCING_SPEC",
       "fields": [
-        {"name": "Method", "type": "picklist", "allowed_values": ["Sanger", "NGS", "Whole-plasmid", "Long-read"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sequencing_method"},
-        {"name": "Sample type", "type": "picklist", "allowed_values": ["Plasmid", "PCR product", "Colony", "gDNA", "RNA", "Cells"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sequencing_sample_type"},
-        {"name": "Read configuration", "type": "picklist", "allowed_values": ["Single-end", "Paired-end"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "read_configuration"},
-        {"name": "Read length", "type": "picklist", "allowed_values": ["50 bp", "100 bp", "150 bp", "250 bp", "300 bp", "Long-read"], "required": false, "product_only": false, "extractor": "regex", "pattern": "length_nt_aa_bp"},
-        {"name": "Read depth / # reads ordered", "type": "number", "allowed_values": "× coverage or million reads", "required": false, "product_only": false, "extractor": "regex", "pattern": "read_depth"},
-        {"name": "Regulatory", "type": "picklist", "allowed_values": ["RUO", "CLIA", "CAP", "GLP"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "regulatory_status_seq"},
-        {"name": "Turnaround", "type": "number", "allowed_values": "days", "required": false, "product_only": false, "extractor": "regex", "pattern": "turnaround"}
+        {
+          "name": "Method",
+          "type": "picklist",
+          "allowed_values": [
+            "Sanger",
+            "NGS",
+            "Whole-plasmid",
+            "Long-read"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sequencing_method"
+        },
+        {
+          "name": "Sample type",
+          "type": "picklist",
+          "allowed_values": [
+            "Plasmid",
+            "PCR product",
+            "Colony",
+            "gDNA",
+            "RNA",
+            "Cells"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sequencing_sample_type"
+        },
+        {
+          "name": "Read configuration",
+          "type": "picklist",
+          "allowed_values": [
+            "Single-end",
+            "Paired-end"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "read_configuration"
+        },
+        {
+          "name": "Read length",
+          "type": "picklist",
+          "allowed_values": [
+            "50 bp",
+            "100 bp",
+            "150 bp",
+            "250 bp",
+            "300 bp",
+            "Long-read"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "length_nt_aa_bp"
+        },
+        {
+          "name": "Read depth / # reads ordered",
+          "type": "number",
+          "allowed_values": "× coverage or million reads",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "read_depth"
+        },
+        {
+          "name": "Regulatory",
+          "type": "picklist",
+          "allowed_values": [
+            "RUO",
+            "CLIA",
+            "CAP",
+            "GLP"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "regulatory_status_seq"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "allowed_values": "days",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround"
+        }
       ]
     },
     "oligos_primers": {
@@ -75,14 +468,118 @@
       "form": "product",
       "table_name": "OLIGOS_PRIMERS_SPEC",
       "fields": [
-        {"name": "Target Gene / Region", "type": "text", "required": false, "product_only": false, "extractor": "override", "override_key": "target_gene_region"},
-        {"name": "Target Species", "type": "multi-select", "allowed_values": ["Human", "Mouse", "Rat", "Zebrafish", "Drosophila", "Yeast", "E. coli", "Other"], "required": false, "product_only": false, "extractor": "override", "override_key": "target_species"},
-        {"name": "Length (nt)", "type": "number", "allowed_values": "nt", "required": true, "product_only": false, "extractor": "regex", "pattern": "length_nt_aa_bp"},
-        {"name": "Synthesis scale", "type": "picklist", "allowed_values": ["25 nmol", "100 nmol", "250 nmol", "1 µmol", "10 µmol"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "synthesis_scale"},
-        {"name": "Purification", "type": "picklist", "allowed_values": ["Standard desalt", "Cartridge", "HPLC", "PAGE"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "oligo_purification"},
-        {"name": "Modifications", "type": "multi-select", "allowed_values": ["5' phosphate", "3' phosphate", "Biotin", "FAM", "LNA", "Amino", "Thiol", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "oligo_end_modifications", "multi_select": true},
-        {"name": "QC", "type": "multi-select", "allowed_values": ["ESI-MS", "MALDI-TOF", "OD", "CE"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "oligo_qc", "multi_select": true},
-        {"name": "Format", "type": "picklist", "allowed_values": ["Tube", "96-well plate", "384-well plate", "Dried / lyophilized"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "oligo_format"}
+        {
+          "name": "Length (nt)",
+          "type": "number",
+          "allowed_values": "nt",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "length_nt_aa_bp"
+        },
+        {
+          "name": "Synthesis scale",
+          "type": "picklist",
+          "allowed_values": [
+            "25 nmol",
+            "100 nmol",
+            "250 nmol",
+            "1 µmol",
+            "10 µmol"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "synthesis_scale"
+        },
+        {
+          "name": "Purification",
+          "type": "picklist",
+          "allowed_values": [
+            "Standard desalt",
+            "Cartridge",
+            "HPLC",
+            "PAGE"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "oligo_purification"
+        },
+        {
+          "name": "Target Gene / Region",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "target_gene_region"
+        },
+        {
+          "name": "Target Species",
+          "type": "multi-select",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Zebrafish",
+            "Drosophila",
+            "Yeast",
+            "E. coli",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "target_species"
+        },
+        {
+          "name": "Modifications",
+          "type": "multi-select",
+          "allowed_values": [
+            "5' phosphate",
+            "3' phosphate",
+            "Biotin",
+            "FAM",
+            "LNA",
+            "Amino",
+            "Thiol",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "oligo_end_modifications",
+          "multi_select": true
+        },
+        {
+          "name": "QC",
+          "type": "multi-select",
+          "allowed_values": [
+            "ESI-MS",
+            "MALDI-TOF",
+            "OD",
+            "CE"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "oligo_qc",
+          "multi_select": true
+        },
+        {
+          "name": "Format",
+          "type": "picklist",
+          "allowed_values": [
+            "Tube",
+            "96-well plate",
+            "384-well plate",
+            "Dried / lyophilized"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "oligo_format"
+        }
       ]
     },
     "gene_synthesis": {
@@ -90,13 +587,86 @@
       "form": "product",
       "table_name": "GENE_SYNTHESIS_SPEC",
       "fields": [
-        {"name": "Length (bp)", "type": "number", "allowed_values": "bp", "required": true, "product_only": false, "extractor": "regex", "pattern": "length_nt_aa_bp"},
-        {"name": "Product type", "type": "picklist", "allowed_values": ["Gene fragment (non-clonal)", "Clonal gene"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "gene_synthesis_product_type"},
-        {"name": "Sequence verification", "type": "picklist", "allowed_values": ["None", "NGS-verified", "Sanger-verified"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sequence_verification"},
-        {"name": "Vector / cloning", "type": "picklist", "allowed_values": ["Linear with adapters", "Cloned into vector"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "vector_cloning"},
-        {"name": "Codon optimization", "type": "yes_no", "allowed_values": ["Yes", "No"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "yes_no"},
-        {"name": "Format", "type": "picklist", "allowed_values": ["Dried tube", "96-well plate", "384-well plate"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "oligo_format"},
-        {"name": "Turnaround", "type": "number", "allowed_values": "days", "required": false, "product_only": false, "extractor": "regex", "pattern": "turnaround"}
+        {
+          "name": "Length (bp)",
+          "type": "number",
+          "allowed_values": "bp",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "length_nt_aa_bp"
+        },
+        {
+          "name": "Product type",
+          "type": "picklist",
+          "allowed_values": [
+            "Gene fragment (non-clonal)",
+            "Clonal gene"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "gene_synthesis_product_type"
+        },
+        {
+          "name": "Sequence verification",
+          "type": "picklist",
+          "allowed_values": [
+            "None",
+            "NGS-verified",
+            "Sanger-verified"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sequence_verification"
+        },
+        {
+          "name": "Vector / cloning",
+          "type": "picklist",
+          "allowed_values": [
+            "Linear with adapters",
+            "Cloned into vector"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "vector_cloning"
+        },
+        {
+          "name": "Codon optimization",
+          "type": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no"
+        },
+        {
+          "name": "Format",
+          "type": "picklist",
+          "allowed_values": [
+            "Dried tube",
+            "96-well plate",
+            "384-well plate"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "oligo_format"
+        },
+        {
+          "name": "Turnaround",
+          "type": "number",
+          "allowed_values": "days",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "turnaround"
+        }
       ]
     },
     "plasmids_vectors": {
@@ -104,13 +674,108 @@
       "form": "product",
       "table_name": "PLASMIDS_VECTORS_SPEC",
       "fields": [
-        {"name": "Prep scale", "type": "picklist", "allowed_values": ["Mini", "Midi", "Maxi", "Mega", "Giga", "96-well"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "prep_scale"},
-        {"name": "Vector type / backbone", "type": "picklist", "allowed_values": ["Expression", "Lentiviral", "AAV", "Adenoviral", "Retroviral", "Transposon"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "vector_backbone"},
-        {"name": "Viral serotype", "type": "picklist", "allowed_values": ["AAV1", "AAV2", "AAV5", "AAV6", "AAV8", "AAV9", "AAVrh10", "AAV-DJ", "PHP.eB", "AAV2-retro", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "viral_serotype"},
-        {"name": "Titer", "type": "number", "allowed_values": "GC/mL or TU/mL", "required": false, "product_only": false, "extractor": "regex", "pattern": "titer"},
-        {"name": "Selection marker", "type": "picklist", "allowed_values": ["AmpR", "KanR", "Puromycin", "Neomycin", "Hygromycin", "Blasticidin", "Zeocin"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "selection_marker"},
-        {"name": "Grade", "type": "picklist", "allowed_values": ["Research", "Transfection / EndoFree", "GMP-source", "cGMP"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "plasmid_grade"},
-        {"name": "Yield", "type": "number", "allowed_values": "µg or mg", "required": false, "product_only": false, "extractor": "regex", "pattern": "yield_amount"}
+        {
+          "name": "Prep scale",
+          "type": "picklist",
+          "allowed_values": [
+            "Mini",
+            "Midi",
+            "Maxi",
+            "Mega",
+            "Giga",
+            "96-well"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "prep_scale"
+        },
+        {
+          "name": "Vector type / backbone",
+          "type": "picklist",
+          "allowed_values": [
+            "Expression",
+            "Lentiviral",
+            "AAV",
+            "Adenoviral",
+            "Retroviral",
+            "Transposon"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "vector_backbone"
+        },
+        {
+          "name": "Grade",
+          "type": "picklist",
+          "allowed_values": [
+            "Research",
+            "Transfection / EndoFree",
+            "GMP-source",
+            "cGMP"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "plasmid_grade"
+        },
+        {
+          "name": "Viral serotype",
+          "type": "picklist",
+          "allowed_values": [
+            "AAV1",
+            "AAV2",
+            "AAV5",
+            "AAV6",
+            "AAV8",
+            "AAV9",
+            "AAVrh10",
+            "AAV-DJ",
+            "PHP.eB",
+            "AAV2-retro",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "viral_serotype"
+        },
+        {
+          "name": "Titer",
+          "type": "number",
+          "allowed_values": "GC/mL or TU/mL",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "titer"
+        },
+        {
+          "name": "Selection marker",
+          "type": "picklist",
+          "allowed_values": [
+            "AmpR",
+            "KanR",
+            "Puromycin",
+            "Neomycin",
+            "Hygromycin",
+            "Blasticidin",
+            "Zeocin"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "selection_marker"
+        },
+        {
+          "name": "Yield",
+          "type": "number",
+          "allowed_values": "µg or mg",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "yield_amount"
+        }
       ]
     }
   }

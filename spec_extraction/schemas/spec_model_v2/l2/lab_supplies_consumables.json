@@ -18,16 +18,148 @@
       "form": "product",
       "table_name": "BOTTLES_CONTAINERS_SPEC",
       "fields": [
-        {"name": "Sterility", "type": "picklist", "allowed_values": ["Sterile", "Non-Sterile", "Sterilizable"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterility"},
-        {"name": "Sterilization method", "type": "picklist", "allowed_values": ["Gamma irradiated", "EO gas", "E-beam", "Autoclavable", "Not sterilized"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterilization_method"},
-        {"name": "Closure type", "type": "picklist", "allowed_values": ["Screw cap", "Snap cap", "Dropper", "Pump / spray", "Dispensing", "None"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "closure_type"},
-        {"name": "Opacity", "type": "picklist", "allowed_values": ["Clear", "Amber", "Opaque"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "opacity"},
-        {"name": "Neck finish", "type": "text", "allowed_values": "GL or GPI thread code", "required": false, "product_only": false, "extractor": "regex", "pattern": "neck_finish"},
-        {"name": "Capacity / Volume / Size", "type": "number", "allowed_values": "mL, µL, L or wells", "required": false, "product_only": false, "extractor": "override", "override_key": "capacity_volume_size"},
-        {"name": "Purity certs", "type": "multi-select", "allowed_values": ["RNase-free", "DNase-free", "DNA-free", "Endotoxin-free", "Pyrogen-free", "Human DNA-free", "None"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "purity_certs", "multi_select": true},
-        {"name": "Material", "type": "picklist", "allowed_values": ["Polypropylene", "Polystyrene", "Polyethylene", "PET", "PTFE", "PES", "Glass", "Nitrile", "Latex", "Stainless steel", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "material"},
-        {"name": "Color", "type": "picklist", "allowed_values": ["Clear", "Amber", "Black", "White", "Blue", "Red", "Green", "Yellow", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "color"},
-        {"name": "Temperature range", "type": "number", "allowed_values": "°C (min to max)", "required": false, "product_only": false, "extractor": "regex", "pattern": "temperature_range"}
+        {
+          "name": "Sterility",
+          "type": "picklist",
+          "allowed_values": [
+            "Sterile",
+            "Non-Sterile",
+            "Sterilizable"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility"
+        },
+        {
+          "name": "Sterilization method",
+          "type": "picklist",
+          "allowed_values": [
+            "Gamma irradiated",
+            "EO gas",
+            "E-beam",
+            "Autoclavable",
+            "Not sterilized"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterilization_method"
+        },
+        {
+          "name": "Closure type",
+          "type": "picklist",
+          "allowed_values": [
+            "Screw cap",
+            "Snap cap",
+            "Dropper",
+            "Pump / spray",
+            "Dispensing",
+            "None"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "closure_type"
+        },
+        {
+          "name": "Opacity",
+          "type": "picklist",
+          "allowed_values": [
+            "Clear",
+            "Amber",
+            "Opaque"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "opacity"
+        },
+        {
+          "name": "Neck finish",
+          "type": "text",
+          "allowed_values": "GL or GPI thread code",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "neck_finish"
+        },
+        {
+          "name": "Capacity / Volume / Size",
+          "type": "number",
+          "allowed_values": "mL, µL, L or wells",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "capacity_volume_size"
+        },
+        {
+          "name": "Purity certs",
+          "type": "multi-select",
+          "allowed_values": [
+            "RNase-free",
+            "DNase-free",
+            "DNA-free",
+            "Endotoxin-free",
+            "Pyrogen-free",
+            "Human DNA-free",
+            "None"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_certs",
+          "multi_select": true
+        },
+        {
+          "name": "Material",
+          "type": "picklist",
+          "allowed_values": [
+            "Polypropylene",
+            "Polystyrene",
+            "Polyethylene",
+            "PET",
+            "PTFE",
+            "PES",
+            "Glass",
+            "Nitrile",
+            "Latex",
+            "Stainless steel",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "material"
+        },
+        {
+          "name": "Color",
+          "type": "picklist",
+          "allowed_values": [
+            "Clear",
+            "Amber",
+            "Black",
+            "White",
+            "Blue",
+            "Red",
+            "Green",
+            "Yellow",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "color"
+        },
+        {
+          "name": "Temperature range",
+          "type": "number",
+          "allowed_values": "°C (min to max)",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "temperature_range"
+        }
       ]
     },
     "laboratory_glassware": {
@@ -35,12 +167,79 @@
       "form": "product",
       "table_name": "LABORATORY_GLASSWARE_SPEC",
       "fields": [
-        {"name": "Sterility", "type": "picklist", "allowed_values": ["Sterile", "Non-Sterile", "Sterilizable"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterility"},
-        {"name": "Sterilization method", "type": "picklist", "allowed_values": ["Gamma irradiated", "EO gas", "E-beam", "Autoclavable", "Not sterilized"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterilization_method"},
-        {"name": "Glass type", "type": "picklist", "allowed_values": ["Borosilicate 3.3", "Borosilicate 5.0", "Soda-lime", "Quartz"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "glass_type"},
-        {"name": "Graduation class", "type": "picklist", "allowed_values": ["Class A", "Class B", "Ungraduated"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "graduation_class"},
-        {"name": "Capacity / Volume / Size", "type": "number", "allowed_values": "mL, µL, L or wells", "required": false, "product_only": false, "extractor": "override", "override_key": "capacity_volume_size"},
-        {"name": "Temperature range", "type": "number", "allowed_values": "°C (min to max)", "required": false, "product_only": false, "extractor": "regex", "pattern": "temperature_range"}
+        {
+          "name": "Sterility",
+          "type": "picklist",
+          "allowed_values": [
+            "Sterile",
+            "Non-Sterile",
+            "Sterilizable"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility"
+        },
+        {
+          "name": "Sterilization method",
+          "type": "picklist",
+          "allowed_values": [
+            "Gamma irradiated",
+            "EO gas",
+            "E-beam",
+            "Autoclavable",
+            "Not sterilized"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterilization_method"
+        },
+        {
+          "name": "Glass type",
+          "type": "picklist",
+          "allowed_values": [
+            "Borosilicate 3.3",
+            "Borosilicate 5.0",
+            "Soda-lime",
+            "Quartz"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "glass_type"
+        },
+        {
+          "name": "Graduation class",
+          "type": "picklist",
+          "allowed_values": [
+            "Class A",
+            "Class B",
+            "Ungraduated"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "graduation_class"
+        },
+        {
+          "name": "Capacity / Volume / Size",
+          "type": "number",
+          "allowed_values": "mL, µL, L or wells",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "capacity_volume_size"
+        },
+        {
+          "name": "Temperature range",
+          "type": "number",
+          "allowed_values": "°C (min to max)",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "temperature_range"
+        }
       ]
     },
     "tubes_vials": {
@@ -48,19 +247,182 @@
       "form": "product",
       "table_name": "TUBES_VIALS_SPEC",
       "fields": [
-        {"name": "Sterility", "type": "picklist", "allowed_values": ["Sterile", "Non-Sterile", "Sterilizable"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterility"},
-        {"name": "Sterilization method", "type": "picklist", "allowed_values": ["Gamma irradiated", "EO gas", "E-beam", "Autoclavable", "Not sterilized"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterilization_method"},
-        {"name": "Cap type", "type": "picklist", "allowed_values": ["Screw", "Snap", "Plug-seal", "Flip-top", "None"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "cap_type"},
-        {"name": "Bottom shape", "type": "picklist", "allowed_values": ["Conical", "Round", "Flat", "Skirted"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "bottom_shape"},
-        {"name": "Graduations", "type": "picklist", "allowed_values": ["Graduated", "Non-graduated"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "graduations"},
-        {"name": "Max RCF (g-force)", "type": "number", "allowed_values": "× g", "required": false, "product_only": false, "extractor": "regex", "pattern": "max_rcf"},
-        {"name": "Low-binding", "type": "picklist", "allowed_values": ["DNA low-binding", "Protein low-binding", "Standard"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "low_binding"},
-        {"name": "Capacity / Volume / Size", "type": "number", "allowed_values": "mL, µL, L or wells", "required": false, "product_only": false, "extractor": "override", "override_key": "capacity_volume_size"},
-        {"name": "Purity certs", "type": "multi-select", "allowed_values": ["RNase-free", "DNase-free", "DNA-free", "Endotoxin-free", "Pyrogen-free", "Human DNA-free", "None"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "purity_certs", "multi_select": true},
-        {"name": "Material", "type": "picklist", "allowed_values": ["Polypropylene", "Polystyrene", "Polyethylene", "PET", "PTFE", "PES", "Glass", "Nitrile", "Latex", "Stainless steel", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "material"},
-        {"name": "Color", "type": "picklist", "allowed_values": ["Clear", "Amber", "Black", "White", "Blue", "Red", "Green", "Yellow", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "color"},
-        {"name": "Compatibility", "type": "text", "allowed_values": "equipment or chemical compatibility", "required": false, "product_only": false, "extractor": "regex", "pattern": "compatibility"},
-        {"name": "Temperature range", "type": "number", "allowed_values": "°C (min to max)", "required": false, "product_only": false, "extractor": "regex", "pattern": "temperature_range"}
+        {
+          "name": "Sterility",
+          "type": "picklist",
+          "allowed_values": [
+            "Sterile",
+            "Non-Sterile",
+            "Sterilizable"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility"
+        },
+        {
+          "name": "Cap type",
+          "type": "picklist",
+          "allowed_values": [
+            "Screw",
+            "Snap",
+            "Plug-seal",
+            "Flip-top",
+            "None"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cap_type"
+        },
+        {
+          "name": "Sterilization method",
+          "type": "picklist",
+          "allowed_values": [
+            "Gamma irradiated",
+            "EO gas",
+            "E-beam",
+            "Autoclavable",
+            "Not sterilized"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterilization_method"
+        },
+        {
+          "name": "Bottom shape",
+          "type": "picklist",
+          "allowed_values": [
+            "Conical",
+            "Round",
+            "Flat",
+            "Skirted"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "bottom_shape"
+        },
+        {
+          "name": "Graduations",
+          "type": "picklist",
+          "allowed_values": [
+            "Graduated",
+            "Non-graduated"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "graduations"
+        },
+        {
+          "name": "Max RCF (g-force)",
+          "type": "number",
+          "allowed_values": "× g",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "max_rcf"
+        },
+        {
+          "name": "Low-binding",
+          "type": "picklist",
+          "allowed_values": [
+            "DNA low-binding",
+            "Protein low-binding",
+            "Standard"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "low_binding"
+        },
+        {
+          "name": "Capacity / Volume / Size",
+          "type": "number",
+          "allowed_values": "mL, µL, L or wells",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "capacity_volume_size"
+        },
+        {
+          "name": "Purity certs",
+          "type": "multi-select",
+          "allowed_values": [
+            "RNase-free",
+            "DNase-free",
+            "DNA-free",
+            "Endotoxin-free",
+            "Pyrogen-free",
+            "Human DNA-free",
+            "None"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_certs",
+          "multi_select": true
+        },
+        {
+          "name": "Material",
+          "type": "picklist",
+          "allowed_values": [
+            "Polypropylene",
+            "Polystyrene",
+            "Polyethylene",
+            "PET",
+            "PTFE",
+            "PES",
+            "Glass",
+            "Nitrile",
+            "Latex",
+            "Stainless steel",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "material"
+        },
+        {
+          "name": "Color",
+          "type": "picklist",
+          "allowed_values": [
+            "Clear",
+            "Amber",
+            "Black",
+            "White",
+            "Blue",
+            "Red",
+            "Green",
+            "Yellow",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "color"
+        },
+        {
+          "name": "Compatibility",
+          "type": "text",
+          "allowed_values": "equipment or chemical compatibility",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "compatibility"
+        },
+        {
+          "name": "Temperature range",
+          "type": "number",
+          "allowed_values": "°C (min to max)",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "temperature_range"
+        }
       ]
     },
     "microplates": {
@@ -68,18 +430,179 @@
       "form": "product",
       "table_name": "MICROPLATES_SPEC",
       "fields": [
-        {"name": "Sterility", "type": "picklist", "allowed_values": ["Sterile", "Non-Sterile", "Sterilizable"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterility"},
-        {"name": "Sterilization method", "type": "picklist", "allowed_values": ["Gamma irradiated", "EO gas", "E-beam", "Autoclavable", "Not sterilized"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterilization_method"},
-        {"name": "Well number", "type": "picklist", "allowed_values": ["6", "12", "24", "48", "96", "384", "1536"], "required": true, "product_only": false, "extractor": "regex", "pattern": "well_number"},
-        {"name": "Well bottom", "type": "picklist", "allowed_values": ["Flat", "Round (U)", "V", "Conical"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "well_bottom"},
-        {"name": "Surface treatment", "type": "picklist", "allowed_values": ["TC-treated", "Non-treated", "Poly-D-lysine", "Collagen-coated", "Ultra-low attachment", "High-binding"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "surface_treatment_microplate"},
-        {"name": "Color", "type": "picklist", "allowed_values": ["Clear", "Black", "White", "Black / clear bottom", "White / clear bottom"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "color_microplate"},
-        {"name": "Lid", "type": "picklist", "allowed_values": ["With lid", "No lid"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "lid"},
-        {"name": "Optical / assay readout", "type": "picklist", "allowed_values": ["UV-transparent", "Low-autofluorescence", "Opaque", "Standard"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "optical_assay_readout"},
-        {"name": "Purity certs", "type": "multi-select", "allowed_values": ["RNase-free", "DNase-free", "DNA-free", "Endotoxin-free", "Pyrogen-free", "Human DNA-free", "None"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "purity_certs", "multi_select": true},
-        {"name": "Material", "type": "picklist", "allowed_values": ["Polypropylene", "Polystyrene", "Polyethylene", "PET", "PTFE", "PES", "Glass", "Nitrile", "Latex", "Stainless steel", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "material"},
-        {"name": "Compatibility", "type": "text", "allowed_values": "equipment or chemical compatibility", "required": false, "product_only": false, "extractor": "regex", "pattern": "compatibility"},
-        {"name": "Temperature range", "type": "number", "allowed_values": "°C (min to max)", "required": false, "product_only": false, "extractor": "regex", "pattern": "temperature_range"}
+        {
+          "name": "Sterility",
+          "type": "picklist",
+          "allowed_values": [
+            "Sterile",
+            "Non-Sterile",
+            "Sterilizable"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility"
+        },
+        {
+          "name": "Well number",
+          "type": "picklist",
+          "allowed_values": [
+            "6",
+            "12",
+            "24",
+            "48",
+            "96",
+            "384",
+            "1536"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "well_number"
+        },
+        {
+          "name": "Well bottom",
+          "type": "picklist",
+          "allowed_values": [
+            "Flat",
+            "Round (U)",
+            "V",
+            "Conical"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "well_bottom"
+        },
+        {
+          "name": "Surface treatment",
+          "type": "picklist",
+          "allowed_values": [
+            "TC-treated",
+            "Non-treated",
+            "Poly-D-lysine",
+            "Collagen-coated",
+            "Ultra-low attachment",
+            "High-binding"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "surface_treatment_microplate"
+        },
+        {
+          "name": "Sterilization method",
+          "type": "picklist",
+          "allowed_values": [
+            "Gamma irradiated",
+            "EO gas",
+            "E-beam",
+            "Autoclavable",
+            "Not sterilized"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterilization_method"
+        },
+        {
+          "name": "Color",
+          "type": "picklist",
+          "allowed_values": [
+            "Clear",
+            "Black",
+            "White",
+            "Black / clear bottom",
+            "White / clear bottom"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "color_microplate"
+        },
+        {
+          "name": "Lid",
+          "type": "picklist",
+          "allowed_values": [
+            "With lid",
+            "No lid"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "lid"
+        },
+        {
+          "name": "Optical / assay readout",
+          "type": "picklist",
+          "allowed_values": [
+            "UV-transparent",
+            "Low-autofluorescence",
+            "Opaque",
+            "Standard"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "optical_assay_readout"
+        },
+        {
+          "name": "Purity certs",
+          "type": "multi-select",
+          "allowed_values": [
+            "RNase-free",
+            "DNase-free",
+            "DNA-free",
+            "Endotoxin-free",
+            "Pyrogen-free",
+            "Human DNA-free",
+            "None"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_certs",
+          "multi_select": true
+        },
+        {
+          "name": "Material",
+          "type": "picklist",
+          "allowed_values": [
+            "Polypropylene",
+            "Polystyrene",
+            "Polyethylene",
+            "PET",
+            "PTFE",
+            "PES",
+            "Glass",
+            "Nitrile",
+            "Latex",
+            "Stainless steel",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "material"
+        },
+        {
+          "name": "Compatibility",
+          "type": "text",
+          "allowed_values": "equipment or chemical compatibility",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "compatibility"
+        },
+        {
+          "name": "Temperature range",
+          "type": "number",
+          "allowed_values": "°C (min to max)",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "temperature_range"
+        }
       ]
     },
     "pipettes_tips": {
@@ -87,15 +610,144 @@
       "form": "product",
       "table_name": "PIPETTES_TIPS_SPEC",
       "fields": [
-        {"name": "Sterility", "type": "picklist", "allowed_values": ["Sterile", "Non-Sterile", "Sterilizable"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterility"},
-        {"name": "Sterilization method", "type": "picklist", "allowed_values": ["Gamma irradiated", "EO gas", "E-beam", "Autoclavable", "Not sterilized"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterilization_method"},
-        {"name": "Volume", "type": "picklist", "allowed_values": ["10 µL", "20 µL", "200 µL", "300 µL", "1000 µL", "1250 µL", "5 mL", "10 mL"], "required": true, "product_only": false, "extractor": "override", "override_key": "capacity_volume_size"},
-        {"name": "Filtered vs non-filtered", "type": "picklist", "allowed_values": ["Filtered", "Non-filtered"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "filtered_nonfiltered"},
-        {"name": "Rack format", "type": "picklist", "allowed_values": ["Racked", "Bulk / bag", "Refill / reload", "Stacked"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "rack_format"},
-        {"name": "Low-retention", "type": "picklist", "allowed_values": ["Low-retention", "Standard"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "low_retention"},
-        {"name": "Universal / pipette fit", "type": "picklist", "allowed_values": ["Universal", "Rainin LTS", "Eppendorf", "Gilson", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "pipette_fit"},
-        {"name": "Purity certs", "type": "multi-select", "allowed_values": ["RNase-free", "DNase-free", "DNA-free", "Endotoxin-free", "Pyrogen-free", "Human DNA-free", "None"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "purity_certs", "multi_select": true},
-        {"name": "Material", "type": "picklist", "allowed_values": ["Polypropylene", "Polystyrene", "Polyethylene", "PET", "PTFE", "PES", "Glass", "Nitrile", "Latex", "Stainless steel", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "material"}
+        {
+          "name": "Sterility",
+          "type": "picklist",
+          "allowed_values": [
+            "Sterile",
+            "Non-Sterile",
+            "Sterilizable"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility"
+        },
+        {
+          "name": "Volume",
+          "type": "picklist",
+          "allowed_values": [
+            "10 µL",
+            "20 µL",
+            "200 µL",
+            "300 µL",
+            "1000 µL",
+            "1250 µL",
+            "5 mL",
+            "10 mL"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "capacity_volume_size"
+        },
+        {
+          "name": "Filtered vs non-filtered",
+          "type": "picklist",
+          "allowed_values": [
+            "Filtered",
+            "Non-filtered"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "filtered_nonfiltered"
+        },
+        {
+          "name": "Sterilization method",
+          "type": "picklist",
+          "allowed_values": [
+            "Gamma irradiated",
+            "EO gas",
+            "E-beam",
+            "Autoclavable",
+            "Not sterilized"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterilization_method"
+        },
+        {
+          "name": "Rack format",
+          "type": "picklist",
+          "allowed_values": [
+            "Racked",
+            "Bulk / bag",
+            "Refill / reload",
+            "Stacked"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "rack_format"
+        },
+        {
+          "name": "Low-retention",
+          "type": "picklist",
+          "allowed_values": [
+            "Low-retention",
+            "Standard"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "low_retention"
+        },
+        {
+          "name": "Universal / pipette fit",
+          "type": "picklist",
+          "allowed_values": [
+            "Universal",
+            "Rainin LTS",
+            "Eppendorf",
+            "Gilson",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "pipette_fit"
+        },
+        {
+          "name": "Purity certs",
+          "type": "multi-select",
+          "allowed_values": [
+            "RNase-free",
+            "DNase-free",
+            "DNA-free",
+            "Endotoxin-free",
+            "Pyrogen-free",
+            "Human DNA-free",
+            "None"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "purity_certs",
+          "multi_select": true
+        },
+        {
+          "name": "Material",
+          "type": "picklist",
+          "allowed_values": [
+            "Polypropylene",
+            "Polystyrene",
+            "Polyethylene",
+            "PET",
+            "PTFE",
+            "PES",
+            "Glass",
+            "Nitrile",
+            "Latex",
+            "Stainless steel",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "material"
+        }
       ]
     },
     "filtration": {
@@ -103,14 +755,120 @@
       "form": "product",
       "table_name": "FILTRATION_SPEC",
       "fields": [
-        {"name": "Sterility", "type": "picklist", "allowed_values": ["Sterile", "Non-Sterile", "Sterilizable"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterility"},
-        {"name": "Sterilization method", "type": "picklist", "allowed_values": ["Gamma irradiated", "EO gas", "E-beam", "Autoclavable", "Not sterilized"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterilization_method"},
-        {"name": "Pore size", "type": "picklist", "allowed_values": ["0.1 µm", "0.2 µm", "0.22 µm", "0.45 µm", "0.8 µm", "1.0 µm", "5 µm"], "required": true, "product_only": false, "extractor": "regex", "pattern": "pore_size"},
-        {"name": "Membrane material", "type": "picklist", "allowed_values": ["PES", "PTFE", "Nylon", "Cellulose acetate", "PVDF", "Glass fiber", "MCE", "Regenerated cellulose"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "membrane_material"},
-        {"name": "Diameter", "type": "picklist", "allowed_values": ["4 mm", "13 mm", "25 mm", "33 mm", "47 mm", "90 mm"], "required": true, "product_only": false, "extractor": "override", "override_key": "capacity_volume_size"},
-        {"name": "Housing material", "type": "picklist", "allowed_values": ["Polypropylene", "Acrylic", "Polycarbonate"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "housing_material"},
-        {"name": "Luer connection", "type": "picklist", "allowed_values": ["Female luer-lock in / male slip out", "Luer-lock both ends", "Luer-slip both ends"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "luer_connection"},
-        {"name": "Compatibility", "type": "text", "allowed_values": "equipment or chemical compatibility", "required": false, "product_only": false, "extractor": "regex", "pattern": "compatibility"}
+        {
+          "name": "Sterility",
+          "type": "picklist",
+          "allowed_values": [
+            "Sterile",
+            "Non-Sterile",
+            "Sterilizable"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility"
+        },
+        {
+          "name": "Pore size",
+          "type": "picklist",
+          "allowed_values": [
+            "0.1 µm",
+            "0.2 µm",
+            "0.22 µm",
+            "0.45 µm",
+            "0.8 µm",
+            "1.0 µm",
+            "5 µm"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "pore_size"
+        },
+        {
+          "name": "Membrane material",
+          "type": "picklist",
+          "allowed_values": [
+            "PES",
+            "PTFE",
+            "Nylon",
+            "Cellulose acetate",
+            "PVDF",
+            "Glass fiber",
+            "MCE",
+            "Regenerated cellulose"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "membrane_material"
+        },
+        {
+          "name": "Diameter",
+          "type": "picklist",
+          "allowed_values": [
+            "4 mm",
+            "13 mm",
+            "25 mm",
+            "33 mm",
+            "47 mm",
+            "90 mm"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "capacity_volume_size"
+        },
+        {
+          "name": "Sterilization method",
+          "type": "picklist",
+          "allowed_values": [
+            "Gamma irradiated",
+            "EO gas",
+            "E-beam",
+            "Autoclavable",
+            "Not sterilized"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterilization_method"
+        },
+        {
+          "name": "Housing material",
+          "type": "picklist",
+          "allowed_values": [
+            "Polypropylene",
+            "Acrylic",
+            "Polycarbonate"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "housing_material"
+        },
+        {
+          "name": "Luer connection",
+          "type": "picklist",
+          "allowed_values": [
+            "Female luer-lock in / male slip out",
+            "Luer-lock both ends",
+            "Luer-slip both ends"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "luer_connection"
+        },
+        {
+          "name": "Compatibility",
+          "type": "text",
+          "allowed_values": "equipment or chemical compatibility",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "compatibility"
+        }
       ]
     },
     "syringes_needles": {
@@ -118,13 +876,94 @@
       "form": "product",
       "table_name": "SYRINGES_NEEDLES_SPEC",
       "fields": [
-        {"name": "Sterility", "type": "picklist", "allowed_values": ["Sterile", "Non-Sterile", "Sterilizable"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterility"},
-        {"name": "Sterilization method", "type": "picklist", "allowed_values": ["Gamma irradiated", "EO gas", "E-beam", "Autoclavable", "Not sterilized"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterilization_method"},
-        {"name": "Luer type", "type": "picklist", "allowed_values": ["Luer-lock", "Luer-slip"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "luer_type"},
-        {"name": "Needle gauge / length", "type": "text", "allowed_values": "gauge (G) and length (in)", "required": false, "product_only": false, "extractor": "regex", "pattern": "needle_gauge_length"},
-        {"name": "Capacity / Volume / Size", "type": "number", "allowed_values": "mL, µL, L or wells", "required": false, "product_only": false, "extractor": "override", "override_key": "capacity_volume_size"},
-        {"name": "Material", "type": "picklist", "allowed_values": ["Polypropylene", "Polystyrene", "Polyethylene", "PET", "PTFE", "PES", "Glass", "Nitrile", "Latex", "Stainless steel", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "material"},
-        {"name": "Compatibility", "type": "text", "allowed_values": "equipment or chemical compatibility", "required": false, "product_only": false, "extractor": "regex", "pattern": "compatibility"}
+        {
+          "name": "Sterility",
+          "type": "picklist",
+          "allowed_values": [
+            "Sterile",
+            "Non-Sterile",
+            "Sterilizable"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility"
+        },
+        {
+          "name": "Luer type",
+          "type": "picklist",
+          "allowed_values": [
+            "Luer-lock",
+            "Luer-slip"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "luer_type"
+        },
+        {
+          "name": "Sterilization method",
+          "type": "picklist",
+          "allowed_values": [
+            "Gamma irradiated",
+            "EO gas",
+            "E-beam",
+            "Autoclavable",
+            "Not sterilized"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterilization_method"
+        },
+        {
+          "name": "Needle gauge / length",
+          "type": "text",
+          "allowed_values": "gauge (G) and length (in)",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "needle_gauge_length"
+        },
+        {
+          "name": "Capacity / Volume / Size",
+          "type": "number",
+          "allowed_values": "mL, µL, L or wells",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "capacity_volume_size"
+        },
+        {
+          "name": "Material",
+          "type": "picklist",
+          "allowed_values": [
+            "Polypropylene",
+            "Polystyrene",
+            "Polyethylene",
+            "PET",
+            "PTFE",
+            "PES",
+            "Glass",
+            "Nitrile",
+            "Latex",
+            "Stainless steel",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "material"
+        },
+        {
+          "name": "Compatibility",
+          "type": "text",
+          "allowed_values": "equipment or chemical compatibility",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "compatibility"
+        }
       ]
     },
     "safety_ppe": {
@@ -132,13 +971,114 @@
       "form": "product",
       "table_name": "SAFETY_PPE_SPEC",
       "fields": [
-        {"name": "Sterility", "type": "picklist", "allowed_values": ["Sterile", "Non-Sterile", "Sterilizable"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterility"},
-        {"name": "Sterilization method", "type": "picklist", "allowed_values": ["Gamma irradiated", "EO gas", "E-beam", "Autoclavable", "Not sterilized"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterilization_method"},
-        {"name": "Type", "type": "picklist", "allowed_values": ["Gloves", "Lab coat", "Goggles", "Safety glasses", "Face shield", "Respirator", "Sleeves", "Shoe covers"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "ppe_type"},
-        {"name": "Material", "type": "picklist", "allowed_values": ["Nitrile", "Latex", "Vinyl", "Neoprene", "Polypropylene"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "ppe_material"},
-        {"name": "Size", "type": "picklist", "allowed_values": ["XS", "S", "M", "L", "XL", "XXL"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "apparel_size"},
-        {"name": "Powder-free", "type": "picklist", "allowed_values": ["Powder-free", "Powdered"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "powder_free"},
-        {"name": "Color", "type": "picklist", "allowed_values": ["Clear", "Amber", "Black", "White", "Blue", "Red", "Green", "Yellow", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "color"}
+        {
+          "name": "Type",
+          "type": "picklist",
+          "allowed_values": [
+            "Gloves",
+            "Lab coat",
+            "Goggles",
+            "Safety glasses",
+            "Face shield",
+            "Respirator",
+            "Sleeves",
+            "Shoe covers"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ppe_type"
+        },
+        {
+          "name": "Material",
+          "type": "picklist",
+          "allowed_values": [
+            "Nitrile",
+            "Latex",
+            "Vinyl",
+            "Neoprene",
+            "Polypropylene"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "ppe_material"
+        },
+        {
+          "name": "Size",
+          "type": "picklist",
+          "allowed_values": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "apparel_size"
+        },
+        {
+          "name": "Sterility",
+          "type": "picklist",
+          "allowed_values": [
+            "Sterile",
+            "Non-Sterile",
+            "Sterilizable"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility"
+        },
+        {
+          "name": "Sterilization method",
+          "type": "picklist",
+          "allowed_values": [
+            "Gamma irradiated",
+            "EO gas",
+            "E-beam",
+            "Autoclavable",
+            "Not sterilized"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterilization_method"
+        },
+        {
+          "name": "Powder-free",
+          "type": "picklist",
+          "allowed_values": [
+            "Powder-free",
+            "Powdered"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "powder_free"
+        },
+        {
+          "name": "Color",
+          "type": "picklist",
+          "allowed_values": [
+            "Clear",
+            "Amber",
+            "Black",
+            "White",
+            "Blue",
+            "Red",
+            "Green",
+            "Yellow",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "color"
+        }
       ]
     },
     "tubing_hoses": {
@@ -146,18 +1086,139 @@
       "form": "product",
       "table_name": "TUBING_HOSES_SPEC",
       "fields": [
-        {"name": "Sterility", "type": "picklist", "allowed_values": ["Sterile", "Non-Sterile", "Sterilizable"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterility"},
-        {"name": "Sterilization method", "type": "picklist", "allowed_values": ["Gamma irradiated", "EO gas", "E-beam", "Autoclavable", "Not sterilized"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "sterilization_method"},
-        {"name": "Inner diameter", "type": "number", "allowed_values": "in. or mm", "required": true, "product_only": false, "extractor": "regex", "pattern": "inner_diameter"},
-        {"name": "Outer diameter", "type": "number", "allowed_values": "in. or mm", "required": false, "product_only": false, "extractor": "regex", "pattern": "outer_diameter"},
-        {"name": "Wall thickness", "type": "number", "allowed_values": "in. or mm", "required": false, "product_only": false, "extractor": "regex", "pattern": "wall_thickness"},
-        {"name": "Length", "type": "number", "allowed_values": "ft. or m", "required": false, "product_only": false, "extractor": "regex", "pattern": "length_ft_m"},
-        {"name": "Tubing material", "type": "picklist", "allowed_values": ["PVC", "Silicone", "Natural rubber", "Latex", "TPE", "FKM", "PTFE", "Polyolefin elastomer", "Other"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "tubing_material"},
-        {"name": "Durometer", "type": "number", "allowed_values": "Shore A", "required": false, "product_only": false, "extractor": "regex", "pattern": "durometer"},
-        {"name": "Max pressure", "type": "number", "allowed_values": "psig", "required": false, "product_only": false, "extractor": "regex", "pattern": "max_pressure"},
-        {"name": "Tubing type", "type": "picklist", "allowed_values": ["Laboratory", "Pressure & vacuum", "Peristaltic pump", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "tubing_type"},
-        {"name": "Compatibility", "type": "text", "allowed_values": "equipment or chemical compatibility", "required": false, "product_only": false, "extractor": "regex", "pattern": "compatibility"},
-        {"name": "Temperature range", "type": "number", "allowed_values": "°C (min to max)", "required": false, "product_only": false, "extractor": "regex", "pattern": "temperature_range"}
+        {
+          "name": "Inner diameter",
+          "type": "number",
+          "allowed_values": "in. or mm",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "inner_diameter"
+        },
+        {
+          "name": "Tubing material",
+          "type": "picklist",
+          "allowed_values": [
+            "PVC",
+            "Silicone",
+            "Natural rubber",
+            "Latex",
+            "TPE",
+            "FKM",
+            "PTFE",
+            "Polyolefin elastomer",
+            "Other"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "tubing_material"
+        },
+        {
+          "name": "Sterility",
+          "type": "picklist",
+          "allowed_values": [
+            "Sterile",
+            "Non-Sterile",
+            "Sterilizable"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterility"
+        },
+        {
+          "name": "Sterilization method",
+          "type": "picklist",
+          "allowed_values": [
+            "Gamma irradiated",
+            "EO gas",
+            "E-beam",
+            "Autoclavable",
+            "Not sterilized"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sterilization_method"
+        },
+        {
+          "name": "Outer diameter",
+          "type": "number",
+          "allowed_values": "in. or mm",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "outer_diameter"
+        },
+        {
+          "name": "Wall thickness",
+          "type": "number",
+          "allowed_values": "in. or mm",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "wall_thickness"
+        },
+        {
+          "name": "Length",
+          "type": "number",
+          "allowed_values": "ft. or m",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "length_ft_m"
+        },
+        {
+          "name": "Durometer",
+          "type": "number",
+          "allowed_values": "Shore A",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "durometer"
+        },
+        {
+          "name": "Max pressure",
+          "type": "number",
+          "allowed_values": "psig",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "max_pressure"
+        },
+        {
+          "name": "Tubing type",
+          "type": "picklist",
+          "allowed_values": [
+            "Laboratory",
+            "Pressure & vacuum",
+            "Peristaltic pump",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "tubing_type"
+        },
+        {
+          "name": "Compatibility",
+          "type": "text",
+          "allowed_values": "equipment or chemical compatibility",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "compatibility"
+        },
+        {
+          "name": "Temperature range",
+          "type": "number",
+          "allowed_values": "°C (min to max)",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "temperature_range"
+        }
       ]
     },
     "cleaning_sterilization": {
@@ -165,12 +1226,80 @@
       "form": "product",
       "table_name": "CLEANING_STERILIZATION_SPEC",
       "fields": [
-        {"name": "Product type", "type": "picklist", "allowed_values": ["Sporicide", "Sterilant", "Disinfectant", "Sanitizer", "Detergent"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "cleaning_product_type"},
-        {"name": "Format", "type": "picklist", "allowed_values": ["Concentrate", "Ready-to-use"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "cleaning_format"},
-        {"name": "Active ingredient", "type": "text", "required": false, "product_only": false, "extractor": "regex", "pattern": "active_ingredient"},
-        {"name": "Efficacy", "type": "multi-select", "allowed_values": ["Bacteria", "Fungi", "Viruses", "Spores"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "efficacy", "multi_select": true},
-        {"name": "EPA registered", "type": "yes_no", "allowed_values": ["Yes", "No"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "epa_registered"},
-        {"name": "Use environment", "type": "picklist", "allowed_values": ["Cleanroom / critical area", "General lab"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "use_environment"}
+        {
+          "name": "Product type",
+          "type": "picklist",
+          "allowed_values": [
+            "Sporicide",
+            "Sterilant",
+            "Disinfectant",
+            "Sanitizer",
+            "Detergent"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cleaning_product_type"
+        },
+        {
+          "name": "Format",
+          "type": "picklist",
+          "allowed_values": [
+            "Concentrate",
+            "Ready-to-use"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cleaning_format"
+        },
+        {
+          "name": "Active ingredient",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "active_ingredient"
+        },
+        {
+          "name": "Efficacy",
+          "type": "multi-select",
+          "allowed_values": [
+            "Bacteria",
+            "Fungi",
+            "Viruses",
+            "Spores"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "efficacy",
+          "multi_select": true
+        },
+        {
+          "name": "EPA registered",
+          "type": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "epa_registered"
+        },
+        {
+          "name": "Use environment",
+          "type": "picklist",
+          "allowed_values": [
+            "Cleanroom / critical area",
+            "General lab"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "use_environment"
+        }
       ]
     },
     "labeling_tape": {
@@ -178,13 +1307,101 @@
       "form": "product",
       "table_name": "LABELING_TAPE_SPEC",
       "fields": [
-        {"name": "Width", "type": "number", "allowed_values": "mm or in.", "required": false, "product_only": false, "extractor": "regex", "pattern": "width"},
-        {"name": "Roll length", "type": "number", "allowed_values": "m", "required": false, "product_only": false, "extractor": "regex", "pattern": "roll_length"},
-        {"name": "Use", "type": "multi-select", "allowed_values": ["General purpose", "Cryogenic", "Freezer", "Autoclave / oven", "Incubator"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "labeling_use", "multi_select": true},
-        {"name": "Writable", "type": "yes_no", "allowed_values": ["Yes", "No"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "writable"},
-        {"name": "Material", "type": "picklist", "allowed_values": ["Polypropylene", "Polystyrene", "Polyethylene", "PET", "PTFE", "PES", "Glass", "Nitrile", "Latex", "Stainless steel", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "material"},
-        {"name": "Color", "type": "picklist", "allowed_values": ["Clear", "Amber", "Black", "White", "Blue", "Red", "Green", "Yellow", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "color"},
-        {"name": "Temperature range", "type": "number", "allowed_values": "°C (min to max)", "required": false, "product_only": false, "extractor": "regex", "pattern": "temperature_range"}
+        {
+          "name": "Width",
+          "type": "number",
+          "allowed_values": "mm or in.",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "width"
+        },
+        {
+          "name": "Roll length",
+          "type": "number",
+          "allowed_values": "m",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "roll_length"
+        },
+        {
+          "name": "Use",
+          "type": "multi-select",
+          "allowed_values": [
+            "General purpose",
+            "Cryogenic",
+            "Freezer",
+            "Autoclave / oven",
+            "Incubator"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "labeling_use",
+          "multi_select": true
+        },
+        {
+          "name": "Writable",
+          "type": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "writable"
+        },
+        {
+          "name": "Material",
+          "type": "picklist",
+          "allowed_values": [
+            "Polypropylene",
+            "Polystyrene",
+            "Polyethylene",
+            "PET",
+            "PTFE",
+            "PES",
+            "Glass",
+            "Nitrile",
+            "Latex",
+            "Stainless steel",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "material"
+        },
+        {
+          "name": "Color",
+          "type": "picklist",
+          "allowed_values": [
+            "Clear",
+            "Amber",
+            "Black",
+            "White",
+            "Blue",
+            "Red",
+            "Green",
+            "Yellow",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "color"
+        },
+        {
+          "name": "Temperature range",
+          "type": "number",
+          "allowed_values": "°C (min to max)",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "temperature_range"
+        }
       ]
     },
     "research_animal_diets": {
@@ -192,16 +1409,119 @@
       "form": "product",
       "table_name": "RESEARCH_ANIMAL_DIETS_SPEC",
       "fields": [
-        {"name": "Diet form", "type": "picklist", "allowed_values": ["Pellet", "Powder / meal", "Gel", "Liquid"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "diet_form"},
-        {"name": "Diet sterilization", "type": "picklist", "allowed_values": ["Autoclavable", "Irradiated", "None"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "diet_sterilization"},
-        {"name": "Target species", "type": "picklist", "allowed_values": ["Mouse", "Rat", "Rodents (general)", "Rabbit", "Guinea pig", "Other"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "target_species_diet"},
-        {"name": "Life stage", "type": "picklist", "allowed_values": ["Maintenance", "Growth & reproduction", "All life stages"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "life_stage"},
-        {"name": "Crude protein", "type": "number", "allowed_values": "%", "required": false, "product_only": false, "extractor": "regex", "pattern": "crude_protein"},
-        {"name": "Fat", "type": "number", "allowed_values": "%", "required": false, "product_only": false, "extractor": "regex", "pattern": "fat_pct"},
-        {"name": "Crude fiber", "type": "number", "allowed_values": "%", "required": false, "product_only": false, "extractor": "regex", "pattern": "crude_fiber"},
-        {"name": "Energy density", "type": "number", "allowed_values": "kcal/g", "required": false, "product_only": false, "extractor": "regex", "pattern": "energy_density"},
-        {"name": "Shelf life", "type": "number", "allowed_values": "months", "required": false, "product_only": false, "extractor": "regex", "pattern": "shelf_life_months"},
-        {"name": "Certified diet", "type": "yes_no", "allowed_values": ["Yes", "No"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "certified_diet"}
+        {
+          "name": "Diet form",
+          "type": "picklist",
+          "allowed_values": [
+            "Pellet",
+            "Powder / meal",
+            "Gel",
+            "Liquid"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "diet_form"
+        },
+        {
+          "name": "Diet sterilization",
+          "type": "picklist",
+          "allowed_values": [
+            "Autoclavable",
+            "Irradiated",
+            "None"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "diet_sterilization"
+        },
+        {
+          "name": "Target species",
+          "type": "picklist",
+          "allowed_values": [
+            "Mouse",
+            "Rat",
+            "Rodents (general)",
+            "Rabbit",
+            "Guinea pig",
+            "Other"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "target_species_diet"
+        },
+        {
+          "name": "Life stage",
+          "type": "picklist",
+          "allowed_values": [
+            "Maintenance",
+            "Growth & reproduction",
+            "All life stages"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "life_stage"
+        },
+        {
+          "name": "Crude protein",
+          "type": "number",
+          "allowed_values": "%",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "crude_protein"
+        },
+        {
+          "name": "Fat",
+          "type": "number",
+          "allowed_values": "%",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "fat_pct"
+        },
+        {
+          "name": "Crude fiber",
+          "type": "number",
+          "allowed_values": "%",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "crude_fiber"
+        },
+        {
+          "name": "Energy density",
+          "type": "number",
+          "allowed_values": "kcal/g",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "energy_density"
+        },
+        {
+          "name": "Shelf life",
+          "type": "number",
+          "allowed_values": "months",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "shelf_life_months"
+        },
+        {
+          "name": "Certified diet",
+          "type": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "certified_diet"
+        }
       ]
     },
     "microscopy_supplies": {
@@ -209,11 +1529,67 @@
       "form": "product",
       "table_name": "MICROSCOPY_SUPPLIES_SPEC",
       "fields": [
-        {"name": "Item type", "type": "picklist", "allowed_values": ["Slides", "Coverslips", "Immersion oil", "Mounting media", "Slide storage", "Other"], "required": true, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "microscopy_item_type"},
-        {"name": "Dimensions", "type": "number", "allowed_values": "mm", "required": false, "product_only": false, "extractor": "regex", "pattern": "dimensions_mm"},
-        {"name": "Corner style", "type": "picklist", "allowed_values": ["Clipped", "Square"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "corner_style"},
-        {"name": "Frosted", "type": "picklist", "allowed_values": ["Frosted end", "Plain"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "frosted"},
-        {"name": "Surface treatment", "type": "picklist", "allowed_values": ["Charged / adhesion", "Untreated"], "required": false, "product_only": false, "extractor": "controlled_vocabulary", "vocabulary_ref": "surface_treatment_microscopy"}
+        {
+          "name": "Item type",
+          "type": "picklist",
+          "allowed_values": [
+            "Slides",
+            "Coverslips",
+            "Immersion oil",
+            "Mounting media",
+            "Slide storage",
+            "Other"
+          ],
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "microscopy_item_type"
+        },
+        {
+          "name": "Dimensions",
+          "type": "number",
+          "allowed_values": "mm",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "dimensions_mm"
+        },
+        {
+          "name": "Corner style",
+          "type": "picklist",
+          "allowed_values": [
+            "Clipped",
+            "Square"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "corner_style"
+        },
+        {
+          "name": "Frosted",
+          "type": "picklist",
+          "allowed_values": [
+            "Frosted end",
+            "Plain"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "frosted"
+        },
+        {
+          "name": "Surface treatment",
+          "type": "picklist",
+          "allowed_values": [
+            "Charged / adhesion",
+            "Untreated"
+          ],
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "surface_treatment_microscopy"
+        }
       ]
     }
   }

@@ -675,9 +675,9 @@
     ],
     "toxicology_safety_assessment": [
       {
-        "id": "glp_toxicology",
-        "label": "GLP Toxicology",
-        "description": "Good Laboratory Practice-compliant nonclinical toxicology studies characterizing dose-related adverse effects of a test article. Includes single- and repeat-dose toxicity studies, dose range-finding studies, and regulatory (ICH/OECD-guideline) toxicology studies."
+        "id": "general_toxicology",
+        "label": "General Toxicology",
+        "description": "Good Laboratory Practice and non-GLP nonclinical toxicology studies characterizing dose-related adverse effects of a test article across the full dosing-duration spectrum. Includes acute single-dose, dose range-finding (DRF/MTD), subacute, subchronic, and chronic (including lifetime) repeat-dose toxicity studies in rodent and non-rodent species, plus carcinogenicity studies, typically per ICH/OECD-guideline toxicology protocols."
       },
       {
         "id": "safety_pharmacology",
@@ -693,11 +693,6 @@
         "id": "toxicokinetics",
         "label": "Toxicokinetics",
         "description": "Pharmacokinetic assessment integrated into toxicology studies to characterize systemic exposure to a test article. Includes TK sampling and analysis conducted alongside GLP toxicology studies to support dose-exposure-response relationships."
-      },
-      {
-        "id": "repeat_dose_chronic_studies",
-        "label": "Repeat-Dose / Chronic Studies",
-        "description": "Extended-duration toxicology studies assessing cumulative and chronic effects of repeated test article administration. Includes subchronic and chronic (up to lifetime) repeat-dose toxicity studies in rodent and non-rodent species."
       },
       {
         "id": "specialty_toxicology",
@@ -939,6 +934,11 @@
         "id": "risk_management",
         "label": "Risk Management",
         "description": "Development and maintenance of risk management plans and risk minimization measures for a product. Includes REMS/RMP development, risk minimization materials, and effectiveness assessments."
+      },
+      {
+        "id": "qppv_pv_system_services",
+        "label": "QPPV & PV System Services",
+        "description": "Provision of a Qualified Person for Pharmacovigilance (QPPV) or equivalent regional PV system role, and maintenance of the pharmacovigilance system itself, rather than case-level safety operations. Includes EU QPPV and deputy/back-up QPPV services, local PV contact (LPPV) services for individual countries, and Pharmacovigilance System Master File (PSMF) maintenance."
       }
     ],
     "heor_rwe_market_access": [

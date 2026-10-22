@@ -1,0 +1,39 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+systematic_literature_review,AI-assisted methods,1083,90,8.31,993,0,0
+systematic_literature_review,Category (L2/L3),1083,1083,100.0,0,0,0
+systematic_literature_review,Category UNSPSC,1083,0,0.0,1083,0,0
+systematic_literature_review,Currency,1083,24,2.22,1059,0,0
+systematic_literature_review,Description,1083,496,45.8,587,0,0
+systematic_literature_review,Development stage,1083,6,0.55,1077,0,0
+systematic_literature_review,Document links,1083,45,4.16,1038,0,0
+systematic_literature_review,Evidence topic,1083,43,3.97,1040,0,0
+systematic_literature_review,Geographic markets covered,1083,180,16.62,903,0,0
+systematic_literature_review,Grey literature included,1083,90,8.31,993,0,0
+systematic_literature_review,HTA-compliant methods,1083,90,8.31,993,0,0
+systematic_literature_review,Image URL,1083,0,0.0,1083,0,0
+systematic_literature_review,Indirect treatment comparison method,1083,0,0.0,1083,0,0
+systematic_literature_review,Inventory,1083,0,0.0,1083,0,0
+systematic_literature_review,Lead time (days),1083,0,0.0,1083,0,0
+systematic_literature_review,Listing UNSPSC,1083,0,0.0,1083,0,0
+systematic_literature_review,Listing type,1083,1083,100.0,0,0,0
+systematic_literature_review,Manufacturer SKU,1083,0,0.0,1083,0,0
+systematic_literature_review,Manufacturer name,1083,0,0.0,1083,0,0
+systematic_literature_review,Meta-analysis included,1083,90,8.31,993,0,0
+systematic_literature_review,Name,1083,1083,100.0,0,0,0
+systematic_literature_review,Peer-reviewed publication support,1083,90,8.31,993,0,0
+systematic_literature_review,Price per unit,1083,1042,96.21,41,0,0
+systematic_literature_review,Pricing model,1083,1083,100.0,0,0,0
+systematic_literature_review,Product / service URL,1083,45,4.16,1038,0,0
+systematic_literature_review,Product type supported,1083,5,0.46,1078,0,0
+systematic_literature_review,Quantity,1083,0,0.0,1083,0,0
+systematic_literature_review,Requester UNSPSC,1083,0,0.0,1083,0,0
+systematic_literature_review,Requester commodity code,1083,0,0.0,1083,0,0
+systematic_literature_review,Review type,1083,3,0.28,1080,0,0
+systematic_literature_review,SLR platform or tooling,1083,0,0.0,1083,0,0
+systematic_literature_review,Ship from,1083,0,0.0,1083,0,0
+systematic_literature_review,Strategic consulting included,1083,90,8.31,993,0,0
+systematic_literature_review,Supplier SKU,1083,0,0.0,1083,0,0
+systematic_literature_review,Target decision maker,1083,20,1.85,1063,0,0
+systematic_literature_review,Therapeutic areas,1083,20,1.85,1063,0,0
+systematic_literature_review,Unit,1083,0,0.0,1083,0,0
+systematic_literature_review,Unit of measure,1083,88,8.13,957,38,0

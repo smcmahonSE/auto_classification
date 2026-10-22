@@ -1,0 +1,40 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+toxicokinetics,21 CFR Part 11 systems,432,4,0.93,428,0,0
+toxicokinetics,ADA / immunogenicity,432,4,0.93,428,0,0
+toxicokinetics,Bioanalysis platform,432,0,0.0,432,0,0
+toxicokinetics,Category (L2/L3),432,432,100.0,0,0,0
+toxicokinetics,Category UNSPSC,432,0,0.0,432,0,0
+toxicokinetics,Currency,432,3,0.69,429,0,0
+toxicokinetics,Description,432,357,82.64,75,0,0
+toxicokinetics,Document links,432,5,1.16,427,0,0
+toxicokinetics,GLP status,432,88,20.37,344,0,0
+toxicokinetics,Image URL,432,0,0.0,432,0,0
+toxicokinetics,Inventory,432,0,0.0,432,0,0
+toxicokinetics,Lead time (days),432,0,0.0,432,0,0
+toxicokinetics,Listing UNSPSC,432,0,0.0,432,0,0
+toxicokinetics,Listing type,432,432,100.0,0,0,0
+toxicokinetics,Manufacturer SKU,432,0,0.0,432,0,0
+toxicokinetics,Manufacturer name,432,0,0.0,432,0,0
+toxicokinetics,Method validation lead time,432,0,0.0,432,0,0
+toxicokinetics,Modality supported,432,23,5.32,409,0,0
+toxicokinetics,Name,432,432,100.0,0,0,0
+toxicokinetics,PK analysis software,432,0,0.0,432,0,0
+toxicokinetics,Price per unit,432,326,75.46,106,0,0
+toxicokinetics,Pricing model,432,432,100.0,0,0,0
+toxicokinetics,Product / service URL,432,5,1.16,427,0,0
+toxicokinetics,Quantity,432,0,0.0,432,0,0
+toxicokinetics,Regulatory submission supported,432,0,0.0,432,0,0
+toxicokinetics,Requester UNSPSC,432,0,0.0,432,0,0
+toxicokinetics,Requester commodity code,432,0,0.0,432,0,0
+toxicokinetics,Run alongside tox study,432,4,0.93,428,0,0
+toxicokinetics,SEND datasets,432,4,0.93,428,0,0
+toxicokinetics,Sample matrix,432,64,14.81,368,0,0
+toxicokinetics,Sampling technique,432,0,0.0,432,0,0
+toxicokinetics,Ship from,432,0,0.0,432,0,0
+toxicokinetics,Species,432,49,11.34,383,0,0
+toxicokinetics,Study start lead time,432,0,0.0,432,0,0
+toxicokinetics,Supplier SKU,432,0,0.0,432,0,0
+toxicokinetics,Time to final report,432,0,0.0,432,0,0
+toxicokinetics,Unit,432,0,0.0,432,0,0
+toxicokinetics,Unit of measure,432,30,6.94,356,46,0
+toxicokinetics,Validation guidance,432,0,0.0,432,0,0

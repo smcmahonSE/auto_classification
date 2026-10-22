@@ -1,0 +1,48 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+post_auth_safety_studies_pass,Category (L2/L3),467,467,100.0,0,0,0
+post_auth_safety_studies_pass,Category UNSPSC,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Currency,467,23,4.93,444,0,0
+post_auth_safety_studies_pass,Data collection approach,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Data sources,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Decentralized or remote study model,467,6,1.28,461,0,0
+post_auth_safety_studies_pass,Deliverables,467,2,0.43,465,0,0
+post_auth_safety_studies_pass,Description,467,322,68.95,145,0,0
+post_auth_safety_studies_pass,Direct-to-patient data collection,467,6,1.28,461,0,0
+post_auth_safety_studies_pass,Document links,467,6,1.28,461,0,0
+post_auth_safety_studies_pass,Endpoints captured,467,2,0.43,465,0,0
+post_auth_safety_studies_pass,Follows ENCePP methods guide,467,6,1.28,461,0,0
+post_auth_safety_studies_pass,Follows GVP Module VIII,467,6,1.28,461,0,0
+post_auth_safety_studies_pass,Geographic coverage,467,2,0.43,465,0,0
+post_auth_safety_studies_pass,Image URL,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Interventional status,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Inventory,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Lead time (days),467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Listing UNSPSC,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Listing type,467,467,100.0,0,0,0
+post_auth_safety_studies_pass,Manufacturer SKU,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Manufacturer name,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Name,467,467,100.0,0,0,0
+post_auth_safety_studies_pass,Number of countries,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Patient population,467,1,0.21,466,0,0
+post_auth_safety_studies_pass,Patient-reported outcomes collected,467,6,1.28,461,0,0
+post_auth_safety_studies_pass,Price per unit,467,441,94.43,26,0,0
+post_auth_safety_studies_pass,Pricing model,467,467,100.0,0,0,0
+post_auth_safety_studies_pass,Product / service URL,467,6,1.28,461,0,0
+post_auth_safety_studies_pass,Product type,467,1,0.21,466,0,0
+post_auth_safety_studies_pass,Quantity,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Regulatory purpose,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Requester UNSPSC,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Requester commodity code,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Risk program supported,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Safety design,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Safety outcomes of interest,467,1,0.21,466,0,0
+post_auth_safety_studies_pass,Safety study type,467,55,11.78,412,0,0
+post_auth_safety_studies_pass,Scope of service,467,2,0.43,465,0,0
+post_auth_safety_studies_pass,Ship from,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Signal detection support,467,6,1.28,461,0,0
+post_auth_safety_studies_pass,Supplier SKU,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Target regulator,467,2,0.43,465,0,0
+post_auth_safety_studies_pass,Target sample size,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Therapeutic area,467,21,4.5,446,0,0
+post_auth_safety_studies_pass,Unit,467,0,0.0,467,0,0
+post_auth_safety_studies_pass,Unit of measure,467,94,20.13,347,26,0

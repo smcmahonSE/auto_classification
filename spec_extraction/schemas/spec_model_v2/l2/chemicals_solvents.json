@@ -10,6 +10,22 @@
       "table_name": "ALCOHOLS_SPEC",
       "fields": [
         {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
           "name": "Molecular Formula",
           "type": "text",
           "required": false,
@@ -25,22 +41,6 @@
           "extractor": "override",
           "override_key": "molecular_weight",
           "allowed_values": "g/mol"
-        },
-        {
-          "name": "CAS Number(s)",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "cas_number"
-        },
-        {
-          "name": "Purity",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "purity"
         },
         {
           "name": "Physical Form / State",
@@ -146,6 +146,22 @@
       "table_name": "ORGANIC_ACIDS_SPEC",
       "fields": [
         {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
           "name": "Molecular Formula",
           "type": "text",
           "required": false,
@@ -161,22 +177,6 @@
           "extractor": "override",
           "override_key": "molecular_weight",
           "allowed_values": "g/mol"
-        },
-        {
-          "name": "CAS Number(s)",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "cas_number"
-        },
-        {
-          "name": "Purity",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "purity"
         },
         {
           "name": "Physical Form / State",
@@ -282,6 +282,22 @@
       "table_name": "POLYOLS_SPEC",
       "fields": [
         {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
           "name": "Molecular Formula",
           "type": "text",
           "required": false,
@@ -297,22 +313,6 @@
           "extractor": "override",
           "override_key": "molecular_weight",
           "allowed_values": "g/mol"
-        },
-        {
-          "name": "CAS Number(s)",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "cas_number"
-        },
-        {
-          "name": "Purity",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "purity"
         },
         {
           "name": "Physical Form / State",
@@ -418,6 +418,22 @@
       "table_name": "SODIUM_SALTS_SPEC",
       "fields": [
         {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
           "name": "Molecular Formula",
           "type": "text",
           "required": false,
@@ -433,22 +449,6 @@
           "extractor": "override",
           "override_key": "molecular_weight",
           "allowed_values": "g/mol"
-        },
-        {
-          "name": "CAS Number(s)",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "cas_number"
-        },
-        {
-          "name": "Purity",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "purity"
         },
         {
           "name": "Physical Form / State",
@@ -554,6 +554,22 @@
       "table_name": "ESTERS_SPEC",
       "fields": [
         {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
           "name": "Molecular Formula",
           "type": "text",
           "required": false,
@@ -569,22 +585,6 @@
           "extractor": "override",
           "override_key": "molecular_weight",
           "allowed_values": "g/mol"
-        },
-        {
-          "name": "CAS Number(s)",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "cas_number"
-        },
-        {
-          "name": "Purity",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "purity"
         },
         {
           "name": "Physical Form / State",
@@ -690,6 +690,22 @@
       "table_name": "INORGANIC_COMPOUNDS_SALTS_SPEC",
       "fields": [
         {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
           "name": "Molecular Formula",
           "type": "text",
           "required": false,
@@ -705,22 +721,6 @@
           "extractor": "override",
           "override_key": "molecular_weight",
           "allowed_values": "g/mol"
-        },
-        {
-          "name": "CAS Number(s)",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "cas_number"
-        },
-        {
-          "name": "Purity",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "purity"
         },
         {
           "name": "Physical Form / State",
@@ -1256,6 +1256,22 @@
           "pattern": "labeled_target_pathway"
         },
         {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
           "name": "Mechanism / activity",
           "type": "picklist",
           "required": false,
@@ -1312,22 +1328,6 @@
           "extractor": "override",
           "override_key": "molecular_weight",
           "allowed_values": "g/mol"
-        },
-        {
-          "name": "CAS Number(s)",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "cas_number"
-        },
-        {
-          "name": "Purity",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "purity"
         },
         {
           "name": "Physical Form / State",
@@ -1446,6 +1446,22 @@
           ]
         },
         {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
           "name": "Physicochemical descriptors",
           "type": "text",
           "required": false,
@@ -1533,22 +1549,6 @@
           "extractor": "override",
           "override_key": "molecular_weight",
           "allowed_values": "g/mol"
-        },
-        {
-          "name": "CAS Number(s)",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "cas_number"
-        },
-        {
-          "name": "Purity",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "purity"
         },
         {
           "name": "Physical Form / State",
@@ -1670,6 +1670,22 @@
           ]
         },
         {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
           "name": "Water content",
           "type": "number",
           "required": false,
@@ -1694,22 +1710,6 @@
           "extractor": "override",
           "override_key": "molecular_weight",
           "allowed_values": "g/mol"
-        },
-        {
-          "name": "CAS Number(s)",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "cas_number"
-        },
-        {
-          "name": "Purity",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "purity"
         },
         {
           "name": "Physical Form / State",
@@ -1806,6 +1806,22 @@
           "allowed_values": "pH"
         },
         {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
           "name": "Concentration / molarity",
           "type": "number",
           "required": false,
@@ -1830,22 +1846,6 @@
           "extractor": "override",
           "override_key": "molecular_weight",
           "allowed_values": "g/mol"
-        },
-        {
-          "name": "CAS Number(s)",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "cas_number"
-        },
-        {
-          "name": "Purity",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "purity"
         },
         {
           "name": "Physical Form / State",
@@ -1967,6 +1967,22 @@
           ]
         },
         {
+          "name": "CAS Number(s)",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Purity",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "purity"
+        },
+        {
           "name": "Specific activity",
           "type": "number",
           "required": false,
@@ -1991,22 +2007,6 @@
           "extractor": "override",
           "override_key": "molecular_weight",
           "allowed_values": "g/mol"
-        },
-        {
-          "name": "CAS Number(s)",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "cas_number"
-        },
-        {
-          "name": "Purity",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "purity"
         },
         {
           "name": "Physical Form / State",

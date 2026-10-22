@@ -1,0 +1,50 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+late_phase_trials,Access program type,2326,0,0.0,2326,0,0
+late_phase_trials,Category (L2/L3),2326,2326,100.0,0,0,0
+late_phase_trials,Category UNSPSC,2326,0,0.0,2326,0,0
+late_phase_trials,Currency,2326,20,0.86,2306,0,0
+late_phase_trials,Data collection approach,2326,0,0.0,2326,0,0
+late_phase_trials,Data sources,2326,0,0.0,2326,0,0
+late_phase_trials,Decentralized or remote study model,2326,95,4.08,2231,0,0
+late_phase_trials,Deliverables,2326,0,0.0,2326,0,0
+late_phase_trials,Description,2326,2236,96.13,90,0,0
+late_phase_trials,Digital endpoints,2326,95,4.08,2231,0,0
+late_phase_trials,Direct-to-patient data collection,2326,95,4.08,2231,0,0
+late_phase_trials,Document links,2326,28,1.2,2298,0,0
+late_phase_trials,Endpoints captured,2326,5,0.21,2321,0,0
+late_phase_trials,Follow-up duration,2326,0,0.0,2326,0,0
+late_phase_trials,Geographic coverage,2326,38,1.63,2288,0,0
+late_phase_trials,Image URL,2326,0,0.0,2326,0,0
+late_phase_trials,Inventory,2326,0,0.0,2326,0,0
+late_phase_trials,Late-phase trial type,2326,0,0.0,2326,0,0
+late_phase_trials,Lead time (days),2326,0,0.0,2326,0,0
+late_phase_trials,Listing UNSPSC,2326,0,0.0,2326,0,0
+late_phase_trials,Listing type,2326,2326,100.0,0,0,0
+late_phase_trials,Long-term follow-up for cell or gene therapy,2326,95,4.08,2231,0,0
+late_phase_trials,Manufacturer SKU,2326,0,0.0,2326,0,0
+late_phase_trials,Manufacturer name,2326,0,0.0,2326,0,0
+late_phase_trials,Name,2326,2326,100.0,0,0,0
+late_phase_trials,Non-drug intervention studied,2326,0,0.0,2326,0,0
+late_phase_trials,Number of countries,2326,0,0.0,2326,0,0
+late_phase_trials,Patient population,2326,10,0.43,2316,0,0
+late_phase_trials,Patient-reported outcomes collected,2326,95,4.08,2231,0,0
+late_phase_trials,Pragmatic design,2326,95,4.08,2231,0,0
+late_phase_trials,Price per unit,2326,2146,92.26,180,0,0
+late_phase_trials,Pricing model,2326,2326,100.0,0,0,0
+late_phase_trials,Product / service URL,2326,28,1.2,2298,0,0
+late_phase_trials,Product type,2326,18,0.77,2308,0,0
+late_phase_trials,Quantity,2326,0,0.0,2326,0,0
+late_phase_trials,Randomized,2326,95,4.08,2231,0,0
+late_phase_trials,Regulatory purpose,2326,0,0.0,2326,0,0
+late_phase_trials,Requester UNSPSC,2326,0,0.0,2326,0,0
+late_phase_trials,Requester commodity code,2326,0,0.0,2326,0,0
+late_phase_trials,Scope of service,2326,1,0.04,2325,0,0
+late_phase_trials,Separate LTFU protocol,2326,95,4.08,2231,0,0
+late_phase_trials,Ship from,2326,0,0.0,2326,0,0
+late_phase_trials,Supplier SKU,2326,0,0.0,2326,0,0
+late_phase_trials,Target regulator,2326,22,0.95,2304,0,0
+late_phase_trials,Target sample size,2326,0,0.0,2326,0,0
+late_phase_trials,Therapeutic area,2326,63,2.71,2263,0,0
+late_phase_trials,Unit,2326,0,0.0,2326,0,0
+late_phase_trials,Unit of measure,2326,143,6.15,2167,16,0
+late_phase_trials,Vector type followed,2326,0,0.0,2326,0,0

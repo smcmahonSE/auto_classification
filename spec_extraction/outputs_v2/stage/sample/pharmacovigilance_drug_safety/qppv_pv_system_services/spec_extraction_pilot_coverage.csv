@@ -1,0 +1,33 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+qppv_pv_system_services,24/7 availability,742,25,3.37,717,0,0
+qppv_pv_system_services,AI or automation in delivery,742,25,3.37,717,0,0
+qppv_pv_system_services,Category (L2/L3),742,742,100.0,0,0,0
+qppv_pv_system_services,Category UNSPSC,742,0,0.0,742,0,0
+qppv_pv_system_services,Currency,742,1,0.13,741,0,0
+qppv_pv_system_services,Description,742,722,97.3,20,0,0
+qppv_pv_system_services,Development stage,742,2,0.27,740,0,0
+qppv_pv_system_services,Document links,742,2,0.27,740,0,0
+qppv_pv_system_services,Expanded access supported,742,25,3.37,717,0,0
+qppv_pv_system_services,Image URL,742,0,0.0,742,0,0
+qppv_pv_system_services,Inventory,742,0,0.0,742,0,0
+qppv_pv_system_services,Languages supported,742,0,0.0,742,0,0
+qppv_pv_system_services,Lead time (days),742,0,0.0,742,0,0
+qppv_pv_system_services,Listing UNSPSC,742,0,0.0,742,0,0
+qppv_pv_system_services,Listing type,742,742,100.0,0,0,0
+qppv_pv_system_services,Manufacturer SKU,742,0,0.0,742,0,0
+qppv_pv_system_services,Manufacturer name,742,0,0.0,742,0,0
+qppv_pv_system_services,Multilingual intake and translation,742,25,3.37,717,0,0
+qppv_pv_system_services,Name,742,742,100.0,0,0,0
+qppv_pv_system_services,Price per unit,742,735,99.06,7,0,0
+qppv_pv_system_services,Pricing model,742,742,100.0,0,0,0
+qppv_pv_system_services,Product / service URL,742,2,0.27,740,0,0
+qppv_pv_system_services,Product types covered,742,2,0.27,740,0,0
+qppv_pv_system_services,Quantity,742,0,0.0,742,0,0
+qppv_pv_system_services,Regions served,742,4,0.54,738,0,0
+qppv_pv_system_services,Requester UNSPSC,742,0,0.0,742,0,0
+qppv_pv_system_services,Requester commodity code,742,0,0.0,742,0,0
+qppv_pv_system_services,Service type,742,0,0.0,742,0,0
+qppv_pv_system_services,Ship from,742,0,0.0,742,0,0
+qppv_pv_system_services,Supplier SKU,742,0,0.0,742,0,0
+qppv_pv_system_services,Unit,742,0,0.0,742,0,0
+qppv_pv_system_services,Unit of measure,742,84,11.32,611,47,0

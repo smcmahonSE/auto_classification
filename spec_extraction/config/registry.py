@@ -20,4 +20,13 @@ MIGRATED_L2_IDS: set[str] = {
     "animal_models",
     "equipment_instruments_parts",
     "histology_pathology",
+    "analytical_reference_standards",
+    "dmpk_adme",
+    "bioanalysis",
+    "cmc_analytical_qc",
+    "regulatory_affairs",
+    "heor_rwe_market_access",
+    "phase_iv_post_marketing_studies",
+    "toxicology_safety_assessment",
+    "pharmacovigilance_drug_safety",
 }

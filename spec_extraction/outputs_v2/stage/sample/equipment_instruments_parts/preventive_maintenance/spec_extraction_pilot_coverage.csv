@@ -1,0 +1,30 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+preventive_maintenance,Brand / manufacturer,1155,0,0.0,1155,0,0
+preventive_maintenance,Capacity,1155,0,0.0,1155,0,0
+preventive_maintenance,Category (L2/L3),1155,1155,100.0,0,0,0
+preventive_maintenance,Category UNSPSC,1155,0,0.0,1155,0,0
+preventive_maintenance,Currency,1155,0,0.0,1155,0,0
+preventive_maintenance,Deliverable,1155,0,0.0,1155,0,0
+preventive_maintenance,Description,1155,65,5.63,1090,0,0
+preventive_maintenance,Document links,1155,2,0.17,1153,0,0
+preventive_maintenance,Equipment type,1155,21,1.82,1134,0,0
+preventive_maintenance,Image URL,1155,1,0.09,1154,0,0
+preventive_maintenance,Inventory,1155,0,0.0,1155,0,0
+preventive_maintenance,Lead time (days),1155,0,0.0,1155,0,0
+preventive_maintenance,Listing UNSPSC,1155,0,0.0,1155,0,0
+preventive_maintenance,Listing type,1155,1155,100.0,0,0,0
+preventive_maintenance,Manufacturer SKU,1155,0,0.0,1155,0,0
+preventive_maintenance,Manufacturer name,1155,0,0.0,1155,0,0
+preventive_maintenance,Name,1155,1155,100.0,0,0,0
+preventive_maintenance,Price per unit,1155,1153,99.83,2,0,0
+preventive_maintenance,Pricing model,1155,1155,100.0,0,0,0
+preventive_maintenance,Product / service URL,1155,2,0.17,1153,0,0
+preventive_maintenance,Protocol / scope,1155,0,0.0,1155,0,0
+preventive_maintenance,Quantity,1155,0,0.0,1155,0,0
+preventive_maintenance,Requester UNSPSC,1155,0,0.0,1155,0,0
+preventive_maintenance,Requester commodity code,1155,0,0.0,1155,0,0
+preventive_maintenance,Ship from,1155,0,0.0,1155,0,0
+preventive_maintenance,Supplier SKU,1155,0,0.0,1155,0,0
+preventive_maintenance,Turnaround,1155,0,0.0,1155,0,0
+preventive_maintenance,Unit,1155,0,0.0,1155,0,0
+preventive_maintenance,Unit of measure,1155,30,2.6,1116,9,0

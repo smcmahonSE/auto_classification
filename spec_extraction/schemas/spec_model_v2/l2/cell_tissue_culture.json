@@ -28,6 +28,53 @@
           ]
         },
         {
+          "name": "Format / physical form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_physical_form_cell",
+          "allowed_values": [
+            "Liquid",
+            "Powder",
+            "Cryopreserved vial",
+            "Proliferating flask",
+            "Gel"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_cell_culture",
+          "allowed_values": [
+            "15-30°C",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2 vapor phase"
+          ]
+        },
+        {
+          "name": "Species (cell source or intended use)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "species_cell_source",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Bovine",
+            "Hamster",
+            "Mammalian (general)",
+            "Other"
+          ]
+        },
+        {
           "name": "Glucose",
           "type": "picklist",
           "required": false,
@@ -137,36 +184,6 @@
           "pattern": "labeled_intended_cell_type"
         },
         {
-          "name": "Format / physical form",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "format_physical_form_cell",
-          "allowed_values": [
-            "Liquid",
-            "Powder",
-            "Cryopreserved vial",
-            "Proliferating flask",
-            "Gel"
-          ]
-        },
-        {
-          "name": "Storage conditions",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "storage_conditions_cell_culture",
-          "allowed_values": [
-            "15-30°C",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
-            "LN2 vapor phase"
-          ]
-        },
-        {
           "name": "Grade / regulatory",
           "type": "picklist",
           "required": false,
@@ -207,23 +224,6 @@
             "Dry ice",
             "LN2 dry shipper"
           ]
-        },
-        {
-          "name": "Species (cell source or intended use)",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "species_cell_source",
-          "allowed_values": [
-            "Human",
-            "Mouse",
-            "Rat",
-            "Bovine",
-            "Hamster",
-            "Mammalian (general)",
-            "Other"
-          ]
         }
       ]
     },
@@ -262,6 +262,53 @@
             "South America",
             "Canada",
             "EU",
+            "Other"
+          ]
+        },
+        {
+          "name": "Format / physical form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_physical_form_cell",
+          "allowed_values": [
+            "Liquid",
+            "Powder",
+            "Cryopreserved vial",
+            "Proliferating flask",
+            "Gel"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_cell_culture",
+          "allowed_values": [
+            "15-30°C",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2 vapor phase"
+          ]
+        },
+        {
+          "name": "Species (cell source or intended use)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "species_cell_source",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Bovine",
+            "Hamster",
+            "Mammalian (general)",
             "Other"
           ]
         },
@@ -351,36 +398,6 @@
           "pattern": "labeled_intended_cell_type"
         },
         {
-          "name": "Format / physical form",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "format_physical_form_cell",
-          "allowed_values": [
-            "Liquid",
-            "Powder",
-            "Cryopreserved vial",
-            "Proliferating flask",
-            "Gel"
-          ]
-        },
-        {
-          "name": "Storage conditions",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "storage_conditions_cell_culture",
-          "allowed_values": [
-            "15-30°C",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
-            "LN2 vapor phase"
-          ]
-        },
-        {
           "name": "Grade / regulatory",
           "type": "picklist",
           "required": false,
@@ -421,23 +438,6 @@
             "Dry ice",
             "LN2 dry shipper"
           ]
-        },
-        {
-          "name": "Species (cell source or intended use)",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "species_cell_source",
-          "allowed_values": [
-            "Human",
-            "Mouse",
-            "Rat",
-            "Bovine",
-            "Hamster",
-            "Mammalian (general)",
-            "Other"
-          ]
         }
       ]
     },
@@ -473,6 +473,53 @@
           "allowed_values": [
             "Standard",
             "Growth factor reduced"
+          ]
+        },
+        {
+          "name": "Format / physical form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_physical_form_cell",
+          "allowed_values": [
+            "Liquid",
+            "Powder",
+            "Cryopreserved vial",
+            "Proliferating flask",
+            "Gel"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_cell_culture",
+          "allowed_values": [
+            "15-30°C",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2 vapor phase"
+          ]
+        },
+        {
+          "name": "Species (cell source or intended use)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "species_cell_source",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Bovine",
+            "Hamster",
+            "Mammalian (general)",
+            "Other"
           ]
         },
         {
@@ -550,36 +597,6 @@
           "pattern": "labeled_intended_cell_type"
         },
         {
-          "name": "Format / physical form",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "format_physical_form_cell",
-          "allowed_values": [
-            "Liquid",
-            "Powder",
-            "Cryopreserved vial",
-            "Proliferating flask",
-            "Gel"
-          ]
-        },
-        {
-          "name": "Storage conditions",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "storage_conditions_cell_culture",
-          "allowed_values": [
-            "15-30°C",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
-            "LN2 vapor phase"
-          ]
-        },
-        {
           "name": "Grade / regulatory",
           "type": "picklist",
           "required": false,
@@ -620,23 +637,6 @@
             "Dry ice",
             "LN2 dry shipper"
           ]
-        },
-        {
-          "name": "Species (cell source or intended use)",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "species_cell_source",
-          "allowed_values": [
-            "Human",
-            "Mouse",
-            "Rat",
-            "Bovine",
-            "Hamster",
-            "Mammalian (general)",
-            "Other"
-          ]
         }
       ]
     },
@@ -657,6 +657,53 @@
             "5%",
             "2%",
             "DMSO-free"
+          ]
+        },
+        {
+          "name": "Format / physical form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_physical_form_cell",
+          "allowed_values": [
+            "Liquid",
+            "Powder",
+            "Cryopreserved vial",
+            "Proliferating flask",
+            "Gel"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_cell_culture",
+          "allowed_values": [
+            "15-30°C",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2 vapor phase"
+          ]
+        },
+        {
+          "name": "Species (cell source or intended use)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "species_cell_source",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Bovine",
+            "Hamster",
+            "Mammalian (general)",
+            "Other"
           ]
         },
         {
@@ -727,36 +774,6 @@
           "pattern": "labeled_intended_cell_type"
         },
         {
-          "name": "Format / physical form",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "format_physical_form_cell",
-          "allowed_values": [
-            "Liquid",
-            "Powder",
-            "Cryopreserved vial",
-            "Proliferating flask",
-            "Gel"
-          ]
-        },
-        {
-          "name": "Storage conditions",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "storage_conditions_cell_culture",
-          "allowed_values": [
-            "15-30°C",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
-            "LN2 vapor phase"
-          ]
-        },
-        {
           "name": "Grade / regulatory",
           "type": "picklist",
           "required": false,
@@ -797,23 +814,6 @@
             "Dry ice",
             "LN2 dry shipper"
           ]
-        },
-        {
-          "name": "Species (cell source or intended use)",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "species_cell_source",
-          "allowed_values": [
-            "Human",
-            "Mouse",
-            "Rat",
-            "Bovine",
-            "Hamster",
-            "Mammalian (general)",
-            "Other"
-          ]
         }
       ]
     },
@@ -850,6 +850,53 @@
             "10X",
             "0.05%",
             "0.25%"
+          ]
+        },
+        {
+          "name": "Format / physical form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_physical_form_cell",
+          "allowed_values": [
+            "Liquid",
+            "Powder",
+            "Cryopreserved vial",
+            "Proliferating flask",
+            "Gel"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_cell_culture",
+          "allowed_values": [
+            "15-30°C",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2 vapor phase"
+          ]
+        },
+        {
+          "name": "Species (cell source or intended use)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "species_cell_source",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Bovine",
+            "Hamster",
+            "Mammalian (general)",
+            "Other"
           ]
         },
         {
@@ -914,36 +961,6 @@
           "pattern": "labeled_intended_cell_type"
         },
         {
-          "name": "Format / physical form",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "format_physical_form_cell",
-          "allowed_values": [
-            "Liquid",
-            "Powder",
-            "Cryopreserved vial",
-            "Proliferating flask",
-            "Gel"
-          ]
-        },
-        {
-          "name": "Storage conditions",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "storage_conditions_cell_culture",
-          "allowed_values": [
-            "15-30°C",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
-            "LN2 vapor phase"
-          ]
-        },
-        {
           "name": "Grade / regulatory",
           "type": "picklist",
           "required": false,
@@ -983,23 +1000,6 @@
             "Ice pack",
             "Dry ice",
             "LN2 dry shipper"
-          ]
-        },
-        {
-          "name": "Species (cell source or intended use)",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "species_cell_source",
-          "allowed_values": [
-            "Human",
-            "Mouse",
-            "Rat",
-            "Bovine",
-            "Hamster",
-            "Mammalian (general)",
-            "Other"
           ]
         }
       ]
@@ -1074,6 +1074,36 @@
           ]
         },
         {
+          "name": "Format / physical form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_physical_form_cell",
+          "allowed_values": [
+            "Liquid",
+            "Powder",
+            "Cryopreserved vial",
+            "Proliferating flask",
+            "Gel"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_cell_culture",
+          "allowed_values": [
+            "15-30°C",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2 vapor phase"
+          ]
+        },
+        {
           "name": "Cell type / morphology",
           "type": "picklist",
           "required": false,
@@ -1145,36 +1175,6 @@
           "product_only": false,
           "extractor": "regex",
           "pattern": "labeled_karyotype"
-        },
-        {
-          "name": "Format / physical form",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "format_physical_form_cell",
-          "allowed_values": [
-            "Liquid",
-            "Powder",
-            "Cryopreserved vial",
-            "Proliferating flask",
-            "Gel"
-          ]
-        },
-        {
-          "name": "Storage conditions",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "storage_conditions_cell_culture",
-          "allowed_values": [
-            "15-30°C",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
-            "LN2 vapor phase"
-          ]
         },
         {
           "name": "Grade / regulatory",
@@ -1277,6 +1277,53 @@
           "allowed_values": "cells per vial"
         },
         {
+          "name": "Format / physical form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_physical_form_cell",
+          "allowed_values": [
+            "Liquid",
+            "Powder",
+            "Cryopreserved vial",
+            "Proliferating flask",
+            "Gel"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_cell_culture",
+          "allowed_values": [
+            "15-30°C",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2 vapor phase"
+          ]
+        },
+        {
+          "name": "Species (cell source or intended use)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "species_cell_source",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Bovine",
+            "Hamster",
+            "Mammalian (general)",
+            "Other"
+          ]
+        },
+        {
           "name": "Guaranteed population doublings",
           "type": "number",
           "required": false,
@@ -1362,36 +1409,6 @@
           "pattern": "labeled_intended_cell_type"
         },
         {
-          "name": "Format / physical form",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "format_physical_form_cell",
-          "allowed_values": [
-            "Liquid",
-            "Powder",
-            "Cryopreserved vial",
-            "Proliferating flask",
-            "Gel"
-          ]
-        },
-        {
-          "name": "Storage conditions",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "storage_conditions_cell_culture",
-          "allowed_values": [
-            "15-30°C",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
-            "LN2 vapor phase"
-          ]
-        },
-        {
           "name": "Grade / regulatory",
           "type": "picklist",
           "required": false,
@@ -1431,23 +1448,6 @@
             "Ice pack",
             "Dry ice",
             "LN2 dry shipper"
-          ]
-        },
-        {
-          "name": "Species (cell source or intended use)",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "species_cell_source",
-          "allowed_values": [
-            "Human",
-            "Mouse",
-            "Rat",
-            "Bovine",
-            "Hamster",
-            "Mammalian (general)",
-            "Other"
           ]
         }
       ]
@@ -1493,6 +1493,53 @@
             "Sendai",
             "Episomal",
             "mRNA"
+          ]
+        },
+        {
+          "name": "Format / physical form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "format_physical_form_cell",
+          "allowed_values": [
+            "Liquid",
+            "Powder",
+            "Cryopreserved vial",
+            "Proliferating flask",
+            "Gel"
+          ]
+        },
+        {
+          "name": "Storage conditions",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "storage_conditions_cell_culture",
+          "allowed_values": [
+            "15-30°C",
+            "2-8°C",
+            "-20°C",
+            "-80°C",
+            "LN2 vapor phase"
+          ]
+        },
+        {
+          "name": "Species (cell source or intended use)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "species_cell_source",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Bovine",
+            "Hamster",
+            "Mammalian (general)",
+            "Other"
           ]
         },
         {
@@ -1575,36 +1622,6 @@
           "pattern": "labeled_derived_cell_type_purity"
         },
         {
-          "name": "Format / physical form",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "format_physical_form_cell",
-          "allowed_values": [
-            "Liquid",
-            "Powder",
-            "Cryopreserved vial",
-            "Proliferating flask",
-            "Gel"
-          ]
-        },
-        {
-          "name": "Storage conditions",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "storage_conditions_cell_culture",
-          "allowed_values": [
-            "15-30°C",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
-            "LN2 vapor phase"
-          ]
-        },
-        {
           "name": "Grade / regulatory",
           "type": "picklist",
           "required": false,
@@ -1644,23 +1661,6 @@
             "Ice pack",
             "Dry ice",
             "LN2 dry shipper"
-          ]
-        },
-        {
-          "name": "Species (cell source or intended use)",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "species_cell_source",
-          "allowed_values": [
-            "Human",
-            "Mouse",
-            "Rat",
-            "Bovine",
-            "Hamster",
-            "Mammalian (general)",
-            "Other"
           ]
         }
       ]

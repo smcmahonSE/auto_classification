@@ -1,0 +1,39 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+literature_monitoring,24/7 availability,807,39,4.83,768,0,0
+literature_monitoring,AI or automation in delivery,807,39,4.83,768,0,0
+literature_monitoring,Article translation,807,39,4.83,768,0,0
+literature_monitoring,Category (L2/L3),807,807,100.0,0,0,0
+literature_monitoring,Category UNSPSC,807,0,0.0,807,0,0
+literature_monitoring,Currency,807,1,0.12,806,0,0
+literature_monitoring,Description,807,762,94.42,45,0,0
+literature_monitoring,Development stage,807,10,1.24,797,0,0
+literature_monitoring,Document links,807,1,0.12,806,0,0
+literature_monitoring,EMA MLM handling,807,39,4.83,768,0,0
+literature_monitoring,Expanded access supported,807,39,4.83,768,0,0
+literature_monitoring,Full-text article retrieval,807,39,4.83,768,0,0
+literature_monitoring,Image URL,807,0,0.0,807,0,0
+literature_monitoring,Inventory,807,0,0.0,807,0,0
+literature_monitoring,Languages supported,807,0,0.0,807,0,0
+literature_monitoring,Lead time (days),807,0,0.0,807,0,0
+literature_monitoring,Listing UNSPSC,807,0,0.0,807,0,0
+literature_monitoring,Listing type,807,807,100.0,0,0,0
+literature_monitoring,Literature databases,807,0,0.0,807,0,0
+literature_monitoring,Literature tool,807,0,0.0,807,0,0
+literature_monitoring,Manufacturer SKU,807,0,0.0,807,0,0
+literature_monitoring,Manufacturer name,807,0,0.0,807,0,0
+literature_monitoring,Multilingual intake and translation,807,39,4.83,768,0,0
+literature_monitoring,Name,807,807,100.0,0,0,0
+literature_monitoring,Price per unit,807,803,99.5,4,0,0
+literature_monitoring,Pricing model,807,807,100.0,0,0,0
+literature_monitoring,Product / service URL,807,1,0.12,806,0,0
+literature_monitoring,Product types covered,807,0,0.0,807,0,0
+literature_monitoring,Quantity,807,0,0.0,807,0,0
+literature_monitoring,Regions served,807,15,1.86,792,0,0
+literature_monitoring,Requester UNSPSC,807,0,0.0,807,0,0
+literature_monitoring,Requester commodity code,807,0,0.0,807,0,0
+literature_monitoring,Search scope,807,4,0.5,803,0,0
+literature_monitoring,Search strategy development,807,39,4.83,768,0,0
+literature_monitoring,Ship from,807,0,0.0,807,0,0
+literature_monitoring,Supplier SKU,807,0,0.0,807,0,0
+literature_monitoring,Unit,807,0,0.0,807,0,0
+literature_monitoring,Unit of measure,807,260,32.22,486,61,0

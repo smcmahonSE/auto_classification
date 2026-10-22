@@ -1,0 +1,513 @@
+{
+  "l2_id": "analytical_reference_standards",
+  "l2_label": "Analytical & Reference Standards",
+  "schema_name": "ANALYTICAL_REFERENCE_STANDARDS",
+  "l2_fields": [
+    {
+      "name": "Standard type",
+      "type": "picklist",
+      "required": true,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "standard_type_ref_standards",
+      "allowed_values": [
+        "Analytical standard",
+        "Certified reference material",
+        "QC control",
+        "Calibrator",
+        "Proficiency test sample"
+      ]
+    },
+    {
+      "name": "Analyte(s) / parameter",
+      "type": "text",
+      "required": true,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "labeled_analyte_parameter"
+    },
+    {
+      "name": "Format",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "physical_format_ref_standards",
+      "allowed_values": [
+        "Solution",
+        "Neat",
+        "Lyophilized",
+        "Powder"
+      ]
+    },
+    {
+      "name": "Regulatory status / intended use",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "regulatory_status_ref_standards",
+      "allowed_values": [
+        "RUO",
+        "IVD",
+        "FDA cleared",
+        "CE marked"
+      ]
+    },
+    {
+      "name": "Storage conditions",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "storage_conditions_ref_standards",
+      "multi_select": true,
+      "allowed_values": [
+        "Room temperature",
+        "2-8°C",
+        "-20°C",
+        "-60 to -80°C",
+        "Light sensitive"
+      ]
+    },
+    {
+      "name": "Expiration / validity",
+      "type": "text",
+      "required": false,
+      "product_only": false,
+      "extractor": "regex",
+      "pattern": "labeled_expiration_validity"
+    }
+  ],
+  "l3_nodes": {
+    "analytical_standards": {
+      "label": "Analytical Standards",
+      "table_name": "ANALYTICAL_STANDARDS_SPEC",
+      "fields": [
+        {
+          "name": "Technique",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "technique_ref_standards",
+          "multi_select": true,
+          "allowed_values": [
+            "ICP-OES",
+            "ICP-MS",
+            "AA",
+            "GC",
+            "LC",
+            "LC-MS",
+            "IC"
+          ]
+        },
+        {
+          "name": "Single or multi-component",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "single_multi_component",
+          "allowed_values": [
+            "Single-component",
+            "Multi-component"
+          ]
+        },
+        {
+          "name": "CAS number",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "cas_number"
+        },
+        {
+          "name": "Matrix / solvent",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_matrix_solvent"
+        },
+        {
+          "name": "Concentration",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "concentration_ug_mg_per_ml",
+          "allowed_values": "µg/mL or mg/mL"
+        },
+        {
+          "name": "Accreditation",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "accreditation_iso_standards",
+          "multi_select": true,
+          "allowed_values": [
+            "ISO 17034",
+            "ISO/IEC 17025",
+            "ISO 9001",
+            "ISO 13485"
+          ]
+        },
+        {
+          "name": "Certified / assigned value",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_certified_assigned_value"
+        },
+        {
+          "name": "Hazard classification",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "hazard_classification_simple",
+          "allowed_values": [
+            "Hazardous",
+            "Non-hazardous"
+          ]
+        },
+        {
+          "name": "Controlled substance status",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "controlled_substance_status",
+          "allowed_values": [
+            "Controlled",
+            "DEA-exempt",
+            "Not controlled"
+          ]
+        },
+        {
+          "name": "Traceability",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "traceability_ref_standards",
+          "allowed_values": [
+            "SI-traceable",
+            "NIST-traceable",
+            "Pharmacopeial",
+            "Not stated"
+          ]
+        }
+      ]
+    },
+    "reference_materials_crms": {
+      "label": "Reference Materials & CRMs",
+      "table_name": "REFERENCE_MATERIALS_CRMS_SPEC",
+      "fields": [
+        {
+          "name": "Issuing program",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "issuing_program_ref_materials",
+          "allowed_values": [
+            "NIST SRM",
+            "USP",
+            "EDQM (Ph. Eur.)",
+            "BP",
+            "JRC (ERM)",
+            "Commercial CRM"
+          ]
+        },
+        {
+          "name": "Matrix / solvent",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_matrix_solvent"
+        },
+        {
+          "name": "Concentration",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "concentration_ug_mg_per_ml",
+          "allowed_values": "µg/mL or mg/mL"
+        },
+        {
+          "name": "Traceability",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "traceability_ref_standards",
+          "allowed_values": [
+            "SI-traceable",
+            "NIST-traceable",
+            "Pharmacopeial",
+            "Not stated"
+          ]
+        },
+        {
+          "name": "Accreditation",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "accreditation_iso_standards",
+          "multi_select": true,
+          "allowed_values": [
+            "ISO 17034",
+            "ISO/IEC 17025",
+            "ISO 9001",
+            "ISO 13485"
+          ]
+        },
+        {
+          "name": "Certified / assigned value",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_certified_assigned_value"
+        },
+        {
+          "name": "Value type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "value_type_ref_materials",
+          "multi_select": true,
+          "allowed_values": [
+            "Certified",
+            "Reference",
+            "Information"
+          ]
+        },
+        {
+          "name": "Minimum sample size",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "minimum_sample_size",
+          "allowed_values": "mg or g"
+        },
+        {
+          "name": "Current lot / valid use date",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_current_lot_valid_use_date"
+        },
+        {
+          "name": "Homogeneity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_homogeneity"
+        }
+      ]
+    },
+    "quality_controls": {
+      "label": "Quality Controls",
+      "table_name": "QUALITY_CONTROLS_SPEC",
+      "fields": [
+        {
+          "name": "Assayed or unassayed",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "assayed_unassayed",
+          "allowed_values": [
+            "Assayed",
+            "Unassayed"
+          ]
+        },
+        {
+          "name": "Levels",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "levels_quality_controls",
+          "allowed_values": [
+            "Level 1",
+            "Level 2",
+            "Level 3",
+            "Bilevel",
+            "Trilevel",
+            "Low",
+            "Mid",
+            "High"
+          ]
+        },
+        {
+          "name": "Certified / assigned value",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_certified_assigned_value"
+        },
+        {
+          "name": "Number of analytes",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "number_of_analytes",
+          "allowed_values": "analytes"
+        },
+        {
+          "name": "Matrix / solvent",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_matrix_solvent"
+        },
+        {
+          "name": "Compatible instruments / assays",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_compatible_instruments"
+        },
+        {
+          "name": "Open-vial stability",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "open_vial_stability_days",
+          "allowed_values": "days"
+        },
+        {
+          "name": "Shelf life",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "shelf_life_months",
+          "allowed_values": "months"
+        },
+        {
+          "name": "Variants / allele frequency",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_variants_allele_frequency"
+        },
+        {
+          "name": "Quantification method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "quantification_method_qc",
+          "multi_select": true,
+          "allowed_values": [
+            "ddPCR",
+            "qPCR",
+            "NGS"
+          ]
+        },
+        {
+          "name": "Peer data program",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_peer_data_program"
+        },
+        {
+          "name": "Accreditation",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "accreditation_iso_standards",
+          "multi_select": true,
+          "allowed_values": [
+            "ISO 17034",
+            "ISO/IEC 17025",
+            "ISO 9001",
+            "ISO 13485"
+          ]
+        }
+      ]
+    },
+    "proficiency_testing": {
+      "label": "Proficiency Testing",
+      "table_name": "PROFICIENCY_TESTING_SPEC",
+      "fields": [
+        {
+          "name": "Program / matrix",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "program_matrix_proficiency_testing",
+          "allowed_values": [
+            "Water supply",
+            "Water pollution",
+            "Soil",
+            "Air & emissions",
+            "Radiochemistry",
+            "Microbiology",
+            "Clinical",
+            "Food"
+          ]
+        },
+        {
+          "name": "Study schedule",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_study_schedule"
+        },
+        {
+          "name": "Accreditation",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Regulatory acceptance",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "regulatory_acceptance_proficiency_testing",
+          "multi_select": true,
+          "allowed_values": [
+            "EPA",
+            "TNI / NELAC",
+            "CLIA",
+            "CAP"
+          ]
+        }
+      ]
+    }
+  }
+}

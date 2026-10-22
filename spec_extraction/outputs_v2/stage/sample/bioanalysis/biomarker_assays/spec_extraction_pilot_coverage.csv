@@ -1,0 +1,55 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+biomarker_assays,Analytical platform,67,2,2.99,65,0,0
+biomarker_assays,Assay source,67,0,0.0,67,0,0
+biomarker_assays,Automated sample preparation,67,2,2.99,65,0,0
+biomarker_assays,BEST biomarker category,67,12,17.91,55,0,0
+biomarker_assays,Bioanalytical guidance followed,67,0,0.0,67,0,0
+biomarker_assays,Biomarker type,67,0,0.0,67,0,0
+biomarker_assays,CLIA testing available,67,2,2.99,65,0,0
+biomarker_assays,Calibration standard levels,67,0,0.0,67,0,0
+biomarker_assays,Category (L2/L3),67,67,100.0,0,0,0
+biomarker_assays,Category UNSPSC,67,0,0.0,67,0,0
+biomarker_assays,Context of use defined,67,2,2.99,65,0,0
+biomarker_assays,Currency,67,0,0.0,67,0,0
+biomarker_assays,Description,67,54,80.6,13,0,0
+biomarker_assays,Development stage,67,35,52.24,32,0,0
+biomarker_assays,Document links,67,0,0.0,67,0,0
+biomarker_assays,Feasibility assessment,67,2,2.99,65,0,0
+biomarker_assays,Image URL,67,0,0.0,67,0,0
+biomarker_assays,Inventory,67,0,0.0,67,0,0
+biomarker_assays,Lead time (days),67,0,0.0,67,0,0
+biomarker_assays,Listing UNSPSC,67,0,0.0,67,0,0
+biomarker_assays,Listing type,67,67,100.0,0,0,0
+biomarker_assays,Lowest quantitation range,67,0,0.0,67,0,0
+biomarker_assays,Manufacturer SKU,67,0,0.0,67,0,0
+biomarker_assays,Manufacturer name,67,0,0.0,67,0,0
+biomarker_assays,Matrix lots for matrix effect,67,0,0.0,67,0,0
+biomarker_assays,Max analytes per sample,67,0,0.0,67,0,0
+biomarker_assays,Method development time,67,0,0.0,67,0,0
+biomarker_assays,Method origin,67,0,0.0,67,0,0
+biomarker_assays,Molecule modality,67,26,38.81,41,0,0
+biomarker_assays,Multiplex capability,67,2,2.99,65,0,0
+biomarker_assays,Name,67,67,100.0,0,0,0
+biomarker_assays,Off-the-shelf assay menu,67,2,2.99,65,0,0
+biomarker_assays,Price per unit,67,62,92.54,5,0,0
+biomarker_assays,Pricing model,67,67,100.0,0,0,0
+biomarker_assays,Product / service URL,67,0,0.0,67,0,0
+biomarker_assays,Quantity,67,0,0.0,67,0,0
+biomarker_assays,Real-time data portal,67,2,2.99,65,0,0
+biomarker_assays,Regulatory compliance level,67,0,0.0,67,0,0
+biomarker_assays,Regulatory submission supported,67,0,0.0,67,0,0
+biomarker_assays,Requester UNSPSC,67,0,0.0,67,0,0
+biomarker_assays,Requester commodity code,67,0,0.0,67,0,0
+biomarker_assays,Sample matrix,67,1,1.49,66,0,0
+biomarker_assays,Service scope,67,0,0.0,67,0,0
+biomarker_assays,Ship from,67,0,0.0,67,0,0
+biomarker_assays,Species,67,43,64.18,24,0,0
+biomarker_assays,Supplier SKU,67,0,0.0,67,0,0
+biomarker_assays,Therapeutic area experience,67,25,37.31,42,0,0
+biomarker_assays,Unit,67,0,0.0,67,0,0
+biomarker_assays,Unit of measure,67,30,44.78,37,0,0
+biomarker_assays,Validated assay library size,67,0,0.0,67,0,0
+biomarker_assays,Validation approach,67,0,0.0,67,0,0
+biomarker_assays,Validation deliverables,67,0,0.0,67,0,0
+biomarker_assays,Validation parameters,67,2,2.99,65,0,0
+biomarker_assays,Validation type,67,0,0.0,67,0,0

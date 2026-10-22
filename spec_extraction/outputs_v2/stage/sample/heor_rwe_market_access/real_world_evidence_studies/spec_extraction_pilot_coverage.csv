@@ -1,0 +1,40 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+real_world_evidence_studies,AI-assisted methods,383,5,1.31,378,0,0
+real_world_evidence_studies,Category (L2/L3),383,383,100.0,0,0,0
+real_world_evidence_studies,Category UNSPSC,383,0,0.0,383,0,0
+real_world_evidence_studies,Currency,383,2,0.52,381,0,0
+real_world_evidence_studies,Data country of origin,383,8,2.09,375,0,0
+real_world_evidence_studies,Data linkage,383,5,1.31,378,0,0
+real_world_evidence_studies,Data source type,383,5,1.31,378,0,0
+real_world_evidence_studies,Deliverables,383,0,0.0,383,0,0
+real_world_evidence_studies,Description,383,59,15.4,324,0,0
+real_world_evidence_studies,Development stage,383,43,11.23,340,0,0
+real_world_evidence_studies,Document links,383,3,0.78,380,0,0
+real_world_evidence_studies,Geographic markets covered,383,8,2.09,375,0,0
+real_world_evidence_studies,Image URL,383,0,0.0,383,0,0
+real_world_evidence_studies,Intended use of evidence,383,0,0.0,383,0,0
+real_world_evidence_studies,Inventory,383,0,0.0,383,0,0
+real_world_evidence_studies,Lead time (days),383,0,0.0,383,0,0
+real_world_evidence_studies,Listing UNSPSC,383,0,0.0,383,0,0
+real_world_evidence_studies,Listing type,383,383,100.0,0,0,0
+real_world_evidence_studies,Manufacturer SKU,383,0,0.0,383,0,0
+real_world_evidence_studies,Manufacturer name,383,0,0.0,383,0,0
+real_world_evidence_studies,Name,383,383,100.0,0,0,0
+real_world_evidence_studies,Peer-reviewed publication support,383,5,1.31,378,0,0
+real_world_evidence_studies,Price per unit,383,360,93.99,23,0,0
+real_world_evidence_studies,Pricing model,383,383,100.0,0,0,0
+real_world_evidence_studies,Product / service URL,383,3,0.78,380,0,0
+real_world_evidence_studies,Product type supported,383,3,0.78,380,0,0
+real_world_evidence_studies,Proprietary data asset used,383,0,0.0,383,0,0
+real_world_evidence_studies,Quantity,383,0,0.0,383,0,0
+real_world_evidence_studies,Requester UNSPSC,383,0,0.0,383,0,0
+real_world_evidence_studies,Requester commodity code,383,0,0.0,383,0,0
+real_world_evidence_studies,Ship from,383,0,0.0,383,0,0
+real_world_evidence_studies,Strategic consulting included,383,5,1.31,378,0,0
+real_world_evidence_studies,Study design,383,65,16.97,318,0,0
+real_world_evidence_studies,Study timing,383,52,13.58,331,0,0
+real_world_evidence_studies,Supplier SKU,383,0,0.0,383,0,0
+real_world_evidence_studies,Target decision maker,383,20,5.22,363,0,0
+real_world_evidence_studies,Therapeutic areas,383,2,0.52,381,0,0
+real_world_evidence_studies,Unit,383,0,0.0,383,0,0
+real_world_evidence_studies,Unit of measure,383,8,2.09,375,0,0

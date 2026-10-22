@@ -1,0 +1,44 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+method_development_validation_bioanalysis,Automated sample preparation,2282,36,1.58,2246,0,0
+method_development_validation_bioanalysis,Bioanalytical guidance followed,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Calibration standard levels,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Category (L2/L3),2282,2282,100.0,0,0,0
+method_development_validation_bioanalysis,Category UNSPSC,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Currency,2282,9,0.39,2273,0,0
+method_development_validation_bioanalysis,Description,2282,894,39.18,1388,0,0
+method_development_validation_bioanalysis,Development stage,2282,28,1.23,2254,0,0
+method_development_validation_bioanalysis,Document links,2282,4,0.18,2278,0,0
+method_development_validation_bioanalysis,Feasibility assessment,2282,36,1.58,2246,0,0
+method_development_validation_bioanalysis,Image URL,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Inventory,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Lead time (days),2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Listing UNSPSC,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Listing type,2282,2282,100.0,0,0,0
+method_development_validation_bioanalysis,Manufacturer SKU,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Manufacturer name,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Matrix lots for matrix effect,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Method development time,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Method origin,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Molecule modality,2282,38,1.67,2244,0,0
+method_development_validation_bioanalysis,Name,2282,2282,100.0,0,0,0
+method_development_validation_bioanalysis,Price per unit,2282,2163,94.79,119,0,0
+method_development_validation_bioanalysis,Pricing model,2282,2282,100.0,0,0,0
+method_development_validation_bioanalysis,Product / service URL,2282,4,0.18,2278,0,0
+method_development_validation_bioanalysis,Quantity,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Real-time data portal,2282,36,1.58,2246,0,0
+method_development_validation_bioanalysis,Regulatory compliance level,2282,4,0.18,2278,0,0
+method_development_validation_bioanalysis,Regulatory submission supported,2282,2,0.09,2280,0,0
+method_development_validation_bioanalysis,Requester UNSPSC,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Requester commodity code,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Sample matrix,2282,77,3.37,2205,0,0
+method_development_validation_bioanalysis,Service scope,2282,335,14.68,1947,0,0
+method_development_validation_bioanalysis,Ship from,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Species,2282,114,5.0,2168,0,0
+method_development_validation_bioanalysis,Supplier SKU,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Therapeutic area experience,2282,60,2.63,2222,0,0
+method_development_validation_bioanalysis,Unit,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Unit of measure,2282,558,24.45,1692,32,0
+method_development_validation_bioanalysis,Validated assay library size,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Validation deliverables,2282,0,0.0,2282,0,0
+method_development_validation_bioanalysis,Validation parameters,2282,38,1.67,2244,0,0
+method_development_validation_bioanalysis,Validation type,2282,0,0.0,2282,0,0

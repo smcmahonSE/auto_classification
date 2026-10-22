@@ -1,0 +1,30 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+service_contracts,Brand / manufacturer,258,0,0.0,258,0,0
+service_contracts,Capacity,258,0,0.0,258,0,0
+service_contracts,Category (L2/L3),258,258,100.0,0,0,0
+service_contracts,Category UNSPSC,258,0,0.0,258,0,0
+service_contracts,Currency,258,3,1.16,255,0,0
+service_contracts,Deliverable,258,0,0.0,258,0,0
+service_contracts,Description,258,223,86.43,35,0,0
+service_contracts,Document links,258,3,1.16,255,0,0
+service_contracts,Equipment type,258,17,6.59,241,0,0
+service_contracts,Image URL,258,2,0.78,256,0,0
+service_contracts,Inventory,258,0,0.0,258,0,0
+service_contracts,Lead time (days),258,0,0.0,258,0,0
+service_contracts,Listing UNSPSC,258,0,0.0,258,0,0
+service_contracts,Listing type,258,258,100.0,0,0,0
+service_contracts,Manufacturer SKU,258,0,0.0,258,0,0
+service_contracts,Manufacturer name,258,0,0.0,258,0,0
+service_contracts,Name,258,258,100.0,0,0,0
+service_contracts,Price per unit,258,248,96.12,10,0,0
+service_contracts,Pricing model,258,258,100.0,0,0,0
+service_contracts,Product / service URL,258,3,1.16,255,0,0
+service_contracts,Protocol / scope,258,0,0.0,258,0,0
+service_contracts,Quantity,258,0,0.0,258,0,0
+service_contracts,Requester UNSPSC,258,0,0.0,258,0,0
+service_contracts,Requester commodity code,258,0,0.0,258,0,0
+service_contracts,Ship from,258,0,0.0,258,0,0
+service_contracts,Supplier SKU,258,0,0.0,258,0,0
+service_contracts,Turnaround,258,0,0.0,258,0,0
+service_contracts,Unit,258,0,0.0,258,0,0
+service_contracts,Unit of measure,258,5,1.94,253,0,0

@@ -1,0 +1,46 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+method_development_validation_cmc,Analytical quality by design,1100,7,0.64,1093,0,0
+method_development_validation_cmc,Analytical technique,1100,165,15.0,935,0,0
+method_development_validation_cmc,Category (L2/L3),1100,1100,100.0,0,0,0
+method_development_validation_cmc,Category UNSPSC,1100,0,0.0,1100,0,0
+method_development_validation_cmc,Controlled substances accepted,1100,7,0.64,1093,0,0
+method_development_validation_cmc,Currency,1100,15,1.36,1085,0,0
+method_development_validation_cmc,Deliverables,1100,77,7.0,1023,0,0
+method_development_validation_cmc,Description,1100,549,49.91,551,0,0
+method_development_validation_cmc,Development stage,1100,30,2.73,1070,0,0
+method_development_validation_cmc,Document links,1100,7,0.64,1093,0,0
+method_development_validation_cmc,Dosage form,1100,4,0.36,1096,0,0
+method_development_validation_cmc,Expedited turnaround available,1100,7,0.64,1093,0,0
+method_development_validation_cmc,Forced degradation studies,1100,7,0.64,1093,0,0
+method_development_validation_cmc,GMP status,1100,5,0.45,1094,1,0
+method_development_validation_cmc,Highly potent compounds accepted,1100,7,0.64,1093,0,0
+method_development_validation_cmc,Image URL,1100,0,0.0,1100,0,0
+method_development_validation_cmc,Inventory,1100,0,0.0,1100,0,0
+method_development_validation_cmc,Lead time (days),1100,0,0.0,1100,0,0
+method_development_validation_cmc,Listing UNSPSC,1100,0,0.0,1100,0,0
+method_development_validation_cmc,Listing type,1100,1100,100.0,0,0,0
+method_development_validation_cmc,Manufacturer SKU,1100,0,0.0,1100,0,0
+method_development_validation_cmc,Manufacturer name,1100,0,0.0,1100,0,0
+method_development_validation_cmc,Material tested,1100,23,2.09,1077,0,0
+method_development_validation_cmc,Method lifecycle activity,1100,493,44.82,607,0,0
+method_development_validation_cmc,Method purpose,1100,23,2.09,1077,0,0
+method_development_validation_cmc,Method source,1100,0,0.0,1100,0,0
+method_development_validation_cmc,Name,1100,1100,100.0,0,0,0
+method_development_validation_cmc,Pharmacopeia,1100,6,0.55,1094,0,0
+method_development_validation_cmc,Price per unit,1100,1091,99.18,9,0,0
+method_development_validation_cmc,Pricing model,1100,1100,100.0,0,0,0
+method_development_validation_cmc,Product / service URL,1100,7,0.64,1093,0,0
+method_development_validation_cmc,Product modality,1100,15,1.36,1085,0,0
+method_development_validation_cmc,Quantity,1100,0,0.0,1100,0,0
+method_development_validation_cmc,Requester UNSPSC,1100,0,0.0,1100,0,0
+method_development_validation_cmc,Requester commodity code,1100,0,0.0,1100,0,0
+method_development_validation_cmc,Ship from,1100,0,0.0,1100,0,0
+method_development_validation_cmc,Standard turnaround,1100,0,0.0,1100,0,0
+method_development_validation_cmc,Supplier SKU,1100,0,0.0,1100,0,0
+method_development_validation_cmc,Target regulatory agency,1100,1,0.09,1099,0,0
+method_development_validation_cmc,Transfer lab role,1100,15,1.36,1085,0,0
+method_development_validation_cmc,Unit,1100,0,0.0,1100,0,0
+method_development_validation_cmc,Unit of measure,1100,88,8.0,977,35,0
+method_development_validation_cmc,Validation approach,1100,0,0.0,1100,0,0
+method_development_validation_cmc,Validation guideline,1100,0,0.0,1100,0,0
+method_development_validation_cmc,Validation parameters,1100,24,2.18,1076,0,0

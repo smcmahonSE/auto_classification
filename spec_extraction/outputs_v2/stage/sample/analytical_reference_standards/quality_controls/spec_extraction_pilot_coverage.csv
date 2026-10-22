@@ -1,0 +1,42 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+quality_controls,Accreditation,1857,83,4.47,1774,0,0
+quality_controls,Analyte(s) / parameter,1857,0,0.0,1857,0,0
+quality_controls,Assayed or unassayed,1857,3,0.16,1854,0,0
+quality_controls,Category (L2/L3),1857,1857,100.0,0,0,0
+quality_controls,Category UNSPSC,1857,0,0.0,1857,0,0
+quality_controls,Certified / assigned value,1857,0,0.0,1857,0,0
+quality_controls,Compatible instruments / assays,1857,0,0.0,1857,0,0
+quality_controls,Currency,1857,10,0.54,1847,0,0
+quality_controls,Description,1857,1004,54.07,853,0,0
+quality_controls,Document links,1857,24,1.29,1833,0,0
+quality_controls,Expiration / validity,1857,0,0.0,1857,0,0
+quality_controls,Format,1857,62,3.34,1795,0,0
+quality_controls,Image URL,1857,0,0.0,1857,0,0
+quality_controls,Inventory,1857,0,0.0,1857,0,0
+quality_controls,Lead time (days),1857,0,0.0,1857,0,0
+quality_controls,Levels,1857,191,10.29,1556,110,0
+quality_controls,Listing UNSPSC,1857,0,0.0,1857,0,0
+quality_controls,Listing type,1857,1857,100.0,0,0,0
+quality_controls,Manufacturer SKU,1857,0,0.0,1857,0,0
+quality_controls,Manufacturer name,1857,0,0.0,1857,0,0
+quality_controls,Matrix / solvent,1857,4,0.22,1853,0,0
+quality_controls,Name,1857,1857,100.0,0,0,0
+quality_controls,Number of analytes,1857,0,0.0,1857,0,0
+quality_controls,Open-vial stability,1857,0,0.0,1857,0,0
+quality_controls,Peer data program,1857,0,0.0,1857,0,0
+quality_controls,Price per unit,1857,1842,99.19,15,0,0
+quality_controls,Pricing model,1857,1857,100.0,0,0,0
+quality_controls,Product / service URL,1857,24,1.29,1833,0,0
+quality_controls,Quantification method,1857,1,0.05,1856,0,0
+quality_controls,Quantity,1857,0,0.0,1857,0,0
+quality_controls,Regulatory status / intended use,1857,15,0.81,1842,0,0
+quality_controls,Requester UNSPSC,1857,0,0.0,1857,0,0
+quality_controls,Requester commodity code,1857,0,0.0,1857,0,0
+quality_controls,Shelf life,1857,21,1.13,1836,0,0
+quality_controls,Ship from,1857,0,0.0,1857,0,0
+quality_controls,Standard type,1857,635,34.19,1218,4,0
+quality_controls,Storage conditions,1857,85,4.58,1772,0,0
+quality_controls,Supplier SKU,1857,0,0.0,1857,0,0
+quality_controls,Unit,1857,0,0.0,1857,0,0
+quality_controls,Unit of measure,1857,286,15.4,1366,205,0
+quality_controls,Variants / allele frequency,1857,0,0.0,1857,0,0

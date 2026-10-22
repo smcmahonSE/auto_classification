@@ -1,0 +1,45 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+genetic_toxicology,Ames format,577,34,5.89,543,0,0
+genetic_toxicology,Assay,577,6,1.04,571,0,0
+genetic_toxicology,Category (L2/L3),577,577,100.0,0,0,0
+genetic_toxicology,Category UNSPSC,577,0,0.0,577,0,0
+genetic_toxicology,Currency,577,2,0.35,575,0,0
+genetic_toxicology,Description,577,555,96.19,22,0,0
+genetic_toxicology,Document links,577,20,3.47,557,0,0
+genetic_toxicology,Enhanced Ames for nitrosamines,577,22,3.81,555,0,0
+genetic_toxicology,Follow-up assay,577,42,7.28,535,0,0
+genetic_toxicology,GLP status,577,7,1.21,570,0,0
+genetic_toxicology,ICH S2 battery option,577,0,0.0,577,0,0
+genetic_toxicology,ICH guidance,577,0,0.0,577,0,0
+genetic_toxicology,Image URL,577,0,0.0,577,0,0
+genetic_toxicology,In silico (Q)SAR,577,22,3.81,555,0,0
+genetic_toxicology,In vivo species,577,59,10.23,518,0,0
+genetic_toxicology,Integrated into tox study,577,0,0.0,577,0,0
+genetic_toxicology,Inventory,577,0,0.0,577,0,0
+genetic_toxicology,Lead time (days),577,0,0.0,577,0,0
+genetic_toxicology,Listing UNSPSC,577,0,0.0,577,0,0
+genetic_toxicology,Listing type,577,577,100.0,0,0,0
+genetic_toxicology,Mammalian cell line,577,0,0.0,577,0,0
+genetic_toxicology,Manufacturer SKU,577,0,0.0,577,0,0
+genetic_toxicology,Manufacturer name,577,0,0.0,577,0,0
+genetic_toxicology,Micronucleus scoring method,577,0,0.0,577,0,0
+genetic_toxicology,Modality supported,577,3,0.52,574,0,0
+genetic_toxicology,Name,577,577,100.0,0,0,0
+genetic_toxicology,OECD test guideline,577,22,3.81,555,0,0
+genetic_toxicology,Price per unit,577,396,68.63,181,0,0
+genetic_toxicology,Pricing model,577,577,100.0,0,0,0
+genetic_toxicology,Product / service URL,577,20,3.47,557,0,0
+genetic_toxicology,Quantity,577,0,0.0,577,0,0
+genetic_toxicology,Regulatory submission supported,577,0,0.0,577,0,0
+genetic_toxicology,Requester UNSPSC,577,0,0.0,577,0,0
+genetic_toxicology,Requester commodity code,577,0,0.0,577,0,0
+genetic_toxicology,SEND datasets,577,22,3.81,555,0,0
+genetic_toxicology,Ship from,577,0,0.0,577,0,0
+genetic_toxicology,Species,577,92,15.94,485,0,0
+genetic_toxicology,Study start lead time,577,0,0.0,577,0,0
+genetic_toxicology,Study tier,577,4,0.69,573,0,0
+genetic_toxicology,Supplier SKU,577,0,0.0,577,0,0
+genetic_toxicology,Test system type,577,44,7.63,533,0,0
+genetic_toxicology,Time to final report,577,0,0.0,577,0,0
+genetic_toxicology,Unit,577,0,0.0,577,0,0
+genetic_toxicology,Unit of measure,577,70,12.13,493,14,0

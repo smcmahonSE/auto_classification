@@ -1,0 +1,35 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+aggregate_reports,24/7 availability,1493,117,7.84,1376,0,0
+aggregate_reports,AI or automation in delivery,1493,117,7.84,1376,0,0
+aggregate_reports,Aggregate report scope,1493,1,0.07,1492,0,0
+aggregate_reports,Category (L2/L3),1493,1493,100.0,0,0,0
+aggregate_reports,Category UNSPSC,1493,0,0.0,1493,0,0
+aggregate_reports,Currency,1493,9,0.6,1484,0,0
+aggregate_reports,Description,1493,1215,81.38,278,0,0
+aggregate_reports,Development stage,1493,2,0.13,1491,0,0
+aggregate_reports,Document links,1493,1,0.07,1492,0,0
+aggregate_reports,Expanded access supported,1493,117,7.84,1376,0,0
+aggregate_reports,Image URL,1493,0,0.0,1493,0,0
+aggregate_reports,Inventory,1493,0,0.0,1493,0,0
+aggregate_reports,Languages supported,1493,0,0.0,1493,0,0
+aggregate_reports,Lead time (days),1493,0,0.0,1493,0,0
+aggregate_reports,Listing UNSPSC,1493,0,0.0,1493,0,0
+aggregate_reports,Listing type,1493,1493,100.0,0,0,0
+aggregate_reports,Manufacturer SKU,1493,0,0.0,1493,0,0
+aggregate_reports,Manufacturer name,1493,0,0.0,1493,0,0
+aggregate_reports,Multilingual intake and translation,1493,117,7.84,1376,0,0
+aggregate_reports,Name,1493,1493,100.0,0,0,0
+aggregate_reports,Price per unit,1493,1461,97.86,32,0,0
+aggregate_reports,Pricing model,1493,1493,100.0,0,0,0
+aggregate_reports,Product / service URL,1493,1,0.07,1492,0,0
+aggregate_reports,Product types covered,1493,16,1.07,1477,0,0
+aggregate_reports,Quantity,1493,0,0.0,1493,0,0
+aggregate_reports,Reference safety documents,1493,0,0.0,1493,0,0
+aggregate_reports,Regions served,1493,40,2.68,1453,0,0
+aggregate_reports,Report types,1493,1,0.07,1492,0,0
+aggregate_reports,Requester UNSPSC,1493,0,0.0,1493,0,0
+aggregate_reports,Requester commodity code,1493,0,0.0,1493,0,0
+aggregate_reports,Ship from,1493,0,0.0,1493,0,0
+aggregate_reports,Supplier SKU,1493,0,0.0,1493,0,0
+aggregate_reports,Unit,1493,0,0.0,1493,0,0
+aggregate_reports,Unit of measure,1493,405,27.13,992,96,0

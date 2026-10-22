@@ -1,0 +1,46 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+specialty_toxicology,Biosafety containment,756,0,0.0,756,0,0
+specialty_toxicology,Category (L2/L3),756,756,100.0,0,0,0
+specialty_toxicology,Category UNSPSC,756,0,0.0,756,0,0
+specialty_toxicology,Currency,756,0,0.0,756,0,0
+specialty_toxicology,DART endpoints,756,1,0.13,755,0,0
+specialty_toxicology,DART guideline,756,20,2.65,736,0,0
+specialty_toxicology,DART species,756,24,3.17,732,0,0
+specialty_toxicology,DART study design,756,1,0.13,755,0,0
+specialty_toxicology,Description,756,113,14.95,643,0,0
+specialty_toxicology,Document links,756,0,0.0,756,0,0
+specialty_toxicology,GLP status,756,2,0.26,754,0,0
+specialty_toxicology,Historical control database,756,5,0.66,751,0,0
+specialty_toxicology,Image URL,756,0,0.0,756,0,0
+specialty_toxicology,Immunotox assay,756,0,0.0,756,0,0
+specialty_toxicology,In vitro skin or eye model,756,19,2.51,737,0,0
+specialty_toxicology,Inhalation atmosphere,756,0,0.0,756,0,0
+specialty_toxicology,Inhalation exposure system,756,1,0.13,755,0,0
+specialty_toxicology,Inventory,756,0,0.0,756,0,0
+specialty_toxicology,Juvenile behavioral tests,756,0,0.0,756,0,0
+specialty_toxicology,Juvenile species,756,24,3.17,732,0,0
+specialty_toxicology,Lead time (days),756,0,0.0,756,0,0
+specialty_toxicology,Listing UNSPSC,756,0,0.0,756,0,0
+specialty_toxicology,Listing type,756,756,100.0,0,0,0
+specialty_toxicology,Manufacturer SKU,756,0,0.0,756,0,0
+specialty_toxicology,Manufacturer name,756,0,0.0,756,0,0
+specialty_toxicology,Modality supported,756,2,0.26,754,0,0
+specialty_toxicology,Name,756,756,100.0,0,0,0
+specialty_toxicology,Ocular route,756,1,0.13,755,0,0
+specialty_toxicology,Phototox assay,756,4,0.53,752,0,0
+specialty_toxicology,Price per unit,756,733,96.96,23,0,0
+specialty_toxicology,Pricing model,756,756,100.0,0,0,0
+specialty_toxicology,Product / service URL,756,0,0.0,756,0,0
+specialty_toxicology,Quantity,756,0,0.0,756,0,0
+specialty_toxicology,Regulatory submission supported,756,1,0.13,755,0,0
+specialty_toxicology,Requester UNSPSC,756,0,0.0,756,0,0
+specialty_toxicology,Requester commodity code,756,0,0.0,756,0,0
+specialty_toxicology,SEND datasets,756,5,0.66,751,0,0
+specialty_toxicology,Ship from,756,0,0.0,756,0,0
+specialty_toxicology,Specialty type,756,71,9.39,685,0,0
+specialty_toxicology,Species,756,41,5.42,715,0,0
+specialty_toxicology,Study start lead time,756,0,0.0,756,0,0
+specialty_toxicology,Supplier SKU,756,0,0.0,756,0,0
+specialty_toxicology,Time to final report,756,0,0.0,756,0,0
+specialty_toxicology,Unit,756,0,0.0,756,0,0
+specialty_toxicology,Unit of measure,756,2,0.26,753,1,0

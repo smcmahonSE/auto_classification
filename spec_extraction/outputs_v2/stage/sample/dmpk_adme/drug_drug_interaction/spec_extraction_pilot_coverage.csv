@@ -1,0 +1,49 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+drug_drug_interaction,Analytical platform,6278,34,0.54,6244,0,0
+drug_drug_interaction,Assay type,6278,12,0.19,6266,0,0
+drug_drug_interaction,CYP isoforms,6278,214,3.41,6064,0,0
+drug_drug_interaction,Category (L2/L3),6278,6278,100.0,0,0,0
+drug_drug_interaction,Category UNSPSC,6278,0,0.0,6278,0,0
+drug_drug_interaction,Compound amount required,6278,0,0.0,6278,0,0
+drug_drug_interaction,Compound format,6278,2227,35.47,4051,0,0
+drug_drug_interaction,Currency,6278,89,1.42,6189,0,0
+drug_drug_interaction,Deliverable format,6278,0,0.0,6278,0,0
+drug_drug_interaction,Description,6278,5999,95.56,279,0,0
+drug_drug_interaction,Development stage,6278,213,3.39,6065,0,0
+drug_drug_interaction,Document links,6278,156,2.48,6122,0,0
+drug_drug_interaction,GLP status,6278,112,1.78,6166,0,0
+drug_drug_interaction,Hepatocyte donors,6278,0,0.0,6278,0,0
+drug_drug_interaction,Image URL,6278,4,0.06,6274,0,0
+drug_drug_interaction,Induction endpoint,6278,563,8.97,5715,0,0
+drug_drug_interaction,Induction parameters,6278,402,6.4,5876,0,0
+drug_drug_interaction,Induction test system,6278,26,0.41,6252,0,0
+drug_drug_interaction,Inhibition parameter,6278,1878,29.91,4400,0,0
+drug_drug_interaction,Inhibitor concentration range,6278,0,0.0,6278,0,0
+drug_drug_interaction,Inventory,6278,0,0.0,6278,0,0
+drug_drug_interaction,Lead time (days),6278,0,0.0,6278,0,0
+drug_drug_interaction,Listing UNSPSC,6278,0,0.0,6278,0,0
+drug_drug_interaction,Listing type,6278,6278,100.0,0,0,0
+drug_drug_interaction,Manufacturer SKU,6278,0,0.0,6278,0,0
+drug_drug_interaction,Manufacturer name,6278,0,0.0,6278,0,0
+drug_drug_interaction,Modality supported,6278,153,2.44,6125,0,0
+drug_drug_interaction,Name,6278,6278,100.0,0,0,0
+drug_drug_interaction,Non-CYP enzymes,6278,210,3.35,6068,0,0
+drug_drug_interaction,Nuclear receptor assay,6278,230,3.66,6048,0,0
+drug_drug_interaction,Ordering format,6278,0,0.0,6278,0,0
+drug_drug_interaction,Phenotyping method,6278,15,0.24,6263,0,0
+drug_drug_interaction,Price per unit,6278,5354,85.28,924,0,0
+drug_drug_interaction,Pricing model,6278,6278,100.0,0,0,0
+drug_drug_interaction,Probe format,6278,2,0.03,6276,0,0
+drug_drug_interaction,Product / service URL,6278,156,2.48,6122,0,0
+drug_drug_interaction,Quantity,6278,0,0.0,6278,0,0
+drug_drug_interaction,Regulatory guidance,6278,1,0.02,6277,0,0
+drug_drug_interaction,Requester UNSPSC,6278,0,0.0,6278,0,0
+drug_drug_interaction,Requester commodity code,6278,0,0.0,6278,0,0
+drug_drug_interaction,Risk assessment or modeling,6278,0,0.0,6278,0,0
+drug_drug_interaction,Ship from,6278,0,0.0,6278,0,0
+drug_drug_interaction,Species,6278,1647,26.23,4631,0,0
+drug_drug_interaction,Supplier SKU,6278,0,0.0,6278,0,0
+drug_drug_interaction,Turnaround,6278,0,0.0,6278,0,0
+drug_drug_interaction,UGT isoforms,6278,31,0.49,6247,0,0
+drug_drug_interaction,Unit,6278,0,0.0,6278,0,0
+drug_drug_interaction,Unit of measure,6278,454,7.23,5724,100,0

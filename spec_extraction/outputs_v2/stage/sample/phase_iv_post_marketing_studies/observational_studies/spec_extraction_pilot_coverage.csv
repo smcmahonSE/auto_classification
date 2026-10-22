@@ -1,0 +1,47 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+observational_studies,Category (L2/L3),905,905,100.0,0,0,0
+observational_studies,Category UNSPSC,905,0,0.0,905,0,0
+observational_studies,Causal inference methods,905,60,6.63,845,0,0
+observational_studies,Comparator approach,905,0,0.0,905,0,0
+observational_studies,Currency,905,13,1.44,892,0,0
+observational_studies,Data collection approach,905,0,0.0,905,0,0
+observational_studies,Data linkage across sources,905,60,6.63,845,0,0
+observational_studies,Data sources,905,0,0.0,905,0,0
+observational_studies,Decentralized or remote study model,905,60,6.63,845,0,0
+observational_studies,Deliverables,905,1,0.11,904,0,0
+observational_studies,Description,905,796,87.96,109,0,0
+observational_studies,Direct-to-patient data collection,905,60,6.63,845,0,0
+observational_studies,Document links,905,13,1.44,892,0,0
+observational_studies,Endpoints captured,905,2,0.22,903,0,0
+observational_studies,Epidemiologic design,905,2,0.22,903,0,0
+observational_studies,Geographic coverage,905,14,1.55,891,0,0
+observational_studies,Image URL,905,0,0.0,905,0,0
+observational_studies,Inventory,905,0,0.0,905,0,0
+observational_studies,Lead time (days),905,0,0.0,905,0,0
+observational_studies,Listing UNSPSC,905,0,0.0,905,0,0
+observational_studies,Listing type,905,905,100.0,0,0,0
+observational_studies,Manufacturer SKU,905,0,0.0,905,0,0
+observational_studies,Manufacturer name,905,0,0.0,905,0,0
+observational_studies,Name,905,905,100.0,0,0,0
+observational_studies,Number of countries,905,0,0.0,905,0,0
+observational_studies,Number of data sources linked,905,0,0.0,905,0,0
+observational_studies,Observational study type,905,0,0.0,905,0,0
+observational_studies,Patient population,905,7,0.77,898,0,0
+observational_studies,Patient-reported outcomes collected,905,60,6.63,845,0,0
+observational_studies,Price per unit,905,854,94.36,51,0,0
+observational_studies,Pricing model,905,905,100.0,0,0,0
+observational_studies,Product / service URL,905,13,1.44,892,0,0
+observational_studies,Product type,905,4,0.44,901,0,0
+observational_studies,Quantity,905,0,0.0,905,0,0
+observational_studies,Regulatory purpose,905,0,0.0,905,0,0
+observational_studies,Requester UNSPSC,905,0,0.0,905,0,0
+observational_studies,Requester commodity code,905,0,0.0,905,0,0
+observational_studies,Scope of service,905,8,0.88,897,0,0
+observational_studies,Ship from,905,0,0.0,905,0,0
+observational_studies,Site type,905,0,0.0,905,0,0
+observational_studies,Supplier SKU,905,0,0.0,905,0,0
+observational_studies,Target regulator,905,17,1.88,888,0,0
+observational_studies,Target sample size,905,0,0.0,905,0,0
+observational_studies,Therapeutic area,905,36,3.98,869,0,0
+observational_studies,Unit,905,0,0.0,905,0,0
+observational_studies,Unit of measure,905,31,3.43,867,7,0

@@ -18,6 +18,43 @@
           "pattern": "labeled_diagnosis"
         },
         {
+          "name": "Consent level",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "consent_level",
+          "allowed_values": [
+            "IRB-approved and consented",
+            "IRB-approved, full release",
+            "IRB-approved, limited release",
+            "Waiver of consent",
+            "De-identified"
+          ]
+        },
+        {
+          "name": "Anatomical site / tissue type",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_anatomical_site"
+        },
+        {
+          "name": "Specimen format",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specimen_format_tissue",
+          "allowed_values": [
+            "FFPE",
+            "Fresh frozen",
+            "OCT",
+            "Fresh"
+          ]
+        },
+        {
           "name": "Disease areas",
           "type": "multi-select",
           "required": false,
@@ -48,29 +85,6 @@
           "product_only": false,
           "extractor": "regex",
           "pattern": "labeled_disease_stage"
-        },
-        {
-          "name": "Consent level",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "consent_level",
-          "allowed_values": [
-            "IRB-approved and consented",
-            "IRB-approved, full release",
-            "IRB-approved, limited release",
-            "Waiver of consent",
-            "De-identified"
-          ]
-        },
-        {
-          "name": "Anatomical site / tissue type",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_anatomical_site"
         },
         {
           "name": "RIN (RNA integrity)",
@@ -107,20 +121,6 @@
           "extractor": "regex",
           "pattern": "sample_size_amount",
           "allowed_values": "mg"
-        },
-        {
-          "name": "Specimen format",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "specimen_format_tissue",
-          "allowed_values": [
-            "FFPE",
-            "Fresh frozen",
-            "OCT",
-            "Fresh"
-          ]
         },
         {
           "name": "Donor Age",
@@ -244,38 +244,6 @@
           "pattern": "labeled_diagnosis"
         },
         {
-          "name": "Disease areas",
-          "type": "multi-select",
-          "required": false,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "disease_areas",
-          "multi_select": true,
-          "allowed_values": [
-            "Oncology",
-            "Autoimmune / inflammatory",
-            "Infectious disease",
-            "Cardiovascular",
-            "Metabolic / endocrine",
-            "Neurology",
-            "Respiratory",
-            "Liver / GI",
-            "Renal",
-            "Dermatology",
-            "Rare / genetic",
-            "Pediatric",
-            "Other"
-          ]
-        },
-        {
-          "name": "Disease stage",
-          "type": "text",
-          "required": false,
-          "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_disease_stage"
-        },
-        {
           "name": "Consent level",
           "type": "picklist",
           "required": true,
@@ -334,6 +302,38 @@
           "extractor": "regex",
           "pattern": "volume_ml",
           "allowed_values": "mL"
+        },
+        {
+          "name": "Disease areas",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "disease_areas",
+          "multi_select": true,
+          "allowed_values": [
+            "Oncology",
+            "Autoimmune / inflammatory",
+            "Infectious disease",
+            "Cardiovascular",
+            "Metabolic / endocrine",
+            "Neurology",
+            "Respiratory",
+            "Liver / GI",
+            "Renal",
+            "Dermatology",
+            "Rare / genetic",
+            "Pediatric",
+            "Other"
+          ]
+        },
+        {
+          "name": "Disease stage",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_disease_stage"
         },
         {
           "name": "Processing",
@@ -517,6 +517,42 @@
           "pattern": "labeled_diagnosis"
         },
         {
+          "name": "Consent level",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "consent_level",
+          "allowed_values": [
+            "IRB-approved and consented",
+            "IRB-approved, full release",
+            "IRB-approved, limited release",
+            "Waiver of consent",
+            "De-identified"
+          ]
+        },
+        {
+          "name": "Cell count",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "cell_count",
+          "allowed_values": "cells"
+        },
+        {
+          "name": "Specimen format",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specimen_format_fresh_cryo",
+          "allowed_values": [
+            "Fresh",
+            "Cryopreserved"
+          ]
+        },
+        {
           "name": "Disease areas",
           "type": "multi-select",
           "required": false,
@@ -547,30 +583,6 @@
           "product_only": false,
           "extractor": "regex",
           "pattern": "labeled_disease_stage"
-        },
-        {
-          "name": "Consent level",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "consent_level",
-          "allowed_values": [
-            "IRB-approved and consented",
-            "IRB-approved, full release",
-            "IRB-approved, limited release",
-            "Waiver of consent",
-            "De-identified"
-          ]
-        },
-        {
-          "name": "Cell count",
-          "type": "number",
-          "required": true,
-          "product_only": false,
-          "extractor": "regex",
-          "pattern": "cell_count",
-          "allowed_values": "cells"
         },
         {
           "name": "Viability %",
@@ -609,18 +621,6 @@
           "product_only": false,
           "extractor": "regex",
           "pattern": "labeled_clinical_data"
-        },
-        {
-          "name": "Specimen format",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "specimen_format_fresh_cryo",
-          "allowed_values": [
-            "Fresh",
-            "Cryopreserved"
-          ]
         },
         {
           "name": "Donor Age",
@@ -758,6 +758,18 @@
           "pattern": "labeled_diagnosis"
         },
         {
+          "name": "Specimen format",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specimen_format_fresh_cryo",
+          "allowed_values": [
+            "Fresh",
+            "Cryopreserved"
+          ]
+        },
+        {
           "name": "Disease areas",
           "type": "multi-select",
           "required": false,
@@ -798,18 +810,6 @@
           "extractor": "regex",
           "pattern": "passage_number",
           "allowed_values": "passage"
-        },
-        {
-          "name": "Specimen format",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "specimen_format_fresh_cryo",
-          "allowed_values": [
-            "Fresh",
-            "Cryopreserved"
-          ]
         },
         {
           "name": "Donor Age",
@@ -1087,30 +1087,6 @@
           ]
         },
         {
-          "name": "Disease areas",
-          "type": "multi-select",
-          "required": false,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "disease_areas",
-          "multi_select": true,
-          "allowed_values": [
-            "Oncology",
-            "Autoimmune / inflammatory",
-            "Infectious disease",
-            "Cardiovascular",
-            "Metabolic / endocrine",
-            "Neurology",
-            "Respiratory",
-            "Liver / GI",
-            "Renal",
-            "Dermatology",
-            "Rare / genetic",
-            "Pediatric",
-            "Other"
-          ]
-        },
-        {
           "name": "Donor health status",
           "type": "multi-select",
           "required": true,
@@ -1251,6 +1227,30 @@
             "FFPE",
             "Fixed (other)",
             "Custom"
+          ]
+        },
+        {
+          "name": "Disease areas",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "disease_areas",
+          "multi_select": true,
+          "allowed_values": [
+            "Oncology",
+            "Autoimmune / inflammatory",
+            "Infectious disease",
+            "Cardiovascular",
+            "Metabolic / endocrine",
+            "Neurology",
+            "Respiratory",
+            "Liver / GI",
+            "Renal",
+            "Dermatology",
+            "Rare / genetic",
+            "Pediatric",
+            "Other"
           ]
         },
         {

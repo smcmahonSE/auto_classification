@@ -69,6 +69,73 @@
           "pattern": "labeled_genetic_background"
         },
         {
+          "name": "Supplier stock / strain code",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_supplier_stock_code"
+        },
+        {
+          "name": "Health status / microbiological standard",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "health_status_microbiological",
+          "allowed_values": [
+            "VAF/Elite",
+            "SPF",
+            "SOPF",
+            "Germ-free",
+            "Conventional"
+          ]
+        },
+        {
+          "name": "Strain / official nomenclature",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "override",
+          "override_key": "animal_strain"
+        },
+        {
+          "name": "Model type / genetic status",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "model_genetic_status",
+          "multi_select": true,
+          "allowed_values": [
+            "Inbred",
+            "Outbred",
+            "Congenic",
+            "Hybrid",
+            "Wild-type",
+            "Knockout",
+            "Knock-in",
+            "Transgenic",
+            "CRISPR-modified",
+            "Immunodeficient",
+            "Humanized"
+          ]
+        },
+        {
+          "name": "Delivery form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "delivery_form_animal",
+          "allowed_values": [
+            "Live animals",
+            "Cryopreserved embryos",
+            "Cryopreserved sperm",
+            "Embryos"
+          ]
+        },
+        {
           "name": "Zygosity",
           "type": "picklist",
           "required": false,
@@ -168,73 +235,6 @@
           "pattern": "labeled_cancer_type_indication"
         },
         {
-          "name": "Supplier stock / strain code",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_supplier_stock_code"
-        },
-        {
-          "name": "Health status / microbiological standard",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "health_status_microbiological",
-          "allowed_values": [
-            "VAF/Elite",
-            "SPF",
-            "SOPF",
-            "Germ-free",
-            "Conventional"
-          ]
-        },
-        {
-          "name": "Strain / official nomenclature",
-          "type": "text",
-          "required": true,
-          "product_only": false,
-          "extractor": "override",
-          "override_key": "animal_strain"
-        },
-        {
-          "name": "Model type / genetic status",
-          "type": "multi-select",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "model_genetic_status",
-          "multi_select": true,
-          "allowed_values": [
-            "Inbred",
-            "Outbred",
-            "Congenic",
-            "Hybrid",
-            "Wild-type",
-            "Knockout",
-            "Knock-in",
-            "Transgenic",
-            "CRISPR-modified",
-            "Immunodeficient",
-            "Humanized"
-          ]
-        },
-        {
-          "name": "Delivery form",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "delivery_form_animal",
-          "allowed_values": [
-            "Live animals",
-            "Cryopreserved embryos",
-            "Cryopreserved sperm",
-            "Embryos"
-          ]
-        },
-        {
           "name": "Sex",
           "type": "picklist",
           "required": false,
@@ -331,27 +331,6 @@
           ]
         },
         {
-          "name": "Zygosity",
-          "type": "picklist",
-          "required": false,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "zygosity_zebrafish",
-          "allowed_values": [
-            "Heterozygous",
-            "Homozygous"
-          ]
-        },
-        {
-          "name": "Adult age",
-          "type": "number",
-          "required": false,
-          "product_only": false,
-          "extractor": "regex",
-          "pattern": "adult_age_months",
-          "allowed_values": "months"
-        },
-        {
           "name": "Model type / genetic status",
           "type": "multi-select",
           "required": true,
@@ -372,6 +351,27 @@
             "Immunodeficient",
             "Humanized"
           ]
+        },
+        {
+          "name": "Zygosity",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "zygosity_zebrafish",
+          "allowed_values": [
+            "Heterozygous",
+            "Homozygous"
+          ]
+        },
+        {
+          "name": "Adult age",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "adult_age_months",
+          "allowed_values": "months"
         },
         {
           "name": "Sex",
@@ -455,6 +455,20 @@
           ]
         },
         {
+          "name": "Delivery form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "delivery_form_animal",
+          "allowed_values": [
+            "Live animals",
+            "Cryopreserved embryos",
+            "Cryopreserved sperm",
+            "Embryos"
+          ]
+        },
+        {
           "name": "Sex / sexual maturity",
           "type": "picklist",
           "required": false,
@@ -516,20 +530,6 @@
           ]
         },
         {
-          "name": "Delivery form",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "delivery_form_animal",
-          "allowed_values": [
-            "Live animals",
-            "Cryopreserved embryos",
-            "Cryopreserved sperm",
-            "Embryos"
-          ]
-        },
-        {
           "name": "Availability status",
           "type": "picklist",
           "required": false,
@@ -575,6 +575,42 @@
           "pattern": "labeled_genotype"
         },
         {
+          "name": "Model type / genetic status",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "model_genetic_status",
+          "multi_select": true,
+          "allowed_values": [
+            "Inbred",
+            "Outbred",
+            "Congenic",
+            "Hybrid",
+            "Wild-type",
+            "Knockout",
+            "Knock-in",
+            "Transgenic",
+            "CRISPR-modified",
+            "Immunodeficient",
+            "Humanized"
+          ]
+        },
+        {
+          "name": "Delivery form",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "delivery_form_animal",
+          "allowed_values": [
+            "Live animals",
+            "Cryopreserved embryos",
+            "Cryopreserved sperm",
+            "Embryos"
+          ]
+        },
+        {
           "name": "Chromosomes affected",
           "type": "text",
           "required": false,
@@ -614,42 +650,6 @@
           "product_only": false,
           "extractor": "regex",
           "pattern": "labeled_donor_made_by"
-        },
-        {
-          "name": "Model type / genetic status",
-          "type": "multi-select",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "model_genetic_status",
-          "multi_select": true,
-          "allowed_values": [
-            "Inbred",
-            "Outbred",
-            "Congenic",
-            "Hybrid",
-            "Wild-type",
-            "Knockout",
-            "Knock-in",
-            "Transgenic",
-            "CRISPR-modified",
-            "Immunodeficient",
-            "Humanized"
-          ]
-        },
-        {
-          "name": "Delivery form",
-          "type": "picklist",
-          "required": true,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "delivery_form_animal",
-          "allowed_values": [
-            "Live animals",
-            "Cryopreserved embryos",
-            "Cryopreserved sperm",
-            "Embryos"
-          ]
         },
         {
           "name": "Production location / origin",

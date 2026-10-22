@@ -1,0 +1,39 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+auditing_compliance,Audit deliverable,734,0,0.0,734,0,0
+auditing_compliance,Audit type,734,5,0.68,729,0,0
+auditing_compliance,Audited entity,734,0,0.0,734,0,0
+auditing_compliance,Category (L2/L3),734,734,100.0,0,0,0
+auditing_compliance,Category UNSPSC,734,0,0.0,734,0,0
+auditing_compliance,Currency,734,0,0.0,734,0,0
+auditing_compliance,Description,734,22,3.0,712,0,0
+auditing_compliance,Development discipline covered,734,10,1.36,724,0,0
+auditing_compliance,Development stage,734,2,0.27,732,0,0
+auditing_compliance,Document links,734,0,0.0,734,0,0
+auditing_compliance,Enforcement remediation,734,0,0.0,734,0,0
+auditing_compliance,Engagement model,734,0,0.0,734,0,0
+auditing_compliance,Image URL,734,0,0.0,734,0,0
+auditing_compliance,Inspection readiness service,734,0,0.0,734,0,0
+auditing_compliance,Inventory,734,0,0.0,734,0,0
+auditing_compliance,Lead time (days),734,0,0.0,734,0,0
+auditing_compliance,Listing UNSPSC,734,0,0.0,734,0,0
+auditing_compliance,Listing type,734,734,100.0,0,0,0
+auditing_compliance,Manufacturer SKU,734,0,0.0,734,0,0
+auditing_compliance,Manufacturer name,734,0,0.0,734,0,0
+auditing_compliance,Name,734,734,100.0,0,0,0
+auditing_compliance,Price per unit,734,734,100.0,0,0,0
+auditing_compliance,Pricing model,734,734,100.0,0,0,0
+auditing_compliance,Pricing structure,734,0,0.0,734,0,0
+auditing_compliance,Product / service URL,734,0,0.0,734,0,0
+auditing_compliance,Product type,734,0,0.0,734,0,0
+auditing_compliance,Quantity,734,0,0.0,734,0,0
+auditing_compliance,Regulatory agency,734,5,0.68,729,0,0
+auditing_compliance,Regulatory information management system,734,1,0.14,733,0,0
+auditing_compliance,Requester UNSPSC,734,0,0.0,734,0,0
+auditing_compliance,Requester commodity code,734,0,0.0,734,0,0
+auditing_compliance,SOP and QMS development,734,0,0.0,734,0,0
+auditing_compliance,Ship from,734,0,0.0,734,0,0
+auditing_compliance,Standard audited against,734,0,0.0,734,0,0
+auditing_compliance,Supplier SKU,734,0,0.0,734,0,0
+auditing_compliance,Target market region,734,0,0.0,734,0,0
+auditing_compliance,Unit,734,0,0.0,734,0,0
+auditing_compliance,Unit of measure,734,0,0.0,734,0,0

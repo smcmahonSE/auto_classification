@@ -1,0 +1,30 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+calibration,Brand / manufacturer,1163,0,0.0,1163,0,0
+calibration,Capacity,1163,4,0.34,1159,0,0
+calibration,Category (L2/L3),1163,1163,100.0,0,0,0
+calibration,Category UNSPSC,1163,0,0.0,1163,0,0
+calibration,Currency,1163,18,1.55,1145,0,0
+calibration,Deliverable,1163,0,0.0,1163,0,0
+calibration,Description,1163,925,79.54,238,0,0
+calibration,Document links,1163,0,0.0,1163,0,0
+calibration,Equipment type,1163,223,19.17,940,0,0
+calibration,Image URL,1163,0,0.0,1163,0,0
+calibration,Inventory,1163,0,0.0,1163,0,0
+calibration,Lead time (days),1163,0,0.0,1163,0,0
+calibration,Listing UNSPSC,1163,0,0.0,1163,0,0
+calibration,Listing type,1163,1163,100.0,0,0,0
+calibration,Manufacturer SKU,1163,0,0.0,1163,0,0
+calibration,Manufacturer name,1163,0,0.0,1163,0,0
+calibration,Name,1163,1163,100.0,0,0,0
+calibration,Price per unit,1163,1163,100.0,0,0,0
+calibration,Pricing model,1163,1163,100.0,0,0,0
+calibration,Product / service URL,1163,0,0.0,1163,0,0
+calibration,Protocol / scope,1163,0,0.0,1163,0,0
+calibration,Quantity,1163,0,0.0,1163,0,0
+calibration,Requester UNSPSC,1163,0,0.0,1163,0,0
+calibration,Requester commodity code,1163,0,0.0,1163,0,0
+calibration,Ship from,1163,0,0.0,1163,0,0
+calibration,Supplier SKU,1163,0,0.0,1163,0,0
+calibration,Turnaround,1163,0,0.0,1163,0,0
+calibration,Unit,1163,0,0.0,1163,0,0
+calibration,Unit of measure,1163,304,26.14,767,92,0

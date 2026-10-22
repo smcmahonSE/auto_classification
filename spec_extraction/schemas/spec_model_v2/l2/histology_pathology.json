@@ -295,18 +295,6 @@
       "table_name": "DIGITAL_PATHOLOGY_IMAGE_ANALYSIS_SPEC",
       "fields": [
         {
-          "name": "Scan magnification",
-          "type": "picklist",
-          "required": false,
-          "product_only": false,
-          "extractor": "controlled_vocabulary",
-          "vocabulary_ref": "scan_magnification",
-          "allowed_values": [
-            "20X",
-            "40X"
-          ]
-        },
-        {
           "name": "Imaging mode",
           "type": "picklist",
           "required": true,
@@ -316,6 +304,18 @@
           "allowed_values": [
             "Brightfield",
             "Multiplex fluorescence"
+          ]
+        },
+        {
+          "name": "Scan magnification",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "scan_magnification",
+          "allowed_values": [
+            "20X",
+            "40X"
           ]
         },
         {

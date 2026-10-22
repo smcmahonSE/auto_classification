@@ -1,39 +1,39 @@
 l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
-conjugated_antibodies,Application,150,5,3.33,145,0,0
-conjugated_antibodies,Category (L2/L3),150,150,100.0,0,0,0
-conjugated_antibodies,Category UNSPSC,150,0,0.0,150,0,0
-conjugated_antibodies,Cited reactivity,150,3,2.0,147,0,0
-conjugated_antibodies,Clonality,150,1,0.67,149,0,0
-conjugated_antibodies,Clone ID,150,0,0.0,150,0,0
-conjugated_antibodies,Conjugate / Label,150,2,1.33,148,0,0
-conjugated_antibodies,Currency,150,0,0.0,150,0,0
-conjugated_antibodies,Description,150,12,8.0,138,0,0
-conjugated_antibodies,Document links,150,2,1.33,148,0,0
-conjugated_antibodies,Format,150,1,0.67,149,0,0
-conjugated_antibodies,Host Species,150,1,0.67,148,1,0
-conjugated_antibodies,Image URL,150,1,0.67,149,0,0
-conjugated_antibodies,Inventory,150,0,0.0,150,0,0
-conjugated_antibodies,Isotype,150,1,0.67,149,0,0
-conjugated_antibodies,Lead time (days),150,0,0.0,150,0,0
-conjugated_antibodies,Listing UNSPSC,150,0,0.0,150,0,0
-conjugated_antibodies,Listing type,150,150,100.0,0,0,0
-conjugated_antibodies,Manufacturer SKU,150,0,0.0,150,0,0
-conjugated_antibodies,Manufacturer name,150,0,0.0,150,0,0
-conjugated_antibodies,Name,150,150,100.0,0,0,0
-conjugated_antibodies,PTM / modification specificity,150,0,0.0,150,0,0
-conjugated_antibodies,Price per unit,150,148,98.67,2,0,0
-conjugated_antibodies,Pricing model,150,150,100.0,0,0,0
-conjugated_antibodies,Product / service URL,150,2,1.33,148,0,0
-conjugated_antibodies,Purification,150,0,0.0,150,0,0
-conjugated_antibodies,Quantity,150,0,0.0,150,0,0
-conjugated_antibodies,RRID,150,0,0.0,150,0,0
-conjugated_antibodies,Recommended dilution,150,0,0.0,150,0,0
-conjugated_antibodies,Requester UNSPSC,150,0,0.0,150,0,0
-conjugated_antibodies,Requester commodity code,150,0,0.0,150,0,0
-conjugated_antibodies,Ship from,150,0,0.0,150,0,0
-conjugated_antibodies,Storage conditions,150,5,3.33,145,0,0
-conjugated_antibodies,Supplier SKU,150,0,0.0,150,0,0
-conjugated_antibodies,Target / Antigen,150,3,2.0,147,0,0
-conjugated_antibodies,Tested reactivity,150,3,2.0,147,0,0
-conjugated_antibodies,Unit,150,0,0.0,150,0,0
-conjugated_antibodies,Unit of measure,150,8,5.33,140,2,0
+conjugated_antibodies,Application,20000,517,2.58,19483,0,0
+conjugated_antibodies,Category (L2/L3),20000,20000,100.0,0,0,0
+conjugated_antibodies,Category UNSPSC,20000,0,0.0,20000,0,0
+conjugated_antibodies,Cited reactivity,20000,651,3.26,19349,0,0
+conjugated_antibodies,Clonality,20000,247,1.23,19752,1,0
+conjugated_antibodies,Clone ID,20000,0,0.0,20000,0,0
+conjugated_antibodies,Conjugate / Label,20000,275,1.38,19692,33,0
+conjugated_antibodies,Currency,20000,46,0.23,19954,0,0
+conjugated_antibodies,Description,20000,1362,6.81,18638,0,0
+conjugated_antibodies,Document links,20000,111,0.56,19889,0,0
+conjugated_antibodies,Format,20000,55,0.27,19943,2,0
+conjugated_antibodies,Host Species,20000,293,1.47,19672,35,0
+conjugated_antibodies,Image URL,20000,1,0.01,19999,0,0
+conjugated_antibodies,Inventory,20000,0,0.0,20000,0,0
+conjugated_antibodies,Isotype,20000,32,0.16,19967,1,0
+conjugated_antibodies,Lead time (days),20000,0,0.0,20000,0,0
+conjugated_antibodies,Listing UNSPSC,20000,0,0.0,20000,0,0
+conjugated_antibodies,Listing type,20000,20000,100.0,0,0,0
+conjugated_antibodies,Manufacturer SKU,20000,0,0.0,20000,0,0
+conjugated_antibodies,Manufacturer name,20000,0,0.0,20000,0,0
+conjugated_antibodies,Name,20000,20000,100.0,0,0,0
+conjugated_antibodies,PTM / modification specificity,20000,59,0.29,19939,2,0
+conjugated_antibodies,Price per unit,20000,19754,98.77,246,0,0
+conjugated_antibodies,Pricing model,20000,20000,100.0,0,0,0
+conjugated_antibodies,Product / service URL,20000,111,0.56,19889,0,0
+conjugated_antibodies,Purification,20000,3,0.01,19997,0,0
+conjugated_antibodies,Quantity,20000,0,0.0,20000,0,0
+conjugated_antibodies,RRID,20000,0,0.0,20000,0,0
+conjugated_antibodies,Recommended dilution,20000,0,0.0,20000,0,0
+conjugated_antibodies,Requester UNSPSC,20000,0,0.0,20000,0,0
+conjugated_antibodies,Requester commodity code,20000,0,0.0,20000,0,0
+conjugated_antibodies,Ship from,20000,0,0.0,20000,0,0
+conjugated_antibodies,Storage conditions,20000,307,1.54,19693,0,0
+conjugated_antibodies,Supplier SKU,20000,0,0.0,20000,0,0
+conjugated_antibodies,Target / Antigen,20000,295,1.47,19705,0,0
+conjugated_antibodies,Tested reactivity,20000,651,3.26,19349,0,0
+conjugated_antibodies,Unit,20000,0,0.0,20000,0,0
+conjugated_antibodies,Unit of measure,20000,660,3.3,19253,87,0

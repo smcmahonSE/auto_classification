@@ -1,0 +1,51 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+metabolite_identification,Analytical platform,6932,10,0.14,6922,0,0
+metabolite_identification,Category (L2/L3),6932,6932,100.0,0,0,0
+metabolite_identification,Category UNSPSC,6932,0,0.0,6932,0,0
+metabolite_identification,Compound amount required,6932,0,0.0,6932,0,0
+metabolite_identification,Compound format,6932,1417,20.44,5515,0,0
+metabolite_identification,Cross-species comparison,6932,152,2.19,6780,0,0
+metabolite_identification,Currency,6932,25,0.36,6907,0,0
+metabolite_identification,Deliverable format,6932,0,0.0,6932,0,0
+metabolite_identification,Description,6932,4821,69.55,2111,0,0
+metabolite_identification,Development stage,6932,1728,24.93,5204,0,0
+metabolite_identification,Document links,6932,110,1.59,6822,0,0
+metabolite_identification,GLP status,6932,1672,24.12,5260,0,0
+metabolite_identification,Image URL,6932,1,0.01,6931,0,0
+metabolite_identification,In vivo sample matrix,6932,407,5.87,6525,0,0
+metabolite_identification,Inventory,6932,0,0.0,6932,0,0
+metabolite_identification,Isotope,6932,7,0.1,6925,0,0
+metabolite_identification,Lead time (days),6932,0,0.0,6932,0,0
+metabolite_identification,Listing UNSPSC,6932,0,0.0,6932,0,0
+metabolite_identification,Listing type,6932,6932,100.0,0,0,0
+metabolite_identification,MIST coverage,6932,152,2.19,6780,0,0
+metabolite_identification,MS platform,6932,0,0.0,6932,0,0
+metabolite_identification,Manufacturer SKU,6932,0,0.0,6932,0,0
+metabolite_identification,Manufacturer name,6932,0,0.0,6932,0,0
+metabolite_identification,Mass balance,6932,152,2.19,6780,0,0
+metabolite_identification,Metabolite biosynthesis,6932,152,2.19,6780,0,0
+metabolite_identification,Modality supported,6932,51,0.74,6881,0,0
+metabolite_identification,NMR structure confirmation,6932,152,2.19,6780,0,0
+metabolite_identification,Name,6932,6932,100.0,0,0,0
+metabolite_identification,Ordering format,6932,0,0.0,6932,0,0
+metabolite_identification,Price per unit,6932,6109,88.13,823,0,0
+metabolite_identification,Pricing model,6932,6932,100.0,0,0,0
+metabolite_identification,Product / service URL,6932,110,1.59,6822,0,0
+metabolite_identification,QWBA,6932,152,2.19,6780,0,0
+metabolite_identification,Quantity,6932,0,0.0,6932,0,0
+metabolite_identification,Radio detection,6932,0,0.0,6932,0,0
+metabolite_identification,Radiolabeled test article,6932,152,2.19,6780,0,0
+metabolite_identification,Radiosynthesis in-house,6932,152,2.19,6780,0,0
+metabolite_identification,Requester UNSPSC,6932,0,0.0,6932,0,0
+metabolite_identification,Requester commodity code,6932,0,0.0,6932,0,0
+metabolite_identification,Service level,6932,44,0.63,6878,10,0
+metabolite_identification,Ship from,6932,0,0.0,6932,0,0
+metabolite_identification,Species,6932,609,8.79,6323,0,0
+metabolite_identification,Study type,6932,3,0.04,6929,0,0
+metabolite_identification,Supplier SKU,6932,0,0.0,6932,0,0
+metabolite_identification,Test concentration,6932,0,0.0,6932,0,0
+metabolite_identification,Test system,6932,268,3.87,6664,0,0
+metabolite_identification,Trapping agent,6932,8,0.12,6924,0,0
+metabolite_identification,Turnaround,6932,0,0.0,6932,0,0
+metabolite_identification,Unit,6932,0,0.0,6932,0,0
+metabolite_identification,Unit of measure,6932,258,3.72,6641,33,0

@@ -1,0 +1,40 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+reference_materials_crms,Accreditation,8098,1777,21.94,6321,0,0
+reference_materials_crms,Analyte(s) / parameter,8098,0,0.0,8098,0,0
+reference_materials_crms,Category (L2/L3),8098,8098,100.0,0,0,0
+reference_materials_crms,Category UNSPSC,8098,0,0.0,8098,0,0
+reference_materials_crms,Certified / assigned value,8098,0,0.0,8098,0,0
+reference_materials_crms,Concentration,8098,8,0.1,8090,0,0
+reference_materials_crms,Currency,8098,201,2.48,7897,0,0
+reference_materials_crms,Current lot / valid use date,8098,0,0.0,8098,0,0
+reference_materials_crms,Description,8098,7526,92.94,572,0,0
+reference_materials_crms,Document links,8098,1074,13.26,7024,0,0
+reference_materials_crms,Expiration / validity,8098,0,0.0,8098,0,0
+reference_materials_crms,Format,8098,566,6.99,7525,7,0
+reference_materials_crms,Homogeneity,8098,0,0.0,8098,0,0
+reference_materials_crms,Image URL,8098,0,0.0,8098,0,0
+reference_materials_crms,Inventory,8098,0,0.0,8098,0,0
+reference_materials_crms,Issuing program,8098,468,5.78,7372,258,0
+reference_materials_crms,Lead time (days),8098,0,0.0,8098,0,0
+reference_materials_crms,Listing UNSPSC,8098,0,0.0,8098,0,0
+reference_materials_crms,Listing type,8098,8098,100.0,0,0,0
+reference_materials_crms,Manufacturer SKU,8098,0,0.0,8098,0,0
+reference_materials_crms,Manufacturer name,8098,0,0.0,8098,0,0
+reference_materials_crms,Matrix / solvent,8098,8,0.1,8090,0,0
+reference_materials_crms,Minimum sample size,8098,0,0.0,8098,0,0
+reference_materials_crms,Name,8098,8098,100.0,0,0,0
+reference_materials_crms,Price per unit,8098,7981,98.56,117,0,0
+reference_materials_crms,Pricing model,8098,8098,100.0,0,0,0
+reference_materials_crms,Product / service URL,8098,1074,13.26,7024,0,0
+reference_materials_crms,Quantity,8098,0,0.0,8098,0,0
+reference_materials_crms,Regulatory status / intended use,8098,46,0.57,8052,0,0
+reference_materials_crms,Requester UNSPSC,8098,0,0.0,8098,0,0
+reference_materials_crms,Requester commodity code,8098,0,0.0,8098,0,0
+reference_materials_crms,Ship from,8098,0,0.0,8098,0,0
+reference_materials_crms,Standard type,8098,1544,19.07,5884,670,0
+reference_materials_crms,Storage conditions,8098,225,2.78,7873,0,0
+reference_materials_crms,Supplier SKU,8098,0,0.0,8098,0,0
+reference_materials_crms,Traceability,8098,309,3.82,7789,0,0
+reference_materials_crms,Unit,8098,0,0.0,8098,0,0
+reference_materials_crms,Unit of measure,8098,2223,27.45,4944,931,0
+reference_materials_crms,Value type,8098,3564,44.01,4534,0,0

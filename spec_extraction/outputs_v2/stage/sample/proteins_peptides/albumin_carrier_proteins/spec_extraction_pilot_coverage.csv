@@ -1,0 +1,34 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+albumin_carrier_proteins,Category (L2/L3),20000,20000,100.0,0,0,0
+albumin_carrier_proteins,Category UNSPSC,20000,0,0.0,20000,0,0
+albumin_carrier_proteins,Currency,20000,268,1.34,19719,13,0
+albumin_carrier_proteins,Description,20000,6406,32.03,13594,0,0
+albumin_carrier_proteins,Document links,20000,209,1.04,19791,0,0
+albumin_carrier_proteins,Endotoxin level,20000,13,0.07,19987,0,0
+albumin_carrier_proteins,Fatty-acid-free / globulin-free,20000,283,1.42,19715,2,0
+albumin_carrier_proteins,Form,20000,533,2.67,19450,17,0
+albumin_carrier_proteins,Fraction / purity,20000,0,0.0,20000,0,0
+albumin_carrier_proteins,Grade,20000,70,0.35,19930,0,0
+albumin_carrier_proteins,Image URL,20000,10,0.05,19990,0,0
+albumin_carrier_proteins,Inventory,20000,0,0.0,20000,0,0
+albumin_carrier_proteins,Lead time (days),20000,0,0.0,20000,0,0
+albumin_carrier_proteins,Listing UNSPSC,20000,0,0.0,20000,0,0
+albumin_carrier_proteins,Listing type,20000,20000,100.0,0,0,0
+albumin_carrier_proteins,Manufacturer SKU,20000,0,0.0,20000,0,0
+albumin_carrier_proteins,Manufacturer name,20000,0,0.0,20000,0,0
+albumin_carrier_proteins,Molecular weight,20000,453,2.27,19547,0,0
+albumin_carrier_proteins,Name,20000,20000,100.0,0,0,0
+albumin_carrier_proteins,Price per unit,20000,19619,98.09,381,0,0
+albumin_carrier_proteins,Pricing model,20000,20000,100.0,0,0,0
+albumin_carrier_proteins,Product / service URL,20000,209,1.04,19791,0,0
+albumin_carrier_proteins,Purity,20000,1786,8.93,18214,0,0
+albumin_carrier_proteins,Quantity,20000,0,0.0,20000,0,0
+albumin_carrier_proteins,Requester UNSPSC,20000,0,0.0,20000,0,0
+albumin_carrier_proteins,Requester commodity code,20000,0,0.0,20000,0,0
+albumin_carrier_proteins,Ship from,20000,0,0.0,20000,0,0
+albumin_carrier_proteins,Source,20000,1090,5.45,18876,34,0
+albumin_carrier_proteins,Species,20000,13586,67.93,5868,546,0
+albumin_carrier_proteins,Storage / reconstitution,20000,482,2.41,19449,69,0
+albumin_carrier_proteins,Supplier SKU,20000,0,0.0,20000,0,0
+albumin_carrier_proteins,Unit,20000,0,0.0,20000,0,0
+albumin_carrier_proteins,Unit of measure,20000,8361,41.8,10899,740,0

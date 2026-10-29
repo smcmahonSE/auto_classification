@@ -1,35 +1,35 @@
 l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
-isotype_controls,Application,20000,379,1.9,19621,0,0
+isotype_controls,Application,20000,377,1.88,19623,0,0
 isotype_controls,Category (L2/L3),20000,20000,100.0,0,0,0
 isotype_controls,Category UNSPSC,20000,0,0.0,20000,0,0
-isotype_controls,Clonality,20000,310,1.55,19690,0,0
+isotype_controls,Clonality,20000,329,1.65,19671,0,0
 isotype_controls,Clone ID,20000,0,0.0,20000,0,0
-isotype_controls,Conjugate,20000,103,0.52,19888,9,0
-isotype_controls,Currency,20000,15,0.07,19985,0,0
-isotype_controls,Description,20000,2047,10.23,17953,0,0
-isotype_controls,Document links,20000,117,0.58,19883,0,0
-isotype_controls,Format,20000,66,0.33,19934,0,0
-isotype_controls,Host Species,20000,292,1.46,19528,180,0
-isotype_controls,Image URL,20000,8,0.04,19992,0,0
+isotype_controls,Conjugate,20000,107,0.53,19882,11,0
+isotype_controls,Currency,20000,23,0.11,19977,0,0
+isotype_controls,Description,20000,2030,10.15,17970,0,0
+isotype_controls,Document links,20000,97,0.48,19903,0,0
+isotype_controls,Format,20000,56,0.28,19943,1,0
+isotype_controls,Host Species,20000,292,1.46,19525,183,0
+isotype_controls,Image URL,20000,1,0.01,19999,0,0
 isotype_controls,Inventory,20000,0,0.0,20000,0,0
-isotype_controls,Isotype,20000,158,0.79,19819,23,0
+isotype_controls,Isotype,20000,169,0.84,19817,14,0
 isotype_controls,Lead time (days),20000,0,0.0,20000,0,0
 isotype_controls,Listing UNSPSC,20000,0,0.0,20000,0,0
 isotype_controls,Listing type,20000,20000,100.0,0,0,0
 isotype_controls,Manufacturer SKU,20000,0,0.0,20000,0,0
 isotype_controls,Manufacturer name,20000,0,0.0,20000,0,0
 isotype_controls,Name,20000,20000,100.0,0,0,0
-isotype_controls,Price per unit,20000,19787,98.94,213,0,0
+isotype_controls,Price per unit,20000,19778,98.89,222,0,0
 isotype_controls,Pricing model,20000,20000,100.0,0,0,0
-isotype_controls,Product / service URL,20000,117,0.58,19883,0,0
-isotype_controls,Purification,20000,7,0.03,19993,0,0
+isotype_controls,Product / service URL,20000,97,0.48,19903,0,0
+isotype_controls,Purification,20000,9,0.04,19991,0,0
 isotype_controls,Quantity,20000,0,0.0,20000,0,0
 isotype_controls,RRID,20000,0,0.0,20000,0,0
 isotype_controls,Recommended dilution,20000,0,0.0,20000,0,0
 isotype_controls,Requester UNSPSC,20000,0,0.0,20000,0,0
 isotype_controls,Requester commodity code,20000,0,0.0,20000,0,0
 isotype_controls,Ship from,20000,0,0.0,20000,0,0
-isotype_controls,Storage conditions,20000,148,0.74,19852,0,0
+isotype_controls,Storage conditions,20000,142,0.71,19858,0,0
 isotype_controls,Supplier SKU,20000,0,0.0,20000,0,0
 isotype_controls,Unit,20000,0,0.0,20000,0,0
-isotype_controls,Unit of measure,20000,1242,6.21,18719,39,0
+isotype_controls,Unit of measure,20000,1238,6.19,18724,38,0

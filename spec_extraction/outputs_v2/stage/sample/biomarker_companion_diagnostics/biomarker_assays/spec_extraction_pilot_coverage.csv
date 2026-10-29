@@ -1,0 +1,52 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+biomarker_assays,Analytical performance parameter,858,32,3.73,826,0,0
+biomarker_assays,Analytical platform,858,51,5.94,807,0,0
+biomarker_assays,Assay context of use,858,38,4.43,820,0,0
+biomarker_assays,Assay deliverable,858,0,0.0,858,0,0
+biomarker_assays,Assay development stage,858,275,32.05,583,0,0
+biomarker_assays,Assay source,858,0,0.0,858,0,0
+biomarker_assays,Assay technology,858,3,0.35,855,0,0
+biomarker_assays,BEST biomarker category,858,17,1.98,841,0,0
+biomarker_assays,Biomarker type,858,55,6.41,803,0,0
+biomarker_assays,Biospecimen access for validation,858,3,0.35,855,0,0
+biomarker_assays,CLIA testing available,858,3,0.35,855,0,0
+biomarker_assays,Category (L2/L3),858,858,100.0,0,0,0
+biomarker_assays,Category UNSPSC,858,0,0.0,858,0,0
+biomarker_assays,Clinical performance study type,858,0,0.0,858,0,0
+biomarker_assays,Currency,858,0,0.0,858,0,0
+biomarker_assays,Description,858,160,18.65,698,0,0
+biomarker_assays,Development stage,858,265,30.89,593,0,0
+biomarker_assays,Document links,858,2,0.23,856,0,0
+biomarker_assays,Flow cytometry panel size,858,0,0.0,858,0,0
+biomarker_assays,Image URL,858,0,0.0,858,0,0
+biomarker_assays,Inventory,858,0,0.0,858,0,0
+biomarker_assays,Lab region (biomarker),858,2,0.23,856,0,0
+biomarker_assays,Lead time (days),858,0,0.0,858,0,0
+biomarker_assays,Listing UNSPSC,858,0,0.0,858,0,0
+biomarker_assays,Listing type,858,858,100.0,0,0,0
+biomarker_assays,Lowest quantitation range,858,0,0.0,858,0,0
+biomarker_assays,Manufacturer SKU,858,0,0.0,858,0,0
+biomarker_assays,Manufacturer name,858,0,0.0,858,0,0
+biomarker_assays,Max analytes per sample,858,0,0.0,858,0,0
+biomarker_assays,Multi-site reproducibility,858,3,0.35,855,0,0
+biomarker_assays,Multiplex IF marker count,858,0,0.0,858,0,0
+biomarker_assays,Multiplex capability,858,3,0.35,855,0,0
+biomarker_assays,Name,858,858,100.0,0,0,0
+biomarker_assays,Post-market performance monitoring,858,3,0.35,855,0,0
+biomarker_assays,Price per unit,858,835,97.32,23,0,0
+biomarker_assays,Pricing model,858,858,100.0,0,0,0
+biomarker_assays,Product / service URL,858,2,0.23,856,0,0
+biomarker_assays,Prospective trial patient testing,858,3,0.35,855,0,0
+biomarker_assays,Quantity,858,0,0.0,858,0,0
+biomarker_assays,Requester UNSPSC,858,0,0.0,858,0,0
+biomarker_assays,Requester commodity code,858,0,0.0,858,0,0
+biomarker_assays,Sample type (biomarker),858,2,0.23,856,0,0
+biomarker_assays,Ship from,858,0,0.0,858,0,0
+biomarker_assays,Supplier SKU,858,0,0.0,858,0,0
+biomarker_assays,Technology transfer offered,858,3,0.35,855,0,0
+biomarker_assays,Therapeutic area (biomarker),858,0,0.0,858,0,0
+biomarker_assays,Unit,858,0,0.0,858,0,0
+biomarker_assays,Unit of measure,858,64,7.46,722,72,0
+biomarker_assays,Validation approach,858,33,3.85,825,0,0
+biomarker_assays,Validation deliverable,858,4,0.47,854,0,0
+biomarker_assays,Validation framework,858,6,0.7,852,0,0

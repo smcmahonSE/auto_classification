@@ -1,0 +1,42 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+detection_imaging_kits,Antibody host compatibility,10724,1187,11.07,9537,0,0
+detection_imaging_kits,Application (detection kits),10724,1828,17.05,8896,0,0
+detection_imaging_kits,Category (L2/L3),10724,10724,100.0,0,0,0
+detection_imaging_kits,Category UNSPSC,10724,0,0.0,10724,0,0
+detection_imaging_kits,Chromogen color,10724,671,6.26,10041,12,0
+detection_imaging_kits,Currency,10724,171,1.59,10552,1,0
+detection_imaging_kits,Description,10724,9761,91.02,963,0,0
+detection_imaging_kits,Detection method (detection kits),10724,2326,21.69,8316,82,0
+detection_imaging_kits,Detection system,10724,313,2.92,10411,0,0
+detection_imaging_kits,Document links,10724,407,3.8,10317,0,0
+detection_imaging_kits,Enzyme,10724,577,5.38,10137,10,0
+detection_imaging_kits,Image URL,10724,48,0.45,10676,0,0
+detection_imaging_kits,Imaging compatibility,10724,114,1.06,10610,0,0
+detection_imaging_kits,Inventory,10724,0,0.0,10724,0,0
+detection_imaging_kits,Kit components (detection kits),10724,0,0.0,10724,0,0
+detection_imaging_kits,Lead time (days),10724,0,0.0,10724,0,0
+detection_imaging_kits,Listing UNSPSC,10724,0,0.0,10724,0,0
+detection_imaging_kits,Listing type,10724,10724,100.0,0,0,0
+detection_imaging_kits,Manufacturer SKU,10724,0,0.0,10724,0,0
+detection_imaging_kits,Manufacturer name,10724,0,0.0,10724,0,0
+detection_imaging_kits,Membrane compatibility,10724,50,0.47,10674,0,0
+detection_imaging_kits,Name,10724,10724,100.0,0,0,0
+detection_imaging_kits,Price per unit,10724,9689,90.35,1035,0,0
+detection_imaging_kits,Pricing model,10724,10724,100.0,0,0,0
+detection_imaging_kits,Product / service URL,10724,407,3.8,10317,0,0
+detection_imaging_kits,Quantity,10724,0,0.0,10724,0,0
+detection_imaging_kits,Reagent form (detection kits),10724,1259,11.74,9465,0,0
+detection_imaging_kits,Recommended antibody dilution,10724,0,0.0,10724,0,0
+detection_imaging_kits,Requester UNSPSC,10724,0,0.0,10724,0,0
+detection_imaging_kits,Requester commodity code,10724,0,0.0,10724,0,0
+detection_imaging_kits,Sample type (detection kits),10724,1998,18.63,8726,0,0
+detection_imaging_kits,Sensitivity (detection kits),10724,8,0.07,10712,4,0
+detection_imaging_kits,Shelf life (detection kits),10724,0,0.0,10724,0,0
+detection_imaging_kits,Ship from,10724,0,0.0,10724,0,0
+detection_imaging_kits,Signal duration,10724,0,0.0,10724,0,0
+detection_imaging_kits,Storage (detection kits),10724,746,6.96,9952,26,0
+detection_imaging_kits,Substrate,10724,1024,9.55,9584,116,0
+detection_imaging_kits,Supplier SKU,10724,0,0.0,10724,0,0
+detection_imaging_kits,Tests per kit (detection kits),10724,0,0.0,10724,0,0
+detection_imaging_kits,Unit,10724,0,0.0,10724,0,0
+detection_imaging_kits,Unit of measure,10724,4038,37.65,3487,3199,0

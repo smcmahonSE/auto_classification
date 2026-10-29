@@ -1,0 +1,37 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+necropsy_toxicologic_pathology,Capacity,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Category (L2/L3),86,86,100.0,0,0,0
+necropsy_toxicologic_pathology,Category UNSPSC,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Currency,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Data system,86,1,1.16,84,1,0
+necropsy_toxicologic_pathology,Deliverables,86,1,1.16,85,0,0
+necropsy_toxicologic_pathology,Description,86,45,52.33,41,0,0
+necropsy_toxicologic_pathology,Document links,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,GLP status,86,1,1.16,84,1,0
+necropsy_toxicologic_pathology,Image URL,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Inventory,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Lead time (days),86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Listing UNSPSC,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Listing type,86,86,100.0,0,0,0
+necropsy_toxicologic_pathology,Manufacturer SKU,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Manufacturer name,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Name,86,86,100.0,0,0,0
+necropsy_toxicologic_pathology,Pathologist credentials,86,8,9.3,78,0,0
+necropsy_toxicologic_pathology,Price per unit,86,86,100.0,0,0,0
+necropsy_toxicologic_pathology,Pricing model,86,86,100.0,0,0,0
+necropsy_toxicologic_pathology,Pricing unit,86,2,2.33,84,0,0
+necropsy_toxicologic_pathology,Product / service URL,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Prosector supervision,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Quantity,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Regulatory submission support,86,1,1.16,85,0,0
+necropsy_toxicologic_pathology,Requester UNSPSC,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Requester commodity code,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,SEND-ready,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Sample type,86,27,31.4,59,0,0
+necropsy_toxicologic_pathology,Ship from,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Species,86,3,3.49,83,0,0
+necropsy_toxicologic_pathology,Study type,86,1,1.16,85,0,0
+necropsy_toxicologic_pathology,Supplier SKU,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Turnaround,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Unit,86,0,0.0,86,0,0
+necropsy_toxicologic_pathology,Unit of measure,86,4,4.65,81,1,0

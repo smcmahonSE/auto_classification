@@ -1,0 +1,40 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+custom_med_chem_synthesis,Analytical data delivered,20000,6,0.03,19994,0,0
+custom_med_chem_synthesis,Asymmetric synthesis,20000,1148,5.74,18852,0,0
+custom_med_chem_synthesis,Category (L2/L3),20000,20000,100.0,0,0,0
+custom_med_chem_synthesis,Category UNSPSC,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Chiral separation,20000,1148,5.74,18852,0,0
+custom_med_chem_synthesis,Compound class,20000,6,0.03,19994,0,0
+custom_med_chem_synthesis,Compound design responsibility,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Currency,20000,81,0.4,19919,0,0
+custom_med_chem_synthesis,Delivery format,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Description,20000,18662,93.31,1338,0,0
+custom_med_chem_synthesis,Document links,20000,840,4.2,19160,0,0
+custom_med_chem_synthesis,Drug discovery stage supported,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Enabling chemistry technologies,20000,3,0.01,19997,0,0
+custom_med_chem_synthesis,Engagement model,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,GMP synthesis available,20000,1148,5.74,18852,0,0
+custom_med_chem_synthesis,Guaranteed minimum purity (%),20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Image URL,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Inventory,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Isotope labeling,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Lead time (days),20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Listing UNSPSC,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Listing type,20000,20000,100.0,0,0,0
+custom_med_chem_synthesis,Manufacturer SKU,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Manufacturer name,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Maximum scale,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Minimum scale,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Name,20000,20000,100.0,0,0,0
+custom_med_chem_synthesis,Price per unit,20000,19984,99.92,16,0,0
+custom_med_chem_synthesis,Pricing model,20000,20000,100.0,0,0,0
+custom_med_chem_synthesis,Product / service URL,20000,840,4.2,19160,0,0
+custom_med_chem_synthesis,Quantity,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Requester UNSPSC,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Requester commodity code,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Service type,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Ship from,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Special handling capabilities,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Supplier SKU,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Unit,20000,0,0.0,20000,0,0
+custom_med_chem_synthesis,Unit of measure,20000,337,1.69,19635,28,0

@@ -1,0 +1,40 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+protein_engineering,Affinity maturation approach,8605,0,0.0,8605,0,0
+protein_engineering,Affinity measurement method,8605,3,0.03,8602,0,0
+protein_engineering,Antibody format,8605,13,0.15,8592,0,0
+protein_engineering,Category (L2/L3),8605,8605,100.0,0,0,0
+protein_engineering,Category UNSPSC,8605,0,0.0,8605,0,0
+protein_engineering,Currency,8605,29,0.34,8576,0,0
+protein_engineering,Deliverables,8605,51,0.59,8554,0,0
+protein_engineering,Description,8605,6853,79.64,1752,0,0
+protein_engineering,Developability liability screening,8605,20,0.23,8585,0,0
+protein_engineering,Display platform,8605,31,0.36,8574,0,0
+protein_engineering,Document links,8605,14,0.16,8591,0,0
+protein_engineering,Engineering type,8605,1,0.01,8604,0,0
+protein_engineering,Fc engineering option,8605,0,0.0,8605,0,0
+protein_engineering,Humanization method,8605,0,0.0,8605,0,0
+protein_engineering,Humanness target (%),8605,0,0.0,8605,0,0
+protein_engineering,IP / royalty-free,8605,20,0.23,8585,0,0
+protein_engineering,Image URL,8605,2,0.02,8603,0,0
+protein_engineering,Immunogenicity assessment,8605,0,0.0,8605,0,0
+protein_engineering,Inventory,8605,0,0.0,8605,0,0
+protein_engineering,Lead time (days),8605,0,0.0,8605,0,0
+protein_engineering,Library size (clones),8605,0,0.0,8605,0,0
+protein_engineering,Listing UNSPSC,8605,0,0.0,8605,0,0
+protein_engineering,Listing type,8605,8605,100.0,0,0,0
+protein_engineering,Manufacturer SKU,8605,0,0.0,8605,0,0
+protein_engineering,Manufacturer name,8605,0,0.0,8605,0,0
+protein_engineering,Name,8605,8605,100.0,0,0,0
+protein_engineering,Number of lead candidates delivered,8605,0,0.0,8605,0,0
+protein_engineering,Price per unit,8605,8049,93.54,556,0,0
+protein_engineering,Pricing model,8605,8605,100.0,0,0,0
+protein_engineering,Product / service URL,8605,14,0.16,8591,0,0
+protein_engineering,Quantity,8605,0,0.0,8605,0,0
+protein_engineering,Requester UNSPSC,8605,0,0.0,8605,0,0
+protein_engineering,Requester commodity code,8605,0,0.0,8605,0,0
+protein_engineering,Ship from,8605,0,0.0,8605,0,0
+protein_engineering,Source species,8605,1528,17.76,7077,0,0
+protein_engineering,Supplier SKU,8605,0,0.0,8605,0,0
+protein_engineering,Target affinity improvement (fold),8605,0,0.0,8605,0,0
+protein_engineering,Unit,8605,0,0.0,8605,0,0
+protein_engineering,Unit of measure,8605,192,2.23,8393,20,0

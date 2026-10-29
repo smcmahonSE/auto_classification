@@ -1,0 +1,40 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+analytical_chemistry,Analysis type,7625,990,12.98,6635,0,0
+analytical_chemistry,Analytical technique,7625,701,9.19,6924,0,0
+analytical_chemistry,Category (L2/L3),7625,7625,100.0,0,0,0
+analytical_chemistry,Category UNSPSC,7625,0,0.0,7625,0,0
+analytical_chemistry,Currency,7625,87,1.14,7538,0,0
+analytical_chemistry,Description,7625,4936,64.73,2689,0,0
+analytical_chemistry,Detection level,7625,124,1.63,7500,1,0
+analytical_chemistry,Document links,7625,239,3.13,7386,0,0
+analytical_chemistry,Elemental method,7625,0,0.0,7625,0,0
+analytical_chemistry,Image URL,7625,11,0.14,7614,0,0
+analytical_chemistry,Inventory,7625,0,0.0,7625,0,0
+analytical_chemistry,Lead time (days),7625,0,0.0,7625,0,0
+analytical_chemistry,Listing UNSPSC,7625,0,0.0,7625,0,0
+analytical_chemistry,Listing type,7625,7625,100.0,0,0,0
+analytical_chemistry,Manufacturer SKU,7625,0,0.0,7625,0,0
+analytical_chemistry,Manufacturer name,7625,0,0.0,7625,0,0
+analytical_chemistry,Mass spec analyzer,7625,5,0.07,7620,0,0
+analytical_chemistry,Method status,7625,0,0.0,7625,0,0
+analytical_chemistry,NMR experiments,7625,50,0.66,7575,0,0
+analytical_chemistry,NMR field strength (MHz),7625,0,0.0,7625,0,0
+analytical_chemistry,Name,7625,7625,100.0,0,0,0
+analytical_chemistry,Preparative isolation available,7625,177,2.32,7448,0,0
+analytical_chemistry,Price per unit,7625,7356,96.47,269,0,0
+analytical_chemistry,Pricing model,7625,7625,100.0,0,0,0
+analytical_chemistry,Product / service URL,7625,239,3.13,7386,0,0
+analytical_chemistry,Quality standard,7625,19,0.25,7606,0,0
+analytical_chemistry,Quantity,7625,0,0.0,7625,0,0
+analytical_chemistry,Reference method,7625,428,5.61,7197,0,0
+analytical_chemistry,Report format,7625,296,3.88,7329,0,0
+analytical_chemistry,Requester UNSPSC,7625,0,0.0,7625,0,0
+analytical_chemistry,Requester commodity code,7625,0,0.0,7625,0,0
+analytical_chemistry,Rush turnaround available,7625,177,2.32,7448,0,0
+analytical_chemistry,Sample handling constraints,7625,49,0.64,7576,0,0
+analytical_chemistry,Sample type,7625,87,1.14,7538,0,0
+analytical_chemistry,Ship from,7625,0,0.0,7625,0,0
+analytical_chemistry,Stereochemistry determination,7625,177,2.32,7448,0,0
+analytical_chemistry,Supplier SKU,7625,2,0.03,7623,0,0
+analytical_chemistry,Unit,7625,0,0.0,7625,0,0
+analytical_chemistry,Unit of measure,7625,919,12.05,6414,292,0

@@ -1,33 +1,37 @@
 l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
-enzymes,Category (L2/L3),150,150,100.0,0,0,0
-enzymes,Category UNSPSC,150,0,0.0,150,0,0
-enzymes,Cofactors / substrate,150,0,0.0,150,0,0
-enzymes,Currency,150,2,1.33,147,1,0
-enzymes,Description,150,117,78.0,33,0,0
-enzymes,Document links,150,12,8.0,138,0,0
-enzymes,Endotoxin level,150,0,0.0,150,0,0
-enzymes,Form,150,16,10.67,134,0,0
-enzymes,Grade,150,1,0.67,149,0,0
-enzymes,Image URL,150,0,0.0,150,0,0
-enzymes,Inventory,150,0,0.0,150,0,0
-enzymes,Lead time (days),150,0,0.0,150,0,0
-enzymes,Listing UNSPSC,150,0,0.0,150,0,0
-enzymes,Listing type,150,150,100.0,0,0,0
-enzymes,Manufacturer SKU,150,0,0.0,150,0,0
-enzymes,Manufacturer name,150,0,0.0,150,0,0
-enzymes,Molecular weight,150,18,12.0,132,0,0
-enzymes,Name,150,150,100.0,0,0,0
-enzymes,Price per unit,150,128,85.33,22,0,0
-enzymes,Pricing model,150,150,100.0,0,0,0
-enzymes,Product / service URL,150,12,8.0,138,0,0
-enzymes,Purity,150,19,12.67,131,0,0
-enzymes,Quantity,150,0,0.0,150,0,0
-enzymes,Requester UNSPSC,150,0,0.0,150,0,0
-enzymes,Requester commodity code,150,0,0.0,150,0,0
-enzymes,Ship from,150,0,0.0,150,0,0
-enzymes,Source / Expression system,150,20,13.33,129,1,0
-enzymes,Specific activity,150,7,4.67,143,0,0
-enzymes,Storage / reconstitution,150,15,10.0,132,3,0
-enzymes,Supplier SKU,150,0,0.0,150,0,0
-enzymes,Unit,150,0,0.0,150,0,0
-enzymes,Unit of measure,150,30,20.0,117,3,0
+enzymes,Alternate names,20000,0,0.0,20000,0,0
+enzymes,Category (L2/L3),20000,20000,100.0,0,0,0
+enzymes,Category UNSPSC,20000,0,0.0,20000,0,0
+enzymes,Cofactors / substrate,20000,0,0.0,20000,0,0
+enzymes,Currency,20000,246,1.23,19732,22,0
+enzymes,Description,20000,16924,84.62,3076,0,0
+enzymes,Document links,20000,1185,5.92,18815,0,0
+enzymes,Endotoxin level,20000,4,0.02,19996,0,0
+enzymes,Form,20000,2128,10.64,17837,35,0
+enzymes,Gene ID,20000,0,0.0,20000,0,0
+enzymes,Gene symbol,20000,0,0.0,20000,0,0
+enzymes,Grade,20000,365,1.82,19635,0,0
+enzymes,Image URL,20000,54,0.27,19946,0,0
+enzymes,Inventory,20000,0,0.0,20000,0,0
+enzymes,Lead time (days),20000,0,0.0,20000,0,0
+enzymes,Listing UNSPSC,20000,0,0.0,20000,0,0
+enzymes,Listing type,20000,20000,100.0,0,0,0
+enzymes,Manufacturer SKU,20000,0,0.0,20000,0,0
+enzymes,Manufacturer name,20000,0,0.0,20000,0,0
+enzymes,Molecular weight,20000,2001,10.01,17999,0,0
+enzymes,Name,20000,20000,100.0,0,0,0
+enzymes,Price per unit,20000,17532,87.66,2468,0,0
+enzymes,Pricing model,20000,20000,100.0,0,0,0
+enzymes,Product / service URL,20000,1185,5.92,18815,0,0
+enzymes,Purity,20000,1954,9.77,18039,7,0
+enzymes,Quantity,20000,0,0.0,20000,0,0
+enzymes,Requester UNSPSC,20000,0,0.0,20000,0,0
+enzymes,Requester commodity code,20000,0,0.0,20000,0,0
+enzymes,Ship from,20000,0,0.0,20000,0,0
+enzymes,Source / Expression system,20000,2889,14.45,16981,130,0
+enzymes,Specific activity,20000,851,4.25,19149,0,0
+enzymes,Storage / reconstitution,20000,2811,14.06,17080,109,0
+enzymes,Supplier SKU,20000,0,0.0,20000,0,0
+enzymes,UniProt accession,20000,0,0.0,20000,0,0
+enzymes,Unit,20000,0,0.0,20000,0,0
+enzymes,Unit of measure,20000,3940,19.7,15501,559,0

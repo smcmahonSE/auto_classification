@@ -1,0 +1,721 @@
+{
+  "l2_id": "medical_affairs_medical_communications",
+  "l2_label": "Medical Affairs & Medical Communications",
+  "schema_name": "MEDICAL_AFFAIRS_MEDICAL_COMMUNICATIONS",
+  "l2_fields": [
+    {
+      "name": "Therapeutic areas (medaffairs)",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "medaffairs_l2__therapeutic_areas_medaffairs",
+      "allowed_values": [
+        "Oncology",
+        "Hematology",
+        "Rare disease",
+        "Neuroscience",
+        "Immunology and inflammation",
+        "Infectious disease and vaccines",
+        "Dermatology",
+        "Endocrinology",
+        "Gastroenterology",
+        "Cardiometabolic",
+        "Ophthalmology",
+        "Respiratory",
+        "Rheumatology",
+        "Cell and gene therapy",
+        "Other"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Geographic coverage (medaffairs)",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "medaffairs_l2__geographic_coverage_medaffairs",
+      "allowed_values": [
+        "Global",
+        "North America",
+        "Europe",
+        "UK",
+        "Asia Pacific",
+        "Latin America",
+        "Middle East"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "AI-assisted delivery",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "Program scope",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "medaffairs_l2__program_scope",
+      "allowed_values": [
+        "Global",
+        "Regional",
+        "Local or affiliate"
+      ]
+    },
+    {
+      "name": "Promotional status",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "medaffairs_l2__promotional_status",
+      "allowed_values": [
+        "Non-promotional",
+        "Promotional"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Compliance with codes of practice",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "Development stage",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "development_stage",
+      "allowed_values": [
+        "Phase 1",
+        "Phase 2",
+        "Phase 3",
+        "Marketing application",
+        "Launch",
+        "Post-approval"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Engagement model (medaffairs)",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "medaffairs_l2__engagement_model_medaffairs",
+      "allowed_values": [
+        "Project-based",
+        "Dedicated team",
+        "Embedded staff",
+        "Hybrid"
+      ]
+    }
+  ],
+  "l3_nodes": {
+    "medical_writing_publications": {
+      "label": "Medical Writing & Publications",
+      "form": "service",
+      "table_name": "MEDICAL_WRITING_PUBLICATIONS_SPEC",
+      "fields": [
+        {
+          "name": "Publication types",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "medical_writing_publications__publication_types",
+          "allowed_values": [
+            "Primary manuscript",
+            "Secondary manuscript",
+            "Review article",
+            "Abstract",
+            "Poster",
+            "Oral presentation",
+            "Plain language summary",
+            "Literature review",
+            "HEOR or RWE publication",
+            "Patient-authored publication",
+            "Simultaneous publication"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Publication planning",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Digital publication enhancements",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "medical_writing_publications__digital_publication_enhancements",
+          "allowed_values": [
+            "Video abstract",
+            "Graphical abstract",
+            "Infographic",
+            "Podcast",
+            "MOA animation",
+            "Microsite",
+            "Interactive case study",
+            "QR code"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Publication gap analysis",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Steering committee management",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "GPP compliance",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Publication amplification",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Literature monitoring (medwriting)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Credentialed publication staff",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "medical_communications": {
+      "label": "Medical Communications",
+      "form": "service",
+      "table_name": "MEDICAL_COMMUNICATIONS_SPEC",
+      "fields": [
+        {
+          "name": "Deliverable types",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "medical_communications__deliverable_types",
+          "allowed_values": [
+            "HCP education program",
+            "E-learning module",
+            "MOA video",
+            "Infographic",
+            "Data visualization",
+            "Field medical tools",
+            "Advisory board materials",
+            "Omnichannel content",
+            "Explainer video",
+            "AR or VR experience"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Scientific platform and narrative",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Medical information contact center",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Adverse event intake",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Product quality complaint intake",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Congress support",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Meeting format",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "medical_communications__meeting_format",
+          "allowed_values": [
+            "Live",
+            "Virtual",
+            "Asynchronous"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Medical training audience",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "medical_communications__medical_training_audience",
+          "allowed_values": [
+            "Internal teams",
+            "External HCPs"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Accredited medical education",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Medical information languages",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "medical_communications__medical_information_languages"
+        },
+        {
+          "name": "Medical information hours",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "medical_communications__medical_information_hours",
+          "allowed_values": [
+            "24/7/365",
+            "Business hours",
+            "Business hours with after-hours coverage"
+          ]
+        },
+        {
+          "name": "Medical information channels",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "medical_communications__medical_information_channels",
+          "allowed_values": [
+            "Phone",
+            "Email",
+            "Web form",
+            "Live chat",
+            "Chatbot",
+            "Social media"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Standard response documents",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Medical content translation",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Social media monitoring",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Promotional review",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "msl_support": {
+      "label": "MSL Support",
+      "form": "service",
+      "table_name": "MSL_SUPPORT_SPEC",
+      "fields": [
+        {
+          "name": "MSL training",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "MSL deployment model",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "msl_support__msl_deployment_model",
+          "allowed_values": [
+            "Dedicated outsourced team",
+            "Flexible scale up or down",
+            "Hybrid human and AI",
+            "AI or virtual MSL"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Field medical roles",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "msl_support__field_medical_roles",
+          "allowed_values": [
+            "Medical science liaison",
+            "Clinical educator",
+            "Medical director",
+            "Clinical training manager"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Engagement channel",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "msl_support__engagement_channel",
+          "allowed_values": [
+            "Face-to-face",
+            "Digital",
+            "Voice",
+            "Video",
+            "Text"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Recruitment and team build",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Field insights reporting",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Performance KPIs",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "CRM integration",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Countries covered (msl)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "msl_support__countries_covered_msl"
+        }
+      ]
+    },
+    "scientific_advisory_kol": {
+      "label": "Scientific Advisory / KOL",
+      "form": "service",
+      "table_name": "SCIENTIFIC_ADVISORY_KOL_SPEC",
+      "fields": [
+        {
+          "name": "KOL identification",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "KOL mapping",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Insights reporting",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Expert segments covered",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "scientific_advisory_kol__expert_segments_covered",
+          "allowed_values": [
+            "KOL",
+            "Digital opinion leader",
+            "Patient advocacy group",
+            "Professional society",
+            "Network"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "KOL engagement plan",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Advisory board format",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "scientific_advisory_kol__advisory_board_format",
+          "allowed_values": [
+            "In-person",
+            "Virtual",
+            "Synthetic or AI-assisted"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Advisory board management",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Speaker programs",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Impact measurement",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    }
+  }
+}

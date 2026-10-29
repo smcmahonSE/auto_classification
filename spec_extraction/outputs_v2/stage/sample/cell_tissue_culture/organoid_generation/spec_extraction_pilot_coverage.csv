@@ -1,0 +1,28 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+organoid_generation,Capacity,826,0,0.0,826,0,0
+organoid_generation,Category (L2/L3),826,826,100.0,0,0,0
+organoid_generation,Category UNSPSC,826,0,0.0,826,0,0
+organoid_generation,Currency,826,6,0.73,820,0,0
+organoid_generation,Deliverable,826,0,0.0,826,0,0
+organoid_generation,Description,826,404,48.91,422,0,0
+organoid_generation,Document links,826,32,3.87,794,0,0
+organoid_generation,Image URL,826,25,3.03,801,0,0
+organoid_generation,Inventory,826,0,0.0,826,0,0
+organoid_generation,Lead time (days),826,0,0.0,826,0,0
+organoid_generation,Listing UNSPSC,826,0,0.0,826,0,0
+organoid_generation,Listing type,826,826,100.0,0,0,0
+organoid_generation,Manufacturer SKU,826,0,0.0,826,0,0
+organoid_generation,Manufacturer name,826,0,0.0,826,0,0
+organoid_generation,Name,826,826,100.0,0,0,0
+organoid_generation,Price per unit,826,816,98.79,10,0,0
+organoid_generation,Pricing model,826,826,100.0,0,0,0
+organoid_generation,Product / service URL,826,32,3.87,794,0,0
+organoid_generation,Protocol / scope,826,0,0.0,826,0,0
+organoid_generation,Quantity,826,0,0.0,826,0,0
+organoid_generation,Requester UNSPSC,826,0,0.0,826,0,0
+organoid_generation,Requester commodity code,826,0,0.0,826,0,0
+organoid_generation,Ship from,826,0,0.0,826,0,0
+organoid_generation,Supplier SKU,826,0,0.0,826,0,0
+organoid_generation,Turnaround,826,1,0.12,825,0,0
+organoid_generation,Unit,826,0,0.0,826,0,0
+organoid_generation,Unit of measure,826,320,38.74,327,179,0

@@ -1,0 +1,45 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+sample_management,Backup power,618,50,8.09,568,0,0
+sample_management,Biorepository location,618,25,4.05,593,0,0
+sample_management,Biorepository standard,618,18,2.91,600,0,0
+sample_management,Category (L2/L3),618,618,100.0,0,0,0
+sample_management,Category UNSPSC,618,0,0.0,618,0,0
+sample_management,Chain of custody,618,50,8.09,568,0,0
+sample_management,Consent tracking,618,50,8.09,568,0,0
+sample_management,Currency,618,4,0.65,614,0,0
+sample_management,Data delivery format,618,7,1.13,611,0,0
+sample_management,Data delivery frequency,618,7,1.13,611,0,0
+sample_management,Data transfer method,618,0,0.0,618,0,0
+sample_management,Default retention period,618,0,0.0,618,0,0
+sample_management,Description,618,346,55.99,272,0,0
+sample_management,Development stage,618,44,7.12,574,0,0
+sample_management,Document links,618,8,1.29,610,0,0
+sample_management,Image URL,618,0,0.0,618,0,0
+sample_management,Inventory,618,0,0.0,618,0,0
+sample_management,Lab region,618,20,3.24,598,0,0
+sample_management,Lead time (days),618,0,0.0,618,0,0
+sample_management,Listing UNSPSC,618,0,0.0,618,0,0
+sample_management,Listing type,618,618,100.0,0,0,0
+sample_management,Long-term storage,618,50,8.09,568,0,0
+sample_management,Manufacturer SKU,618,0,0.0,618,0,0
+sample_management,Manufacturer name,618,0,0.0,618,0,0
+sample_management,Name,618,618,100.0,0,0,0
+sample_management,Price per unit,618,593,95.95,25,0,0
+sample_management,Pricing model,618,618,100.0,0,0,0
+sample_management,Processing service,618,0,0.0,618,0,0
+sample_management,Product / service URL,618,8,1.29,610,0,0
+sample_management,Quantity,618,0,0.0,618,0,0
+sample_management,Requester UNSPSC,618,0,0.0,618,0,0
+sample_management,Requester commodity code,618,0,0.0,618,0,0
+sample_management,Retrospective biospecimen sourcing,618,50,8.09,568,0,0
+sample_management,Sample destruction,618,0,0.0,618,0,0
+sample_management,Sample tracking system,618,0,0.0,618,0,0
+sample_management,Ship from,618,0,0.0,618,0,0
+sample_management,Storage temperature (central lab),618,2,0.32,616,0,0
+sample_management,Stored sample type,618,18,2.91,600,0,0
+sample_management,Supplier SKU,618,0,0.0,618,0,0
+sample_management,Temperature monitoring,618,50,8.09,568,0,0
+sample_management,Therapeutic area (central lab),618,19,3.07,599,0,0
+sample_management,Third-party sample intake,618,50,8.09,568,0,0
+sample_management,Unit,618,0,0.0,618,0,0
+sample_management,Unit of measure,618,130,21.04,465,23,0

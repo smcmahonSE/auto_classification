@@ -1,0 +1,48 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+clinical_supply_logistics,Blinding method,715,0,0.0,715,0,0
+clinical_supply_logistics,Category (L2/L3),715,715,100.0,0,0,0
+clinical_supply_logistics,Category UNSPSC,715,0,0.0,715,0,0
+clinical_supply_logistics,Comparator sourcing,715,1,0.14,714,0,0
+clinical_supply_logistics,Comparator use,715,1,0.14,714,0,0
+clinical_supply_logistics,Compliance standard,715,1,0.14,714,0,0
+clinical_supply_logistics,Controlled substances,715,1,0.14,714,0,0
+clinical_supply_logistics,Currency,715,0,0.0,715,0,0
+clinical_supply_logistics,Delivery model,715,0,0.0,715,0,0
+clinical_supply_logistics,Depot network,715,1,0.14,714,0,0
+clinical_supply_logistics,Description,715,146,20.42,569,0,0
+clinical_supply_logistics,Development stage,715,5,0.7,710,0,0
+clinical_supply_logistics,Direct-to-patient countries,715,0,0.0,715,0,0
+clinical_supply_logistics,Distribution model,715,0,0.0,715,0,0
+clinical_supply_logistics,Document links,715,0,0.0,715,0,0
+clinical_supply_logistics,FSP engagement type,715,0,0.0,715,0,0
+clinical_supply_logistics,IRT functions,715,0,0.0,715,0,0
+clinical_supply_logistics,IRT system,715,0,0.0,715,0,0
+clinical_supply_logistics,Image URL,715,0,0.0,715,0,0
+clinical_supply_logistics,Importer of record,715,1,0.14,714,0,0
+clinical_supply_logistics,Inventory,715,0,0.0,715,0,0
+clinical_supply_logistics,Label type,715,0,0.0,715,0,0
+clinical_supply_logistics,Lead time (days),715,0,0.0,715,0,0
+clinical_supply_logistics,Listing UNSPSC,715,0,0.0,715,0,0
+clinical_supply_logistics,Listing type,715,715,100.0,0,0,0
+clinical_supply_logistics,Manufacturer SKU,715,0,0.0,715,0,0
+clinical_supply_logistics,Manufacturer name,715,0,0.0,715,0,0
+clinical_supply_logistics,Name,715,715,100.0,0,0,0
+clinical_supply_logistics,Packaging format,715,0,0.0,715,0,0
+clinical_supply_logistics,Packaging level,715,0,0.0,715,0,0
+clinical_supply_logistics,Price per unit,715,714,99.86,1,0,0
+clinical_supply_logistics,Pricing model,715,715,100.0,0,0,0
+clinical_supply_logistics,Product / service URL,715,0,0.0,715,0,0
+clinical_supply_logistics,Product modality (supply),715,1,0.14,714,0,0
+clinical_supply_logistics,QP release,715,1,0.14,714,0,0
+clinical_supply_logistics,Quantity,715,0,0.0,715,0,0
+clinical_supply_logistics,Requester UNSPSC,715,0,0.0,715,0,0
+clinical_supply_logistics,Requester commodity code,715,0,0.0,715,0,0
+clinical_supply_logistics,Returns and destruction,715,1,0.14,714,0,0
+clinical_supply_logistics,Ship from,715,0,0.0,715,0,0
+clinical_supply_logistics,Sourcing model,715,2,0.28,713,0,0
+clinical_supply_logistics,Supplier SKU,715,0,0.0,715,0,0
+clinical_supply_logistics,Supply forecasting,715,1,0.14,714,0,0
+clinical_supply_logistics,Temperature range (supply),715,0,0.0,715,0,0
+clinical_supply_logistics,Therapeutic area (clinical trial),715,1,0.14,714,0,0
+clinical_supply_logistics,Unit,715,0,0.0,715,0,0
+clinical_supply_logistics,Unit of measure,715,21,2.94,682,12,0

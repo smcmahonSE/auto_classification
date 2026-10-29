@@ -1,0 +1,1866 @@
+{
+  "l2_id": "kits_assays",
+  "l2_label": "Kits and Assays",
+  "schema_name": "KITS_ASSAYS",
+  "l2_fields": [],
+  "l3_nodes": {
+    "elisa_kits": {
+      "label": "ELISA Kits",
+      "form": "product",
+      "table_name": "ELISA_KITS_SPEC",
+      "fields": [
+        {
+          "name": "Analyte",
+          "type": "text",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_elisa_kits__analyte"
+        },
+        {
+          "name": "Assay format",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "elisa_kits__assay_format",
+          "allowed_values": [
+            "Sandwich",
+            "Competitive"
+          ]
+        },
+        {
+          "name": "Sample type (elisa)",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "elisa_kits__sample_type_elisa",
+          "allowed_values": [
+            "Serum",
+            "Plasma",
+            "EDTA plasma",
+            "Heparin plasma",
+            "Citrate plasma",
+            "Cell culture supernatant",
+            "Cell culture medium",
+            "Cell lysate",
+            "Tissue lysate",
+            "Urine",
+            "Cerebrospinal fluid",
+            "Synovial fluid",
+            "Saliva",
+            "Whole blood"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Sensitivity (elisa)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "elisa_kits__sensitivity_elisa"
+        },
+        {
+          "name": "Range (elisa)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "elisa_kits__range_elisa"
+        },
+        {
+          "name": "Species (elisa)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "elisa_kits__species_elisa",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Monkey",
+            "Pig",
+            "Dog"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Detection method (elisa)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "elisa_kits__detection_method_elisa",
+          "allowed_values": [
+            "Colorimetric",
+            "Fluorometric",
+            "Luminescent",
+            "Chemiluminescent",
+            "Electrochemical"
+          ]
+        },
+        {
+          "name": "Storage (elisa)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "elisa_kits__storage_elisa",
+          "allowed_values": [
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "Room temperature"
+          ]
+        },
+        {
+          "name": "Kit format",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "elisa_kits__kit_format",
+          "allowed_values": [
+            "Pre-coated plate",
+            "Uncoated (plate included)",
+            "Uncoated (no plate)",
+            "All-in-well plate",
+            "Tag-coated universal plate"
+          ]
+        },
+        {
+          "name": "Tests per kit (elisa)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "elisa_kits__tests_per_kit_elisa"
+        },
+        {
+          "name": "Application (elisa)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "elisa_kits__application_elisa",
+          "allowed_values": [
+            "ELISA",
+            "Multiplex",
+            "Quantification",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Assay time (elisa)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "elisa_kits__assay_time_elisa"
+        },
+        {
+          "name": "Sample volume",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "elisa_kits__sample_volume"
+        },
+        {
+          "name": "Plate format",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "elisa_kits__plate_format",
+          "allowed_values": [
+            "96-well plate",
+            "384-well plate",
+            "Strip-well plate"
+          ]
+        },
+        {
+          "name": "Quantitation type",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "elisa_kits__quantitation_type",
+          "allowed_values": [
+            "Quantitative",
+            "Semi-quantitative"
+          ]
+        },
+        {
+          "name": "Cross-reactivity",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_elisa_kits__cross_reactivity"
+        },
+        {
+          "name": "Intra-assay CV",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "elisa_kits__intra_assay_cv"
+        },
+        {
+          "name": "Inter-assay CV",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "elisa_kits__inter_assay_cv"
+        },
+        {
+          "name": "Spike recovery",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "elisa_kits__spike_recovery"
+        },
+        {
+          "name": "Linearity of dilution",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "elisa_kits__linearity_of_dilution"
+        },
+        {
+          "name": "Gene ID",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_gene_id"
+        },
+        {
+          "name": "UniProt accession",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_uniprot_accession"
+        },
+        {
+          "name": "Kit components (elisa)",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_elisa_kits__kit_components_elisa"
+        },
+        {
+          "name": "Shipping condition (elisa)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "elisa_kits__shipping_condition_elisa",
+          "allowed_values": [
+            "Ambient",
+            "Wet ice / blue ice",
+            "Dry ice"
+          ]
+        }
+      ]
+    },
+    "cell_based_assays": {
+      "label": "Cell-Based Assays",
+      "form": "product",
+      "table_name": "CELL_BASED_ASSAYS_SPEC",
+      "fields": [
+        {
+          "name": "Readout",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cell_based_assays__readout",
+          "allowed_values": [
+            "Luminescent",
+            "Fluorescent",
+            "Colorimetric"
+          ]
+        },
+        {
+          "name": "Application (cell-based)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cell_based_assays__application_cell_based",
+          "allowed_values": [
+            "Viability",
+            "Cytotoxicity",
+            "Apoptosis",
+            "Proliferation",
+            "Reporter",
+            "Signaling",
+            "Enzyme activity",
+            "Metabolic / ATP"
+          ]
+        },
+        {
+          "name": "Well format",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cell_based_assays__well_format",
+          "allowed_values": [
+            "96",
+            "384",
+            "1536",
+            "Cuvette / tube"
+          ]
+        },
+        {
+          "name": "Storage (cell-based)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cell_based_assays__storage_cell_based",
+          "allowed_values": [
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C",
+            "Room temperature"
+          ]
+        },
+        {
+          "name": "Reagent form (cell-based)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cell_based_assays__reagent_form_cell_based",
+          "allowed_values": [
+            "Ready-to-use",
+            "Liquid",
+            "Lyophilized",
+            "Concentrate",
+            "Solution in DMSO",
+            "Multi-part (mix before use)"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Tests per kit (cell-based)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "cell_based_assays__tests_per_kit_cell_based"
+        },
+        {
+          "name": "Sample type (cell-based)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cell_based_assays__sample_type_cell_based",
+          "allowed_values": [
+            "Adherent cells",
+            "Suspension cells",
+            "Primary cells",
+            "3D spheroid / organoid",
+            "Cell lysate",
+            "Tissue lysate"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Assay chemistry",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cell_based_assays__assay_chemistry",
+          "allowed_values": [
+            "MTT",
+            "XTT",
+            "WST-8",
+            "Resazurin",
+            "LDH",
+            "ATP / luciferase",
+            "Caspase substrate",
+            "Other"
+          ]
+        },
+        {
+          "name": "Assay time (cell-based)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "cell_based_assays__assay_time_cell_based"
+        },
+        {
+          "name": "Detection instrument",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cell_based_assays__detection_instrument",
+          "allowed_values": [
+            "Microplate reader",
+            "Luminometer",
+            "Fluorescence microscope",
+            "High-content imager",
+            "Flow cytometer",
+            "Spectrophotometer"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Wavelength (cell-based)",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_cell_based_assays__wavelength_cell_based"
+        },
+        {
+          "name": "Sensitivity (cell-based)",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_cell_based_assays__sensitivity_cell_based"
+        },
+        {
+          "name": "Target (cell-based)",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_cell_based_assays__target_cell_based"
+        },
+        {
+          "name": "Kit components (cell-based)",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_cell_based_assays__kit_components_cell_based"
+        },
+        {
+          "name": "Shipping condition (cell-based)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cell_based_assays__shipping_condition_cell_based",
+          "allowed_values": [
+            "Ambient",
+            "Wet ice / blue ice",
+            "Dry ice"
+          ]
+        },
+        {
+          "name": "Multiplex",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "cell_based_assays__multiplex",
+          "allowed_values": [
+            "Single",
+            "Multiplex"
+          ]
+        },
+        {
+          "name": "Multiplex-compatible",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "nucleic_acid_extraction": {
+      "label": "Nucleic Acid Extraction Kits",
+      "form": "product",
+      "table_name": "NUCLEIC_ACID_EXTRACTION_SPEC",
+      "fields": [
+        {
+          "name": "Target (nucleic acid)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "nucleic_acid_extraction__target_nucleic_acid",
+          "allowed_values": [
+            "gDNA",
+            "Total RNA",
+            "miRNA",
+            "Small RNA",
+            "cfDNA",
+            "cfRNA",
+            "Total nucleic acid (DNA and RNA)",
+            "Viral nucleic acid",
+            "Plasmid DNA"
+          ]
+        },
+        {
+          "name": "Input sample type",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "nucleic_acid_extraction__input_sample_type",
+          "allowed_values": [
+            "Blood",
+            "Buffy coat",
+            "Tissue",
+            "FFPE",
+            "Plasma",
+            "Serum",
+            "Cultured cells",
+            "Bacteria",
+            "Yeast",
+            "Saliva",
+            "Swab",
+            "Urine",
+            "Body fluids (CSF, amniotic fluid)",
+            "Plant",
+            "Enzymatic reaction cleanup"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Method (nucleic acid)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "nucleic_acid_extraction__method_nucleic_acid",
+          "allowed_values": [
+            "Spin column",
+            "Magnetic bead",
+            "Vacuum",
+            "Precipitation"
+          ]
+        },
+        {
+          "name": "Yield",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "nucleic_acid_extraction__yield"
+        },
+        {
+          "name": "Elution volume",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "nucleic_acid_extraction__elution_volume"
+        },
+        {
+          "name": "Tests per kit (nucleic acid)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "nucleic_acid_extraction__tests_per_kit_nucleic_acid"
+        },
+        {
+          "name": "Processing time",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "nucleic_acid_extraction__processing_time"
+        },
+        {
+          "name": "Sample input amount",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_nucleic_acid_extraction__sample_input_amount"
+        },
+        {
+          "name": "Format (nucleic acid)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "nucleic_acid_extraction__format_nucleic_acid",
+          "allowed_values": [
+            "Mini (single column)",
+            "Midi",
+            "Maxi",
+            "96-well plate",
+            "Instrument cartridge"
+          ]
+        },
+        {
+          "name": "Automation compatible",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "nucleic_acid_extraction__automation_compatible",
+          "allowed_values": [
+            "Manual only",
+            "QIAcube",
+            "KingFisher",
+            "Maxwell",
+            "Liquid handler"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Downstream application",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "nucleic_acid_extraction__downstream_application",
+          "allowed_values": [
+            "PCR",
+            "qPCR",
+            "RT-qPCR",
+            "dPCR",
+            "NGS",
+            "Sanger sequencing",
+            "Genotyping",
+            "Microarray",
+            "Methylation / bisulfite",
+            "Southern blot",
+            "Northern blot",
+            "Restriction digest"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Purity (A260/A280)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "nucleic_acid_extraction__purity_a260_a280"
+        },
+        {
+          "name": "Blood collection tube",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "nucleic_acid_extraction__blood_collection_tube",
+          "allowed_values": [
+            "EDTA",
+            "Citrate",
+            "Heparin",
+            "Streck cfDNA BCT",
+            "PAXgene"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Storage (nucleic acid)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "nucleic_acid_extraction__storage_nucleic_acid",
+          "allowed_values": [
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "Room temperature"
+          ]
+        }
+      ]
+    },
+    "protein_quantification": {
+      "label": "Protein Quantification Kits",
+      "form": "product",
+      "table_name": "PROTEIN_QUANTIFICATION_SPEC",
+      "fields": [
+        {
+          "name": "Method (protein quant)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_quantification__method_protein_quant",
+          "allowed_values": [
+            "BCA",
+            "Micro BCA",
+            "Bradford",
+            "Lowry",
+            "Biuret",
+            "660 nm",
+            "Fluorescent"
+          ]
+        },
+        {
+          "name": "Range (protein quant)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "protein_quantification__range_protein_quant"
+        },
+        {
+          "name": "Storage (protein quant)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_quantification__storage_protein_quant",
+          "allowed_values": [
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "Room temperature"
+          ]
+        },
+        {
+          "name": "Reagent form (protein quant)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_quantification__reagent_form_protein_quant",
+          "allowed_values": [
+            "Ready-to-use",
+            "Lyophilized",
+            "Concentrate",
+            "Multi-part (mix before use)"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Tests per kit (protein quant)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "protein_quantification__tests_per_kit_protein_quant"
+        },
+        {
+          "name": "Detection method (protein quant)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_quantification__detection_method_protein_quant",
+          "allowed_values": [
+            "Colorimetric",
+            "Fluorescent"
+          ]
+        },
+        {
+          "name": "Format (protein quant)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_quantification__format_protein_quant",
+          "allowed_values": [
+            "Microplate (96-well)",
+            "Test tube / cuvette"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Standard included",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_quantification__standard_included",
+          "allowed_values": [
+            "BSA",
+            "Bovine gamma-globulin",
+            "Non-animal protein",
+            "None"
+          ]
+        },
+        {
+          "name": "Detergent compatibility",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_quantification__detergent_compatibility",
+          "allowed_values": [
+            "Compatible",
+            "Compatible up to stated limit",
+            "Not compatible"
+          ]
+        },
+        {
+          "name": "Reducing agent compatibility",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_quantification__reducing_agent_compatibility",
+          "allowed_values": [
+            "Compatible",
+            "Compatible up to stated limit",
+            "Not compatible"
+          ]
+        },
+        {
+          "name": "Wavelength (protein quant)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "protein_quantification__wavelength_protein_quant"
+        },
+        {
+          "name": "Assay time (protein quant)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "protein_quantification__assay_time_protein_quant"
+        },
+        {
+          "name": "Sensitivity (protein quant)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "protein_quantification__sensitivity_protein_quant"
+        },
+        {
+          "name": "Sample type (protein quant)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_quantification__sample_type_protein_quant",
+          "allowed_values": [
+            "Purified protein",
+            "Column fractions",
+            "Cell lysate",
+            "Tissue extract",
+            "Serum",
+            "Plasma",
+            "Cell culture supernatant",
+            "Other biological fluids"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "detection_imaging_kits": {
+      "label": "Detection & Imaging Kits",
+      "form": "product",
+      "table_name": "DETECTION_IMAGING_KITS_SPEC",
+      "fields": [
+        {
+          "name": "Detection method (detection kits)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "detection_imaging_kits__detection_method_detection_kits",
+          "allowed_values": [
+            "Chemiluminescent",
+            "Fluorescent",
+            "Chromogenic"
+          ]
+        },
+        {
+          "name": "Enzyme",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "detection_imaging_kits__enzyme",
+          "allowed_values": [
+            "HRP",
+            "AP"
+          ]
+        },
+        {
+          "name": "Substrate",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "detection_imaging_kits__substrate",
+          "allowed_values": [
+            "DAB",
+            "AEC",
+            "TMB",
+            "Luminol / ECL",
+            "CDP-Star",
+            "Tyramide",
+            "Other"
+          ]
+        },
+        {
+          "name": "Application (detection kits)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "detection_imaging_kits__application_detection_kits",
+          "allowed_values": [
+            "WB",
+            "IHC",
+            "ICC",
+            "IF",
+            "ISH",
+            "ELISA"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Storage (detection kits)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "detection_imaging_kits__storage_detection_kits",
+          "allowed_values": [
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "Room temperature"
+          ]
+        },
+        {
+          "name": "Reagent form (detection kits)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "detection_imaging_kits__reagent_form_detection_kits",
+          "allowed_values": [
+            "Ready-to-use",
+            "Liquid",
+            "Concentrate",
+            "Multi-part (mix before use)"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Tests per kit (detection kits)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "detection_imaging_kits__tests_per_kit_detection_kits"
+        },
+        {
+          "name": "Antibody host compatibility",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "detection_imaging_kits__antibody_host_compatibility",
+          "allowed_values": [
+            "Rabbit",
+            "Mouse",
+            "Rat",
+            "Goat",
+            "Mouse and rabbit",
+            "Polyvalent"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Detection system",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "detection_imaging_kits__detection_system",
+          "allowed_values": [
+            "Polymer",
+            "Streptavidin-biotin (ABC / LSAB)",
+            "Tyramide signal amplification",
+            "Direct conjugate"
+          ]
+        },
+        {
+          "name": "Sample type (detection kits)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "detection_imaging_kits__sample_type_detection_kits",
+          "allowed_values": [
+            "FFPE sections",
+            "Frozen sections",
+            "Cells",
+            "Membrane (WB)"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Chromogen color",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "detection_imaging_kits__chromogen_color",
+          "allowed_values": [
+            "Brown",
+            "Red",
+            "Blue / purple"
+          ]
+        },
+        {
+          "name": "Sensitivity (detection kits)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "detection_imaging_kits__sensitivity_detection_kits",
+          "allowed_values": [
+            "Femtogram",
+            "Low picogram",
+            "Picogram"
+          ]
+        },
+        {
+          "name": "Signal duration",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "detection_imaging_kits__signal_duration"
+        },
+        {
+          "name": "Shelf life (detection kits)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "detection_imaging_kits__shelf_life_detection_kits"
+        },
+        {
+          "name": "Recommended antibody dilution",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_detection_imaging_kits__recommended_antibody_dilution"
+        },
+        {
+          "name": "Kit components (detection kits)",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_detection_imaging_kits__kit_components_detection_kits"
+        },
+        {
+          "name": "Membrane compatibility",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "detection_imaging_kits__membrane_compatibility",
+          "allowed_values": [
+            "Nitrocellulose",
+            "PVDF"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Imaging compatibility",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "detection_imaging_kits__imaging_compatibility",
+          "allowed_values": [
+            "Film",
+            "CCD / digital imager"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "flow_cytometry_assays": {
+      "label": "Flow Cytometry Assays",
+      "form": "product",
+      "table_name": "FLOW_CYTOMETRY_ASSAYS_SPEC",
+      "fields": [
+        {
+          "name": "Application (flow assays)",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "flow_cytometry_assays__application_flow_assays",
+          "allowed_values": [
+            "Apoptosis",
+            "Necrosis / dead cell",
+            "Proliferation",
+            "Cell tracking",
+            "Viability",
+            "Cell cycle",
+            "Immunophenotyping",
+            "Intracellular cytokine",
+            "Absolute counting"
+          ]
+        },
+        {
+          "name": "Markers",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_flow_cytometry_assays__markers"
+        },
+        {
+          "name": "Fluorophores",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "flow_cytometry_assays__fluorophores",
+          "allowed_values": [
+            "FITC",
+            "PE",
+            "APC",
+            "PerCP",
+            "PerCP-Cy5.5",
+            "PE-Cy7",
+            "APC-Cy7",
+            "Alexa Fluor 488",
+            "Alexa Fluor 647",
+            "Pacific Blue / eFluor 450",
+            "BV421",
+            "Propidium iodide (PI)",
+            "7-AAD",
+            "CFSE",
+            "Near-IR",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Species reactivity (flow assays)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "flow_cytometry_assays__species_reactivity_flow_assays",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Monkey",
+            "Pig",
+            "Dog",
+            "Multi-species",
+            "Species-independent"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Storage (flow assays)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "flow_cytometry_assays__storage_flow_assays",
+          "allowed_values": [
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C",
+            "Room temperature",
+            "Mixed (components stored separately)"
+          ]
+        },
+        {
+          "name": "Reagent form (flow assays)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "flow_cytometry_assays__reagent_form_flow_assays",
+          "allowed_values": [
+            "Ready-to-use",
+            "Liquid",
+            "Lyophilized",
+            "Concentrate",
+            "Multi-part (mix before use)"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Tests per kit (flow assays)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "flow_cytometry_assays__tests_per_kit_flow_assays"
+        },
+        {
+          "name": "Excitation laser",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "flow_cytometry_assays__excitation_laser",
+          "allowed_values": [
+            "UV 355 nm",
+            "Violet 405 nm",
+            "Blue 488 nm",
+            "Yellow-green 561 nm",
+            "Red 633/640 nm"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Fixable",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Detection platform (flow assays)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "flow_cytometry_assays__detection_platform_flow_assays",
+          "allowed_values": [
+            "Flow cytometer",
+            "Fluorescence microscope",
+            "Imaging cytometer"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Sample type (flow assays)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "flow_cytometry_assays__sample_type_flow_assays",
+          "allowed_values": [
+            "Whole blood",
+            "PBMC",
+            "Cell lines / cell suspension",
+            "Adherent cells",
+            "Tissue cell suspension"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Number of colors",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "flow_cytometry_assays__number_of_colors"
+        },
+        {
+          "name": "Regulatory status (flow assays)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "flow_cytometry_assays__regulatory_status_flow_assays",
+          "allowed_values": [
+            "RUO",
+            "IVD / CE-IVD"
+          ]
+        },
+        {
+          "name": "Kit components (flow assays)",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_flow_cytometry_assays__kit_components_flow_assays"
+        },
+        {
+          "name": "Shipping condition (flow assays)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "flow_cytometry_assays__shipping_condition_flow_assays",
+          "allowed_values": [
+            "Ambient",
+            "Wet ice / blue ice",
+            "Dry ice"
+          ]
+        }
+      ]
+    },
+    "custom_assay_development_validation": {
+      "label": "Custom assay development & validation",
+      "form": "service",
+      "table_name": "CUSTOM_ASSAY_DEVELOPMENT_VALIDATION_SPEC",
+      "fields": [
+        {
+          "name": "Assay format (custom dev)",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_assay_development_validation__assay_format_custom_dev",
+          "allowed_values": [
+            "Biochemical",
+            "Cell-based",
+            "Biophysical/binding",
+            "Phenotypic",
+            "Immunoassay"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Target class (custom dev)",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_assay_development_validation__target_class_custom_dev",
+          "allowed_values": [
+            "Kinase",
+            "GPCR",
+            "Ion channel",
+            "Nuclear receptor",
+            "Transporter",
+            "Epigenetic",
+            "Protease",
+            "Phosphatase",
+            "PDE",
+            "PARP",
+            "Ubiquitin/DUB",
+            "PPI",
+            "Other enzyme"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Detection technology (custom dev)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_assay_development_validation__detection_technology_custom_dev",
+          "allowed_values": [
+            "TR-FRET",
+            "HTRF",
+            "AlphaScreen/AlphaLISA",
+            "FP",
+            "Fluorescence intensity",
+            "Luminescence",
+            "Absorbance",
+            "Radiometric",
+            "SPR",
+            "BRET",
+            "Calcium flux",
+            "Electrophysiology",
+            "High-content imaging",
+            "Flow cytometry",
+            "Mass spec",
+            "ELISA",
+            "Reporter gene"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "HTS-ready output",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Cell line engineering included",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Client materials accepted",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_assay_development_validation__client_materials_accepted",
+          "allowed_values": [
+            "Cell line",
+            "Protein",
+            "Reference compound",
+            "Existing protocol (assay transfer)"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Cell model type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_assay_development_validation__cell_model_type",
+          "allowed_values": [
+            "Immortalized line",
+            "Primary",
+            "iPSC/stem cell-derived",
+            "3D/spheroid",
+            "Co-culture"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Species (custom dev)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_assay_development_validation__species_custom_dev",
+          "allowed_values": [
+            "Human",
+            "Mouse",
+            "Rat",
+            "Dog",
+            "NHP",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Validation parameters (custom dev)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_assay_development_validation__validation_parameters_custom_dev",
+          "allowed_values": [
+            "Z' factor",
+            "Signal-to-background",
+            "CV",
+            "DMSO tolerance",
+            "Km",
+            "Reference compound IC50",
+            "Accuracy",
+            "Precision",
+            "Specificity",
+            "Linearity/range",
+            "Robustness"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Potency readout (custom dev)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_assay_development_validation__potency_readout_custom_dev",
+          "allowed_values": [
+            "IC50",
+            "EC50",
+            "Ki",
+            "Relative potency"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Deliverables (custom dev)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_assay_development_validation__deliverables_custom_dev",
+          "allowed_values": [
+            "Validated protocol",
+            "Study report",
+            "Raw data",
+            "Stable cell line",
+            "Assay reagents/kit",
+            "Cell bank"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Turnaround time (custom dev)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "custom_assay_development_validation__turnaround_time_custom_dev"
+        },
+        {
+          "name": "Quality system (custom dev)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_assay_development_validation__quality_system_custom_dev",
+          "allowed_values": [
+            "Non-GxP",
+            "GLP",
+            "GMP",
+            "ISO 9001"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Regulatory guideline (custom dev)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_assay_development_validation__regulatory_guideline_custom_dev",
+          "allowed_values": [
+            "ICH Q2(R2)",
+            "ICH Q14",
+            "USP <1033>",
+            "None"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Protein production included",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "high_throughput_screening_hts": {
+      "label": "High-throughput screening (HTS)",
+      "form": "service",
+      "table_name": "HIGH_THROUGHPUT_SCREENING_HTS_SPEC",
+      "fields": [
+        {
+          "name": "Screening approach",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "high_throughput_screening_hts__screening_approach",
+          "allowed_values": [
+            "Biochemical",
+            "Cell-based",
+            "Phenotypic",
+            "Biophysical",
+            "Affinity selection MS",
+            "DEL",
+            "Fragment",
+            "High-content"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Library source",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "high_throughput_screening_hts__library_source",
+          "allowed_values": [
+            "Provider library",
+            "Client library",
+            "Third-party collection",
+            "Custom-designed library"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Target class (hts)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "high_throughput_screening_hts__target_class_hts",
+          "allowed_values": [
+            "Kinase",
+            "GPCR",
+            "Ion channel",
+            "Nuclear receptor",
+            "Transporter",
+            "Epigenetic",
+            "Protease",
+            "Phosphatase",
+            "PDE",
+            "PARP",
+            "Ubiquitin/DUB",
+            "PPI",
+            "Other enzyme"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Library size",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "high_throughput_screening_hts__library_size"
+        },
+        {
+          "name": "Library type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "high_throughput_screening_hts__library_type",
+          "allowed_values": [
+            "Diversity",
+            "Lead-like",
+            "Target-focused",
+            "Fragment",
+            "Natural product",
+            "Macrocycle",
+            "Covalent",
+            "Annotated/repurposing",
+            "DEL"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Plate format (hts)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "high_throughput_screening_hts__plate_format_hts",
+          "allowed_values": [
+            "96",
+            "384",
+            "1536"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Detection technology (hts)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "high_throughput_screening_hts__detection_technology_hts",
+          "allowed_values": [
+            "TR-FRET",
+            "HTRF",
+            "AlphaScreen/AlphaLISA",
+            "FP",
+            "Fluorescence intensity",
+            "Luminescence",
+            "Absorbance",
+            "Radiometric",
+            "SPR",
+            "BRET",
+            "Calcium flux",
+            "Electrophysiology",
+            "High-content imaging",
+            "Flow cytometry",
+            "Mass spec",
+            "ELISA",
+            "Reporter gene"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Assay development included",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "high_throughput_screening_hts__assay_development_included",
+          "allowed_values": [
+            "Included",
+            "Assay transfer only",
+            "Client supplies validated assay"
+          ]
+        },
+        {
+          "name": "Hit confirmation steps",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "high_throughput_screening_hts__hit_confirmation_steps",
+          "allowed_values": [
+            "Pilot screen",
+            "Retest",
+            "Dose-response",
+            "Counter-screen",
+            "Orthogonal assay",
+            "Secondary assay",
+            "Hit expansion"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Compound format",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "high_throughput_screening_hts__compound_format",
+          "allowed_values": [
+            "Singles",
+            "Pools"
+          ]
+        },
+        {
+          "name": "Automation (hts)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Computational hit expansion",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Deliverables (hts)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "high_throughput_screening_hts__deliverables_hts",
+          "allowed_values": [
+            "Hit list",
+            "Dose-response curves",
+            "Clustering/SAR",
+            "Full structures",
+            "Raw data",
+            "Report"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Turnaround time (hts)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "high_throughput_screening_hts__turnaround_time_hts"
+        },
+        {
+          "name": "Biosafety level (hts)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "high_throughput_screening_hts__biosafety_level_hts",
+          "allowed_values": [
+            "BSL-1",
+            "BSL-2",
+            "BSL-3"
+          ]
+        },
+        {
+          "name": "HTS pricing model",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "high_throughput_screening_hts__hts_pricing_model",
+          "allowed_values": [
+            "Fixed price",
+            "Custom quote"
+          ]
+        },
+        {
+          "name": "Screen QC metrics",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "high_throughput_screening_hts__screen_qc_metrics",
+          "allowed_values": [
+            "Z'",
+            "S/B",
+            "CV",
+            "Plate effects"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Max compounds per campaign",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "high_throughput_screening_hts__max_compounds_per_campaign"
+        },
+        {
+          "name": "Max hits delivered",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "high_throughput_screening_hts__max_hits_delivered"
+        },
+        {
+          "name": "Client-supplied protein required",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    }
+  }
+}

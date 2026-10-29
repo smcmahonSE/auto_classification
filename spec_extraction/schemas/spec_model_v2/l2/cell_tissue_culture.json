@@ -1010,6 +1010,30 @@
       "table_name": "CELL_LINES_SPEC",
       "fields": [
         {
+          "name": "Cell line name",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_cell_line_name"
+        },
+        {
+          "name": "Repository catalog number",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_repository_catalog_number"
+        },
+        {
+          "name": "Cell line synonyms",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_cell_line_synonyms"
+        },
+        {
           "name": "Organism",
           "type": "picklist",
           "required": true,

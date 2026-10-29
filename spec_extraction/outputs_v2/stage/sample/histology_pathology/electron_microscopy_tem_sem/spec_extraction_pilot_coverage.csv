@@ -1,0 +1,35 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+electron_microscopy_tem_sem,Capacity,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Category (L2/L3),967,967,100.0,0,0,0
+electron_microscopy_tem_sem,Category UNSPSC,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Currency,967,1,0.1,966,0,0
+electron_microscopy_tem_sem,Deliverables,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Description,967,129,13.34,838,0,0
+electron_microscopy_tem_sem,Document links,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Fixation requirement,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,GLP status,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Image URL,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Image deliverables,967,1,0.1,966,0,0
+electron_microscopy_tem_sem,Inventory,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Lead time (days),967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Listing UNSPSC,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Listing type,967,967,100.0,0,0,0
+electron_microscopy_tem_sem,Manufacturer SKU,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Manufacturer name,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Name,967,967,100.0,0,0,0
+electron_microscopy_tem_sem,Price per unit,967,966,99.9,1,0,0
+electron_microscopy_tem_sem,Pricing model,967,967,100.0,0,0,0
+electron_microscopy_tem_sem,Pricing unit,967,9,0.93,958,0,0
+electron_microscopy_tem_sem,Product / service URL,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Quantity,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Requester UNSPSC,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Requester commodity code,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Sample type,967,27,2.79,940,0,0
+electron_microscopy_tem_sem,Section thickness,967,14,1.45,953,0,0
+electron_microscopy_tem_sem,Ship from,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Species,967,18,1.86,949,0,0
+electron_microscopy_tem_sem,Supplier SKU,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Technique,967,108,11.17,853,6,0
+electron_microscopy_tem_sem,Turnaround,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Unit,967,0,0.0,967,0,0
+electron_microscopy_tem_sem,Unit of measure,967,59,6.1,899,9,0

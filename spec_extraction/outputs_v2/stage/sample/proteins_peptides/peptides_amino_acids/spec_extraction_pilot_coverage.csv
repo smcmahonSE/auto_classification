@@ -1,0 +1,35 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+peptides_amino_acids,Category (L2/L3),20000,20000,100.0,0,0,0
+peptides_amino_acids,Category UNSPSC,20000,0,0.0,20000,0,0
+peptides_amino_acids,Counterion / salt,20000,1083,5.42,18912,5,0
+peptides_amino_acids,Currency,20000,182,0.91,19816,2,0
+peptides_amino_acids,Description,20000,16260,81.3,3740,0,0
+peptides_amino_acids,Document links,20000,1582,7.91,18418,0,0
+peptides_amino_acids,Endotoxin level,20000,16,0.08,19984,0,0
+peptides_amino_acids,Form,20000,383,1.92,19597,20,0
+peptides_amino_acids,Grade,20000,103,0.52,19896,1,0
+peptides_amino_acids,Image URL,20000,14,0.07,19986,0,0
+peptides_amino_acids,Inventory,20000,0,0.0,20000,0,0
+peptides_amino_acids,Lead time (days),20000,0,0.0,20000,0,0
+peptides_amino_acids,Length (aa),20000,16,0.08,19984,0,0
+peptides_amino_acids,Listing UNSPSC,20000,0,0.0,20000,0,0
+peptides_amino_acids,Listing type,20000,20000,100.0,0,0,0
+peptides_amino_acids,Manufacturer SKU,20000,0,0.0,20000,0,0
+peptides_amino_acids,Manufacturer name,20000,0,0.0,20000,0,0
+peptides_amino_acids,Modifications,20000,829,4.15,19171,0,0
+peptides_amino_acids,Molecular weight,20000,228,1.14,19772,0,0
+peptides_amino_acids,Name,20000,20000,100.0,0,0,0
+peptides_amino_acids,Price per unit,20000,19389,96.95,611,0,0
+peptides_amino_acids,Pricing model,20000,20000,100.0,0,0,0
+peptides_amino_acids,Product / service URL,20000,1582,7.91,18418,0,0
+peptides_amino_acids,Purity (HPLC),20000,26,0.13,19973,1,0
+peptides_amino_acids,Quantity,20000,0,0.0,20000,0,0
+peptides_amino_acids,Requester UNSPSC,20000,0,0.0,20000,0,0
+peptides_amino_acids,Requester commodity code,20000,0,0.0,20000,0,0
+peptides_amino_acids,Scale,20000,7831,39.16,12169,0,0
+peptides_amino_acids,Sequence,20000,0,0.0,20000,0,0
+peptides_amino_acids,Ship from,20000,1,0.01,19999,0,0
+peptides_amino_acids,Storage / reconstitution,20000,3186,15.93,16302,512,0
+peptides_amino_acids,Supplier SKU,20000,0,0.0,20000,0,0
+peptides_amino_acids,Unit,20000,0,0.0,20000,0,0
+peptides_amino_acids,Unit of measure,20000,3804,19.02,16098,98,0

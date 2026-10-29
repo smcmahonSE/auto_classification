@@ -1,0 +1,45 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+flow_cytometry_central_lab,Analysis software,549,41,7.47,508,0,0
+flow_cytometry_central_lab,Assay application (central lab flow),549,8,1.46,541,0,0
+flow_cytometry_central_lab,Assay regulatory status,549,0,0.0,549,0,0
+flow_cytometry_central_lab,Category (L2/L3),549,549,100.0,0,0,0
+flow_cytometry_central_lab,Category UNSPSC,549,0,0.0,549,0,0
+flow_cytometry_central_lab,Currency,549,1,0.18,548,0,0
+flow_cytometry_central_lab,Custom panel development,549,24,4.37,525,0,0
+flow_cytometry_central_lab,Cytometer platform,549,0,0.0,549,0,0
+flow_cytometry_central_lab,Data delivery format,549,11,2.0,538,0,0
+flow_cytometry_central_lab,Data delivery frequency,549,13,2.37,536,0,0
+flow_cytometry_central_lab,Data transfer method,549,0,0.0,549,0,0
+flow_cytometry_central_lab,Description,549,396,72.13,153,0,0
+flow_cytometry_central_lab,Development stage,549,24,4.37,525,0,0
+flow_cytometry_central_lab,Document links,549,15,2.73,534,0,0
+flow_cytometry_central_lab,Flow sample type,549,15,2.73,534,0,0
+flow_cytometry_central_lab,Image URL,549,11,2.0,538,0,0
+flow_cytometry_central_lab,Inventory,549,0,0.0,549,0,0
+flow_cytometry_central_lab,Lab region,549,14,2.55,535,0,0
+flow_cytometry_central_lab,Lead time (days),549,0,0.0,549,0,0
+flow_cytometry_central_lab,Listing UNSPSC,549,0,0.0,549,0,0
+flow_cytometry_central_lab,Listing type,549,549,100.0,0,0,0
+flow_cytometry_central_lab,Manufacturer SKU,549,0,0.0,549,0,0
+flow_cytometry_central_lab,Manufacturer name,549,0,0.0,549,0,0
+flow_cytometry_central_lab,Mass cytometry,549,24,4.37,525,0,0
+flow_cytometry_central_lab,Max colors per panel,549,0,0.0,549,0,0
+flow_cytometry_central_lab,Name,549,549,100.0,0,0,0
+flow_cytometry_central_lab,PBMC isolation,549,24,4.37,525,0,0
+flow_cytometry_central_lab,Price per unit,549,514,93.62,35,0,0
+flow_cytometry_central_lab,Pricing model,549,549,100.0,0,0,0
+flow_cytometry_central_lab,Product / service URL,549,15,2.73,534,0,0
+flow_cytometry_central_lab,Quantity,549,0,0.0,549,0,0
+flow_cytometry_central_lab,Raw data file access,549,24,4.37,525,0,0
+flow_cytometry_central_lab,Ready-made panels,549,24,4.37,525,0,0
+flow_cytometry_central_lab,Requester UNSPSC,549,0,0.0,549,0,0
+flow_cytometry_central_lab,Requester commodity code,549,0,0.0,549,0,0
+flow_cytometry_central_lab,Sample stability,549,0,0.0,549,0,0
+flow_cytometry_central_lab,Ship from,549,0,0.0,549,0,0
+flow_cytometry_central_lab,Spectral flow,549,24,4.37,525,0,0
+flow_cytometry_central_lab,Stabilization tubes,549,24,4.37,525,0,0
+flow_cytometry_central_lab,Supplier SKU,549,0,0.0,549,0,0
+flow_cytometry_central_lab,Therapeutic area (central lab),549,48,8.74,501,0,0
+flow_cytometry_central_lab,Unit,549,0,0.0,549,0,0
+flow_cytometry_central_lab,Unit of measure,549,123,22.4,372,54,0
+flow_cytometry_central_lab,Validation guideline,549,1,0.18,548,0,0

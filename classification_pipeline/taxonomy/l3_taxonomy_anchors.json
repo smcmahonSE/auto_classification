@@ -749,11 +749,6 @@
         "description": "Assays detecting and characterizing anti-drug antibodies (ADA) and neutralizing antibodies generated in response to a biotherapeutic. Includes screening, confirmatory, and titer/neutralizing antibody assays per regulatory tiered testing strategies."
       },
       {
-        "id": "biomarker_assays",
-        "label": "Biomarker Assays",
-        "description": "Quantitative assays measuring pharmacodynamic or disease-related biomarkers in biological samples to support clinical or nonclinical studies. Includes ligand-binding assays, multiplex biomarker panels, and biomarker assay qualification."
-      },
-      {
         "id": "method_development_validation_bioanalysis",
         "label": "Method Development & Validation",
         "description": "Development and regulatory validation of bioanalytical methods for a specific analyte and matrix. Includes fit-for-purpose and GLP/regulated (FDA/EMA) bioanalytical method validation."
@@ -840,11 +835,6 @@
         "description": "Non-routine, specialized laboratory testing requiring specific expertise or platforms. Includes esoteric/reference lab testing, specialized assay panels, and low-volume/rare-analyte testing."
       },
       {
-        "id": "biomarker_testing",
-        "label": "Biomarker Testing",
-        "description": "Central-lab testing of pharmacodynamic, safety, or efficacy biomarkers across multi-site clinical trials. Includes standardized biomarker panels and cross-site biomarker testing harmonization."
-      },
-      {
         "id": "flow_cytometry_central_lab",
         "label": "Flow Cytometry",
         "description": "Central-lab flow cytometry testing services for immunophenotyping and cell-based endpoints in clinical trials. Includes standardized immunophenotyping panels and multi-site flow cytometry harmonization."
@@ -862,19 +852,14 @@
     ],
     "biomarker_companion_diagnostics": [
       {
-        "id": "biomarker_assay_development",
-        "label": "Biomarker Assay Development",
-        "description": "Development of novel or fit-for-purpose biomarker assays supporting drug development. Includes exploratory and analytically validated biomarker assay development for pharmacodynamic, safety, or patient-selection biomarkers."
+        "id": "biomarker_assays",
+        "label": "Biomarker Assays",
+        "description": "Development and testing of quantitative biomarker assays measuring pharmacodynamic, safety, efficacy, or patient-selection biomarkers in biological samples, to support drug development, nonclinical studies, and multi-site clinical trials. Includes exploratory and analytically validated biomarker assay development, ligand-binding assays, multiplex biomarker panels, biomarker assay qualification, and standardized cross-site biomarker testing harmonization."
       },
       {
         "id": "companion_diagnostic_cdx_development",
         "label": "Companion Diagnostic (CDx) Development",
         "description": "Development of in vitro diagnostic tests co-developed with a therapeutic to identify patients likely to benefit from treatment. Includes CDx assay development, analytical/clinical validation, and regulatory co-submission support."
-      },
-      {
-        "id": "clinical_assay_validation",
-        "label": "Clinical Assay Validation",
-        "description": "Validation of clinical laboratory assays to demonstrate analytical and clinical performance for use in a clinical trial or diagnostic context. Includes analytical validation (precision, accuracy, sensitivity/specificity) and clinical validation studies."
       },
       {
         "id": "genomic_molecular_profiling",

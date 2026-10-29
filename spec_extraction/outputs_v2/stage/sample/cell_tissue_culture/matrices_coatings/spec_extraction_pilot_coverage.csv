@@ -1,38 +1,38 @@
 l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
-matrices_coatings,Category (L2/L3),150,150,100.0,0,0,0
-matrices_coatings,Category UNSPSC,150,0,0.0,150,0,0
-matrices_coatings,Currency,150,2,1.33,148,0,0
-matrices_coatings,Delivery format,150,16,10.67,134,0,0
-matrices_coatings,Description,150,148,98.67,2,0,0
-matrices_coatings,Document links,150,8,5.33,142,0,0
-matrices_coatings,Format / physical form,150,16,10.67,134,0,0
-matrices_coatings,Formulation / animal origin,150,1,0.67,149,0,0
-matrices_coatings,Grade / regulatory,150,0,0.0,150,0,0
-matrices_coatings,Growth factor content,150,76,50.67,62,12,0
-matrices_coatings,Image URL,150,0,0.0,150,0,0
-matrices_coatings,Intended cell type / application,150,0,0.0,150,0,0
-matrices_coatings,Inventory,150,0,0.0,150,0,0
-matrices_coatings,Lead time (days),150,0,0.0,150,0,0
-matrices_coatings,Listing UNSPSC,150,0,0.0,150,0,0
-matrices_coatings,Listing type,150,150,100.0,0,0,0
-matrices_coatings,Manufacturer SKU,150,0,0.0,150,0,0
-matrices_coatings,Manufacturer name,150,0,0.0,150,0,0
-matrices_coatings,Matrix type,150,25,16.67,123,2,0
-matrices_coatings,Name,150,150,100.0,0,0,0
-matrices_coatings,Phenol red,150,76,50.67,62,12,0
-matrices_coatings,Price per unit,150,143,95.33,7,0,0
-matrices_coatings,Pricing model,150,150,100.0,0,0,0
-matrices_coatings,Product / service URL,150,8,5.33,142,0,0
-matrices_coatings,Protein concentration,150,76,50.67,62,12,0
-matrices_coatings,Qualification,150,76,50.67,62,12,0
-matrices_coatings,Quantity,150,0,0.0,150,0,0
-matrices_coatings,Requester UNSPSC,150,0,0.0,150,0,0
-matrices_coatings,Requester commodity code,150,0,0.0,150,0,0
-matrices_coatings,Ship from,150,0,0.0,150,0,0
-matrices_coatings,Shipping temperature,150,0,0.0,150,0,0
-matrices_coatings,Species (cell source or intended use),150,26,17.33,122,2,0
-matrices_coatings,Sterility / contamination QC,150,0,0.0,150,0,0
-matrices_coatings,Storage conditions,150,3,2.0,146,1,0
-matrices_coatings,Supplier SKU,150,0,0.0,150,0,0
-matrices_coatings,Unit,150,0,0.0,150,0,0
-matrices_coatings,Unit of measure,150,48,32.0,92,10,0
+matrices_coatings,Category (L2/L3),7347,7347,100.0,0,0,0
+matrices_coatings,Category UNSPSC,7347,0,0.0,7347,0,0
+matrices_coatings,Currency,7347,72,0.98,7275,0,0
+matrices_coatings,Delivery format,7347,1023,13.92,6276,48,0
+matrices_coatings,Description,7347,7186,97.81,161,0,0
+matrices_coatings,Document links,7347,502,6.83,6845,0,0
+matrices_coatings,Format / physical form,7347,1023,13.92,6276,48,0
+matrices_coatings,Formulation / animal origin,7347,169,2.3,7178,0,0
+matrices_coatings,Grade / regulatory,7347,12,0.16,7335,0,0
+matrices_coatings,Growth factor content,7347,3642,49.57,2976,729,0
+matrices_coatings,Image URL,7347,51,0.69,7296,0,0
+matrices_coatings,Intended cell type / application,7347,0,0.0,7347,0,0
+matrices_coatings,Inventory,7347,0,0.0,7347,0,0
+matrices_coatings,Lead time (days),7347,0,0.0,7347,0,0
+matrices_coatings,Listing UNSPSC,7347,0,0.0,7347,0,0
+matrices_coatings,Listing type,7347,7347,100.0,0,0,0
+matrices_coatings,Manufacturer SKU,7347,0,0.0,7347,0,0
+matrices_coatings,Manufacturer name,7347,0,0.0,7347,0,0
+matrices_coatings,Matrix type,7347,1324,18.02,5878,145,0
+matrices_coatings,Name,7347,7347,100.0,0,0,0
+matrices_coatings,Phenol red,7347,3642,49.57,2976,729,0
+matrices_coatings,Price per unit,7347,7146,97.26,201,0,0
+matrices_coatings,Pricing model,7347,7347,100.0,0,0,0
+matrices_coatings,Product / service URL,7347,502,6.83,6845,0,0
+matrices_coatings,Protein concentration,7347,3642,49.57,2976,729,0
+matrices_coatings,Qualification,7347,3642,49.57,2976,729,0
+matrices_coatings,Quantity,7347,0,0.0,7347,0,0
+matrices_coatings,Requester UNSPSC,7347,0,0.0,7347,0,0
+matrices_coatings,Requester commodity code,7347,0,0.0,7347,0,0
+matrices_coatings,Ship from,7347,0,0.0,7347,0,0
+matrices_coatings,Shipping temperature,7347,9,0.12,7338,0,0
+matrices_coatings,Species (cell source or intended use),7347,1229,16.73,5903,215,0
+matrices_coatings,Sterility / contamination QC,7347,34,0.46,7313,0,0
+matrices_coatings,Storage conditions,7347,364,4.95,6960,23,0
+matrices_coatings,Supplier SKU,7347,0,0.0,7347,0,0
+matrices_coatings,Unit,7347,0,0.0,7347,0,0
+matrices_coatings,Unit of measure,7347,2571,34.99,4224,552,0

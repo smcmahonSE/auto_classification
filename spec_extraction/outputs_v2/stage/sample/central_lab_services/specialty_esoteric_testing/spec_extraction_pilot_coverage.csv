@@ -1,0 +1,40 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+specialty_esoteric_testing,AST breakpoint standard,2579,5,0.19,2574,0,0
+specialty_esoteric_testing,Category (L2/L3),2579,2579,100.0,0,0,0
+specialty_esoteric_testing,Category UNSPSC,2579,0,0.0,2579,0,0
+specialty_esoteric_testing,Companion diagnostic support,2579,25,0.97,2554,0,0
+specialty_esoteric_testing,Currency,2579,0,0.0,2579,0,0
+specialty_esoteric_testing,Data delivery format,2579,15,0.58,2564,0,0
+specialty_esoteric_testing,Data delivery frequency,2579,16,0.62,2563,0,0
+specialty_esoteric_testing,Data transfer method,2579,0,0.0,2579,0,0
+specialty_esoteric_testing,Description,2579,271,10.51,2308,0,0
+specialty_esoteric_testing,Development stage,2579,66,2.56,2513,0,0
+specialty_esoteric_testing,Digital pathology scanner,2579,17,0.66,2562,0,0
+specialty_esoteric_testing,Document links,2579,7,0.27,2572,0,0
+specialty_esoteric_testing,Image URL,2579,0,0.0,2579,0,0
+specialty_esoteric_testing,Inventory,2579,0,0.0,2579,0,0
+specialty_esoteric_testing,Lab region,2579,1,0.04,2578,0,0
+specialty_esoteric_testing,Lead time (days),2579,0,0.0,2579,0,0
+specialty_esoteric_testing,Listing UNSPSC,2579,0,0.0,2579,0,0
+specialty_esoteric_testing,Listing type,2579,2579,100.0,0,0,0
+specialty_esoteric_testing,Manufacturer SKU,2579,0,0.0,2579,0,0
+specialty_esoteric_testing,Manufacturer name,2579,0,0.0,2579,0,0
+specialty_esoteric_testing,Mass spec platform,2579,0,0.0,2579,0,0
+specialty_esoteric_testing,Microbiology method,2579,10,0.39,2569,0,0
+specialty_esoteric_testing,Name,2579,2579,100.0,0,0,0
+specialty_esoteric_testing,Pathology service,2579,2,0.08,2577,0,0
+specialty_esoteric_testing,Price per unit,2579,2563,99.38,16,0,0
+specialty_esoteric_testing,Pricing model,2579,2579,100.0,0,0,0
+specialty_esoteric_testing,Product / service URL,2579,7,0.27,2572,0,0
+specialty_esoteric_testing,Quantity,2579,0,0.0,2579,0,0
+specialty_esoteric_testing,Requester UNSPSC,2579,0,0.0,2579,0,0
+specialty_esoteric_testing,Requester commodity code,2579,0,0.0,2579,0,0
+specialty_esoteric_testing,Ship from,2579,0,0.0,2579,0,0
+specialty_esoteric_testing,Specialty discipline,2579,22,0.85,2557,0,0
+specialty_esoteric_testing,Supplier SKU,2579,0,0.0,2579,0,0
+specialty_esoteric_testing,Target / marker,2579,0,0.0,2579,0,0
+specialty_esoteric_testing,Therapeutic area (central lab),2579,18,0.7,2561,0,0
+specialty_esoteric_testing,Tissue sample type,2579,1,0.04,2578,0,0
+specialty_esoteric_testing,Unit,2579,0,0.0,2579,0,0
+specialty_esoteric_testing,Unit of measure,2579,209,8.1,2333,37,0
+specialty_esoteric_testing,Viral target,2579,0,0.0,2579,0,0

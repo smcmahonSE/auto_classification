@@ -1,0 +1,41 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+scientific_advisory_kol,AI-assisted delivery,39,0,0.0,39,0,0
+scientific_advisory_kol,Advisory board format,39,0,0.0,39,0,0
+scientific_advisory_kol,Advisory board management,39,0,0.0,39,0,0
+scientific_advisory_kol,Category (L2/L3),39,39,100.0,0,0,0
+scientific_advisory_kol,Category UNSPSC,39,0,0.0,39,0,0
+scientific_advisory_kol,Compliance with codes of practice,39,0,0.0,39,0,0
+scientific_advisory_kol,Currency,39,0,0.0,39,0,0
+scientific_advisory_kol,Description,39,14,35.9,25,0,0
+scientific_advisory_kol,Development stage,39,0,0.0,39,0,0
+scientific_advisory_kol,Document links,39,0,0.0,39,0,0
+scientific_advisory_kol,Engagement model (medaffairs),39,0,0.0,39,0,0
+scientific_advisory_kol,Expert segments covered,39,0,0.0,39,0,0
+scientific_advisory_kol,Geographic coverage (medaffairs),39,0,0.0,39,0,0
+scientific_advisory_kol,Image URL,39,0,0.0,39,0,0
+scientific_advisory_kol,Impact measurement,39,0,0.0,39,0,0
+scientific_advisory_kol,Insights reporting,39,0,0.0,39,0,0
+scientific_advisory_kol,Inventory,39,0,0.0,39,0,0
+scientific_advisory_kol,KOL engagement plan,39,0,0.0,39,0,0
+scientific_advisory_kol,KOL identification,39,0,0.0,39,0,0
+scientific_advisory_kol,KOL mapping,39,0,0.0,39,0,0
+scientific_advisory_kol,Lead time (days),39,0,0.0,39,0,0
+scientific_advisory_kol,Listing UNSPSC,39,0,0.0,39,0,0
+scientific_advisory_kol,Listing type,39,39,100.0,0,0,0
+scientific_advisory_kol,Manufacturer SKU,39,0,0.0,39,0,0
+scientific_advisory_kol,Manufacturer name,39,0,0.0,39,0,0
+scientific_advisory_kol,Name,39,39,100.0,0,0,0
+scientific_advisory_kol,Price per unit,39,39,100.0,0,0,0
+scientific_advisory_kol,Pricing model,39,39,100.0,0,0,0
+scientific_advisory_kol,Product / service URL,39,0,0.0,39,0,0
+scientific_advisory_kol,Program scope,39,0,0.0,39,0,0
+scientific_advisory_kol,Promotional status,39,0,0.0,39,0,0
+scientific_advisory_kol,Quantity,39,0,0.0,39,0,0
+scientific_advisory_kol,Requester UNSPSC,39,0,0.0,39,0,0
+scientific_advisory_kol,Requester commodity code,39,0,0.0,39,0,0
+scientific_advisory_kol,Ship from,39,0,0.0,39,0,0
+scientific_advisory_kol,Speaker programs,39,0,0.0,39,0,0
+scientific_advisory_kol,Supplier SKU,39,0,0.0,39,0,0
+scientific_advisory_kol,Therapeutic areas (medaffairs),39,0,0.0,39,0,0
+scientific_advisory_kol,Unit,39,0,0.0,39,0,0
+scientific_advisory_kol,Unit of measure,39,1,2.56,38,0,0

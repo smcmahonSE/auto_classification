@@ -1,0 +1,44 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+high_throughput_screening_hts,Assay development included,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Automation (hts),1065,110,10.33,955,0,0
+high_throughput_screening_hts,Biosafety level (hts),1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Category (L2/L3),1065,1065,100.0,0,0,0
+high_throughput_screening_hts,Category UNSPSC,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Client-supplied protein required,1065,110,10.33,955,0,0
+high_throughput_screening_hts,Compound format,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Computational hit expansion,1065,110,10.33,955,0,0
+high_throughput_screening_hts,Currency,1065,5,0.47,1060,0,0
+high_throughput_screening_hts,Deliverables (hts),1065,11,1.03,1054,0,0
+high_throughput_screening_hts,Description,1065,583,54.74,482,0,0
+high_throughput_screening_hts,Detection technology (hts),1065,79,7.42,986,0,0
+high_throughput_screening_hts,Document links,1065,32,3.0,1033,0,0
+high_throughput_screening_hts,HTS pricing model,1065,3,0.28,1062,0,0
+high_throughput_screening_hts,Hit confirmation steps,1065,1,0.09,1064,0,0
+high_throughput_screening_hts,Image URL,1065,1,0.09,1064,0,0
+high_throughput_screening_hts,Inventory,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Lead time (days),1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Library size,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Library source,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Library type,1065,8,0.75,1057,0,0
+high_throughput_screening_hts,Listing UNSPSC,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Listing type,1065,1065,100.0,0,0,0
+high_throughput_screening_hts,Manufacturer SKU,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Manufacturer name,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Max compounds per campaign,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Max hits delivered,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Name,1065,1065,100.0,0,0,0
+high_throughput_screening_hts,Plate format (hts),1065,74,6.95,991,0,0
+high_throughput_screening_hts,Price per unit,1065,1037,97.37,28,0,0
+high_throughput_screening_hts,Pricing model,1065,1065,100.0,0,0,0
+high_throughput_screening_hts,Product / service URL,1065,32,3.0,1033,0,0
+high_throughput_screening_hts,Quantity,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Requester UNSPSC,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Requester commodity code,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Screen QC metrics,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Screening approach,1065,78,7.32,987,0,0
+high_throughput_screening_hts,Ship from,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Supplier SKU,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Target class (hts),1065,110,10.33,955,0,0
+high_throughput_screening_hts,Turnaround time (hts),1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Unit,1065,0,0.0,1065,0,0
+high_throughput_screening_hts,Unit of measure,1065,241,22.63,629,195,0

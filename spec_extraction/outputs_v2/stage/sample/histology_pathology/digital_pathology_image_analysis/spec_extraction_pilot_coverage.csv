@@ -1,0 +1,38 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+digital_pathology_image_analysis,21 CFR Part 11 validated,3678,10,0.27,3668,0,0
+digital_pathology_image_analysis,Capacity,3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Category (L2/L3),3678,3678,100.0,0,0,0
+digital_pathology_image_analysis,Category UNSPSC,3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Currency,3678,3,0.08,3675,0,0
+digital_pathology_image_analysis,Deliverables,3678,6,0.16,3672,0,0
+digital_pathology_image_analysis,Description,3678,694,18.87,2984,0,0
+digital_pathology_image_analysis,Document links,3678,5,0.14,3673,0,0
+digital_pathology_image_analysis,GLP status,3678,7,0.19,3671,0,0
+digital_pathology_image_analysis,Image URL,3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Image analysis platform,3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Image format,3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Imaging mode,3678,4,0.11,3674,0,0
+digital_pathology_image_analysis,Inventory,3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Lead time (days),3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Listing UNSPSC,3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Listing type,3678,3678,100.0,0,0,0
+digital_pathology_image_analysis,Manufacturer SKU,3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Manufacturer name,3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Name,3678,3678,100.0,0,0,0
+digital_pathology_image_analysis,Pathologist credentials,3678,3,0.08,3675,0,0
+digital_pathology_image_analysis,Price per unit,3678,3675,99.92,3,0,0
+digital_pathology_image_analysis,Pricing model,3678,3678,100.0,0,0,0
+digital_pathology_image_analysis,Pricing unit,3678,15,0.41,3662,1,0
+digital_pathology_image_analysis,Product / service URL,3678,5,0.14,3673,0,0
+digital_pathology_image_analysis,Quantity,3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Requester UNSPSC,3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Requester commodity code,3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Sample type,3678,1172,31.87,2506,0,0
+digital_pathology_image_analysis,Scan magnification,3678,6,0.16,3671,1,0
+digital_pathology_image_analysis,Scanner,3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Ship from,3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Species,3678,677,18.41,3001,0,0
+digital_pathology_image_analysis,Supplier SKU,3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Turnaround,3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Unit,3678,0,0.0,3678,0,0
+digital_pathology_image_analysis,Unit of measure,3678,866,23.55,2777,35,0

@@ -1,0 +1,41 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+cell_based_assays,Application (cell-based),5602,839,14.98,4630,133,0
+cell_based_assays,Assay chemistry,5602,386,6.89,5206,10,0
+cell_based_assays,Assay time (cell-based),5602,0,0.0,5602,0,0
+cell_based_assays,Category (L2/L3),5602,5602,100.0,0,0,0
+cell_based_assays,Category UNSPSC,5602,0,0.0,5602,0,0
+cell_based_assays,Currency,5602,46,0.82,5556,0,0
+cell_based_assays,Description,5602,3327,59.39,2275,0,0
+cell_based_assays,Detection instrument,5602,40,0.71,5562,0,0
+cell_based_assays,Document links,5602,181,3.23,5421,0,0
+cell_based_assays,Image URL,5602,33,0.59,5569,0,0
+cell_based_assays,Inventory,5602,0,0.0,5602,0,0
+cell_based_assays,Kit components (cell-based),5602,0,0.0,5602,0,0
+cell_based_assays,Lead time (days),5602,0,0.0,5602,0,0
+cell_based_assays,Listing UNSPSC,5602,0,0.0,5602,0,0
+cell_based_assays,Listing type,5602,5602,100.0,0,0,0
+cell_based_assays,Manufacturer SKU,5602,0,0.0,5602,0,0
+cell_based_assays,Manufacturer name,5602,0,0.0,5602,0,0
+cell_based_assays,Multiplex,5602,218,3.89,5379,5,0
+cell_based_assays,Multiplex-compatible,5602,674,12.03,4926,2,0
+cell_based_assays,Name,5602,5602,100.0,0,0,0
+cell_based_assays,Price per unit,5602,5325,95.06,277,0,0
+cell_based_assays,Pricing model,5602,5602,100.0,0,0,0
+cell_based_assays,Product / service URL,5602,181,3.23,5421,0,0
+cell_based_assays,Quantity,5602,0,0.0,5602,0,0
+cell_based_assays,Readout,5602,371,6.62,5223,8,0
+cell_based_assays,Reagent form (cell-based),5602,299,5.34,5303,0,0
+cell_based_assays,Requester UNSPSC,5602,0,0.0,5602,0,0
+cell_based_assays,Requester commodity code,5602,0,0.0,5602,0,0
+cell_based_assays,Sample type (cell-based),5602,133,2.37,5469,0,0
+cell_based_assays,Sensitivity (cell-based),5602,0,0.0,5602,0,0
+cell_based_assays,Ship from,5602,0,0.0,5602,0,0
+cell_based_assays,Shipping condition (cell-based),5602,24,0.43,5578,0,0
+cell_based_assays,Storage (cell-based),5602,221,3.95,5293,88,0
+cell_based_assays,Supplier SKU,5602,0,0.0,5602,0,0
+cell_based_assays,Target (cell-based),5602,0,0.0,5602,0,0
+cell_based_assays,Tests per kit (cell-based),5602,0,0.0,5602,0,0
+cell_based_assays,Unit,5602,0,0.0,5602,0,0
+cell_based_assays,Unit of measure,5602,2192,39.13,1843,1567,0
+cell_based_assays,Wavelength (cell-based),5602,0,0.0,5602,0,0
+cell_based_assays,Well format,5602,301,5.37,5267,34,0

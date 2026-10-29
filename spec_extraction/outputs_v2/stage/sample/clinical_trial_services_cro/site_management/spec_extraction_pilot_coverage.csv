@@ -1,0 +1,36 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+site_management,Category (L2/L3),947,947,100.0,0,0,0
+site_management,Category UNSPSC,947,0,0.0,947,0,0
+site_management,Currency,947,0,0.0,947,0,0
+site_management,Delivery model,947,3,0.32,944,0,0
+site_management,Description,947,87,9.19,860,0,0
+site_management,Development stage,947,9,0.95,938,0,0
+site_management,Document links,947,0,0.0,947,0,0
+site_management,FSP engagement type,947,0,0.0,947,0,0
+site_management,Feasibility data sources,947,1,0.11,946,0,0
+site_management,Image URL,947,0,0.0,947,0,0
+site_management,Inventory,947,0,0.0,947,0,0
+site_management,Investigator payments,947,3,0.32,944,0,0
+site_management,Lead time (days),947,0,0.0,947,0,0
+site_management,Listing UNSPSC,947,0,0.0,947,0,0
+site_management,Listing type,947,947,100.0,0,0,0
+site_management,Manufacturer SKU,947,0,0.0,947,0,0
+site_management,Manufacturer name,947,0,0.0,947,0,0
+site_management,Name,947,947,100.0,0,0,0
+site_management,Network therapeutic focus,947,11,1.16,936,0,0
+site_management,Price per unit,947,944,99.68,3,0,0
+site_management,Pricing model,947,947,100.0,0,0,0
+site_management,Product / service URL,947,0,0.0,947,0,0
+site_management,Quantity,947,0,0.0,947,0,0
+site_management,Requester UNSPSC,947,0,0.0,947,0,0
+site_management,Requester commodity code,947,0,0.0,947,0,0
+site_management,Ship from,947,0,0.0,947,0,0
+site_management,Site augmentation staff,947,0,0.0,947,0,0
+site_management,Site portal,947,0,0.0,947,0,0
+site_management,Site selection method,947,0,0.0,947,0,0
+site_management,Site types,947,0,0.0,947,0,0
+site_management,Start-up activities,947,2,0.21,945,0,0
+site_management,Supplier SKU,947,0,0.0,947,0,0
+site_management,Therapeutic area (clinical trial),947,11,1.16,936,0,0
+site_management,Unit,947,0,0.0,947,0,0
+site_management,Unit of measure,947,1,0.11,946,0,0

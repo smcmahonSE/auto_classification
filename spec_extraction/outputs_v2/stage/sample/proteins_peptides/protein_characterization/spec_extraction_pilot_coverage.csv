@@ -1,0 +1,40 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+protein_characterization,Aggregation method,2623,3,0.11,2620,0,0
+protein_characterization,Binding kinetics method,2623,8,0.3,2615,0,0
+protein_characterization,Category (L2/L3),2623,2623,100.0,0,0,0
+protein_characterization,Category UNSPSC,2623,0,0.0,2623,0,0
+protein_characterization,Charge variant method,2623,0,0.0,2623,0,0
+protein_characterization,Currency,2623,100,3.81,2523,0,0
+protein_characterization,Description,2623,2017,76.9,606,0,0
+protein_characterization,Developability assays,2623,0,0.0,2623,0,0
+protein_characterization,Document links,2623,98,3.74,2525,0,0
+protein_characterization,Epitope mapping,2623,50,1.91,2573,0,0
+protein_characterization,Glycan analysis,2623,3,0.11,2620,0,0
+protein_characterization,Higher-order structure method,2623,18,0.69,2605,0,0
+protein_characterization,Identity confirmation method,2623,81,3.09,2542,0,0
+protein_characterization,Image URL,2623,2,0.08,2621,0,0
+protein_characterization,Intact mass method,2623,5,0.19,2618,0,0
+protein_characterization,Inventory,2623,0,0.0,2623,0,0
+protein_characterization,Lead time (days),2623,0,0.0,2623,0,0
+protein_characterization,Listing UNSPSC,2623,0,0.0,2623,0,0
+protein_characterization,Listing type,2623,2623,100.0,0,0,0
+protein_characterization,Manufacturer SKU,2623,0,0.0,2623,0,0
+protein_characterization,Manufacturer name,2623,0,0.0,2623,0,0
+protein_characterization,Molecule type,2623,771,29.39,1852,0,0
+protein_characterization,Name,2623,2623,100.0,0,0,0
+protein_characterization,PTM analysis,2623,39,1.49,2584,0,0
+protein_characterization,Potency assays,2623,0,0.0,2623,0,0
+protein_characterization,Price per unit,2623,2497,95.2,126,0,0
+protein_characterization,Pricing model,2623,2623,100.0,0,0,0
+protein_characterization,Process impurity assays,2623,5,0.19,2618,0,0
+protein_characterization,Product / service URL,2623,98,3.74,2525,0,0
+protein_characterization,Purity method,2623,123,4.69,2500,0,0
+protein_characterization,Quantity,2623,0,0.0,2623,0,0
+protein_characterization,Regulatory standard,2623,8,0.3,2615,0,0
+protein_characterization,Requester UNSPSC,2623,0,0.0,2623,0,0
+protein_characterization,Requester commodity code,2623,0,0.0,2623,0,0
+protein_characterization,Ship from,2623,0,0.0,2623,0,0
+protein_characterization,Supplier SKU,2623,0,0.0,2623,0,0
+protein_characterization,Thermal stability method,2623,3,0.11,2620,0,0
+protein_characterization,Unit,2623,0,0.0,2623,0,0
+protein_characterization,Unit of measure,2623,202,7.7,2205,216,0

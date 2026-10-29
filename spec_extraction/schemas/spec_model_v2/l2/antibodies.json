@@ -18,6 +18,38 @@
           "override_key": "antibody_target"
         },
         {
+          "name": "Gene ID",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_gene_id"
+        },
+        {
+          "name": "UniProt accession",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_uniprot_accession"
+        },
+        {
+          "name": "Target gene symbol",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_target_gene_symbol"
+        },
+        {
+          "name": "Target alternate names",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_target_alternate_names"
+        },
+        {
           "name": "Tested reactivity",
           "type": "multi-select",
           "required": true,
@@ -446,6 +478,38 @@
           "override_key": "antibody_target"
         },
         {
+          "name": "Gene ID",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_gene_id"
+        },
+        {
+          "name": "UniProt accession",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_uniprot_accession"
+        },
+        {
+          "name": "Target gene symbol",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_target_gene_symbol"
+        },
+        {
+          "name": "Target alternate names",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_target_alternate_names"
+        },
+        {
           "name": "Tested reactivity",
           "type": "multi-select",
           "required": true,
@@ -865,6 +929,38 @@
           "product_only": false,
           "extractor": "override",
           "override_key": "antibody_target"
+        },
+        {
+          "name": "Gene ID",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_gene_id"
+        },
+        {
+          "name": "UniProt accession",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_uniprot_accession"
+        },
+        {
+          "name": "Target gene symbol",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_target_gene_symbol"
+        },
+        {
+          "name": "Target alternate names",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_target_alternate_names"
         },
         {
           "name": "Tested reactivity",

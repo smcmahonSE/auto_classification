@@ -1,0 +1,780 @@
+{
+  "l2_id": "biomarker_companion_diagnostics",
+  "l2_label": "Biomarker & Companion Diagnostics",
+  "schema_name": "BIOMARKER_COMPANION_DIAGNOSTICS",
+  "l2_fields": [
+    {
+      "name": "Assay technology",
+      "type": "multi-select",
+      "required": true,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "biomarker_cdx_l2__assay_technology",
+      "allowed_values": [
+        "IHC",
+        "Multiplex immunofluorescence",
+        "FISH",
+        "Other ISH (CISH, EBER)",
+        "NGS",
+        "qPCR",
+        "Digital PCR (ddPCR)",
+        "Immunoassay (ELISA, MSD, Luminex, Olink)",
+        "ELISpot",
+        "Flow cytometry",
+        "Spatial transcriptomics",
+        "Mass spectrometry",
+        "Digital pathology and image analysis"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Assay development stage",
+      "type": "multi-select",
+      "required": true,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "biomarker_cdx_l2__assay_development_stage",
+      "allowed_values": [
+        "Biomarker discovery",
+        "Feasibility",
+        "Assay development",
+        "Analytical validation",
+        "Clinical validation",
+        "Regulatory submission",
+        "Commercialization"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Sample type (biomarker)",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "biomarker_cdx_l2__sample_type_biomarker",
+      "allowed_values": [
+        "FFPE tissue",
+        "Fresh or frozen tissue",
+        "Tissue microarray",
+        "Whole blood",
+        "Plasma (ctDNA)",
+        "PBMC",
+        "Bone marrow cells",
+        "Dissociated tumor cells"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Therapeutic area (biomarker)",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "biomarker_cdx_l2__therapeutic_area_biomarker",
+      "allowed_values": [
+        "Oncology",
+        "Hematologic malignancy",
+        "Immunology and inflammation",
+        "Neurology",
+        "Cardiovascular and metabolic",
+        "Infectious disease",
+        "Cell and gene therapy",
+        "Hereditary and rare disease"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Lab region (biomarker)",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "biomarker_cdx_l2__lab_region_biomarker",
+      "allowed_values": [
+        "United States",
+        "Canada",
+        "Europe",
+        "China",
+        "Japan",
+        "Singapore",
+        "Australia",
+        "South Africa"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Development stage",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "development_stage",
+      "allowed_values": [
+        "Preclinical",
+        "Phase 1",
+        "Phase 2",
+        "Phase 3",
+        "Post-approval"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Validation framework",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "biomarker_cdx_l2__validation_framework",
+      "allowed_values": [
+        "CLIA",
+        "CAP",
+        "New York State CLEP",
+        "IVDR performance evaluation",
+        "FDA design control"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Biospecimen access for validation",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "Prospective trial patient testing",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "Analytical performance parameter",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "biomarker_cdx_l2__analytical_performance_parameter",
+      "allowed_values": [
+        "Precision",
+        "Reproducibility",
+        "Sensitivity",
+        "Specificity",
+        "Stability",
+        "Reportable range",
+        "Inter-operator",
+        "Inter-instrument",
+        "Reagent lot"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Clinical performance study type",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "biomarker_cdx_l2__clinical_performance_study_type",
+      "allowed_values": [
+        "Concordance",
+        "Clinical sensitivity",
+        "Clinical specificity",
+        "Comparator method bridging",
+        "Retrospective",
+        "Prospective"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Multi-site reproducibility",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "Validation deliverable",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "biomarker_cdx_l2__validation_deliverable",
+      "allowed_values": [
+        "Performance evaluation report",
+        "Scientific validity report",
+        "Validation summary",
+        "Technical file",
+        "Risk assessment"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Post-market performance monitoring",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "yes_no",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ]
+    }
+  ],
+  "l3_nodes": {
+    "biomarker_assays": {
+      "label": "Biomarker Assays",
+      "form": "service",
+      "table_name": "BIOMARKER_ASSAYS_SPEC",
+      "fields": [
+        {
+          "name": "Biomarker type",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biomarker_assays__biomarker_type",
+          "allowed_values": [
+            "Soluble protein",
+            "Cytokine",
+            "Neuro biomarker",
+            "Enzyme activity",
+            "Cell surface",
+            "Cells",
+            "DNA",
+            "RNA",
+            "Gene expression"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Analytical platform",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biomarker_assays__analytical_platform",
+          "allowed_values": [
+            "ELISA",
+            "MSD",
+            "Simoa",
+            "Ella",
+            "SMCxPRO",
+            "Luminex",
+            "Olink",
+            "NULISA",
+            "AlphaLISA",
+            "Lumipulse",
+            "Flow cytometry",
+            "ELISpot",
+            "NanoString",
+            "qPCR",
+            "LC-MS/MS",
+            "Hybrid LC-MS",
+            "Leica BOND",
+            "Dako Omnis",
+            "Ventana BenchMark",
+            "Akoya PhenoImager HT",
+            "Illumina",
+            "10x Genomics",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Multiplex capability",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Validation approach",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biomarker_assays__validation_approach",
+          "allowed_values": [
+            "Exploratory",
+            "Fit-for-purpose",
+            "Qualified",
+            "Fully validated"
+          ]
+        },
+        {
+          "name": "Assay context of use",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biomarker_assays__assay_context_of_use",
+          "allowed_values": [
+            "Exploratory",
+            "Secondary endpoint",
+            "Primary endpoint",
+            "Patient screening",
+            "Enrollment",
+            "Stratification",
+            "Safety",
+            "Pharmacodynamic"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "CLIA testing available",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Assay source",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biomarker_assays__assay_source",
+          "allowed_values": [
+            "Commercial kit",
+            "Off-the-shelf menu assay",
+            "Custom developed"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "BEST biomarker category",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biomarker_assays__best_biomarker_category",
+          "allowed_values": [
+            "Pharmacodynamic",
+            "Safety",
+            "Predictive",
+            "Prognostic",
+            "Diagnostic",
+            "Monitoring",
+            "Susceptibility",
+            "Surrogate endpoint"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Max analytes per sample",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "biomarker_assays__max_analytes_per_sample"
+        },
+        {
+          "name": "Lowest quantitation range",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biomarker_assays__lowest_quantitation_range",
+          "allowed_values": [
+            "fg/mL",
+            "pg/mL",
+            "ng/mL"
+          ]
+        },
+        {
+          "name": "Flow cytometry panel size",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "biomarker_assays__flow_cytometry_panel_size"
+        },
+        {
+          "name": "Multiplex IF marker count",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "biomarker_assays__multiplex_if_marker_count"
+        },
+        {
+          "name": "Technology transfer offered",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Assay deliverable",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biomarker_assays__assay_deliverable",
+          "allowed_values": [
+            "Analytical plan",
+            "Validation report",
+            "SOPs",
+            "Final analytical report",
+            "Transfer verification",
+            "Assay performance metrics"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "companion_diagnostic_cdx_development": {
+      "label": "Companion Diagnostic (CDx) Development",
+      "form": "service",
+      "table_name": "COMPANION_DIAGNOSTIC_CDX_DEVELOPMENT_SPEC",
+      "fields": [
+        {
+          "name": "Test format",
+          "type": "picklist",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "companion_diagnostic_cdx_development__test_format",
+          "allowed_values": [
+            "Kitted IVD",
+            "Single-site lab test (LDT)",
+            "Clinical trial assay"
+          ]
+        },
+        {
+          "name": "Regulatory pathway",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "companion_diagnostic_cdx_development__regulatory_pathway",
+          "allowed_values": [
+            "PMA",
+            "PMA supplement",
+            "510(k)",
+            "De Novo",
+            "Humanitarian Device Exemption",
+            "EUA",
+            "EU IVDR CE mark",
+            "Japan CDx approval"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Prior CDx biomarkers",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_companion_diagnostic_cdx_development__prior_cdx_biomarkers"
+        },
+        {
+          "name": "Commercial launch support",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "companion_diagnostic_cdx_development__commercial_launch_support",
+          "allowed_values": [
+            "Day-One lab network readiness",
+            "Reimbursement program",
+            "Physician and patient education",
+            "Sponsored testing",
+            "Biomarker-positive patient alerts"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Collaboration model",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "companion_diagnostic_cdx_development__collaboration_model",
+          "allowed_values": [
+            "Two-way co-development",
+            "Three-way with IVD manufacturer",
+            "Clinical trial testing only"
+          ]
+        },
+        {
+          "name": "Concurrent drug and diagnostic approval support",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Investigational submission support",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "companion_diagnostic_cdx_development__investigational_submission_support",
+          "allowed_values": [
+            "Pre-submission",
+            "IDE",
+            "ITA",
+            "IVDR Annex XIV"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Diagnostic claim type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "companion_diagnostic_cdx_development__diagnostic_claim_type",
+          "allowed_values": [
+            "Companion",
+            "Complementary",
+            "Tissue-agnostic"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "GMP kit manufacturing",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Countries with registration support",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "companion_diagnostic_cdx_development__countries_with_registration_support"
+        }
+      ]
+    },
+    "genomic_molecular_profiling": {
+      "label": "Genomic / Molecular Profiling",
+      "form": "service",
+      "table_name": "GENOMIC_MOLECULAR_PROFILING_SPEC",
+      "fields": [
+        {
+          "name": "Sequencing scope",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "genomic_molecular_profiling__sequencing_scope",
+          "allowed_values": [
+            "Targeted panel",
+            "Whole exome",
+            "Whole transcriptome",
+            "Whole genome",
+            "Single-cell RNA-seq"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Test regulatory status",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "genomic_molecular_profiling__test_regulatory_status",
+          "allowed_values": [
+            "FDA-approved IVD",
+            "FDA-cleared IVD",
+            "LDT",
+            "Investigational use only",
+            "Research use only"
+          ]
+        },
+        {
+          "name": "Data deliverable",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "genomic_molecular_profiling__data_deliverable",
+          "allowed_values": [
+            "Clinical report",
+            "Biomarker-positive alerts",
+            "Linked clinical outcomes data",
+            "Bioinformatics analysis",
+            "Submission-ready data"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Panel size",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "genomic_molecular_profiling__panel_size"
+        },
+        {
+          "name": "Nucleic acid analyzed",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "genomic_molecular_profiling__nucleic_acid_analyzed",
+          "allowed_values": [
+            "DNA",
+            "RNA",
+            "ctDNA"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Variant type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "genomic_molecular_profiling__variant_type",
+          "allowed_values": [
+            "SNV",
+            "Indel",
+            "Copy number alteration",
+            "Fusion",
+            "Splice variant"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Genomic signature",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "genomic_molecular_profiling__genomic_signature",
+          "allowed_values": [
+            "TMB",
+            "Blood TMB",
+            "MSI",
+            "HRD",
+            "Genomic LOH",
+            "ctDNA tumor fraction",
+            "HLA genotype"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Turnaround time (genomic)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "genomic_molecular_profiling__turnaround_time_genomic"
+        },
+        {
+          "name": "Profiling application",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "genomic_molecular_profiling__profiling_application",
+          "allowed_values": [
+            "Comprehensive genomic profiling",
+            "Trial enrollment screening",
+            "Response and resistance monitoring",
+            "Minimal residual disease"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "IHC add-on",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Minimum DNA input",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "genomic_molecular_profiling__minimum_dna_input"
+        },
+        {
+          "name": "Blood draw volume",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "genomic_molecular_profiling__blood_draw_volume"
+        },
+        {
+          "name": "Matched normal analysis",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Kitted in-house option",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    }
+  }
+}

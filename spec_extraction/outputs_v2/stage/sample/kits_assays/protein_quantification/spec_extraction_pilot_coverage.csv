@@ -1,0 +1,38 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+protein_quantification,Assay time (protein quant),14632,0,0.0,14632,0,0
+protein_quantification,Category (L2/L3),14632,14632,100.0,0,0,0
+protein_quantification,Category UNSPSC,14632,0,0.0,14632,0,0
+protein_quantification,Currency,14632,159,1.09,14471,2,0
+protein_quantification,Description,14632,13136,89.78,1496,0,0
+protein_quantification,Detection method (protein quant),14632,532,3.64,14093,7,0
+protein_quantification,Detergent compatibility,14632,299,2.04,14312,21,0
+protein_quantification,Document links,14632,648,4.43,13984,0,0
+protein_quantification,Format (protein quant),14632,0,0.0,14632,0,0
+protein_quantification,Image URL,14632,48,0.33,14584,0,0
+protein_quantification,Inventory,14632,0,0.0,14632,0,0
+protein_quantification,Lead time (days),14632,0,0.0,14632,0,0
+protein_quantification,Listing UNSPSC,14632,0,0.0,14632,0,0
+protein_quantification,Listing type,14632,14632,100.0,0,0,0
+protein_quantification,Manufacturer SKU,14632,0,0.0,14632,0,0
+protein_quantification,Manufacturer name,14632,0,0.0,14632,0,0
+protein_quantification,Method (protein quant),14632,184,1.26,14437,11,0
+protein_quantification,Name,14632,14632,100.0,0,0,0
+protein_quantification,Price per unit,14632,13096,89.5,1536,0,0
+protein_quantification,Pricing model,14632,14632,100.0,0,0,0
+protein_quantification,Product / service URL,14632,648,4.43,13984,0,0
+protein_quantification,Quantity,14632,0,0.0,14632,0,0
+protein_quantification,Range (protein quant),14632,2,0.01,14630,0,0
+protein_quantification,Reagent form (protein quant),14632,338,2.31,14294,0,0
+protein_quantification,Reducing agent compatibility,14632,299,2.04,14312,21,0
+protein_quantification,Requester UNSPSC,14632,0,0.0,14632,0,0
+protein_quantification,Requester commodity code,14632,0,0.0,14632,0,0
+protein_quantification,Sample type (protein quant),14632,1141,7.8,13491,0,0
+protein_quantification,Sensitivity (protein quant),14632,0,0.0,14632,0,0
+protein_quantification,Ship from,14632,0,0.0,14632,0,0
+protein_quantification,Standard included,14632,71,0.49,14561,0,0
+protein_quantification,Storage (protein quant),14632,700,4.78,13910,22,0
+protein_quantification,Supplier SKU,14632,0,0.0,14632,0,0
+protein_quantification,Tests per kit (protein quant),14632,0,0.0,14632,0,0
+protein_quantification,Unit,14632,0,0.0,14632,0,0
+protein_quantification,Unit of measure,14632,6323,43.21,3511,4798,0
+protein_quantification,Wavelength (protein quant),14632,0,0.0,14632,0,0

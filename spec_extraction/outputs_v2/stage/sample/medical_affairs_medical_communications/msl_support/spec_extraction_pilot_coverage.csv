@@ -1,0 +1,41 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+msl_support,AI-assisted delivery,346,0,0.0,346,0,0
+msl_support,CRM integration,346,0,0.0,346,0,0
+msl_support,Category (L2/L3),346,346,100.0,0,0,0
+msl_support,Category UNSPSC,346,0,0.0,346,0,0
+msl_support,Compliance with codes of practice,346,0,0.0,346,0,0
+msl_support,Countries covered (msl),346,0,0.0,346,0,0
+msl_support,Currency,346,0,0.0,346,0,0
+msl_support,Description,346,138,39.88,208,0,0
+msl_support,Development stage,346,3,0.87,343,0,0
+msl_support,Document links,346,0,0.0,346,0,0
+msl_support,Engagement channel,346,0,0.0,346,0,0
+msl_support,Engagement model (medaffairs),346,0,0.0,346,0,0
+msl_support,Field insights reporting,346,0,0.0,346,0,0
+msl_support,Field medical roles,346,0,0.0,346,0,0
+msl_support,Geographic coverage (medaffairs),346,0,0.0,346,0,0
+msl_support,Image URL,346,0,0.0,346,0,0
+msl_support,Inventory,346,0,0.0,346,0,0
+msl_support,Lead time (days),346,0,0.0,346,0,0
+msl_support,Listing UNSPSC,346,0,0.0,346,0,0
+msl_support,Listing type,346,346,100.0,0,0,0
+msl_support,MSL deployment model,346,0,0.0,346,0,0
+msl_support,MSL training,346,0,0.0,346,0,0
+msl_support,Manufacturer SKU,346,0,0.0,346,0,0
+msl_support,Manufacturer name,346,0,0.0,346,0,0
+msl_support,Name,346,346,100.0,0,0,0
+msl_support,Performance KPIs,346,0,0.0,346,0,0
+msl_support,Price per unit,346,344,99.42,2,0,0
+msl_support,Pricing model,346,346,100.0,0,0,0
+msl_support,Product / service URL,346,0,0.0,346,0,0
+msl_support,Program scope,346,0,0.0,346,0,0
+msl_support,Promotional status,346,0,0.0,346,0,0
+msl_support,Quantity,346,0,0.0,346,0,0
+msl_support,Recruitment and team build,346,0,0.0,346,0,0
+msl_support,Requester UNSPSC,346,0,0.0,346,0,0
+msl_support,Requester commodity code,346,0,0.0,346,0,0
+msl_support,Ship from,346,0,0.0,346,0,0
+msl_support,Supplier SKU,346,0,0.0,346,0,0
+msl_support,Therapeutic areas (medaffairs),346,0,0.0,346,0,0
+msl_support,Unit,346,0,0.0,346,0,0
+msl_support,Unit of measure,346,66,19.08,280,0,0

@@ -1,0 +1,41 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+medical_writing_publications,AI-assisted delivery,391,2,0.51,389,0,0
+medical_writing_publications,Category (L2/L3),391,391,100.0,0,0,0
+medical_writing_publications,Category UNSPSC,391,0,0.0,391,0,0
+medical_writing_publications,Compliance with codes of practice,391,2,0.51,389,0,0
+medical_writing_publications,Credentialed publication staff,391,2,0.51,389,0,0
+medical_writing_publications,Currency,391,0,0.0,391,0,0
+medical_writing_publications,Description,391,21,5.37,370,0,0
+medical_writing_publications,Development stage,391,0,0.0,391,0,0
+medical_writing_publications,Digital publication enhancements,391,0,0.0,391,0,0
+medical_writing_publications,Document links,391,0,0.0,391,0,0
+medical_writing_publications,Engagement model (medaffairs),391,0,0.0,391,0,0
+medical_writing_publications,GPP compliance,391,2,0.51,389,0,0
+medical_writing_publications,Geographic coverage (medaffairs),391,0,0.0,391,0,0
+medical_writing_publications,Image URL,391,0,0.0,391,0,0
+medical_writing_publications,Inventory,391,0,0.0,391,0,0
+medical_writing_publications,Lead time (days),391,0,0.0,391,0,0
+medical_writing_publications,Listing UNSPSC,391,0,0.0,391,0,0
+medical_writing_publications,Listing type,391,391,100.0,0,0,0
+medical_writing_publications,Literature monitoring (medwriting),391,2,0.51,389,0,0
+medical_writing_publications,Manufacturer SKU,391,0,0.0,391,0,0
+medical_writing_publications,Manufacturer name,391,0,0.0,391,0,0
+medical_writing_publications,Name,391,391,100.0,0,0,0
+medical_writing_publications,Price per unit,391,391,100.0,0,0,0
+medical_writing_publications,Pricing model,391,391,100.0,0,0,0
+medical_writing_publications,Product / service URL,391,0,0.0,391,0,0
+medical_writing_publications,Program scope,391,0,0.0,391,0,0
+medical_writing_publications,Promotional status,391,0,0.0,391,0,0
+medical_writing_publications,Publication amplification,391,2,0.51,389,0,0
+medical_writing_publications,Publication gap analysis,391,2,0.51,389,0,0
+medical_writing_publications,Publication planning,391,2,0.51,389,0,0
+medical_writing_publications,Publication types,391,23,5.88,368,0,0
+medical_writing_publications,Quantity,391,0,0.0,391,0,0
+medical_writing_publications,Requester UNSPSC,391,0,0.0,391,0,0
+medical_writing_publications,Requester commodity code,391,0,0.0,391,0,0
+medical_writing_publications,Ship from,391,0,0.0,391,0,0
+medical_writing_publications,Steering committee management,391,2,0.51,389,0,0
+medical_writing_publications,Supplier SKU,391,0,0.0,391,0,0
+medical_writing_publications,Therapeutic areas (medaffairs),391,1,0.26,390,0,0
+medical_writing_publications,Unit,391,0,0.0,391,0,0
+medical_writing_publications,Unit of measure,391,3,0.77,388,0,0

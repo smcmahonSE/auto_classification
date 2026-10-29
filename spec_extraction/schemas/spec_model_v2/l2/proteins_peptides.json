@@ -133,9 +133,9 @@
           "extractor": "controlled_vocabulary",
           "vocabulary_ref": "storage_reconstitution",
           "allowed_values": [
-            "2-8°C",
-            "-20°C",
-            "-80°C"
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C"
           ]
         },
         {
@@ -145,7 +145,39 @@
           "product_only": false,
           "extractor": "regex",
           "pattern": "endotoxin_level",
-          "allowed_values": "EU/µg"
+          "allowed_values": "EU/\u00b5g"
+        },
+        {
+          "name": "Gene ID",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_gene_id"
+        },
+        {
+          "name": "UniProt accession",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_uniprot_accession"
+        },
+        {
+          "name": "Gene symbol",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_gene_symbol"
+        },
+        {
+          "name": "Alternate names",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_alternate_names"
         }
       ]
     },
@@ -248,7 +280,7 @@
           "product_only": false,
           "extractor": "regex",
           "pattern": "endotoxin_level",
-          "allowed_values": "EU/µg"
+          "allowed_values": "EU/\u00b5g"
         },
         {
           "name": "Grade",
@@ -280,10 +312,42 @@
           "extractor": "controlled_vocabulary",
           "vocabulary_ref": "storage_reconstitution",
           "allowed_values": [
-            "2-8°C",
-            "-20°C",
-            "-80°C"
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C"
           ]
+        },
+        {
+          "name": "Gene ID",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_gene_id"
+        },
+        {
+          "name": "UniProt accession",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_uniprot_accession"
+        },
+        {
+          "name": "Gene symbol",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_gene_symbol"
+        },
+        {
+          "name": "Alternate names",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_alternate_names"
         }
       ]
     },
@@ -379,9 +443,9 @@
           "extractor": "controlled_vocabulary",
           "vocabulary_ref": "storage_reconstitution",
           "allowed_values": [
-            "2-8°C",
-            "-20°C",
-            "-80°C"
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C"
           ]
         },
         {
@@ -391,7 +455,39 @@
           "product_only": false,
           "extractor": "regex",
           "pattern": "endotoxin_level",
-          "allowed_values": "EU/µg"
+          "allowed_values": "EU/\u00b5g"
+        },
+        {
+          "name": "Gene ID",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_gene_id"
+        },
+        {
+          "name": "UniProt accession",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_uniprot_accession"
+        },
+        {
+          "name": "Gene symbol",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_gene_symbol"
+        },
+        {
+          "name": "Alternate names",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_alternate_names"
         }
       ]
     },
@@ -502,9 +598,9 @@
           "extractor": "controlled_vocabulary",
           "vocabulary_ref": "storage_reconstitution",
           "allowed_values": [
-            "2-8°C",
-            "-20°C",
-            "-80°C"
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C"
           ]
         },
         {
@@ -514,7 +610,7 @@
           "product_only": false,
           "extractor": "regex",
           "pattern": "endotoxin_level",
-          "allowed_values": "EU/µg"
+          "allowed_values": "EU/\u00b5g"
         }
       ]
     },
@@ -549,12 +645,12 @@
           "vocabulary_ref": "peptide_purity_tier",
           "allowed_values": [
             "Crude",
-            "≥70%",
-            "≥80%",
-            "≥90%",
-            "≥95%",
-            "≥97%",
-            "≥98%"
+            "\u226570%",
+            "\u226580%",
+            "\u226590%",
+            "\u226595%",
+            "\u226597%",
+            "\u226598%"
           ]
         },
         {
@@ -640,9 +736,9 @@
           "extractor": "controlled_vocabulary",
           "vocabulary_ref": "storage_reconstitution",
           "allowed_values": [
-            "2-8°C",
-            "-20°C",
-            "-80°C"
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C"
           ]
         },
         {
@@ -652,7 +748,7 @@
           "product_only": false,
           "extractor": "regex",
           "pattern": "endotoxin_level",
-          "allowed_values": "EU/µg"
+          "allowed_values": "EU/\u00b5g"
         }
       ]
     },
@@ -662,37 +758,257 @@
       "table_name": "PROTEIN_PURIFICATION_SPEC",
       "fields": [
         {
-          "name": "Protocol / scope",
-          "type": "text",
-          "required": false,
+          "name": "Expression system",
+          "type": "multi-select",
+          "required": true,
           "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_protocol_scope"
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_purification__expression_system",
+          "allowed_values": [
+            "E. coli",
+            "Mammalian HEK293",
+            "Mammalian CHO",
+            "Insect/baculovirus (Sf9, Sf21, Hi5)",
+            "Yeast (Pichia, S. cerevisiae)",
+            "B. subtilis",
+            "Cell-free"
+          ],
+          "multi_select": true
         },
         {
-          "name": "Turnaround",
+          "name": "Protein type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_purification__protein_type",
+          "allowed_values": [
+            "Antibody/fragment",
+            "Enzyme",
+            "Membrane protein (GPCR, ion channel, transporter)",
+            "Antigen",
+            "Cytokine",
+            "Fc fusion",
+            "Viral protein/VLP",
+            "Glycoprotein",
+            "Kinase",
+            "Toxic protein"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Maximum production scale",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_purification__maximum_production_scale",
+          "allowed_values": [
+            "\u00b5g",
+            "mg",
+            "g",
+            "kg"
+          ]
+        },
+        {
+          "name": "Purity specification (%)",
           "type": "number",
           "required": false,
           "product_only": false,
           "extractor": "regex",
-          "pattern": "turnaround",
-          "allowed_values": "days or weeks"
+          "pattern": "protein_purification__purity_specification"
         },
         {
-          "name": "Capacity",
-          "type": "text",
+          "name": "Affinity tag",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_purification__affinity_tag",
+          "allowed_values": [
+            "His",
+            "Strep",
+            "Flag",
+            "Fc",
+            "GST",
+            "MBP",
+            "SUMO",
+            "Trx",
+            "Untagged"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Purification method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_purification__purification_method",
+          "allowed_values": [
+            "IMAC (Ni)",
+            "Strep-Tactin",
+            "Protein A/G",
+            "Antigen affinity",
+            "Ion exchange",
+            "Size exclusion",
+            "Hydrophobic interaction"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Endotoxin level (EU/mg)",
+          "type": "number",
           "required": false,
           "product_only": false,
           "extractor": "regex",
-          "pattern": "labeled_capacity"
+          "pattern": "protein_purification__endotoxin_level_eu_mg"
         },
         {
-          "name": "Deliverable",
-          "type": "text",
+          "name": "QC methods included",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_purification__qc_methods_included",
+          "allowed_values": [
+            "SDS-PAGE",
+            "UV A280",
+            "Western blot",
+            "SEC-HPLC",
+            "Mass spec",
+            "SPR/BLI",
+            "nanoDSF",
+            "ELISA/activity",
+            "Endotoxin"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Gene synthesis included",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Accepted starting material",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_purification__accepted_starting_material",
+          "allowed_values": [
+            "Sequence/accession",
+            "Plasmid",
+            "Hybridoma",
+            "Purified protein",
+            "Cell pellet/conditioned medium"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Delivered form",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_purification__delivered_form",
+          "allowed_values": [
+            "Liquid in customer buffer",
+            "Liquid in PBS",
+            "Lyophilized"
+          ]
+        },
+        {
+          "name": "Quality grade",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_purification__quality_grade",
+          "allowed_values": [
+            "Research",
+            "Preclinical",
+            "GMP"
+          ]
+        },
+        {
+          "name": "Expression mode",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_purification__expression_mode",
+          "allowed_values": [
+            "Transient",
+            "Stable cell line/pool"
+          ]
+        },
+        {
+          "name": "Typical expression yield (mg/L)",
+          "type": "number",
           "required": false,
           "product_only": false,
           "extractor": "regex",
-          "pattern": "labeled_deliverable"
+          "pattern": "protein_purification__typical_expression_yield_mg_l"
+        },
+        {
+          "name": "Purity assay basis",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_purification__purity_assay_basis",
+          "allowed_values": [
+            "SDS-PAGE",
+            "SEC-HPLC monomer"
+          ]
+        },
+        {
+          "name": "Tag removal offered",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Inclusion body refolding",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Membrane protein format",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_purification__membrane_protein_format",
+          "allowed_values": [
+            "Detergent micelles",
+            "Nanodiscs",
+            "Amphipols",
+            "Proteoliposomes",
+            "VLP"
+          ],
+          "multi_select": true
         }
       ]
     },
@@ -702,37 +1018,252 @@
       "table_name": "PROTEIN_CHARACTERIZATION_SPEC",
       "fields": [
         {
-          "name": "Protocol / scope",
-          "type": "text",
+          "name": "Molecule type",
+          "type": "multi-select",
           "required": false,
           "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_protocol_scope"
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_characterization__molecule_type",
+          "allowed_values": [
+            "Protein",
+            "Glycoprotein",
+            "Monoclonal antibody",
+            "Bispecific",
+            "Antibody fragment (Fab, scFv, VHH)",
+            "ADC/protein conjugate",
+            "PEGylated protein",
+            "Biosimilar",
+            "Peptide"
+          ],
+          "multi_select": true
         },
         {
-          "name": "Turnaround",
-          "type": "number",
+          "name": "Purity method",
+          "type": "multi-select",
           "required": false,
           "product_only": false,
-          "extractor": "regex",
-          "pattern": "turnaround",
-          "allowed_values": "days or weeks"
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_characterization__purity_method",
+          "allowed_values": [
+            "SDS-PAGE",
+            "CE-SDS",
+            "SEC-HPLC",
+            "RP-HPLC",
+            "HIC-HPLC",
+            "Western blot"
+          ],
+          "multi_select": true
         },
         {
-          "name": "Capacity",
-          "type": "text",
+          "name": "Identity confirmation method",
+          "type": "multi-select",
           "required": false,
           "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_capacity"
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_characterization__identity_confirmation_method",
+          "allowed_values": [
+            "Peptide mapping",
+            "N/C-terminal sequencing",
+            "De novo sequencing",
+            "Western blot"
+          ],
+          "multi_select": true
         },
         {
-          "name": "Deliverable",
-          "type": "text",
+          "name": "Intact mass method",
+          "type": "multi-select",
           "required": false,
           "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_deliverable"
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_characterization__intact_mass_method",
+          "allowed_values": [
+            "ESI LC-MS",
+            "MALDI-TOF",
+            "Native MS",
+            "SEC-MALS"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Glycan analysis",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_characterization__glycan_analysis",
+          "allowed_values": [
+            "N-glycan profiling",
+            "O-glycan profiling",
+            "Sialic acid",
+            "Glycosylation site mapping",
+            "Monosaccharide composition"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Aggregation method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_characterization__aggregation_method",
+          "allowed_values": [
+            "SEC-HPLC",
+            "SEC-MALS",
+            "DLS",
+            "SV-AUC",
+            "Native MS"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Thermal stability method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_characterization__thermal_stability_method",
+          "allowed_values": [
+            "nanoDSF",
+            "DSC",
+            "Thermal shift"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Binding kinetics method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_characterization__binding_kinetics_method",
+          "allowed_values": [
+            "SPR (Biacore)",
+            "BLI (Octet)",
+            "ITC",
+            "ELISA"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "PTM analysis",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_characterization__ptm_analysis",
+          "allowed_values": [
+            "Deamidation",
+            "Oxidation",
+            "Phosphorylation",
+            "Disulfide bond mapping",
+            "Degradation sites"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Potency assays",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_characterization__potency_assays",
+          "allowed_values": [
+            "Cell-based potency",
+            "Fc receptor binding",
+            "Fc effector (ADCC, ADCP, CDC)",
+            "Enzyme activity",
+            "Cytotoxicity"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Regulatory standard",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_characterization__regulatory_standard",
+          "allowed_values": [
+            "Research use only",
+            "ICH Q6B-aligned",
+            "GLP",
+            "GMP release"
+          ]
+        },
+        {
+          "name": "Charge variant method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_characterization__charge_variant_method",
+          "allowed_values": [
+            "icIEF/cIEF",
+            "Gel IEF",
+            "IEX-HPLC",
+            "CE"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Higher-order structure method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_characterization__higher_order_structure_method",
+          "allowed_values": [
+            "Circular dichroism",
+            "FTIR",
+            "NMR",
+            "Intrinsic fluorescence",
+            "X-ray crystallography"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Process impurity assays",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_characterization__process_impurity_assays",
+          "allowed_values": [
+            "Endotoxin (LAL)",
+            "Host cell protein",
+            "Residual DNA",
+            "Residual Protein A",
+            "Sterility"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Developability assays",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_characterization__developability_assays",
+          "allowed_values": [
+            "Self-interaction",
+            "Polyspecificity",
+            "Freeze-thaw stability",
+            "HT stability screen"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Epitope mapping",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
         }
       ]
     },
@@ -742,37 +1273,222 @@
       "table_name": "PROTEIN_ENGINEERING_SPEC",
       "fields": [
         {
-          "name": "Protocol / scope",
-          "type": "text",
-          "required": false,
+          "name": "Engineering type",
+          "type": "multi-select",
+          "required": true,
           "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_protocol_scope"
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_engineering__engineering_type",
+          "allowed_values": [
+            "Humanization",
+            "Affinity maturation",
+            "Deimmunization",
+            "Developability optimization",
+            "Fc engineering",
+            "Chimerization",
+            "Isotype switching",
+            "Species conversion (caninization etc.)",
+            "Format conversion"
+          ],
+          "multi_select": true
         },
         {
-          "name": "Turnaround",
+          "name": "Humanization method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_engineering__humanization_method",
+          "allowed_values": [
+            "CDR grafting",
+            "SDR grafting",
+            "Chain shuffling",
+            "Germline composite/T-cell-epitope-guided",
+            "AI/in silico design"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Source species",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_engineering__source_species",
+          "allowed_values": [
+            "Mouse",
+            "Rat",
+            "Rabbit",
+            "Llama/camelid",
+            "Chicken",
+            "Dog",
+            "NHP"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Affinity maturation approach",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_engineering__affinity_maturation_approach",
+          "allowed_values": [
+            "AI/structure-based design",
+            "Phage library selection",
+            "Error-prone PCR",
+            "Oligo-directed mutagenesis"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Display platform",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_engineering__display_platform",
+          "allowed_values": [
+            "Phage",
+            "Yeast",
+            "Mammalian",
+            "Ribosome"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Target affinity improvement (fold)",
           "type": "number",
           "required": false,
           "product_only": false,
           "extractor": "regex",
-          "pattern": "turnaround",
-          "allowed_values": "days or weeks"
+          "pattern": "protein_engineering__target_affinity_improvement_fold"
         },
         {
-          "name": "Capacity",
-          "type": "text",
+          "name": "Antibody format",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_engineering__antibody_format",
+          "allowed_values": [
+            "IgG",
+            "Fab",
+            "F(ab')2",
+            "scFv",
+            "VHH",
+            "Bispecific",
+            "IgM"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Fc engineering option",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_engineering__fc_engineering_option",
+          "allowed_values": [
+            "Effector silencing",
+            "Effector enhancement",
+            "Half-life extension",
+            "Half-life reduction",
+            "Aglycosylation"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Deliverables",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_engineering__deliverables",
+          "allowed_values": [
+            "Sequences",
+            "Expression plasmids",
+            "Purified variant protein",
+            "Binding kinetics data",
+            "CoA"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Library size (clones)",
+          "type": "number",
           "required": false,
           "product_only": false,
           "extractor": "regex",
-          "pattern": "labeled_capacity"
+          "pattern": "protein_engineering__library_size_clones"
         },
         {
-          "name": "Deliverable",
-          "type": "text",
+          "name": "Humanness target (%)",
+          "type": "number",
           "required": false,
           "product_only": false,
           "extractor": "regex",
-          "pattern": "labeled_deliverable"
+          "pattern": "protein_engineering__humanness_target"
+        },
+        {
+          "name": "Affinity measurement method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_engineering__affinity_measurement_method",
+          "allowed_values": [
+            "SPR",
+            "BLI",
+            "ELISA",
+            "FACS"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Immunogenicity assessment",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_engineering__immunogenicity_assessment",
+          "allowed_values": [
+            "In silico T-cell epitope prediction",
+            "Ex vivo T-cell assay"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Developability liability screening",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Number of lead candidates delivered",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "protein_engineering__number_of_lead_candidates_delivered"
+        },
+        {
+          "name": "IP / royalty-free",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
         }
       ]
     },
@@ -782,37 +1498,199 @@
       "table_name": "PROTEIN_CONJUGATION_LABELING_SPEC",
       "fields": [
         {
-          "name": "Protocol / scope",
-          "type": "text",
-          "required": false,
+          "name": "Conjugate type",
+          "type": "picklist",
+          "required": true,
           "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_protocol_scope"
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_conjugation_labeling__conjugate_type",
+          "allowed_values": [
+            "Detection reagent (label)",
+            "Antibody-drug conjugate",
+            "Antibody-oligo conjugate",
+            "Radioconjugate",
+            "PEGylated protein"
+          ]
         },
         {
-          "name": "Turnaround",
+          "name": "Label type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_conjugation_labeling__label_type",
+          "allowed_values": [
+            "Biotin",
+            "HRP",
+            "FITC",
+            "Alexa Fluor 488/647",
+            "PE",
+            "APC",
+            "Cy5",
+            "Gold nanoparticle",
+            "Quantum dot",
+            "Oligonucleotide",
+            "Metal chelate"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Conjugation chemistry",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_conjugation_labeling__conjugation_chemistry",
+          "allowed_values": [
+            "Lysine (NHS)",
+            "Cysteine (maleimide)",
+            "Engineered cysteine",
+            "Enzymatic",
+            "Glycan remodeling",
+            "Non-natural amino acid",
+            "Disulfide rebridging",
+            "Click chemistry"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Carrier molecule",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_conjugation_labeling__carrier_molecule",
+          "allowed_values": [
+            "Full IgG",
+            "Fab",
+            "scFv",
+            "VHH",
+            "Bispecific",
+            "Peptide",
+            "Other protein"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Target loading ratio",
           "type": "number",
           "required": false,
           "product_only": false,
           "extractor": "regex",
-          "pattern": "turnaround",
-          "allowed_values": "days or weeks"
+          "pattern": "protein_conjugation_labeling__target_loading_ratio"
         },
         {
-          "name": "Capacity",
-          "type": "text",
+          "name": "Loading characterization method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_conjugation_labeling__loading_characterization_method",
+          "allowed_values": [
+            "HIC",
+            "RP-HPLC",
+            "LC-MS",
+            "MALDI-TOF",
+            "UV spectroscopy"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Free drug analysis",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Drug payload class",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_conjugation_labeling__drug_payload_class",
+          "allowed_values": [
+            "Auristatin",
+            "Maytansinoid",
+            "PBD dimer",
+            "Camptothecin",
+            "Anthracycline",
+            "Duocarmycin",
+            "Amatoxin",
+            "Immunomodulator (TLR/STING)",
+            "Oligonucleotide",
+            "Chelator"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Linker type",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "protein_conjugation_labeling__linker_type",
+          "allowed_values": [
+            "Cleavable",
+            "Non-cleavable"
+          ]
+        },
+        {
+          "name": "Conjugation site identification",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Activity retention confirmed",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Batch size (mg)",
+          "type": "number",
           "required": false,
           "product_only": false,
           "extractor": "regex",
-          "pattern": "labeled_capacity"
+          "pattern": "protein_conjugation_labeling__batch_size_mg"
         },
         {
-          "name": "Deliverable",
-          "type": "text",
+          "name": "Minimum input antibody purity (%)",
+          "type": "number",
           "required": false,
           "product_only": false,
           "extractor": "regex",
-          "pattern": "labeled_deliverable"
+          "pattern": "protein_conjugation_labeling__minimum_input_antibody_purity"
+        },
+        {
+          "name": "GMP manufacturing available",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
         }
       ]
     }

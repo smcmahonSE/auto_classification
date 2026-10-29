@@ -1,0 +1,40 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+stem_cells_ipscs,Category (L2/L3),11955,11955,100.0,0,0,0
+stem_cells_ipscs,Category UNSPSC,11955,0,0.0,11955,0,0
+stem_cells_ipscs,Culture system,11955,21,0.18,11932,2,0
+stem_cells_ipscs,Currency,11955,18,0.15,11937,0,0
+stem_cells_ipscs,Derived cell type & purity,11955,0,0.0,11955,0,0
+stem_cells_ipscs,Description,11955,7730,64.66,4225,0,0
+stem_cells_ipscs,Differentiation potential,11955,641,5.36,11314,0,0
+stem_cells_ipscs,Document links,11955,431,3.61,11524,0,0
+stem_cells_ipscs,Donor age / sex / disease,11955,0,0.0,11955,0,0
+stem_cells_ipscs,Format / physical form,11955,622,5.2,11308,25,0
+stem_cells_ipscs,Grade / regulatory,11955,54,0.45,11899,2,0
+stem_cells_ipscs,Image URL,11955,207,1.73,11748,0,0
+stem_cells_ipscs,Inventory,11955,0,0.0,11955,0,0
+stem_cells_ipscs,Karyotype,11955,0,0.0,11955,0,0
+stem_cells_ipscs,Lead time (days),11955,0,0.0,11955,0,0
+stem_cells_ipscs,Licensing / permitted use,11955,0,0.0,11955,0,0
+stem_cells_ipscs,Listing UNSPSC,11955,0,0.0,11955,0,0
+stem_cells_ipscs,Listing type,11955,11955,100.0,0,0,0
+stem_cells_ipscs,Manufacturer SKU,11955,0,0.0,11955,0,0
+stem_cells_ipscs,Manufacturer name,11955,0,0.0,11955,0,0
+stem_cells_ipscs,Name,11955,11955,100.0,0,0,0
+stem_cells_ipscs,Parental cell / tissue origin,11955,0,0.0,11955,0,0
+stem_cells_ipscs,Pluripotency markers,11955,55,0.46,11900,0,0
+stem_cells_ipscs,Price per unit,11955,9835,82.27,2120,0,0
+stem_cells_ipscs,Pricing model,11955,11955,100.0,0,0,0
+stem_cells_ipscs,Product / service URL,11955,431,3.61,11524,0,0
+stem_cells_ipscs,Quantity,11955,0,0.0,11955,0,0
+stem_cells_ipscs,Reprogramming method,11955,62,0.52,11891,2,0
+stem_cells_ipscs,Requester UNSPSC,11955,0,0.0,11955,0,0
+stem_cells_ipscs,Requester commodity code,11955,0,0.0,11955,0,0
+stem_cells_ipscs,Ship from,11955,35,0.29,11920,0,0
+stem_cells_ipscs,Shipping temperature,11955,318,2.66,11637,0,0
+stem_cells_ipscs,Species (cell source or intended use),11955,8406,70.31,2971,578,0
+stem_cells_ipscs,Stem cell type,11955,674,5.64,11264,17,0
+stem_cells_ipscs,Sterility / contamination QC,11955,1,0.01,11954,0,0
+stem_cells_ipscs,Storage conditions,11955,52,0.43,11901,2,0
+stem_cells_ipscs,Supplier SKU,11955,0,0.0,11955,0,0
+stem_cells_ipscs,Unit,11955,0,0.0,11955,0,0
+stem_cells_ipscs,Unit of measure,11955,1815,15.18,9845,295,0

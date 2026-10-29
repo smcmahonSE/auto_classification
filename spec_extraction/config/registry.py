@@ -29,4 +29,9 @@ MIGRATED_L2_IDS: set[str] = {
     "phase_iv_post_marketing_studies",
     "toxicology_safety_assessment",
     "pharmacovigilance_drug_safety",
+    "biomarker_companion_diagnostics",
+    "medical_affairs_medical_communications",
+    "central_lab_services",
+    "clinical_trial_services_cro",
+    "kits_assays",
 }

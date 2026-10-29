@@ -8,7 +8,6 @@ animal_tissue,Derivative / extract type,597,1,0.17,596,0,0
 animal_tissue,Description,597,586,98.16,11,0,0
 animal_tissue,Disease / model state,597,0,0.0,597,0,0
 animal_tissue,Document links,597,0,0.0,597,0,0
-animal_tissue,Format / preservation,597,443,74.2,153,1,0
 animal_tissue,IACUC / animal-welfare consent,597,0,0.0,597,0,0
 animal_tissue,Image URL,597,0,0.0,597,0,0
 animal_tissue,Individual vs Pooled,597,6,1.01,591,0,0
@@ -19,6 +18,7 @@ animal_tissue,Listing type,597,597,100.0,0,0,0
 animal_tissue,Manufacturer SKU,597,0,0.0,597,0,0
 animal_tissue,Manufacturer name,597,0,0.0,597,0,0
 animal_tissue,Name,597,597,100.0,0,0,0
+animal_tissue,Preservation,597,443,74.2,153,1,0
 animal_tissue,Price per unit,597,597,100.0,0,0,0
 animal_tissue,Pricing model,597,597,100.0,0,0,0
 animal_tissue,Product / service URL,597,0,0.0,597,0,0

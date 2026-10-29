@@ -1145,13 +1145,22 @@
           ]
         },
         {
-          "name": "Vessel size / working volume",
+          "name": "Vessel size",
           "type": "number",
           "required": true,
           "product_only": false,
           "extractor": "regex",
           "pattern": "vessel_size_l",
           "allowed_values": "L"
+        },
+        {
+          "name": "Working volume",
+          "type": "number",
+          "required": true,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "working_volume_l",
+          "allowed_values": "L (min and max)"
         },
         {
           "name": "Application",

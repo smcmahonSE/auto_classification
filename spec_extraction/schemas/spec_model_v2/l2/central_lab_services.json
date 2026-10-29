@@ -1,0 +1,1027 @@
+{
+  "l2_id": "central_lab_services",
+  "l2_label": "Central Lab Services",
+  "schema_name": "CENTRAL_LAB_SERVICES",
+  "l2_fields": [
+    {
+      "name": "Lab region",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "central_lab_l2__lab_region",
+      "allowed_values": [
+        "North America",
+        "Europe",
+        "China",
+        "Singapore",
+        "Japan",
+        "India",
+        "Australia",
+        "South Africa",
+        "Latin America"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Therapeutic area (central lab)",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "central_lab_l2__therapeutic_area_central_lab",
+      "allowed_values": [
+        "Oncology",
+        "Cardiometabolic",
+        "Neurology",
+        "Immunology",
+        "Infectious disease",
+        "Rare disease",
+        "Cell and gene therapy",
+        "Other"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Data delivery format",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "central_lab_l2__data_delivery_format",
+      "allowed_values": [
+        "CDISC LAB",
+        "SAS",
+        "ASCII",
+        "HL7",
+        "Excel",
+        "Custom"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Data transfer method",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "central_lab_l2__data_transfer_method",
+      "allowed_values": [
+        "SFTP",
+        "Encrypted email",
+        "Portal"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Development stage",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "development_stage",
+      "allowed_values": [
+        "Preclinical",
+        "Phase 1",
+        "Phase 2",
+        "Phase 3",
+        "Post-approval"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Data delivery frequency",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "central_lab_l2__data_delivery_frequency",
+      "allowed_values": [
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Custom"
+      ]
+    }
+  ],
+  "l3_nodes": {
+    "routine_safety_labs": {
+      "label": "Routine Safety Labs",
+      "form": "service",
+      "table_name": "ROUTINE_SAFETY_LABS_SPEC",
+      "fields": [
+        {
+          "name": "Safety test discipline",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "routine_safety_labs__safety_test_discipline",
+          "allowed_values": [
+            "Hematology",
+            "Chemistry",
+            "Urinalysis",
+            "Coagulation",
+            "Serology",
+            "Immunology",
+            "Endocrinology",
+            "HbA1c",
+            "Drug screening",
+            "Pregnancy"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Harmonized platforms across sites",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "HbA1c certification",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Analyzer platform",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "routine_safety_labs__analyzer_platform",
+          "allowed_values": [
+            "Roche cobas",
+            "Siemens Atellica",
+            "Siemens ADVIA",
+            "Beckman AU",
+            "Beckman DxH",
+            "Sysmex XN",
+            "Sysmex CS",
+            "Stago",
+            "Abbott Alinity",
+            "Tosoh"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Result turnaround",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "routine_safety_labs__result_turnaround"
+        },
+        {
+          "name": "Critical value flagging",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Global reference ranges",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Sponsor-specific reference ranges",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Toxicity grading scale",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "routine_safety_labs__toxicity_grading_scale",
+          "allowed_values": [
+            "CTCAE",
+            "DAIDS",
+            "DMID"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Result blinding",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Inter-lab comparison program",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "specialty_esoteric_testing": {
+      "label": "Specialty / Esoteric Testing",
+      "form": "service",
+      "table_name": "SPECIALTY_ESOTERIC_TESTING_SPEC",
+      "fields": [
+        {
+          "name": "Specialty discipline",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specialty_esoteric_testing__specialty_discipline",
+          "allowed_values": [
+            "Anatomic pathology",
+            "Histology",
+            "IHC",
+            "ISH / FISH",
+            "Microbiology",
+            "Virology",
+            "Mycology",
+            "Special chemistry",
+            "Cytogenetics",
+            "Mass spectrometry",
+            "Toxicology"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Digital pathology scanner",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specialty_esoteric_testing__digital_pathology_scanner",
+          "allowed_values": [
+            "Leica Aperio AT2",
+            "Hamamatsu NanoZoomer",
+            "PhenoImager",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Pathology service",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specialty_esoteric_testing__pathology_service",
+          "allowed_values": [
+            "H&E",
+            "Special stains",
+            "IHC",
+            "FISH / CISH",
+            "TMA construction",
+            "Macrodissection",
+            "Telepathology",
+            "% tumor content"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Tissue sample type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specialty_esoteric_testing__tissue_sample_type",
+          "allowed_values": [
+            "FFPE",
+            "Fresh frozen",
+            "Block",
+            "Slides",
+            "Bone marrow aspirate",
+            "Bone marrow core",
+            "FNA"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Companion diagnostic support",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Mass spec platform",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specialty_esoteric_testing__mass_spec_platform",
+          "allowed_values": [
+            "LC-MS/MS",
+            "GC-MS",
+            "UPLC"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Viral target",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_specialty_esoteric_testing__viral_target"
+        },
+        {
+          "name": "Target / marker",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_target_marker"
+        },
+        {
+          "name": "Microbiology method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specialty_esoteric_testing__microbiology_method",
+          "allowed_values": [
+            "Culture",
+            "MALDI-TOF ID",
+            "AST",
+            "Syndromic PCR"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "AST breakpoint standard",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "specialty_esoteric_testing__ast_breakpoint_standard",
+          "allowed_values": [
+            "CLSI",
+            "EUCAST",
+            "FDA"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "flow_cytometry_central_lab": {
+      "label": "Flow Cytometry",
+      "form": "service",
+      "table_name": "FLOW_CYTOMETRY_CENTRAL_LAB_SPEC",
+      "fields": [
+        {
+          "name": "Assay application (central lab flow)",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "flow_cytometry_central_lab__assay_application_central_lab_flow",
+          "allowed_values": [
+            "Immunophenotyping",
+            "Receptor occupancy",
+            "MRD",
+            "CAR-T PK/PD",
+            "Intracellular cytokine",
+            "PNH",
+            "CD34"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Custom panel development",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Max colors per panel",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "flow_cytometry_central_lab__max_colors_per_panel"
+        },
+        {
+          "name": "Cytometer platform",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "flow_cytometry_central_lab__cytometer_platform",
+          "allowed_values": [
+            "BD FACSCanto II",
+            "BD FACSLyric",
+            "Cytek Aurora",
+            "Bio-Rad ZE5",
+            "Beckman Navios",
+            "CyTOF Helios"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Spectral flow",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "PBMC isolation",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Flow sample type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "flow_cytometry_central_lab__flow_sample_type",
+          "allowed_values": [
+            "Whole blood",
+            "Fresh PBMC",
+            "Cryo PBMC",
+            "Bone marrow aspirate",
+            "CSF",
+            "Dissociated tissue"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Validation guideline",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "flow_cytometry_central_lab__validation_guideline",
+          "allowed_values": [
+            "CLSI H62",
+            "Fit-for-purpose",
+            "CAP / CLIA"
+          ]
+        },
+        {
+          "name": "Ready-made panels",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Sample stability",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "flow_cytometry_central_lab__sample_stability"
+        },
+        {
+          "name": "Analysis software",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "flow_cytometry_central_lab__analysis_software",
+          "allowed_values": [
+            "FlowJo",
+            "FCS Express",
+            "SpectroFlo",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Mass cytometry",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Stabilization tubes",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Assay regulatory status",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "flow_cytometry_central_lab__assay_regulatory_status",
+          "allowed_values": [
+            "IVD",
+            "RUO"
+          ]
+        },
+        {
+          "name": "Raw data file access",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "kit_build_logistics": {
+      "label": "Kit Build & Logistics",
+      "form": "service",
+      "table_name": "KIT_BUILD_LOGISTICS_SPEC",
+      "fields": [
+        {
+          "name": "Kit build location",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "kit_build_logistics__kit_build_location",
+          "allowed_values": [
+            "North America",
+            "Europe",
+            "China",
+            "Japan",
+            "APAC"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Custom kit design",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Shipping temperature (kit)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "kit_build_logistics__shipping_temperature_kit",
+          "allowed_values": [
+            "Ambient",
+            "2-8\u00b0C",
+            "Frozen",
+            "Dry ice",
+            "Cryogenic"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Shipment tracking",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "kit_build_logistics__shipment_tracking",
+          "allowed_values": [
+            "Real-time",
+            "Temperature log",
+            "GPS"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Requisition forms provided",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Kit labeling",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "kit_build_logistics__kit_labeling",
+          "allowed_values": [
+            "Barcode",
+            "RFID"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Kit ordering portal",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Start-up kit lead time",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "kit_build_logistics__start_up_kit_lead_time"
+        },
+        {
+          "name": "Resupply time",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "kit_build_logistics__resupply_time"
+        },
+        {
+          "name": "Automatic resupply",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Kit expiry management",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Courier",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "kit_build_logistics__courier",
+          "allowed_values": [
+            "FedEx",
+            "DHL",
+            "Marken",
+            "World Courier",
+            "UPS",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Visit-specific kits",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Electronic requisition",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Home collection kits",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Lab abnormality follow-up kits",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "sample_management": {
+      "label": "Sample Management",
+      "form": "service",
+      "table_name": "SAMPLE_MANAGEMENT_SPEC",
+      "fields": [
+        {
+          "name": "Sample tracking system",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_sample_management__sample_tracking_system"
+        },
+        {
+          "name": "Storage temperature (central lab)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sample_management__storage_temperature_central_lab",
+          "allowed_values": [
+            "Ambient",
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-70\u00b0C",
+            "-80\u00b0C",
+            "LN2 (-150\u00b0C)"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Long-term storage",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Biorepository location",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sample_management__biorepository_location",
+          "allowed_values": [
+            "North America",
+            "Europe",
+            "Singapore",
+            "China",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Temperature monitoring",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Processing service",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sample_management__processing_service",
+          "allowed_values": [
+            "Aliquoting",
+            "De-identification",
+            "DNA / RNA extraction",
+            "PBMC isolation",
+            "Card spotting"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Default retention period",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "sample_management__default_retention_period"
+        },
+        {
+          "name": "Chain of custody",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Sample destruction",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sample_management__sample_destruction",
+          "allowed_values": [
+            "Destroy on approval",
+            "Return to sponsor"
+          ]
+        },
+        {
+          "name": "Backup power",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Biorepository standard",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sample_management__biorepository_standard",
+          "allowed_values": [
+            "CAP",
+            "ISBER",
+            "NCI",
+            "WHO GCLP"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Stored sample type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "sample_management__stored_sample_type",
+          "allowed_values": [
+            "Serum",
+            "Plasma",
+            "Whole blood",
+            "Urine",
+            "DNA",
+            "RNA",
+            "PBMC",
+            "FFPE",
+            "Bone marrow",
+            "CSF",
+            "Stool"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Third-party sample intake",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Consent tracking",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Retrospective biospecimen sourcing",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    }
+  }
+}

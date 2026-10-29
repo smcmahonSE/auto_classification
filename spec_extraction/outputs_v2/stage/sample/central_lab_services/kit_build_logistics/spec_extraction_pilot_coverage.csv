@@ -1,0 +1,46 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+kit_build_logistics,Automatic resupply,599,14,2.34,585,0,0
+kit_build_logistics,Category (L2/L3),599,599,100.0,0,0,0
+kit_build_logistics,Category UNSPSC,599,0,0.0,599,0,0
+kit_build_logistics,Courier,599,5,0.83,594,0,0
+kit_build_logistics,Currency,599,1,0.17,598,0,0
+kit_build_logistics,Custom kit design,599,14,2.34,585,0,0
+kit_build_logistics,Data delivery format,599,4,0.67,595,0,0
+kit_build_logistics,Data delivery frequency,599,5,0.83,594,0,0
+kit_build_logistics,Data transfer method,599,0,0.0,599,0,0
+kit_build_logistics,Description,599,206,34.39,393,0,0
+kit_build_logistics,Development stage,599,6,1.0,593,0,0
+kit_build_logistics,Document links,599,1,0.17,598,0,0
+kit_build_logistics,Electronic requisition,599,14,2.34,585,0,0
+kit_build_logistics,Home collection kits,599,14,2.34,585,0,0
+kit_build_logistics,Image URL,599,1,0.17,598,0,0
+kit_build_logistics,Inventory,599,0,0.0,599,0,0
+kit_build_logistics,Kit build location,599,4,0.67,595,0,0
+kit_build_logistics,Kit expiry management,599,14,2.34,585,0,0
+kit_build_logistics,Kit labeling,599,3,0.5,596,0,0
+kit_build_logistics,Kit ordering portal,599,14,2.34,585,0,0
+kit_build_logistics,Lab abnormality follow-up kits,599,14,2.34,585,0,0
+kit_build_logistics,Lab region,599,4,0.67,595,0,0
+kit_build_logistics,Lead time (days),599,0,0.0,599,0,0
+kit_build_logistics,Listing UNSPSC,599,0,0.0,599,0,0
+kit_build_logistics,Listing type,599,599,100.0,0,0,0
+kit_build_logistics,Manufacturer SKU,599,0,0.0,599,0,0
+kit_build_logistics,Manufacturer name,599,0,0.0,599,0,0
+kit_build_logistics,Name,599,599,100.0,0,0,0
+kit_build_logistics,Price per unit,599,599,100.0,0,0,0
+kit_build_logistics,Pricing model,599,599,100.0,0,0,0
+kit_build_logistics,Product / service URL,599,1,0.17,598,0,0
+kit_build_logistics,Quantity,599,0,0.0,599,0,0
+kit_build_logistics,Requester UNSPSC,599,0,0.0,599,0,0
+kit_build_logistics,Requester commodity code,599,0,0.0,599,0,0
+kit_build_logistics,Requisition forms provided,599,14,2.34,585,0,0
+kit_build_logistics,Resupply time,599,0,0.0,599,0,0
+kit_build_logistics,Ship from,599,0,0.0,599,0,0
+kit_build_logistics,Shipment tracking,599,0,0.0,599,0,0
+kit_build_logistics,Shipping temperature (kit),599,0,0.0,599,0,0
+kit_build_logistics,Start-up kit lead time,599,0,0.0,599,0,0
+kit_build_logistics,Supplier SKU,599,0,0.0,599,0,0
+kit_build_logistics,Therapeutic area (central lab),599,5,0.83,594,0,0
+kit_build_logistics,Unit,599,0,0.0,599,0,0
+kit_build_logistics,Unit of measure,599,196,32.72,376,27,0
+kit_build_logistics,Visit-specific kits,599,14,2.34,585,0,0

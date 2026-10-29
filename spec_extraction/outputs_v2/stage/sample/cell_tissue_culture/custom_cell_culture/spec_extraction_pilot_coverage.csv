@@ -1,0 +1,28 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+custom_cell_culture,Capacity,2415,0,0.0,2415,0,0
+custom_cell_culture,Category (L2/L3),2415,2415,100.0,0,0,0
+custom_cell_culture,Category UNSPSC,2415,0,0.0,2415,0,0
+custom_cell_culture,Currency,2415,0,0.0,2415,0,0
+custom_cell_culture,Deliverable,2415,0,0.0,2415,0,0
+custom_cell_culture,Description,2415,202,8.36,2213,0,0
+custom_cell_culture,Document links,2415,2,0.08,2413,0,0
+custom_cell_culture,Image URL,2415,0,0.0,2415,0,0
+custom_cell_culture,Inventory,2415,0,0.0,2415,0,0
+custom_cell_culture,Lead time (days),2415,0,0.0,2415,0,0
+custom_cell_culture,Listing UNSPSC,2415,0,0.0,2415,0,0
+custom_cell_culture,Listing type,2415,2415,100.0,0,0,0
+custom_cell_culture,Manufacturer SKU,2415,0,0.0,2415,0,0
+custom_cell_culture,Manufacturer name,2415,0,0.0,2415,0,0
+custom_cell_culture,Name,2415,2415,100.0,0,0,0
+custom_cell_culture,Price per unit,2415,2391,99.01,24,0,0
+custom_cell_culture,Pricing model,2415,2415,100.0,0,0,0
+custom_cell_culture,Product / service URL,2415,2,0.08,2413,0,0
+custom_cell_culture,Protocol / scope,2415,0,0.0,2415,0,0
+custom_cell_culture,Quantity,2415,0,0.0,2415,0,0
+custom_cell_culture,Requester UNSPSC,2415,0,0.0,2415,0,0
+custom_cell_culture,Requester commodity code,2415,0,0.0,2415,0,0
+custom_cell_culture,Ship from,2415,0,0.0,2415,0,0
+custom_cell_culture,Supplier SKU,2415,0,0.0,2415,0,0
+custom_cell_culture,Turnaround,2415,0,0.0,2415,0,0
+custom_cell_culture,Unit,2415,0,0.0,2415,0,0
+custom_cell_culture,Unit of measure,2415,871,36.07,1540,4,0

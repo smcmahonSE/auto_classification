@@ -1,0 +1,38 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+patient_recruitment_retention,Category (L2/L3),988,988,100.0,0,0,0
+patient_recruitment_retention,Category UNSPSC,988,0,0.0,988,0,0
+patient_recruitment_retention,Currency,988,0,0.0,988,0,0
+patient_recruitment_retention,Delivery model,988,0,0.0,988,0,0
+patient_recruitment_retention,Description,988,2,0.2,986,0,0
+patient_recruitment_retention,Development stage,988,853,86.34,135,0,0
+patient_recruitment_retention,Diversity plan support,988,0,0.0,988,0,0
+patient_recruitment_retention,Document links,988,0,0.0,988,0,0
+patient_recruitment_retention,FSP engagement type,988,0,0.0,988,0,0
+patient_recruitment_retention,Home or remote enrollment,988,0,0.0,988,0,0
+patient_recruitment_retention,Image URL,988,0,0.0,988,0,0
+patient_recruitment_retention,Inventory,988,0,0.0,988,0,0
+patient_recruitment_retention,Languages supported (recruitment),988,0,0.0,988,0,0
+patient_recruitment_retention,Lead time (days),988,0,0.0,988,0,0
+patient_recruitment_retention,Listing UNSPSC,988,0,0.0,988,0,0
+patient_recruitment_retention,Listing type,988,988,100.0,0,0,0
+patient_recruitment_retention,Manufacturer SKU,988,0,0.0,988,0,0
+patient_recruitment_retention,Manufacturer name,988,0,0.0,988,0,0
+patient_recruitment_retention,Name,988,988,100.0,0,0,0
+patient_recruitment_retention,Patient payments,988,0,0.0,988,0,0
+patient_recruitment_retention,Pre-screening,988,0,0.0,988,0,0
+patient_recruitment_retention,Price per unit,988,988,100.0,0,0,0
+patient_recruitment_retention,Pricing model,988,988,100.0,0,0,0
+patient_recruitment_retention,Product / service URL,988,0,0.0,988,0,0
+patient_recruitment_retention,Quantity,988,0,0.0,988,0,0
+patient_recruitment_retention,Recruitment channels,988,0,0.0,988,0,0
+patient_recruitment_retention,Recruitment countries,988,0,0.0,988,0,0
+patient_recruitment_retention,Recruitment technology,988,0,0.0,988,0,0
+patient_recruitment_retention,Requester UNSPSC,988,0,0.0,988,0,0
+patient_recruitment_retention,Requester commodity code,988,0,0.0,988,0,0
+patient_recruitment_retention,Retention services,988,1,0.1,987,0,0
+patient_recruitment_retention,Ship from,988,0,0.0,988,0,0
+patient_recruitment_retention,Supplier SKU,988,0,0.0,988,0,0
+patient_recruitment_retention,Target populations,988,1,0.1,987,0,0
+patient_recruitment_retention,Therapeutic area (clinical trial),988,1,0.1,987,0,0
+patient_recruitment_retention,Unit,988,0,0.0,988,0,0
+patient_recruitment_retention,Unit of measure,988,0,0.0,988,0,0

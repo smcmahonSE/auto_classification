@@ -1,0 +1,37 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+dissociation_reagents,Animal origin,3834,117,3.05,3717,0,0
+dissociation_reagents,Category (L2/L3),3834,3834,100.0,0,0,0
+dissociation_reagents,Category UNSPSC,3834,0,0.0,3834,0,0
+dissociation_reagents,Chelator,3834,161,4.2,3668,5,0
+dissociation_reagents,Concentration,3834,80,2.09,3736,18,0
+dissociation_reagents,Currency,3834,33,0.86,3801,0,0
+dissociation_reagents,Description,3834,3798,99.06,36,0,0
+dissociation_reagents,Document links,3834,572,14.92,3262,0,0
+dissociation_reagents,Enzyme / agent,3834,161,4.2,3595,78,0
+dissociation_reagents,Format / physical form,3834,310,8.09,3505,19,0
+dissociation_reagents,Formulation / animal origin,3834,20,0.52,3814,0,0
+dissociation_reagents,Grade / regulatory,3834,29,0.76,3804,1,0
+dissociation_reagents,Image URL,3834,213,5.56,3621,0,0
+dissociation_reagents,Intended cell type / application,3834,0,0.0,3834,0,0
+dissociation_reagents,Inventory,3834,0,0.0,3834,0,0
+dissociation_reagents,Lead time (days),3834,0,0.0,3834,0,0
+dissociation_reagents,Listing UNSPSC,3834,0,0.0,3834,0,0
+dissociation_reagents,Listing type,3834,3834,100.0,0,0,0
+dissociation_reagents,Manufacturer SKU,3834,0,0.0,3834,0,0
+dissociation_reagents,Manufacturer name,3834,0,0.0,3834,0,0
+dissociation_reagents,Name,3834,3834,100.0,0,0,0
+dissociation_reagents,Phenol red,3834,1199,31.27,2010,625,0
+dissociation_reagents,Price per unit,3834,3697,96.43,137,0,0
+dissociation_reagents,Pricing model,3834,3834,100.0,0,0,0
+dissociation_reagents,Product / service URL,3834,572,14.92,3262,0,0
+dissociation_reagents,Quantity,3834,0,0.0,3834,0,0
+dissociation_reagents,Requester UNSPSC,3834,0,0.0,3834,0,0
+dissociation_reagents,Requester commodity code,3834,0,0.0,3834,0,0
+dissociation_reagents,Ship from,3834,0,0.0,3834,0,0
+dissociation_reagents,Shipping temperature,3834,17,0.44,3817,0,0
+dissociation_reagents,Species (cell source or intended use),3834,749,19.54,2841,244,0
+dissociation_reagents,Sterility / contamination QC,3834,28,0.73,3806,0,0
+dissociation_reagents,Storage conditions,3834,112,2.92,3718,4,0
+dissociation_reagents,Supplier SKU,3834,0,0.0,3834,0,0
+dissociation_reagents,Unit,3834,0,0.0,3834,0,0
+dissociation_reagents,Unit of measure,3834,864,22.54,2378,592,0

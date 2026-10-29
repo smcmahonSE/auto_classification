@@ -1,37 +1,38 @@
 l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
-ihc_immunohistochemistry,Antibody source,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Capacity,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Category (L2/L3),150,150,100.0,0,0,0
-ihc_immunohistochemistry,Category UNSPSC,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Currency,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Deliverables,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Description,150,3,2.0,147,0,0
-ihc_immunohistochemistry,Detection,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Document links,150,0,0.0,150,0,0
-ihc_immunohistochemistry,GLP status,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Image URL,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Inventory,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Lead time (days),150,0,0.0,150,0,0
-ihc_immunohistochemistry,Listing UNSPSC,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Listing type,150,150,100.0,0,0,0
-ihc_immunohistochemistry,Manufacturer SKU,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Manufacturer name,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Multiplex,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Name,150,150,100.0,0,0,0
-ihc_immunohistochemistry,Pathologist credentials,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Price per unit,150,150,100.0,0,0,0
-ihc_immunohistochemistry,Pricing model,150,150,100.0,0,0,0
-ihc_immunohistochemistry,Pricing unit,150,1,0.67,149,0,0
-ihc_immunohistochemistry,Product / service URL,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Quantification,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Quantity,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Requester UNSPSC,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Requester commodity code,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Sample type,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Ship from,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Species,150,2,1.33,148,0,0
-ihc_immunohistochemistry,Supplier SKU,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Tissue cross-reactivity (TCR),150,0,0.0,150,0,0
-ihc_immunohistochemistry,Turnaround,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Unit,150,0,0.0,150,0,0
-ihc_immunohistochemistry,Unit of measure,150,1,0.67,149,0,0
+ihc_immunohistochemistry,Antibody source,11142,1,0.01,11141,0,0
+ihc_immunohistochemistry,Capacity,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Category (L2/L3),11142,11142,100.0,0,0,0
+ihc_immunohistochemistry,Category UNSPSC,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Currency,11142,3,0.03,11139,0,0
+ihc_immunohistochemistry,Deliverables,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Description,11142,94,0.84,11048,0,0
+ihc_immunohistochemistry,Detection,11142,1,0.01,11141,0,0
+ihc_immunohistochemistry,Document links,11142,1,0.01,11141,0,0
+ihc_immunohistochemistry,GLP status,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Image URL,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Inventory,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Lead time (days),11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Listing UNSPSC,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Listing type,11142,11142,100.0,0,0,0
+ihc_immunohistochemistry,Manufacturer SKU,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Manufacturer name,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Multiplex,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Name,11142,11142,100.0,0,0,0
+ihc_immunohistochemistry,Pathologist credentials,11142,1,0.01,11141,0,0
+ihc_immunohistochemistry,Price per unit,11142,11141,99.99,1,0,0
+ihc_immunohistochemistry,Pricing model,11142,11142,100.0,0,0,0
+ihc_immunohistochemistry,Pricing unit,11142,2,0.02,11140,0,0
+ihc_immunohistochemistry,Product / service URL,11142,1,0.01,11141,0,0
+ihc_immunohistochemistry,Quantification,11142,3,0.03,11139,0,0
+ihc_immunohistochemistry,Quantity,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Requester UNSPSC,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Requester commodity code,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Sample type,11142,2,0.02,11140,0,0
+ihc_immunohistochemistry,Ship from,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Species,11142,68,0.61,11074,0,0
+ihc_immunohistochemistry,Supplier SKU,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Target / marker,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Tissue cross-reactivity (TCR),11142,12,0.11,11130,0,0
+ihc_immunohistochemistry,Turnaround,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Unit,11142,0,0.0,11142,0,0
+ihc_immunohistochemistry,Unit of measure,11142,44,0.39,11094,4,0

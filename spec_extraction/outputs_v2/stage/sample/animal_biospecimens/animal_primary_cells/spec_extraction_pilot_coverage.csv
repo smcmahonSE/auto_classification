@@ -6,7 +6,6 @@ animal_primary_cells,Currency,9,0,0.0,9,0,0
 animal_primary_cells,Description,9,9,100.0,0,0,0
 animal_primary_cells,Disease / model state,9,0,0.0,9,0,0
 animal_primary_cells,Document links,9,4,44.44,5,0,0
-animal_primary_cells,Format / preservation,9,3,33.33,6,0,0
 animal_primary_cells,IACUC / animal-welfare consent,9,0,0.0,9,0,0
 animal_primary_cells,Image URL,9,0,0.0,9,0,0
 animal_primary_cells,Individual vs Pooled,9,0,0.0,9,0,0
@@ -18,6 +17,7 @@ animal_primary_cells,Manufacturer SKU,9,0,0.0,9,0,0
 animal_primary_cells,Manufacturer name,9,0,0.0,9,0,0
 animal_primary_cells,Name,9,9,100.0,0,0,0
 animal_primary_cells,Passage number,9,0,0.0,9,0,0
+animal_primary_cells,Preservation,9,3,33.33,6,0,0
 animal_primary_cells,Price per unit,9,9,100.0,0,0,0
 animal_primary_cells,Pricing model,9,9,100.0,0,0,0
 animal_primary_cells,Product / service URL,9,4,44.44,5,0,0

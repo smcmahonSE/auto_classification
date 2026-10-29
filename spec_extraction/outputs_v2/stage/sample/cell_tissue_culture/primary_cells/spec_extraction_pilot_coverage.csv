@@ -1,0 +1,43 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+primary_cells,Category (L2/L3),13778,13778,100.0,0,0,0
+primary_cells,Category UNSPSC,13778,0,0.0,13778,0,0
+primary_cells,Cell number per vial,13778,0,0.0,13778,0,0
+primary_cells,Cell type,13778,0,0.0,13778,0,0
+primary_cells,Characterization markers,13778,0,0.0,13778,0,0
+primary_cells,Currency,13778,83,0.6,13695,0,0
+primary_cells,Description,13778,4999,36.28,8779,0,0
+primary_cells,Document links,13778,185,1.34,13593,0,0
+primary_cells,Donor infectious-disease screening,13778,0,0.0,13778,0,0
+primary_cells,Donor type,13778,116,0.84,13650,12,0
+primary_cells,Format / physical form,13778,1145,8.31,12609,24,0
+primary_cells,Formulation / animal origin,13778,56,0.41,13722,0,0
+primary_cells,Grade / regulatory,13778,68,0.49,13710,0,0
+primary_cells,Guaranteed population doublings,13778,0,0.0,13778,0,0
+primary_cells,HLA-typed donor,13778,535,3.88,13175,68,0
+primary_cells,Image URL,13778,109,0.79,13669,0,0
+primary_cells,Intended cell type / application,13778,0,0.0,13778,0,0
+primary_cells,Inventory,13778,0,0.0,13778,0,0
+primary_cells,Lead time (days),13778,0,0.0,13778,0,0
+primary_cells,Listing UNSPSC,13778,0,0.0,13778,0,0
+primary_cells,Listing type,13778,13778,100.0,0,0,0
+primary_cells,Manufacturer SKU,13778,0,0.0,13778,0,0
+primary_cells,Manufacturer name,13778,0,0.0,13778,0,0
+primary_cells,Name,13778,13778,100.0,0,0,0
+primary_cells,Passage supplied,13778,60,0.44,13718,0,0
+primary_cells,Price per unit,13778,13651,99.08,127,0,0
+primary_cells,Pricing model,13778,13778,100.0,0,0,0
+primary_cells,Product / service URL,13778,185,1.34,13593,0,0
+primary_cells,Quantity,13778,0,0.0,13778,0,0
+primary_cells,Recommended medium,13778,0,0.0,13778,0,0
+primary_cells,Requester UNSPSC,13778,0,0.0,13778,0,0
+primary_cells,Requester commodity code,13778,0,0.0,13778,0,0
+primary_cells,Ship from,13778,18,0.13,13760,0,0
+primary_cells,Shipping temperature,13778,166,1.2,13612,0,0
+primary_cells,Species (cell source or intended use),13778,9498,68.94,3431,849,0
+primary_cells,Sterility / contamination QC,13778,5,0.04,13773,0,0
+primary_cells,Storage conditions,13778,1,0.01,13777,0,0
+primary_cells,Supplier SKU,13778,0,0.0,13778,0,0
+primary_cells,Tissue / source,13778,0,0.0,13778,0,0
+primary_cells,Unit,13778,0,0.0,13778,0,0
+primary_cells,Unit of measure,13778,5574,40.46,7709,495,0
+primary_cells,Viability %,13778,0,0.0,13778,0,0

@@ -1,0 +1,48 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+elisa_kits,Analyte,20000,0,0.0,20000,0,0
+elisa_kits,Application (elisa),20000,16163,80.81,3837,0,0
+elisa_kits,Assay format,20000,9436,47.18,10504,60,0
+elisa_kits,Assay time (elisa),20000,0,0.0,20000,0,0
+elisa_kits,Category (L2/L3),20000,20000,100.0,0,0,0
+elisa_kits,Category UNSPSC,20000,0,0.0,20000,0,0
+elisa_kits,Cross-reactivity,20000,0,0.0,20000,0,0
+elisa_kits,Currency,20000,29,0.14,19970,1,0
+elisa_kits,Description,20000,19718,98.59,282,0,0
+elisa_kits,Detection method (elisa),20000,3159,15.79,16838,3,0
+elisa_kits,Document links,20000,265,1.32,19735,0,0
+elisa_kits,Gene ID,20000,0,0.0,20000,0,0
+elisa_kits,Image URL,20000,21,0.1,19979,0,0
+elisa_kits,Inter-assay CV,20000,0,0.0,20000,0,0
+elisa_kits,Intra-assay CV,20000,0,0.0,20000,0,0
+elisa_kits,Inventory,20000,0,0.0,20000,0,0
+elisa_kits,Kit components (elisa),20000,0,0.0,20000,0,0
+elisa_kits,Kit format,20000,3,0.01,19997,0,0
+elisa_kits,Lead time (days),20000,0,0.0,20000,0,0
+elisa_kits,Linearity of dilution,20000,0,0.0,20000,0,0
+elisa_kits,Listing UNSPSC,20000,0,0.0,20000,0,0
+elisa_kits,Listing type,20000,20000,100.0,0,0,0
+elisa_kits,Manufacturer SKU,20000,0,0.0,20000,0,0
+elisa_kits,Manufacturer name,20000,0,0.0,20000,0,0
+elisa_kits,Name,20000,20000,100.0,0,0,0
+elisa_kits,Plate format,20000,54,0.27,19946,0,0
+elisa_kits,Price per unit,20000,16897,84.48,3103,0,0
+elisa_kits,Pricing model,20000,20000,100.0,0,0,0
+elisa_kits,Product / service URL,20000,265,1.32,19735,0,0
+elisa_kits,Quantitation type,20000,7270,36.35,12729,1,0
+elisa_kits,Quantity,20000,0,0.0,20000,0,0
+elisa_kits,Range (elisa),20000,0,0.0,20000,0,0
+elisa_kits,Requester UNSPSC,20000,0,0.0,20000,0,0
+elisa_kits,Requester commodity code,20000,0,0.0,20000,0,0
+elisa_kits,Sample type (elisa),20000,6538,32.69,13462,0,0
+elisa_kits,Sample volume,20000,0,0.0,20000,0,0
+elisa_kits,Sensitivity (elisa),20000,0,0.0,20000,0,0
+elisa_kits,Ship from,20000,0,0.0,20000,0,0
+elisa_kits,Shipping condition (elisa),20000,10,0.05,19990,0,0
+elisa_kits,Species (elisa),20000,13341,66.7,6659,0,0
+elisa_kits,Spike recovery,20000,0,0.0,20000,0,0
+elisa_kits,Storage (elisa),20000,2709,13.54,17245,46,0
+elisa_kits,Supplier SKU,20000,0,0.0,20000,0,0
+elisa_kits,Tests per kit (elisa),20000,0,0.0,20000,0,0
+elisa_kits,UniProt accession,20000,0,0.0,20000,0,0
+elisa_kits,Unit,20000,0,0.0,20000,0,0
+elisa_kits,Unit of measure,20000,9491,47.46,487,10022,0

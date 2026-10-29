@@ -1,0 +1,38 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+trial_management_monitoring,Category (L2/L3),64,64,100.0,0,0,0
+trial_management_monitoring,Category UNSPSC,64,0,0.0,64,0,0
+trial_management_monitoring,Centralized monitoring,64,6,9.38,58,0,0
+trial_management_monitoring,Currency,64,1,1.56,63,0,0
+trial_management_monitoring,Decentralized components,64,0,0.0,64,0,0
+trial_management_monitoring,Delivery model,64,1,1.56,63,0,0
+trial_management_monitoring,Description,64,24,37.5,40,0,0
+trial_management_monitoring,Development stage,64,1,1.56,63,0,0
+trial_management_monitoring,Document links,64,1,1.56,63,0,0
+trial_management_monitoring,FSP engagement type,64,0,0.0,64,0,0
+trial_management_monitoring,Image URL,64,0,0.0,64,0,0
+trial_management_monitoring,Inventory,64,0,0.0,64,0,0
+trial_management_monitoring,Lead time (days),64,0,0.0,64,0,0
+trial_management_monitoring,Listing UNSPSC,64,0,0.0,64,0,0
+trial_management_monitoring,Listing type,64,64,100.0,0,0,0
+trial_management_monitoring,Manufacturer SKU,64,0,0.0,64,0,0
+trial_management_monitoring,Manufacturer name,64,0,0.0,64,0,0
+trial_management_monitoring,Monitoring approach,64,0,0.0,64,0,0
+trial_management_monitoring,Monitoring setting,64,0,0.0,64,0,0
+trial_management_monitoring,Name,64,64,100.0,0,0,0
+trial_management_monitoring,Oversight platform,64,0,0.0,64,0,0
+trial_management_monitoring,PM deliverables,64,0,0.0,64,0,0
+trial_management_monitoring,Price per unit,64,59,92.19,5,0,0
+trial_management_monitoring,Pricing model,64,64,100.0,0,0,0
+trial_management_monitoring,Product / service URL,64,1,1.56,63,0,0
+trial_management_monitoring,Quantity,64,0,0.0,64,0,0
+trial_management_monitoring,Remote monitoring visits,64,6,9.38,58,0,0
+trial_management_monitoring,Requester UNSPSC,64,0,0.0,64,0,0
+trial_management_monitoring,Requester commodity code,64,0,0.0,64,0,0
+trial_management_monitoring,Ship from,64,0,0.0,64,0,0
+trial_management_monitoring,Source data verification level,64,0,0.0,64,0,0
+trial_management_monitoring,Specialty monitoring,64,0,0.0,64,0,0
+trial_management_monitoring,Supplier SKU,64,0,0.0,64,0,0
+trial_management_monitoring,Therapeutic area (clinical trial),64,1,1.56,63,0,0
+trial_management_monitoring,Trial model,64,0,0.0,64,0,0
+trial_management_monitoring,Unit,64,0,0.0,64,0,0
+trial_management_monitoring,Unit of measure,64,1,1.56,63,0,0

@@ -88,9 +88,9 @@
           "multi_select": true,
           "allowed_values": [
             "Room Temperature",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C",
             "Desiccated",
             "Protected from Light"
           ]
@@ -224,9 +224,9 @@
           "multi_select": true,
           "allowed_values": [
             "Room Temperature",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C",
             "Desiccated",
             "Protected from Light"
           ]
@@ -360,9 +360,9 @@
           "multi_select": true,
           "allowed_values": [
             "Room Temperature",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C",
             "Desiccated",
             "Protected from Light"
           ]
@@ -496,9 +496,9 @@
           "multi_select": true,
           "allowed_values": [
             "Room Temperature",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C",
             "Desiccated",
             "Protected from Light"
           ]
@@ -632,9 +632,9 @@
           "multi_select": true,
           "allowed_values": [
             "Room Temperature",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C",
             "Desiccated",
             "Protected from Light"
           ]
@@ -768,9 +768,9 @@
           "multi_select": true,
           "allowed_values": [
             "Room Temperature",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C",
             "Desiccated",
             "Protected from Light"
           ]
@@ -928,7 +928,7 @@
           "product_only": false,
           "extractor": "regex",
           "pattern": "operating_temp_range",
-          "allowed_values": "°C (min to max)"
+          "allowed_values": "\u00b0C (min to max)"
         },
         {
           "name": "Substrates",
@@ -1027,9 +1027,9 @@
           "multi_select": true,
           "allowed_values": [
             "Room Temperature",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C",
             "Desiccated",
             "Protected from Light"
           ]
@@ -1213,9 +1213,9 @@
           "multi_select": true,
           "allowed_values": [
             "Room Temperature",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C",
             "Desiccated",
             "Protected from Light"
           ]
@@ -1375,9 +1375,9 @@
           "multi_select": true,
           "allowed_values": [
             "Room Temperature",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C",
             "Desiccated",
             "Protected from Light"
           ]
@@ -1596,9 +1596,9 @@
           "multi_select": true,
           "allowed_values": [
             "Room Temperature",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C",
             "Desiccated",
             "Protected from Light"
           ]
@@ -1739,9 +1739,9 @@
           "multi_select": true,
           "allowed_values": [
             "Room Temperature",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C",
             "Desiccated",
             "Protected from Light"
           ]
@@ -1828,7 +1828,7 @@
           "product_only": false,
           "extractor": "regex",
           "pattern": "concentration_molarity",
-          "allowed_values": "M or ×"
+          "allowed_values": "M or \u00d7"
         },
         {
           "name": "Molecular Formula",
@@ -1893,9 +1893,9 @@
           "multi_select": true,
           "allowed_values": [
             "Room Temperature",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C",
             "Desiccated",
             "Protected from Light"
           ]
@@ -1958,12 +1958,12 @@
           "extractor": "controlled_vocabulary",
           "vocabulary_ref": "isotope",
           "allowed_values": [
-            "³H",
-            "¹⁴C",
-            "³²P",
-            "³³P",
-            "³⁵S",
-            "¹²⁵I"
+            "\u00b3H",
+            "\u00b9\u2074C",
+            "\u00b3\u00b2P",
+            "\u00b3\u00b3P",
+            "\u00b3\u2075S",
+            "\u00b9\u00b2\u2075I"
           ]
         },
         {
@@ -2054,9 +2054,9 @@
           "multi_select": true,
           "allowed_values": [
             "Room Temperature",
-            "2-8°C",
-            "-20°C",
-            "-80°C",
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C",
             "Desiccated",
             "Protected from Light"
           ]
@@ -2112,37 +2112,235 @@
       "table_name": "CUSTOM_MED_CHEM_SYNTHESIS_SPEC",
       "fields": [
         {
-          "name": "Protocol / scope",
-          "type": "text",
-          "required": false,
+          "name": "Service type",
+          "type": "multi-select",
+          "required": true,
           "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_protocol_scope"
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_med_chem_synthesis__service_type",
+          "allowed_values": [
+            "Custom synthesis (to-order compounds)",
+            "Medicinal chemistry (design-make-test)",
+            "Library / parallel synthesis",
+            "Scale-up synthesis",
+            "Route design / route scouting",
+            "Process chemistry (discovery)",
+            "Building block / scaffold synthesis",
+            "Compound resupply / resynthesis",
+            "Isotope / radiolabel synthesis"
+          ],
+          "multi_select": true
         },
         {
-          "name": "Turnaround",
+          "name": "Engagement model",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_med_chem_synthesis__engagement_model",
+          "allowed_values": [
+            "Fee-for-service (per compound / per project)",
+            "FTE (dedicated chemists)",
+            "Milestone / risk-sharing"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Compound class",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_med_chem_synthesis__compound_class",
+          "allowed_values": [
+            "Small molecule",
+            "bRo5 / macrocycle",
+            "Peptide",
+            "Oligonucleotide",
+            "Targeted protein degrader (PROTAC / molecular glue)",
+            "ADC linker-payload",
+            "Covalent inhibitor",
+            "Carbohydrate",
+            "Nucleoside / nucleotide",
+            "Lipid",
+            "Steroid",
+            "Organometallic / organoboron",
+            "Fluorinated compounds",
+            "Natural-product-like (e.g. eicosanoids)"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Isotope labeling",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_med_chem_synthesis__isotope_labeling",
+          "allowed_values": [
+            "None",
+            "Stable isotope (2H/13C/15N)",
+            "Deuterated analogs",
+            "Carbon-14",
+            "Tritium"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Minimum scale",
           "type": "number",
           "required": false,
           "product_only": false,
           "extractor": "regex",
-          "pattern": "turnaround",
-          "allowed_values": "days or weeks"
+          "pattern": "custom_med_chem_synthesis__minimum_scale"
         },
         {
-          "name": "Capacity",
-          "type": "text",
+          "name": "Maximum scale",
+          "type": "number",
           "required": false,
           "product_only": false,
           "extractor": "regex",
-          "pattern": "labeled_capacity"
+          "pattern": "custom_med_chem_synthesis__maximum_scale"
         },
         {
-          "name": "Deliverable",
-          "type": "text",
+          "name": "Analytical data delivered",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_med_chem_synthesis__analytical_data_delivered",
+          "allowed_values": [
+            "LC-MS",
+            "1H NMR",
+            "13C / 2D NMR",
+            "HPLC purity (UV)",
+            "ELSD / CAD",
+            "Chiral HPLC / SFC (ee)",
+            "Optical rotation / VCD (absolute configuration)",
+            "Certificate of analysis"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Chiral separation",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Enabling chemistry technologies",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_med_chem_synthesis__enabling_chemistry_technologies",
+          "allowed_values": [
+            "Flow chemistry",
+            "Photochemistry / photoredox",
+            "Electrochemistry",
+            "Biocatalysis",
+            "Microwave",
+            "High-throughput reaction screening (HTE)",
+            "Late-stage functionalization",
+            "High-pressure hydrogenation"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Drug discovery stage supported",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_med_chem_synthesis__drug_discovery_stage_supported",
+          "allowed_values": [
+            "Hit expansion / hit-to-lead",
+            "Lead optimization",
+            "Candidate selection",
+            "IND-enabling supply"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Compound design responsibility",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_med_chem_synthesis__compound_design_responsibility",
+          "allowed_values": [
+            "Client supplies structures (make-only)",
+            "Provider proposes analogs / SAR design",
+            "Fully integrated design with CADD"
+          ]
+        },
+        {
+          "name": "Guaranteed minimum purity (%)",
+          "type": "number",
           "required": false,
           "product_only": false,
           "extractor": "regex",
-          "pattern": "labeled_deliverable"
+          "pattern": "custom_med_chem_synthesis__guaranteed_minimum_purity"
+        },
+        {
+          "name": "Asymmetric synthesis",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Special handling capabilities",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_med_chem_synthesis__special_handling_capabilities",
+          "allowed_values": [
+            "Highly potent compounds (HPAPI)",
+            "Controlled substances (licensed)",
+            "Toxic / hazardous reagents",
+            "Fluorination (e.g. SF4)"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "GMP synthesis available",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Delivery format",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "custom_med_chem_synthesis__delivery_format",
+          "allowed_values": [
+            "Vials (solid)",
+            "DMSO solution",
+            "Assay-ready plates",
+            "Customer-supplied containers"
+          ],
+          "multi_select": true
         }
       ]
     },
@@ -2152,37 +2350,276 @@
       "table_name": "ANALYTICAL_CHEMISTRY_SPEC",
       "fields": [
         {
-          "name": "Protocol / scope",
-          "type": "text",
-          "required": false,
+          "name": "Analysis type",
+          "type": "multi-select",
+          "required": true,
           "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_protocol_scope"
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "analytical_chemistry__analysis_type",
+          "allowed_values": [
+            "Identity confirmation",
+            "Purity",
+            "Assay / quantitation",
+            "Structure elucidation",
+            "Impurity profiling",
+            "Impurity identification",
+            "Unknown identification",
+            "Composition / deformulation",
+            "Elemental analysis",
+            "Residual solvents",
+            "Chiral / stereochemistry",
+            "Counter-ion analysis",
+            "Solid form / polymorph",
+            "Contamination / residue investigation"
+          ],
+          "multi_select": true
         },
         {
-          "name": "Turnaround",
+          "name": "Analytical technique",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "analytical_chemistry__analytical_technique",
+          "allowed_values": [
+            "HPLC",
+            "UPLC/UHPLC",
+            "LC-MS",
+            "LC-MS/MS",
+            "HRMS",
+            "GC",
+            "GC-MS",
+            "Headspace GC",
+            "NMR",
+            "qNMR",
+            "FTIR",
+            "UV-Vis",
+            "ICP-MS",
+            "ICP-OES",
+            "AAS",
+            "Ion chromatography",
+            "Karl Fischer",
+            "Titration",
+            "XRPD",
+            "DSC/TGA",
+            "CHN combustion",
+            "SFC"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Sample type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "analytical_chemistry__sample_type",
+          "allowed_values": [
+            "Small molecule / NCE",
+            "API / drug substance",
+            "Formulated product",
+            "Raw material / excipient",
+            "Reference standard",
+            "Compound library",
+            "Polymer",
+            "Peptide / oligonucleotide",
+            "UVCB / complex mixture",
+            "Unknown residue or deposit"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Quality standard",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "analytical_chemistry__quality_standard",
+          "allowed_values": [
+            "Non-regulated research",
+            "GLP",
+            "GMP",
+            "ISO 17025 accredited"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Reference method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "analytical_chemistry__reference_method",
+          "allowed_values": [
+            "USP",
+            "Ph. Eur.",
+            "BP",
+            "JP",
+            "ChP",
+            "ACS",
+            "FCC",
+            "ICH Q3A/Q3B",
+            "ICH Q3C",
+            "ICH Q3D",
+            "ICH M7",
+            "OECD",
+            "ASTM",
+            "Client method"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Method status",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "analytical_chemistry__method_status",
+          "allowed_values": [
+            "Use existing compendial method",
+            "Use client-supplied method",
+            "Develop new method",
+            "Develop and validate method"
+          ]
+        },
+        {
+          "name": "Detection level",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "analytical_chemistry__detection_level",
+          "allowed_values": [
+            "Percent (0.1% and above)",
+            "ppm",
+            "ppb",
+            "ppt"
+          ]
+        },
+        {
+          "name": "Elemental method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "analytical_chemistry__elemental_method",
+          "allowed_values": [
+            "Trace metals by ICP-MS",
+            "Multi-element by ICP-OES",
+            "Metals by AAS",
+            "CHN combustion",
+            "Heavy metals (USP <232>/<233>)"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Mass spec analyzer",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "analytical_chemistry__mass_spec_analyzer",
+          "allowed_values": [
+            "Single quad",
+            "Triple quad",
+            "Q-TOF",
+            "Orbitrap",
+            "MALDI-TOF"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "NMR field strength (MHz)",
           "type": "number",
           "required": false,
           "product_only": false,
           "extractor": "regex",
-          "pattern": "turnaround",
-          "allowed_values": "days or weeks"
+          "pattern": "analytical_chemistry__nmr_field_strength_mhz"
         },
         {
-          "name": "Capacity",
-          "type": "text",
+          "name": "NMR experiments",
+          "type": "multi-select",
           "required": false,
           "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_capacity"
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "analytical_chemistry__nmr_experiments",
+          "allowed_values": [
+            "1H",
+            "13C",
+            "19F",
+            "31P",
+            "15N",
+            "2D (COSY, HSQC, NOESY, TOCSY)",
+            "qNMR"
+          ],
+          "multi_select": true
         },
         {
-          "name": "Deliverable",
-          "type": "text",
+          "name": "Stereochemistry determination",
+          "type": "picklist",
           "required": false,
           "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_deliverable"
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Preparative isolation available",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Sample handling constraints",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "analytical_chemistry__sample_handling_constraints",
+          "allowed_values": [
+            "Volatile",
+            "Air or moisture sensitive",
+            "Reactive / unstable",
+            "Poorly water soluble",
+            "Controlled substance"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Rush turnaround available",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Report format",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "analytical_chemistry__report_format",
+          "allowed_values": [
+            "Certificate of analysis",
+            "GLP certificate of analysis",
+            "Full technical report",
+            "Raw data files"
+          ],
+          "multi_select": true
         }
       ]
     },

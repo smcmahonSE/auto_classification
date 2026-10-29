@@ -40,6 +40,7 @@ bioprocess_single_use,Supplier SKU,449,0,0.0,449,0,0
 bioprocess_single_use,System type,449,51,11.36,397,1,0
 bioprocess_single_use,Unit,449,0,0.0,449,0,0
 bioprocess_single_use,Unit of measure,449,164,36.53,208,77,0
-bioprocess_single_use,Vessel size / working volume,449,62,13.81,387,0,0
+bioprocess_single_use,Vessel size,449,62,13.81,387,0,0
 bioprocess_single_use,Warranty / service plan,449,0,0.0,449,0,0
 bioprocess_single_use,Weight,449,1,0.22,448,0,0
+bioprocess_single_use,Working volume,449,62,13.81,387,0,0

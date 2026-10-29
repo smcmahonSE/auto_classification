@@ -1,35 +1,39 @@
 l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
-cytokines_growth_factors,Bioactivity / ED50,150,0,0.0,150,0,0
-cytokines_growth_factors,Carrier,150,0,0.0,150,0,0
-cytokines_growth_factors,Category (L2/L3),150,150,100.0,0,0,0
-cytokines_growth_factors,Category UNSPSC,150,0,0.0,150,0,0
-cytokines_growth_factors,Currency,150,0,0.0,150,0,0
-cytokines_growth_factors,Description,150,144,96.0,6,0,0
-cytokines_growth_factors,Document links,150,2,1.33,148,0,0
-cytokines_growth_factors,Endotoxin level,150,0,0.0,150,0,0
-cytokines_growth_factors,Form,150,31,20.67,119,0,0
-cytokines_growth_factors,Grade,150,3,2.0,147,0,0
-cytokines_growth_factors,Image URL,150,2,1.33,148,0,0
-cytokines_growth_factors,Inventory,150,0,0.0,150,0,0
-cytokines_growth_factors,Lead time (days),150,0,0.0,150,0,0
-cytokines_growth_factors,Listing UNSPSC,150,0,0.0,150,0,0
-cytokines_growth_factors,Listing type,150,150,100.0,0,0,0
-cytokines_growth_factors,Manufacturer SKU,150,0,0.0,150,0,0
-cytokines_growth_factors,Manufacturer name,150,0,0.0,150,0,0
-cytokines_growth_factors,Molecular weight,150,39,26.0,111,0,0
-cytokines_growth_factors,Name,150,150,100.0,0,0,0
-cytokines_growth_factors,Price per unit,150,118,78.67,32,0,0
-cytokines_growth_factors,Pricing model,150,150,100.0,0,0,0
-cytokines_growth_factors,Product / service URL,150,2,1.33,148,0,0
-cytokines_growth_factors,Purity,150,10,6.67,140,0,0
-cytokines_growth_factors,Quantity,150,0,0.0,150,0,0
-cytokines_growth_factors,Requester UNSPSC,150,0,0.0,150,0,0
-cytokines_growth_factors,Requester commodity code,150,0,0.0,150,0,0
-cytokines_growth_factors,Sequence / region,150,0,0.0,150,0,0
-cytokines_growth_factors,Ship from,150,0,0.0,150,0,0
-cytokines_growth_factors,Source / Expression system,150,37,24.67,112,1,0
-cytokines_growth_factors,Species,150,93,62.0,36,21,0
-cytokines_growth_factors,Storage / reconstitution,150,42,28.0,108,0,0
-cytokines_growth_factors,Supplier SKU,150,0,0.0,150,0,0
-cytokines_growth_factors,Unit,150,0,0.0,150,0,0
-cytokines_growth_factors,Unit of measure,150,39,26.0,110,1,0
+cytokines_growth_factors,Alternate names,20000,0,0.0,20000,0,0
+cytokines_growth_factors,Bioactivity / ED50,20000,1,0.01,19999,0,0
+cytokines_growth_factors,Carrier,20000,175,0.88,19825,0,0
+cytokines_growth_factors,Category (L2/L3),20000,20000,100.0,0,0,0
+cytokines_growth_factors,Category UNSPSC,20000,0,0.0,20000,0,0
+cytokines_growth_factors,Currency,20000,89,0.45,19911,0,0
+cytokines_growth_factors,Description,20000,19418,97.09,582,0,0
+cytokines_growth_factors,Document links,20000,374,1.87,19626,0,0
+cytokines_growth_factors,Endotoxin level,20000,112,0.56,19888,0,0
+cytokines_growth_factors,Form,20000,4129,20.64,15862,9,0
+cytokines_growth_factors,Gene ID,20000,0,0.0,20000,0,0
+cytokines_growth_factors,Gene symbol,20000,0,0.0,20000,0,0
+cytokines_growth_factors,Grade,20000,306,1.53,19694,0,0
+cytokines_growth_factors,Image URL,20000,113,0.56,19887,0,0
+cytokines_growth_factors,Inventory,20000,0,0.0,20000,0,0
+cytokines_growth_factors,Lead time (days),20000,0,0.0,20000,0,0
+cytokines_growth_factors,Listing UNSPSC,20000,0,0.0,20000,0,0
+cytokines_growth_factors,Listing type,20000,20000,100.0,0,0,0
+cytokines_growth_factors,Manufacturer SKU,20000,0,0.0,20000,0,0
+cytokines_growth_factors,Manufacturer name,20000,0,0.0,20000,0,0
+cytokines_growth_factors,Molecular weight,20000,5546,27.73,14454,0,0
+cytokines_growth_factors,Name,20000,20000,100.0,0,0,0
+cytokines_growth_factors,Price per unit,20000,17060,85.3,2940,0,0
+cytokines_growth_factors,Pricing model,20000,20000,100.0,0,0,0
+cytokines_growth_factors,Product / service URL,20000,374,1.87,19626,0,0
+cytokines_growth_factors,Purity,20000,1426,7.13,18574,0,0
+cytokines_growth_factors,Quantity,20000,0,0.0,20000,0,0
+cytokines_growth_factors,Requester UNSPSC,20000,0,0.0,20000,0,0
+cytokines_growth_factors,Requester commodity code,20000,0,0.0,20000,0,0
+cytokines_growth_factors,Sequence / region,20000,0,0.0,20000,0,0
+cytokines_growth_factors,Ship from,20000,0,0.0,20000,0,0
+cytokines_growth_factors,Source / Expression system,20000,5076,25.38,14898,26,0
+cytokines_growth_factors,Species,20000,11890,59.45,4799,3311,0
+cytokines_growth_factors,Storage / reconstitution,20000,5122,25.61,14802,76,0
+cytokines_growth_factors,Supplier SKU,20000,0,0.0,20000,0,0
+cytokines_growth_factors,UniProt accession,20000,0,0.0,20000,0,0
+cytokines_growth_factors,Unit,20000,0,0.0,20000,0,0
+cytokines_growth_factors,Unit of measure,20000,4732,23.66,14749,519,0

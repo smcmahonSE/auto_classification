@@ -1,0 +1,48 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+companion_diagnostic_cdx_development,Analytical performance parameter,3495,82,2.35,3413,0,0
+companion_diagnostic_cdx_development,Assay development stage,3495,162,4.64,3333,0,0
+companion_diagnostic_cdx_development,Assay technology,3495,18,0.52,3477,0,0
+companion_diagnostic_cdx_development,Biospecimen access for validation,3495,31,0.89,3464,0,0
+companion_diagnostic_cdx_development,Category (L2/L3),3495,3495,100.0,0,0,0
+companion_diagnostic_cdx_development,Category UNSPSC,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Clinical performance study type,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Collaboration model,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Commercial launch support,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Concurrent drug and diagnostic approval support,3495,31,0.89,3464,0,0
+companion_diagnostic_cdx_development,Countries with registration support,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Currency,3495,6,0.17,3489,0,0
+companion_diagnostic_cdx_development,Description,3495,1100,31.47,2395,0,0
+companion_diagnostic_cdx_development,Development stage,3495,301,8.61,3194,0,0
+companion_diagnostic_cdx_development,Diagnostic claim type,3495,69,1.97,3426,0,0
+companion_diagnostic_cdx_development,Document links,3495,39,1.12,3456,0,0
+companion_diagnostic_cdx_development,GMP kit manufacturing,3495,31,0.89,3464,0,0
+companion_diagnostic_cdx_development,Image URL,3495,4,0.11,3491,0,0
+companion_diagnostic_cdx_development,Inventory,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Investigational submission support,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Lab region (biomarker),3495,51,1.46,3444,0,0
+companion_diagnostic_cdx_development,Lead time (days),3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Listing UNSPSC,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Listing type,3495,3495,100.0,0,0,0
+companion_diagnostic_cdx_development,Manufacturer SKU,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Manufacturer name,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Multi-site reproducibility,3495,31,0.89,3464,0,0
+companion_diagnostic_cdx_development,Name,3495,3495,100.0,0,0,0
+companion_diagnostic_cdx_development,Post-market performance monitoring,3495,31,0.89,3464,0,0
+companion_diagnostic_cdx_development,Price per unit,3495,3349,95.82,146,0,0
+companion_diagnostic_cdx_development,Pricing model,3495,3495,100.0,0,0,0
+companion_diagnostic_cdx_development,Prior CDx biomarkers,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Product / service URL,3495,39,1.12,3456,0,0
+companion_diagnostic_cdx_development,Prospective trial patient testing,3495,31,0.89,3464,0,0
+companion_diagnostic_cdx_development,Quantity,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Regulatory pathway,3495,6,0.17,3489,0,0
+companion_diagnostic_cdx_development,Requester UNSPSC,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Requester commodity code,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Sample type (biomarker),3495,28,0.8,3467,0,0
+companion_diagnostic_cdx_development,Ship from,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Supplier SKU,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Test format,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Therapeutic area (biomarker),3495,107,3.06,3388,0,0
+companion_diagnostic_cdx_development,Unit,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Unit of measure,3495,700,20.03,2581,214,0
+companion_diagnostic_cdx_development,Validation deliverable,3495,0,0.0,3495,0,0
+companion_diagnostic_cdx_development,Validation framework,3495,55,1.57,3440,0,0

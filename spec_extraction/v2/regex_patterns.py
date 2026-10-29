@@ -261,7 +261,8 @@ NUMERIC_PATTERNS: dict[str, NumericPattern] = {
     "magnification_x": NumericPattern(labels=("magnification",), bare_regex=re.compile(r"\b(\d+(?:\.\d+)?)\s*[xX]\b")),
     "fluorescence_channels": NumericPattern(labels=("fluorescence channels", "channels"), bare_regex=re.compile(r"\b(\d+)\s*\+?\s*channels?\b", re.IGNORECASE)),
     "volume_range_ul": NumericPattern(labels=("volume range",), bare_regex=re.compile(r"\b(\d+(?:,\d+)?)\s*(?:µl|ul)\b", re.IGNORECASE)),
-    "vessel_size_l": NumericPattern(labels=("vessel size", "working volume", "nominal volume", "bag size", "capacity"), bare_regex=re.compile(r"\b(\d+(?:,\d+)?(?:\.\d+)?)\s*L\b")),
+    "vessel_size_l": NumericPattern(labels=("vessel size", "nominal volume", "bag size", "capacity"), bare_regex=re.compile(r"\b(\d+(?:,\d+)?(?:\.\d+)?)\s*L\b")),
+    "working_volume_l": NumericPattern(labels=("working volume",), bare_regex=re.compile(r"\b(\d+(?:,\d+)?(?:\.\d+)?)\s*L\b")),
     "noise_level_db": NumericPattern(labels=("noise level",), bare_regex=re.compile(r"\b(\d+(?:\.\d+)?)\s*db", re.IGNORECASE)),
     "dimensions_wdh_cm": NumericPattern(
         labels=("dimensions",),
@@ -338,6 +339,84 @@ NUMERIC_PATTERNS: dict[str, NumericPattern] = {
     "languages_supported_pv": NumericPattern(labels=("languages supported", "languages",), bare_regex=None),
     "on_time_submission_compliance_pct": NumericPattern(labels=("on-time submission compliance", "submission compliance",), bare_regex=None),
     "program_languages_pv": NumericPattern(labels=("program languages",), bare_regex=None),
+
+    # --- Phase 2b: newly-detailed service L3s (Model 8) ---
+    "analytical_chemistry__nmr_field_strength_mhz": NumericPattern(labels=("nmr field strength",), bare_regex=None),
+    "custom_med_chem_synthesis__minimum_scale": NumericPattern(labels=("minimum scale",), bare_regex=None),
+    "custom_med_chem_synthesis__maximum_scale": NumericPattern(labels=("maximum scale",), bare_regex=None),
+    "custom_med_chem_synthesis__guaranteed_minimum_purity": NumericPattern(labels=("guaranteed minimum purity",), bare_regex=None),
+    "protein_purification__purity_specification": NumericPattern(labels=("purity specification",), bare_regex=None),
+    "protein_purification__endotoxin_level_eu_mg": NumericPattern(labels=("endotoxin level",), bare_regex=None),
+    "protein_purification__typical_expression_yield_mg_l": NumericPattern(labels=("typical expression yield",), bare_regex=None),
+    "protein_engineering__target_affinity_improvement_fold": NumericPattern(labels=("target affinity improvement",), bare_regex=None),
+    "protein_engineering__library_size_clones": NumericPattern(labels=("library size",), bare_regex=None),
+    "protein_engineering__humanness_target": NumericPattern(labels=("humanness target",), bare_regex=None),
+    "protein_engineering__number_of_lead_candidates_delivered": NumericPattern(labels=("number of lead candidates delivered",), bare_regex=None),
+    "protein_conjugation_labeling__target_loading_ratio": NumericPattern(labels=("target loading ratio",), bare_regex=None),
+    "protein_conjugation_labeling__batch_size_mg": NumericPattern(labels=("batch size",), bare_regex=None),
+    "protein_conjugation_labeling__minimum_input_antibody_purity": NumericPattern(labels=("minimum input antibody purity",), bare_regex=None),
+    "in_vivo_pharmacology_efficacy__number_of_models_available": NumericPattern(labels=("number of models available",), bare_regex=None),
+    "in_vivo_pharmacology_efficacy__in_life_duration": NumericPattern(labels=("in-life duration",), bare_regex=None),
+
+    # --- Biomarker & Companion Diagnostics > Biomarker Assays (Phase 1, Model 8 §22) ---
+    "biomarker_assays__max_analytes_per_sample": NumericPattern(labels=("max analytes per sample",), bare_regex=None),
+    "biomarker_assays__flow_cytometry_panel_size": NumericPattern(labels=("flow cytometry panel size",), bare_regex=None),
+    "biomarker_assays__multiplex_if_marker_count": NumericPattern(labels=("multiplex if marker count",), bare_regex=None),
+
+    # --- Biomarker & Companion Diagnostics > CDx Development, Genomic/Molecular Profiling ---
+    "companion_diagnostic_cdx_development__countries_with_registration_support": NumericPattern(labels=("countries with registration support",), bare_regex=None),
+    "genomic_molecular_profiling__panel_size": NumericPattern(labels=("panel size",), bare_regex=None),
+    "genomic_molecular_profiling__turnaround_time_genomic": NumericPattern(labels=("turnaround time",), bare_regex=None),
+    "genomic_molecular_profiling__minimum_dna_input": NumericPattern(labels=("minimum dna input",), bare_regex=None),
+    "genomic_molecular_profiling__blood_draw_volume": NumericPattern(labels=("blood draw volume",), bare_regex=None),
+
+    # --- Medical Affairs & Medical Communications ---
+    "medical_communications__medical_information_languages": NumericPattern(labels=("medical information languages",), bare_regex=None),
+    "msl_support__countries_covered_msl": NumericPattern(labels=("countries covered",), bare_regex=None),
+
+    # --- Central Lab Services ---
+    "routine_safety_labs__result_turnaround": NumericPattern(labels=("result turnaround",), bare_regex=None),
+    "flow_cytometry_central_lab__max_colors_per_panel": NumericPattern(labels=("max colors per panel",), bare_regex=None),
+    "flow_cytometry_central_lab__sample_stability": NumericPattern(labels=("sample stability",), bare_regex=None),
+    "kit_build_logistics__start_up_kit_lead_time": NumericPattern(labels=("start-up kit lead time",), bare_regex=None),
+    "kit_build_logistics__resupply_time": NumericPattern(labels=("resupply time",), bare_regex=None),
+    "sample_management__default_retention_period": NumericPattern(labels=("default retention period",), bare_regex=None),
+
+    # --- Clinical Trial Services ---
+    "patient_recruitment_retention__languages_supported_recruitment": NumericPattern(labels=("languages supported",), bare_regex=None),
+
+    # --- Kits and Assays ---
+    "elisa_kits__sensitivity_elisa": NumericPattern(labels=("sensitivity",), bare_regex=None),
+    "elisa_kits__range_elisa": NumericPattern(labels=("range",), bare_regex=None),
+    "elisa_kits__tests_per_kit_elisa": NumericPattern(labels=("tests per kit",), bare_regex=None),
+    "elisa_kits__assay_time_elisa": NumericPattern(labels=("assay time",), bare_regex=None),
+    "elisa_kits__sample_volume": NumericPattern(labels=("sample volume",), bare_regex=None),
+    "elisa_kits__intra_assay_cv": NumericPattern(labels=("intra-assay cv",), bare_regex=None),
+    "elisa_kits__inter_assay_cv": NumericPattern(labels=("inter-assay cv",), bare_regex=None),
+    "elisa_kits__spike_recovery": NumericPattern(labels=("spike recovery",), bare_regex=None),
+    "elisa_kits__linearity_of_dilution": NumericPattern(labels=("linearity of dilution",), bare_regex=None),
+    "cell_based_assays__tests_per_kit_cell_based": NumericPattern(labels=("tests per kit",), bare_regex=None),
+    "cell_based_assays__assay_time_cell_based": NumericPattern(labels=("assay time",), bare_regex=None),
+    "nucleic_acid_extraction__yield": NumericPattern(labels=("yield",), bare_regex=None),
+    "nucleic_acid_extraction__elution_volume": NumericPattern(labels=("elution volume",), bare_regex=None),
+    "nucleic_acid_extraction__tests_per_kit_nucleic_acid": NumericPattern(labels=("tests per kit",), bare_regex=None),
+    "nucleic_acid_extraction__processing_time": NumericPattern(labels=("processing time",), bare_regex=None),
+    "nucleic_acid_extraction__purity_a260_a280": NumericPattern(labels=("purity",), bare_regex=None),
+    "protein_quantification__range_protein_quant": NumericPattern(labels=("range",), bare_regex=None),
+    "protein_quantification__tests_per_kit_protein_quant": NumericPattern(labels=("tests per kit",), bare_regex=None),
+    "protein_quantification__wavelength_protein_quant": NumericPattern(labels=("wavelength",), bare_regex=None),
+    "protein_quantification__assay_time_protein_quant": NumericPattern(labels=("assay time",), bare_regex=None),
+    "protein_quantification__sensitivity_protein_quant": NumericPattern(labels=("sensitivity",), bare_regex=None),
+    "detection_imaging_kits__tests_per_kit_detection_kits": NumericPattern(labels=("tests per kit",), bare_regex=None),
+    "detection_imaging_kits__signal_duration": NumericPattern(labels=("signal duration",), bare_regex=None),
+    "detection_imaging_kits__shelf_life_detection_kits": NumericPattern(labels=("shelf life",), bare_regex=None),
+    "flow_cytometry_assays__tests_per_kit_flow_assays": NumericPattern(labels=("tests per kit",), bare_regex=None),
+    "flow_cytometry_assays__number_of_colors": NumericPattern(labels=("number of colors",), bare_regex=None),
+    "custom_assay_development_validation__turnaround_time_custom_dev": NumericPattern(labels=("turnaround time",), bare_regex=None),
+    "high_throughput_screening_hts__library_size": NumericPattern(labels=("library size",), bare_regex=None),
+    "high_throughput_screening_hts__turnaround_time_hts": NumericPattern(labels=("turnaround time",), bare_regex=None),
+    "high_throughput_screening_hts__max_compounds_per_campaign": NumericPattern(labels=("max compounds per campaign",), bare_regex=None),
+    "high_throughput_screening_hts__max_hits_delivered": NumericPattern(labels=("max hits delivered",), bare_regex=None),
 
 }
 
@@ -488,6 +567,44 @@ LABELED_TEXT_PATTERNS: dict[str, tuple[str, ...]] = {
 
     # --- Pharmacovigilance & Drug Safety ---
     "labeled_literature_tool": ("literature tool",),
+
+    # --- Identifier standardization (Antibodies, Proteins and Peptides, Cells and
+    # Tissue Culture, Histology & Pathology) --- passthrough capture of whatever the
+    # supplier provides; resolving these against NCBI Gene / UniProt / HGNC /
+    # Cellosaurus is a separate data-engineering task, not done here.
+    "labeled_gene_id": ("gene id", "entrez gene id", "ncbi gene id"),
+    "labeled_uniprot_accession": ("uniprot accession", "uniprot id", "uniprot"),
+    "labeled_target_gene_symbol": ("target gene symbol", "gene symbol"),
+    "labeled_target_alternate_names": ("target alternate names", "alternate names", "aliases", "also known as"),
+    "labeled_gene_symbol": ("gene symbol",),
+    "labeled_alternate_names": ("alternate names", "aliases", "also known as"),
+    "labeled_cell_line_name": ("cell line name", "cell line"),
+    "labeled_repository_catalog_number": ("repository catalog number", "cellosaurus accession", "cellosaurus id", "atcc number", "ccle id"),
+    "labeled_cell_line_synonyms": ("cell line synonyms", "synonyms"),
+    "labeled_target_marker": ("target / marker", "target", "marker"),
+    "labeled_target_gene": ("target gene",),
+    "labeled_in_vivo_pharmacology_efficacy__disease_model_name": ("disease model name",),
+    "labeled_companion_diagnostic_cdx_development__prior_cdx_biomarkers": ("prior cdx biomarkers",),
+    "labeled_specialty_esoteric_testing__viral_target": ("viral target",),
+    "labeled_sample_management__sample_tracking_system": ("sample tracking system",),
+    "labeled_trial_management_monitoring__oversight_platform": ("oversight platform",),
+    "labeled_site_management__site_portal": ("site portal",),
+    "labeled_patient_recruitment_retention__recruitment_technology": ("recruitment technology",),
+    "labeled_clinical_supply_logistics__irt_system": ("irt system",),
+
+    # --- Kits and Assays ---
+    "labeled_elisa_kits__analyte": ("analyte",),
+    "labeled_elisa_kits__cross_reactivity": ("cross-reactivity",),
+    "labeled_elisa_kits__kit_components_elisa": ("kit components",),
+    "labeled_cell_based_assays__wavelength_cell_based": ("wavelength",),
+    "labeled_cell_based_assays__sensitivity_cell_based": ("sensitivity",),
+    "labeled_cell_based_assays__target_cell_based": ("target",),
+    "labeled_cell_based_assays__kit_components_cell_based": ("kit components",),
+    "labeled_nucleic_acid_extraction__sample_input_amount": ("sample input amount",),
+    "labeled_detection_imaging_kits__recommended_antibody_dilution": ("recommended antibody dilution",),
+    "labeled_detection_imaging_kits__kit_components_detection_kits": ("kit components",),
+    "labeled_flow_cytometry_assays__markers": ("markers",),
+    "labeled_flow_cytometry_assays__kit_components_flow_assays": ("kit components",),
 
 }
 

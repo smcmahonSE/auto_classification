@@ -1,0 +1,35 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+tissue_processing_sectioning,Capacity,20000,0,0.0,20000,0,0
+tissue_processing_sectioning,Category (L2/L3),20000,20000,100.0,0,0,0
+tissue_processing_sectioning,Category UNSPSC,20000,0,0.0,20000,0,0
+tissue_processing_sectioning,Currency,20000,8,0.04,19992,0,0
+tissue_processing_sectioning,Decalcification,20000,102,0.51,19898,0,0
+tissue_processing_sectioning,Deliverables,20000,5,0.03,19995,0,0
+tissue_processing_sectioning,Description,20000,18075,90.38,1925,0,0
+tissue_processing_sectioning,Document links,20000,9,0.04,19991,0,0
+tissue_processing_sectioning,Embedding medium,20000,6687,33.43,13310,3,0
+tissue_processing_sectioning,GLP status,20000,5,0.03,19995,0,0
+tissue_processing_sectioning,Image URL,20000,1,0.01,19999,0,0
+tissue_processing_sectioning,Inventory,20000,0,0.0,20000,0,0
+tissue_processing_sectioning,Lead time (days),20000,0,0.0,20000,0,0
+tissue_processing_sectioning,Listing UNSPSC,20000,0,0.0,20000,0,0
+tissue_processing_sectioning,Listing type,20000,20000,100.0,0,0,0
+tissue_processing_sectioning,Manufacturer SKU,20000,0,0.0,20000,0,0
+tissue_processing_sectioning,Manufacturer name,20000,0,0.0,20000,0,0
+tissue_processing_sectioning,Name,20000,20000,100.0,0,0,0
+tissue_processing_sectioning,Price per unit,20000,19993,99.97,7,0,0
+tissue_processing_sectioning,Pricing model,20000,20000,100.0,0,0,0
+tissue_processing_sectioning,Pricing unit,20000,1,0.01,19999,0,0
+tissue_processing_sectioning,Product / service URL,20000,9,0.04,19991,0,0
+tissue_processing_sectioning,Quantity,20000,0,0.0,20000,0,0
+tissue_processing_sectioning,Requester UNSPSC,20000,0,0.0,20000,0,0
+tissue_processing_sectioning,Requester commodity code,20000,0,0.0,20000,0,0
+tissue_processing_sectioning,Sample type,20000,17646,88.23,2354,0,0
+tissue_processing_sectioning,Sections per slide,20000,0,0.0,20000,0,0
+tissue_processing_sectioning,Ship from,20000,0,0.0,20000,0,0
+tissue_processing_sectioning,Species,20000,1198,5.99,18802,0,0
+tissue_processing_sectioning,Supplier SKU,20000,0,0.0,20000,0,0
+tissue_processing_sectioning,Tissue size,20000,143,0.71,19855,2,0
+tissue_processing_sectioning,Turnaround,20000,0,0.0,20000,0,0
+tissue_processing_sectioning,Unit,20000,0,0.0,20000,0,0
+tissue_processing_sectioning,Unit of measure,20000,2402,12.01,17408,190,0

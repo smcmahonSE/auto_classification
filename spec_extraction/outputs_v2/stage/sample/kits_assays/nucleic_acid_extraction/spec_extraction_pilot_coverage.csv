@@ -1,0 +1,38 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+nucleic_acid_extraction,Automation compatible,11650,146,1.25,11504,0,0
+nucleic_acid_extraction,Blood collection tube,11650,83,0.71,11567,0,0
+nucleic_acid_extraction,Category (L2/L3),11650,11650,100.0,0,0,0
+nucleic_acid_extraction,Category UNSPSC,11650,0,0.0,11650,0,0
+nucleic_acid_extraction,Currency,11650,81,0.7,11558,11,0
+nucleic_acid_extraction,Description,11650,11024,94.63,626,0,0
+nucleic_acid_extraction,Document links,11650,619,5.31,11031,0,0
+nucleic_acid_extraction,Downstream application,11650,3890,33.39,7760,0,0
+nucleic_acid_extraction,Elution volume,11650,0,0.0,11650,0,0
+nucleic_acid_extraction,Format (nucleic acid),11650,415,3.56,11214,21,0
+nucleic_acid_extraction,Image URL,11650,336,2.88,11314,0,0
+nucleic_acid_extraction,Input sample type,11650,1628,13.97,10022,0,0
+nucleic_acid_extraction,Inventory,11650,0,0.0,11650,0,0
+nucleic_acid_extraction,Lead time (days),11650,0,0.0,11650,0,0
+nucleic_acid_extraction,Listing UNSPSC,11650,0,0.0,11650,0,0
+nucleic_acid_extraction,Listing type,11650,11650,100.0,0,0,0
+nucleic_acid_extraction,Manufacturer SKU,11650,0,0.0,11650,0,0
+nucleic_acid_extraction,Manufacturer name,11650,0,0.0,11650,0,0
+nucleic_acid_extraction,Method (nucleic acid),11650,572,4.91,11003,75,0
+nucleic_acid_extraction,Name,11650,11650,100.0,0,0,0
+nucleic_acid_extraction,Price per unit,11650,11305,97.04,345,0,0
+nucleic_acid_extraction,Pricing model,11650,11650,100.0,0,0,0
+nucleic_acid_extraction,Processing time,11650,0,0.0,11650,0,0
+nucleic_acid_extraction,Product / service URL,11650,619,5.31,11031,0,0
+nucleic_acid_extraction,Purity (A260/A280),11650,0,0.0,11650,0,0
+nucleic_acid_extraction,Quantity,11650,0,0.0,11650,0,0
+nucleic_acid_extraction,Requester UNSPSC,11650,0,0.0,11650,0,0
+nucleic_acid_extraction,Requester commodity code,11650,0,0.0,11650,0,0
+nucleic_acid_extraction,Sample input amount,11650,0,0.0,11650,0,0
+nucleic_acid_extraction,Ship from,11650,0,0.0,11650,0,0
+nucleic_acid_extraction,Storage (nucleic acid),11650,197,1.69,11447,6,0
+nucleic_acid_extraction,Supplier SKU,11650,0,0.0,11650,0,0
+nucleic_acid_extraction,Target (nucleic acid),11650,490,4.21,11144,16,0
+nucleic_acid_extraction,Tests per kit (nucleic acid),11650,0,0.0,11650,0,0
+nucleic_acid_extraction,Unit,11650,0,0.0,11650,0,0
+nucleic_acid_extraction,Unit of measure,11650,3832,32.89,1700,6118,0
+nucleic_acid_extraction,Yield,11650,0,0.0,11650,0,0

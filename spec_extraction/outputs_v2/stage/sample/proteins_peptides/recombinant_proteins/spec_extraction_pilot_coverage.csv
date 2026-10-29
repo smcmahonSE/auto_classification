@@ -1,35 +1,39 @@
 l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
-recombinant_proteins,Bioactivity,150,0,0.0,150,0,0
-recombinant_proteins,Category (L2/L3),150,150,100.0,0,0,0
-recombinant_proteins,Category UNSPSC,150,0,0.0,150,0,0
-recombinant_proteins,Currency,150,0,0.0,150,0,0
-recombinant_proteins,Description,150,141,94.0,9,0,0
-recombinant_proteins,Document links,150,2,1.33,148,0,0
-recombinant_proteins,Endotoxin level,150,1,0.67,149,0,0
-recombinant_proteins,Expression system,150,27,18.0,117,6,0
-recombinant_proteins,Form,150,13,8.67,137,0,0
-recombinant_proteins,Grade,150,2,1.33,148,0,0
-recombinant_proteins,Image URL,150,0,0.0,150,0,0
-recombinant_proteins,Inventory,150,0,0.0,150,0,0
-recombinant_proteins,Lead time (days),150,0,0.0,150,0,0
-recombinant_proteins,Listing UNSPSC,150,0,0.0,150,0,0
-recombinant_proteins,Listing type,150,150,100.0,0,0,0
-recombinant_proteins,Manufacturer SKU,150,0,0.0,150,0,0
-recombinant_proteins,Manufacturer name,150,0,0.0,150,0,0
-recombinant_proteins,Molecular weight,150,13,8.67,137,0,0
-recombinant_proteins,Name,150,150,100.0,0,0,0
-recombinant_proteins,Price per unit,150,135,90.0,15,0,0
-recombinant_proteins,Pricing model,150,150,100.0,0,0,0
-recombinant_proteins,Product / service URL,150,2,1.33,148,0,0
-recombinant_proteins,Purity,150,21,14.0,129,0,0
-recombinant_proteins,Quantity,150,0,0.0,150,0,0
-recombinant_proteins,Requester UNSPSC,150,0,0.0,150,0,0
-recombinant_proteins,Requester commodity code,150,0,0.0,150,0,0
-recombinant_proteins,Sequence / region,150,0,0.0,150,0,0
-recombinant_proteins,Ship from,150,0,0.0,150,0,0
-recombinant_proteins,Species,150,124,82.67,16,10,0
-recombinant_proteins,Storage / reconstitution,150,28,18.67,116,6,0
-recombinant_proteins,Supplier SKU,150,0,0.0,150,0,0
-recombinant_proteins,Tag,150,30,20.0,120,0,0
-recombinant_proteins,Unit,150,0,0.0,150,0,0
-recombinant_proteins,Unit of measure,150,16,10.67,133,1,0
+recombinant_proteins,Alternate names,20000,0,0.0,20000,0,0
+recombinant_proteins,Bioactivity,20000,0,0.0,20000,0,0
+recombinant_proteins,Category (L2/L3),20000,20000,100.0,0,0,0
+recombinant_proteins,Category UNSPSC,20000,0,0.0,20000,0,0
+recombinant_proteins,Currency,20000,23,0.11,19977,0,0
+recombinant_proteins,Description,20000,18708,93.54,1292,0,0
+recombinant_proteins,Document links,20000,412,2.06,19588,0,0
+recombinant_proteins,Endotoxin level,20000,151,0.76,19849,0,0
+recombinant_proteins,Expression system,20000,4005,20.03,15706,289,0
+recombinant_proteins,Form,20000,1805,9.03,18195,0,0
+recombinant_proteins,Gene ID,20000,0,0.0,20000,0,0
+recombinant_proteins,Gene symbol,20000,0,0.0,20000,0,0
+recombinant_proteins,Grade,20000,362,1.81,19630,8,0
+recombinant_proteins,Image URL,20000,25,0.12,19975,0,0
+recombinant_proteins,Inventory,20000,0,0.0,20000,0,0
+recombinant_proteins,Lead time (days),20000,0,0.0,20000,0,0
+recombinant_proteins,Listing UNSPSC,20000,0,0.0,20000,0,0
+recombinant_proteins,Listing type,20000,20000,100.0,0,0,0
+recombinant_proteins,Manufacturer SKU,20000,0,0.0,20000,0,0
+recombinant_proteins,Manufacturer name,20000,0,0.0,20000,0,0
+recombinant_proteins,Molecular weight,20000,1855,9.28,18145,0,0
+recombinant_proteins,Name,20000,20000,100.0,0,0,0
+recombinant_proteins,Price per unit,20000,18033,90.16,1967,0,0
+recombinant_proteins,Pricing model,20000,20000,100.0,0,0,0
+recombinant_proteins,Product / service URL,20000,412,2.06,19588,0,0
+recombinant_proteins,Purity,20000,2213,11.06,17787,0,0
+recombinant_proteins,Quantity,20000,0,0.0,20000,0,0
+recombinant_proteins,Requester UNSPSC,20000,0,0.0,20000,0,0
+recombinant_proteins,Requester commodity code,20000,0,0.0,20000,0,0
+recombinant_proteins,Sequence / region,20000,0,0.0,20000,0,0
+recombinant_proteins,Ship from,20000,0,0.0,20000,0,0
+recombinant_proteins,Species,20000,16991,84.95,2250,759,0
+recombinant_proteins,Storage / reconstitution,20000,3417,17.09,15819,764,0
+recombinant_proteins,Supplier SKU,20000,0,0.0,20000,0,0
+recombinant_proteins,Tag,20000,3800,19.0,16187,13,0
+recombinant_proteins,UniProt accession,20000,0,0.0,20000,0,0
+recombinant_proteins,Unit,20000,0,0.0,20000,0,0
+recombinant_proteins,Unit of measure,20000,1591,7.95,18370,39,0

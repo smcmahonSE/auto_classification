@@ -1,0 +1,36 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+clinical_data_management,24-hour coverage,3329,0,0.0,3329,0,0
+clinical_data_management,CDM deliverables,3329,3,0.09,3326,0,0
+clinical_data_management,Category (L2/L3),3329,3329,100.0,0,0,0
+clinical_data_management,Category UNSPSC,3329,0,0.0,3329,0,0
+clinical_data_management,Currency,3329,0,0.0,3329,0,0
+clinical_data_management,Data standards (cdm),3329,0,0.0,3329,0,0
+clinical_data_management,Delivery location,3329,0,0.0,3329,0,0
+clinical_data_management,Delivery model,3329,0,0.0,3329,0,0
+clinical_data_management,Description,3329,43,1.29,3286,0,0
+clinical_data_management,Development stage,3329,11,0.33,3318,0,0
+clinical_data_management,Document links,3329,1,0.03,3328,0,0
+clinical_data_management,EDC platform,3329,1,0.03,3328,0,0
+clinical_data_management,External data sources,3329,6,0.18,3323,0,0
+clinical_data_management,FSP engagement type,3329,0,0.0,3329,0,0
+clinical_data_management,GCP guideline,3329,0,0.0,3329,0,0
+clinical_data_management,Image URL,3329,0,0.0,3329,0,0
+clinical_data_management,Inventory,3329,0,0.0,3329,0,0
+clinical_data_management,Lead time (days),3329,0,0.0,3329,0,0
+clinical_data_management,Listing UNSPSC,3329,0,0.0,3329,0,0
+clinical_data_management,Listing type,3329,3329,100.0,0,0,0
+clinical_data_management,Manufacturer SKU,3329,0,0.0,3329,0,0
+clinical_data_management,Manufacturer name,3329,0,0.0,3329,0,0
+clinical_data_management,Name,3329,3329,100.0,0,0,0
+clinical_data_management,Price per unit,3329,3328,99.97,1,0,0
+clinical_data_management,Pricing model,3329,3329,100.0,0,0,0
+clinical_data_management,Product / service URL,3329,1,0.03,3328,0,0
+clinical_data_management,Quantity,3329,0,0.0,3329,0,0
+clinical_data_management,Requester UNSPSC,3329,0,0.0,3329,0,0
+clinical_data_management,Requester commodity code,3329,0,0.0,3329,0,0
+clinical_data_management,Ship from,3329,0,0.0,3329,0,0
+clinical_data_management,Supplier SKU,3329,0,0.0,3329,0,0
+clinical_data_management,System ownership,3329,1,0.03,3328,0,0
+clinical_data_management,Therapeutic area (clinical trial),3329,0,0.0,3329,0,0
+clinical_data_management,Unit,3329,0,0.0,3329,0,0
+clinical_data_management,Unit of measure,3329,9,0.27,3320,0,0

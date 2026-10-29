@@ -1,0 +1,38 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+protein_conjugation_labeling,Activity retention confirmed,1211,10,0.83,1201,0,0
+protein_conjugation_labeling,Batch size (mg),1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Carrier molecule,1211,94,7.76,1117,0,0
+protein_conjugation_labeling,Category (L2/L3),1211,1211,100.0,0,0,0
+protein_conjugation_labeling,Category UNSPSC,1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Conjugate type,1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Conjugation chemistry,1211,40,3.3,1171,0,0
+protein_conjugation_labeling,Conjugation site identification,1211,10,0.83,1201,0,0
+protein_conjugation_labeling,Currency,1211,4,0.33,1207,0,0
+protein_conjugation_labeling,Description,1211,1167,96.37,44,0,0
+protein_conjugation_labeling,Document links,1211,146,12.06,1065,0,0
+protein_conjugation_labeling,Drug payload class,1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Free drug analysis,1211,10,0.83,1201,0,0
+protein_conjugation_labeling,GMP manufacturing available,1211,10,0.83,1201,0,0
+protein_conjugation_labeling,Image URL,1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Inventory,1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Label type,1211,206,17.01,1005,0,0
+protein_conjugation_labeling,Lead time (days),1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Linker type,1211,15,1.24,1188,8,0
+protein_conjugation_labeling,Listing UNSPSC,1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Listing type,1211,1211,100.0,0,0,0
+protein_conjugation_labeling,Loading characterization method,1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Manufacturer SKU,1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Manufacturer name,1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Minimum input antibody purity (%),1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Name,1211,1211,100.0,0,0,0
+protein_conjugation_labeling,Price per unit,1211,898,74.15,313,0,0
+protein_conjugation_labeling,Pricing model,1211,1211,100.0,0,0,0
+protein_conjugation_labeling,Product / service URL,1211,146,12.06,1065,0,0
+protein_conjugation_labeling,Quantity,1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Requester UNSPSC,1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Requester commodity code,1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Ship from,1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Supplier SKU,1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Target loading ratio,1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Unit,1211,0,0.0,1211,0,0
+protein_conjugation_labeling,Unit of measure,1211,140,11.56,1060,11,0

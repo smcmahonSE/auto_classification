@@ -7,7 +7,6 @@ animal_blood_biofluids,Currency,264,0,0.0,264,0,0
 animal_blood_biofluids,Description,264,137,51.89,127,0,0
 animal_blood_biofluids,Disease / model state,264,0,0.0,264,0,0
 animal_blood_biofluids,Document links,264,4,1.52,260,0,0
-animal_blood_biofluids,Format / preservation,264,20,7.58,244,0,0
 animal_blood_biofluids,IACUC / animal-welfare consent,264,0,0.0,264,0,0
 animal_blood_biofluids,Image URL,264,0,0.0,264,0,0
 animal_blood_biofluids,Individual vs Pooled,264,59,22.35,205,0,0
@@ -19,6 +18,7 @@ animal_blood_biofluids,Manufacturer SKU,264,0,0.0,264,0,0
 animal_blood_biofluids,Manufacturer name,264,0,0.0,264,0,0
 animal_blood_biofluids,Matrix,264,129,48.86,81,54,0
 animal_blood_biofluids,Name,264,264,100.0,0,0,0
+animal_blood_biofluids,Preservation,264,20,7.58,244,0,0
 animal_blood_biofluids,Price per unit,264,263,99.62,1,0,0
 animal_blood_biofluids,Pricing model,264,264,100.0,0,0,0
 animal_blood_biofluids,Processing / finishing,264,0,0.0,264,0,0

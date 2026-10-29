@@ -1,0 +1,37 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+biostatistics,Blinding of outputs,56,0,0.0,56,0,0
+biostatistics,Category (L2/L3),56,56,100.0,0,0,0
+biostatistics,Category UNSPSC,56,0,0.0,56,0,0
+biostatistics,Currency,56,0,0.0,56,0,0
+biostatistics,DMC or DSMB support,56,0,0.0,56,0,0
+biostatistics,Data standards (biostats),56,2,3.57,54,0,0
+biostatistics,Delivery model,56,0,0.0,56,0,0
+biostatistics,Description,56,6,10.71,50,0,0
+biostatistics,Development stage,56,0,0.0,56,0,0
+biostatistics,Document links,56,0,0.0,56,0,0
+biostatistics,FSP engagement type,56,0,0.0,56,0,0
+biostatistics,Image URL,56,0,0.0,56,0,0
+biostatistics,Inventory,56,0,0.0,56,0,0
+biostatistics,Lead time (days),56,0,0.0,56,0,0
+biostatistics,Listing UNSPSC,56,0,0.0,56,0,0
+biostatistics,Listing type,56,56,100.0,0,0,0
+biostatistics,Manufacturer SKU,56,0,0.0,56,0,0
+biostatistics,Manufacturer name,56,0,0.0,56,0,0
+biostatistics,Name,56,56,100.0,0,0,0
+biostatistics,Price per unit,56,55,98.21,1,0,0
+biostatistics,Pricing model,56,56,100.0,0,0,0
+biostatistics,Product / service URL,56,0,0.0,56,0,0
+biostatistics,Quantity,56,0,0.0,56,0,0
+biostatistics,Requester UNSPSC,56,0,0.0,56,0,0
+biostatistics,Requester commodity code,56,0,0.0,56,0,0
+biostatistics,Ship from,56,0,0.0,56,0,0
+biostatistics,Statistical guideline,56,0,0.0,56,0,0
+biostatistics,Statistical software,56,1,1.79,55,0,0
+biostatistics,Stats deliverables,56,2,3.57,54,0,0
+biostatistics,Study types,56,0,0.0,56,0,0
+biostatistics,Submission agencies,56,0,0.0,56,0,0
+biostatistics,Supplier SKU,56,0,0.0,56,0,0
+biostatistics,Therapeutic area (clinical trial),56,3,5.36,53,0,0
+biostatistics,Trial designs supported,56,0,0.0,56,0,0
+biostatistics,Unit,56,0,0.0,56,0,0
+biostatistics,Unit of measure,56,3,5.36,52,1,0

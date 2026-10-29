@@ -108,6 +108,14 @@
       "table_name": "IHC_IMMUNOHISTOCHEMISTRY_SPEC",
       "fields": [
         {
+          "name": "Target / marker",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_target_marker"
+        },
+        {
           "name": "Detection",
           "type": "picklist",
           "required": true,
@@ -218,6 +226,14 @@
       "form": "service",
       "table_name": "IN_SITU_HYBRIDIZATION_ISH_SPEC",
       "fields": [
+        {
+          "name": "Target gene",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_target_gene"
+        },
         {
           "name": "Platform / chemistry",
           "type": "picklist",

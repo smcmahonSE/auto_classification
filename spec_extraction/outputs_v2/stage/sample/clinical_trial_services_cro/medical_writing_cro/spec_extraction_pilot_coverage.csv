@@ -1,0 +1,35 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+medical_writing_cro,CSR format,1152,0,0.0,1152,0,0
+medical_writing_cro,Category (L2/L3),1152,1152,100.0,0,0,0
+medical_writing_cro,Category UNSPSC,1152,0,0.0,1152,0,0
+medical_writing_cro,Clinical document types,1152,3,0.26,1149,0,0
+medical_writing_cro,Currency,1152,0,0.0,1152,0,0
+medical_writing_cro,Delivery model,1152,0,0.0,1152,0,0
+medical_writing_cro,Description,1152,27,2.34,1125,0,0
+medical_writing_cro,Development stage,1152,0,0.0,1152,0,0
+medical_writing_cro,Disclosure documents,1152,0,0.0,1152,0,0
+medical_writing_cro,Document links,1152,0,0.0,1152,0,0
+medical_writing_cro,FSP engagement type,1152,0,0.0,1152,0,0
+medical_writing_cro,Image URL,1152,0,0.0,1152,0,0
+medical_writing_cro,Inventory,1152,0,0.0,1152,0,0
+medical_writing_cro,Lead time (days),1152,0,0.0,1152,0,0
+medical_writing_cro,Listing UNSPSC,1152,0,0.0,1152,0,0
+medical_writing_cro,Listing type,1152,1152,100.0,0,0,0
+medical_writing_cro,Manufacturer SKU,1152,0,0.0,1152,0,0
+medical_writing_cro,Manufacturer name,1152,0,0.0,1152,0,0
+medical_writing_cro,Name,1152,1152,100.0,0,0,0
+medical_writing_cro,Price per unit,1152,1150,99.83,2,0,0
+medical_writing_cro,Pricing basis,1152,0,0.0,1152,0,0
+medical_writing_cro,Pricing model,1152,1152,100.0,0,0,0
+medical_writing_cro,Product / service URL,1152,0,0.0,1152,0,0
+medical_writing_cro,Quantity,1152,0,0.0,1152,0,0
+medical_writing_cro,Requester UNSPSC,1152,0,0.0,1152,0,0
+medical_writing_cro,Requester commodity code,1152,0,0.0,1152,0,0
+medical_writing_cro,Ship from,1152,0,0.0,1152,0,0
+medical_writing_cro,Standalone QC review,1152,0,0.0,1152,0,0
+medical_writing_cro,Supplier SKU,1152,0,0.0,1152,0,0
+medical_writing_cro,Target agencies (medwriting cro),1152,0,0.0,1152,0,0
+medical_writing_cro,Therapeutic area (clinical trial),1152,0,0.0,1152,0,0
+medical_writing_cro,Unit,1152,0,0.0,1152,0,0
+medical_writing_cro,Unit of measure,1152,2,0.17,1149,1,0
+medical_writing_cro,Writing guideline,1152,0,0.0,1152,0,0

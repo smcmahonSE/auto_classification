@@ -1,0 +1,32 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+special_histochemical_stains,Capacity,3727,0,0.0,3727,0,0
+special_histochemical_stains,Category (L2/L3),3727,3727,100.0,0,0,0
+special_histochemical_stains,Category UNSPSC,3727,0,0.0,3727,0,0
+special_histochemical_stains,Currency,3727,19,0.51,3708,0,0
+special_histochemical_stains,Deliverables,3727,0,0.0,3727,0,0
+special_histochemical_stains,Description,3727,881,23.64,2846,0,0
+special_histochemical_stains,Document links,3727,24,0.64,3703,0,0
+special_histochemical_stains,GLP status,3727,0,0.0,3727,0,0
+special_histochemical_stains,Image URL,3727,1,0.03,3726,0,0
+special_histochemical_stains,Inventory,3727,0,0.0,3727,0,0
+special_histochemical_stains,Lead time (days),3727,0,0.0,3727,0,0
+special_histochemical_stains,Listing UNSPSC,3727,0,0.0,3727,0,0
+special_histochemical_stains,Listing type,3727,3727,100.0,0,0,0
+special_histochemical_stains,Manufacturer SKU,3727,0,0.0,3727,0,0
+special_histochemical_stains,Manufacturer name,3727,0,0.0,3727,0,0
+special_histochemical_stains,Name,3727,3727,100.0,0,0,0
+special_histochemical_stains,Price per unit,3727,3708,99.49,19,0,0
+special_histochemical_stains,Pricing model,3727,3727,100.0,0,0,0
+special_histochemical_stains,Pricing unit,3727,3,0.08,3724,0,0
+special_histochemical_stains,Product / service URL,3727,24,0.64,3703,0,0
+special_histochemical_stains,Quantity,3727,0,0.0,3727,0,0
+special_histochemical_stains,Requester UNSPSC,3727,0,0.0,3727,0,0
+special_histochemical_stains,Requester commodity code,3727,0,0.0,3727,0,0
+special_histochemical_stains,Sample type,3727,34,0.91,3693,0,0
+special_histochemical_stains,Ship from,3727,0,0.0,3727,0,0
+special_histochemical_stains,Species,3727,200,5.37,3527,0,0
+special_histochemical_stains,Stain,3727,301,8.08,3408,18,0
+special_histochemical_stains,Supplier SKU,3727,0,0.0,3727,0,0
+special_histochemical_stains,Turnaround,3727,0,0.0,3727,0,0
+special_histochemical_stains,Unit,3727,0,0.0,3727,0,0
+special_histochemical_stains,Unit of measure,3727,309,8.29,3335,83,0

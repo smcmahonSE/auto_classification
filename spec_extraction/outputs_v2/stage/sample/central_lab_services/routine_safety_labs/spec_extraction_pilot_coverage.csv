@@ -1,0 +1,41 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+routine_safety_labs,Analyzer platform,2836,0,0.0,2836,0,0
+routine_safety_labs,Category (L2/L3),2836,2836,100.0,0,0,0
+routine_safety_labs,Category UNSPSC,2836,0,0.0,2836,0,0
+routine_safety_labs,Critical value flagging,2836,131,4.62,2705,0,0
+routine_safety_labs,Currency,2836,4,0.14,2832,0,0
+routine_safety_labs,Data delivery format,2836,6,0.21,2830,0,0
+routine_safety_labs,Data delivery frequency,2836,5,0.18,2831,0,0
+routine_safety_labs,Data transfer method,2836,0,0.0,2836,0,0
+routine_safety_labs,Description,2836,1835,64.7,1001,0,0
+routine_safety_labs,Development stage,2836,31,1.09,2805,0,0
+routine_safety_labs,Document links,2836,5,0.18,2831,0,0
+routine_safety_labs,Global reference ranges,2836,131,4.62,2705,0,0
+routine_safety_labs,Harmonized platforms across sites,2836,131,4.62,2705,0,0
+routine_safety_labs,HbA1c certification,2836,131,4.62,2705,0,0
+routine_safety_labs,Image URL,2836,0,0.0,2836,0,0
+routine_safety_labs,Inter-lab comparison program,2836,131,4.62,2705,0,0
+routine_safety_labs,Inventory,2836,0,0.0,2836,0,0
+routine_safety_labs,Lab region,2836,27,0.95,2809,0,0
+routine_safety_labs,Lead time (days),2836,0,0.0,2836,0,0
+routine_safety_labs,Listing UNSPSC,2836,0,0.0,2836,0,0
+routine_safety_labs,Listing type,2836,2836,100.0,0,0,0
+routine_safety_labs,Manufacturer SKU,2836,0,0.0,2836,0,0
+routine_safety_labs,Manufacturer name,2836,0,0.0,2836,0,0
+routine_safety_labs,Name,2836,2836,100.0,0,0,0
+routine_safety_labs,Price per unit,2836,2822,99.51,14,0,0
+routine_safety_labs,Pricing model,2836,2836,100.0,0,0,0
+routine_safety_labs,Product / service URL,2836,5,0.18,2831,0,0
+routine_safety_labs,Quantity,2836,0,0.0,2836,0,0
+routine_safety_labs,Requester UNSPSC,2836,0,0.0,2836,0,0
+routine_safety_labs,Requester commodity code,2836,0,0.0,2836,0,0
+routine_safety_labs,Result blinding,2836,131,4.62,2705,0,0
+routine_safety_labs,Result turnaround,2836,0,0.0,2836,0,0
+routine_safety_labs,Safety test discipline,2836,210,7.4,2626,0,0
+routine_safety_labs,Ship from,2836,0,0.0,2836,0,0
+routine_safety_labs,Sponsor-specific reference ranges,2836,131,4.62,2705,0,0
+routine_safety_labs,Supplier SKU,2836,0,0.0,2836,0,0
+routine_safety_labs,Therapeutic area (central lab),2836,325,11.46,2511,0,0
+routine_safety_labs,Toxicity grading scale,2836,0,0.0,2836,0,0
+routine_safety_labs,Unit,2836,0,0.0,2836,0,0
+routine_safety_labs,Unit of measure,2836,1000,35.26,1654,182,0

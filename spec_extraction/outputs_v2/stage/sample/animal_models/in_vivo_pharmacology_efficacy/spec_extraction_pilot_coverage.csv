@@ -1,0 +1,46 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+in_vivo_pharmacology_efficacy,Cancer type (efficacy),628,1,0.16,627,0,0
+in_vivo_pharmacology_efficacy,Category (L2/L3),628,628,100.0,0,0,0
+in_vivo_pharmacology_efficacy,Category UNSPSC,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Currency,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Description,628,33,5.25,595,0,0
+in_vivo_pharmacology_efficacy,Disease model name,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Document links,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Dosing route,628,1,0.16,627,0,0
+in_vivo_pharmacology_efficacy,Efficacy endpoints,628,3,0.48,625,0,0
+in_vivo_pharmacology_efficacy,Ex vivo readouts,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,GLP status (efficacy),628,1,0.16,627,0,0
+in_vivo_pharmacology_efficacy,Host strain,628,1,0.16,627,0,0
+in_vivo_pharmacology_efficacy,Humanized immune system source,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Image URL,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,In-life duration,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,In-life imaging modality,628,2,0.32,626,0,0
+in_vivo_pharmacology_efficacy,Inventory,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Lead time (days),628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Listing UNSPSC,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Listing type,628,628,100.0,0,0,0
+in_vivo_pharmacology_efficacy,Manufacturer SKU,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Manufacturer name,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Model characterization data provided,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Name,628,628,100.0,0,0,0
+in_vivo_pharmacology_efficacy,Non-tumor functional endpoints,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Number of models available,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,PK sampling and bioanalysis available,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Pharmacodynamic readout,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Price per unit,628,627,99.84,1,0,0
+in_vivo_pharmacology_efficacy,Pricing model,628,628,100.0,0,0,0
+in_vivo_pharmacology_efficacy,Product / service URL,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Quantity,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Requester UNSPSC,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Requester commodity code,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Research / therapeutic area,628,5,0.8,623,0,0
+in_vivo_pharmacology_efficacy,Ship from,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Species,628,11,1.75,615,2,0
+in_vivo_pharmacology_efficacy,Study type,628,13,2.07,615,0,0
+in_vivo_pharmacology_efficacy,Supplier SKU,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Therapeutic modality supported,628,1,0.16,627,0,0
+in_vivo_pharmacology_efficacy,Treatment-resistant or pretreated models,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Tumor implantation site,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Tumor model type (efficacy),628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Unit,628,0,0.0,628,0,0
+in_vivo_pharmacology_efficacy,Unit of measure,628,4,0.64,621,3,0

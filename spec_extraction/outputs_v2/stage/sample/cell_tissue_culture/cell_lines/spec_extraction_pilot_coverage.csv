@@ -1,0 +1,45 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+cell_lines,Authentication (STR profile),644,1,0.16,643,0,0
+cell_lines,Biosafety level,644,0,0.0,644,0,0
+cell_lines,Category (L2/L3),644,644,100.0,0,0,0
+cell_lines,Category UNSPSC,644,0,0.0,644,0,0
+cell_lines,Cell line name,644,0,0.0,644,0,0
+cell_lines,Cell line synonyms,644,0,0.0,644,0,0
+cell_lines,Cell type / morphology,644,60,9.32,577,7,0
+cell_lines,Contamination / virus status,644,0,0.0,644,0,0
+cell_lines,Currency,644,12,1.86,632,0,0
+cell_lines,Description,644,394,61.18,250,0,0
+cell_lines,Disease,644,0,0.0,644,0,0
+cell_lines,Document links,644,11,1.71,633,0,0
+cell_lines,Donor age / sex,644,0,0.0,644,0,0
+cell_lines,Format / physical form,644,5,0.78,639,0,0
+cell_lines,Grade / regulatory,644,2,0.31,642,0,0
+cell_lines,Growth properties,644,90,13.98,547,7,0
+cell_lines,Image URL,644,5,0.78,639,0,0
+cell_lines,Inventory,644,0,0.0,644,0,0
+cell_lines,Karyotype,644,0,0.0,644,0,0
+cell_lines,Lead time (days),644,0,0.0,644,0,0
+cell_lines,Licensing / permitted use,644,0,0.0,644,0,0
+cell_lines,Listing UNSPSC,644,0,0.0,644,0,0
+cell_lines,Listing type,644,644,100.0,0,0,0
+cell_lines,Manufacturer SKU,644,0,0.0,644,0,0
+cell_lines,Manufacturer name,644,0,0.0,644,0,0
+cell_lines,Name,644,644,100.0,0,0,0
+cell_lines,Organism,644,220,34.16,389,35,0
+cell_lines,Price per unit,644,615,95.5,29,0,0
+cell_lines,Pricing model,644,644,100.0,0,0,0
+cell_lines,Product / service URL,644,11,1.71,633,0,0
+cell_lines,Quantity,644,0,0.0,644,0,0
+cell_lines,Recommended medium & conditions,644,0,0.0,644,0,0
+cell_lines,Repository catalog number,644,0,0.0,644,0,0
+cell_lines,Requester UNSPSC,644,0,0.0,644,0,0
+cell_lines,Requester commodity code,644,0,0.0,644,0,0
+cell_lines,Ship from,644,0,0.0,644,0,0
+cell_lines,Shipping temperature,644,21,3.26,623,0,0
+cell_lines,Sterility / contamination QC,644,0,0.0,644,0,0
+cell_lines,Storage conditions,644,0,0.0,644,0,0
+cell_lines,Subculturing ratio,644,0,0.0,644,0,0
+cell_lines,Supplier SKU,644,0,0.0,644,0,0
+cell_lines,Tissue / organ,644,0,0.0,644,0,0
+cell_lines,Unit,644,0,0.0,644,0,0
+cell_lines,Unit of measure,644,51,7.92,584,9,0

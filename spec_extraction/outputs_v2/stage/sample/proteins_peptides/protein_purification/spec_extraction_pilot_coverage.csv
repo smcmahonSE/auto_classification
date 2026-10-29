@@ -1,0 +1,42 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+protein_purification,Accepted starting material,12286,54,0.44,12232,0,0
+protein_purification,Affinity tag,12286,206,1.68,12080,0,0
+protein_purification,Category (L2/L3),12286,12286,100.0,0,0,0
+protein_purification,Category UNSPSC,12286,0,0.0,12286,0,0
+protein_purification,Currency,12286,130,1.06,12156,0,0
+protein_purification,Delivered form,12286,84,0.68,12202,0,0
+protein_purification,Description,12286,7560,61.53,4726,0,0
+protein_purification,Document links,12286,358,2.91,11928,0,0
+protein_purification,Endotoxin level (EU/mg),12286,0,0.0,12286,0,0
+protein_purification,Expression mode,12286,19,0.15,12267,0,0
+protein_purification,Expression system,12286,131,1.07,12155,0,0
+protein_purification,Gene synthesis included,12286,696,5.66,11583,7,0
+protein_purification,Image URL,12286,109,0.89,12177,0,0
+protein_purification,Inclusion body refolding,12286,696,5.66,11583,7,0
+protein_purification,Inventory,12286,0,0.0,12286,0,0
+protein_purification,Lead time (days),12286,0,0.0,12286,0,0
+protein_purification,Listing UNSPSC,12286,0,0.0,12286,0,0
+protein_purification,Listing type,12286,12286,100.0,0,0,0
+protein_purification,Manufacturer SKU,12286,0,0.0,12286,0,0
+protein_purification,Manufacturer name,12286,0,0.0,12286,0,0
+protein_purification,Maximum production scale,12286,1764,14.36,10329,193,0
+protein_purification,Membrane protein format,12286,3,0.02,12283,0,0
+protein_purification,Name,12286,12286,100.0,0,0,0
+protein_purification,Price per unit,12286,11782,95.9,504,0,0
+protein_purification,Pricing model,12286,12286,100.0,0,0,0
+protein_purification,Product / service URL,12286,358,2.91,11928,0,0
+protein_purification,Protein type,12286,269,2.19,12017,0,0
+protein_purification,Purification method,12286,249,2.03,12037,0,0
+protein_purification,Purity assay basis,12286,74,0.6,12212,0,0
+protein_purification,Purity specification (%),12286,0,0.0,12286,0,0
+protein_purification,QC methods included,12286,186,1.51,12100,0,0
+protein_purification,Quality grade,12286,325,2.65,11960,1,0
+protein_purification,Quantity,12286,0,0.0,12286,0,0
+protein_purification,Requester UNSPSC,12286,0,0.0,12286,0,0
+protein_purification,Requester commodity code,12286,0,0.0,12286,0,0
+protein_purification,Ship from,12286,0,0.0,12286,0,0
+protein_purification,Supplier SKU,12286,0,0.0,12286,0,0
+protein_purification,Tag removal offered,12286,696,5.66,11583,7,0
+protein_purification,Typical expression yield (mg/L),12286,0,0.0,12286,0,0
+protein_purification,Unit,12286,0,0.0,12286,0,0
+protein_purification,Unit of measure,12286,2447,19.92,8923,916,0

@@ -855,37 +855,322 @@
       "table_name": "IN_VIVO_PHARMACOLOGY_EFFICACY_SPEC",
       "fields": [
         {
-          "name": "Protocol / scope",
-          "type": "text",
-          "required": false,
+          "name": "Study type",
+          "type": "multi-select",
+          "required": true,
           "product_only": false,
-          "extractor": "regex",
-          "pattern": "labeled_protocol_scope"
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "in_vivo_pharmacology_efficacy__study_type",
+          "allowed_values": [
+            "Efficacy study",
+            "Dose range finding / MTD",
+            "Pharmacodynamic study",
+            "Screening panel",
+            "Mouse clinical trial (population study)",
+            "Single mouse trial",
+            "Combination study",
+            "Radiation combination study"
+          ],
+          "multi_select": true
         },
         {
-          "name": "Turnaround",
+          "name": "Tumor model type (efficacy)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "in_vivo_pharmacology_efficacy__tumor_model_type_efficacy",
+          "allowed_values": [
+            "Cell line-derived xenograft (CDX)",
+            "Patient-derived xenograft (PDX)",
+            "Syngeneic",
+            "Genetically engineered (GEMM)",
+            "Humanized immune system model",
+            "Primary hematological patient sample"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Tumor implantation site",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "in_vivo_pharmacology_efficacy__tumor_implantation_site",
+          "allowed_values": [
+            "Subcutaneous",
+            "Orthotopic",
+            "Intracranial",
+            "Systemic / disseminated (IV)",
+            "Metastatic"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Cancer type (efficacy)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "in_vivo_pharmacology_efficacy__cancer_type_efficacy",
+          "allowed_values": [
+            "Bladder",
+            "Brain / glioma",
+            "Breast",
+            "Colorectal",
+            "Gastric",
+            "Head and neck",
+            "Leukemia",
+            "Liver",
+            "Lung (NSCLC)",
+            "Lung (SCLC)",
+            "Lymphoma",
+            "Melanoma",
+            "Multiple myeloma",
+            "Neuroblastoma",
+            "Ovarian",
+            "Pancreatic",
+            "Prostate",
+            "Renal",
+            "Sarcoma",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Number of models available",
           "type": "number",
           "required": false,
           "product_only": false,
           "extractor": "regex",
-          "pattern": "turnaround",
-          "allowed_values": "days or weeks"
+          "pattern": "in_vivo_pharmacology_efficacy__number_of_models_available"
         },
         {
-          "name": "Capacity",
+          "name": "Treatment-resistant or pretreated models",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Disease model name",
           "type": "text",
           "required": false,
           "product_only": false,
           "extractor": "regex",
-          "pattern": "labeled_capacity"
+          "pattern": "labeled_in_vivo_pharmacology_efficacy__disease_model_name"
         },
         {
-          "name": "Deliverable",
-          "type": "text",
+          "name": "Efficacy endpoints",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "in_vivo_pharmacology_efficacy__efficacy_endpoints",
+          "allowed_values": [
+            "Tumor volume (caliper)",
+            "Tumor growth inhibition (TGI %)",
+            "T/C %",
+            "Survival",
+            "Tumor burden by imaging",
+            "Body weight"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "In-life imaging modality",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "in_vivo_pharmacology_efficacy__in_life_imaging_modality",
+          "allowed_values": [
+            "Bioluminescence (BLI)",
+            "Fluorescence (FLI)",
+            "Micro-CT",
+            "PET",
+            "MRI",
+            "Ultrasound / echocardiography",
+            "None"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Ex vivo readouts",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "in_vivo_pharmacology_efficacy__ex_vivo_readouts",
+          "allowed_values": [
+            "Flow cytometry immunophenotyping",
+            "Histology / IHC",
+            "RNA-seq / NGS",
+            "Multiplex cytokine (Luminex)",
+            "ELISpot",
+            "Hematology",
+            "Clinical chemistry",
+            "Proteomics / mass spec"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "PK sampling and bioanalysis available",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Pharmacodynamic readout",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Therapeutic modality supported",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "in_vivo_pharmacology_efficacy__therapeutic_modality_supported",
+          "allowed_values": [
+            "Small molecule",
+            "Antibody",
+            "ADC / conjugate",
+            "Cell therapy",
+            "Gene therapy",
+            "Oligonucleotide",
+            "Vaccine",
+            "Radiopharmaceutical"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Model characterization data provided",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "in_vivo_pharmacology_efficacy__model_characterization_data_provided",
+          "allowed_values": [
+            "Growth curves",
+            "Whole exome sequencing",
+            "RNA-seq",
+            "Patient treatment history",
+            "Standard-of-care response data",
+            "Checkpoint inhibitor response",
+            "HLA typing",
+            "Baseline immune profile"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Dosing route",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "in_vivo_pharmacology_efficacy__dosing_route",
+          "allowed_values": [
+            "Oral (PO)",
+            "Intravenous (IV)",
+            "Intraperitoneal (IP)",
+            "Subcutaneous (SC)",
+            "Intratumoral",
+            "Intra-articular",
+            "Intradermal",
+            "Diet / ad libitum"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Host strain",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "in_vivo_pharmacology_efficacy__host_strain",
+          "allowed_values": [
+            "Athymic nude mouse",
+            "SCID",
+            "NOD SCID",
+            "NSG / NOG-type",
+            "Rag2/Il2rg (R2G2)",
+            "B-NDG",
+            "Nude rat",
+            "C57BL/6",
+            "BALB/c",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Humanized immune system source",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "in_vivo_pharmacology_efficacy__humanized_immune_system_source",
+          "allowed_values": [
+            "CD34+ hematopoietic stem cell",
+            "PBMC",
+            "Not offered"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Non-tumor functional endpoints",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "in_vivo_pharmacology_efficacy__non_tumor_functional_endpoints",
+          "allowed_values": [
+            "Behavioral testing",
+            "Telemetry (BP, HR, ECG)",
+            "Clinical scoring",
+            "Histopathology scoring",
+            "Metabolic markers"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "In-life duration",
+          "type": "number",
           "required": false,
           "product_only": false,
           "extractor": "regex",
-          "pattern": "labeled_deliverable"
+          "pattern": "in_vivo_pharmacology_efficacy__in_life_duration"
+        },
+        {
+          "name": "GLP status (efficacy)",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "in_vivo_pharmacology_efficacy__glp_status_efficacy",
+          "allowed_values": [
+            "Non-GLP",
+            "GLP",
+            "Either"
+          ]
         }
       ]
     }

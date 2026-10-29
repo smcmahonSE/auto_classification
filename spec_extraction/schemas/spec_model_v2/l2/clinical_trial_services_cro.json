@@ -1,0 +1,1150 @@
+{
+  "l2_id": "clinical_trial_services_cro",
+  "l2_label": "Clinical Trial Services",
+  "schema_name": "CLINICAL_TRIAL_SERVICES",
+  "l2_fields": [
+    {
+      "name": "Development stage",
+      "type": "multi-select",
+      "required": true,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "development_stage",
+      "allowed_values": [
+        "Phase 1",
+        "Phase 2",
+        "Phase 3",
+        "Post-approval"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "Delivery model",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "clinical_trial_l2__delivery_model",
+      "allowed_values": [
+        "Full service",
+        "FSP",
+        "Blended",
+        "Standalone"
+      ]
+    },
+    {
+      "name": "Therapeutic area (clinical trial)",
+      "type": "multi-select",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "clinical_trial_l2__therapeutic_area_clinical_trial",
+      "allowed_values": [
+        "Oncology",
+        "CNS",
+        "Cardiovascular",
+        "Metabolic",
+        "Immunology",
+        "Infectious disease",
+        "Rare disease",
+        "Pediatrics",
+        "Respiratory",
+        "Dermatology",
+        "Other"
+      ],
+      "multi_select": true
+    },
+    {
+      "name": "FSP engagement type",
+      "type": "picklist",
+      "required": false,
+      "product_only": false,
+      "extractor": "controlled_vocabulary",
+      "vocabulary_ref": "clinical_trial_l2__fsp_engagement_type",
+      "allowed_values": [
+        "Dedicated FTE",
+        "Activity based",
+        "Centralized hub",
+        "Blended"
+      ]
+    }
+  ],
+  "l3_nodes": {
+    "trial_management_monitoring": {
+      "label": "Trial Management & Monitoring",
+      "form": "service",
+      "table_name": "TRIAL_MANAGEMENT_MONITORING_SPEC",
+      "fields": [
+        {
+          "name": "Monitoring approach",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "trial_management_monitoring__monitoring_approach",
+          "allowed_values": [
+            "Risk-based",
+            "Centralized",
+            "Remote",
+            "On-site (100% SDV)"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Trial model",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "trial_management_monitoring__trial_model",
+          "allowed_values": [
+            "Site-based",
+            "Hybrid",
+            "Fully decentralized"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Centralized monitoring",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Decentralized components",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "trial_management_monitoring__decentralized_components",
+          "allowed_values": [
+            "eConsent",
+            "eCOA / ePRO",
+            "Wearables",
+            "Home nursing",
+            "Telehealth",
+            "Direct-to-patient drug"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Oversight platform",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_trial_management_monitoring__oversight_platform"
+        },
+        {
+          "name": "PM deliverables",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "trial_management_monitoring__pm_deliverables",
+          "allowed_values": [
+            "Project plan",
+            "Vendor management",
+            "Budget management",
+            "Status reporting"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Remote monitoring visits",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Source data verification level",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "trial_management_monitoring__source_data_verification_level",
+          "allowed_values": [
+            "100% SDV",
+            "Targeted SDV",
+            "SDR only"
+          ]
+        },
+        {
+          "name": "Monitoring setting",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "trial_management_monitoring__monitoring_setting",
+          "allowed_values": [
+            "Clinical research unit",
+            "Hospital",
+            "Research center",
+            "Medical practice"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Specialty monitoring",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "trial_management_monitoring__specialty_monitoring",
+          "allowed_values": [
+            "Unblinded",
+            "Long-term follow-up"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "site_management": {
+      "label": "Site Management",
+      "form": "service",
+      "table_name": "SITE_MANAGEMENT_SPEC",
+      "fields": [
+        {
+          "name": "Start-up activities",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "site_management__start_up_activities",
+          "allowed_values": [
+            "CDA",
+            "Ethics / IRB",
+            "Regulatory submission",
+            "Contract",
+            "Budget",
+            "Essential documents",
+            "SIV"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Site selection method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "site_management__site_selection_method",
+          "allowed_values": [
+            "Performance data",
+            "Claims or EHR data",
+            "AI model",
+            "Investigator survey"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Site augmentation staff",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "site_management__site_augmentation_staff",
+          "allowed_values": [
+            "CRC",
+            "Nurse",
+            "Data entry",
+            "Pre-screener"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Site portal",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_site_management__site_portal"
+        },
+        {
+          "name": "Feasibility data sources",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "site_management__feasibility_data_sources",
+          "allowed_values": [
+            "Claims",
+            "EHR",
+            "Site performance",
+            "Surveys",
+            "Regulatory intelligence"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Site types",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "site_management__site_types",
+          "allowed_values": [
+            "Academic",
+            "Community",
+            "Private practice",
+            "Hospital",
+            "Phase I unit"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Investigator payments",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Network therapeutic focus",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "site_management__network_therapeutic_focus",
+          "allowed_values": [
+            "Oncology",
+            "CNS",
+            "Cardiovascular",
+            "Metabolic",
+            "Immunology",
+            "Infectious disease",
+            "Rare disease",
+            "Pediatrics",
+            "Respiratory",
+            "Dermatology",
+            "Other"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "patient_recruitment_retention": {
+      "label": "Patient Recruitment & Retention",
+      "form": "service",
+      "table_name": "PATIENT_RECRUITMENT_RETENTION_SPEC",
+      "fields": [
+        {
+          "name": "Recruitment channels",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "patient_recruitment_retention__recruitment_channels",
+          "allowed_values": [
+            "Patient registry",
+            "EHR or claims mining",
+            "Digital / social",
+            "Advocacy groups",
+            "Physician referral",
+            "Community outreach",
+            "Call center"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Target populations",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "patient_recruitment_retention__target_populations",
+          "allowed_values": [
+            "Rare disease",
+            "Pediatric",
+            "Underrepresented",
+            "Elderly"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Retention services",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "patient_recruitment_retention__retention_services",
+          "allowed_values": [
+            "Concierge",
+            "Travel support",
+            "Reimbursement",
+            "Reminders",
+            "Patient portal",
+            "Education"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Diversity plan support",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Recruitment technology",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_patient_recruitment_retention__recruitment_technology"
+        },
+        {
+          "name": "Pre-screening",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Languages supported (recruitment)",
+          "type": "number",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "patient_recruitment_retention__languages_supported_recruitment"
+        },
+        {
+          "name": "Home or remote enrollment",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Patient payments",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Recruitment countries",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "patient_recruitment_retention__recruitment_countries",
+          "allowed_values": [
+            "United States",
+            "Canada",
+            "European Union",
+            "United Kingdom",
+            "Brazil",
+            "China",
+            "Japan",
+            "India",
+            "Australia",
+            "Other"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "clinical_data_management": {
+      "label": "Clinical Data Management",
+      "form": "service",
+      "table_name": "CLINICAL_DATA_MANAGEMENT_SPEC",
+      "fields": [
+        {
+          "name": "CDM deliverables",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_data_management__cdm_deliverables",
+          "allowed_values": [
+            "DMP",
+            "CRF design",
+            "DB build",
+            "Edit checks",
+            "Cleaning",
+            "Medical coding",
+            "SAE reconciliation",
+            "External data reconciliation",
+            "DB lock",
+            "Archival"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "EDC platform",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_data_management__edc_platform",
+          "allowed_values": [
+            "Medidata Rave",
+            "Veeva CDMS",
+            "Oracle InForm",
+            "Proprietary",
+            "Other"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Data standards (cdm)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_data_management__data_standards_cdm",
+          "allowed_values": [
+            "CDASH",
+            "SDTM",
+            "ADaM"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "External data sources",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_data_management__external_data_sources",
+          "allowed_values": [
+            "Central lab",
+            "Imaging",
+            "eCOA",
+            "IRT",
+            "Wearables",
+            "EHR"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "System ownership",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_data_management__system_ownership",
+          "allowed_values": [
+            "Provider",
+            "Sponsor",
+            "Either"
+          ]
+        },
+        {
+          "name": "Delivery location",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_data_management__delivery_location",
+          "allowed_values": [
+            "Onshore",
+            "Nearshore",
+            "Offshore"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "GCP guideline",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_data_management__gcp_guideline",
+          "allowed_values": [
+            "ICH E6(R2)",
+            "ICH E6(R3)",
+            "21 CFR Part 11"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "24-hour coverage",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "biostatistics": {
+      "label": "Biostatistics",
+      "form": "service",
+      "table_name": "BIOSTATISTICS_SPEC",
+      "fields": [
+        {
+          "name": "Stats deliverables",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biostatistics__stats_deliverables",
+          "allowed_values": [
+            "SAP",
+            "TLF shells",
+            "TLFs",
+            "Randomization schedule",
+            "Interim analysis",
+            "ISS",
+            "ISE",
+            "Define.xml",
+            "CSR stats section"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "DMC or DSMB support",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biostatistics__dmc_or_dsmb_support",
+          "allowed_values": [
+            "Stats support only",
+            "Full DMC management"
+          ]
+        },
+        {
+          "name": "Data standards (biostats)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biostatistics__data_standards_biostats",
+          "allowed_values": [
+            "SDTM",
+            "ADaM",
+            "Define.xml"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Trial designs supported",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biostatistics__trial_designs_supported",
+          "allowed_values": [
+            "Adaptive",
+            "Bayesian",
+            "Platform",
+            "Basket",
+            "Umbrella",
+            "External control"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Statistical software",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biostatistics__statistical_software",
+          "allowed_values": [
+            "SAS",
+            "R",
+            "Python"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Statistical guideline",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biostatistics__statistical_guideline",
+          "allowed_values": [
+            "ICH E9",
+            "ICH E9(R1)"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Submission agencies",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biostatistics__submission_agencies",
+          "allowed_values": [
+            "FDA",
+            "EMA",
+            "PMDA",
+            "NMPA"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Study types",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biostatistics__study_types",
+          "allowed_values": [
+            "Interventional",
+            "Registry",
+            "RWE",
+            "Long-term follow-up"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Blinding of outputs",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "biostatistics__blinding_of_outputs",
+          "allowed_values": [
+            "Blinded",
+            "Unblinded"
+          ],
+          "multi_select": true
+        }
+      ]
+    },
+    "medical_writing_cro": {
+      "label": "Medical Writing",
+      "form": "service",
+      "table_name": "MEDICAL_WRITING_CRO_SPEC",
+      "fields": [
+        {
+          "name": "Clinical document types",
+          "type": "multi-select",
+          "required": true,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "medical_writing_cro__clinical_document_types",
+          "allowed_values": [
+            "Protocol",
+            "Amendment",
+            "CSR",
+            "IB",
+            "Narrative",
+            "ICF",
+            "IMPD"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Disclosure documents",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "medical_writing_cro__disclosure_documents",
+          "allowed_values": [
+            "Registry posting",
+            "Redaction",
+            "Anonymization",
+            "Lay summary"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "CSR format",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "medical_writing_cro__csr_format",
+          "allowed_values": [
+            "Full",
+            "Abbreviated",
+            "Interim",
+            "Synoptic",
+            "PASS"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Target agencies (medwriting cro)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "medical_writing_cro__target_agencies_medwriting_cro",
+          "allowed_values": [
+            "FDA",
+            "EMA",
+            "PMDA",
+            "NMPA"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Writing guideline",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "medical_writing_cro__writing_guideline",
+          "allowed_values": [
+            "ICH E3",
+            "ICH E6",
+            "CTD M4"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Pricing basis",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "medical_writing_cro__pricing_basis",
+          "allowed_values": [
+            "Per document",
+            "Hourly",
+            "FTE"
+          ]
+        },
+        {
+          "name": "Standalone QC review",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    "clinical_supply_logistics": {
+      "label": "Clinical Supply & Logistics",
+      "form": "service",
+      "table_name": "CLINICAL_SUPPLY_LOGISTICS_SPEC",
+      "fields": [
+        {
+          "name": "Distribution model",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_supply_logistics__distribution_model",
+          "allowed_values": [
+            "Depot to site",
+            "Depot to patient",
+            "Site to patient",
+            "Pharmacy to patient"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Returns and destruction",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Depot network",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_supply_logistics__depot_network",
+          "allowed_values": [
+            "Owned",
+            "Partner",
+            "Both"
+          ]
+        },
+        {
+          "name": "Packaging format",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_supply_logistics__packaging_format",
+          "allowed_values": [
+            "Blister",
+            "Bottle",
+            "Vial",
+            "Prefilled syringe",
+            "Cartridge",
+            "Kit",
+            "Wallet"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Packaging level",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_supply_logistics__packaging_level",
+          "allowed_values": [
+            "Primary",
+            "Secondary"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Comparator sourcing",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "IRT system",
+          "type": "text",
+          "required": false,
+          "product_only": false,
+          "extractor": "regex",
+          "pattern": "labeled_clinical_supply_logistics__irt_system"
+        },
+        {
+          "name": "Importer of record",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Supply forecasting",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Blinding method",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_supply_logistics__blinding_method",
+          "allowed_values": [
+            "Over-encapsulation",
+            "Masking",
+            "Matching placebo"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Label type",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_supply_logistics__label_type",
+          "allowed_values": [
+            "Single panel",
+            "Booklet",
+            "Multi-language",
+            "Re-labeling"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Temperature range (supply)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_supply_logistics__temperature_range_supply",
+          "allowed_values": [
+            "Ambient",
+            "CRT (15-25\u00b0C)",
+            "2-8\u00b0C",
+            "-20\u00b0C",
+            "-80\u00b0C",
+            "Cryogenic"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Sourcing model",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_supply_logistics__sourcing_model",
+          "allowed_values": [
+            "Central",
+            "Local",
+            "Both"
+          ]
+        },
+        {
+          "name": "IRT functions",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_supply_logistics__irt_functions",
+          "allowed_values": [
+            "Randomization",
+            "Resupply",
+            "Expiry management",
+            "Titration",
+            "UAT"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "QP release",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Product modality (supply)",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_supply_logistics__product_modality_supply",
+          "allowed_values": [
+            "Small molecule",
+            "Biologic",
+            "Cell and gene therapy",
+            "Potent compound"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Compliance standard",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_supply_logistics__compliance_standard",
+          "allowed_values": [
+            "GMP",
+            "GDP",
+            "Annex 13"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Comparator use",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_supply_logistics__comparator_use",
+          "allowed_values": [
+            "Comparator",
+            "Rescue",
+            "Co-medication",
+            "Ancillary"
+          ],
+          "multi_select": true
+        },
+        {
+          "name": "Controlled substances",
+          "type": "picklist",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "yes_no",
+          "allowed_values": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "Direct-to-patient countries",
+          "type": "multi-select",
+          "required": false,
+          "product_only": false,
+          "extractor": "controlled_vocabulary",
+          "vocabulary_ref": "clinical_supply_logistics__direct_to_patient_countries",
+          "allowed_values": [
+            "United States",
+            "Canada",
+            "European Union",
+            "United Kingdom",
+            "Brazil",
+            "China",
+            "Japan",
+            "India",
+            "Australia",
+            "Other"
+          ],
+          "multi_select": true
+        }
+      ]
+    }
+  }
+}

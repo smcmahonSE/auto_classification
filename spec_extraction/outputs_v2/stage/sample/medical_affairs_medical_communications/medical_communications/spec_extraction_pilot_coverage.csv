@@ -1,0 +1,48 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+medical_communications,AI-assisted delivery,992,2,0.2,990,0,0
+medical_communications,Accredited medical education,992,2,0.2,990,0,0
+medical_communications,Adverse event intake,992,2,0.2,990,0,0
+medical_communications,Category (L2/L3),992,992,100.0,0,0,0
+medical_communications,Category UNSPSC,992,0,0.0,992,0,0
+medical_communications,Compliance with codes of practice,992,2,0.2,990,0,0
+medical_communications,Congress support,992,2,0.2,990,0,0
+medical_communications,Currency,992,0,0.0,992,0,0
+medical_communications,Deliverable types,992,0,0.0,992,0,0
+medical_communications,Description,992,94,9.48,898,0,0
+medical_communications,Development stage,992,3,0.3,989,0,0
+medical_communications,Document links,992,2,0.2,990,0,0
+medical_communications,Engagement model (medaffairs),992,0,0.0,992,0,0
+medical_communications,Geographic coverage (medaffairs),992,0,0.0,992,0,0
+medical_communications,Image URL,992,0,0.0,992,0,0
+medical_communications,Inventory,992,0,0.0,992,0,0
+medical_communications,Lead time (days),992,0,0.0,992,0,0
+medical_communications,Listing UNSPSC,992,0,0.0,992,0,0
+medical_communications,Listing type,992,992,100.0,0,0,0
+medical_communications,Manufacturer SKU,992,0,0.0,992,0,0
+medical_communications,Manufacturer name,992,0,0.0,992,0,0
+medical_communications,Medical content translation,992,2,0.2,990,0,0
+medical_communications,Medical information channels,992,1,0.1,991,0,0
+medical_communications,Medical information contact center,992,2,0.2,990,0,0
+medical_communications,Medical information hours,992,1,0.1,991,0,0
+medical_communications,Medical information languages,992,0,0.0,992,0,0
+medical_communications,Medical training audience,992,0,0.0,992,0,0
+medical_communications,Meeting format,992,1,0.1,991,0,0
+medical_communications,Name,992,992,100.0,0,0,0
+medical_communications,Price per unit,992,983,99.09,9,0,0
+medical_communications,Pricing model,992,992,100.0,0,0,0
+medical_communications,Product / service URL,992,2,0.2,990,0,0
+medical_communications,Product quality complaint intake,992,2,0.2,990,0,0
+medical_communications,Program scope,992,0,0.0,992,0,0
+medical_communications,Promotional review,992,2,0.2,990,0,0
+medical_communications,Promotional status,992,7,0.71,985,0,0
+medical_communications,Quantity,992,0,0.0,992,0,0
+medical_communications,Requester UNSPSC,992,0,0.0,992,0,0
+medical_communications,Requester commodity code,992,0,0.0,992,0,0
+medical_communications,Scientific platform and narrative,992,2,0.2,990,0,0
+medical_communications,Ship from,992,0,0.0,992,0,0
+medical_communications,Social media monitoring,992,2,0.2,990,0,0
+medical_communications,Standard response documents,992,2,0.2,990,0,0
+medical_communications,Supplier SKU,992,0,0.0,992,0,0
+medical_communications,Therapeutic areas (medaffairs),992,3,0.3,989,0,0
+medical_communications,Unit,992,0,0.0,992,0,0
+medical_communications,Unit of measure,992,7,0.71,985,0,0

@@ -1,0 +1,37 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+in_situ_hybridization_ish,Capacity,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Category (L2/L3),3335,3335,100.0,0,0,0
+in_situ_hybridization_ish,Category UNSPSC,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Combined with IF,3335,31,0.93,3304,0,0
+in_situ_hybridization_ish,Currency,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Deliverables,3335,1,0.03,3334,0,0
+in_situ_hybridization_ish,Description,3335,2806,84.14,529,0,0
+in_situ_hybridization_ish,Detection,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Document links,3335,3,0.09,3332,0,0
+in_situ_hybridization_ish,GLP status,3335,4,0.12,3331,0,0
+in_situ_hybridization_ish,Image URL,3335,2,0.06,3333,0,0
+in_situ_hybridization_ish,Inventory,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Lead time (days),3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Listing UNSPSC,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Listing type,3335,3335,100.0,0,0,0
+in_situ_hybridization_ish,Manufacturer SKU,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Manufacturer name,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Name,3335,3335,100.0,0,0,0
+in_situ_hybridization_ish,Pathologist credentials,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Platform / chemistry,3335,10,0.3,3325,0,0
+in_situ_hybridization_ish,Price per unit,3335,3334,99.97,1,0,0
+in_situ_hybridization_ish,Pricing model,3335,3335,100.0,0,0,0
+in_situ_hybridization_ish,Pricing unit,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Probe source,3335,5,0.15,3330,0,0
+in_situ_hybridization_ish,Product / service URL,3335,3,0.09,3332,0,0
+in_situ_hybridization_ish,Quantity,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Requester UNSPSC,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Requester commodity code,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Sample type,3335,1129,33.85,2206,0,0
+in_situ_hybridization_ish,Ship from,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Species,3335,95,2.85,3240,0,0
+in_situ_hybridization_ish,Supplier SKU,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Target gene,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Turnaround,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Unit,3335,0,0.0,3335,0,0
+in_situ_hybridization_ish,Unit of measure,3335,1092,32.74,2227,16,0

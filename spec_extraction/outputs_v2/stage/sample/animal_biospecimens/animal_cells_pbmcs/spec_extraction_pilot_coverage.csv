@@ -7,7 +7,6 @@ animal_cells_pbmcs,Currency,386,0,0.0,386,0,0
 animal_cells_pbmcs,Description,386,371,96.11,15,0,0
 animal_cells_pbmcs,Disease / model state,386,0,0.0,386,0,0
 animal_cells_pbmcs,Document links,386,15,3.89,371,0,0
-animal_cells_pbmcs,Format / preservation,386,29,7.51,357,0,0
 animal_cells_pbmcs,IACUC / animal-welfare consent,386,0,0.0,386,0,0
 animal_cells_pbmcs,Image URL,386,2,0.52,384,0,0
 animal_cells_pbmcs,Individual vs Pooled,386,1,0.26,385,0,0
@@ -19,6 +18,7 @@ animal_cells_pbmcs,Listing type,386,386,100.0,0,0,0
 animal_cells_pbmcs,Manufacturer SKU,386,0,0.0,386,0,0
 animal_cells_pbmcs,Manufacturer name,386,0,0.0,386,0,0
 animal_cells_pbmcs,Name,386,386,100.0,0,0,0
+animal_cells_pbmcs,Preservation,386,29,7.51,357,0,0
 animal_cells_pbmcs,Price per unit,386,381,98.7,5,0,0
 animal_cells_pbmcs,Pricing model,386,386,100.0,0,0,0
 animal_cells_pbmcs,Product / service URL,386,15,3.89,371,0,0

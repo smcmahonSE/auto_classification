@@ -1,0 +1,39 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+flow_cytometry_assays,Application (flow assays),20000,260,1.3,19722,18,0
+flow_cytometry_assays,Category (L2/L3),20000,20000,100.0,0,0,0
+flow_cytometry_assays,Category UNSPSC,20000,0,0.0,20000,0,0
+flow_cytometry_assays,Currency,20000,282,1.41,19718,0,0
+flow_cytometry_assays,Description,20000,13696,68.48,6304,0,0
+flow_cytometry_assays,Detection platform (flow assays),20000,17,0.08,19983,0,0
+flow_cytometry_assays,Document links,20000,705,3.52,19295,0,0
+flow_cytometry_assays,Excitation laser,20000,0,0.0,20000,0,0
+flow_cytometry_assays,Fixable,20000,1952,9.76,18041,7,0
+flow_cytometry_assays,Fluorophores,20000,977,4.88,19023,0,0
+flow_cytometry_assays,Image URL,20000,180,0.9,19820,0,0
+flow_cytometry_assays,Inventory,20000,0,0.0,20000,0,0
+flow_cytometry_assays,Kit components (flow assays),20000,0,0.0,20000,0,0
+flow_cytometry_assays,Lead time (days),20000,0,0.0,20000,0,0
+flow_cytometry_assays,Listing UNSPSC,20000,0,0.0,20000,0,0
+flow_cytometry_assays,Listing type,20000,20000,100.0,0,0,0
+flow_cytometry_assays,Manufacturer SKU,20000,0,0.0,20000,0,0
+flow_cytometry_assays,Manufacturer name,20000,0,0.0,20000,0,0
+flow_cytometry_assays,Markers,20000,0,0.0,20000,0,0
+flow_cytometry_assays,Name,20000,20000,100.0,0,0,0
+flow_cytometry_assays,Number of colors,20000,0,0.0,20000,0,0
+flow_cytometry_assays,Price per unit,20000,19323,96.61,677,0,0
+flow_cytometry_assays,Pricing model,20000,20000,100.0,0,0,0
+flow_cytometry_assays,Product / service URL,20000,705,3.52,19295,0,0
+flow_cytometry_assays,Quantity,20000,0,0.0,20000,0,0
+flow_cytometry_assays,Reagent form (flow assays),20000,890,4.45,19110,0,0
+flow_cytometry_assays,Regulatory status (flow assays),20000,13,0.07,19987,0,0
+flow_cytometry_assays,Requester UNSPSC,20000,0,0.0,20000,0,0
+flow_cytometry_assays,Requester commodity code,20000,0,0.0,20000,0,0
+flow_cytometry_assays,Sample type (flow assays),20000,96,0.48,19904,0,0
+flow_cytometry_assays,Ship from,20000,0,0.0,20000,0,0
+flow_cytometry_assays,Shipping condition (flow assays),20000,148,0.74,19852,0,0
+flow_cytometry_assays,Species reactivity (flow assays),20000,1936,9.68,18064,0,0
+flow_cytometry_assays,Storage (flow assays),20000,148,0.74,19831,21,0
+flow_cytometry_assays,Supplier SKU,20000,0,0.0,20000,0,0
+flow_cytometry_assays,Tests per kit (flow assays),20000,0,0.0,20000,0,0
+flow_cytometry_assays,Unit,20000,0,0.0,20000,0,0
+flow_cytometry_assays,Unit of measure,20000,5009,25.05,9371,5620,0

@@ -1,40 +1,40 @@
 l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
-culture_media,Basal formulation,150,6,4.0,144,0,0
-culture_media,Category (L2/L3),150,150,100.0,0,0,0
-culture_media,Category UNSPSC,150,0,0.0,150,0,0
-culture_media,Currency,150,1,0.67,149,0,0
-culture_media,Description,150,127,84.67,23,0,0
-culture_media,Document links,150,8,5.33,142,0,0
-culture_media,Format / physical form,150,25,16.67,123,2,0
-culture_media,Formulation / animal origin,150,1,0.67,149,0,0
-culture_media,Glucose,150,1,0.67,149,0,0
-culture_media,Grade / regulatory,150,3,2.0,147,0,0
-culture_media,HEPES / Sodium pyruvate,150,2,1.33,148,0,0
-culture_media,Image URL,150,1,0.67,149,0,0
-culture_media,Intended cell type / application,150,0,0.0,150,0,0
-culture_media,Inventory,150,0,0.0,150,0,0
-culture_media,Kit components,150,0,0.0,150,0,0
-culture_media,L-Glutamine,150,49,32.67,89,12,0
-culture_media,Lead time (days),150,0,0.0,150,0,0
-culture_media,Listing UNSPSC,150,0,0.0,150,0,0
-culture_media,Listing type,150,150,100.0,0,0,0
-culture_media,Manufacturer SKU,150,0,0.0,150,0,0
-culture_media,Manufacturer name,150,0,0.0,150,0,0
-culture_media,Name,150,150,100.0,0,0,0
-culture_media,Phenol red,150,49,32.67,89,12,0
-culture_media,Price per unit,150,142,94.67,8,0,0
-culture_media,Pricing model,150,150,100.0,0,0,0
-culture_media,Product / service URL,150,8,5.33,142,0,0
-culture_media,Quantity,150,0,0.0,150,0,0
-culture_media,Requester UNSPSC,150,0,0.0,150,0,0
-culture_media,Requester commodity code,150,0,0.0,150,0,0
-culture_media,Shelf life,150,0,0.0,150,0,0
-culture_media,Ship from,150,0,0.0,150,0,0
-culture_media,Shipping temperature,150,2,1.33,148,0,0
-culture_media,Specialized system,150,26,17.33,120,4,0
-culture_media,Species (cell source or intended use),150,28,18.67,110,12,0
-culture_media,Sterility / contamination QC,150,0,0.0,150,0,0
-culture_media,Storage conditions,150,8,5.33,142,0,0
-culture_media,Supplier SKU,150,0,0.0,150,0,0
-culture_media,Unit,150,0,0.0,150,0,0
-culture_media,Unit of measure,150,29,19.33,102,19,0
+culture_media,Basal formulation,20000,889,4.45,19055,56,0
+culture_media,Category (L2/L3),20000,20000,100.0,0,0,0
+culture_media,Category UNSPSC,20000,0,0.0,20000,0,0
+culture_media,Currency,20000,249,1.24,19750,1,0
+culture_media,Description,20000,17573,87.87,2427,0,0
+culture_media,Document links,20000,1654,8.27,18346,0,0
+culture_media,Format / physical form,20000,2525,12.62,17321,154,0
+culture_media,Formulation / animal origin,20000,333,1.67,19667,0,0
+culture_media,Glucose,20000,83,0.41,19890,27,0
+culture_media,Grade / regulatory,20000,267,1.33,19723,10,0
+culture_media,HEPES / Sodium pyruvate,20000,264,1.32,19736,0,0
+culture_media,Image URL,20000,265,1.32,19735,0,0
+culture_media,Intended cell type / application,20000,0,0.0,20000,0,0
+culture_media,Inventory,20000,0,0.0,20000,0,0
+culture_media,Kit components,20000,0,0.0,20000,0,0
+culture_media,L-Glutamine,20000,6536,32.68,11888,1576,0
+culture_media,Lead time (days),20000,0,0.0,20000,0,0
+culture_media,Listing UNSPSC,20000,0,0.0,20000,0,0
+culture_media,Listing type,20000,20000,100.0,0,0,0
+culture_media,Manufacturer SKU,20000,0,0.0,20000,0,0
+culture_media,Manufacturer name,20000,0,0.0,20000,0,0
+culture_media,Name,20000,20000,100.0,0,0,0
+culture_media,Phenol red,20000,6536,32.68,11888,1576,0
+culture_media,Price per unit,20000,18894,94.47,1106,0,0
+culture_media,Pricing model,20000,20000,100.0,0,0,0
+culture_media,Product / service URL,20000,1654,8.27,18346,0,0
+culture_media,Quantity,20000,0,0.0,20000,0,0
+culture_media,Requester UNSPSC,20000,0,0.0,20000,0,0
+culture_media,Requester commodity code,20000,0,0.0,20000,0,0
+culture_media,Shelf life,20000,1,0.01,19999,0,0
+culture_media,Ship from,20000,0,0.0,20000,0,0
+culture_media,Shipping temperature,20000,197,0.98,19803,0,0
+culture_media,Specialized system,20000,3194,15.97,16353,453,0
+culture_media,Species (cell source or intended use),20000,4270,21.35,14687,1043,0
+culture_media,Sterility / contamination QC,20000,147,0.73,19853,0,0
+culture_media,Storage conditions,20000,915,4.58,19071,14,0
+culture_media,Supplier SKU,20000,1,0.01,19999,0,0
+culture_media,Unit,20000,0,0.0,20000,0,0
+culture_media,Unit of measure,20000,4461,22.3,12828,2711,0

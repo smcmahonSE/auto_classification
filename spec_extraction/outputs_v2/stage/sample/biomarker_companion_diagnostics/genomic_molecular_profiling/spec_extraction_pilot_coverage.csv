@@ -1,0 +1,52 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+genomic_molecular_profiling,Analytical performance parameter,796,12,1.51,784,0,0
+genomic_molecular_profiling,Assay development stage,796,10,1.26,786,0,0
+genomic_molecular_profiling,Assay technology,796,21,2.64,775,0,0
+genomic_molecular_profiling,Biospecimen access for validation,796,15,1.88,781,0,0
+genomic_molecular_profiling,Blood draw volume,796,0,0.0,796,0,0
+genomic_molecular_profiling,Category (L2/L3),796,796,100.0,0,0,0
+genomic_molecular_profiling,Category UNSPSC,796,0,0.0,796,0,0
+genomic_molecular_profiling,Clinical performance study type,796,0,0.0,796,0,0
+genomic_molecular_profiling,Currency,796,1,0.13,795,0,0
+genomic_molecular_profiling,Data deliverable,796,1,0.13,795,0,0
+genomic_molecular_profiling,Description,796,302,37.94,494,0,0
+genomic_molecular_profiling,Development stage,796,80,10.05,716,0,0
+genomic_molecular_profiling,Document links,796,12,1.51,784,0,0
+genomic_molecular_profiling,Genomic signature,796,5,0.63,791,0,0
+genomic_molecular_profiling,IHC add-on,796,15,1.88,781,0,0
+genomic_molecular_profiling,Image URL,796,0,0.0,796,0,0
+genomic_molecular_profiling,Inventory,796,0,0.0,796,0,0
+genomic_molecular_profiling,Kitted in-house option,796,15,1.88,781,0,0
+genomic_molecular_profiling,Lab region (biomarker),796,1,0.13,795,0,0
+genomic_molecular_profiling,Lead time (days),796,0,0.0,796,0,0
+genomic_molecular_profiling,Listing UNSPSC,796,0,0.0,796,0,0
+genomic_molecular_profiling,Listing type,796,796,100.0,0,0,0
+genomic_molecular_profiling,Manufacturer SKU,796,0,0.0,796,0,0
+genomic_molecular_profiling,Manufacturer name,796,0,0.0,796,0,0
+genomic_molecular_profiling,Matched normal analysis,796,15,1.88,781,0,0
+genomic_molecular_profiling,Minimum DNA input,796,0,0.0,796,0,0
+genomic_molecular_profiling,Multi-site reproducibility,796,15,1.88,781,0,0
+genomic_molecular_profiling,Name,796,796,100.0,0,0,0
+genomic_molecular_profiling,Nucleic acid analyzed,796,59,7.41,737,0,0
+genomic_molecular_profiling,Panel size,796,0,0.0,796,0,0
+genomic_molecular_profiling,Post-market performance monitoring,796,15,1.88,781,0,0
+genomic_molecular_profiling,Price per unit,796,784,98.49,12,0,0
+genomic_molecular_profiling,Pricing model,796,796,100.0,0,0,0
+genomic_molecular_profiling,Product / service URL,796,12,1.51,784,0,0
+genomic_molecular_profiling,Profiling application,796,0,0.0,796,0,0
+genomic_molecular_profiling,Prospective trial patient testing,796,15,1.88,781,0,0
+genomic_molecular_profiling,Quantity,796,0,0.0,796,0,0
+genomic_molecular_profiling,Requester UNSPSC,796,0,0.0,796,0,0
+genomic_molecular_profiling,Requester commodity code,796,0,0.0,796,0,0
+genomic_molecular_profiling,Sample type (biomarker),796,1,0.13,795,0,0
+genomic_molecular_profiling,Sequencing scope,796,29,3.64,767,0,0
+genomic_molecular_profiling,Ship from,796,0,0.0,796,0,0
+genomic_molecular_profiling,Supplier SKU,796,0,0.0,796,0,0
+genomic_molecular_profiling,Test regulatory status,796,0,0.0,796,0,0
+genomic_molecular_profiling,Therapeutic area (biomarker),796,130,16.33,666,0,0
+genomic_molecular_profiling,Turnaround time (genomic),796,0,0.0,796,0,0
+genomic_molecular_profiling,Unit,796,0,0.0,796,0,0
+genomic_molecular_profiling,Unit of measure,796,394,49.5,363,39,0
+genomic_molecular_profiling,Validation deliverable,796,0,0.0,796,0,0
+genomic_molecular_profiling,Validation framework,796,6,0.75,790,0,0
+genomic_molecular_profiling,Variant type,796,0,0.0,796,0,0

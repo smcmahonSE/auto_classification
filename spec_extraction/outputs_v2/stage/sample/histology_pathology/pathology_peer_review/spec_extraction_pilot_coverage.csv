@@ -1,0 +1,37 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+pathology_peer_review,Capacity,2344,0,0.0,2344,0,0
+pathology_peer_review,Category (L2/L3),2344,2344,100.0,0,0,0
+pathology_peer_review,Category UNSPSC,2344,0,0.0,2344,0,0
+pathology_peer_review,Currency,2344,0,0.0,2344,0,0
+pathology_peer_review,Deliverables,2344,1,0.04,2343,0,0
+pathology_peer_review,Description,2344,121,5.16,2223,0,0
+pathology_peer_review,Document links,2344,0,0.0,2344,0,0
+pathology_peer_review,GLP status,2344,26,1.11,2318,0,0
+pathology_peer_review,Image URL,2344,0,0.0,2344,0,0
+pathology_peer_review,Inventory,2344,0,0.0,2344,0,0
+pathology_peer_review,Lead time (days),2344,0,0.0,2344,0,0
+pathology_peer_review,Listing UNSPSC,2344,0,0.0,2344,0,0
+pathology_peer_review,Listing type,2344,2344,100.0,0,0,0
+pathology_peer_review,Manufacturer SKU,2344,0,0.0,2344,0,0
+pathology_peer_review,Manufacturer name,2344,0,0.0,2344,0,0
+pathology_peer_review,Name,2344,2344,100.0,0,0,0
+pathology_peer_review,Pathologist credentials,2344,6,0.26,2338,0,0
+pathology_peer_review,Pathology Working Group (PWG),2344,0,0.0,2344,0,0
+pathology_peer_review,Price per unit,2344,2344,100.0,0,0,0
+pathology_peer_review,Pricing model,2344,2344,100.0,0,0,0
+pathology_peer_review,Pricing unit,2344,0,0.0,2344,0,0
+pathology_peer_review,Product / service URL,2344,0,0.0,2344,0,0
+pathology_peer_review,Quantity,2344,0,0.0,2344,0,0
+pathology_peer_review,Regulatory submission support,2344,0,0.0,2344,0,0
+pathology_peer_review,Requester UNSPSC,2344,0,0.0,2344,0,0
+pathology_peer_review,Requester commodity code,2344,0,0.0,2344,0,0
+pathology_peer_review,Review format,2344,0,0.0,2344,0,0
+pathology_peer_review,Review scope,2344,31,1.32,2313,0,0
+pathology_peer_review,Sample type,2344,80,3.41,2264,0,0
+pathology_peer_review,Ship from,2344,0,0.0,2344,0,0
+pathology_peer_review,Species,2344,0,0.0,2344,0,0
+pathology_peer_review,Supplier SKU,2344,0,0.0,2344,0,0
+pathology_peer_review,Timing,2344,0,0.0,2344,0,0
+pathology_peer_review,Turnaround,2344,0,0.0,2344,0,0
+pathology_peer_review,Unit,2344,0,0.0,2344,0,0
+pathology_peer_review,Unit of measure,2344,6,0.26,2338,0,0

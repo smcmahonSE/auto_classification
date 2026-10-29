@@ -1,0 +1,39 @@
+l3_id,field,total_rows,matched_rows,matched_pct,missing_rows,ambiguous_rows,invalid_rows
+custom_assay_development_validation,Assay format (custom dev),6093,492,8.07,5601,0,0
+custom_assay_development_validation,Category (L2/L3),6093,6093,100.0,0,0,0
+custom_assay_development_validation,Category UNSPSC,6093,0,0.0,6093,0,0
+custom_assay_development_validation,Cell line engineering included,6093,33,0.54,6060,0,0
+custom_assay_development_validation,Cell model type,6093,16,0.26,6077,0,0
+custom_assay_development_validation,Client materials accepted,6093,210,3.45,5883,0,0
+custom_assay_development_validation,Currency,6093,5,0.08,6088,0,0
+custom_assay_development_validation,Deliverables (custom dev),6093,3,0.05,6090,0,0
+custom_assay_development_validation,Description,6093,837,13.74,5256,0,0
+custom_assay_development_validation,Detection technology (custom dev),6093,157,2.58,5936,0,0
+custom_assay_development_validation,Document links,6093,35,0.57,6058,0,0
+custom_assay_development_validation,HTS-ready output,6093,33,0.54,6060,0,0
+custom_assay_development_validation,Image URL,6093,2,0.03,6091,0,0
+custom_assay_development_validation,Inventory,6093,0,0.0,6093,0,0
+custom_assay_development_validation,Lead time (days),6093,0,0.0,6093,0,0
+custom_assay_development_validation,Listing UNSPSC,6093,0,0.0,6093,0,0
+custom_assay_development_validation,Listing type,6093,6093,100.0,0,0,0
+custom_assay_development_validation,Manufacturer SKU,6093,0,0.0,6093,0,0
+custom_assay_development_validation,Manufacturer name,6093,0,0.0,6093,0,0
+custom_assay_development_validation,Name,6093,6093,100.0,0,0,0
+custom_assay_development_validation,Potency readout (custom dev),6093,3,0.05,6090,0,0
+custom_assay_development_validation,Price per unit,6093,6017,98.75,76,0,0
+custom_assay_development_validation,Pricing model,6093,6093,100.0,0,0,0
+custom_assay_development_validation,Product / service URL,6093,35,0.57,6058,0,0
+custom_assay_development_validation,Protein production included,6093,33,0.54,6060,0,0
+custom_assay_development_validation,Quality system (custom dev),6093,6,0.1,6087,0,0
+custom_assay_development_validation,Quantity,6093,0,0.0,6093,0,0
+custom_assay_development_validation,Regulatory guideline (custom dev),6093,0,0.0,6093,0,0
+custom_assay_development_validation,Requester UNSPSC,6093,0,0.0,6093,0,0
+custom_assay_development_validation,Requester commodity code,6093,0,0.0,6093,0,0
+custom_assay_development_validation,Ship from,6093,0,0.0,6093,0,0
+custom_assay_development_validation,Species (custom dev),6093,384,6.3,5709,0,0
+custom_assay_development_validation,Supplier SKU,6093,0,0.0,6093,0,0
+custom_assay_development_validation,Target class (custom dev),6093,1414,23.21,4679,0,0
+custom_assay_development_validation,Turnaround time (custom dev),6093,0,0.0,6093,0,0
+custom_assay_development_validation,Unit,6093,0,0.0,6093,0,0
+custom_assay_development_validation,Unit of measure,6093,4579,75.15,1226,288,0
+custom_assay_development_validation,Validation parameters (custom dev),6093,157,2.58,5936,0,0

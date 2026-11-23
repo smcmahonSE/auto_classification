@@ -105,6 +105,26 @@ def main() -> None:
         for table, count in written:
             print(f"Wrote {count:,} rows to {table}")
 
+        if args.env == "stage":
+            # SPECIFICATION_COVERAGE_SUMMARY (a view over one dynamic-table
+            # "shard" per (L2, env) — see sql/generate_coverage_sql.py's
+            # module docstring for why it's sharded that way) only covers
+            # migrated (v2) categories, which is exactly this branch — so a
+            # full-mode publish here is the one event that can change what
+            # (resolved_id, args.env)'s shard reports. Only that shard needs
+            # refreshing, not the whole thing. TARGET_LAG is a loose 7-day
+            # backstop; this explicit refresh is what keeps it actually
+            # current. A refresh failure must never fail this
+            # already-successful publish. (Guarded to stage only because no
+            # PROD spec tables exist yet — see ENVS_TO_INCLUDE — not because
+            # the refresh call itself is stage-specific.)
+            from sql.refresh import refresh_specification_coverage_shard
+            try:
+                refresh_specification_coverage_shard(resolved_id, args.env)
+                print(f"Refreshed coverage shard for {resolved_id} ({args.env}).")
+            except Exception as exc:
+                print(f"Warning: coverage shard refresh failed: {exc}")
+
 
 if __name__ == "__main__":
     main()
